@@ -1,0 +1,28 @@
+server:
+  port: 39100
+  servlet:
+    context-path: /ataint
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+      username:
+      password:
+      url: jdbc:sqlite::resource:data/sqlite.db
+      driver-class-nam: org.sqlite.JDBC
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+#  level:
+#   com.iast.astbenchmark: debug
+
+iast:
+  reportId: 1660294427858
+  detectionPath: /Users/curry/Documents/iast-default.log.2022-08-12.0
+  vulType: taint
+
+seeker:
+  detectionPath: /Users/curry/Documents/seeker0818.json
+dongtai:
+  detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/dongtai.json

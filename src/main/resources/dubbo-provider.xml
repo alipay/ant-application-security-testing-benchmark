@@ -1,0 +1,17 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">-->
+<!--    &lt;!&ndash; 当前应用信息配置 &ndash;&gt;-->
+<!--    <dubbo:application name="simple-registry" />-->
+<!--    &lt;!&ndash; 暴露服务协议配置 &ndash;&gt;-->
+<!--    <dubbo:protocol port="9090" />-->
+<!--    &lt;!&ndash; 暴露服务配置 &ndash;&gt;-->
+<!--    <dubbo:service interface="org.apache.dubbo.registry.RegistryService" ref="registryService" registry="N/A" ondisconnect="disconnect" callbacks="1000">-->
+<!--        <dubbo:method name="subscribe"><dubbo:argument index="1" callback="true" /></dubbo:method>-->
+<!--        <dubbo:method name="unsubscribe"><dubbo:argument index="1" callback="false" /></dubbo:method>-->
+<!--    </dubbo:service>-->
+<!--    &lt;!&ndash; 简单注册中心实现，可自行扩展实现集群和状态同步 &ndash;&gt;-->
+<!--    <bean id="registryService" class="org.apache.dubbo.registry.simple.SimpleRegistryService" />-->
+<!--</beans>-->
