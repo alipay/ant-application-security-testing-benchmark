@@ -1062,7 +1062,7 @@ public class AstTaintCase002 {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             byte[] bytes = cmd.getBytes();
-            Runtime.getRuntime().exec(String.valueOf(bytes));
+            Runtime.getRuntime().exec(new String(bytes));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
@@ -1079,7 +1079,7 @@ public class AstTaintCase002 {
         try {
             char[] chars= new char[]{0,0};
             cmd.getChars(0,2,chars,0);
-            Runtime.getRuntime().exec(String.valueOf(chars));
+            Runtime.getRuntime().exec(new String(chars));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
