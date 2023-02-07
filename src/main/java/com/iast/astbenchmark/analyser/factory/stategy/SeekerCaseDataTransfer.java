@@ -51,6 +51,7 @@ public class SeekerCaseDataTransfer implements CaseDataTransfer {
          */
         Map<String, BaseOriginalDataBean> tagMap = convertToTagMap(logsBeans);
         resultBean.setCaseDetectionItems(CaseResultutils.caseAnalyse(tagMap));
+
         return resultBean;
     }
 

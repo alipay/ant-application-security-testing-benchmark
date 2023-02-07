@@ -91,8 +91,13 @@ private ConfigService configService;
         List<IastSlsBaseMessageBean> iastMbList = new ArrayList<>();
         for (String log: logList) {
             String logSplit = "LogUtil - ";
+            String slsSplit = "SlsUtil - ";
             if(log.contains(logSplit)){
                 String mbStr = log.split(logSplit)[1];
+                IastSlsBaseMessageBean mb = JSONUtil.toBean(mbStr,IastSlsBaseMessageBean.class);
+                iastMbList.add(mb);
+            }else if (log.contains(slsSplit)){
+                String mbStr = log.split(slsSplit)[1];
                 IastSlsBaseMessageBean mb = JSONUtil.toBean(mbStr,IastSlsBaseMessageBean.class);
                 iastMbList.add(mb);
             }
