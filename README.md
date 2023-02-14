@@ -19,7 +19,7 @@
     如果您有新的软件需要适配，可以通过以下几个步骤：
     1.在VendorEnum枚举中增加您的软件
     2.在com.iast.astbenchmark.analyser.factory.stategy包中实现CaseDataTransfer接口
-    3.注意实现过成功需要对扫描结果里面分析出'aTaintCase00xxx'这样的tagKey进行标记，您可以参考已经实现的CaseDataTransfer
+    3.注意实现过程中需要对扫描结果里面分析出'aTaintCase00xxx'这样的tagKey进行标记，您可以参考已经实现的CaseDataTransfer
     4.最后您可以通过交互命令行对您的结果进行调试
 #### cases:
 靶场用例，依据
