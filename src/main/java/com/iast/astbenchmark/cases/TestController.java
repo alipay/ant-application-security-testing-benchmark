@@ -24,7 +24,7 @@ import java.sql.SQLException;
 public class TestController {
     @Autowired
     IastCaseDataTransfer iastCaseDataTransfer;
-    @PostMapping(value = "aliapy/strategy")
+    @PostMapping(value = "iast/strategy")
     public void test001() {
         iastCaseDataTransfer.doOperation();
     }
