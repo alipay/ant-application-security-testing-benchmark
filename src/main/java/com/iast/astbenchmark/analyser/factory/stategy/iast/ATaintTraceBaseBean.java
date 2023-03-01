@@ -8,7 +8,7 @@ import java.util.List;
 
 
 /**
- * 阿里基础跟踪Bean
+ * 基础跟踪Bean
  */
 @Data
 @ToString
