@@ -34,6 +34,8 @@ public class ConfigServiceImpl implements ConfigService {
                 return seekerDetectionPath;
             case DONGTAI:
                 return dongtaiDetectionPath;
+            case XMIRROR:
+                return xmirrorDetectionPath;
         }
         return "";
     }
@@ -49,6 +51,8 @@ public class ConfigServiceImpl implements ConfigService {
     private String seekerDetectionPath;
     @Value("${dongtai.detectionPath}")
     private String dongtaiDetectionPath;
+    @Value("${xmirror.detectionPath}")
+    private String xmirrorDetectionPath;
 
     @Override
     public void doChanhge(VendorEnum vendor, String path, String checkFlag) {
@@ -62,6 +66,9 @@ public class ConfigServiceImpl implements ConfigService {
                break;
            case DONGTAI:
                dongtaiDetectionPath=path;
+               break;
+          case XMIRROR:
+                xmirrorDetectionPath = path;
                break;
        }
     }

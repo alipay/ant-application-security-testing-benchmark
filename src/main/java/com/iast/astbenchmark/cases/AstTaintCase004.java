@@ -801,6 +801,7 @@ public class AstTaintCase004 {
         try {
             String hardcode = "a";
             StringBuilder builder = new StringBuilder(hardcode+cmd);
+            builder.deleteCharAt(1);
             Runtime.getRuntime().exec(builder.toString());
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {

@@ -72,45 +72,12 @@ class AstbenchmarkApplicationTests {
         }
     }
 
-    //@Test
-    //void aTaintCase001() {
-    //    HttpResponse response = doGet(url_root + "ataint/case001/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase002() {
-    //    HttpResponse response = doGet(url_root + "ataint/case002/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase003() {
-    //    HttpResponse response = doGet(url_root + "ataint/case003/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase004() {
-    //    HttpResponse response = doGet(url_root + "ataint/case004/1");
-    //    System.out.println(response.body());
-    //}
     @Test
     void aTaintCase00901() {
         String sink = "ls";
         HttpResponse response = doPost(url_root + "ataint/case00901?cmd="+sink);
         System.out.println(response.body());
     }
-    //@Test
-    //void aTaintCase00902() {
-    //    HttpResponse response =  doPost(url_root + "ataint/case00902?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-    //@Test
-    //void aTaintCase00903() {
-    //    HttpResponse response =  doPost(url_root + "ataint/case00902?cmd=ls");
-    //    System.out.println(response.body());
-    //}
 
     @Test
     void aTaintCase005() {
