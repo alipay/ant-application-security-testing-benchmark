@@ -320,6 +320,7 @@ public class AstTaintCase001 {
      * @return
      */
     @PostMapping("case009/{cmd}")
+    @Deprecated
     public Map<String, Object> aTaintCase009(@PathVariable Byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -343,6 +344,7 @@ public class AstTaintCase001 {
      * @return
      */
     @PostMapping("case0010/{cmd}")
+    @Deprecated
     public Map<String, Object> aTaintCase0010(@PathVariable Integer cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -366,6 +368,7 @@ public class AstTaintCase001 {
      * @return
      */
     @PostMapping("case0011/{cmd}")
+    @Deprecated
     public Map<String, Object> aTaintCase0011(@PathVariable Long cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -388,6 +391,7 @@ public class AstTaintCase001 {
      * @return
      */
     @PostMapping("case0012/{cmd}")
+    @Deprecated
     public Map<String, Object> aTaintCase0012(@PathVariable Character cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -517,6 +521,7 @@ public class AstTaintCase001 {
      * @return
      */
     @PostMapping("case0017")
+    @Deprecated
     public Map<String, Object> aTaintCase0017(@RequestBody String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -605,6 +610,7 @@ public class AstTaintCase001 {
     //}
 
     @PostMapping("case0021")
+    @Deprecated
     public Map<String, Object> aTaintCase0021(@RequestBody SourceTestWithMPObject cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -617,6 +623,7 @@ public class AstTaintCase001 {
     }
 
     @PostMapping("case0021/2")
+    @Deprecated
     public Map<String, Object> aTaintCase0021_2(@RequestBody SourceTestWithMPObject cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -629,6 +636,7 @@ public class AstTaintCase001 {
     }
 
     @PostMapping("case0021/3")
+    @Deprecated
     public Map<String, Object> aTaintCase0021_3(@RequestBody SourceTestWithMPObject cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -783,7 +791,7 @@ public class AstTaintCase001 {
     public Map<String, Object> aTaintCase00924_3(@RequestBody LayerBaseBean9 cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(cmd.getCmda2());
+            Runtime.getRuntime().exec(cmd.getCmda9());
             modelMap.put("status", SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", ERROR_STR);

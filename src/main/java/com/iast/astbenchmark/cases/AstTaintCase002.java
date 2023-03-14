@@ -199,6 +199,7 @@ public class AstTaintCase002 {
      * @return
      */
     @PostMapping("case0028")
+    @Deprecated
     public Map<String, Object> aTaintCase0028(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -218,6 +219,7 @@ public class AstTaintCase002 {
      * @return
      */
     @PostMapping("case0029")
+    @Deprecated
     public Map<String, Object> aTaintCase0029(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -237,6 +239,7 @@ public class AstTaintCase002 {
      * @return
      */
     @PostMapping("case0030")
+    @Deprecated
     public Map<String, Object> aTaintCase0030(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -256,6 +259,7 @@ public class AstTaintCase002 {
      * @return
      */
     @PostMapping("case0031")
+    @Deprecated
     public Map<String, Object> aTaintCase0031(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -275,6 +279,7 @@ public class AstTaintCase002 {
      * @return
      */
     @PostMapping("case0032")
+    @Deprecated
     public Map<String, Object> aTaintCase0032(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -865,6 +870,7 @@ public class AstTaintCase002 {
      * aTaintCase0060 传播场景->运算符->赋值
      */
     @PostMapping(value = "case0060")
+    @Deprecated
     public Map<String, Object> aTaintCase0060(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -2107,6 +2113,7 @@ public class AstTaintCase002 {
      * aTaintCase00106 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自固定参数
      */
     @PostMapping(value = "case00106")
+    @Deprecated
     public Map<String, Object> aTaintCase00106(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -2121,6 +2128,7 @@ public class AstTaintCase002 {
      * aTaintCase00107 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自可变参数
      */
     @PostMapping(value = "case00107")
+    @Deprecated
     public Map<String, Object> aTaintCase00107(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -2137,6 +2145,7 @@ public class AstTaintCase002 {
      * path="/data/ls"
      */
     @PostMapping(value = "case00108")
+    @Deprecated
     public Map<String, Object> aTaintCase00108(@RequestParam String path) {
         Map<String, Object> modelMap = new HashMap<>();
         InputStream in = null;
@@ -2191,6 +2200,7 @@ public class AstTaintCase002 {
      * 从文件中读取命令，并用命令行执行
      */
     @PostMapping(value = "case00111")
+    @Deprecated
     public Map<String, Object> aTaintCase00111(@RequestParam String path) {
         Map<String, Object> modelMap = new HashMap<>();
 

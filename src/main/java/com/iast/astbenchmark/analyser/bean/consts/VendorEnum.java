@@ -3,7 +3,8 @@ package com.iast.astbenchmark.analyser.bean.consts;
 public enum VendorEnum {
     IAST("IAST","IAST"),
     SEEKER("SEEKER","SEEKER"),
-    DONGTAI("DONGTAI","DONGTAI")
+    DONGTAI("DONGTAI","DONGTAI"),
+    XMIRROR("XMIRROR","XMIRROR")
     ;
     private String code;
     private String description;
