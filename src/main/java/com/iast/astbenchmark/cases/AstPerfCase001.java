@@ -104,7 +104,8 @@ public class AstPerfCase001 {
     public Map<String,String> aTaintCase99005(@RequestBody BigSizeBean bigSizeBean) {
         Map<String,String> modelMap = new HashMap<>();
         try {
-            sink(1,bigSizeBean,100);
+            String exec =bigSizeBean.toString();
+            Runtime.getRuntime().exec(exec);
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (Exception e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
