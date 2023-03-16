@@ -17,9 +17,9 @@ import java.util.Map;
 
 /**
  * 性能测试靶场
- * ● 超长调用链路（污点链路长度1000）有漏洞场景，占比5%
- * ● 大污点对象（污点对象大小超过1K）有漏洞场景，占比5%
- * ● 多污点对象（同一个请求同时跟踪100个污点对象）有漏洞场景，占比5%
+ * ● 超长调用链路（污点链路长度1000）有漏洞场景
+ * ● 大污点对象（污点对象大小超过1K）有漏洞场景
+ * ● 多污点对象（同一个请求同时跟踪100个污点对象）有漏洞场景
  */
 @RestController()
 public class AstPerfCase001 {
@@ -55,7 +55,7 @@ public class AstPerfCase001 {
     }
 
     /**
-     * 超长调用链路（污点链路长度1000）有漏洞场景，占比5%
+     * 超长调用链路（污点链路长度200）有漏洞场景
      */
     @PostMapping("case99003")
     public Map<String,String> aTaintCase99003(@RequestParam String cmd) {
@@ -66,7 +66,7 @@ public class AstPerfCase001 {
         }
         try {
             /** 递归1000次*/
-            cmd = MyCommonTestUtil.traceDeepth(cmd, 0, 1000);
+            cmd = MyCommonTestUtil.traceDeepth(cmd, 0, 200);
             Runtime.getRuntime().exec(cmd);
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
