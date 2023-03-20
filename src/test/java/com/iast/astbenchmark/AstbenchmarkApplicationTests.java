@@ -977,14 +977,17 @@ class AstbenchmarkApplicationTests {
 
     @Test
     void aTaintCase00141() {
-        HttpResponse response = doPost(url_root + "ataint/case00141?cmd=reportidsql");
+        HttpResponse response = doPost(url_root + "ataint/case00141?cmd=test");
+        HttpResponse response1 = doPost(url_root + "ataint/case00141/1?cmd=test");
         System.out.println(response.body());
     }
 
 
     @Test
-    void aTaintCase00103_2() {
-        HttpResponse response = doPost(url_root + "ataint/case00103/2?cmd=<p>ls<p>");
+    void aTaintCase00103() {
+        HttpResponse response = doPost(url_root + "ataint/case00103?cmd=<p>ls<p>");
+        HttpResponse response2 = doPost(url_root + "ataint/case00103/2?cmd=<p>ls<p>");
+        HttpResponse response1 = doPost(url_root + "ataint/case00103/1?cmd=<p>ls<p>");
         System.out.println(response.body());
     }
 
@@ -995,8 +998,12 @@ class AstbenchmarkApplicationTests {
     @Test
     void aTaintCase00104() {
         HttpResponse response = doPost(url_root + "ataint/case00104?cmd=reportidsql");
-
         System.out.println(response.body());
+    }
+    @Test
+    void aTaintCase00104_1() {
+        HttpResponse response2 = doPost(url_root + "ataint/case00104/1?cmd=reportidsql");
+        System.out.println(response2.body());
     }
 
     @Test
@@ -1006,6 +1013,13 @@ class AstbenchmarkApplicationTests {
     }
 
     //TODO 105
+    @Test
+    void aTaintCase00105() {
+        HttpResponse response = doPost(url_root + "ataint/case00105?cmd=reportidsql");
+        HttpResponse response1 = doPost(url_root + "ataint/case00105/1?cmd=reportidsql");
+        HttpResponse response2 = doPost(url_root + "ataint/case00105/2?cmd=reportidsql");
+        System.out.println(response.body());
+    }
     @Test
     void aTaintCase00106() {
         HttpResponse response = doPost(url_root + "ataint/case00106?cmd=ls");
