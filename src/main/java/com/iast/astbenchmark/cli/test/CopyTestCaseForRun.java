@@ -264,7 +264,7 @@ class CopyTestCaseForRun {
     }
 
     void aTaintCase0024() {
-        HttpResponse response = doPost(url_root + "ataint/case0024/as");
+        HttpResponse response = doPost(url_root + "ataint/case0024?cmd=ls");
         System.out.println(response.body());
     }
 

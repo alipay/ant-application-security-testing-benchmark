@@ -10,6 +10,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 import lombok.Data;
 import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -43,8 +44,8 @@ public class AstTaintCase002 {
      * @param cmd
      * @return
      */
-    @PostMapping("case0022/{cmd}")
-    public Map<String, Object> aTaintCase0022(@PathVariable String cmd) {
+    @PostMapping("case0022")
+    public Map<String, Object> aTaintCase0022(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(StrUtil.cleanBlank(cmd));
@@ -109,8 +110,8 @@ public class AstTaintCase002 {
      * @param cmd
      * @return
      */
-    @PostMapping("case0024/{cmd}")
-    public Map<String, Object> aTaintCase0024(@PathVariable String cmd)
+    @PostMapping("case0024")
+    public Map<String, Object> aTaintCase0024(@RequestParam String cmd)
             throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
