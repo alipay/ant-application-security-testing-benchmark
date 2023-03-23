@@ -393,7 +393,7 @@ class AstbenchmarkApplicationTests {
     }
     @Test
     void aTaintCase0022() {
-        HttpResponse response = doPost(url_root + "ataint/case0022/l%20s%20");
+        HttpResponse response = doPost(url_root + "ataint/case0022?cmd=l%20s%20");
         System.out.println(response.body());
     }
 
@@ -410,7 +410,7 @@ class AstbenchmarkApplicationTests {
 
     @Test
     void aTaintCase0024() {
-        HttpResponse response = doPost(url_root + "ataint/case0024/as");
+        HttpResponse response = doPost(url_root + "ataint/case0024?cmd=ls");
         System.out.println(response.body());
     }
 

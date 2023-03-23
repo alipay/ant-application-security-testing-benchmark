@@ -981,7 +981,7 @@ public class AstTaintCase004 {
            String aa = hardcode+cmd;
            char[] chars = aa.toCharArray();
            char[] data = Arrays.copyOfRange(chars,hardcode.length(),chars.length);;
-            Runtime.getRuntime().exec(new String(chars));
+            Runtime.getRuntime().exec(new String(data));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {
             modelMap.put("status", CommonConsts.ERROR_STR);
@@ -1007,7 +1007,7 @@ public class AstTaintCase004 {
             String aa = hardcode+cmd;
             char[] chars = aa.toCharArray();
             char[] data = Arrays.copyOfRange(chars,0,hardcode.length());;
-            Runtime.getRuntime().exec(new String(chars));
+            Runtime.getRuntime().exec(new String(data));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {
             modelMap.put("status", CommonConsts.ERROR_STR);
@@ -1056,7 +1056,7 @@ public class AstTaintCase004 {
             String hardcode = "a,b";
             String cmdfull = hardcode + cmd;
             String data1=cmdfull.substring(0,hardcode.length());
-            String dara2=String.join(cmd,data1);
+            String dara2=String.join(cmd,data1,hardcode);
             Runtime.getRuntime().exec(dara2);
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {
