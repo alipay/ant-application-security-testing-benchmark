@@ -9,17 +9,25 @@ import java.util.List;
 
 @JacksonXmlRootElement(localName ="message")
 public class TicketRequest {
-
-    @JacksonXmlElementWrapper(localName ="orderlist")
-    @JacksonXmlProperty(localName ="order")
-    private List<OrderRequest> orderList;
-
-    public List<OrderRequest> getOrderList() {
-        return orderList;
+    public String phase;
+    @JacksonXmlProperty(localName = "phase")
+    public String getPhase() {
+        return phase;
     }
 
-    public void setOrderList(List<OrderRequest> orderList) {
-        this.orderList = orderList;
+    public void setPhase(String phase) {
+        this.phase = phase;
     }
+    //@JacksonXmlElementWrapper(localName ="orderlist")
+    //@JacksonXmlProperty(localName ="order")
+    //private List<OrderRequest> orderList;
+    //
+    //public List<OrderRequest> getOrderList() {
+    //    return orderList;
+    //}
+    //
+    //public void setOrderList(List<OrderRequest> orderList) {
+    //    this.orderList = orderList;
+    //}
 
 }

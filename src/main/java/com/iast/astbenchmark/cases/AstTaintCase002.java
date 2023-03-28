@@ -8,9 +8,7 @@ import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
-import lombok.Data;
 import org.apache.commons.lang.StringEscapeUtils;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -336,7 +334,7 @@ public class AstTaintCase002 {
     public Map<String, Object> aTaintCase0034(@RequestBody TicketRequest ticketRequest) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(ticketRequest.getOrderList().get(0).getPhase());
+            Runtime.getRuntime().exec(ticketRequest.getPhase());
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);

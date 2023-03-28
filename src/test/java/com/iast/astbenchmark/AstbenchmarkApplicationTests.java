@@ -57,6 +57,7 @@ class AstbenchmarkApplicationTests {
 
     @BeforeAll
     static void init() {
+        //url_root = "http://30.98.121.247:39100/";
         url_root = "http://localhost:39100/";
         // caseUniqGroupId=System.currentTimeMillis();
         caseUniqGroupId = 54877081211069L;
@@ -475,19 +476,7 @@ class AstbenchmarkApplicationTests {
                 .body("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                         "\n" +
                         "<message> \n" +
-                        "  <orderlist> \n" +
-                        "    <order> \n" +
-                        "      <lotterytype>2004</lotterytype>  \n" +
                         "      <phase>ls</phase>  \n" +
-                        "      <orderid>zy2014090234322</orderid>  \n" +
-                        "      <playtype>200401</playtype>  \n" +
-                        "      <betcode>00,02,03,04,05,06,07^</betcode>  \n" +
-                        "      <multiple>1</multiple>  \n" +
-                        "      <amount>2</amount>  \n" +
-                        "      <add>0</add>  \n" +
-                        "      <endtime>结束时间</endtime> \n" +
-                        "    </order> \n" +
-                        "  </orderlist> \n" +
                         "</message>").execute();
 
         System.out.println(response.body());
