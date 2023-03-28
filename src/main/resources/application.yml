@@ -25,7 +25,7 @@ iast:
 seeker:
   detectionPath: /Users/curry/Documents/seeker0818.json
 dongtai:
-  detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/dongtai.json
+  detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/dongtai_0328.json
 xmirror:
   detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/xmirror.json
 

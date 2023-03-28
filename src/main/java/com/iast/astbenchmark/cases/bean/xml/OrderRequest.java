@@ -7,7 +7,7 @@ public class OrderRequest {
 
     public String lotteryType;
 
-    public String phase;
+
 
     @JacksonXmlProperty(localName = "lotterytype")
     public String getLotteryType() {
@@ -18,12 +18,6 @@ public class OrderRequest {
         this.lotteryType = lotteryType;
     }
 
-    @JacksonXmlProperty(localName = "phase")
-    public String getPhase() {
-        return phase;
-    }
 
-    public void setPhase(String phase) {
-        this.phase = phase;
-    }
+
 }
