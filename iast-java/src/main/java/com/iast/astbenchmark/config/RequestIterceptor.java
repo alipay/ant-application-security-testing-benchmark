@@ -1,4 +1,4 @@
-//package com.iast.astbenchmark.config;
+package com.iast.astbenchmark.config;//package com.iast.astbenchmark.config;
 //
 //import org.springframework.stereotype.Component;
 //import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
