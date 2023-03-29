@@ -7,37 +7,15 @@ import cn.hutool.http.HttpResponse;
 import cn.hutool.http.HttpUtil;
 import cn.hutool.json.JSON;
 import cn.hutool.json.JSONUtil;
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.iast.astbenchmark.cases.bean.SourceTestObject;
-import com.iast.astbenchmark.cases.bean.SourceTestWith100Filedsbject;
-import com.iast.astbenchmark.cases.bean.SourceTestWith10Filedsbject;
-import com.iast.astbenchmark.cases.bean.SoureWithQueueBean;
-import com.iast.astbenchmark.cases.bean.SoureWithSetBean;
 import com.iast.astbenchmark.cases.bean.big.BigParamBean;
 import com.iast.astbenchmark.cases.bean.big.BigSizeBean;
-import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean2;
-import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean9;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.test.context.TestPropertySource;
-import org.springframework.web.client.RestTemplate;
 
 import java.nio.charset.Charset;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
 @SpringBootTest
