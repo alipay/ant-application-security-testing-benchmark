@@ -14,8 +14,8 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-#  level:
-#   com.iast.astbenchmark: debug
+  level:
+   com.iast.astbenchmark: debug
 
 iast:
   reportId: 1660294427858
@@ -28,4 +28,6 @@ dongtai:
   detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/dongtai_0328.json
 xmirror:
   detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/xmirror.json
+openrasp:
+  detectionPath: /Users/tedt/Downloads/openrasp0330.json
 
