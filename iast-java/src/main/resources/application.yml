@@ -19,15 +19,9 @@ spring:
 
 iast:
   reportId: 1660294427858
-  detectionPath: /Users/curry/Documents/iast-default.log.2022-08-12.0
+  detectionPath: /home/admin/data/iast-default.log.2022-08-12.0
   vulType: taint
 
-seeker:
-  detectionPath: /Users/curry/Documents/seeker0818.json
-dongtai:
-  detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/dongtai_0328.json
-xmirror:
-  detectionPath: /Users/curry/IdeaProjects/antcode/astbenchmark/data/xmirror.json
-openrasp:
-  detectionPath: /Users/tedt/Downloads/openrasp0330.json
+detectionPath: '{"seeker": "/home/admin/data/seeker.json","dongtai": "/home/admin/data/dongtai.json","openrasp":"/home/admin/data/openrasp.json" }'
+
 
