@@ -44,7 +44,7 @@ public class SeekerCaseDataTransfer implements CaseDataTransfer {
         /**
          *  Step1 ->获取检出结果并解析；
          *  */
-        List<SeekerCollectBaseData> logsBeans = getReportLog(configService.getSeekerDetectionPath());
+        List<SeekerCollectBaseData> logsBeans = getReportLog(configService.getDetection(this.vendor()));
         /**
          *  Step2 -> 抽取Tag
          *  默认使用MethedName作为Case的tag进行标记
