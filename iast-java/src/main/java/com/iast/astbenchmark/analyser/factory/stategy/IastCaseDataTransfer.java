@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
- * iast iast-->获取日志文件-->根据文件逐个解析case-->
+ * iast iast-->获取日志文件-->根据文件逐个解析case（Log方式）
  */
 @Component
 public class IastCaseDataTransfer extends CaseDataTransfer {
