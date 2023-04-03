@@ -8,14 +8,10 @@ import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.analyser.bean.BaseOriginalDataBean;
-import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
 import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
 import com.iast.astbenchmark.analyser.factory.CaseDataTransfer;
 import com.iast.astbenchmark.analyser.factory.stategy.dongtai.DongResultBean;
 import com.iast.astbenchmark.analyser.factory.stategy.dongtai.DongTaintItemBean;
-import com.iast.astbenchmark.analyser.service.ConfigService;
-import com.iast.astbenchmark.analyser.util.CaseResultutils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -25,34 +21,23 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-public class DongtaiCaseDataTransfer implements CaseDataTransfer {
-    @Autowired
-    private ConfigService configService;
+public class DongtaiCaseDataTransfer extends CaseDataTransfer {
 
-    @Override
     public VendorEnum vendor() {
         return VendorEnum.DONGTAI;
     }
 
-    @Override
-    public CaseDataCollectResultBean doOperation() {
-        Long time = System.currentTimeMillis();
-        CaseDataCollectResultBean resultBean = new CaseDataCollectResultBean();
-        resultBean.setVendor(vendor());
-        resultBean.setReportId(this.vendor().getDescription() + "@" + time);
-        resultBean.setCaseTime(time);
+    public Map<String, BaseOriginalDataBean> extrapResultMap(String path) {
         /**
          *  Step1 ->获取检出结果并解析；
          *  指定检测结果目录 以及检测标记
          */
-        List<DongTaintItemBean> taintItemBeans = getReportLogArray(configService.getDetection(this.vendor()));
+        List<DongTaintItemBean> taintItemBeans = getReportLogArray(path);
         /**
          *  Step2 -> 抽取Tag
          *  默认使用MethedName作为Case的tag进行标记
          */
-        Map<String, BaseOriginalDataBean> tagMap = convertToTagMap(taintItemBeans);
-        resultBean.setCaseDetectionItems(CaseResultutils.caseAnalyse(tagMap));
-        return resultBean;
+        return convertToTagMap(taintItemBeans);
     }
 
     private Map<String, BaseOriginalDataBean> convertToTagMap(List<DongTaintItemBean> logsBeans) {
@@ -93,9 +78,10 @@ public class DongtaiCaseDataTransfer implements CaseDataTransfer {
         DongResultBean resultBean = JSONUtil.toBean(json, DongResultBean.class);
         return resultBean.getData().getMessages();
     }
+
     private List<DongTaintItemBean> getReportLogArray(String path) {
         List<DongTaintItemBean> itemBeans = Lists.newArrayList();
-        JSONArray jsonArray =JSONUtil.readJSONArray(FileUtil.file(path), Charset.forName("utf-8"));
+        JSONArray jsonArray = JSONUtil.readJSONArray(FileUtil.file(path), Charset.forName("utf-8"));
         for (Object o : jsonArray) {
             DongResultBean resultBean = JSONUtil.toBean(JSONUtil.toJsonStr(o), DongResultBean.class);
             itemBeans.addAll(resultBean.getData().getMessages());

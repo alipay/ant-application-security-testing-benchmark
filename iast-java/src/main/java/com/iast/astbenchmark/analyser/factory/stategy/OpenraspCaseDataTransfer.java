@@ -3,60 +3,40 @@ package com.iast.astbenchmark.analyser.factory.stategy;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.analyser.bean.BaseOriginalDataBean;
-import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
 import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
 import com.iast.astbenchmark.analyser.factory.CaseDataTransfer;
-import com.iast.astbenchmark.analyser.factory.stategy.dongtai.DongResultBean;
-import com.iast.astbenchmark.analyser.factory.stategy.dongtai.DongTaintItemBean;
 import com.iast.astbenchmark.analyser.factory.stategy.openrasp.OpenraspResultBean;
 import com.iast.astbenchmark.analyser.factory.stategy.openrasp.OpenraspTaintItemBean;
-import com.iast.astbenchmark.analyser.service.ConfigService;
-import com.iast.astbenchmark.analyser.util.CaseResultutils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
-import java.io.File;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 @Component
-public class OpenraspCaseDataTransfer  implements CaseDataTransfer {
+public class OpenraspCaseDataTransfer extends CaseDataTransfer {
 
-    @Autowired
-    private ConfigService configService;
-
-    @Override
     public VendorEnum vendor() {
         return VendorEnum.OPENRASP;
     }
 
-    @Override
-    public CaseDataCollectResultBean doOperation() {
-        Long time = System.currentTimeMillis();
-        CaseDataCollectResultBean resultBean = new CaseDataCollectResultBean();
-        resultBean.setVendor(vendor());
-        resultBean.setReportId(this.vendor().getDescription() + "@" + time);
-        resultBean.setCaseTime(time);
+    public Map<String, BaseOriginalDataBean> extrapResultMap(String path) {
         /**
          *  Step1 ->获取检出结果并解析；
          *  指定检测结果目录 以及检测标记
          */
-        List<OpenraspTaintItemBean> taintItemBeans = getReportLogArray(configService.getDetection(this.vendor()));
+        List<OpenraspTaintItemBean> taintItemBeans = getReportLogArray(path);
         /**
          *  Step2 -> 抽取Tag
          *  默认使用MethedName作为Case的tag进行标记
          */
-        Map<String, BaseOriginalDataBean> tagMap = convertToTagMap(taintItemBeans);
-        resultBean.setCaseDetectionItems(CaseResultutils.caseAnalyse(tagMap));
-        return resultBean;
+        return convertToTagMap(taintItemBeans);
     }
 
     private Map<String, BaseOriginalDataBean> convertToTagMap(List<OpenraspTaintItemBean> logsBeans) {

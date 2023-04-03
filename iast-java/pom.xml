@@ -4,6 +4,7 @@
     <artifactId>iast-java</artifactId>
     <name>Archetype - iast-java</name>
     <url>http://maven.apache.org</url>
+    <version>1.0-SNAPSHOT</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
