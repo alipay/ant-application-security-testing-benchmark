@@ -46,7 +46,7 @@ public class AstTaintCase002 {
     public Map<String, Object> aTaintCase0022(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(StrUtil.cleanBlank(cmd));
+            Runtime.getRuntime().exec(StrUtil.addPrefixIfNot(cmd,"pre"));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
