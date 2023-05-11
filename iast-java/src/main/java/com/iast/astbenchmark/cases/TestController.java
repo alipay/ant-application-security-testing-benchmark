@@ -23,18 +23,6 @@ import java.sql.SQLException;
 @Slf4j
 public class TestController {
     @Autowired
-    IastCaseDataTransfer iastCaseDataTransfer;
-    @PostMapping(value = "iast/strategy")
-    public void test001() {
-        iastCaseDataTransfer.doOperation();
-    }
-    @Autowired
-    SeekerCaseDataTransfer seekerCaseDataTransfer;
-    @PostMapping(value = "seeker/strategy")
-    public void test002() {
-        seekerCaseDataTransfer.doOperation();
-    }
-    @Autowired
     DataAnalysisService dataAnalysisService;
     @PostMapping(value = "analysis/strategy/{vendor}")
     public void test003(@PathVariable String vendor) {

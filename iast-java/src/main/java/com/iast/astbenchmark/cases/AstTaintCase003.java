@@ -7,9 +7,9 @@ import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.db.Db;
 import cn.hutool.db.Entity;
 import cn.hutool.http.HttpRequest;
+import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 import com.iast.astbenchmark.common.utils.SessionUtil;
-import com.iast.astbenchmark.common.CommonConsts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,12 +36,24 @@ public class AstTaintCase003 {
      * aTaintCase00113 异步跟踪能力->存储型异步->污点通过db存储后触发
      * 采用轻量级的sqlite
      */
+    private Long id =0L;
     @PostMapping(value = "case00113")
     public Map<String, Object> aTaintCase00113(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             /** 创建存储*/
-            Long id =  Db.use().insertForGeneratedKey(Entity.create("CMD").set("cmd", cmd));
+            id =  Db.use().insertForGeneratedKey(Entity.create("CMD").set("cmd", cmd));
+            modelMap.put("status", CommonConsts.SUCCESS_STR);
+        } catch (SQLException e) {
+            modelMap.put("status", CommonConsts.ERROR_STR);
+            throw new RuntimeException(e);
+        }
+        return modelMap;
+    }
+    @PostMapping(value = "case00113/1")
+    public Map<String, Object> aTaintCase00113_1(@RequestParam String cmd) {
+        Map<String, Object> modelMap = new HashMap<>();
+        try {
             /** 从DB获取存储*/
             Entity res = Db.use().get(Entity.create("CMD").set("id",id));
             Runtime.getRuntime().exec(res.getStr("cmd"));
@@ -52,6 +64,7 @@ public class AstTaintCase003 {
             throw new RuntimeException(e);
         } finally {
             /** 最终从DB中删除这个数据*/
+            id=0L;
             try {
                 Db.use().del(Entity.create("CMD").set("cmd", cmd));
             } catch (SQLException e) {

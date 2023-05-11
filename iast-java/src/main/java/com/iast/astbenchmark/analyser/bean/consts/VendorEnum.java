@@ -4,6 +4,7 @@ public enum VendorEnum {
     IAST("IAST","IAST"),
     SEEKER("SEEKER","SEEKER"),
     DONGTAI("DONGTAI","DONGTAI"),
+    OPENRASP("OPENRASP","OPENRASP"),
     XMIRROR("XMIRROR","XMIRROR")
     ;
     private String code;

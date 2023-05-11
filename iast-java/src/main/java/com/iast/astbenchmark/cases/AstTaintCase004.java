@@ -1,25 +1,24 @@
 package com.iast.astbenchmark.cases;
 
-import com.alibaba.fastjson.JSON;
 import com.iast.astbenchmark.cases.bean.OneLayerSimpleBean;
 import com.iast.astbenchmark.cases.bean.SourceTestObject;
 import com.iast.astbenchmark.cases.bean.SoureWithQueueBean;
 import com.iast.astbenchmark.cases.bean.SoureWithSetBean;
 import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean99;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.google.common.collect.Queues;
-import com.google.common.collect.Sets;
 import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
-import com.sun.jna.StringArray;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
 /**
  * 准备度（aTaintCase00125～case00137）
@@ -1024,10 +1023,25 @@ public class AstTaintCase004 {
     public Map<String, Object> aTaintCase00953(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String hardcode = "abc";
+            String hardcode = "ls";
             String cmdfull = hardcode + cmd;
             String data1=cmdfull.substring(0,hardcode.length());  //截取到非无污点数据
             String dara2=data1.concat(cmd);                      //再拼接上污点
+            Runtime.getRuntime().exec(dara2);
+            modelMap.put("status", CommonConsts.SUCCESS_STR);
+        } catch (IOException e)  {
+            modelMap.put("status", CommonConsts.ERROR_STR);
+        }
+        return modelMap;
+    }
+    @PostMapping(value = "case00953/1")
+    public Map<String, Object> aTaintCase00953_1(@RequestParam String cmd) {
+        Map<String, Object> modelMap = new HashMap<>();
+        try {
+            String hardcode = "ls";
+            String cmdfull = hardcode + cmd;
+            String data1=cmdfull.substring(0,hardcode.length());
+            String dara2=data1.concat(hardcode);                      //再拼接上非污点
             Runtime.getRuntime().exec(dara2);
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {
@@ -1053,10 +1067,25 @@ public class AstTaintCase004 {
     public Map<String, Object> aTaintCase00954(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String hardcode = "a,b";
+            String hardcode = "ls";
             String cmdfull = hardcode + cmd;
             String data1=cmdfull.substring(0,hardcode.length());
             String dara2=String.join(cmd,data1,hardcode);
+            Runtime.getRuntime().exec(dara2);
+            modelMap.put("status", CommonConsts.SUCCESS_STR);
+        } catch (IOException e)  {
+            modelMap.put("status", CommonConsts.ERROR_STR);
+        }
+        return modelMap;
+    }
+    @PostMapping(value = "case00954/1")
+    public Map<String, Object> aTaintCase00954_1(@RequestParam String cmd) {
+        Map<String, Object> modelMap = new HashMap<>();
+        try {
+            String hardcode = "ls";
+            String cmdfull = hardcode + cmd;
+            String data1=cmdfull.substring(0,hardcode.length());
+            String dara2=String.join(hardcode,data1,hardcode);
             Runtime.getRuntime().exec(dara2);
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e)  {
