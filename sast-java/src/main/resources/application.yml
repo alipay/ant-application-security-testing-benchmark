@@ -1,0 +1,20 @@
+server:
+  port: 39100
+  servlet:
+    context-path: /btaint
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  datasource:
+      username:
+      password:
+      url: jdbc:sqlite::resource:data/sqlite.db
+      driver-class-nam: org.sqlite.JDBC
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+
+
