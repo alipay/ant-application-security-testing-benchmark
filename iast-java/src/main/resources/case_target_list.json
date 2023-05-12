@@ -1,4 +1,12 @@
 [
+  {"caseNo": "aTaintCase001","caseType": "T001","caseDesc": "污点对象完整度检验，基础类型int作为污点对象","data": [{  "tag": "aTaintCase001",  "result": true}]},
+  {"caseNo": "aTaintCase002","caseType": "T001","caseDesc": "污点对象完整度检验，基础类型char作为污点对象","data": [{  "tag": "aTaintCase002",  "result": true}]},
+  {"caseNo": "aTaintCase003","caseType": "T001","caseDesc": "污点对象完整度检验，基本类型byte 作为污点对象","data": [{  "tag": "aTaintCase003",  "result": true}]},
+  {"caseNo": "aTaintCase004","caseType": "T001","caseDesc": "污点对象完整度检验，基础类型long 作为污点对象","data": [{  "tag": "aTaintCase004",  "result": true}]},
+  {"caseNo": "aTaintCase009","caseType": "T001","caseDesc": "污点对象完整度检验，基本数据类型的封装类型 Byte 作为污点对象","data": [{  "tag": "aTaintCase009",  "result": true}]},
+  {"caseNo": "aTaintCase0010","caseType": "T001","caseDesc": "污点对象完整度检验，基本数据类型的封装类型 Integer 作为污点对象","data": [{  "tag": "aTaintCase0010",  "result": true}]},
+  {"caseNo": "aTaintCase0011","caseType": "T001","caseDesc": "污点对象完整度检验，基本数据类型的封装类型 Long 作为污点对象","data": [{  "tag": "aTaintCase0011",  "result": true}]},
+  {"caseNo": "aTaintCase0012","caseType": "T001","caseDesc": "污点对象完整度检验，基本数据类型的封装类型 Character 作为污点对象","data": [{  "tag": "aTaintCase0012",  "result": true}]},
   {"caseNo": "aTaintCase00901","caseType": "T001","caseDesc": "污点对象完整度检验,字符串对象String作为污点对象","data": [{  "tag": "aTaintCase00901",  "result": true}]},
   {"caseNo": "aTaintCase00921","caseType": "T001","caseDesc": "","data": [{  "tag": "aTaintCase00921",  "result": true},{  "tag": "aTaintCase00921_2",  "result": true},{  "tag": "aTaintCase00921_3",  "result": true}]},
   {"caseNo": "aTaintCase00922","caseType": "T001","caseDesc": "","data": [{  "tag": "aTaintCase00922",  "result": true},{  "tag": "aTaintCase00922_2",  "result": true},{  "tag": "aTaintCase00922_3",  "result": true}]},
