@@ -1,0 +1,10 @@
+.idea/
+awatch3.1.0/
+*.class
+*.zip
+*.jar
+iast-java/target/
+data/
+iast-java/logs/
+logs/
+*.log
