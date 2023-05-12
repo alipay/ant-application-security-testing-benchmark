@@ -18,7 +18,7 @@ public class CaseNodeTreeUtil {
     }
 
     public static CaseNode initRoot() {
-        List<String> lines = FileUtil.readLines("data/caseNodeTree.txt", Charset.forName("utf-8"));
+        List<String> lines = FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
         CasetargeCache.initNow();
         CaseNode root = CaseNode.builder()
                 .type(CaseNodeType.ROOT)
