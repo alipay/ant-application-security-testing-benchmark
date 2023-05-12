@@ -84,8 +84,8 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @GetMapping("case001/{cmd}")
-    public Map<String, Object> aTaintCase001(@PathVariable int cmd) {
+    @GetMapping("case001")
+    public Map<String, Object> aTaintCase001(@RequestParam int cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));
@@ -103,8 +103,8 @@ public class AstTaintCase001 {
      *
      * @return
      */
-    @GetMapping("case002/{cmd}")
-    public Map<String, Object> aTaintCase002(@PathVariable char cmd) {
+    @GetMapping("case002")
+    public Map<String, Object> aTaintCase002(@RequestParam char cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));
@@ -121,8 +121,8 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @GetMapping("case003/{cmd}")
-    public Map<String, Object> aTaintCase003(@PathVariable byte cmd) {
+    @GetMapping("case003")
+    public Map<String, Object> aTaintCase003(@RequestParam byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));
@@ -139,8 +139,8 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @GetMapping("case004/{cmd}")
-    public Map<String, Object> aTaintCase004(@PathVariable long cmd) {
+    @GetMapping("case004")
+    public Map<String, Object> aTaintCase004(@RequestParam long cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));
@@ -150,6 +150,7 @@ public class AstTaintCase001 {
         }
         return modelMap;
     }
+
 
     /** 污点对象完整度 2.引用类型 **/
 
@@ -319,9 +320,9 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @PostMapping("case009/{cmd}")
+    @PostMapping("case009")
     @Deprecated
-    public Map<String, Object> aTaintCase009(@PathVariable Byte cmd) {
+    public Map<String, Object> aTaintCase009(@RequestParam Byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", ERROR_STR);
@@ -343,9 +344,9 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @PostMapping("case0010/{cmd}")
+    @PostMapping("case0010")
     @Deprecated
-    public Map<String, Object> aTaintCase0010(@PathVariable Integer cmd) {
+    public Map<String, Object> aTaintCase0010(@RequestParam Integer cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", ERROR_STR);
@@ -367,9 +368,9 @@ public class AstTaintCase001 {
      * @param cmd
      * @return
      */
-    @PostMapping("case0011/{cmd}")
+    @PostMapping("case0011")
     @Deprecated
-    public Map<String, Object> aTaintCase0011(@PathVariable Long cmd) {
+    public Map<String, Object> aTaintCase0011(@RequestParam Long cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", ERROR_STR);
@@ -390,9 +391,9 @@ public class AstTaintCase001 {
      * @param cmd 测试数据使用（0~9）
      * @return
      */
-    @PostMapping("case0012/{cmd}")
+    @PostMapping("case0012")
     @Deprecated
-    public Map<String, Object> aTaintCase0012(@PathVariable Character cmd) {
+    public Map<String, Object> aTaintCase0012(@RequestParam Character cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", ERROR_STR);
