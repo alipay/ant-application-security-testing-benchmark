@@ -31,7 +31,7 @@ public class CasetargeCache {
     private void goinit() {
         if (targetMap.isEmpty()) {
             try {
-                String target = IoUtil.read(new ClassPathResource("case_target_list.json").getStream(),Charset.forName("utf-8"));
+                String target = IoUtil.read(new ClassPathResource("config/case_target_list.json").getStream(),Charset.forName("utf-8"));
                 //JSONArray array = JSONUtil.readJSONArray(FileUtil.file("case_target_list.json"), Charset.forName("utf-8"));
                 JSONArray array =JSONUtil.parseArray(target);
                 array.stream().forEach(e -> {
