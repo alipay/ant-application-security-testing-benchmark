@@ -46,7 +46,7 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
 ```
 ### 联系我们
     钉钉
-    ![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/dingTalk.png)
+![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/dingTalk.png)
 
 ### License
 This project is licensed under the Apache License 2.0
