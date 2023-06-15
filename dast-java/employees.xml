@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <username>admin</username>
+        <password>admim123</password>
+        <secret>{FdW`nUOltj_f0H"</secret>
+    </user>
+    <user>
+        <username>manager</username>
+        <password>a1b2c3d4</password>
+        <secret>|o*mE$c2BOI-j{LD</secret>
+    </user>
+    <user>
+        <username>user</username>
+        <password>1q2w3e4r5t</password>
+        <secret>G?2Qp%6-@xI|kR;E</secret>
+    </user>
+</users>

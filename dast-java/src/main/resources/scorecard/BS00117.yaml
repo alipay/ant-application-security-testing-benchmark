@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "upload"
+test-number: "00117"
+vulnerability: "true"
+cwe: "434"

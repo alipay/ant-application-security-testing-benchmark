@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "sensitive"
+test-number: "00152"
+vulnerability: "true"
+cwe: "200"

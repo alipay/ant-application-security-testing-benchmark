@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "pathtraver"
+test-number: "00019"
+vulnerability: "true"
+cwe: "22"

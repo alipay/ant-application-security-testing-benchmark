@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "xxe"
+test-number: "00073"
+vulnerability: "true"
+cwe: "611"

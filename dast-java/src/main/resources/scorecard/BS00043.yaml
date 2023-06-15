@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "sqli"
+test-number: "00043"
+vulnerability: "false"
+cwe: "89"
