@@ -1,0 +1,14 @@
+POST /xss/BS00015?BS00015=%3c%73%63%72%69%70%74%3e%61%6c%65%72%74%28%31%29%3b%3c%2f%73%63%72%69%70%74%3e HTTP/1.1
+Host: localhost
+Connection: close
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36
+BS00015: BS00015
+Cookie: BS00015=BS00015;
+Referer: http://localhost/
+Content-Type: application/x-www-form-urlencoded
+scannerauth:cd117e0a9365670f19c768032f8dabfe
+Content-Length: 8
+
+test=123
