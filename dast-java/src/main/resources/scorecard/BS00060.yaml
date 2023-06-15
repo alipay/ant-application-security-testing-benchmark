@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "code_injection"
+test-number: "00060"
+vulnerability: "false"
+cwe: "78"
