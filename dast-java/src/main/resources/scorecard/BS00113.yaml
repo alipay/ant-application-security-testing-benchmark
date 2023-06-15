@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "jsonp"
+test-number: "00113"
+vulnerability: "true"
+cwe: "346"

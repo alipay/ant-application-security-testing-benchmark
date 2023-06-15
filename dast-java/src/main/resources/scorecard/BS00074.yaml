@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "xss"
+test-number: "00074"
+vulnerability: "true"
+cwe: "79"

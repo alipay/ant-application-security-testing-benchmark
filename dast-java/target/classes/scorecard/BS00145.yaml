@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "redirect"
+test-number: "00145"
+vulnerability: "true"
+cwe: "601"
