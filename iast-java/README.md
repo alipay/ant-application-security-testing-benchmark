@@ -44,7 +44,8 @@
 
 - #### 二 性能测试
    [《IAST性能与稳定性测试方案》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
-
+  
+    靶场提供一套完整的性能测试方案,旨在判断日常工作模式下和极端场景下IAST的性能情况
 
 
 ### 项目结构
@@ -86,6 +87,5 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
    靶场用例跑测 egg: runtest || runtest -m aTaintCase001
 ```
 
-    靶场提供一套完整的性能测试方案,旨在判断日常工作模式下和极端场景下IAST的性能情况
 ### License
 This project is licensed under the Apache License 2.0
