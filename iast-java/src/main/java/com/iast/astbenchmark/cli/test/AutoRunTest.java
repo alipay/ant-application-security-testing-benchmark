@@ -13,7 +13,7 @@ public class AutoRunTest {
           if(!StringUtils.isEmpty(url)){
              CopyTestCaseForRun.url_root = url;
           }
-          Method[] methods = clazz.getMethods();
+          Method[] methods = clazz.getDeclaredMethods();
           StringBuilder builder = new StringBuilder();
           for (Method method : methods) {
               if(method.getName().contains("aTaintCase00")){
@@ -25,10 +25,10 @@ public class AutoRunTest {
                       System.out.println(method.getName()+":invoke FAIL\n");
                       builder.append(method.getName()+":invoke FAIL\n");
                   }
-                  System.out.println(method.getName()+":invoke OK\n");
                   builder.append(method.getName()+":invoke OK\n");
               }
           }
+          System.out.println(builder);
           return builder.toString();
       }
     public static String run(String metheodName,String url){
@@ -41,13 +41,13 @@ public class AutoRunTest {
             method.setAccessible(true);
             method.invoke(clazz.newInstance());
         } catch (NoSuchMethodException e) {
-            return "No Such Method";
+            return metheodName+"No Such Method";
         } catch (InvocationTargetException e ) {
-            return "InvocationTargetException";
+            return metheodName+"InvocationTargetException";
         } catch (IllegalAccessException e) {
-            return "IllegalAccessException";
+            return metheodName+"IllegalAccessException";
         } catch (InstantiationException e) {
-            return  "IllegalAccessException";
+            return  metheodName+"IllegalAccessException";
         }
         return metheodName+":OK\n";
 
