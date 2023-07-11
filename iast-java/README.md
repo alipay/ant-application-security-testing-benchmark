@@ -5,11 +5,11 @@
 ### 快速入门
 - #### 一 靶场测试
 - - ##### 工程启动
-    项目使用到的中间件有sqlite&redis,您可以在application&db.setting修改链接信息
-    项目通过AstbenchmarkApplication作为springboot项目启动
-    使用-Dspring.shell.interactive.enabled=false/true来关闭/开启项目的shell交互功能
-    根据待测IAST厂商相关提示加入iastagent
-    
+    项目使用到的中间件有sqlite&redis,您可以在application&db.setting修改链接信息;
+    项目通过AstbenchmarkApplication作为springboot项目启动;
+    使用-Dspring.shell.interactive.enabled=false/true来关闭/开启项目的shell交互功能;
+    根据待测IAST厂商相关提示加入iastagent;
+
 - - ##### 驱动靶场
     项目启动后您可以直接运行AstbenchmarkApplicationTests驱动靶场用例
 - - ##### 交互命令
@@ -17,7 +17,7 @@
 - - - ###### --跑测结果分析
     对于厂商的跑测结果收集,通常从页面或者后台日志手动获取;  
     当页面结果有多个时将结果构造成jsonArray([response1,response2]);  
-    日志使用接口上标记的时间戳定位检索
+    日志使用接口上标记的时间戳定位检索;
 
     ```分析命令 analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file```
 
