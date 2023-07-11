@@ -9,12 +9,13 @@
 ### 项目结构
 ```
 ├── dast-java(dast工程目录）
-├────── [dast操作说明](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/dast-java/README.md)
 ├── floder-img(静态资源)
 ├── iast-java(iast工程目录）
-├────── [iast操作说明](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/iast-java/README.md)
 └── sast-java(sast工程目录）
 ```
+### 操作说明
+[dast操作说明](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/dast-java/README.md)
+[iast操作说明](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/iast-java/README.md)
 ### 联系我们
 #### 钉钉
 ![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/dingTalk.png)
