@@ -1,40 +1,78 @@
 package com.iast.astbenchmark.cli.tree;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.resource.ResourceUtil;
 import cn.hutool.core.util.StrUtil;
 import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
 import com.iast.astbenchmark.analyser.cache.CasetargeCache;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
+import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 public class CaseNodeTreeUtil {
     public static void main(String[] args) {
         System.out.println(CaseNodeTreeUtil.initRoot());
     }
 
     public static CaseNode initRoot() {
-        List<String> lines = FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
-        CasetargeCache.initNow();
-        CaseNode root = CaseNode.builder()
-                .type(CaseNodeType.ROOT)
-                .id(0)
-                .deepth(1)
-                .name("IAST引擎能力评估体系(JAVA)")
-                .build();
-
-        for (int row = 0; row < lines.size(); row++) {
-            if (StrUtil.isEmpty(lines.get(row))||lines.get(row).startsWith("#")) {
-                continue;
+        BufferedReader reader =null;
+        InputStream inputStream  =null;
+        try {
+            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
+            reader= new BufferedReader(new InputStreamReader(inputStream));
+            List<String> lines =Lists.newArrayList();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
             }
-            String[] nodesData = lines.get(row).split("->");
-            addTreeNode(root, 0, row + 1, nodesData);
+            //= FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
+            CasetargeCache.initNow();
+            CaseNode root = CaseNode.builder()
+                    .type(CaseNodeType.ROOT)
+                    .id(0)
+                    .deepth(1)
+                    .name("IAST引擎能力评估体系(JAVA)")
+                    .build();
+
+            for (int row = 0; row < lines.size(); row++) {
+                if (StrUtil.isEmpty(lines.get(row))||lines.get(row).startsWith("#")) {
+                    continue;
+                }
+                String[] nodesData = lines.get(row).split("->");
+                addTreeNode(root, 0, row + 1, nodesData);
+            }
+            return root;
+        }catch (Exception e){
+            log.error("初始化异常:{}",e);
+        }finally {
+            try {
+                if(reader!=null){
+                    reader.close();
+                }
+                if(inputStream!=null){
+                    inputStream.close();
+                }
+            }catch (IOException e){
+
+            }
+
         }
-        return root;
+       return null;
     }
 
     public static Map<String, CaseNode> leafMap(CaseNode root) {

@@ -1,7 +1,6 @@
 package com.iast.astbenchmark.cases.bean;
 
 import lombok.Data;
-import org.stringtemplate.v4.compiler.STLexer;
 
 import java.io.Serializable;
 
