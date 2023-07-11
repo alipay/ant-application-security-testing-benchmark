@@ -37,7 +37,8 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
     │   │               ├── cli      
 ```
 #### analyser:
-##### 分析器:用于解析转换不同的IAST软件扫描结果,如果您有新的软件需要适配，可以通过以下几个步骤：
+##### 分析器:用于解析转换不同的IAST软件扫描结果;
+    如果您有新的软件需要适配,可以通过下面的步骤开始：
     1.在VendorEnum枚举中增加您的软件
     2.在com.iast.astbenchmark.analyser.factory.stategy包中实现CaseDataTransfer接口
     3.注意实现过程中需要对扫描结果里面分析出'aTaintCase00xxx'这样的tagKey进行标记，您可以参考已经实现的CaseDataTransfer
@@ -49,7 +50,7 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
 #### cli:
     提供报告生成，报告查询，结果比对等功能；你可以使用help命令查看具体支持哪些命令：
 ### 性能测试
+   [IAST性能与稳定性测试方案](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
     靶场提供一套完整的性能测试方案,旨在判断日常工作模式下和极端场景下IAST的性能情况
-[IAST性能与稳定性测试方案](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
 ### License
 This project is licensed under the Apache License 2.0
