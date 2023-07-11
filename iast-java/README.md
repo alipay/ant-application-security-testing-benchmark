@@ -13,6 +13,7 @@
 ##### 交互命令
     项目中内置了(靶场跑测,结果分析,报告搜索,报告对比)等命令
 ###### 跑测结果分析
+    对于厂商的跑测结果收集,通常从页面或者后台日志手动获取;当页面结果有多个时将结果构造成jsonArray([response1,response2]);日志使用接口上标记的时间戳检索
 ```analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file```
 
     egg: analysis -v IAST -p /var/data/testresult.log -o /var/data/report.txt
