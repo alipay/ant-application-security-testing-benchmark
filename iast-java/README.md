@@ -3,6 +3,7 @@
     为了能全面而客观的对安全能力进行评价，蚂蚁安全团队从2021年开始探索建立安全能力的评价体系。通过应用安全评价体系项目，希望可以衡量出应用安全产品的技术优劣，指引应用安全产品的发展方向，并可辅助用于商业化安全产品采购的技术选型，详见wiki。
     项目主要包括两部分，一部分是分语言的评价体系，另一部分是基于评价体系的Benchmark。项目一期首先发布的是Java IAST引擎能力评价体系V1.0和Benchmark。如果您有任何好的想法，欢迎与我们团队联系。
 ### 快速入门
+#### 一 靶场测试
 ##### 工程启动
     项目使用到的中间件有sqlite&redis,您可以在application&db.setting修改链接信息
     项目通过AstbenchmarkApplication作为springboot项目启动
@@ -21,6 +22,8 @@
 
     egg:search -l all （查询所有报告的ID） 
         search -i reportId （查询指定报告详情）
+#### 二 性能测试
+   [《IAST性能与稳定性测试方案》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
 
 
 
@@ -62,8 +65,6 @@ analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file
 runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)
    靶场用例跑测 egg: runtest || runtest -m aTaintCase001
 ```
-### 性能测试
-   [《IAST性能与稳定性测试方案》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
 
     靶场提供一套完整的性能测试方案,旨在判断日常工作模式下和极端场景下IAST的性能情况
 ### License
