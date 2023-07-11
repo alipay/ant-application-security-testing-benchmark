@@ -4,30 +4,39 @@
     项目主要包括两部分，一部分是分语言的评价体系，另一部分是基于评价体系的Benchmark。项目一期首先发布的是Java IAST引擎能力评价体系V1.0和Benchmark。如果您有任何好的想法，欢迎与我们团队联系。
 ### 快速入门
 - #### 一 靶场测试
+
 - - ##### 工程启动
-    项目使用到的中间件有sqlite&redis,您可以在application&db.setting修改链接信息;
-    项目通过AstbenchmarkApplication作为springboot项目启动;
-    使用-Dspring.shell.interactive.enabled=false/true来关闭/开启项目的shell交互功能;
-    根据待测IAST厂商相关提示加入iastagent;
+     ```
+     项目使用到的中间件有sqlite&redis,您可以在application&db.setting修改链接信息;   
+     项目通过AstbenchmarkApplication作为springboot项目启动;
+     使用-Dspring.shell.interactive.enabled=false/true来关闭/开启项目的shell交互功能;
+     根据待测IAST厂商相关提示加入iastagent; 
+     ```
 
 - - ##### 驱动靶场
     项目启动后您可以直接运行AstbenchmarkApplicationTests驱动靶场用例
+
 - - ##### 交互命令
     项目中内置了(靶场跑测,结果分析,报告搜索,报告对比)等命令,您可以在项目启动后输入help查看
+
 - - - ###### --跑测结果分析
+    ```
     对于厂商的跑测结果收集,通常从页面或者后台日志手动获取;  
     当页面结果有多个时将结果构造成jsonArray([response1,response2]);  
     日志使用接口上标记的时间戳定位检索;
+    ```
 
     ```分析命令 analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file```
 
     命令示例: analysis -v IAST -p /var/data/testresult.log -o /var/data/report.txt
+
 - - - ###### --跑测报告搜索
     ```查询命令 search: -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）```
 
     命令示例:search -l all （查询所有报告的ID）
 
            search -i reportId （查询指定报告详情）
+
 - #### 二 性能测试
    [《IAST性能与稳定性测试方案》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
 
