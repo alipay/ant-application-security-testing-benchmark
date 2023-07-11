@@ -9,21 +9,21 @@
     使用-Dspring.shell.interactive.enabled=false/true来关闭/开启项目的shell交互功能
     根据待测IAST厂商相关提示加入iastagent
 ##### 驱动靶场
-    项目启动后您可以运行AstbenchmarkApplicationTests驱动靶场用例
+    项目启动后您可以直接运行AstbenchmarkApplicationTests驱动靶场用例
 ##### 交互命令
     项目中内置了(靶场跑测,结果分析,报告搜索,报告对比)等命令
-    输入help查看详细命令:
-```
-My Commands
-search: -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）
-   报告搜索功能 egg:search -i reportId || search -l all
-compare: -a :input reportId1;-b: input reportId2;-o:result to file;  (compare reportId1 to reportId2)
-   报告对比功能 egg: compare -a reportId1 -b reportId2
-analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file
-   跑测结果分析 egg: analysis -v IAST -p /var/data/testresult.log -o /var/data/report.txt
-runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)
-   靶场用例跑测 egg: runtest || runtest -m aTaintCase001
-```
+###### 跑测结果分析
+```analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file```
+
+    egg: analysis -v IAST -p /var/data/testresult.log -o /var/data/report.txt
+###### 跑测报告搜索
+```search: -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）```
+
+    egg:search -l all （查询所有报告的ID） 
+        search -i reportId （查询指定报告详情）
+
+
+
 ### 项目结构
 ```
 └── src
@@ -37,7 +37,7 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
     │   │               ├── cli      
 ```
 #### analyser:
-##### 分析器:用于解析转换不同的IAST软件扫描结果;
+##### 分析器-用于解析转换不同的IAST软件扫描结果;
     如果您有新的软件需要适配,可以通过下面的步骤开始：
     1.在VendorEnum枚举中增加您的软件
     2.在com.iast.astbenchmark.analyser.factory.stategy包中实现CaseDataTransfer接口
@@ -45,12 +45,25 @@ runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benc
     4.您可以通过交互命令行对您的结果进行调试
     5.对于厂商的跑测结果收集,通常从页面或者后台日志手动获取;页面结果有多个时将结果构造成jsonArray;日志使用接口上标记的时间戳检索
 #### cases:
-##### 靶场用例:依据[《引擎能力评价体系》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/Java-IAST%E5%BC%95%E6%93%8E%E8%83%BD%E5%8A%9B%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB)
+##### 靶场用例
+依据[《引擎能力评价体系》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/Java-IAST%E5%BC%95%E6%93%8E%E8%83%BD%E5%8A%9B%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB)
+
     这里存放了所有靶场case的实现，您可以评论留下您的宝贵意见或建议
 #### cli:
     提供报告生成，报告查询，结果比对等功能；你可以使用help命令查看具体支持哪些命令：
+```
+My Commands
+search: -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）
+   报告搜索功能 egg:search -i reportId || search -l all
+compare: -a :input reportId1;-b: input reportId2;-o:result to file;  (compare reportId1 to reportId2)
+   报告对比功能 egg: compare -a reportId1 -b reportId2
+analysis: -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file
+   跑测结果分析 egg: analysis -v IAST -p /var/data/testresult.log -o /var/data/report.txt
+runtest: -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)
+   靶场用例跑测 egg: runtest || runtest -m aTaintCase001
+```
 ### 性能测试
-   [IAST性能与稳定性测试方案](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
+   [《IAST性能与稳定性测试方案》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/IAST%E6%80%A7%E8%83%BD%E4%B8%8E%E7%A8%B3%E5%AE%9A%E6%80%A7%E6%B5%8B%E8%AF%95%E6%96%B9%E6%A1%88)
 
     靶场提供一套完整的性能测试方案,旨在判断日常工作模式下和极端场景下IAST的性能情况
 ### License
