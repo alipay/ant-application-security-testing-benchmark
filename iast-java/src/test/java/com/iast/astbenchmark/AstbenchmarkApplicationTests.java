@@ -52,10 +52,9 @@ class AstbenchmarkApplicationTests {
 
     @BeforeAll
     static void init() {
-        //url_root = "http://30.98.121.247:39100/";
         url_root = "http://localhost:39100/";
-        // caseUniqGroupId=System.currentTimeMillis();
-        caseUniqGroupId = 54877081211069L;
+        caseUniqGroupId=System.currentTimeMillis();
+        //caseUniqGroupId = 54877081211069L;
         System.out.println("请保存此次跑case的关键字:" + caseUniqGroupId);
     }
 
@@ -66,6 +65,49 @@ class AstbenchmarkApplicationTests {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    @Test
+    void aTaintCase001() {
+        HttpResponse response = doGet(url_root + "ataint/case001?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase002() {
+        HttpResponse response = doGet(url_root + "ataint/case002?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase003() {
+        HttpResponse response = doGet(url_root + "ataint/case003?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase004() {
+        HttpResponse response = doGet(url_root + "ataint/case004?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase009() {
+        HttpResponse response = doPost(url_root + "ataint/case009?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase0010() {
+        HttpResponse response = doPost(url_root + "ataint/case0010?cmd=1");
+        System.out.println(response.body());
+    }
+
+    @Test
+    void aTaintCase0011() {
+        HttpResponse response = doPost(url_root + "ataint/case0011?cmd=1");
+        System.out.println(response.body());
     }
 
     @Test
