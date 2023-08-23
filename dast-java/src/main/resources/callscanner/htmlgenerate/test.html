@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扫描器评测结果报告</title>
+    <style>
+        table {
+  border-collapse: collapse;}
+
+table, th, td {
+  border: 1px solid black;}
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center">扫描器评测结果报告</h1>
+        <h1 id="-">基本信息</h1>
+    <p>测试开始时间:2021-08-16 15:34:46</p>
+    <p>报告生成时间:2021-08-16 15:34:46</p>
+    <h1 id="-">扫描结果概览</h1>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">检测类型</th>
+    <th style="text-align:center">样例总数</th>
+    <th style="text-align:center">真阳性</th>
+    <th style="text-align:center">真阴性</th>
+    <th style="text-align:center">假阳性</th>
+    <th style="text-align:center">假阴性</th>
+    <th style="text-align:center">精确率</th>
+    <th style="text-align:center">召回率</th>
+    <th style="text-align:center">约登指数  </th>
+    </tr>
+    </thead>
+    <tbody>    <tr>
+    <td style="text-align:center">redirect</td>
+    <td style="text-align:center">7</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">6</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">cmdi</td>
+    <td style="text-align:center">29</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">4</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">25</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">ssrf</td>
+    <td style="text-align:center">7</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">5</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">pathtraver</td>
+    <td style="text-align:center">8</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">5</td>
+    <td style="text-align:center">1.00</td>
+    <td style="text-align:center">0.29</td>
+    <td style="text-align:center">0.29</td>
+    </tr>    <tr>
+    <td style="text-align:center">cors</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">ERROR</td>
+    </tr>    <tr>
+    <td style="text-align:center">jsonp</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">ERROR</td>
+    </tr>    <tr>
+    <td style="text-align:center">xxe</td>
+    <td style="text-align:center">3</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">xss</td>
+    <td style="text-align:center">19</td>
+    <td style="text-align:center">9</td>
+    <td style="text-align:center">4</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">6</td>
+    <td style="text-align:center">1.00</td>
+    <td style="text-align:center">0.60</td>
+    <td style="text-align:center">0.60</td>
+    </tr>    <tr>
+    <td style="text-align:center">deserialization</td>
+    <td style="text-align:center">5</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">1</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">4</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">code_injection</td>
+    <td style="text-align:center">5</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">2</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">3</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">sensitive</td>
+    <td style="text-align:center">14</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">4</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">10</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">sqli</td>
+    <td style="text-align:center">29</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">4</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">25</td>
+    <td style="text-align:center">ERROR</td>
+    <td style="text-align:center">0.00</td>
+    <td style="text-align:center">0.00</td>
+    </tr>    <tr>
+    <td style="text-align:center">所有检测项</td>
+    <td style="text-align:center">129</td>
+    <td style="text-align:center">11</td>
+    <td style="text-align:center">24</td>
+    <td style="text-align:center">0</td>
+    <td style="text-align:center">94</td>
+    <td style="text-align:center">1.00</td>
+    <td style="text-align:center">0.10</td>
+    <td style="text-align:center">0.10</td>
+    </tr>
+</tbody>
+    </table>
+    <p>注：约登指数(Youden index)是评价筛查试验真实性的方法，假设其假阴性（漏诊率）和假阳性（误诊率）的危害性同等意义时，即可应用约登指数。约登指数是灵敏度与特异度之和减去1，因此指数越接近1则越好</p>
+        <h1 id="-">检出失效情况汇总</h1>
+    <h2 id="-vulntype-">检测类型：redirect</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00051</td> </tr>
+<tr> <td style="text-align:center">BS00053</td> </tr>
+<tr> <td style="text-align:center">BS00054</td> </tr>
+<tr> <td style="text-align:center">BS00108</td> </tr>
+<tr> <td style="text-align:center">BS00106</td> </tr>
+<tr> <td style="text-align:center">BS00107</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：cmdi</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00020</td> </tr>
+<tr> <td style="text-align:center">BS00092</td> </tr>
+<tr> <td style="text-align:center">BS00002</td> </tr>
+<tr> <td style="text-align:center">BS00123</td> </tr>
+<tr> <td style="text-align:center">BS00005</td> </tr>
+<tr> <td style="text-align:center">BS00040</td> </tr>
+<tr> <td style="text-align:center">BS00041</td> </tr>
+<tr> <td style="text-align:center">BS00042</td> </tr>
+<tr> <td style="text-align:center">BS00034</td> </tr>
+<tr> <td style="text-align:center">BS00035</td> </tr>
+<tr> <td style="text-align:center">BS00036</td> </tr>
+<tr> <td style="text-align:center">BS00037</td> </tr>
+<tr> <td style="text-align:center">BS00038</td> </tr>
+<tr> <td style="text-align:center">BS00025</td> </tr>
+<tr> <td style="text-align:center">BS00027</td> </tr>
+<tr> <td style="text-align:center">BS00045</td> </tr>
+<tr> <td style="text-align:center">BS00046</td> </tr>
+<tr> <td style="text-align:center">BS00047</td> </tr>
+<tr> <td style="text-align:center">BS00087</td> </tr>
+<tr> <td style="text-align:center">BS00088</td> </tr>
+<tr> <td style="text-align:center">BS00121</td> </tr>
+<tr> <td style="text-align:center">BS00078</td> </tr>
+<tr> <td style="text-align:center">BS00079</td> </tr>
+<tr> <td style="text-align:center">BS00115</td> </tr>
+<tr> <td style="text-align:center">BS00077</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：ssrf</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00049</td> </tr>
+<tr> <td style="text-align:center">BS00084</td> </tr>
+<tr> <td style="text-align:center">BS00085</td> </tr>
+<tr> <td style="text-align:center">BS00110</td> </tr>
+<tr> <td style="text-align:center">BS00109</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：pathtraver</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00019</td> </tr>
+<tr> <td style="text-align:center">BS00095</td> </tr>
+<tr> <td style="text-align:center">BS00001</td> </tr>
+<tr> <td style="text-align:center">BS00082</td> </tr>
+<tr> <td style="text-align:center">BS00083</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：cors</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00111</td> </tr>
+<tr> <td style="text-align:center">BS00112</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：jsonp</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00113</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：xxe</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00061</td> </tr>
+<tr> <td style="text-align:center">BS00073</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：xss</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00013</td> </tr>
+<tr> <td style="text-align:center">BS00003</td> </tr>
+<tr> <td style="text-align:center">BS00004</td> </tr>
+<tr> <td style="text-align:center">BS00126</td> </tr>
+<tr> <td style="text-align:center">BS00071</td> </tr>
+<tr> <td style="text-align:center">BS00072</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：deserialization</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00096</td> </tr>
+<tr> <td style="text-align:center">BS00124</td> </tr>
+<tr> <td style="text-align:center">BS00125</td> </tr>
+<tr> <td style="text-align:center">BS00057</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：code_injection</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00130</td> </tr>
+<tr> <td style="text-align:center">BS00056</td> </tr>
+<tr> <td style="text-align:center">BS00055</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：sensitive</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00089</td> </tr>
+<tr> <td style="text-align:center">BS00127</td> </tr>
+<tr> <td style="text-align:center">BS00128</td> </tr>
+<tr> <td style="text-align:center">BS00086</td> </tr>
+<tr> <td style="text-align:center">BS00114</td> </tr>
+<tr> <td style="text-align:center">BS00116</td> </tr>
+<tr> <td style="text-align:center">BS00069</td> </tr>
+<tr> <td style="text-align:center">BS00102</td> </tr>
+<tr> <td style="text-align:center">BS00104</td> </tr>
+<tr> <td style="text-align:center">BS00105</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>    <h2 id="-vulntype-">检测类型：sqli</h2>
+      <h3 id="-">漏报（假阴性）</h3>
+    <table>
+    <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody><tr> <td style="text-align:center">BS00012</td> </tr>
+<tr> <td style="text-align:center">BS00014</td> </tr>
+<tr> <td style="text-align:center">BS00093</td> </tr>
+<tr> <td style="text-align:center">BS00094</td> </tr>
+<tr> <td style="text-align:center">BS00097</td> </tr>
+<tr> <td style="text-align:center">BS00010</td> </tr>
+<tr> <td style="text-align:center">BS00098</td> </tr>
+<tr> <td style="text-align:center">BS00099</td> </tr>
+<tr> <td style="text-align:center">BS00091</td> </tr>
+<tr> <td style="text-align:center">BS00009</td> </tr>
+<tr> <td style="text-align:center">BS00122</td> </tr>
+<tr> <td style="text-align:center">BS00006</td> </tr>
+<tr> <td style="text-align:center">BS00007</td> </tr>
+<tr> <td style="text-align:center">BS00023</td> </tr>
+<tr> <td style="text-align:center">BS00026</td> </tr>
+<tr> <td style="text-align:center">BS00063</td> </tr>
+<tr> <td style="text-align:center">BS00065</td> </tr>
+<tr> <td style="text-align:center">BS00066</td> </tr>
+<tr> <td style="text-align:center">BS00120</td> </tr>
+<tr> <td style="text-align:center">BS00119</td> </tr>
+<tr> <td style="text-align:center">BS00118</td> </tr>
+<tr> <td style="text-align:center">BS00067</td> </tr>
+<tr> <td style="text-align:center">BS00100</td> </tr>
+<tr> <td style="text-align:center">BS00068</td> </tr>
+<tr> <td style="text-align:center">BS00101</td> </tr>
+</tbody>
+    </table>
+    <h3 id="-">误报（假阳性）</h3>
+    <table> <thead>
+    <tr>
+    <th style="text-align:center">case编号</th>
+    </tr>
+    </thead>
+    <tbody>    </tbody>
+    </table>        
+        
+</body>
+
+</html>

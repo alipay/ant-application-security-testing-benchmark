@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "deserialization"
+test-number: "00125"
+vulnerability: "true"
+cwe: "502"

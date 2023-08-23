@@ -1,0 +1,5 @@
+benchmark-version: "1.2"
+category: "cmdi"
+test-number: "00005"
+vulnerability: "true"
+cwe: "78"
