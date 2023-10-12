@@ -157,7 +157,7 @@ public class AstTaintCase001 {
         return modelMap;
     }
     /**
-     *变量传递通过native方法发生在两个入参上
+     *MethodInvocation+array
      */
     @PostMapping("case018/{cmd}")
     public Map<String, Object> aTaintCase018(@PathVariable String cmd) {
