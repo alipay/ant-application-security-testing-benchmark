@@ -20,7 +20,7 @@
 [《iast操作说明》](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/iast-java/README.md)
 ### 联系我们
 #### 钉钉
-![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/dingTalk.png)
+![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.JPG)
 
 ### License
 This project is licensed under the Apache License 2.0
