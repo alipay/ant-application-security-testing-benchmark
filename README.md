@@ -19,7 +19,7 @@
 
 [《iast操作说明》](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/iast-java/README.md)
 ### 联系我们
-#### 钉钉
+#### 微信
 ![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.JPG)
 
 ### License
