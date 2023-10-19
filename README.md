@@ -23,7 +23,7 @@
 
 ### 联系我们
 #### 微信
-![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.JPG)
+![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.png)
 
 ### License
 This project is licensed under the Apache License 2.0
