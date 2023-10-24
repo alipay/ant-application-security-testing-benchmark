@@ -1,0 +1,108 @@
+# xAST评价体系开源项目简介
+
+xAST评价体系开源项目简介
+
+# 项目背景
+
+xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来越重要的作用，目前其每一类产品（SAST/IAST/DAST/SCA/MAST等）都有至少数十款商业化或开源产品供客户选择。与此同时，一些甲方企业也在自研xAST产品。不管是商业采购还是选择开源产品还是自研，大家都面临一个共同的难题，如何真实衡量一款xAST产品的技术水平？
+
+经过调研我们发现，目前工业界和学术界都没有对xAST产品技术能力进行衡量的评价标准，通常都是使用若干漏洞样本集的测试结果对xAST进行技术评价，业界常见的漏洞样本集见图1，测试结果示例见图2。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image1.png)
+
+图1 业界常见漏洞样本集
+
+一方面，由图1可以看出各样本集之间差异巨大（从数十个样本到十万个样本），究其根源在于漏洞样本集缺乏体系化设计，都是漏洞样本的简单堆砌，测试结果的完整性得不到保障；漏洞样本集所测试的功能点分布不均，测试结果也缺乏合理性。
+
+另一方面，由图2可以看出，由于缺乏评价体系，评价结果对用户是个“黑盒”，评价结果只能给出总体的召回率和误报率数据，无法细粒度的刻画产品的技术优势与不足。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image2.png)
+
+图2 不同开源SAST在Juliet Java漏洞样本集上的测试结果示例
+
+针对xAST领域缺乏有效衡量技术能力标准的业界痛点，**蚂蚁安全团队**联合**蚂蚁****程序分析团队**、**浙江大学网络空间安全学院**的20余位专家学者，共同设计了xAST评价体系及其测试样本套件Benchmark，致力于成为应用安全测试工具的“**度量衡**”。
+
+# 项目目标与价值
+
+**目标**：打造具备行业共识的xAST能力评价体系**事实技术标准**
+
+**价值**：衡量xAST产品技术能力，指引xAST技术发展方向，辅助客户产品选型
+
+# 技术亮点
+
+## 业界首个评价体系驱动式Benchmark
+
+传统漏洞样本集普遍没有做评价项设计，一般是简单的通过堆砌样本来体现其“完整度”，很可能有较多的样本都在测试同一个功能点，这势必导致测试结果既不能保证完备性，也不能保证测试结果的合理性。
+
+我们在设计测试样本集之前，在业界首次设计了一套包含各个维度评价项的评价体系，再基于评价体系设计对应的测试样本集，较传统方式提高了完备性和合理性。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image3.png)
+
+图3 业界首个评价体系设计驱动式Benchmark
+
+## 业界首个面向工具视角的Benchmark
+
+传统漏洞样本集一般都是以漏洞类型作为评价视角，不同漏洞类型的样本组成了样本集，不同类型的xAST产品都在同一套漏洞样本集上进行测试。但xAST技术原理各异，样本集在不同类型产品之间很难通用。如测试静态分析SAST路径敏感的样本对于动态分析IAST来说就没有太多意义，这也将影响测试结果的合理性。
+
+针对这种情况，我们转换了评价视角，在业界首次从漏洞视角转化成工具视角，不同工具不同评价项，不同语言不同评价项，评价项和样本的设计更合理。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image4.png)
+
+图4 业界首个面向工具视角的Benchmark
+
+## 评价体系分层设计，降低评价复杂度
+
+本质上，xAST的能力是分层的。有的能力比较底层，如对污点数据的跟踪能力，这类能力通常实现的难度较大，成本较高，是需要用户重点关注的；有的能力属于比较上层，如对某个规则或框架的sink点支持，通过简单的配置就可以支持，重要度相比引擎能力没那么高。传统漏洞样本集没有对这些能力做区分，“眉毛胡子一把抓”，测试结果无法区分究竟是规则没有配置导致的不支持还是引擎能力上不支持。
+
+我们在业界首次提出对一款xAST可以从底层到上层分成引擎能力、规则能力和产品化能力这三层。对这三层分别设计评价体系和测试样本，既降低了每一层评价的复杂度，又使测试结果可以直接反映问题出在哪一层。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image5.png)
+
+图5 评价体系分层设计，降低评价复杂度
+
+## “体检报告”式结果，细粒度可解释
+
+传统漏洞样本集由于缺乏评价体系指导，每个样本的“测试功能点”是模糊的，评价结果是个“黑盒”，只能得到一个召回率和准确率的数据，无法得到更细粒度的信息。
+
+我们基于评价体系，每个评价项对应生成一个测试样本，给每个测试样本都赋予了明确的“测试功能点”，使测试结果如同一份详尽的“体检报告”，细粒度可解释，知其然，知其所以然。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image6.png)
+
+图6 “体检报告”式结果，细粒度可解释
+
+## 业界Benchmark交叉验证，确保完备性
+
+为了保障评价体系及其Benchmark的完备性，我们还与业界常见的Benchmark进行了交叉验证，确保这些常见Benchmark的测试功能点都能在我们的评价体系中有体现，进一步确保了评价体系的完备性。
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image7.png)
+
+图7 业界Benchmark交叉验证，确保完备性
+
+# 项目规划与进展
+
+1.  项目整体规划大图见图8，计划对SAST、IAST、DAST、SCA和MAST（移动应用安全测试技术）分层设计评价体系与Benchmark。未来如果基于机器学习和大模型技术进行漏洞检测的技术成熟之后，也会纳入到我们的项目规划中。
+    
+2.  目前已启动的是引擎能力评价体系及其Benchmark的设计，已初步完成并开源了IAST\-Java、SAST\-Java、SAST\-Node、DAST引擎能力评价体系的设计，其余的部分希望能够借助行业的力量进行共建。
+    
+
+![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image8.png)
+
+图8 项目规划大图
+
+3.  项目自2023年开源以来，截止2023年10月，已有**阿里集团**、**斗象科技**、**水木羽林**、**赛迪**、**统信**、**科大讯飞**、**悬镜**、**火线安全**和**蚂蚁Sparrow**等十余家企业用户使用评价体系用于商采/开源产品选型或自研产品的技术衡量。
+    
+4.  其中IAST\-Java和DAST引擎能力评价体系已作为事实技术标准，用于**开放原子开源基金会**（工信部所属国家唯一官方开源组织**）**对开源安全工具的测评项目，测评结果即将对外开源开放。
+    
+
+欢迎各位专家对项目进行试用，更期待您能参与SAST和IAST多语言、SCA、MAST等引擎能力以及各类产品规则层面的共建，共同打造一个业界公认的xAST评价体系事实标准，为安全行业带来一份微小而美好的改变。
+
+# 开源社区地址
+
+https://github.com/alipay/ant-application-security-testing-benchmark
+
+# 联系我们
+## 微信
+![Image text](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.png)
+
+# License
+This project is licensed under the Apache License 2.0
