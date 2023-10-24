@@ -1,6 +1,6 @@
 # xAST评价体系开源项目简介
 
-xAST评价体系开源项目简介
+
 
 # 项目背景
 
@@ -96,9 +96,6 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 
 欢迎各位专家对项目进行试用，更期待您能参与SAST和IAST多语言、SCA、MAST等引擎能力以及各类产品规则层面的共建，共同打造一个业界公认的xAST评价体系事实标准，为安全行业带来一份微小而美好的改变。
 
-# 开源社区地址
-
-https://github.com/alipay/ant-application-security-testing-benchmark
 
 # 联系我们
 ## 微信
