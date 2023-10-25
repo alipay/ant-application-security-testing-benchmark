@@ -25,9 +25,20 @@
 
   另一方面，由图2可以看出，由于缺乏评价体系，评价结果对用户是个“黑盒”，评价结果只能给出总体的召回率和误报率数据，无法细粒度的刻画产品的技术优势与不足。
 
-<div align=center><img src=" https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image2.png"></div>
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image2.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图2 不同开源SAST在Juliet Java漏洞样本集上的测试结果示例</div>
+  </center>
+   </div>
 
-图2 不同开源SAST在Juliet Java漏洞样本集上的测试结果示例
+
 
   针对xAST领域缺乏有效衡量技术能力标准的业界痛点，**蚂蚁安全团队**联合**蚂蚁****程序分析团队**、**浙江大学网络空间安全学院**的20余位专家学者，共同设计了xAST评价体系及其测试样本套件Benchmark，致力于成为应用安全测试工具的“**度量衡**”。
 
@@ -44,10 +55,20 @@
   传统漏洞样本集普遍没有做评价项设计，一般是简单的通过堆砌样本来体现其“完整度”，很可能有较多的样本都在测试同一个功能点，这势必导致测试结果既不能保证完备性，也不能保证测试结果的合理性。
 
 我们在设计测试样本集之前，在业界首次设计了一套包含各个维度评价项的评价体系，再基于评价体系设计对应的测试样本集，较传统方式提高了完备性和合理性。
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image3.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图3 业界首个评价体系设计驱动式Benchmark</div>
+  </center>
+   </div>
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image3.png)
 
-图3 业界首个评价体系设计驱动式Benchmark
 
 ## 业界首个面向工具视角的Benchmark
 
@@ -55,9 +76,20 @@
 
   针对这种情况，我们转换了评价视角，在业界首次从漏洞视角转化成工具视角，不同工具不同评价项，不同语言不同评价项，评价项和样本的设计更合理。
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image4.png)
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image4.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图4 业界首个面向工具视角的Benchmark</div>
+  </center>
+   </div>
 
-图4 业界首个面向工具视角的Benchmark
+
 
 ## 评价体系分层设计，降低评价复杂度
 
@@ -65,9 +97,19 @@
 
   我们在业界首次提出对一款xAST可以从底层到上层分成引擎能力、规则能力和产品化能力这三层。对这三层分别设计评价体系和测试样本，既降低了每一层评价的复杂度，又使测试结果可以直接反映问题出在哪一层。
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image5.png)
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image5.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图5 评价体系分层设计，降低评价复杂度</div>
+  </center>
+   </div>
 
-图5 评价体系分层设计，降低评价复杂度
 
 ## “体检报告”式结果，细粒度可解释
 
@@ -75,17 +117,37 @@
 
   我们基于评价体系，每个评价项对应生成一个测试样本，给每个测试样本都赋予了明确的“测试功能点”，使测试结果如同一份详尽的“体检报告”，细粒度可解释，知其然，知其所以然。
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image6.png)
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image6.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图6 “体检报告”式结果，细粒度可解释</div>
+  </center>
+   </div>
 
-图6 “体检报告”式结果，细粒度可解释
 
 ## 业界Benchmark交叉验证，确保完备性
 
   为了保障评价体系及其Benchmark的完备性，我们还与业界常见的Benchmark进行了交叉验证，确保这些常见Benchmark的测试功能点都能在我们的评价体系中有体现，进一步确保了评价体系的完备性。
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image7.png)
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image7.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图7 业界Benchmark交叉验证，确保完备性</div>
+  </center>
+   </div>
 
-图7 业界Benchmark交叉验证，确保完备性
 
 # 项目规划与进展
 
@@ -93,10 +155,20 @@
 
 2.  目前已启动的是引擎能力评价体系及其Benchmark的设计，已初步完成并开源了IAST\-Java、SAST\-Java、SAST\-Node、DAST引擎能力评价体系的设计，其余的部分希望能够借助行业的力量进行共建。
 
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image8.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图8 项目规划大图</div>
+  </center>
+   </div>
 
-![image]( https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image8.png)
 
-图8 项目规划大图
 
 3.  项目自2023年开源以来，截止2023年10月，已有**阿里集团**、**斗象科技**、**水木羽林**、**赛迪**、**统信**、**科大讯飞**、**悬镜**、**火线安全**和**蚂蚁Sparrow**等十余家企业用户使用评价体系用于商采/开源产品选型或自研产品的技术衡量。
 
