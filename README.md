@@ -7,9 +7,19 @@
   xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来越重要的作用，目前其每一类产品（SAST/IAST/DAST/SCA/MAST等）都有至少数十款商业化或开源产品供客户选择。与此同时，一些甲方企业也在自研xAST产品。不管是商业采购还是选择开源产品还是自研，大家都面临一个共同的难题，如何真实衡量一款xAST产品的技术水平？
 
   经过调研我们发现，目前工业界和学术界都没有对xAST产品技术能力进行衡量的评价标准，通常都是使用若干漏洞样本集的测试结果对xAST进行技术评价，业界常见的漏洞样本集见图1，测试结果示例见图2。
-  <div align=center><img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image1.png"></div>
+   <div align=center>
+<center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image1.png">
+    <br>
+    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
+    display: inline-block;
+    color: #999;
+    padding: 2px;">图1 业界常见漏洞样本集</div>
+  </center>
+   </div>
 
-图1 业界常见漏洞样本集
 
   一方面，由图1可以看出各样本集之间差异巨大（从数十个样本到十万个样本），究其根源在于漏洞样本集缺乏体系化设计，都是漏洞样本的简单堆砌，测试结果的完整性得不到保障；漏洞样本集所测试的功能点分布不均，测试结果也缺乏合理性。
 
