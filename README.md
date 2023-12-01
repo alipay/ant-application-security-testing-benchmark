@@ -1,5 +1,17 @@
 <div align='center' ><font size="18">xAST评价体系开源项目简介</font></div>
 
+# 联系我们
+## 微信
+
+   <div align=center>
+   <center>
+    <img style="border-radius: 0.3125em;
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
+    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/Iwechat.png">
+    <br>
+  </center>
+   </div>
+
 [【nodejs评价体系传送门】](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
 
 # 项目背景
