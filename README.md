@@ -12,6 +12,10 @@
   </center>
    </div>
 
+## 邮箱
+
+xast-contact@service.alipay.com
+
 [【nodejs评价体系传送门】](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
 
 # 项目背景
@@ -204,6 +208,10 @@
     <br>
   </center>
    </div>
+
+## 邮箱
+
+xast-contact@service.alipay.com
 
 # License
 This project is licensed under the Apache License 2.0
