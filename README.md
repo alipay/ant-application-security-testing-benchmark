@@ -4,9 +4,12 @@
 ## 微信
 
 <p align="center">
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/>微信交流群
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/>微信小助手
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/><br>
+  <span style="display: block; text-align: center;">微信交流群</span>
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
+  <span style="display: block; text-align: center;">微信小助手</span>
 </p>
+
 
 
 ## 邮箱
@@ -214,9 +217,12 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 ## 微信
 
 <p align="center">
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/>微信交流群
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/>微信小助手
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/><br>
+  <span style="display: block; text-align: center;">微信交流群</span>
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
+  <span style="display: block; text-align: center;">微信小助手</span>
 </p>
+
 
 ## 邮箱
 
