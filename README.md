@@ -4,12 +4,12 @@
 ## 微信
 
 <p align="center">
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/><br>
-  <span style="display: block; text-align: center;">微信交流群</span>
-  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
-  <span style="display: block; text-align: center;">微信小助手</span>
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/>
+  <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/>
 </p>
-
+<p align="center">
+  <em>微信交流群</em> <em>微信小助手</em>
+</p>
 
 
 ## 邮箱
