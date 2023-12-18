@@ -52,7 +52,7 @@ class AstbenchmarkApplicationTests {
 
     @BeforeAll
     static void init() {
-        url_root = "http://localhost:8888/";
+        url_root = "http://localhost:39100/";
         caseUniqGroupId=System.currentTimeMillis();
         //caseUniqGroupId = 54877081211069L;
         System.out.println("请保存此次跑case的关键字:" + caseUniqGroupId);
