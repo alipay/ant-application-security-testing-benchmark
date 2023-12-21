@@ -7,10 +7,6 @@
   <table>
     <tr>
       <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/><br>
-        <em>微信交流群</em>
-      </td>
-      <td style="text-align: center;">
         <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
         <em>微信小助手</em>
       </td>
@@ -227,10 +223,6 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 <div align="center">
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
-      <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/Iwechat.png" alt="微信交流群" width="200"/><br>
-        <em>微信交流群</em>
-      </td>
       <td style="text-align: center;">
         <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
         <em>微信小助手</em>
