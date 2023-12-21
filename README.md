@@ -21,7 +21,10 @@
 xast-contact@service.alipay.com
 
 ## 传送门
-[【nodejs评价体系传送门】](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
+
+[《评价指标项详见wiki 》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki)
+
+[《nodejs评价体系传送门》](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
 
 # 项目背景
 
