@@ -4,7 +4,7 @@
 
 # 测试xmind
 
-![Mind Map Preview](https://www.yuque.com/g/xiaoxian-uxsut/vuzy55/kzl8mqtyu3oiqfxq/collaborator/join?token=WZmnqKANMmxcNf6T&source=doc_collaborator# 邀请你共同编辑文档《无标题文档》)
+![Mind Map Preview](https://www.yuque.com/xiaoxian-uxsut/vuzy55/kzl8mqtyu3oiqfxq?inner=BZtex)
 
 ## 微信
 
