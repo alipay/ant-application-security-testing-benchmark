@@ -1,5 +1,5 @@
 benchmark-version: "1.2"
-category: "cmdi"
+category: "sqli"
 test-number: "00087"
 vulnerability: "true"
 cwe: "78"
