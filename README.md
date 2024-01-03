@@ -1,6 +1,11 @@
 <div align='center' ><font size="18">xAST评价体系开源项目简介</font></div>
 
 # 联系我们
+
+# 测试xmind
+
+![Mind Map Preview](https://www.yuque.com/g/xiaoxian-uxsut/vuzy55/kzl8mqtyu3oiqfxq/collaborator/join?token=WZmnqKANMmxcNf6T&source=doc_collaborator# 邀请你共同编辑文档《无标题文档》)
+
 ## 微信
 
 <div align="center">
