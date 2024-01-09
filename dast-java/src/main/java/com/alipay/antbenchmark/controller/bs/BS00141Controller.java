@@ -26,7 +26,7 @@ public class BS00141Controller extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String param = request.getParameter("BS00141");
-        if (!new URL(param).getHost().endsWith("alipay.com")) {
+        if (!new URL(param).getHost().endsWith(".alipay.com")) {
             response.getWriter().println("Hacker!");
             return;
         }
