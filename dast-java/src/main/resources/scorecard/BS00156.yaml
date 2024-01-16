@@ -1,5 +1,5 @@
 benchmark-version: "1.2"
 category: "xss"
 test-number: "00156"
-vulnerability: "true"
+vulnerability: "false"
 cwe: "79"
