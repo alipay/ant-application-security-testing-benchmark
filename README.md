@@ -251,3 +251,21 @@ xast-contact@service.alipay.com
 
 # License
 This project is licensed under the Apache License 2.0
+
+```mermaid
+graph LR
+    A[引擎能力评估]  --> AA[完整度]
+    A[引擎能力评估]  --> AB[准确度]
+    AB --> ABD
+    AB --> ABE
+    AB --> ABF
+    ABF --> ABFA
+    A[引擎能力评估]  --> AC[兼容性]
+    AC --> ACD
+    AC --> ACE
+    AC --> ACF
+    ACF --> ACFA
+    A[引擎能力评估]  --> AC[性能]
+    A[引擎能力评估]  --> AD[接入成本]
+
+  
