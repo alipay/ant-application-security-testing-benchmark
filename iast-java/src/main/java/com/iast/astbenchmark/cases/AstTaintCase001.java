@@ -42,40 +42,6 @@ public class AstTaintCase001 {
         return modelMap;
     }
 
-    ///**
-    // * 字符串对象,StringBuffer
-    // * @param cmd
-    // * @return
-    // */
-    //@PostMapping ("case00902")
-    //public Map<String, Object> aTaintCase00902(@RequestParam String cmd) {
-    //    Map<String, Object> modelMap = new HashMap<>();
-    //    try {
-    //        StringBuffer buffer = new StringBuffer(cmd);
-    //        Runtime.getRuntime().exec(new String(buffer));
-    //        modelMap.put("status", SUCCESS_STR);
-    //    } catch (IOException e)  {
-    //        modelMap.put("status", ERROR_STR);
-    //    }
-    //    return modelMap;
-    //}
-    ///**
-    // * 字符串对象,StringBuffer
-    // * @param cmd
-    // * @return
-    // */
-    //@PostMapping("case00903")
-    //public Map<String, Object> aTaintCase00903(@RequestParam String cmd) {
-    //    Map<String, Object> modelMap = new HashMap<>();
-    //    try {
-    //        StringBuilder buffer = new StringBuilder(cmd);
-    //        Runtime.getRuntime().exec(new String(buffer));
-    //        modelMap.put("status", SUCCESS_STR);
-    //    } catch (IOException e)  {
-    //        modelMap.put("status", ERROR_STR);
-    //    }
-    //    return modelMap;
-    //}
 
     /** 污点对象完整度 基础类型 **/
     /**

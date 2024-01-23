@@ -1566,7 +1566,7 @@ public class AstTaintCase002 {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             char[] chars = cmd.toCharArray();
-            Runtime.getRuntime().exec(chars.toString());
+            Runtime.getRuntime().exec(String.valueOf(chars));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
