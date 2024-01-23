@@ -47,6 +47,7 @@ class CopyTestCaseForRun {
 
 
 
+
     void aTaintCase001() {
         HttpResponse response = doGet(url_root + "ataint/case001?cmd=1");
         System.out.println(response.body());
@@ -137,14 +138,6 @@ class CopyTestCaseForRun {
 
 
 
-
-
-
-
-
-
-
-
     void aTaintCase0013() {
         String[] strings = {"cd /", "ls"};
         HttpResponse response = doPost(url_root + "ataint/case0013", JSONUtil.toJsonStr(strings));
@@ -153,6 +146,7 @@ class CopyTestCaseForRun {
 
 
     void aTaintCase0014() {
+        //int[] datas = {1,2};
         HttpResponse response = doPost(url_root + "ataint/case0014?cmd=ls");
         System.out.println(response.body());
     }
@@ -197,8 +191,6 @@ class CopyTestCaseForRun {
 
         System.out.println(response.body());
     }
-
-
 
 
 
@@ -341,11 +333,13 @@ class CopyTestCaseForRun {
     }
 
 
+
     void aTaintCase0027() {
         HttpResponse response = doPost(url_root + "ataint/case0027?data=ls", "");
 
         System.out.println(response.body());
     }
+
 
 
     void aTaintCase0033() {
@@ -408,9 +402,12 @@ class CopyTestCaseForRun {
 
     void aTaintCase0041() {
         String[] aa = {"l", "s"};
+        // HttpResponse response = HttpRequest.post(url_root+"ataint/case0041/ls?cmd=ls").body("ls").execute();
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0041" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(aa)).execute();
+        //.form("file",FileUtil.file("data/ls")).execute();
         System.out.println(response.body());
     }
+
 
 
     void aTaintCase0044() {
@@ -448,6 +445,7 @@ class CopyTestCaseForRun {
                 .header("cmd", "ls").execute();
         System.out.println(response.body());
     }
+
 
 
     void aTaintCase0062() {
@@ -694,6 +692,8 @@ class CopyTestCaseForRun {
     }
 
 
+
+
     void aTaintCase0099() {
         HttpResponse response = doPost(url_root + "ataint/case0099?cmd=reportidsql");
         System.out.println(response.body());
@@ -754,6 +754,7 @@ class CopyTestCaseForRun {
         System.out.println(response2.body());
     }
 
+    //TODO 105
 
     void aTaintCase00105() {
         HttpResponse response = doPost(url_root + "ataint/case00105?cmd=reportidsql");
@@ -866,6 +867,7 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
+    //No 21~22
 
     void aTaintCase00123() {
         HttpResponse response = doPost(url_root + "ataint/case00123?cmd=ls");
@@ -1085,6 +1087,7 @@ class CopyTestCaseForRun {
 
 
 
+
     void aTaintCase00932() {
         SourceTestObject testObject = new SourceTestObject();
         testObject.setCmd("ls");
@@ -1206,6 +1209,7 @@ class CopyTestCaseForRun {
         HttpResponse response3 = doPost(url_root + "ataint/case00946/3?cmd=ls");
         System.out.println(response.body()+response2.body()+response3.body());
     }
+
     void aTaintCase00947() {
         HttpResponse response = doPost(url_root + "ataint/case00947?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00947/2?cmd=ls");
@@ -1296,6 +1300,9 @@ class CopyTestCaseForRun {
         HttpResponse response2 = doPost(url_root + "ataint/case00960/2?cmd=ls");
         System.out.println(response.body()+response2.body());
     }
+
+
+
 
     private HttpResponse doGet(String url) {
         url = urlWithTime(url);

@@ -42,40 +42,40 @@ public class AstTaintCase001 {
         return modelMap;
     }
 
-    /**
-     * 字符串对象,StringBuffer
-     * @param cmd
-     * @return
-     */
-    @PostMapping ("case00902")
-    public Map<String, Object> aTaintCase00902(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuffer buffer = new StringBuffer(cmd);
-            Runtime.getRuntime().exec(new String(buffer));
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e)  {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
-    /**
-     * 字符串对象,StringBuffer
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case00903")
-    public Map<String, Object> aTaintCase00903(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder buffer = new StringBuilder(cmd);
-            Runtime.getRuntime().exec(new String(buffer));
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e)  {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * 字符串对象,StringBuffer
+    // * @param cmd
+    // * @return
+    // */
+    //@PostMapping ("case00902")
+    //public Map<String, Object> aTaintCase00902(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        StringBuffer buffer = new StringBuffer(cmd);
+    //        Runtime.getRuntime().exec(new String(buffer));
+    //        modelMap.put("status", SUCCESS_STR);
+    //    } catch (IOException e)  {
+    //        modelMap.put("status", ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    ///**
+    // * 字符串对象,StringBuffer
+    // * @param cmd
+    // * @return
+    // */
+    //@PostMapping("case00903")
+    //public Map<String, Object> aTaintCase00903(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        StringBuilder buffer = new StringBuilder(cmd);
+    //        Runtime.getRuntime().exec(new String(buffer));
+    //        modelMap.put("status", SUCCESS_STR);
+    //    } catch (IOException e)  {
+    //        modelMap.put("status", ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /** 污点对象完整度 基础类型 **/
     /**
@@ -151,92 +151,6 @@ public class AstTaintCase001 {
         return modelMap;
     }
 
-
-    /** 污点对象完整度 2.引用类型 **/
-
-    /**
-     * 引用类型Map 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case00927")
-    public Map<String, Object> aTaintCase927(@RequestBody Map<String, String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null || cmd.isEmpty()) {
-            modelMap.put("status", ERROR_STR);
-            return modelMap;
-        }
-        PrintWriter printWriter = new PrintWriter(System.out);
-        printWriter.print(cmd);
-        // Runtime.getRuntime().exec(cmd));
-        modelMap.put("status", SUCCESS_STR);
-        return modelMap;
-    }
-
-    /**
-     * 引用类型List 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case00928")
-    public Map<String, Object> aTaintCase00928(@RequestBody List<String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null || CollectionUtils.isEmpty(cmd)) {
-            modelMap.put("status", ERROR_STR);
-            return modelMap;
-        }
-        PrintWriter printWriter = new PrintWriter(System.out);
-        printWriter.print(cmd);
-        //Runtime.getRuntime().exec(cmd.get(0));
-        modelMap.put("status", SUCCESS_STR);
-        return modelMap;
-    }
-
-    /**
-     * 引用类型queue 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case00929")
-    public Map<String, Object> aTaintCase00929(@RequestBody List<String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null || CollectionUtils.isEmpty(cmd)) {
-            modelMap.put("status", ERROR_STR);
-            return modelMap;
-        }
-        Queue<String> queue = new LinkedBlockingQueue();
-        queue.add(cmd.get(0));
-        PrintWriter printWriter = new PrintWriter(System.out);
-        printWriter.print(queue);
-        //Runtime.getRuntime().exec(queue.peek());
-        modelMap.put("status", SUCCESS_STR);
-        return modelMap;
-    }
-
-    /**
-     * 引用类型Set 作为污点对象
-     *
-     * @param
-     * @return
-     */
-    @Deprecated
-    @PostMapping("case00930")
-    public Map<String, Object> aTaintCase00930(@RequestBody List<String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null || CollectionUtils.isEmpty(cmd)) {
-            modelMap.put("status", ERROR_STR);
-            return modelMap;
-        }
-        Set<String> stringSet = new HashSet<>(cmd);
-        PrintWriter printWriter = new PrintWriter(System.out);
-        printWriter.print(stringSet);
-        //Runtime.getRuntime().exec(cmd.get(stringSet.iterator().next()));
-        modelMap.put("status", SUCCESS_STR);
-        return modelMap;
-    }
 
     @PostMapping("case005")
     public Map<String, Object> aTaintCase005(@RequestBody Map<String, String> cmd) {
@@ -515,139 +429,7 @@ public class AstTaintCase001 {
         return modelMap;
     }
 
-    /**
-     * 其他对象 String 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case0017")
-    @Deprecated
-    public Map<String, Object> aTaintCase0017(@RequestBody String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null) {
-            modelMap.put("status", ERROR_STR);
-            return modelMap;
-        }
-        try {
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 其他对象 StringBuffer 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    //@PostMapping("case0018")
-    //public Map<String, Object> aTaintCase0018(@RequestBody String cmd) {
-    //    Map<String, Object> modelMap = new HashMap<>();
-    //    if (cmd == null) {
-    //        modelMap.put("status", ERROR_STR);
-    //        return modelMap;
-    //    }
-    //    StringBuffer data = new StringBuffer();
-    //    data.append(cmd);
-    //    try {
-    //        Runtime.getRuntime().exec(String.valueOf(data));
-    //        modelMap.put("status", SUCCESS_STR);
-    //    } catch (IOException e) {
-    //        modelMap.put("status", ERROR_STR);
-    //    }
-    //    return modelMap;
-    //}
-    //
-    ///**
-    // * 其他对象 StringBuilder 作为污点对象
-    // *
-    // * @param cmd
-    // * @return
-    // */
-    //@PostMapping("case0019")
-    //public Map<String, Object> aTaintCase0019(@RequestBody String cmd) {
-    //    Map<String, Object> modelMap = new HashMap<>();
-    //    if (cmd == null) {
-    //        modelMap.put("status", ERROR_STR);
-    //        return modelMap;
-    //    }
-    //    StringBuilder data = new StringBuilder();
-    //    data.append(cmd);
-    //    try {
-    //        Runtime.getRuntime().exec(data.toString());
-    //        modelMap.put("status", SUCCESS_STR);
-    //    } catch (IOException e) {
-    //        modelMap.put("status", ERROR_STR);
-    //    }
-    //    return modelMap;
-    //}
-
-    /**
-     * 其他对象  自定义对象 对象本身作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    //@PostMapping("case0020")
-    //public Map<String, Object> aTaintCase0020(@RequestBody SourceTestObject cmd) {
-    //    Map<String, Object> modelMap = new HashMap<>();
-    //    if (cmd == null) {
-    //        modelMap.put("status", ERROR_STR);
-    //        return modelMap;
-    //    }
-    //    try {
-    //        java.io.PrintWriter printWriter = new PrintWriter(System.out);
-    //        printWriter.print(cmd);
-    //        //Runtime.getRuntime().exec(cmd);
-    //        modelMap.put("status", SUCCESS_STR);
-    //    } catch (IOException e)  {
-    //        modelMap.put("status", ERROR_STR);
-    //    }
-    //    return modelMap;
-    //}
-
-    @PostMapping("case0021")
-    @Deprecated
-    public Map<String, Object> aTaintCase0021(@RequestBody SourceTestWithMPObject cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd.getCmd1());
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    @PostMapping("case0021/2")
-    @Deprecated
-    public Map<String, Object> aTaintCase0021_2(@RequestBody SourceTestWithMPObject cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd.getCmd10());
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    @PostMapping("case0021/3")
-    @Deprecated
-    public Map<String, Object> aTaintCase0021_3(@RequestBody SourceTestWithMPObject cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd.getCmd20());
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
 
     /**
      * 对象字段->单层字段(10)@aTaintCase00921
@@ -692,7 +474,7 @@ public class AstTaintCase001 {
     }
 
     /**
-     * 对象字段->单层字段(10)@aTaintCase00921
+     * 对象字段->单层字段(100)@aTaintCase00921
      *
      * @param cmd
      * @return

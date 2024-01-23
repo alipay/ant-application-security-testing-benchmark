@@ -1,30 +1,29 @@
 package com.iast.astbenchmark.cases;
 
-import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
 import com.iast.astbenchmark.cases.bean.SourceTestObject;
 import com.iast.astbenchmark.cases.bean.xml.TicketRequest;
+import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
-import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
-import org.apache.commons.lang.StringEscapeUtils;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.nio.charset.Charset;
-import java.sql.*;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -46,7 +45,7 @@ public class AstTaintCase002 {
     public Map<String, Object> aTaintCase0022(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(StrUtil.addPrefixIfNot(cmd,"pre"));
+            Runtime.getRuntime().exec(StrUtil.addPrefixIfNot(cmd, "pre"));
             modelMap.put("status", CommonConsts.SUCCESS_STR);
         } catch (IOException e) {
             modelMap.put("status", CommonConsts.ERROR_STR);
@@ -154,24 +153,6 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * 特殊链路跟踪能力->static方法追踪
-     *
-     * @param cmd
-     * @return
-     */
-    //    @PostMapping("case0026/{cmd}")
-    //    public Map<String, Object> aTaintCase0026(@PathVariable String cmd) {
-    //        Map<String, Object> modelMap = new HashMap<>();
-    //        try {
-    //            Runtime.getRuntime().exec(StringUtils.deleteAny(cmd,"a"));
-    //            modelMap.put("status", SUCCESS_STR);
-    //        } catch (IOException e) {
-    //            modelMap.put("status", ERROR_STR);
-    //        }
-    //        return modelMap;
-    //    }
-
     /** 污点来源识别能力*/
 
     /**
@@ -192,105 +173,105 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * 污点来自http url getContenPath
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0028")
-    @Deprecated
-    public Map<String, Object> aTaintCase0028(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String datas = request.getContextPath();
-            Runtime.getRuntime().exec(datas);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * 污点来自http url getContenPath
+    // *
+    // * @param
+    // * @return
+    // */
+    //@PostMapping("case0028")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0028(HttpServletRequest request) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String datas = request.getContextPath();
+    //        Runtime.getRuntime().exec(datas);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    //
+    ///**
+    // * 污点来自http url getRequestURL
+    // *
+    // * @param
+    // * @return
+    // */
+    //@PostMapping("case0029")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0029(HttpServletRequest request) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String datas = String.valueOf(request.getRequestURL());
+    //        Runtime.getRuntime().exec(datas);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    //
+    ///**
+    // * 污点来自http url getServletPath
+    // *
+    // * @param
+    // * @return
+    // */
+    //@PostMapping("case0030")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0030(HttpServletRequest request) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String datas = request.getServletPath();
+    //        Runtime.getRuntime().exec(datas);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    //
+    ///**
+    // * 污点来自http url getRequestURI
+    // *
+    // * @param
+    // * @return
+    // */
+    //@PostMapping("case0031")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0031(HttpServletRequest request) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String datas = request.getRequestURI();
+    //        Runtime.getRuntime().exec(datas);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
-    /**
-     * 污点来自http url getRequestURL
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0029")
-    @Deprecated
-    public Map<String, Object> aTaintCase0029(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String datas = String.valueOf(request.getRequestURL());
-            Runtime.getRuntime().exec(datas);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http url getServletPath
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0030")
-    @Deprecated
-    public Map<String, Object> aTaintCase0030(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String datas = request.getServletPath();
-            Runtime.getRuntime().exec(datas);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http url getRequestURI
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0031")
-    @Deprecated
-    public Map<String, Object> aTaintCase0031(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String datas = request.getRequestURI();
-            Runtime.getRuntime().exec(datas);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http url getPathInfo
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0032")
-    @Deprecated
-    public Map<String, Object> aTaintCase0032(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String datas = request.getPathInfo();
-            Runtime.getRuntime().exec(datas);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * 污点来自http url getPathInfo
+    // *
+    // * @param
+    // * @return
+    // */
+    //@PostMapping("case0032")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0032(HttpServletRequest request) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String datas = request.getPathInfo();
+    //        Runtime.getRuntime().exec(datas);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * 污点来自http body  *json
@@ -316,19 +297,6 @@ public class AstTaintCase002 {
      * @param /Users/curry/IdeaProjects/astbenchmark/src/main/resources/data/case0034.xml
      * @return
      */
-    //    @PostMapping("case0034")
-    //    public Map<String, Object> aTaintCase0034(MultipartFile file) throws IOException {
-    //        Map<String, Object> modelMap = new HashMap<>();
-    //        try {
-    //            Document document = XmlUtil.readXML(file.getInputStream());
-    //            Object obj = XmlUtil.getByXPath("//cmd",document, XPathConstants.STRING);
-    //            Runtime.getRuntime().exec(String.valueOf(obj));
-    //            modelMap.put("status", SUCCESS_STR);
-    //        } catch (IOException e) {
-    //            modelMap.put("status", ERROR_STR);
-    //        }
-    //        return modelMap;
-    //    }
     @PostMapping(value = "/case0034", consumes = {MediaType.APPLICATION_XML_VALUE}, produces = MediaType.APPLICATION_XML_VALUE)
     @ResponseBody
     public Map<String, Object> aTaintCase0034(@RequestBody TicketRequest ticketRequest) {
@@ -865,25 +833,25 @@ public class AstTaintCase002 {
     //        return modelMap;
     //    }
 
-    /**
-     * 传播场景
-     */
-    /**
-     * aTaintCase0060 传播场景->运算符->赋值
-     */
-    @PostMapping(value = "case0060")
-    @Deprecated
-    public Map<String, Object> aTaintCase0060(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = "ls";
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * 传播场景
+    // */
+    ///**
+    // * aTaintCase0060 传播场景->运算符->赋值
+    // */
+    //@PostMapping(value = "case0060")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase0060(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        cmd = "ls";
+    //        Runtime.getRuntime().exec(cmd);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * aTaintCase0061 传播场景->运算符->位运算
@@ -1132,23 +1100,23 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * aTaintCase0070 传播场景->String操作->repeat
-     * // java11后的方法？
-     */
-    @PostMapping(value = "case0070")
-    public Map<String, Object> aTaintCase0070(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //Arrays.fill System.arraycopy
-            // cmd=cmd.repeat(2);
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase0070 传播场景->String操作->repeat
+    // * // java11后的方法？
+    // */
+    //@PostMapping(value = "case0070")
+    //public Map<String, Object> aTaintCase0070(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        //Arrays.fill System.arraycopy
+    //        // cmd=cmd.repeat(2);
+    //        Runtime.getRuntime().exec(cmd);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * aTaintCase0071 传播场景->String操作->replace
@@ -1200,23 +1168,23 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * aTaintCase0073 传播场景->String操作->strip
-     * // java11后的方法？
-     */
-    @PostMapping(value = "case0073")
-    public Map<String, Object> aTaintCase0073(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //new String(Arrays.copyOfRange(val, index, index + len),
-            // cmd=cmd.strip();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase0073 传播场景->String操作->strip
+    // * // java11后的方法？
+    // */
+    //@PostMapping(value = "case0073")
+    //public Map<String, Object> aTaintCase0073(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        //new String(Arrays.copyOfRange(val, index, index + len),
+    //        // cmd=cmd.strip();
+    //        Runtime.getRuntime().exec(cmd);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * aTaintCase0074 传播场景->String操作->subSequence
@@ -1379,23 +1347,23 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * aTaintCase0084 传播场景->StringBuilder操作->charAt
-     */
-    @PostMapping(value = "case0084")
-    public Map<String, Object> aTaintCase0084(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            char c = builder.charAt(0);
-            Runtime.getRuntime().exec(String.valueOf(c));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase0084 传播场景->StringBuilder操作->charAt
+    // */
+    //@PostMapping(value = "case0084")
+    //public Map<String, Object> aTaintCase0084(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        StringBuilder builder = new StringBuilder();
+    //        builder.append(cmd);
+    //        char c = builder.charAt(0);
+    //        Runtime.getRuntime().exec(String.valueOf(c));
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * aTaintCase0085 传播场景->StringBuilder操作->delete
@@ -1606,22 +1574,29 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * aTaintCase0097 传播场景-数组初始化->new 方式初始化
-     */
-    @PostMapping(value = "case0097")
-    public Map<String, Object> aTaintCase0097(@RequestParam String cmd1, @RequestParam String cmd2) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String[] chars = new String[] {cmd1, cmd2};
-            Runtime.getRuntime().exec(chars);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase0097 传播场景-数组初始化->new 方式初始化
+    // */
+    //@PostMapping(value = "case0097")
+    //public Map<String, Object> aTaintCase0097(@RequestParam String cmd1, @RequestParam String cmd2) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        String[] chars = new String[] {cmd1, cmd2};
+    //        Runtime.getRuntime().exec(chars);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
 
+    /**
+     * jdk 序列化与反序列化
+     *
+     * @param sourceTestObject
+     * @return
+     * @throws ClassNotFoundException
+     */
     @PostMapping(value = "case00932")
     public Map<String, Object> aTaintCase00932(@RequestBody SourceTestObject sourceTestObject) throws ClassNotFoundException {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1652,95 +1627,95 @@ public class AstTaintCase002 {
     //    }
     //TODO sanitizer  这里做的过程中需要思考一个问题，当结果未返回，可能是这种方法压根不是工具定义的传播方法；也可能是定义了白名单（已解决）
 
-    /**
-     * aTaintCase0099 污点无害化处理能力 sanitizer->sanitizer方法特性支持->sanitizer污点来自固定参数
-     */
-    @PostMapping(value = "case0099")
-    public Map<String, Object> aTaintCase0099(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        String res = StringEscapeUtils.escapeSql(cmd);
-        String driver = "org.sqlite.JDBC";
-        String url = "jdbc:sqlite::resource:data/sqlite.db";
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url);
-            if (!con.isClosed()) {
-                System.out.println("数据库连接成功");
-            }
-            statement = con.createStatement();
-            //模拟 SQL 注入，采用拼接字符串的形式
-            String sqlQuery = "select * from REPORT where REPORT_ID=" + res;
-            resultSet = statement.executeQuery(sqlQuery);
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("数据库驱动没有安装");
-        } catch (SQLException sqlException) {
-            System.out.println("数据库连接失败");
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
-
-    @PostMapping(value = "case0099/2")
-    public Map<String, Object> aTaintCase0099_2(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        String driver = "org.sqlite.JDBC";
-        String url = "jdbc:sqlite::resource:data/sqlite.db";
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url);
-            if (!con.isClosed()) {
-                System.out.println("数据库连接成功");
-            }
-            statement = con.createStatement();
-            //模拟 SQL 注入，采用拼接字符串的形式
-            String sqlQuery = "select * from REPORT where REPORT_ID=" + cmd;
-            resultSet = statement.executeQuery(sqlQuery);
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("数据库驱动没有安装");
-        } catch (SQLException sqlException) {
-            System.out.println("数据库连接失败");
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase0099 污点无害化处理能力 sanitizer->sanitizer方法特性支持->sanitizer污点来自固定参数
+    // */
+    //@PostMapping(value = "case0099")
+    //public Map<String, Object> aTaintCase0099(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    String res = StringEscapeUtils.escapeSql(cmd);
+    //    String driver = "org.sqlite.JDBC";
+    //    String url = "jdbc:sqlite::resource:data/sqlite.db";
+    //    Connection con = null;
+    //    Statement statement = null;
+    //    ResultSet resultSet = null;
+    //
+    //    try {
+    //        Class.forName(driver);
+    //        con = DriverManager.getConnection(url);
+    //        if (!con.isClosed()) {
+    //            System.out.println("数据库连接成功");
+    //        }
+    //        statement = con.createStatement();
+    //        //模拟 SQL 注入，采用拼接字符串的形式
+    //        String sqlQuery = "select * from REPORT where REPORT_ID=" + res;
+    //        resultSet = statement.executeQuery(sqlQuery);
+    //
+    //    } catch (ClassNotFoundException e) {
+    //        System.out.println("数据库驱动没有安装");
+    //    } catch (SQLException sqlException) {
+    //        System.out.println("数据库连接失败");
+    //    } finally {
+    //        try {
+    //            if (resultSet != null) {
+    //                resultSet.close();
+    //            }
+    //            if (statement != null) {
+    //                statement.close();
+    //            }
+    //            if (con != null) {
+    //                con.close();
+    //            }
+    //        } catch (SQLException e) {
+    //            System.out.println(e.getMessage());
+    //        }
+    //    }
+    //    modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    return modelMap;
+    //}
+    //
+    //@PostMapping(value = "case0099/2")
+    //public Map<String, Object> aTaintCase0099_2(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    String driver = "org.sqlite.JDBC";
+    //    String url = "jdbc:sqlite::resource:data/sqlite.db";
+    //    Connection con = null;
+    //    Statement statement = null;
+    //    ResultSet resultSet = null;
+    //
+    //    try {
+    //        Class.forName(driver);
+    //        con = DriverManager.getConnection(url);
+    //        if (!con.isClosed()) {
+    //            System.out.println("数据库连接成功");
+    //        }
+    //        statement = con.createStatement();
+    //        //模拟 SQL 注入，采用拼接字符串的形式
+    //        String sqlQuery = "select * from REPORT where REPORT_ID=" + cmd;
+    //        resultSet = statement.executeQuery(sqlQuery);
+    //
+    //    } catch (ClassNotFoundException e) {
+    //        System.out.println("数据库驱动没有安装");
+    //    } catch (SQLException sqlException) {
+    //        System.out.println("数据库连接失败");
+    //    } finally {
+    //        try {
+    //            if (resultSet != null) {
+    //                resultSet.close();
+    //            }
+    //            if (statement != null) {
+    //                statement.close();
+    //            }
+    //            if (con != null) {
+    //                con.close();
+    //            }
+    //        } catch (SQLException e) {
+    //            System.out.println(e.getMessage());
+    //        }
+    //    }
+    //    modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    return modelMap;
+    //}
     /**
      * aTaintCase0100 污点无害化处理能力sanitizer->sanitizer方法特性支持->sanitizer污点来自对象实例
      */
@@ -1854,97 +1829,97 @@ public class AstTaintCase002 {
     //        return modelMap;
     //    }
 
-    /**
-     * aTaintCase00102 污点无害化处理能力sanitizer->sanitizer方法特性支持->sanitizer目标为固定参数
-     * TODO   这里需要将　cmd 放入集合中，需要找到这样的方法支持
-     *  目标为固定参数，理解为经过sanitizer函数后 返回的结果，继续作为污点传播 remove
-     */
-    @PostMapping(value = "case00102")
-    public Map<String, Object> aTaintCase00102(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        String res = StringEscapeUtils.escapeSql(cmd);
-        String driver = "org.sqlite.JDBC";
-        String url = "jdbc:sqlite::resource:data/sqlite.db";
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url);
-            if (!con.isClosed()) {
-                System.out.println("数据库连接成功");
-            }
-            statement = con.createStatement();
-            //模拟 SQL 注入，采用拼接字符串的形式
-            String sqlQuery = "select * from REPORT where REPORT_ID=" + res;
-            resultSet = statement.executeQuery(sqlQuery);
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("数据库驱动没有安装");
-        } catch (SQLException sqlException) {
-            System.out.println("数据库连接失败");
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
-
-    @PostMapping(value = "case00102/2")
-    public Map<String, Object> aTaintCase00102_2(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        String driver = "org.sqlite.JDBC";
-        String url = "jdbc:sqlite::resource:data/sqlite.db";
-        Connection con = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            Class.forName(driver);
-            con = DriverManager.getConnection(url);
-            if (!con.isClosed()) {
-                System.out.println("数据库连接成功");
-            }
-            statement = con.createStatement();
-            //模拟 SQL 注入，采用拼接字符串的形式
-            String sqlQuery = "select * from REPORT where REPORT_ID=" + cmd;
-            resultSet = statement.executeQuery(sqlQuery);
-
-        } catch (ClassNotFoundException e) {
-            System.out.println("数据库驱动没有安装");
-        } catch (SQLException sqlException) {
-            System.out.println("数据库连接失败");
-        } finally {
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-                if (statement != null) {
-                    statement.close();
-                }
-                if (con != null) {
-                    con.close();
-                }
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        }
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase00102 污点无害化处理能力sanitizer->sanitizer方法特性支持->sanitizer目标为固定参数
+    // * TODO   这里需要将　cmd 放入集合中，需要找到这样的方法支持
+    // *  目标为固定参数，理解为经过sanitizer函数后 返回的结果，继续作为污点传播 remove
+    // */
+    //@PostMapping(value = "case00102")
+    //public Map<String, Object> aTaintCase00102(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    String res = StringEscapeUtils.escapeSql(cmd);
+    //    String driver = "org.sqlite.JDBC";
+    //    String url = "jdbc:sqlite::resource:data/sqlite.db";
+    //    Connection con = null;
+    //    Statement statement = null;
+    //    ResultSet resultSet = null;
+    //
+    //    try {
+    //        Class.forName(driver);
+    //        con = DriverManager.getConnection(url);
+    //        if (!con.isClosed()) {
+    //            System.out.println("数据库连接成功");
+    //        }
+    //        statement = con.createStatement();
+    //        //模拟 SQL 注入，采用拼接字符串的形式
+    //        String sqlQuery = "select * from REPORT where REPORT_ID=" + res;
+    //        resultSet = statement.executeQuery(sqlQuery);
+    //
+    //    } catch (ClassNotFoundException e) {
+    //        System.out.println("数据库驱动没有安装");
+    //    } catch (SQLException sqlException) {
+    //        System.out.println("数据库连接失败");
+    //    } finally {
+    //        try {
+    //            if (resultSet != null) {
+    //                resultSet.close();
+    //            }
+    //            if (statement != null) {
+    //                statement.close();
+    //            }
+    //            if (con != null) {
+    //                con.close();
+    //            }
+    //        } catch (SQLException e) {
+    //            System.out.println(e.getMessage());
+    //        }
+    //    }
+    //    modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    return modelMap;
+    //}
+    //
+    //@PostMapping(value = "case00102/2")
+    //public Map<String, Object> aTaintCase00102_2(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    String driver = "org.sqlite.JDBC";
+    //    String url = "jdbc:sqlite::resource:data/sqlite.db";
+    //    Connection con = null;
+    //    Statement statement = null;
+    //    ResultSet resultSet = null;
+    //
+    //    try {
+    //        Class.forName(driver);
+    //        con = DriverManager.getConnection(url);
+    //        if (!con.isClosed()) {
+    //            System.out.println("数据库连接成功");
+    //        }
+    //        statement = con.createStatement();
+    //        //模拟 SQL 注入，采用拼接字符串的形式
+    //        String sqlQuery = "select * from REPORT where REPORT_ID=" + cmd;
+    //        resultSet = statement.executeQuery(sqlQuery);
+    //
+    //    } catch (ClassNotFoundException e) {
+    //        System.out.println("数据库驱动没有安装");
+    //    } catch (SQLException sqlException) {
+    //        System.out.println("数据库连接失败");
+    //    } finally {
+    //        try {
+    //            if (resultSet != null) {
+    //                resultSet.close();
+    //            }
+    //            if (statement != null) {
+    //                statement.close();
+    //            }
+    //            if (con != null) {
+    //                con.close();
+    //            }
+    //        } catch (SQLException e) {
+    //            System.out.println(e.getMessage());
+    //        }
+    //    }
+    //    modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    return modelMap;
+    //}
 
     /**
      * 污点直接赋值为硬编码值 (硬编码是一种sanitizer方式)
@@ -1955,7 +1930,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00141")
     public Map<String, Object> aTaintCase00141(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        cmd="test";
+        cmd = "test";
         TaintMethodUtil.sink(cmd);
         modelMap.put("status", CommonConsts.SUCCESS_STR);
         return modelMap;
@@ -2064,63 +2039,63 @@ public class AstTaintCase002 {
         return modelMap;
     }
 
-    /**
-     * aTaintCase00106 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自固定参数
-     */
-    @PostMapping(value = "case00106")
-    @Deprecated
-    public Map<String, Object> aTaintCase00106(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * aTaintCase00107 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自可变参数
-     */
-    @PostMapping(value = "case00107")
-    @Deprecated
-    public Map<String, Object> aTaintCase00107(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", "-c", cmd);
-            processBuilder.start();
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * aTaintCase00108 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自对象实例
-     * path="/data/ls"
-     */
-    @PostMapping(value = "case00108")
-    @Deprecated
-    public Map<String, Object> aTaintCase00108(@RequestParam String path) {
-        Map<String, Object> modelMap = new HashMap<>();
-        InputStream in = null;
-        try {
-            in = new FileInputStream(FileUtil.file(path));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        } finally {
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                }
-            }
-        }
-        return modelMap;
-    }
+    ///**
+    // * aTaintCase00106 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自固定参数
+    // */
+    //@PostMapping(value = "case00106")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase00106(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        Runtime.getRuntime().exec(cmd);
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    //
+    ///**
+    // * aTaintCase00107 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自可变参数
+    // */
+    //@PostMapping(value = "case00107")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase00107(@RequestParam String cmd) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    try {
+    //        ProcessBuilder processBuilder = new ProcessBuilder("/bin/bash", "-c", cmd);
+    //        processBuilder.start();
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    }
+    //    return modelMap;
+    //}
+    //
+    ///**
+    // * aTaintCase00108 触发污点跟踪能力（sink）->sink方法特性支持->sink点污点来自对象实例
+    // * path="/data/ls"
+    // */
+    //@PostMapping(value = "case00108")
+    //@Deprecated
+    //public Map<String, Object> aTaintCase00108(@RequestParam String path) {
+    //    Map<String, Object> modelMap = new HashMap<>();
+    //    InputStream in = null;
+    //    try {
+    //        in = new FileInputStream(FileUtil.file(path));
+    //        modelMap.put("status", CommonConsts.SUCCESS_STR);
+    //    } catch (IOException e) {
+    //        modelMap.put("status", CommonConsts.ERROR_STR);
+    //    } finally {
+    //        if (in != null) {
+    //            try {
+    //                in.close();
+    //            } catch (IOException e) {
+    //            }
+    //        }
+    //    }
+    //    return modelMap;
+    //}
 
     /**
      * aTaintCase00109 触发污点跟踪能力（sink）->单污点来源传播至多sink点
