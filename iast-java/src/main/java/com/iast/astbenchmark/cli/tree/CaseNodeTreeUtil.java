@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -56,6 +57,7 @@ public class CaseNodeTreeUtil {
                 String[] nodesData = lines.get(row).split("->");
                 addTreeNode(root, 0, row + 1, nodesData);
             }
+            getGraph(root);
             return root;
         }catch (Exception e){
             log.error("初始化异常:{}",e);
@@ -73,6 +75,36 @@ public class CaseNodeTreeUtil {
 
         }
        return null;
+    }
+
+    private static void getGraph(CaseNode node){
+        if(node.getDeepth()==1){
+            System.out.println("graph LR");
+            for (CaseNode child : node.getChildren()) {
+                getGraph(child);
+            }
+            return;
+        }
+        //if(node.getLeafData()!=null){
+        //    System.out.println(node.getName()+"-->"+node.getLeafData().getCaseNo()+"\n");
+        //    return ;
+        //}
+        if(node.getDeepth()>1){
+            //String parent ="N"+node.getParent().getId()+"[\"`**"+node.getParent().getName()+"**`\"]";
+            //String current ="N"+node.getId()+"[\"`**"+node.getName()+"**`\"]";
+            String parent ="N"+node.getParent().getId()+"[\""+node.getParent().getName()+"\"]";
+            String current ="N"+node.getId()+"[\""+node.getName()+"\"]";
+            if(!StringUtils.isEmpty(node.getName())){
+                System.out.println(parent+"==>"+current);
+            }
+
+            if(!CollectionUtils.isEmpty(node.getChildren())){
+                for (CaseNode child : node.getChildren()) {
+                    getGraph(child);
+                }
+            }
+        }
+
     }
 
     public static Map<String, CaseNode> leafMap(CaseNode root) {
@@ -123,7 +155,7 @@ public class CaseNodeTreeUtil {
     private static void addTreeNode(CaseNode parent, Integer deepth, Integer row, String[] nodesData) {
         deepth = deepth + 1;
         CaseNodeType type = CaseNodeType.NODE;
-        Integer id = Integer.valueOf("" + String.valueOf(row) + String.valueOf(deepth));
+        Integer id = Integer.valueOf("" + String.valueOf(deepth) + String.valueOf(row));
         if (nodesData.length  <= deepth) {
             type = CaseNodeType.LEAF;
 
