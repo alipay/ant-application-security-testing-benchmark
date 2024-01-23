@@ -45,56 +45,46 @@ class CopyTestCaseForRun {
         caseUniqGroupId = System.currentTimeMillis();
     }
 
-
-
     void aTaintCase001() {
         HttpResponse response = doGet(url_root + "ataint/case001?cmd=1");
         System.out.println(response.body());
     }
-
 
     void aTaintCase002() {
         HttpResponse response = doGet(url_root + "ataint/case002?cmd=1");
         System.out.println(response.body());
     }
 
-
     void aTaintCase003() {
         HttpResponse response = doGet(url_root + "ataint/case003?cmd=1");
         System.out.println(response.body());
     }
-
 
     void aTaintCase004() {
         HttpResponse response = doGet(url_root + "ataint/case004?cmd=1");
         System.out.println(response.body());
     }
 
-
     void aTaintCase009() {
         HttpResponse response = doPost(url_root + "ataint/case009?cmd=1");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0010() {
         HttpResponse response = doPost(url_root + "ataint/case0010?cmd=1");
         System.out.println(response.body());
     }
 
-
     void aTaintCase0011() {
         HttpResponse response = doPost(url_root + "ataint/case0011?cmd=1");
         System.out.println(response.body());
     }
 
-
     void aTaintCase00901() {
         String sink = "ls";
-        HttpResponse response = doPost(url_root + "ataint/case00901?cmd="+sink);
+        HttpResponse response = doPost(url_root + "ataint/case00901?cmd=" + sink);
         System.out.println(response.body());
     }
-
 
     void aTaintCase005() {
         Map<String, String> map = Maps.newHashMap();
@@ -103,14 +93,12 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase006() {
         List<String> list = Lists.newArrayList();
         list.add("ls");
         HttpResponse response = doPost(url_root + "ataint/case006", JSONUtil.toJsonStr(list));
         System.out.println(response.body());
     }
-
 
     void aTaintCase007() throws InterruptedException {
         LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
@@ -123,9 +111,8 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase008() {
-        Set<String> set= new HashSet<>();
+        Set<String> set = new HashSet<>();
         set.add("ls");
         set.add("key");
         SoureWithSetBean setBean = new SoureWithSetBean();
@@ -135,35 +122,23 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
-
-
-
-
-
-
-
-
-
     void aTaintCase0013() {
         String[] strings = {"cd /", "ls"};
         HttpResponse response = doPost(url_root + "ataint/case0013", JSONUtil.toJsonStr(strings));
         System.out.println(response.body());
     }
 
-
     void aTaintCase0014() {
+        //int[] datas = {1,2};
         HttpResponse response = doPost(url_root + "ataint/case0014?cmd=ls");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0015() {
         byte[] datas = {1, 2};
         HttpResponse response = doPost(url_root + "ataint/case0015", JSONUtil.toJsonStr(datas));
         System.out.println(response.body());
     }
-
 
     void aTaintCase0016() {
         SourceTestObject object1 = new SourceTestObject();
@@ -178,7 +153,6 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00926() {
         SourceTestObject object1 = new SourceTestObject();
         SourceTestObject object2 = new SourceTestObject();
@@ -191,123 +165,122 @@ class CopyTestCaseForRun {
         SourceTestObject[][] objects = new SourceTestObject[2][2];
         objects[0][0] = object1;
         objects[1][1] = object2;
-        objects[0][1] =object3;
+        objects[0][1] = object3;
         objects[1][0] = object4;
         HttpResponse response = doPost(url_root + "ataint/case00926", JSONUtil.toJsonStr(objects));
 
         System.out.println(response.body());
     }
 
-
-
-
-
     void aTaintCase00921() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00921_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00921_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/3" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00922() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00922_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00922_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/3" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00923() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00923_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00923_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/3" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00924() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00924_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00924_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean9 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/3" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00925() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase00925_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
@@ -315,7 +288,6 @@ class CopyTestCaseForRun {
         HttpResponse response = doPost(url_root + "ataint/case0022?cmd=l%20s%20");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0023() {
         HttpResponse response = doPost(url_root + "ataint/case0023", "ls");
@@ -327,12 +299,10 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0024() {
         HttpResponse response = doPost(url_root + "ataint/case0024?cmd=ls");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0025() {
         String[] data = {"ls"};
@@ -340,22 +310,20 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0027() {
         HttpResponse response = doPost(url_root + "ataint/case0027?data=ls", "");
 
         System.out.println(response.body());
     }
 
-
     void aTaintCase0033() {
         HttpResponse response = doPost(url_root + "ataint/case0033", "{\"cmd\":\"ls\"}");
         System.out.println(response.body());
     }
 
-
     void aTaintCase0034() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0034" + "?auto_check_start_time=" + caseUniqGroupId).contentType(MediaType.APPLICATION_XML_VALUE)
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case0034" + "?auto_check_start_time=" + caseUniqGroupId).contentType(
+                        MediaType.APPLICATION_XML_VALUE)
                 .body("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
                         "\n" +
                         "<message> \n" +
@@ -365,7 +333,6 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0035() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0035" + "?auto_check_start_time=" + caseUniqGroupId)
                 .form("file", FileUtil.file("data/ls")).execute();
@@ -373,25 +340,21 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0036() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0036" + "?auto_check_start_time=" + caseUniqGroupId)
                 .form("file", FileUtil.file("data/ls")).execute();
         System.out.println(response.body());
     }
 
-
     void aTaintCase0037() {
         HttpResponse response = doPost(url_root + "ataint/case0037?cmd=ls", "");
         System.out.println(response.body());
     }
 
-
     void aTaintCase0038() {
         HttpResponse response = doPost(url_root + "ataint/case0038?cmd=ls", "");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0039() {
         HttpResponse response = doPost(url_root + "ataint/case0039?cmd=ls");
@@ -399,25 +362,24 @@ class CopyTestCaseForRun {
 
     }
 
-
     void aTaintCase0040() {
         HttpResponse response = doPost(url_root + "ataint/case0040?cmd=ls");
         System.out.println(response.body());
     }
 
-
     void aTaintCase0041() {
         String[] aa = {"l", "s"};
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0041" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(aa)).execute();
+        // HttpResponse response = HttpRequest.post(url_root+"ataint/case0041/ls?cmd=ls").body("ls").execute();
+        HttpResponse response = HttpRequest.post(url_root + "ataint/case0041" + "?auto_check_start_time=" + caseUniqGroupId).body(
+                JSONUtil.toJsonStr(aa)).execute();
+        //.form("file",FileUtil.file("data/ls")).execute();
         System.out.println(response.body());
     }
-
 
     void aTaintCase0044() {
         HttpResponse response = doPost(url_root + "ataint/case0044/ls123");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0045() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0045" + "?auto_check_start_time=" + caseUniqGroupId)
@@ -426,14 +388,12 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0046() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0046" + "?auto_check_start_time=" + caseUniqGroupId)
                 .header("cmd", "ls").execute();
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0047() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case0047" + "?auto_check_start_time=" + caseUniqGroupId)
@@ -442,19 +402,16 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00139() {
         HttpResponse response = HttpRequest.post(url_root + "ataint/case00139" + "?auto_check_start_time=" + caseUniqGroupId)
                 .header("cmd", "ls").execute();
         System.out.println(response.body());
     }
 
-
     void aTaintCase0062() {
         HttpResponse response = doPost(url_root + "ataint/case0062?cmd=ls");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0063() {
         HttpResponse response = doPost(url_root + "ataint/case0063?cmd=ls");
@@ -462,13 +419,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0064() {
         HttpResponse response = doPost(url_root + "ataint/case0064?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0065() {
         HttpResponse response = doPost(url_root + "ataint/case0065?cmd=ls");
@@ -476,13 +431,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0066() {
         HttpResponse response = doPost(url_root + "ataint/case0066?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0067() {
         HttpResponse response = doPost(url_root + "ataint/case0067?cmd=lsaa");
@@ -490,13 +443,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0068() {
         HttpResponse response = doPost(url_root + "ataint/case0068?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0069() {
         HttpResponse response = doPost(url_root + "ataint/case0069?cmd=ls");
@@ -504,13 +455,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0070() {
         HttpResponse response = doPost(url_root + "ataint/case0070?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0071() {
         HttpResponse response = doPost(url_root + "ataint/case0071?cmd=ls");
@@ -518,13 +467,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00140() {
         HttpResponse response = doPost(url_root + "ataint/case00140?cmd=alasaa");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0072() {
         HttpResponse response = doPost(url_root + "ataint/case0072?cmd=ls%20pp");
@@ -532,19 +479,16 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0073() {
         HttpResponse response = doPost(url_root + "ataint/case0073?cmd=ls");
         System.out.println(response.body());
     }
 
-
-    void  aTaintCase0074() {
+    void aTaintCase0074() {
         HttpResponse response = doPost(url_root + "ataint/case0074?cmd=lsaa");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0075() {
         HttpResponse response = doPost(url_root + "ataint/case0075?cmd=ls");
@@ -552,13 +496,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0076() {
         HttpResponse response = doPost(url_root + "ataint/case0076?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0077() {
         HttpResponse response = doPost(url_root + "ataint/case0077?cmd=LS");
@@ -566,13 +508,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0078() {
         HttpResponse response = doPost(url_root + "ataint/case0078?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0079() {
         HttpResponse response = doPost(url_root + "ataint/case0079?cmd=ls");
@@ -580,13 +520,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0080() {
         HttpResponse response = doPost(url_root + "ataint/case0080?cmd=%20ls%20");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0081() {
         HttpResponse response = doPost(url_root + "ataint/case0081?cmd=ls");
@@ -594,13 +532,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0082() {
         HttpResponse response = doPost(url_root + "ataint/case0082?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0083() {
         HttpResponse response = doPost(url_root + "ataint/case0083?cmd=ls");
@@ -608,14 +544,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
-
     void aTaintCase0085() {
         HttpResponse response = doPost(url_root + "ataint/case0085?cmd=lsabc");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0086() {
         HttpResponse response = doPost(url_root + "ataint/case0086?cmd=lsa");
@@ -623,13 +556,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0087() {
         HttpResponse response = doPost(url_root + "ataint/case0087?cmd=lsabc");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0088() {
         HttpResponse response = doPost(url_root + "ataint/case0088?cmd=ls");
@@ -637,13 +568,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0089() {
         HttpResponse response = doPost(url_root + "ataint/case0089?cmd=lsa");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0090() {
         HttpResponse response = doPost(url_root + "ataint/case0090?cmd=lsabc");
@@ -651,13 +580,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0091() {
         HttpResponse response = doPost(url_root + "ataint/case0091?cmd=lsabc");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0092() {
         HttpResponse response = doPost(url_root + "ataint/case0092?cmd=lsabc");
@@ -665,13 +592,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0093() {
         HttpResponse response = doPost(url_root + "ataint/case0093?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0094() {
         HttpResponse response = doPost(url_root + "ataint/case0094?cmd=ls");
@@ -679,13 +604,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0095() {
         HttpResponse response = doPost(url_root + "ataint/case0095?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase0096() {
         HttpResponse response = doPost(url_root + "ataint/case0096?cmd=ls");
@@ -693,30 +616,25 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase0099() {
         HttpResponse response = doPost(url_root + "ataint/case0099?cmd=reportidsql");
         System.out.println(response.body());
     }
-
 
     void aTaintCase0099_2() {
         HttpResponse response2 = doPost(url_root + "ataint/case0099/2?cmd=reportidsql");
         System.out.println(response2.body());
     }
 
-
     void aTaintCase00102() {
         HttpResponse response = doPost(url_root + "ataint/case00102?cmd=reportidsql");
         System.out.println(response.body());
     }
 
-
     void aTaintCase00102_2() {
         HttpResponse response2 = doPost(url_root + "ataint/case00102/2?cmd=reportidsql");
         System.out.println(response2.body());
     }
-
 
     void aTaintCase00141() {
         HttpResponse response = doPost(url_root + "ataint/case00141?cmd=test");
@@ -724,15 +642,12 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
-
     void aTaintCase00103() {
         HttpResponse response = doPost(url_root + "ataint/case00103?cmd=<p>ls<p>");
         HttpResponse response2 = doPost(url_root + "ataint/case00103/2?cmd=<p>ls<p>");
         HttpResponse response1 = doPost(url_root + "ataint/case00103/1?cmd=<p>ls<p>");
         System.out.println(response.body());
     }
-
 
     /**
      * --------
@@ -748,12 +663,12 @@ class CopyTestCaseForRun {
         System.out.println(response2.body());
     }
 
-
     void aTaintCase00104_2() {
         HttpResponse response2 = doPost(url_root + "ataint/case00104/2?cmd=reportidsql");
         System.out.println(response2.body());
     }
 
+    //TODO 105
 
     void aTaintCase00105() {
         HttpResponse response = doPost(url_root + "ataint/case00105?cmd=reportidsql");
@@ -768,14 +683,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
-
     void aTaintCase00107() {
         HttpResponse response = doPost(url_root + "ataint/case00107?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00108() {
         HttpResponse response = doPost(url_root + "ataint/case00108?path=data%2Fls");
@@ -783,20 +695,17 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00109() {
         HttpResponse response = doPost(url_root + "ataint/case00109?cmd=ls");
 
         System.out.println(response.body());
     }
 
-
     void aTaintCase00110() {
         HttpResponse response = doPost(url_root + "ataint/case00110?cmd1=ls&cmd2=la");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00111() {
 
@@ -805,13 +714,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00112() {
         HttpResponse response = doPost(url_root + "ataint/case00112?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00113() {
         HttpResponse response = doPost(url_root + "ataint/case00113?cmd=ls");
@@ -819,32 +726,28 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00114() {
         HttpResponse response = doPost(url_root + "ataint/case00114/ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00114/1");
-        System.out.println("aTaintCase00114"+response.body());
+        System.out.println("aTaintCase00114" + response.body());
     }
-
 
     void aTaintCase00115() {
         HttpResponse response = doPost(url_root + "ataint/case00115?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00115/1");
-        System.out.println("aTaintCase00115"+response.body());
+        System.out.println("aTaintCase00115" + response.body());
     }
-
 
     void aTaintCase00138() {
         HttpResponse response = doPost(url_root + "ataint/case00138?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00138/1");
-        System.out.println("aTaintCase00138"+response.body());
+        System.out.println("aTaintCase00138" + response.body());
     }
-
 
     void aTaintCase00116() {
         HttpResponse response = doPost(url_root + "ataint/case00116?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00116/1");
-        System.out.println("aTaintCase00116"+response.body());
+        System.out.println("aTaintCase00116" + response.body());
     }
     /**
      *  aTaintCase00117 异步跟踪能力->存储行异步->污点通过缓存存储后触发->OSS
@@ -859,13 +762,13 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00120() {
         HttpResponse response = doPost(url_root + "ataint/case00120?cmd=ls");
 
         System.out.println(response.body());
     }
 
+    //No 21~22
 
     void aTaintCase00123() {
         HttpResponse response = doPost(url_root + "ataint/case00123?cmd=ls");
@@ -873,13 +776,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00124() {
         HttpResponse response = doPost(url_root + "ataint/case00124?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00125() {
         HttpResponse response = doPost(url_root + "ataint/case00125?cmd1=cd%20/&cmd2=ls");
@@ -887,13 +788,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00126() {
         HttpResponse response = doPost(url_root + "ataint/case00126?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00126_2() {
         HttpResponse response = doPost(url_root + "ataint/case00126/2?cmd=ls");
@@ -901,13 +800,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00127() {
         HttpResponse response = doPost(url_root + "ataint/case00127?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00127_2() {
         HttpResponse response = doPost(url_root + "ataint/case00127/2?cmd=ls");
@@ -915,13 +812,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00128() {
         HttpResponse response = doPost(url_root + "ataint/case00128?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00128_2() {
         HttpResponse response = doPost(url_root + "ataint/case00128/2?cmd=ls");
@@ -929,13 +824,11 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00129() {
         HttpResponse response = doPost(url_root + "ataint/case00129?cmd=ls");
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00129_2() {
         HttpResponse response = doPost(url_root + "ataint/case00129/2?cmd=ls");
@@ -943,103 +836,92 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00130() {
         String[][] strings = new String[2][2];
-        strings[0][1]="ls";
-        strings[1][1]="cd /";
-        HttpResponse response = doPost(url_root + "ataint/case00130",JSONObject.toJSONString(strings));
+        strings[0][1] = "ls";
+        strings[1][1] = "cd /";
+        HttpResponse response = doPost(url_root + "ataint/case00130", JSONObject.toJSONString(strings));
         System.out.println(response.body());
     }
-
 
     void aTaintCase00130_2() {
         String[][] strings = new String[2][2];
-        strings[0][1]="ls";
-        strings[1][1]="cd /";
-        HttpResponse response = doPost(url_root + "ataint/case00130",JSONObject.toJSONString(strings));
+        strings[0][1] = "ls";
+        strings[1][1] = "cd /";
+        HttpResponse response = doPost(url_root + "ataint/case00130", JSONObject.toJSONString(strings));
         System.out.println(response.body());
     }
-
 
     void aTaintCase00131() {
         String[][] strings = new String[2][2];
-        strings[0][1]="ls";
-        strings[1][1]="cd /";
-        HttpResponse response = doPost(url_root + "ataint/case00131",JSONObject.toJSONString(strings));
+        strings[0][1] = "ls";
+        strings[1][1] = "cd /";
+        HttpResponse response = doPost(url_root + "ataint/case00131", JSONObject.toJSONString(strings));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00131_2() {
         String[][] strings = new String[2][2];
-        strings[0][1]="ls";
-        strings[1][1]="cd /";
-        HttpResponse response = doPost(url_root + "ataint/case00131",JSONObject.toJSONString(strings));
+        strings[0][1] = "ls";
+        strings[1][1] = "cd /";
+        HttpResponse response = doPost(url_root + "ataint/case00131", JSONObject.toJSONString(strings));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00132() {
         List<String> stringList = Lists.newArrayList();
         stringList.add("ls");
-        HttpResponse response = doPost(url_root + "ataint/case00132",JSONObject.toJSONString(stringList));
+        HttpResponse response = doPost(url_root + "ataint/case00132", JSONObject.toJSONString(stringList));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00132_2() {
         List<String> stringList = Lists.newArrayList();
         stringList.add("ls");
-        HttpResponse response = doPost(url_root + "ataint/case00132/2",JSONObject.toJSONString(stringList));
+        HttpResponse response = doPost(url_root + "ataint/case00132/2", JSONObject.toJSONString(stringList));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00133() {
         Map<String, String> map = Maps.newHashMap();
         map.put("1", "ls");
-        HttpResponse response = doPost(url_root + "ataint/case00133",JSONObject.toJSONString(map));
+        HttpResponse response = doPost(url_root + "ataint/case00133", JSONObject.toJSONString(map));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00133_2() {
         Map<String, String> map = Maps.newHashMap();
         map.put("1", "ls");
-        HttpResponse response = doPost(url_root + "ataint/case00133/2",JSONObject.toJSONString(map));
+        HttpResponse response = doPost(url_root + "ataint/case00133/2", JSONObject.toJSONString(map));
         System.out.println(response.body());
     }
-
 
     void aTaintCase00134() {
-        Set<String> set= new HashSet<>();
+        Set<String> set = new HashSet<>();
         set.add("ls");
         SoureWithSetBean setBean = new SoureWithSetBean();
         setBean.setKey("key");
         setBean.setValue(set);
-        HttpResponse response = doPost(url_root + "ataint/case00134",JSONObject.toJSONString(setBean));
+        HttpResponse response = doPost(url_root + "ataint/case00134", JSONObject.toJSONString(setBean));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00134_2() {
-        Set<String> set= new HashSet<>();
+        Set<String> set = new HashSet<>();
         set.add("ls");
         SoureWithSetBean setBean = new SoureWithSetBean();
         setBean.setKey("key");
         setBean.setValue(set);
-        HttpResponse response = doPost(url_root + "ataint/case00134/2",JSONObject.toJSONString(setBean));
+        HttpResponse response = doPost(url_root + "ataint/case00134/2", JSONObject.toJSONString(setBean));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00135() throws InterruptedException {
         LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
@@ -1047,11 +929,10 @@ class CopyTestCaseForRun {
         SoureWithQueueBean queueBean = new SoureWithQueueBean();
         queueBean.setKey("key");
         queueBean.setQueue(queue);
-        HttpResponse response = doPost(url_root + "ataint/case00135",JSONObject.toJSONString(queueBean));
+        HttpResponse response = doPost(url_root + "ataint/case00135", JSONObject.toJSONString(queueBean));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00135_2() throws InterruptedException {
         LinkedBlockingQueue<String> queue = new LinkedBlockingQueue<>();
@@ -1059,31 +940,26 @@ class CopyTestCaseForRun {
         SoureWithQueueBean queueBean = new SoureWithQueueBean();
         queueBean.setKey("key");
         queueBean.setQueue(queue);
-        HttpResponse response = doPost(url_root + "ataint/case00135/2",JSONObject.toJSONString(queueBean));
-
+        HttpResponse response = doPost(url_root + "ataint/case00135/2", JSONObject.toJSONString(queueBean));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00136() {
         List<String> list = Lists.newArrayList();
         list.add("ls");
-        HttpResponse response = doPost(url_root + "ataint/case00136",JSONObject.toJSONString(list));
+        HttpResponse response = doPost(url_root + "ataint/case00136", JSONObject.toJSONString(list));
 
         System.out.println(response.body());
     }
-
 
     void aTaintCase00136_2() {
         List<String> list = Lists.newArrayList();
         list.add("ls");
-        HttpResponse response = doPost(url_root + "ataint/case00136/2",JSONObject.toJSONString(list));
+        HttpResponse response = doPost(url_root + "ataint/case00136/2", JSONObject.toJSONString(list));
 
         System.out.println(response.body());
     }
-
-
 
     void aTaintCase00932() {
         SourceTestObject testObject = new SourceTestObject();
@@ -1101,7 +977,6 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-
     void aTaintCase00142_2() {
         SourceTestObject testObject = new SourceTestObject();
         testObject.setCmd("ls");
@@ -1110,25 +985,21 @@ class CopyTestCaseForRun {
         System.out.println(response2.body());
     }
 
-
     void aTaintCase00143() {
         HttpResponse response = doPost(url_root + "ataint/case00143?cmd=ls");
         System.out.println("aTaintCase00143" + response.body());
     }
-
 
     void aTaintCase00144() {
         HttpResponse response = doPost(url_root + "ataint/case00144?cmd=ls");
         System.out.println("aTaintCase00144" + response.body());
     }
 
-
     void aTaintCase00145() {
         int[] aa = {108, 115};
         HttpResponse response = doPost(url_root + "ataint/case00145", JSONUtil.toJsonStr(aa));
         System.out.println("aTaintCase00145" + response.body());
     }
-
 
     void aTaintCase00146() {
         HttpResponse response = doPost(url_root + "ataint/case00146?cmd=ls");
@@ -1138,21 +1009,19 @@ class CopyTestCaseForRun {
     @Autowired
     private RestTemplate restTemplate;
 
-
     void aTaintCase00147() {
         byte[] bytes = {108, 115};
         HttpEntity<ByteArrayResource> httpEntity = new HttpEntity<>(new ByteArrayResource(bytes), new HttpHeaders());
-        restTemplate.exchange(url_root + "ataint/case00147"+ "?auto_check_start_time=" + caseUniqGroupId, HttpMethod.POST, httpEntity, Object.class);
+        restTemplate.exchange(url_root + "ataint/case00147" + "?auto_check_start_time=" + caseUniqGroupId, HttpMethod.POST, httpEntity,
+                Object.class);
 
         System.out.println("aTaintCase00147");
     }
-
 
     void aTaintCase00148() {
         HttpResponse response = doPost(url_root + "ataint/case00148?cmd=ls");
         System.out.println("aTaintCase00148" + response.body());
     }
-
 
     void aTaintCase00149() {
         HttpResponse response = doPost(url_root + "ataint/case00149?cmd=ls");
@@ -1163,138 +1032,138 @@ class CopyTestCaseForRun {
         HttpResponse response = doPost(url_root + "ataint/case00940?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00940/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00940/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00941() {
         HttpResponse response = doPost(url_root + "ataint/case00941?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00941/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00941/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00942() {
         HttpResponse response = doPost(url_root + "ataint/case00942?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00942/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00942/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00943() {
         HttpResponse response = doPost(url_root + "ataint/case00943?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00943/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00943/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00944() {
         HttpResponse response = doPost(url_root + "ataint/case00944?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00944/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00944/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00945() {
         HttpResponse response = doPost(url_root + "ataint/case00945?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00945/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00946() {
         HttpResponse response = doPost(url_root + "ataint/case00946?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00946/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00946/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
+
     void aTaintCase00947() {
         HttpResponse response = doPost(url_root + "ataint/case00947?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00947/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00947/2?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00948() {
         HttpResponse response = doPost(url_root + "ataint/case00948?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00948/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00948/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00949() {
         HttpResponse response = doPost(url_root + "ataint/case00949?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00949/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00949/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
-
 
     void aTaintCase00950() {
         HttpResponse response = doPost(url_root + "ataint/case00950?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00950/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00950/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00951() {
         HttpResponse response = doPost(url_root + "ataint/case00951?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00951/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00951/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00952() {
         HttpResponse response = doPost(url_root + "ataint/case00952?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00952/2?cmd=ls");
         HttpResponse response3 = doPost(url_root + "ataint/case00952/3?cmd=ls");
-        System.out.println(response.body()+response2.body()+response3.body());
+        System.out.println(response.body() + response2.body() + response3.body());
     }
 
     void aTaintCase00953() {
         HttpResponse response = doPost(url_root + "ataint/case00953?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00953/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00954() {
         HttpResponse response = doPost(url_root + "ataint/case00954?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00954/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00955() {
         HttpResponse response = doPost(url_root + "ataint/case00955?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00955/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00956() {
         HttpResponse response = doPost(url_root + "ataint/case00956?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00956/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00957() {
         HttpResponse response = doPost(url_root + "ataint/case00957?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00957/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00958() {
         HttpResponse response = doPost(url_root + "ataint/case00958?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00958/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00959() {
         HttpResponse response = doPost(url_root + "ataint/case00959?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00959/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     void aTaintCase00960() {
         HttpResponse response = doPost(url_root + "ataint/case00960?cmd=ls");
         HttpResponse response2 = doPost(url_root + "ataint/case00960/2?cmd=ls");
-        System.out.println(response.body()+response2.body());
+        System.out.println(response.body() + response2.body());
     }
 
     private HttpResponse doGet(String url) {
