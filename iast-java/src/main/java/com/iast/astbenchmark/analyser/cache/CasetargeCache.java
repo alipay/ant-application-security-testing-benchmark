@@ -45,6 +45,17 @@ public class CasetargeCache {
         }
     }
 
+    //public static void main(String[] args) {
+    //    String target = IoUtil.read(new ClassPathResource("config/case_target_list.json").getStream(),Charset.forName("utf-8"));
+    //    //JSONArray array = JSONUtil.readJSONArray(FileUtil.file("case_target_list.json"), Charset.forName("utf-8"));
+    //    JSONArray array =JSONUtil.parseArray(target);
+    //    array.stream().forEach(e -> {
+    //        CaseTargetBean bean = JSONUtil.toBean(JSONUtil.toJsonStr(e), CaseTargetBean.class);
+    //        targetMap.put(bean.getCaseNo(), bean);
+    //    });
+    //    targetMap.forEach((k,v)-> System.out.println(k+"____"+v.getCaseDesc()));
+    //}
+
     public static CaseTargetBean getTargetByCaseKey(String key) {
         return targetMap.get(key);
     }

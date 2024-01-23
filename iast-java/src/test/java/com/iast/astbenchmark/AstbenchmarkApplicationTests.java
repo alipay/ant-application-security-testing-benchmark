@@ -52,7 +52,7 @@ class AstbenchmarkApplicationTests {
 
     @BeforeAll
     static void init() {
-        url_root = "http://localhost:39100/";
+        url_root = "http://localhost:8888/";
         caseUniqGroupId=System.currentTimeMillis();
         //caseUniqGroupId = 54877081211069L;
         System.out.println("请保存此次跑case的关键字:" + caseUniqGroupId);
@@ -158,62 +158,6 @@ class AstbenchmarkApplicationTests {
     }
 
 
-    //@Test
-    //void aTaintCase00927() {
-    //    Map<String, String> map = Maps.newHashMap();
-    //    map.put("cmd", "ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case00927", JSONUtil.toJsonStr(map));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase00928() {
-    //    List<String> list = Lists.newArrayList();
-    //    list.add("ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case00928", JSONUtil.toJsonStr(list));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase00929() {
-    //    List<String> list = Lists.newArrayList();
-    //    list.add("ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case00929", JSONUtil.toJsonStr(list));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase00930() {
-    //    List<String> list = Lists.newArrayList();
-    //    list.add("ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case00930", JSONUtil.toJsonStr(list));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase009() {
-    //    HttpResponse response = doPost(url_root + "ataint/case009/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0010() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0010/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0011() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0011/1");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0012() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0012/1");
-    //    System.out.println(response.body());
-    //}
-
     @Test
     void aTaintCase0013() {
         String[] strings = {"cd /", "ls"};
@@ -269,56 +213,6 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //@Test
-    //void aTaintCase0017() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0017", "ls");
-    //    System.out.println(response.body());
-    //}
-    //
-    //@Test
-    //void aTaintCase0018() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0018", "ls");
-    //    System.out.println(response.body());
-    //}
-    //
-    //@Test
-    //@Test
-    //void aTaintCase0019() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0019", "ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0020() {
-    //    SourceTestObject object = new SourceTestObject();
-    //    object.setCmd("ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case0020", JSONUtil.toJsonStr(object));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0021() {
-    //    JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
-    //    SourceTestWithMPObject object = JSONUtil.toBean(json, SourceTestWithMPObject.class, true);
-    //    HttpResponse response = HttpRequest.post(url_root + "ataint/case0021" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
-    //    System.out.println(response.body());
-    //}
-    //
-    //@Test
-    //void aTaintCase0021_2() {
-    //    JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
-    //    SourceTestWithMPObject object = JSONUtil.toBean(json, SourceTestWithMPObject.class, true);
-    //    HttpResponse response = HttpRequest.post(url_root + "ataint/case0021/2" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
-    //    System.out.println(response.body());
-    //}
-    //
-    //@Test
-    //void aTaintCase0021_3() {
-    //    JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
-    //    SourceTestWithMPObject object = JSONUtil.toBean(json, SourceTestWithMPObject.class, true);
-    //    HttpResponse response = HttpRequest.post(url_root + "ataint/case0021/3" + "?auto_check_start_time=" + caseUniqGroupId).body(JSONUtil.toJsonStr(object)).execute();
-    //    System.out.println(response.body());
-    //}
 
     @Test
     void aTaintCase00921() {
@@ -459,12 +353,7 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //    @Test
-//    void aTaintCase0026(){
-//        HttpResponse response = doPost(url_root+"ataint/case0026/alasa","");
-//
-//        System.out.println(response.body());
-//    }
+
     @Test
     void aTaintCase0027() {
         HttpResponse response = doPost(url_root + "ataint/case0027?data=ls", "");
@@ -472,35 +361,7 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //    @Test
-//    void aTaintCase0028(){
-//        HttpResponse response = doPost(url_root+"ataint/case0028","");
-//
-//        System.out.println(response.body());
-//    }
-//    @Test
-//    void aTaintCase0029(){
-//        HttpResponse response = doPost(url_root+"ataint/case0029","");
-//
-//        System.out.println(response.body());
-//    }
-//    @Test
-//    void aTaintCase0030(){
-//        HttpResponse response = doPost(url_root+"ataint/case0030","");
-//
-//        System.out.println(response.body());
-//    }
-//    @Test
-//    void aTaintCase0031(){
-//        HttpResponse response = doPost(url_root+"ataint/case0031","");
-//
-//        System.out.println(response.body());
-//    }
-//    @Test
-//    void aTaintCase0032(){
-//        HttpResponse response = doPost(url_root+"ataint/case0032","");
-//        System.out.println(response.body());
-//    }
+
     @Test
     void aTaintCase0033() {
         HttpResponse response = doPost(url_root + "ataint/case0033", "{\"cmd\":\"ls\"}");
@@ -568,16 +429,7 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //    @Test
-//    void aTaintCase0042(){
-//        HttpResponse response = doPost(url_root+"ataint/case0042/ls");
-//        System.out.println(response.body());
-//    }
-//    @Test
-//    void aTaintCase0043(){
-//        HttpResponse response = doPost(url_root+"ataint/case0043/ls");
-//        System.out.println(response.body());
-//    }
+
     @Test
     void aTaintCase0044() {
         HttpResponse response = doPost(url_root + "ataint/case0044/ls123");
@@ -615,104 +467,6 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //@Test
-    //void aTaintCase0048() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0048?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0049() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0049?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0050() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0050", "{\"cmd\":\"ls\"}");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0051() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0051?cmd1=alasa&cmd2=a");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0052() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0052?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0053() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0053?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0054() {
-    //    SourceTestWithConstract01Bean bean = MyCommonTestUtil.buildTestObject("ls");
-    //    HttpResponse response = doPost(url_root + "ataint/case0054", JSONUtil.toJsonStr(bean));
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0055() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0055?cmd1=alas&cmd=a");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0056() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0056?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0056_2() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0056/2?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0057() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0057?cmd=ls");
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0058() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0058?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
-
-   // @Test
-    //void aTaintCase0059() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0059?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0060() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0060?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
-
-    //@Test
-    //void aTaintCase0061() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0061?cmd=1");
-    //
-    //    System.out.println(response.body());
-    //}
 
     @Test
     void aTaintCase0062() {
@@ -873,12 +627,6 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //@Test
-    //void aTaintCase0084() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0084?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
 
     @Test
     void aTaintCase0085() {
@@ -960,22 +708,10 @@ class AstbenchmarkApplicationTests {
     @Test
     void aTaintCase0096() {
         HttpResponse response = doPost(url_root + "ataint/case0096?cmd=ls");
-
         System.out.println(response.body());
     }
 
-    //@Test
-    //void aTaintCase0097() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0097?cmd1=ls&cmd2=cd");
-    //    System.out.println(response.body());
-    //}
 
-    //@Test
-    //void aTaintCase0098() {
-    //    HttpResponse response = doPost(url_root + "ataint/case0098?cmd=ls");
-    //
-    //    System.out.println(response.body());
-    //}
 
     @Test
     void aTaintCase0099() {
@@ -1369,17 +1105,7 @@ class AstbenchmarkApplicationTests {
         System.out.println(response.body());
     }
 
-    //@Test
-    //void aTaintCase00137() {
-    //    HttpResponse response = doPost(url_root + "ataint/case00137", "http://localhost/nothing");
-    //    System.out.println(response.body());
-    //}
-    //
-    //@Test
-    //void aTaintCase00137_2() {
-    //    HttpResponse response = doPost(url_root + "ataint/case00137/2", "/nothing");
-    //    System.out.println(response.body());
-    //}
+
 
     @Test
     void aTaintCase00932() {

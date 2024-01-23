@@ -74,6 +74,7 @@
   {"data":[{"result":true,"tag":"aTaintCase0093"}],"caseNo":"aTaintCase0093","caseType":"T002","caseDesc":"传播场景-char[],byte[]操作->copyOf"},
   {"data":[{"result":true,"tag":"aTaintCase0094"}],"caseNo":"aTaintCase0094","caseType":"T002","caseDesc":"传播场景-char[],byte[]操作-->copyOfRange"},
   {"data":[{"result":true,"tag":"aTaintCase0095"}],"caseNo":"aTaintCase0095","caseType":"T002","caseDesc":"传播场景-char[],byte[]操作->deepToString"},
+  {"data":[{"result":true,"tag":"aTaintCase0096"}],"caseNo":"aTaintCase0096","caseType":"T002","caseDesc":"传播场景-char[],byte[]操作->toString"},
   {"data":[{"result":true,"tag":"aTaintCase00932"}],"caseNo":"aTaintCase00932","caseType":"T002","caseDesc":""},
   {"data":[{"result":false,"tag":"aTaintCase00141"},{"result":true,"tag":"aTaintCase00141_1"}],"caseNo":"aTaintCase00141","caseType":"T002","caseDesc":"污点无害化处理能力sanitizer->sanitizer方法特性支持->污点直接赋值为硬编码值"},
   {"data":[{"result":false,"tag":"aTaintCase00103"},{"result":true,"tag":"aTaintCase00103_1"},{"result":true,"tag":"aTaintCase00103_2"}],"caseNo":"aTaintCase00103","caseType":"T002","caseDesc":"污点无害化处理能力sanitizer->sanitizer支持区分类型"},

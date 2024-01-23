@@ -276,4 +276,9 @@ public class AstTaintCase003 {
         return modelMap;
     }
 
+    /**
+     * rpc跨应用，至少支持一种框架，Sofa rpc/springcloud rpc/dubbo/grpc/hsf
+     * TODO 需要多工程之间的调用，暂无case作为单独工程调用验证
+     */
+
 }
