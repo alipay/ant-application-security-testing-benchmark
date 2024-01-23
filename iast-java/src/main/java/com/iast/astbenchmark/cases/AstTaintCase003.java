@@ -7,6 +7,7 @@ import cn.hutool.core.thread.ThreadUtil;
 import cn.hutool.db.Db;
 import cn.hutool.db.Entity;
 import cn.hutool.http.HttpRequest;
+import com.iast.astbenchmark.analyser.cache.CaseTag;
 import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 import com.iast.astbenchmark.common.utils.SessionUtil;
@@ -51,6 +52,12 @@ public class AstTaintCase003 {
         return modelMap;
     }
     @PostMapping(value = "case00113/1")
+    @CaseTag(
+            caseNo ="aTaintCase00113",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->存储型异步->污点通过db存储后触发",
+            thisMethodTag = "aTaintCase00113_1",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00113_1(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -83,6 +90,12 @@ public class AstTaintCase003 {
         return modelMap;
     }
     @PostMapping(value = "case00114/1")
+    @CaseTag(
+            caseNo ="aTaintCase00114",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->存储型异步->污点通过session存储后触发",
+            thisMethodTag = "aTaintCase00114_1",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00114_1(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -106,6 +119,12 @@ public class AstTaintCase003 {
         return modelMap;
     }
     @PostMapping(value = "case00115/1")
+    @CaseTag(
+            caseNo ="aTaintCase00115",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->存储型异步->污点通过缓存存储后触发->本地缓存",
+            thisMethodTag = "aTaintCase00115_1",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00115_1() {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -130,6 +149,12 @@ public class AstTaintCase003 {
         return modelMap;
     }
     @PostMapping(value = "case00138/1")
+    @CaseTag(
+            caseNo ="aTaintCase00138",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->存储型异步->污点通过缓存存储后触发->非本地缓存",
+            thisMethodTag = "aTaintCase00138_1",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00138_1() {
         Map<String, Object> modelMap = new HashMap<>();
         String key ="cmd_key";
@@ -158,6 +183,12 @@ public class AstTaintCase003 {
         return modelMap;
     }
     @PostMapping(value = "case00116/1")
+    @CaseTag(
+            caseNo ="aTaintCase00116",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->存储型异步->污点通过文件存储后触发->本地文件",
+            thisMethodTag = "aTaintCase00116_1",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00116_1() {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -171,7 +202,7 @@ public class AstTaintCase003 {
     }
 
     /**
-     *  aTaintCase00117 异步跟踪能力->存储行异步->污点通过缓存存储后触发-> OSS
+     *  TODO aTaintCase00117 异步跟踪能力->存储行异步->污点通过缓存存储后触发-> OSS
      */
 
     /**
@@ -181,6 +212,12 @@ public class AstTaintCase003 {
      * aTaintCase00119 异步跟踪能力->多线程异步->污点的来源和触发在不同线程
      */
     @PostMapping(value = "case00119")
+    @CaseTag(
+            caseNo ="aTaintCase00119",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->多线程异步->污点的来源和触发在不同线程",
+            thisMethodTag = "aTaintCase00119",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00119(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         Thread thread = new Thread(()->{
@@ -199,6 +236,12 @@ public class AstTaintCase003 {
      */
     ThreadPoolExecutor executorForTest = ThreadUtil.newExecutor(1,1);
     @PostMapping(value = "case00120")
+    @CaseTag(
+            caseNo ="aTaintCase00120",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力->多线程异步->污点的来源和触发在不同线程，sink的触发由线程池中的线程触发",
+            thisMethodTag = "aTaintCase00120",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00120(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         executorForTest.execute(()->{
@@ -231,6 +274,12 @@ public class AstTaintCase003 {
     }
 
     @PostMapping(value = "case00123/2")
+    @CaseTag(
+            caseNo ="aTaintCase00123",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进城跟踪能力->http->跨一层进程调用",
+            thisMethodTag = "aTaintCase00123_2",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00123_2(@RequestParam String cmd,@RequestParam String auto_check_start_time) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -265,6 +314,12 @@ public class AstTaintCase003 {
     }
 
     @PostMapping(value = "case00124/3")
+    @CaseTag(
+            caseNo ="aTaintCase00124",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进城跟踪能力->http->跨多层进程调用",
+            thisMethodTag = "aTaintCase00124_3",
+            thisMethodExpectedResult = true
+    )
     public Map<String, Object> aTaintCase00124_3(@RequestParam String cmd,@RequestParam String auto_check_start_time) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
