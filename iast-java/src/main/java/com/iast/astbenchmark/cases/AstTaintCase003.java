@@ -255,14 +255,14 @@ public class AstTaintCase003 {
     }
 
     /**
-     * aTaintCase00121 跨进城跟踪能力->sofa tr(阿里内部)->单次rpc调用触发sink
+     * aTaintCase00121 跨进程跟踪能力->调用方式->sofa tr(阿里内部)->单次rpc调用触发sink
      */
     /**
-     *  aTaintCase00122 跨进城跟踪能力->sofa tr(阿里内部)->跨多个应用rpc 触发sink
+     *  aTaintCase00122 跨进程跟踪能力->调用方式->sofa tr(阿里内部)->跨多个应用rpc 触发sink
      */
 
     /**
-     * aTaintCase00123 跨进城跟踪能力->http->单次http调用触发sink
+     * aTaintCase00123 跨进程跟踪能力->调用方式->调用方式->http->单次http调用触发sink
      */
     @PostMapping(value = "case00123")
     public Map<String, Object> aTaintCase00123(@RequestParam String cmd,@RequestParam String auto_check_start_time) {
@@ -276,7 +276,7 @@ public class AstTaintCase003 {
     @PostMapping(value = "case00123/2")
     @CaseTag(
             caseNo ="aTaintCase00123",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进城跟踪能力->http->跨一层进程调用",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进程跟踪能力->调用方式->http->跨一层进程调用",
             thisMethodTag = "aTaintCase00123_2",
             thisMethodExpectedResult = true
     )
@@ -292,7 +292,7 @@ public class AstTaintCase003 {
     }
 
     /**
-     *   aTaintCase00124 跨进城跟踪能力->http->跨多个应用http触发sink
+     *   aTaintCase00124 跨进程跟踪能力->调用方式->http->跨多个应用http触发sink
      */
 
     @PostMapping(value = "case00124")
@@ -316,7 +316,7 @@ public class AstTaintCase003 {
     @PostMapping(value = "case00124/3")
     @CaseTag(
             caseNo ="aTaintCase00124",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进城跟踪能力->http->跨多层进程调用",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进程跟踪能力->调用方式->http->跨多层进程调用",
             thisMethodTag = "aTaintCase00124_3",
             thisMethodExpectedResult = true
     )
@@ -335,5 +335,28 @@ public class AstTaintCase003 {
      * rpc跨应用，至少支持一种框架，Sofa rpc/springcloud rpc/dubbo/grpc/hsf
      * TODO 需要多工程之间的调用，暂无case作为单独工程调用验证
      */
+
+    @PostMapping(value = "case001241")
+    @CaseTag(
+            caseNo ="aTaintCase001241",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进程跟踪能力->调用方式->rpc(至少支持一种框架：Sofa/SpringCloud/Dubbo/gRpc/HSF)->跨一层进程间调用(暂无实现)",
+            thisMethodTag = "aTaintCase001241",
+            thisMethodExpectedResult = true
+    )
+    public Map<String, Object> aTaintCase001241() {
+    //TODO
+        return null;
+    }
+    @PostMapping(value = "case001242")
+    @CaseTag(
+            caseNo ="aTaintCase001242",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->跨进程跟踪能力->调用方式->rpc(至少支持一种框架：Sofa/SpringCloud/Dubbo/gRpc/HSF)->跨多层进程间调用(暂无实现)",
+            thisMethodTag = "aTaintCase001242",
+            thisMethodExpectedResult = true
+    )
+    public Map<String, Object> aTaintCase001242() {
+        //TODO
+        return null;
+    }
 
 }

@@ -69,7 +69,7 @@ public class AstTaintCase002 {
     @PostMapping("case0023")
     @CaseTag(
             caseNo ="aTaintCase0023",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪(100层)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪->100层",
             thisMethodTag = "aTaintCase0023",
             thisMethodExpectedResult = true
     )
@@ -99,7 +99,7 @@ public class AstTaintCase002 {
     @PostMapping("case00931")
     @CaseTag(
             caseNo ="aTaintCase00931",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪(1000层)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪->1000层",
             thisMethodTag = "aTaintCase00931",
             thisMethodExpectedResult = true
     )
@@ -322,7 +322,7 @@ public class AstTaintCase002 {
     @PostMapping("case0033")
     @CaseTag(
             caseNo ="aTaintCase0033",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->*json",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->json@RequestBody",
             thisMethodTag = "aTaintCase0033",
             thisMethodExpectedResult = true
     )
@@ -347,7 +347,7 @@ public class AstTaintCase002 {
     @ResponseBody
     @CaseTag(
             caseNo ="aTaintCase0034",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->*xml",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->xml/getInputStream",
             thisMethodTag = "aTaintCase0034",
             thisMethodExpectedResult = true
     )
@@ -371,7 +371,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0035")
     @CaseTag(
             caseNo ="aTaintCase0035",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data getPart",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data->getPart",
             thisMethodTag = "aTaintCase0035",
             thisMethodExpectedResult = true
     )
@@ -398,7 +398,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0036")
     @CaseTag(
             caseNo ="aTaintCase0036",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data getParts",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data->getParts",
             thisMethodTag = "aTaintCase0036",
             thisMethodExpectedResult = true
     )
@@ -425,7 +425,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0037")
     @CaseTag(
             caseNo ="aTaintCase0037",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode getParameter",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameter",
             thisMethodTag = "aTaintCase0037",
             thisMethodExpectedResult = true
     )
@@ -451,7 +451,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0038")
     @CaseTag(
             caseNo ="aTaintCase0038",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode getParameterMap",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterMap",
             thisMethodTag = "aTaintCase0038",
             thisMethodExpectedResult = true
     )
@@ -477,7 +477,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0039")
     @CaseTag(
             caseNo ="aTaintCase0039",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode getParameterValues",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterValues",
             thisMethodTag = "aTaintCase0039",
             thisMethodExpectedResult = true
     )
@@ -503,7 +503,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0040")
     @CaseTag(
             caseNo ="aTaintCase0040",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode getParameterNames",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterNames",
             thisMethodTag = "aTaintCase0040",
             thisMethodExpectedResult = true
     )
@@ -623,7 +623,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0045")
     @CaseTag(
             caseNo ="aTaintCase0045",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header getCookies",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getCookies",
             thisMethodTag = "aTaintCase0045",
             thisMethodExpectedResult = true
     )
@@ -649,7 +649,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0046")
     @CaseTag(
             caseNo ="aTaintCase0046",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header getHeader",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeader",
             thisMethodTag = "aTaintCase0046",
             thisMethodExpectedResult = true
     )
@@ -674,7 +674,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0047")
     @CaseTag(
             caseNo ="aTaintCase0047",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header getHeaders",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeaders",
             thisMethodTag = "aTaintCase0047",
             thisMethodExpectedResult = true
     )
@@ -699,7 +699,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00139")
     @CaseTag(
             caseNo ="aTaintCase00139",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header getHeaderNames",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeaderNames",
             thisMethodTag = "aTaintCase00139",
             thisMethodExpectedResult = true
     )
@@ -1889,7 +1889,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case0094")
     @CaseTag(
             caseNo ="aTaintCase0094",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作-->copyOfRange",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase0094",
             thisMethodExpectedResult = true
     )
@@ -2314,7 +2314,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00141")
     @CaseTag(
             caseNo ="aTaintCase00141",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->sanitizer方法特性支持->污点直接赋值为硬编码值",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->污点直接赋值为硬编码值",
             thisMethodTag = "aTaintCase00141",
             thisMethodExpectedResult = false
     )
@@ -2329,7 +2329,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00141/1")
     @CaseTag(
             caseNo ="aTaintCase00141",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->sanitizer方法特性支持->污点直接赋值为硬编码值",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->污点直接赋值为硬编码值",
             thisMethodTag = "aTaintCase00141_1",
             thisMethodExpectedResult = true
     )
@@ -2346,7 +2346,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00103/2")
     @CaseTag(
             caseNo ="aTaintCase00103",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->sanitizer支持区分类型",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103_2",
             thisMethodExpectedResult = true
     )
@@ -2365,7 +2365,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00103/1")
     @CaseTag(
             caseNo ="aTaintCase00103",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->sanitizer支持区分类型",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103_1",
             thisMethodExpectedResult = true
     )
@@ -2379,7 +2379,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00103")
     @CaseTag(
             caseNo ="aTaintCase00103",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->sanitizer支持区分类型",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103",
             thisMethodExpectedResult = false
     )
@@ -2397,7 +2397,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00104")
     @CaseTag(
             caseNo ="aTaintCase00104",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->触发sink后再执行sanitizer",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104",
             thisMethodExpectedResult = true
     )
@@ -2412,7 +2412,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00104/1")
     @CaseTag(
             caseNo ="aTaintCase00104",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->触发sink后再执行sanitizer",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104_1",
             thisMethodExpectedResult = false
     )
@@ -2427,7 +2427,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00104/2")
     @CaseTag(
             caseNo ="aTaintCase00104",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->触发sink后再执行sanitizer",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104_2",
             thisMethodExpectedResult = true
     )
@@ -2445,7 +2445,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00105")
     @CaseTag(
             caseNo ="aTaintCase00105",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->支持自定义unSanitizer(再次污点化)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105",
             thisMethodExpectedResult = true
     )
@@ -2460,7 +2460,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00105/1")
     @CaseTag(
             caseNo ="aTaintCase00105",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->支持自定义unSanitizer(再次污点化)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105_1",
             thisMethodExpectedResult = false
     )
@@ -2476,7 +2476,7 @@ public class AstTaintCase002 {
     @PostMapping(value = "case00105/2")
     @CaseTag(
             caseNo ="aTaintCase00105",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力sanitizer->支持自定义unSanitizer(再次污点化)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105_2",
             thisMethodExpectedResult = true
     )

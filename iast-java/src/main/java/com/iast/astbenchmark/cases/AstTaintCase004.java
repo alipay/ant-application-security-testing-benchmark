@@ -78,13 +78,13 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00126 污点对象跟踪粒度->字段/元素级别->对象字段->单层简单对象部分字段为污点
+     * aTaintCase00126 污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->单层简单对象部分字段为污点
      * /2为参照组，期望case被检测出，参照组不被检测出
      */
     @PostMapping(value = "case00126")
     @CaseTag(
             caseNo = "aTaintCase00126",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->单层简单对象部分字段为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->单层简单对象部分字段为污点",
             thisMethodTag = "aTaintCase00126",
             thisMethodExpectedResult = true
     )
@@ -105,7 +105,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00126/2")
     @CaseTag(
             caseNo = "aTaintCase00126",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->单层简单对象部分字段为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->单层简单对象部分字段为污点",
             thisMethodTag = "aTaintCase00126_2",
             thisMethodExpectedResult = false
     )
@@ -124,12 +124,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00127 污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来自父类
+     * aTaintCase00127 污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类
      */
     @PostMapping(value = "case00127")
     @CaseTag(
             caseNo = "aTaintCase00127",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来自父类",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类",
             thisMethodTag = "aTaintCase00127",
             thisMethodExpectedResult = true
     )
@@ -152,7 +152,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00127/2")
     @CaseTag(
             caseNo = "aTaintCase00127",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来自父类",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类",
             thisMethodTag = "aTaintCase00127_2",
             thisMethodExpectedResult = false
     )
@@ -173,12 +173,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00128 污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来自子类
+     * aTaintCase00128 污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自子类
      */
     @PostMapping(value = "case00128")
     @CaseTag(
             caseNo = "aTaintCase00128",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来当前类字段",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来当前类字段",
             thisMethodTag = "aTaintCase00128",
             thisMethodExpectedResult = true
     )
@@ -201,7 +201,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00128/2")
     @CaseTag(
             caseNo = "aTaintCase00128",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->污点来当前类字段",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来当前类字段",
             thisMethodTag = "aTaintCase00128_2",
             thisMethodExpectedResult = false
     )
@@ -223,12 +223,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00129 污点对象跟踪粒度->字段/元素级别->数组元素->单维数组中的部分元素为污点
+     * aTaintCase00129 污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点
      */
     @PostMapping(value = "case00129")
     @CaseTag(
             caseNo = "aTaintCase00129",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->单维数组中的部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00129",
             thisMethodExpectedResult = true
     )
@@ -251,7 +251,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00129/2")
     @CaseTag(
             caseNo = "aTaintCase00129",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->单维数组中的部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00129",
             thisMethodExpectedResult = false
     )
@@ -271,12 +271,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00130 污点对象跟踪粒度->字段/元素级别->数组元素->多维数组中的部分元素为污点
+     * aTaintCase00130 污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点
      */
     @PostMapping(value = "case00130")
     @CaseTag(
             caseNo = "aTaintCase00130",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->多维数组中的部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00130",
             thisMethodExpectedResult = true
     )
@@ -302,7 +302,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00130/2")
     @CaseTag(
             caseNo = "aTaintCase00130",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->多维数组中的部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00130_2",
             thisMethodExpectedResult = false
     )
@@ -321,13 +321,13 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00131 污点对象跟踪粒度->字段/元素级别->数组元素->部分元素为污点，序列化后再反序列化
+     * aTaintCase00131 污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->部分元素为污点，序列化后再反序列化
      */
 
     @PostMapping(value = "case00131")
     @CaseTag(
             caseNo = "aTaintCase00131",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->部分元素为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00131",
             thisMethodExpectedResult = true
     )
@@ -352,7 +352,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00131/2")
     @CaseTag(
             caseNo = "aTaintCase00131",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->数组元素->部分元素为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00131_2",
             thisMethodExpectedResult = false
     )
@@ -375,12 +375,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00132 污点对象跟踪粒度->字段/元素级别->集合元素->List中部分元素为污点
+     * aTaintCase00132 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点
      */
     @PostMapping(value = "case00132")
     @CaseTag(
             caseNo = "aTaintCase00132",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->List中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点",
             thisMethodTag = "aTaintCase00132",
             thisMethodExpectedResult = true
     )
@@ -400,7 +400,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00132/2")
     @CaseTag(
             caseNo = "aTaintCase00132",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->List中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点",
             thisMethodTag = "aTaintCase00132_2",
             thisMethodExpectedResult = false
     )
@@ -418,12 +418,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00133 污点对象跟踪粒度->字段/元素级别->集合元素->Map中部分元素为污点
+     * aTaintCase00133 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点
      */
     @PostMapping(value = "case00133")
     @CaseTag(
             caseNo = "aTaintCase00133",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Map中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点",
             thisMethodTag = "aTaintCase00133",
             thisMethodExpectedResult = true
     )
@@ -445,7 +445,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00133/2")
     @CaseTag(
             caseNo = "aTaintCase00133",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Map中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点",
             thisMethodTag = "aTaintCase00133_2",
             thisMethodExpectedResult = false
     )
@@ -463,12 +463,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00134 污点对象跟踪粒度->字段/元素级别->集合元素->Set中部分元素为污点
+     * aTaintCase00134 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点
      */
     @PostMapping(value = "case00134")
     @CaseTag(
             caseNo = "aTaintCase00134",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Set中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点",
             thisMethodTag = "aTaintCase00134",
             thisMethodExpectedResult = true
     )
@@ -493,7 +493,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00134/2")
     @CaseTag(
             caseNo = "aTaintCase00134",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Set中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点",
             thisMethodTag = "aTaintCase00134",
             thisMethodExpectedResult = false
     )
@@ -516,12 +516,12 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00135 污点对象跟踪粒度->字段/元素级别->集合元素->Queue中部分元素为污点
+     * aTaintCase00135 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点
      */
     @PostMapping(value = "case00135")
     @CaseTag(
             caseNo = "aTaintCase00135",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Queue中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点",
             thisMethodTag = "aTaintCase00135",
             thisMethodExpectedResult = true
     )
@@ -546,7 +546,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00135/2")
     @CaseTag(
             caseNo = "aTaintCase00135",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->Queue中部分元素为污点",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点",
             thisMethodTag = "aTaintCase00135",
             thisMethodExpectedResult = false
     )
@@ -569,13 +569,13 @@ public class AstTaintCase004 {
     }
 
     /**
-     * aTaintCase00136 污点对象跟踪粒度->字段/元素级别->集合元素->集合中部分元素为污点，序列化后再反序列化
+     * aTaintCase00136 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->集合中部分元素为污点，序列化后再反序列化
      */
 
     @PostMapping(value = "case00136")
     @CaseTag(
             caseNo = "aTaintCase00136",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->集合中部分元素为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->集合中部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00136",
             thisMethodExpectedResult = true
     )
@@ -602,7 +602,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00136/2")
     @CaseTag(
             caseNo = "aTaintCase00136",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->集合元素->集合中部分元素为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->集合中部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00136",
             thisMethodExpectedResult = false
     )
@@ -1830,7 +1830,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00142")
     @CaseTag(
             caseNo = "aTaintCase00142",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00142",
             thisMethodExpectedResult = true
     )
@@ -1854,7 +1854,7 @@ public class AstTaintCase004 {
     @PostMapping(value = "case00142/2")
     @CaseTag(
             caseNo = "aTaintCase00142",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->对象字段->多层复杂对象部分字段为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00142_2",
             thisMethodExpectedResult = true
     )

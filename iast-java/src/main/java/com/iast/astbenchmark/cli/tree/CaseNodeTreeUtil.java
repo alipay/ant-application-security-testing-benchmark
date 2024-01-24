@@ -27,7 +27,7 @@ public class CaseNodeTreeUtil {
 
             CaseNode root = CaseNode.builder()
                     .type(CaseNodeType.ROOT)
-                    .id(0)
+                    .id("N0")
                     .deepth(1)
                     .name("IAST引擎能力评估体系(JAVA)")
                     .build();
@@ -114,31 +114,45 @@ public class CaseNodeTreeUtil {
         }
     }
 
+    /**
+     * 添加树节点
+     *
+     * @param parent    父节点
+     * @param deepth    深度
+     * @param row       行数
+     * @param nodesData 节点数据
+     */
     private static void addTreeNode(CaseNode parent, Integer deepth, Integer row, String[] nodesData) {
         deepth = deepth + 1;
+        // 默认节点类型为NODE
         CaseNodeType type = CaseNodeType.NODE;
-        Integer id = Integer.valueOf("" + String.valueOf(row) + String.valueOf(deepth));
+        // 节点id
+        String id = "N" + deepth + "_" + row;
+        // 判断节点类型
         if (nodesData.length <= deepth) {
             type = CaseNodeType.LEAF;
-
         }
         String name = nodesData[deepth - 1];
+        // 获取父节点的子节点列表
         List<CaseNode> children = parent.getChildren();
+        // 如果子节点列表为空，则初始化一个新的子节点列表
         if (CollectionUtils.isEmpty(children)) {
             children = Lists.newArrayList();
             parent.setChildren(children);
         }
         CaseNode currentNode = nodeExit(children, name);
+        // 判断子节点是否存在
         if (currentNode == null) {
             currentNode = buildNode(type, id, deepth, name, parent);
             children.add(currentNode);
         }
+        // 递归添加子节点
         if (type.equals(CaseNodeType.NODE)) {
             addTreeNode(currentNode, deepth, row, nodesData);
         }
     }
 
-    private static CaseNode buildNode(CaseNodeType type, Integer id, Integer deepth, String name, CaseNode parent) {
+    private static CaseNode buildNode(CaseNodeType type, String id, Integer deepth, String name, CaseNode parent) {
         CaseNode node = CaseNode.builder()
                 .type(type)
                 .id(id)

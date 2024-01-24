@@ -56,7 +56,7 @@ public class AstTaintCase001 {
     @GetMapping("case001")
     @CaseTag(
             caseNo = "aTaintCase001",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基础数据类型->int",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->int",
             thisMethodTag = "aTaintCase001",
             thisMethodExpectedResult = true
     )
@@ -81,7 +81,7 @@ public class AstTaintCase001 {
     @GetMapping("case002")
     @CaseTag(
             caseNo ="aTaintCase002",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基础数据类型->char",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->char",
             thisMethodTag = "aTaintCase002",
             thisMethodExpectedResult = true
     )
@@ -105,7 +105,7 @@ public class AstTaintCase001 {
     @GetMapping("case003")
     @CaseTag(
             caseNo ="aTaintCase003",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基础数据类型->byte",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->byte",
             thisMethodTag = "aTaintCase003",
             thisMethodExpectedResult = true
     )
@@ -129,7 +129,7 @@ public class AstTaintCase001 {
     @GetMapping("case004")
     @CaseTag(
             caseNo ="aTaintCase004",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基础数据类型->long",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->long",
             thisMethodTag = "aTaintCase004",
             thisMethodExpectedResult = true
     )
@@ -148,7 +148,7 @@ public class AstTaintCase001 {
     @PostMapping("case005")
     @CaseTag(
             caseNo ="aTaintCase005",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合元素->Map元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合(集合对象全为污点)->Map元素",
             thisMethodTag = "aTaintCase005",
             thisMethodExpectedResult = true
     )
@@ -176,7 +176,7 @@ public class AstTaintCase001 {
     @PostMapping("case006")
     @CaseTag(
             caseNo ="aTaintCase006",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合元素->List元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合(集合对象全为污点)->List元素",
             thisMethodTag = "aTaintCase006",
             thisMethodExpectedResult = true
     )
@@ -205,7 +205,7 @@ public class AstTaintCase001 {
 
     @CaseTag(
             caseNo ="aTaintCase007",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合元素->Queue元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合(集合对象全为污点)->Queue元素",
             thisMethodTag = "aTaintCase007",
             thisMethodExpectedResult = true
     )
@@ -229,7 +229,7 @@ public class AstTaintCase001 {
     @PostMapping("case008")
     @CaseTag(
             caseNo ="aTaintCase008",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合元素->Set元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合(集合对象全为污点)->Set元素",
             thisMethodTag = "aTaintCase008",
             thisMethodExpectedResult = true
     )
@@ -255,7 +255,7 @@ public class AstTaintCase001 {
     @PostMapping("case009")
     @CaseTag(
             caseNo ="aTaintCase009",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->引用类型->基本数据类型的封装类型->Byte",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->Byte",
             thisMethodTag = "aTaintCase009",
             thisMethodExpectedResult = true
     )
@@ -285,7 +285,7 @@ public class AstTaintCase001 {
     @PostMapping("case0010")
     @CaseTag(
             caseNo ="aTaintCase0010",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->引用类型->基本数据类型的封装类型->Integer",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->Integer",
             thisMethodTag = "aTaintCase0010",
             thisMethodExpectedResult = true
     )
@@ -314,7 +314,7 @@ public class AstTaintCase001 {
     @PostMapping("case0011")
     @CaseTag(
             caseNo ="aTaintCase0011",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->引用类型->基本数据类型的封装类型->Long",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->Long",
             thisMethodTag = "aTaintCase0011",
             thisMethodExpectedResult = true
     )
@@ -342,7 +342,7 @@ public class AstTaintCase001 {
     @PostMapping("case0012")
     @CaseTag(
             caseNo ="aTaintCase0012",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->引用类型->基本数据类型的封装类型->Character",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->Character",
             thisMethodTag = "aTaintCase0012",
             thisMethodExpectedResult = true
     )
@@ -370,7 +370,7 @@ public class AstTaintCase001 {
     @PostMapping("case0013")
     @CaseTag(
             caseNo ="aTaintCase0013",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组全为污点)->数组对象String[]",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->数组对象String[]",
             thisMethodTag = "aTaintCase0013",
             thisMethodExpectedResult = true
     )
@@ -398,7 +398,7 @@ public class AstTaintCase001 {
     @PostMapping("case0014")
     @CaseTag(
             caseNo ="aTaintCase0014",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组全为污点)->数组对象char[]",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->数组对象char[]",
             thisMethodTag = "aTaintCase0014",
             thisMethodExpectedResult = true
     )
@@ -430,7 +430,7 @@ public class AstTaintCase001 {
     @PostMapping("case0015")
     @CaseTag(
             caseNo ="aTaintCase0015",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组全为污点)->数组对象byte[]",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->数组对象byte[]",
             thisMethodTag = "aTaintCase0015",
             thisMethodExpectedResult = true
     )
@@ -459,7 +459,7 @@ public class AstTaintCase001 {
     @PostMapping("case0016")
     @CaseTag(
             caseNo ="aTaintCase0016",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组全为污点)->单维数组对象的元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->单维数组对象的元素",
             thisMethodTag = "aTaintCase0016",
             thisMethodExpectedResult = true
     )
@@ -480,7 +480,7 @@ public class AstTaintCase001 {
     @PostMapping("case00926")
     @CaseTag(
             caseNo ="aTaintCase00926",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组全为污点)->多维数组对象的元素",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->多维数组对象的元素",
             thisMethodTag = "aTaintCase00926",
             thisMethodExpectedResult = true
     )
@@ -503,7 +503,7 @@ public class AstTaintCase001 {
 
 
     /**
-     * 对象字段->单层字段(10)@aTaintCase00921
+     * 对象字段->单层字段->10@aTaintCase00921
      *
      * @param cmd
      * @return
@@ -511,7 +511,7 @@ public class AstTaintCase001 {
     @PostMapping("case00921")
     @CaseTag(
             caseNo ="aTaintCase00921",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->10",
             thisMethodTag = "aTaintCase00921",
             thisMethodExpectedResult = true
     )
@@ -529,7 +529,7 @@ public class AstTaintCase001 {
     @PostMapping("case00921/2")
     @CaseTag(
             caseNo ="aTaintCase00921",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->10",
             thisMethodTag = "aTaintCase00921_2",
             thisMethodExpectedResult = true
     )
@@ -547,7 +547,7 @@ public class AstTaintCase001 {
     @PostMapping("case00921/3")
     @CaseTag(
             caseNo ="aTaintCase00921",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->10",
             thisMethodTag = "aTaintCase00921_3",
             thisMethodExpectedResult = true
     )
@@ -563,7 +563,7 @@ public class AstTaintCase001 {
     }
 
     /**
-     * 对象字段->单层字段(100)@aTaintCase00921
+     * 对象字段->单层字段->100@aTaintCase00921
      *
      * @param cmd
      * @return
@@ -571,7 +571,7 @@ public class AstTaintCase001 {
     @PostMapping("case00922")
     @CaseTag(
             caseNo ="aTaintCase00922",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(100)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->100",
             thisMethodTag = "aTaintCase00922",
             thisMethodExpectedResult = true
     )
@@ -590,7 +590,7 @@ public class AstTaintCase001 {
     @PostMapping("case00922/2")
     @CaseTag(
             caseNo ="aTaintCase00922",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(100)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->100",
             thisMethodTag = "aTaintCase00922_2",
             thisMethodExpectedResult = true
     )
@@ -608,7 +608,7 @@ public class AstTaintCase001 {
     @PostMapping("case00922/3")
     @CaseTag(
             caseNo ="aTaintCase00922",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段(100)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->100",
             thisMethodTag = "aTaintCase00922_3",
             thisMethodExpectedResult = true
     )
@@ -625,7 +625,7 @@ public class AstTaintCase001 {
     @PostMapping("case00923")
     @CaseTag(
             caseNo ="aTaintCase00923",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(3)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->3层",
             thisMethodTag = "aTaintCase00923",
             thisMethodExpectedResult = true
     )
@@ -642,7 +642,7 @@ public class AstTaintCase001 {
     @PostMapping("case00923/2")
     @CaseTag(
             caseNo ="aTaintCase00923",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(3)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->3层",
             thisMethodTag = "aTaintCase00923_2",
             thisMethodExpectedResult = true
     )
@@ -659,7 +659,7 @@ public class AstTaintCase001 {
     @PostMapping("case00923/3")
     @CaseTag(
             caseNo ="aTaintCase00923",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(3)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->3层",
             thisMethodTag = "aTaintCase00923_3",
             thisMethodExpectedResult = true
     )
@@ -677,7 +677,7 @@ public class AstTaintCase001 {
     @PostMapping("case00924")
     @CaseTag(
             caseNo ="aTaintCase00924",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->10层",
             thisMethodTag = "aTaintCase00924",
             thisMethodExpectedResult = true
     )
@@ -694,7 +694,7 @@ public class AstTaintCase001 {
     @PostMapping("case00924/2")
     @CaseTag(
             caseNo ="aTaintCase00924",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->10层",
             thisMethodTag = "aTaintCase00924_2",
             thisMethodExpectedResult = true
     )
@@ -711,7 +711,7 @@ public class AstTaintCase001 {
     @PostMapping("case00924/3")
     @CaseTag(
             caseNo ="aTaintCase00924",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段(10)",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->10层",
             thisMethodTag = "aTaintCase00924_3",
             thisMethodExpectedResult = true
     )
@@ -729,7 +729,7 @@ public class AstTaintCase001 {
     @PostMapping("case00925")
     @CaseTag(
             caseNo ="aTaintCase00925",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->污点来自父类",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->污点为父类字段",
             thisMethodTag = "aTaintCase00925",
             thisMethodExpectedResult = true
     )
@@ -746,7 +746,7 @@ public class AstTaintCase001 {
     @PostMapping("case00925/2")
     @CaseTag(
             caseNo ="aTaintCase00925",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->污点来自父类",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->污点为父类字段",
             thisMethodTag = "aTaintCase00925_2",
             thisMethodExpectedResult = true
     )

@@ -1,21 +1,16 @@
 package com.iast.astbenchmark.analyser.cache;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.IoUtil;
-import cn.hutool.core.io.resource.ClassPathResource;
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONUtil;
-import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
 import com.google.common.collect.Maps;
+import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
 import com.iast.astbenchmark.cases.AstTaintCase001;
 import com.iast.astbenchmark.cases.AstTaintCase002;
 import com.iast.astbenchmark.cases.AstTaintCase003;
 import com.iast.astbenchmark.cases.AstTaintCase004;
+import com.iast.astbenchmark.cli.tree.CaseNodeTreeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.nio.charset.Charset;
 import java.util.Map;
 
 import static com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil.buildCaseMap;
@@ -48,6 +43,8 @@ public class CasetargeCache {
                 buildCaseMap(AstTaintCase002.class);
                 buildCaseMap(AstTaintCase003.class);
                 buildCaseMap(AstTaintCase004.class);
+                CaseStuctCache.root = CaseNodeTreeUtil.initRoot();
+                CaseStuctCache.leafData=CaseNodeTreeUtil.leafMap(CaseStuctCache.root);
             } catch (Exception e) {
                 log.error("ERROR : Case加载失败，请检查您的case_target_list.json:{}", e);
             }
