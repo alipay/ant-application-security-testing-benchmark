@@ -19,7 +19,7 @@ public class MermindUtil {
         //System.out.println(mermindScript);
         //mermind 脑图,这个版本格式有点乱
         printTree(CaseStuctCache.getRoot(),CaseStuctCache.getRoot().getDeepth());
-        //FileUtil.writeUtf8String("java引擎评价体系.md", mermindScript);
+        //FileUtil.writeUtf8String("JAVA.md", mermindScript);
     }
     public static void printTree(CaseNode node, int depth) {
         if (node == null) {
