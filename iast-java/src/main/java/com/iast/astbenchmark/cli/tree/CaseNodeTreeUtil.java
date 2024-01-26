@@ -27,7 +27,7 @@ public class CaseNodeTreeUtil {
 
             CaseNode root = CaseNode.builder()
                     .type(CaseNodeType.ROOT)
-                    .id("N0")
+                    .id("ROOT")
                     .deepth(1)
                     .name("IAST引擎能力评估体系(JAVA)")
                     .build();
@@ -47,51 +47,51 @@ public class CaseNodeTreeUtil {
 
     }
 
-    //public static CaseNode initRoot() {
-    //    BufferedReader reader = null;
-    //    InputStream inputStream = null;
-    //    try {
-    //        inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
-    //        reader = new BufferedReader(new InputStreamReader(inputStream));
-    //        List<String> lines = Lists.newArrayList();
-    //        String line;
-    //        while ((line = reader.readLine()) != null) {
-    //            lines.add(line);
-    //        }
-    //        //= FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
-    //        CasetargeCache.initNow();
-    //        CaseNode root = CaseNode.builder()
-    //                .type(CaseNodeType.ROOT)
-    //                .id(0)
-    //                .deepth(1)
-    //                .name("IAST引擎能力评估体系(JAVA)")
-    //                .build();
-    //
-    //        for (int row = 0; row < lines.size(); row++) {
-    //            if (StrUtil.isEmpty(lines.get(row)) || lines.get(row).startsWith("#")) {
-    //                continue;
-    //            }
-    //            String[] nodesData = lines.get(row).split("->");
-    //            addTreeNode(root, 0, row + 1, nodesData);
-    //        }
-    //        return root;
-    //    } catch (Exception e) {
-    //        log.error("初始化异常:{}", e);
-    //    } finally {
-    //        try {
-    //            if (reader != null) {
-    //                reader.close();
-    //            }
-    //            if (inputStream != null) {
-    //                inputStream.close();
-    //            }
-    //        } catch (IOException e) {
-    //
-    //        }
-    //
-    //    }
-    //    return null;
-    //}
+    public static CaseNode initRoot2() {
+        BufferedReader reader = null;
+        InputStream inputStream = null;
+        try {
+            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
+            reader = new BufferedReader(new InputStreamReader(inputStream));
+            List<String> lines = Lists.newArrayList();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+            //= FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
+            CasetargeCache.initNow();
+            CaseNode root = CaseNode.builder()
+                    .type(CaseNodeType.ROOT)
+                    .id("ROOT")
+                    .deepth(1)
+                    .name("IAST引擎能力评估体系(JAVA)")
+                    .build();
+
+            for (int row = 0; row < lines.size(); row++) {
+                if (StrUtil.isEmpty(lines.get(row)) || lines.get(row).startsWith("#")) {
+                    continue;
+                }
+                String[] nodesData = lines.get(row).split("->");
+                addTreeNode(root, 0, row + 1, nodesData);
+            }
+            return root;
+        } catch (Exception e) {
+            log.error("初始化异常:{}", e);
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+                if (inputStream != null) {
+                    inputStream.close();
+                }
+            } catch (IOException e) {
+
+            }
+
+        }
+        return null;
+    }
 
     public static Map<String, CaseNode> leafMap(CaseNode root) {
         Map<String, CaseNode> leafMap = Maps.newLinkedHashMap();
@@ -127,7 +127,7 @@ public class CaseNodeTreeUtil {
         // 默认节点类型为NODE
         CaseNodeType type = CaseNodeType.NODE;
         // 节点id
-        String id = "N" + deepth + "_" + row;
+        String id = "L" + deepth +"H"+ row;
         // 判断节点类型
         if (nodesData.length <= deepth) {
             type = CaseNodeType.LEAF;

@@ -322,7 +322,7 @@ public class AstTaintCase002 {
     @PostMapping("case0033")
     @CaseTag(
             caseNo ="aTaintCase0033",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->json@RequestBody",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->json/RequestBody",
             thisMethodTag = "aTaintCase0033",
             thisMethodExpectedResult = true
     )

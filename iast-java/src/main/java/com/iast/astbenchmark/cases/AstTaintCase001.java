@@ -29,9 +29,9 @@ public class AstTaintCase001 {
      */
     @PostMapping ("case00901")
     @CaseTag(
-            caseNo = "aTaintCase99001",
+            caseNo = "aTaintCase00901",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->字符串对象->String",
-            thisMethodTag = "aTaintCase99001",
+            thisMethodTag = "aTaintCase00901",
             thisMethodExpectedResult = true
     )
     public Map<String, Object> aTaintCase00901(@RequestParam String cmd) {

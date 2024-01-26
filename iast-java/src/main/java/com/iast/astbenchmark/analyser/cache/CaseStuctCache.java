@@ -11,6 +11,7 @@ public class CaseStuctCache {
     protected static CaseNode root;
     protected static Map<String, CaseNode> leafData ;
 
+
     public static CaseNode getLeafByCaseNo(String caseNo){
         try {
             return leafData.get(caseNo);

@@ -16,9 +16,9 @@ public class MermindUtil {
         mermindScript = "```mermind\n";
         getGraph(CaseStuctCache.getRoot());
         //mermind graph脑图
-        //System.out.println(mermindScript);
+        System.out.println(mermindScript);
         //mermind 脑图,这个版本格式有点乱
-        printTree(CaseStuctCache.getRoot(),CaseStuctCache.getRoot().getDeepth());
+        //printTree(CaseStuctCache.getRoot(),CaseStuctCache.getRoot().getDeepth());
         //FileUtil.writeUtf8String("JAVA.md", mermindScript);
     }
     public static void printTree(CaseNode node, int depth) {
@@ -62,17 +62,19 @@ public class MermindUtil {
             String parent = node.getParent().getId() + "[\"" + node.getParent().getName() + "\"]";
             String current = node.getId() + "[\"" + node.getName() + "\"]";
 
+            if (!StringUtils.isEmpty(node.getName())) {
+                if (node.getLeafData() != null) {
+                    current = node.getLeafData().getCaseNo() + "[\"" + node.getName() + "\"]";
+                }
+                mermindScript = mermindScript + parent + "==>" + current + "\n";
+            }
             if (!CollectionUtils.isEmpty(node.getChildren())) {
                 for (CaseNode child : node.getChildren()) {
                     getGraph(child);
                 }
             }
-            if (node.getLeafData() != null) {
-                current = node.getLeafData().getCaseNo() + "[\"" + node.getName() + "\"]";
-            }
-            if (!StringUtils.isEmpty(node.getName())) {
-                mermindScript = mermindScript + parent + "==>" + current + "\n";
-            }
+
+
 
         }
 
