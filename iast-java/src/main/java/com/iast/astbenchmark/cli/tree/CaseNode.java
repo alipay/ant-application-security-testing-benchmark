@@ -9,15 +9,11 @@ import java.util.List;
 @Data
 @Builder
 public class CaseNode {
-    /**
-     *  类型
-     */
-    private CaseNodeType type;
 
     /**
      * 基础数据
      */
-    private Integer id;
+    private String id;
     private String name;
     private Integer deepth;
 
@@ -26,6 +22,12 @@ public class CaseNode {
      */
     private CaseNode parent;
     private List<CaseNode> children;
+
+    /**
+     *  类型
+     */
+    private CaseNodeType type;
+
 
     /**
      * 以上为存储结构
