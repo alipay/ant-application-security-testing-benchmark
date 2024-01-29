@@ -6,8 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.iast.astbenchmark.analyser.service.DataAnalysisService;
 import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
 import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
-import com.iast.astbenchmark.analyser.factory.stategy.IastCaseDataTransfer;
-import com.iast.astbenchmark.analyser.factory.stategy.SeekerCaseDataTransfer;
+import com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,5 +50,10 @@ public class TestController {
             throw new RuntimeException(e);
         }
         System.out.println(res);
+    }
+
+    @PostMapping(value = "process")
+    public void test004() {
+        AnnotationProcessorUtil.processAnnotations(AstTaintCase001.class);
     }
 }
