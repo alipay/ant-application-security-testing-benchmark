@@ -29,7 +29,7 @@ public class BS00113Controller extends HttpServlet {
         param = param.replace("\n", "").replace("\r", "").replace("\"", "\\\"");
         param = param.replace("<", "").replace(">", "");
         try {
-            response.getWriter().println(param + "{\"username\":\"test\"}");
+            response.getWriter().println(param + "({\"username\":\"test\"})");
         } catch (Exception e) {
             response.getWriter().println(e.toString());
             return;
