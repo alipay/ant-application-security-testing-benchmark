@@ -1,4 +1,4 @@
-GET /jsonp/BS00113 HTTP/1.1
+GET /jsonp/BS00113?BS00113=callback HTTP/1.1
 Host: localhost
 Connection: close
 Accept-Encoding: gzip, deflate
