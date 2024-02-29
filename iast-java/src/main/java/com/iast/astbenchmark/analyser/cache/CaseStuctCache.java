@@ -8,12 +8,9 @@ import java.util.Map;
 
 @Slf4j
 public class CaseStuctCache {
-    private static CaseNode root;
-    private static Map<String, CaseNode> leafData ;
-    static {
-        root = CaseNodeTreeUtil.initRoot();
-        leafData=CaseNodeTreeUtil.leafMap(root);
-    }
+    protected static CaseNode root;
+    protected static Map<String, CaseNode> leafData ;
+
 
     public static CaseNode getLeafByCaseNo(String caseNo){
         try {
@@ -31,9 +28,9 @@ public class CaseStuctCache {
         return root;
     }
 
-    public static void main(String[] args) {
-        for (CaseNode value : CaseStuctCache.getAllLeaf().values()) {
-            System.out.println(value.getFullName());
-        }
-    }
+    //public static void main(String[] args) {
+    //    for (CaseNode value : CaseStuctCache.getAllLeaf().values()) {
+    //        System.out.println(value.getFullName());
+    //    }
+    //}
 }
