@@ -1,16 +1,32 @@
 package com.iast.astbenchmark.analyser.bean.consts;
 
+import org.apache.commons.lang.StringUtils;
+
 public enum CaseTypeEnum {
-    T001("污点对象完整度能力检测"),
-    T002("污点链路完整度能力检测"),
-    T003("异步跟踪能力检测"),
-    T004("跨进程跟踪能力检测"),
-    T005("污点准确度能力检测");
+    T001("IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度","污点对象完整度能力检测"),
+    T002("IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度","污点链路完整度能力检测"),
+    T003("IAST引擎能力评估体系(JAVA)->完整度->异步跟踪能力","异步跟踪能力检测"),
+    T004("IAST引擎能力评估体系(JAVA)->完整度->跨进城跟踪能力","跨进程跟踪能力检测"),
+    T005("IAST引擎能力评估体系(JAVA)->准确度","污点准确度能力检测");
     String desc;
-    CaseTypeEnum(String desc){
+
+    String tag;
+    CaseTypeEnum(String tag,String desc){
         this.desc=desc;
+        this.tag=tag;
     }
 
+    public static String getDescByTag(String data) {
+        if(StringUtils.isEmpty(data)){
+            return data;
+        }
+        for (CaseTypeEnum caseTypeEnum : values()) {
+            if (data.contains(caseTypeEnum.getTag())) {
+                return caseTypeEnum.name();
+            }
+        }
+        return null;
+    }
 
     public String getDesc() {
         return desc;
@@ -18,5 +34,13 @@ public enum CaseTypeEnum {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }
