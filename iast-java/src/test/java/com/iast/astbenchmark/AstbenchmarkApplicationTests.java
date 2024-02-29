@@ -905,6 +905,7 @@ class AstbenchmarkApplicationTests {
     @Test
     void aTaintCase00125() {
         HttpResponse response = doPost(url_root + "ataint/case00125?cmd1=cd%20/&cmd2=ls");
+        HttpResponse response2 = doPost(url_root + "ataint/case00125/2?cmd1=&cmd2=");
 
         System.out.println(response.body());
     }
