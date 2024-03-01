@@ -8,6 +8,7 @@ import com.iast.astbenchmark.analyser.service.ConfigService;
 import com.iast.astbenchmark.analyser.service.DataAnalysisService;
 import com.iast.astbenchmark.analyser.util.MermindUtil;
 import com.iast.astbenchmark.cli.test.AutoRunTest;
+
 import com.iast.astbenchmark.cli.xmind.XMindReaderUtil;
 import com.iast.astbenchmark.cli.xmind.XmindUtil;
 import lombok.extern.slf4j.Slf4j;
