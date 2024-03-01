@@ -8,6 +8,7 @@ import com.iast.astbenchmark.analyser.service.ConfigService;
 import com.iast.astbenchmark.analyser.service.DataAnalysisService;
 import com.iast.astbenchmark.analyser.util.MermindUtil;
 import com.iast.astbenchmark.cli.test.AutoRunTest;
+import com.iast.astbenchmark.cli.xmind.XMindReaderUtil;
 import com.iast.astbenchmark.cli.xmind.XmindUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.jline.utils.AttributedString;
@@ -151,22 +152,33 @@ public class IastBenchmarkCommand {
         }
     }
 
-    @ShellMethod("导出评价体系脑图(mermind格式) -o :mermind scripts to md file")
-    public String mermind(@ShellOption(defaultValue = "", value = "-o") String resultFile) {
+    @ShellMethod("导出评价体系脑图(mermind格式) -o :mermind scripts to md file -x : mermind scripts from xmind file")
+    public String mermind(@ShellOption(defaultValue = "", value = "-o") String resultFile,
+                          @ShellOption(defaultValue = "", value = "-x") String xmindFile) {
 
         try {
-            if(StrUtil.isNotEmpty(resultFile)&&resultFile.endsWith(".md")){
-                return "ERROR:请输入以md结尾的markdown文档";
+            if(StrUtil.isNotEmpty(xmindFile)){
+                if(!xmindFile.endsWith(".xmind")){
+                    return "ERROR:请输入以xmind结尾的xmind文件路径";
+                }
+                if(!FileUtil.isFile(xmindFile)){
+                    return "ERROR:请检查xmind文件是否存在";
+                }
+                return XMindReaderUtil.convertXmindToMermind(xmindFile);
+            }else {
+                if(StrUtil.isNotEmpty(resultFile)&&!resultFile.endsWith(".md")){
+                    return "ERROR:请输入以md结尾的markdown文档";
+                }
+                String res = MermindUtil.printMermindScript();
+                if(StrUtil.isNotEmpty(resultFile)){
+                    FileUtil.writeString(res, resultFile, Charset.forName("utf-8"));
+                    return "结果已写入文件" + resultFile + "中,请查看";
+                }
+                return res;
             }
-            String res = MermindUtil.printMermindScript();
-            if(StrUtil.isNotEmpty(resultFile)){
-                FileUtil.writeString(res, resultFile, Charset.forName("utf-8"));
-                return "结果已写入文件" + resultFile + "请查看";
-            }
-            return res;
         } catch (Exception e) {
-            log.error("跑测异常:{}", e);
-            return "ERROR:跑测异常";
+            log.error("异常:{}", e);
+            return "ERROR:异常";
         }
     }
 
