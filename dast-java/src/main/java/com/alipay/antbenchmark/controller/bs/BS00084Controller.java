@@ -14,6 +14,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.HashMap;
 
 @Controller
 @RequestMapping(value = "/ssrf")
@@ -26,7 +28,22 @@ public class BS00084Controller extends HttpServlet {
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        String param = request.getParameter("BS00084");
+        BufferedReader reader = request.getReader();
+        String line;
+        StringBuilder builder = new StringBuilder();
+        while ((line = reader.readLine()) != null) {
+            builder.append(line);
+        }
+        String[] pairs = builder.toString().split("&");
+        HashMap<String, String> params = new HashMap<>();
+        for (String pair : pairs) {
+            String[] parts = pair.split("=");
+            String key = parts[0];
+            String value = parts.length > 1 ? parts[1] : "";
+            params.put(key, value);
+        }
+        String param = params.get("BS00084");
+        param = java.net.URLDecoder.decode(param, StandardCharsets.UTF_8.toString());
         StringBuffer responsestr = new StringBuffer();
         if (param.startsWith("https://www.alipay.com")) {
             try {
