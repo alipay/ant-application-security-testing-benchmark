@@ -1,6 +1,7 @@
 package com.iast.astbenchmark.analyser.factory.stategy.iast;
 
 import com.iast.astbenchmark.analyser.bean.BaseOriginalDataBean;
+
 import lombok.Data;
 
 @Data

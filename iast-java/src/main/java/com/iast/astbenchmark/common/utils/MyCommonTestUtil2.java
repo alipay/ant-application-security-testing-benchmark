@@ -5,20 +5,19 @@ package com.iast.astbenchmark.common.utils;
  */
 public class MyCommonTestUtil2 {
 
-
-    public  String traceDeepth(String data, int deepth, final int maxDeepth) {
+    public String traceDeepth(String data, int deepth, final int maxDeepth) {
         if (deepth >= maxDeepth) {
             return data;
         }
-        for (int i = 0; i < maxDeepth;i++) {
+        for (int i = 0; i < maxDeepth; i++) {
             data = new StringBuilder().append(data).append(i).toString();
         }
         deepth++;
         return traceDeepth(data, deepth, maxDeepth);
     }
 
-    public  String traceDeepth(String data, final int maxDeepth) {
-        for (int i = 0; i < maxDeepth;i++) {
+    public String traceDeepth(String data, final int maxDeepth) {
+        for (int i = 0; i < maxDeepth; i++) {
             data = new StringBuilder().append(data).append(i).toString();
         }
         return data;

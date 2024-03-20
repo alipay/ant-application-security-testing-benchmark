@@ -1,17 +1,15 @@
 package com.iast.astbenchmark.analyser.bean.consts;
 
 public enum VendorEnum {
-    IAST("IAST","IAST"),
-    SEEKER("SEEKER","SEEKER"),
-    DONGTAI("DONGTAI","DONGTAI"),
-    OPENRASP("OPENRASP","OPENRASP"),
-    XMIRROR("XMIRROR","XMIRROR")
-    ;
+    IAST("IAST", "IAST"), SEEKER("SEEKER", "SEEKER"), DONGTAI("DONGTAI", "DONGTAI"), OPENRASP("OPENRASP", "OPENRASP"),
+    XMIRROR("XMIRROR", "XMIRROR");
+
     private String code;
     private String description;
-    VendorEnum(String code,String description){
-        this.code =code;
-        this.description=description;
+
+    VendorEnum(String code, String description) {
+        this.code = code;
+        this.description = description;
     }
 
     public String getCode() {

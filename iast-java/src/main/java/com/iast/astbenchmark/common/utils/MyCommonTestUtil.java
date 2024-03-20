@@ -1,16 +1,18 @@
 package com.iast.astbenchmark.common.utils;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.io.IoUtil;
-import com.iast.astbenchmark.cases.bean.SourceTestWithConstract01Bean;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-//import sun.misc.Unsafe;
-
-import java.io.*;
-//import java.lang.reflect.Field;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.iast.astbenchmark.cases.bean.SourceTestWithConstract01Bean;
+
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.io.IoUtil;
 
 /**
  * 创建一些测试方法或者工具方法的支撑测试用例
@@ -31,12 +33,11 @@ public class MyCommonTestUtil {
     }
 
     public static String traceDeepth(String data, final int maxDeepth) {
-        for (int i = 0; i < maxDeepth;i++) {
+        for (int i = 0; i < maxDeepth; i++) {
             data = new StringBuilder().append(data).append(i).toString();
         }
         return data;
     }
-
 
     /**
      * 供反射调用
@@ -45,52 +46,51 @@ public class MyCommonTestUtil {
         return data + "reflect";
     }
 
-    //    /**------------------------
-    //     * 构造使用Native方法
-    //     */
-    //    private static Unsafe unsafe = null;
-    //    private static Field getUnsafe = null;
+    // /**------------------------
+    // * 构造使用Native方法
+    // */
+    // private static Unsafe unsafe = null;
+    // private static Field getUnsafe = null;
     //
-    //    static {
-    //        try {
-    //            getUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
-    //            getUnsafe.setAccessible(true);
-    //            unsafe = (Unsafe) getUnsafe.get(null);
-    //        } catch (NoSuchFieldException e) {
-    //            e.printStackTrace();
-    //        } catch (IllegalAccessException e) {
-    //            e.printStackTrace();
-    //        }
+    // static {
+    // try {
+    // getUnsafe = Unsafe.class.getDeclaredField("theUnsafe");
+    // getUnsafe.setAccessible(true);
+    // unsafe = (Unsafe) getUnsafe.get(null);
+    // } catch (NoSuchFieldException e) {
+    // e.printStackTrace();
+    // } catch (IllegalAccessException e) {
+    // e.printStackTrace();
+    // }
     //
-    //    }
+    // }
     //
     //
-    //    private static class Data {
-    //        public Long getId() {
-    //            return id;
-    //        }
+    // private static class Data {
+    // public Long getId() {
+    // return id;
+    // }
     //
-    //        public void setId(Long id) {
-    //            this.id = id;
-    //        }
+    // public void setId(Long id) {
+    // this.id = id;
+    // }
     //
-    //        private Long id;
+    // private Long id;
     //
-    //    }
-    //    public static long unsafeForNative(long  inData) throws NoSuchFieldException {
-    //        Data data = new Data();
-    //        data.setId(inData);
-    //        Field id = data.getClass().getDeclaredField("id");
-    //        long l = unsafe.objectFieldOffset(id);
-    //        id.setAccessible(true);
+    // }
+    // public static long unsafeForNative(long inData) throws NoSuchFieldException {
+    // Data data = new Data();
+    // data.setId(inData);
+    // Field id = data.getClass().getDeclaredField("id");
+    // long l = unsafe.objectFieldOffset(id);
+    // id.setAccessible(true);
     //
-    //        unsafe.compareAndSwapLong(data,1L,1L,2L);
-    //        return data.getId();
-    //    }
+    // unsafe.compareAndSwapLong(data,1L,1L,2L);
+    // return data.getId();
+    // }
 
     /**
-     * ------------------------
-     * 构造使用Native方法
+     * ------------------------ 构造使用Native方法
      */
 
     public static String concat(String str1, String str2) {

@@ -1,9 +1,8 @@
 package com.iast.astbenchmark.cli.xmind.reader.bean;
 
+import java.util.List;
 
 import lombok.Data;
-
-import java.util.List;
 
 /**
  * Auto-generated: 2020-03-24 11:24:27

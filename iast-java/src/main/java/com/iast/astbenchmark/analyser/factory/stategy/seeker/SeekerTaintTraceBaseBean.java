@@ -1,6 +1,7 @@
 package com.iast.astbenchmark.analyser.factory.stategy.seeker;
 
 import com.iast.astbenchmark.analyser.bean.BaseDetectedDataBean;
+
 import lombok.Data;
 import lombok.ToString;
 

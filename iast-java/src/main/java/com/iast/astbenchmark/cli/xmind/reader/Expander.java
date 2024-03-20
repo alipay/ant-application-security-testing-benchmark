@@ -1,23 +1,20 @@
 package com.iast.astbenchmark.cli.xmind.reader;
 
-import org.apache.commons.compress.archivers.ArchiveEntry;
-import org.apache.commons.compress.archivers.ArchiveException;
-import org.apache.commons.compress.archivers.ArchiveInputStream;
-import org.apache.commons.compress.archivers.ArchiveOutputStream;
-import org.apache.commons.compress.archivers.ArchiveStreamFactory;
-import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
-import org.apache.commons.compress.archivers.zip.ZipArchiveInputStream;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import org.apache.commons.compress.archivers.ArchiveEntry;
+import org.apache.commons.compress.archivers.ArchiveException;
+import org.apache.commons.compress.archivers.ArchiveInputStream;
+import org.apache.commons.compress.archivers.ArchiveStreamFactory;
+
 public class Expander {
 
     public void expand(File source, File destination) throws IOException, ArchiveException {
-        try (FileInputStream fis = new FileInputStream(source);
-             ArchiveInputStream ais = new ArchiveStreamFactory().createArchiveInputStream(ArchiveStreamFactory.ZIP, fis)) {
+        try (FileInputStream fis = new FileInputStream(source); ArchiveInputStream ais =
+            new ArchiveStreamFactory().createArchiveInputStream(ArchiveStreamFactory.ZIP, fis)) {
 
             ArchiveEntry entry;
             while ((entry = ais.getNextEntry()) != null) {

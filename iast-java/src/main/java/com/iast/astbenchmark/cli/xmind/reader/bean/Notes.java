@@ -1,6 +1,5 @@
 package com.iast.astbenchmark.cli.xmind.reader.bean;
 
-
 import lombok.Data;
 
 /**
@@ -13,6 +12,5 @@ import lombok.Data;
 public class Notes {
 
     private String content;
-
 
 }

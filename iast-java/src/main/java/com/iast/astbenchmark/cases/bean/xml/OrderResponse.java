@@ -12,8 +12,7 @@ public class OrderResponse {
 
     public String msg;
 
-    public OrderResponse() {
-    }
+    public OrderResponse() {}
 
     public OrderResponse(String orderId, String sysId, String errorCode, String msg) {
         this.orderId = orderId;

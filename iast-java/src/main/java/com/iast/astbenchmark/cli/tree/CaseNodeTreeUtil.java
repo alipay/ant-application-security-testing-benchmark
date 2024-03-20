@@ -1,13 +1,5 @@
 package com.iast.astbenchmark.cli.tree;
 
-import cn.hutool.core.util.StrUtil;
-import com.google.common.collect.Lists;
-import com.google.common.collect.Maps;
-import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
-import com.iast.astbenchmark.analyser.cache.CasetargeCache;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.CollectionUtils;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,21 +8,26 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import org.springframework.util.CollectionUtils;
+
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
+import com.iast.astbenchmark.analyser.cache.CasetargeCache;
+
+import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 public class CaseNodeTreeUtil {
     public static CaseNode initRoot() {
         try {
-          //  CasetargeCache.initNow();
-            List<String> lines =
-                    CasetargeCache.getAllCases().values().stream()
-                            .map(e -> e.getCaseDesc() + "@" + e.getCaseNo()).collect(Collectors.toList());
+            // CasetargeCache.initNow();
+            List<String> lines = CasetargeCache.getAllCases().values().stream()
+                .map(e -> e.getCaseDesc() + "@" + e.getCaseNo()).collect(Collectors.toList());
 
-            CaseNode root = CaseNode.builder()
-                    .type(CaseNodeType.ROOT)
-                    .id("ROOT")
-                    .deepth(1)
-                    .name("IAST引擎能力评估体系(JAVA)")
-                    .build();
+            CaseNode root =
+                CaseNode.builder().type(CaseNodeType.ROOT).id("ROOT").deepth(1).name("IAST引擎能力评估体系(JAVA)").build();
 
             for (int row = 0; row < lines.size(); row++) {
                 if (StrUtil.isEmpty(lines.get(row)) || lines.get(row).startsWith("#")) {
@@ -58,14 +55,10 @@ public class CaseNodeTreeUtil {
             while ((line = reader.readLine()) != null) {
                 lines.add(line);
             }
-            //= FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
+            // = FileUtil.readLines("config/caseNodeTree.txt", Charset.forName("utf-8"));
             CasetargeCache.initNow();
-            CaseNode root = CaseNode.builder()
-                    .type(CaseNodeType.ROOT)
-                    .id("ROOT")
-                    .deepth(1)
-                    .name("IAST引擎能力评估体系(JAVA)")
-                    .build();
+            CaseNode root =
+                CaseNode.builder().type(CaseNodeType.ROOT).id("ROOT").deepth(1).name("IAST引擎能力评估体系(JAVA)").build();
 
             for (int row = 0; row < lines.size(); row++) {
                 if (StrUtil.isEmpty(lines.get(row)) || lines.get(row).startsWith("#")) {
@@ -117,9 +110,9 @@ public class CaseNodeTreeUtil {
     /**
      * 添加树节点
      *
-     * @param parent    父节点
-     * @param deepth    深度
-     * @param row       行数
+     * @param parent 父节点
+     * @param deepth 深度
+     * @param row 行数
      * @param nodesData 节点数据
      */
     private static void addTreeNode(CaseNode parent, Integer deepth, Integer row, String[] nodesData) {
@@ -127,7 +120,7 @@ public class CaseNodeTreeUtil {
         // 默认节点类型为NODE
         CaseNodeType type = CaseNodeType.NODE;
         // 节点id
-        String id = "L" + deepth +"H"+ row;
+        String id = "L" + deepth + "H" + row;
         // 判断节点类型
         if (nodesData.length <= deepth) {
             type = CaseNodeType.LEAF;
@@ -153,13 +146,7 @@ public class CaseNodeTreeUtil {
     }
 
     private static CaseNode buildNode(CaseNodeType type, String id, Integer deepth, String name, CaseNode parent) {
-        CaseNode node = CaseNode.builder()
-                .type(type)
-                .id(id)
-                .deepth(deepth)
-                .name(name)
-                .parent(parent)
-                .build();
+        CaseNode node = CaseNode.builder().type(type).id(id).deepth(deepth).name(name).parent(parent).build();
         if (type.equals(CaseNodeType.LEAF)) {
             String split = "@";
             if (name.contains(split)) {
@@ -182,48 +169,45 @@ public class CaseNodeTreeUtil {
         return null;
     }
 
-    //public static void main(String[] args) {
-    //    BufferedReader reader = null;
-    //    InputStream inputStream = null;
-    //    try {
-    //        inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
-    //        reader = new BufferedReader(new InputStreamReader(inputStream));
-    //        List<String> lines = Lists.newArrayList();
-    //        String line;
-    //        while ((line = reader.readLine()) != null) {
-    //            if (StrUtil.isNotEmpty(line) && line.contains("@")) {
-    //                String[] tags = line.split("@");
-    //                Arrays.asList(tags);
-    //                String caseNo = tags[1];
-    //                String caseFullName = tags[0];
-    //                System.out.println("    @CaseTag(\n"
-    //                        + "            caseNo =\"" + caseNo + "\",\n"
-    //                        + "            caseFullName = \"" + caseFullName + "\",\n"
-    //                        + "            thisMethodTag = \"" + caseNo + "\",\n"
-    //                        + "            thisMethodExpectedResult = true\n"
-    //                        + "    )");
-    //            }
-    //            System.out.println();
+    // public static void main(String[] args) {
+    // BufferedReader reader = null;
+    // InputStream inputStream = null;
+    // try {
+    // inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
+    // reader = new BufferedReader(new InputStreamReader(inputStream));
+    // List<String> lines = Lists.newArrayList();
+    // String line;
+    // while ((line = reader.readLine()) != null) {
+    // if (StrUtil.isNotEmpty(line) && line.contains("@")) {
+    // String[] tags = line.split("@");
+    // Arrays.asList(tags);
+    // String caseNo = tags[1];
+    // String caseFullName = tags[0];
+    // System.out.println(" @CaseTag(\n"
+    // + " caseNo =\"" + caseNo + "\",\n"
+    // + " caseFullName = \"" + caseFullName + "\",\n"
+    // + " thisMethodTag = \"" + caseNo + "\",\n"
+    // + " thisMethodExpectedResult = true\n"
+    // + " )");
+    // }
+    // System.out.println();
     //
-    //        }
+    // }
     //
-    //    } catch (Exception e) {
-    //        log.error("初始化异常:{}", e);
-    //    } finally {
-    //        try {
-    //            if (reader != null) {
-    //                reader.close();
-    //            }
-    //            if (inputStream != null) {
-    //                inputStream.close();
-    //            }
-    //        } catch (IOException e) {
+    // } catch (Exception e) {
+    // log.error("初始化异常:{}", e);
+    // } finally {
+    // try {
+    // if (reader != null) {
+    // reader.close();
+    // }
+    // if (inputStream != null) {
+    // inputStream.close();
+    // }
+    // } catch (IOException e) {
     //
-    //        }
+    // }
     //
-    //    }
-    //}
+    // }
+    // }
 }
-
-
-

@@ -29,13 +29,11 @@ public class DongtaiCaseDataTransfer extends CaseDataTransfer {
 
     public Map<String, BaseOriginalDataBean> extrapResultMap(String path) {
         /**
-         *  Step1 ->获取检出结果并解析；
-         *  指定检测结果目录 以及检测标记
+         * Step1 ->获取检出结果并解析； 指定检测结果目录 以及检测标记
          */
         List<DongTaintItemBean> taintItemBeans = getReportLogArray(path);
         /**
-         *  Step2 -> 抽取Tag
-         *  默认使用MethedName作为Case的tag进行标记
+         * Step2 -> 抽取Tag 默认使用MethedName作为Case的tag进行标记
          */
         return convertToTagMap(taintItemBeans);
     }
@@ -44,9 +42,10 @@ public class DongtaiCaseDataTransfer extends CaseDataTransfer {
         if (CollectionUtils.isEmpty(logsBeans)) {
             return Maps.newHashMap();
         }
-        return logsBeans.stream().filter(e -> StrUtil.isNotEmpty(e.getBottom_stack())
-                        && StrUtil.isNotEmpty(e.getTop_stack()) && StrUtil.isNotEmpty(e.getUri()))
-                .collect(Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
+        return logsBeans.stream()
+            .filter(e -> StrUtil.isNotEmpty(e.getBottom_stack()) && StrUtil.isNotEmpty(e.getTop_stack())
+                && StrUtil.isNotEmpty(e.getUri()))
+            .collect(Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
     }
 
     private String getTagKey(DongTaintItemBean baseData) {

@@ -32,22 +32,22 @@ public class IastCaseDataTransfer extends CaseDataTransfer {
     public Map<String, BaseOriginalDataBean> extrapResultMap(String path) {
 
         /**
-         *  Step1 ->获取检出结果并解析；
-         *  指定检测结果目录 以及检测标记
+         * Step1 ->获取检出结果并解析； 指定检测结果目录 以及检测标记
          */
-        List<IastSlsBaseMessageBean> logBeans = getReportLog(configService.getIastReportId(), configService.getIastDetectionPath());
+        List<IastSlsBaseMessageBean> logBeans =
+            getReportLog(configService.getIastReportId(), configService.getIastDetectionPath());
         /**
-         *  Step2 -> 抽取Tag
-         *  默认使用MethedName作为Case的tag进行标记
+         * Step2 -> 抽取Tag 默认使用MethedName作为Case的tag进行标记
          */
         return convertToTagMap(logBeans);
 
     }
 
     private Map<String, BaseOriginalDataBean> convertToTagMap(List<IastSlsBaseMessageBean> logBeans) {
-        return logBeans.stream().filter(
-                e -> e.getDetail() != null && StrUtil.isNotEmpty(e.getDetail().getSinkStack()) && e.getType().equals("taint")).collect(
-                Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
+        return logBeans.stream()
+            .filter(e -> e.getDetail() != null && StrUtil.isNotEmpty(e.getDetail().getSinkStack())
+                && e.getType().equals("taint"))
+            .collect(Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
     }
 
     private String getTagKey(IastSlsBaseMessageBean data) {

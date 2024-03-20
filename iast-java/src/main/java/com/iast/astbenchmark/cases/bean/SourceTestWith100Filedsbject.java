@@ -1,8 +1,8 @@
 package com.iast.astbenchmark.cases.bean;
 
-import lombok.Data;
-
 import java.io.Serializable;
+
+import lombok.Data;
 
 /**
  * 多属性
