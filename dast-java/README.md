@@ -1,3 +1,5 @@
+# DAST引擎评价体系
+参照[蚂蚁DAST应用评价体系](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/DAST%E5%BC%95%E6%93%8E%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB)使用
 # 黑盒扫描器靶场
 蚂蚁黑盒扫描器靶场是一款配合蚂蚁黑盒扫描引擎评价体系食用的黑盒靶场。我们借鉴了[OWASP Benchmark](https://github.com/OWASP-Benchmark/BenchmarkJava)靶场的设计思路，对接口管理进行了增强，此靶场具备以下增强功能
 - 在/index.html和/index路径下，提供靶场全部接口信息，并内置了对接口的监控，自动统计爬虫对HTML表单和Ajax请求的爬取能力
