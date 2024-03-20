@@ -42,10 +42,13 @@ public class MermindUtil {
         }
     }
 
-    public static String printMermindScript() {
+    public static String printMermindScript(CaseNode root) {
         mermindScript = "```mermind\n";
-        getGraph(CaseStuctCache.getRoot());
+        getGraph(root);
         return mermindScript;
+    }
+    public static String printMermindScript() {
+        return printMermindScript(CaseStuctCache.getRoot());
     }
 
     private static void getGraph(CaseNode node) {
