@@ -1,11 +1,21 @@
 package com.iast.astbenchmark.cli.test;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.http.HttpRequest;
-import cn.hutool.http.HttpResponse;
-import cn.hutool.http.HttpUtil;
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONUtil;
+import java.nio.charset.Charset;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.TimeUnit;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
+import org.springframework.web.client.RestTemplate;
+
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -16,21 +26,13 @@ import com.iast.astbenchmark.cases.bean.SoureWithQueueBean;
 import com.iast.astbenchmark.cases.bean.SoureWithSetBean;
 import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean2;
 import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean9;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.web.client.RestTemplate;
 
-import java.nio.charset.Charset;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.TimeUnit;
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.http.HttpRequest;
+import cn.hutool.http.HttpResponse;
+import cn.hutool.http.HttpUtil;
+import cn.hutool.json.JSON;
+import cn.hutool.json.JSONUtil;
 
 class CopyTestCaseForRun {
 
@@ -38,7 +40,7 @@ class CopyTestCaseForRun {
     /**
      * 此次本组Case执行时的唯一ID,用于在代理测对case数据的快速定位
      */
-    private static         Long   caseUniqGroupId;
+    private static Long caseUniqGroupId;
 
     static {
         url_root = "http://localhost:39100/";
@@ -129,7 +131,7 @@ class CopyTestCaseForRun {
     }
 
     void aTaintCase0014() {
-        //int[] datas = {1,2};
+        // int[] datas = {1,2};
         HttpResponse response = doPost(url_root + "ataint/case0014?cmd=ls");
         System.out.println(response.body());
     }
@@ -175,112 +177,126 @@ class CopyTestCaseForRun {
     void aTaintCase00921() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00921" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00921_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00921/2" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00921_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith10Filedsbject object = JSONUtil.toBean(json, SourceTestWith10Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00921/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00921/3" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00922() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00922" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00922_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00922/2" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00922_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/big.json"), Charset.forName("utf-8"));
         SourceTestWith100Filedsbject object = JSONUtil.toBean(json, SourceTestWith100Filedsbject.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00922/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00922/3" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00923() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00923" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00923_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00923/2" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00923_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00923/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00923/3" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00924() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00924" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00924_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00924/2" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00924_3() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean9 object = JSONUtil.toBean(json, LayerBaseBean9.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00924/3" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00924/3" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00925() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00925" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
     void aTaintCase00925_2() {
         JSON json = JSONUtil.readJSON(FileUtil.file("data/biglayer.json"), Charset.forName("utf-8"));
         LayerBaseBean2 object = JSONUtil.toBean(json, LayerBaseBean2.class, true);
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00925/2" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(object)).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00925/2" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(object)).execute();
         System.out.println(response.body());
     }
 
@@ -322,26 +338,26 @@ class CopyTestCaseForRun {
     }
 
     void aTaintCase0034() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0034" + "?auto_check_start_time=" + caseUniqGroupId).contentType(
-                        MediaType.APPLICATION_XML_VALUE)
-                .body("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" +
-                        "\n" +
-                        "<message> \n" +
-                        "      <phase>ls</phase>  \n" +
-                        "</message>").execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0034" + "?auto_check_start_time=" + caseUniqGroupId)
+                .contentType(MediaType.APPLICATION_XML_VALUE).body("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n" + "\n"
+                    + "<message> \n" + "      <phase>ls</phase>  \n" + "</message>")
+                .execute();
 
         System.out.println(response.body());
     }
 
     void aTaintCase0035() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0035" + "?auto_check_start_time=" + caseUniqGroupId)
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0035" + "?auto_check_start_time=" + caseUniqGroupId)
                 .form("file", FileUtil.file("data/ls")).execute();
 
         System.out.println(response.body());
     }
 
     void aTaintCase0036() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0036" + "?auto_check_start_time=" + caseUniqGroupId)
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0036" + "?auto_check_start_time=" + caseUniqGroupId)
                 .form("file", FileUtil.file("data/ls")).execute();
         System.out.println(response.body());
     }
@@ -370,9 +386,10 @@ class CopyTestCaseForRun {
     void aTaintCase0041() {
         String[] aa = {"l", "s"};
         // HttpResponse response = HttpRequest.post(url_root+"ataint/case0041/ls?cmd=ls").body("ls").execute();
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0041" + "?auto_check_start_time=" + caseUniqGroupId).body(
-                JSONUtil.toJsonStr(aa)).execute();
-        //.form("file",FileUtil.file("data/ls")).execute();
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0041" + "?auto_check_start_time=" + caseUniqGroupId)
+                .body(JSONUtil.toJsonStr(aa)).execute();
+        // .form("file",FileUtil.file("data/ls")).execute();
         System.out.println(response.body());
     }
 
@@ -382,28 +399,31 @@ class CopyTestCaseForRun {
     }
 
     void aTaintCase0045() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0045" + "?auto_check_start_time=" + caseUniqGroupId)
-                .cookie("ls").execute();
+        HttpResponse response = HttpRequest
+            .post(url_root + "ataint/case0045" + "?auto_check_start_time=" + caseUniqGroupId).cookie("ls").execute();
 
         System.out.println(response.body());
     }
 
     void aTaintCase0046() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0046" + "?auto_check_start_time=" + caseUniqGroupId)
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0046" + "?auto_check_start_time=" + caseUniqGroupId)
                 .header("cmd", "ls").execute();
 
         System.out.println(response.body());
     }
 
     void aTaintCase0047() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case0047" + "?auto_check_start_time=" + caseUniqGroupId)
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case0047" + "?auto_check_start_time=" + caseUniqGroupId)
                 .header("cmd", "ls").execute();
 
         System.out.println(response.body());
     }
 
     void aTaintCase00139() {
-        HttpResponse response = HttpRequest.post(url_root + "ataint/case00139" + "?auto_check_start_time=" + caseUniqGroupId)
+        HttpResponse response =
+            HttpRequest.post(url_root + "ataint/case00139" + "?auto_check_start_time=" + caseUniqGroupId)
                 .header("cmd", "ls").execute();
         System.out.println(response.body());
     }
@@ -668,7 +688,7 @@ class CopyTestCaseForRun {
         System.out.println(response2.body());
     }
 
-    //TODO 105
+    // TODO 105
 
     void aTaintCase00105() {
         HttpResponse response = doPost(url_root + "ataint/case00105?cmd=reportidsql");
@@ -749,8 +769,9 @@ class CopyTestCaseForRun {
         HttpResponse response2 = doPost(url_root + "ataint/case00116/1");
         System.out.println("aTaintCase00116" + response.body());
     }
+
     /**
-     *  aTaintCase00117 异步跟踪能力->存储行异步->污点通过缓存存储后触发->OSS
+     * aTaintCase00117 异步跟踪能力->存储行异步->污点通过缓存存储后触发->OSS
      */
     /**
      * aTaintCase00118 异步跟踪能力->存储行异步->支持自定义污点的存储和再次提取点
@@ -768,7 +789,7 @@ class CopyTestCaseForRun {
         System.out.println(response.body());
     }
 
-    //No 21~22
+    // No 21~22
 
     void aTaintCase00123() {
         HttpResponse response = doPost(url_root + "ataint/case00123?cmd=ls");
@@ -1012,8 +1033,8 @@ class CopyTestCaseForRun {
     void aTaintCase00147() {
         byte[] bytes = {108, 115};
         HttpEntity<ByteArrayResource> httpEntity = new HttpEntity<>(new ByteArrayResource(bytes), new HttpHeaders());
-        restTemplate.exchange(url_root + "ataint/case00147" + "?auto_check_start_time=" + caseUniqGroupId, HttpMethod.POST, httpEntity,
-                Object.class);
+        restTemplate.exchange(url_root + "ataint/case00147" + "?auto_check_start_time=" + caseUniqGroupId,
+            HttpMethod.POST, httpEntity, Object.class);
 
         System.out.println("aTaintCase00147");
     }

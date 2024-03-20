@@ -8,6 +8,7 @@ public interface ConfigService {
     String getIastDetectionPath();
 
     String getVulType();
+
     String getDetection(VendorEnum vendorEnum);
 
     void doChanhge(VendorEnum vendor, String path, String checkFlag);

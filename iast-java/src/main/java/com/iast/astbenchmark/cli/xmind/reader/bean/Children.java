@@ -1,8 +1,8 @@
 package com.iast.astbenchmark.cli.xmind.reader.bean;
 
-import lombok.Data;
-
 import java.util.List;
+
+import lombok.Data;
 
 /**
  * Auto-generated: 2020-03-24 11:24:27
@@ -14,6 +14,5 @@ import java.util.List;
 public class Children {
 
     private List<Attached> attached;
-
 
 }

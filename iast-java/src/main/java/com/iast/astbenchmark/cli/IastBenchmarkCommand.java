@@ -1,17 +1,11 @@
 package com.iast.astbenchmark.cli;
 
-import cn.hutool.core.io.FileUtil;
-import cn.hutool.core.util.StrUtil;
-import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
-import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
-import com.iast.astbenchmark.analyser.service.ConfigService;
-import com.iast.astbenchmark.analyser.service.DataAnalysisService;
-import com.iast.astbenchmark.analyser.util.MermindUtil;
-import com.iast.astbenchmark.cli.test.AutoRunTest;
+import java.nio.charset.Charset;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import com.iast.astbenchmark.cli.xmind.XMindReaderUtil;
-import com.iast.astbenchmark.cli.xmind.XmindUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.jline.utils.AttributedString;
 import org.jline.utils.AttributedStyle;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +16,18 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 import org.springframework.util.StringUtils;
 
-import java.nio.charset.Charset;
-import java.sql.SQLException;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
+import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
+import com.iast.astbenchmark.analyser.service.ConfigService;
+import com.iast.astbenchmark.analyser.service.DataAnalysisService;
+import com.iast.astbenchmark.analyser.util.MermindUtil;
+import com.iast.astbenchmark.cli.test.AutoRunTest;
+import com.iast.astbenchmark.cli.xmind.XMindReaderUtil;
+import com.iast.astbenchmark.cli.xmind.XmindUtil;
+
+import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
 
 @ShellComponent
 @Slf4j
@@ -35,20 +36,21 @@ public class IastBenchmarkCommand {
     @Autowired
     private DataAnalysisService dataAnalysisService;
     @Autowired
-    private ConfigService       configService;
+    private ConfigService configService;
+
     @Bean
     public PromptProvider promptProvider() {
-        return () -> new AttributedString("IAST_SHELL:>",
-                AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
+        return () -> new AttributedString("IAST_SHELL:>", AttributedStyle.DEFAULT.foreground(AttributedStyle.YELLOW));
     }
+
     /**
      * 1 run Test ?
      */
 
     @ShellMethod("分析iast软件的跑测结果 -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file")
-    public String analysis(@ShellOption("-v") String vendor
-            , @ShellOption(defaultValue = "", value = "-p") String path, @ShellOption(defaultValue = "", value = "-c") String checkFlag,
-                           @ShellOption(defaultValue = "", value = "-o") String resultFile) {
+    public String analysis(@ShellOption("-v") String vendor, @ShellOption(defaultValue = "", value = "-p") String path,
+        @ShellOption(defaultValue = "", value = "-c") String checkFlag,
+        @ShellOption(defaultValue = "", value = "-o") String resultFile) {
 
         String checkParam = checkParam(vendor, path, checkFlag, resultFile);
         if (StrUtil.isNotEmpty(checkParam)) {
@@ -82,9 +84,9 @@ public class IastBenchmarkCommand {
 
     @ShellMethod("查询已跑测的结果报告 -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）")
     public String search(@ShellOption(value = {"-i"}, defaultValue = "") String reportId,
-                         @ShellOption(defaultValue = "", value = "-o") String resultFile
-            , @ShellOption(defaultValue = "", value = "-l") String listId,
-                         @ShellOption(defaultValue = "false", value = "-x") Boolean exportFlag) {
+        @ShellOption(defaultValue = "", value = "-o") String resultFile,
+        @ShellOption(defaultValue = "", value = "-l") String listId,
+        @ShellOption(defaultValue = "false", value = "-x") Boolean exportFlag) {
         try {
             String checkParam = checkParamSearch(reportId, resultFile, listId, exportFlag);
             if (StrUtil.isNotEmpty(checkParam)) {
@@ -98,9 +100,9 @@ public class IastBenchmarkCommand {
                     return "结果已写入文件" + resultFile + "请查看";
                 } else if (exportFlag) {
                     return XmindUtil.export(resultBean);
-                    //导出xmind
-                    //导出html
-                    //导出文本
+                    // 导出xmind
+                    // 导出html
+                    // 导出文本
                 }
                 return res;
             } else if (StrUtil.isNotEmpty(listId)) {
@@ -116,7 +118,7 @@ public class IastBenchmarkCommand {
 
     @ShellMethod("对比两次跑测报告的差异 -a :input reportId1;-b: input reportId2;-o:result to file;  (compare reportId1 to reportId2)")
     public String compare(@ShellOption(value = "-a") String reportId1, @ShellOption(value = "-b") String reportId2,
-                          @ShellOption(defaultValue = "", value = "-o") String resultFile) {
+        @ShellOption(defaultValue = "", value = "-o") String resultFile) {
         try {
             String checkParam = checkParamCompare(reportId1, reportId2, resultFile);
             if (StrUtil.isNotEmpty(checkParam)) {
@@ -139,7 +141,7 @@ public class IastBenchmarkCommand {
 
     @ShellMethod("跑测靶场 -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)")
     public String runtest(@ShellOption(value = {"-m"}, defaultValue = "") String methodName,
-                          @ShellOption(defaultValue = "", value = "-i") String url) {
+        @ShellOption(defaultValue = "", value = "-i") String url) {
 
         try {
             if (StringUtils.isEmpty(methodName)) {
@@ -155,23 +157,23 @@ public class IastBenchmarkCommand {
 
     @ShellMethod("导出评价体系脑图(mermind格式) -o :mermind scripts to md file -x : mermind scripts from xmind file")
     public String mermind(@ShellOption(defaultValue = "", value = "-o") String resultFile,
-                          @ShellOption(defaultValue = "", value = "-x") String xmindFile) {
+        @ShellOption(defaultValue = "", value = "-x") String xmindFile) {
 
         try {
-            if(StrUtil.isNotEmpty(xmindFile)){
-                if(!xmindFile.endsWith(".xmind")){
+            if (StrUtil.isNotEmpty(xmindFile)) {
+                if (!xmindFile.endsWith(".xmind")) {
                     return "ERROR:请输入以xmind结尾的xmind文件路径";
                 }
-                if(!FileUtil.isFile(xmindFile)){
+                if (!FileUtil.isFile(xmindFile)) {
                     return "ERROR:请检查xmind文件是否存在";
                 }
                 return XMindReaderUtil.convertXmindToMermind(xmindFile);
-            }else {
-                if(StrUtil.isNotEmpty(resultFile)&&!resultFile.endsWith(".md")){
+            } else {
+                if (StrUtil.isNotEmpty(resultFile) && !resultFile.endsWith(".md")) {
                     return "ERROR:请输入以md结尾的markdown文档";
                 }
                 String res = MermindUtil.printMermindScript();
-                if(StrUtil.isNotEmpty(resultFile)){
+                if (StrUtil.isNotEmpty(resultFile)) {
                     FileUtil.writeString(res, resultFile, Charset.forName("utf-8"));
                     return "结果已写入文件" + resultFile + "中,请查看";
                 }
@@ -192,7 +194,8 @@ public class IastBenchmarkCommand {
             try {
                 VendorEnum.valueOf(vendor.toUpperCase());
             } catch (Exception e) {
-                return "厂商不存在，请输入all或者" + Arrays.stream(VendorEnum.values()).map(v -> v.getCode()).collect(Collectors.toList());
+                return "厂商不存在，请输入all或者"
+                    + Arrays.stream(VendorEnum.values()).map(v -> v.getCode()).collect(Collectors.toList());
             }
         }
         if (exportFlag && StrUtil.isEmpty(reportId)) {
@@ -227,15 +230,11 @@ public class IastBenchmarkCommand {
         return "";
     }
     /**
-     * 2 分析结果
-     * iast  file check
-     * seeker file
+     * 2 分析结果 iast file check seeker file
      */
 
     /**
-     * 3 输出结果
-     *  -o 输出文件
+     * 3 输出结果 -o 输出文件
      */
 
 }
-

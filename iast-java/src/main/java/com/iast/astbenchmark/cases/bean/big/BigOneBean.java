@@ -2,10 +2,11 @@ package com.iast.astbenchmark.cases.bean.big;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.sf.json.JSONObject;
+
 import net.sf.json.JSONArray;
-public class BigOneBean
-{
+import net.sf.json.JSONObject;
+
+public class BigOneBean {
     private String _id;
 
     private int index;
@@ -50,139 +51,183 @@ public class BigOneBean
 
     private String favoriteFruit;
 
-    public void set_id(String _id){
+    public void set_id(String _id) {
         this._id = _id;
     }
-    public String get_id(){
+
+    public String get_id() {
         return this._id;
     }
-    public void setIndex(int index){
+
+    public void setIndex(int index) {
         this.index = index;
     }
-    public int getIndex(){
+
+    public int getIndex() {
         return this.index;
     }
-    public void setGuid(String guid){
+
+    public void setGuid(String guid) {
         this.guid = guid;
     }
-    public String getGuid(){
+
+    public String getGuid() {
         return this.guid;
     }
-    public void setIsActive(boolean isActive){
+
+    public void setIsActive(boolean isActive) {
         this.isActive = isActive;
     }
-    public boolean getIsActive(){
+
+    public boolean getIsActive() {
         return this.isActive;
     }
-    public void setBalance(String balance){
+
+    public void setBalance(String balance) {
         this.balance = balance;
     }
-    public String getBalance(){
+
+    public String getBalance() {
         return this.balance;
     }
-    public void setPicture(String picture){
+
+    public void setPicture(String picture) {
         this.picture = picture;
     }
-    public String getPicture(){
+
+    public String getPicture() {
         return this.picture;
     }
-    public void setAge(int age){
+
+    public void setAge(int age) {
         this.age = age;
     }
-    public int getAge(){
+
+    public int getAge() {
         return this.age;
     }
-    public void setEyeColor(String eyeColor){
+
+    public void setEyeColor(String eyeColor) {
         this.eyeColor = eyeColor;
     }
-    public String getEyeColor(){
+
+    public String getEyeColor() {
         return this.eyeColor;
     }
-    public void setName(String name){
+
+    public void setName(String name) {
         this.name = name;
     }
-    public String getName(){
+
+    public String getName() {
         return this.name;
     }
-    public void setGender(String gender){
+
+    public void setGender(String gender) {
         this.gender = gender;
     }
-    public String getGender(){
+
+    public String getGender() {
         return this.gender;
     }
-    public void setCompany(String company){
+
+    public void setCompany(String company) {
         this.company = company;
     }
-    public String getCompany(){
+
+    public String getCompany() {
         return this.company;
     }
-    public void setEmail(String email){
+
+    public void setEmail(String email) {
         this.email = email;
     }
-    public String getEmail(){
+
+    public String getEmail() {
         return this.email;
     }
-    public void setPhone(String phone){
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getPhone(){
+
+    public String getPhone() {
         return this.phone;
     }
-    public void setAddress(String address){
+
+    public void setAddress(String address) {
         this.address = address;
     }
-    public String getAddress(){
+
+    public String getAddress() {
         return this.address;
     }
-    public void setAbout(String about){
+
+    public void setAbout(String about) {
         this.about = about;
     }
-    public String getAbout(){
+
+    public String getAbout() {
         return this.about;
     }
-    public void setRegistered(String registered){
+
+    public void setRegistered(String registered) {
         this.registered = registered;
     }
-    public String getRegistered(){
+
+    public String getRegistered() {
         return this.registered;
     }
-    public void setLatitude(double latitude){
+
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
-    public double getLatitude(){
+
+    public double getLatitude() {
         return this.latitude;
     }
-    public void setLongitude(double longitude){
+
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
-    public double getLongitude(){
+
+    public double getLongitude() {
         return this.longitude;
     }
-    public void setTags(List<String> tags){
+
+    public void setTags(List<String> tags) {
         this.tags = tags;
     }
-    public List<String> getTags(){
+
+    public List<String> getTags() {
         return this.tags;
     }
-    public void setFriends(List<Friends> friends){
+
+    public void setFriends(List<Friends> friends) {
         this.friends = friends;
     }
-    public List<Friends> getFriends(){
+
+    public List<Friends> getFriends() {
         return this.friends;
     }
-    public void setGreeting(String greeting){
+
+    public void setGreeting(String greeting) {
         this.greeting = greeting;
     }
-    public String getGreeting(){
+
+    public String getGreeting() {
         return this.greeting;
     }
-    public void setFavoriteFruit(String favoriteFruit){
+
+    public void setFavoriteFruit(String favoriteFruit) {
         this.favoriteFruit = favoriteFruit;
     }
-    public String getFavoriteFruit(){
+
+    public String getFavoriteFruit() {
         return this.favoriteFruit;
     }
-    public static BigOneBean fill(JSONObject jsonobj){
+
+    public static BigOneBean fill(JSONObject jsonobj) {
         BigOneBean entity = new BigOneBean();
         if (jsonobj.containsKey("_id")) {
             entity.set_id(jsonobj.getString("_id"));
@@ -252,6 +297,7 @@ public class BigOneBean
         }
         return entity;
     }
+
     public static List<BigOneBean> fillList(JSONArray jsonarray) {
         if (jsonarray == null || jsonarray.size() == 0)
             return null;
@@ -261,6 +307,7 @@ public class BigOneBean
         }
         return olist;
     }
+
     class Friends {
         private int id;
 
@@ -283,4 +330,3 @@ public class BigOneBean
         private String name;
     }
 }
-

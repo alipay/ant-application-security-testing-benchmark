@@ -10,24 +10,23 @@ package com.iast.astbenchmark.analyser.bean.consts;
  * FN（False Negatives）：假的负样本 = 【正样本 被错误分为 负样本】
  */
 public enum CaseResultEnum {
-//    TP("TP", "真的正样本"),
-//    TN("TN","真的负样本"),
-//
-//    FP("FP","假的正样本"),
-//    FN("FN","假的负样本")
-    TP("TP", "通过"),
-    TN("TN","通过"),
+    // TP("TP", "真的正样本"),
+    // TN("TN","真的负样本"),
+    //
+    // FP("FP","假的正样本"),
+    // FN("FN","假的负样本")
+    TP("TP", "通过"), TN("TN", "通过"),
 
-    FP("FP","误报"),
-    FN("FN","漏报")
-    ;
+    FP("FP", "误报"), FN("FN", "漏报");
 
     private String code;
     private String desc;
-    CaseResultEnum(String code,String desc){
+
+    CaseResultEnum(String code, String desc) {
         this.code = code;
-        this.desc =desc;
+        this.desc = desc;
     }
+
     public String getCode() {
         return code;
     }

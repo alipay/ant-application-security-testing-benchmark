@@ -1,12 +1,13 @@
 package com.iast.astbenchmark.analyser.util;
 
-import com.iast.astbenchmark.analyser.cache.CaseStuctCache;
-import com.iast.astbenchmark.analyser.cache.CasetargeCache;
-import com.iast.astbenchmark.cli.tree.CaseNode;
+import java.util.List;
+
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
-import java.util.List;
+import com.iast.astbenchmark.analyser.cache.CaseStuctCache;
+import com.iast.astbenchmark.analyser.cache.CasetargeCache;
+import com.iast.astbenchmark.cli.tree.CaseNode;
 
 public class MermindUtil {
     private static String mermindScript = "";
@@ -15,12 +16,13 @@ public class MermindUtil {
         CasetargeCache.initNow();
         mermindScript = "```mermind\n";
         getGraph(CaseStuctCache.getRoot());
-        //mermind graph脑图
+        // mermind graph脑图
         System.out.println(mermindScript);
-        //mermind 脑图,这个版本格式有点乱
-        //printTree(CaseStuctCache.getRoot(),CaseStuctCache.getRoot().getDeepth());
-        //FileUtil.writeUtf8String("JAVA.md", mermindScript);
+        // mermind 脑图,这个版本格式有点乱
+        // printTree(CaseStuctCache.getRoot(),CaseStuctCache.getRoot().getDeepth());
+        // FileUtil.writeUtf8String("JAVA.md", mermindScript);
     }
+
     public static void printTree(CaseNode node, int depth) {
         if (node == null) {
             return;
@@ -28,10 +30,9 @@ public class MermindUtil {
         // 创建缩进字符串，每个深度级别增加一个空格
         String indent = new String(new char[depth]).replace('\0', ' ');
 
-        String name =node.getName().replaceAll("\\)","").replace("(","")
-                .replaceAll("]","").replace("[","");
+        String name = node.getName().replaceAll("\\)", "").replace("(", "").replaceAll("]", "").replace("[", "");
         // 打印当前节点的名称与缩进
-        System.out.println(indent + "\""+name+ "\"");
+        System.out.println(indent + "\"" + name + "\"");
 
         // 递归打印每个子节点，深度加一
         List<CaseNode> children = node.getChildren();
@@ -47,6 +48,7 @@ public class MermindUtil {
         getGraph(root);
         return mermindScript;
     }
+
     public static String printMermindScript() {
         return printMermindScript(CaseStuctCache.getRoot());
     }
@@ -76,8 +78,6 @@ public class MermindUtil {
                     getGraph(child);
                 }
             }
-
-
 
         }
 

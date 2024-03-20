@@ -28,12 +28,11 @@ public class SeekerCaseDataTransfer extends CaseDataTransfer {
 
     public Map<String, BaseOriginalDataBean> extrapResultMap(String path) {
         /**
-         *  Step1 ->获取检出结果并解析；
-         *  */
+         * Step1 ->获取检出结果并解析；
+         */
         List<SeekerCollectBaseData> logsBeans = getReportLog(path);
         /**
-         *  Step2 -> 抽取Tag
-         *  默认使用MethedName作为Case的tag进行标记
+         * Step2 -> 抽取Tag 默认使用MethedName作为Case的tag进行标记
          */
         return convertToTagMap(logsBeans);
     }
@@ -42,8 +41,9 @@ public class SeekerCaseDataTransfer extends CaseDataTransfer {
         if (CollectionUtils.isEmpty(logsBeans)) {
             return Maps.newHashMap();
         }
-        return logsBeans.stream().filter(e -> StrUtil.isNotEmpty(e.getSourceType()) && StrUtil.isNotEmpty(e.getCodeLocation()))
-                .collect(Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
+        return logsBeans.stream()
+            .filter(e -> StrUtil.isNotEmpty(e.getSourceType()) && StrUtil.isNotEmpty(e.getCodeLocation()))
+            .collect(Collectors.toMap(e1 -> getTagKey(e1), e2 -> e2, (k1, k2) -> k1));
     }
 
     private String getTagKey(SeekerCollectBaseData baseData) {

@@ -1,10 +1,11 @@
 package com.iast.astbenchmark.analyser.factory.stategy.seeker;
 
 import com.iast.astbenchmark.analyser.bean.BaseOriginalDataBean;
+
 import lombok.Data;
 
 @Data
-public class SeekerCollectBaseData  extends BaseOriginalDataBean {
+public class SeekerCollectBaseData extends BaseOriginalDataBean {
     private String Owner;
     private String ProjectKey;
     private String ItemKey;

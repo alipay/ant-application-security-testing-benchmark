@@ -1,6 +1,5 @@
 package com.iast.astbenchmark.cli.xmind.reader.bean;
 
-
 import lombok.Data;
 
 @Data

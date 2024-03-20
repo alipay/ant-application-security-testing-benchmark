@@ -1,8 +1,8 @@
 package com.iast.astbenchmark.analyser.bean;
 
-import lombok.Data;
-
 import java.util.List;
+
+import lombok.Data;
 
 /**
  * case_target&case_de
@@ -24,14 +24,7 @@ public class CaseTargetBean {
 
     @Override
     public String toString() {
-        return "{" +
-                "tags=" + tags +
-                ", weight=" + weight +
-                ", caseNo='" + caseNo + '\'' +
-                ", caseDesc='" + caseDesc + '\'' +
-                ", caseType='" + caseType + '\'' +
-                ", data=" + data +
-                '}';
+        return "{" + "tags=" + tags + ", weight=" + weight + ", caseNo='" + caseNo + '\'' + ", caseDesc='" + caseDesc
+            + '\'' + ", caseType='" + caseType + '\'' + ", data=" + data + '}';
     }
 }
-

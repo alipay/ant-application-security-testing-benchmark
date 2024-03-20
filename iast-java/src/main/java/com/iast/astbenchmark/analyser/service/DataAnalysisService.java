@@ -7,12 +7,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 /**
- * 用于检查结果分析，以及分析结果存储
- * 返回ID用户报告下载
+ * 用于检查结果分析，以及分析结果存储 返回ID用户报告下载
  */
 public interface DataAnalysisService {
-    Long  doAnalysisAndDB(VendorEnum vendorEnum) throws SQLException;
+    Long doAnalysisAndDB(VendorEnum vendorEnum) throws SQLException;
+
     CaseDataCollectResultBean searchResult(Long id) throws SQLException;
-    CaseDataCollectResultBean searchResultbyReportId(String  reportID) throws SQLException;
+
+    CaseDataCollectResultBean searchResultbyReportId(String reportID) throws SQLException;
+
     List<String> getAllReportId(String vendor);
 }

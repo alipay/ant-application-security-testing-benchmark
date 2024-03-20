@@ -14,21 +14,22 @@ import java.util.Optional;
 @Component
 public class CaseDataTransferStategyFactory {
 
-    private  final  List<CaseDataTransfer> caseDataTransfers;
-    public CaseDataTransferStategyFactory(List<CaseDataTransfer> caseDataTransfers){
-        this.caseDataTransfers=caseDataTransfers;
-    }
-    private Map<String,CaseDataTransfer> caseDataTransferMap = Maps.newConcurrentMap();
-    @PostConstruct
-    public void init(){
-        Optional.ofNullable(caseDataTransfers).orElseGet(ArrayList::new).forEach(
-                tracer->{
-                    caseDataTransferMap.put(tracer.vendor().getCode(),tracer);
-                }
-        );
+    private final List<CaseDataTransfer> caseDataTransfers;
+
+    public CaseDataTransferStategyFactory(List<CaseDataTransfer> caseDataTransfers) {
+        this.caseDataTransfers = caseDataTransfers;
     }
 
-    public CaseDataCollectResultBean collect(VendorEnum vendorEnum){
-       return caseDataTransferMap.get(vendorEnum.getCode()).doOperation();
+    private Map<String, CaseDataTransfer> caseDataTransferMap = Maps.newConcurrentMap();
+
+    @PostConstruct
+    public void init() {
+        Optional.ofNullable(caseDataTransfers).orElseGet(ArrayList::new).forEach(tracer -> {
+            caseDataTransferMap.put(tracer.vendor().getCode(), tracer);
+        });
+    }
+
+    public CaseDataCollectResultBean collect(VendorEnum vendorEnum) {
+        return caseDataTransferMap.get(vendorEnum.getCode()).doOperation();
     }
 }

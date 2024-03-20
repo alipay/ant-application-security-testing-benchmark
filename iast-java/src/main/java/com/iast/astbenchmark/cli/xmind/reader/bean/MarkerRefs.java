@@ -1,9 +1,9 @@
 package com.iast.astbenchmark.cli.xmind.reader.bean;
 
-import lombok.Data;
-
 import java.util.List;
 import java.util.Map;
+
+import lombok.Data;
 
 @Data
 public class MarkerRefs {

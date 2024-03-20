@@ -9,5 +9,4 @@ import lombok.Data;
  * @website http://www.bejson.com/java2pojo/
  */
 @Data
-public class RootTopic extends Attached{
-}
+public class RootTopic extends Attached {}

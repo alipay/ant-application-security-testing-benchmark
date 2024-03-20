@@ -1,19 +1,22 @@
 package com.iast.astbenchmark.cases;
-import cn.hutool.db.Db;
-import cn.hutool.db.Entity;
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
-import com.iast.astbenchmark.analyser.service.DataAnalysisService;
-import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
-import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
-import com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil;
-import lombok.extern.slf4j.Slf4j;
+
+import java.sql.SQLException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.sql.SQLException;
+import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
+import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
+import com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil;
+import com.iast.astbenchmark.analyser.service.DataAnalysisService;
+
+import cn.hutool.db.Db;
+import cn.hutool.db.Entity;
+import cn.hutool.json.JSONObject;
+import cn.hutool.json.JSONUtil;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 自测用，可删除
@@ -23,10 +26,11 @@ import java.sql.SQLException;
 public class TestController {
     @Autowired
     DataAnalysisService dataAnalysisService;
+
     @PostMapping(value = "analysis/strategy/{vendor}")
     public void test003(@PathVariable String vendor) {
         VendorEnum vendorEnum = VendorEnum.valueOf(vendor);
-        if(vendorEnum==null){
+        if (vendorEnum == null) {
             return;
         }
         try {
@@ -40,11 +44,11 @@ public class TestController {
     public void test003(@PathVariable Long id) {
         Entity res = null;
         try {
-            res = Db.use().get(Entity.create("REPORT").set("id",id));
+            res = Db.use().get(Entity.create("REPORT").set("id", id));
             Object data = res.get("REPORT_DATA");
             JSONObject json = JSONUtil.parseObj(data);
             String vendor = json.getStr("vendor");
-            CaseDataCollectResultBean collectResultBean = JSONUtil.toBean(json,CaseDataCollectResultBean.class);
+            CaseDataCollectResultBean collectResultBean = JSONUtil.toBean(json, CaseDataCollectResultBean.class);
             collectResultBean.setVendor(VendorEnum.valueOf(vendor));
         } catch (SQLException e) {
             throw new RuntimeException(e);

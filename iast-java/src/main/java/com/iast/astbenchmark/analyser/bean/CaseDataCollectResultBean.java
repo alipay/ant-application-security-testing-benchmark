@@ -1,10 +1,11 @@
 package com.iast.astbenchmark.analyser.bean;
 
-import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.List;
+
+import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
+
+import lombok.Data;
 
 @Data
 public class CaseDataCollectResultBean implements Serializable {
@@ -19,12 +20,8 @@ public class CaseDataCollectResultBean implements Serializable {
 
     @Override
     public String toString() {
-        return "CaseDataCollectResultBean{" +
-                "vendor=" + vendor.getDescription() +
-                ", reportId='" + reportId + '\'' +
-                ", caseTime=" + caseTime +
-                ", caseDetectionItems=" + caseDetectionItems +
-                '}';
+        return "CaseDataCollectResultBean{" + "vendor=" + vendor.getDescription() + ", reportId='" + reportId + '\''
+            + ", caseTime=" + caseTime + ", caseDetectionItems=" + caseDetectionItems + '}';
     }
 
 }

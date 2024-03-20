@@ -1,10 +1,11 @@
 package com.iast.astbenchmark.cli.xmind.reader;
 
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
+import java.io.IOException;
+
 import org.dom4j.DocumentException;
 
-import java.io.IOException;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 
 /**
  * @author liufree liufreeo@gmail.com
@@ -15,21 +16,8 @@ import java.io.IOException;
 public class XmindZen {
 
     /**
-     * "notes": {
-     * "plain": {
-     * "content": "这是副节点1的备注"
-     * },
-     * "ops": {
-     * "ops": [
-     * {
-     * "insert": "这是副节点1的备注\n"
-     * }
-     * ]
-     * }
-     * 转换为
-     * "notes":{
-     * "content":"这是副节点1的备注"
-     * }
+     * "notes": { "plain": { "content": "这是副节点1的备注" }, "ops": { "ops": [ { "insert": "这是副节点1的备注\n" } ] } 转换为 "notes":{
+     * "content":"这是副节点1的备注" }
      *
      * @param jsonContent
      * @return
@@ -59,7 +47,7 @@ public class XmindZen {
             return;
         }
         for (Object attached : attachedArray) {
-            JSONObject attachedObject = (JSONObject) attached;
+            JSONObject attachedObject = (JSONObject)attached;
             transferNotes(attachedObject);
             JSONObject childrenObject = attachedObject.getJSONObject("children");
             if (childrenObject == null) {
@@ -83,6 +71,5 @@ public class XmindZen {
             notes.put("content", null);
         }
     }
-
 
 }

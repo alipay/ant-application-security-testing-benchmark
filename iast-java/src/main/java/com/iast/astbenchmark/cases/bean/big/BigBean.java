@@ -1,8 +1,8 @@
 package com.iast.astbenchmark.cases.bean.big;
 
-import lombok.Data;
-
 import java.util.List;
+
+import lombok.Data;
 
 @Data
 public class BigBean {

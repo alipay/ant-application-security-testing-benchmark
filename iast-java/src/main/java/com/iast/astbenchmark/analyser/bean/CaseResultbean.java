@@ -2,6 +2,7 @@ package com.iast.astbenchmark.analyser.bean;
 
 import com.iast.astbenchmark.analyser.bean.consts.CaseResultEnum;
 import com.iast.astbenchmark.analyser.bean.consts.CaseTypeEnum;
+
 import lombok.Data;
 
 @Data
