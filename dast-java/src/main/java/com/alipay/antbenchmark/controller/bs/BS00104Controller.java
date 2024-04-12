@@ -23,7 +23,7 @@ public class BS00104Controller extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         //ak泄露
         try {
-            response.getWriter().println("{\"ALIYUN_ACCESSKEYSECRET\": \"iTk1rAbsNa7bznWSCw7aR23W2kAN1a\", \"ALIYUN_ACCESSKEYID\": \"LTAeLQ1K2EaTgNkk\"}");
+            response.getWriter().println("{\"ALIYUN_ACCESSKEYSECRET\": \"iTk1rAbsNa7bznWSCw7aR23W2kAN1a\", \"ALIYUN_ACCESSKEYID\": \"LTAI2FdesjE4ETjJvVmfNdyN\"}");
         } catch (Exception e) {
             response.getWriter().println(e.toString());
             return;
