@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 import java.util.List;
 
 public class MermindUtil {
-    private static String mermindScript = "";
+    public static String mermindScript = "";
 
     public static void main(String[] args) {
         CasetargeCache.initNow();
@@ -51,7 +51,7 @@ public class MermindUtil {
         return printMermindScript(CaseStuctCache.getRoot());
     }
 
-    private static void getGraph(CaseNode node) {
+    public static void getGraph(CaseNode node) {
         if (node.getDeepth() == 1) {
             if (!mermindScript.contains("graph LR")) {
                 mermindScript = mermindScript + "graph LR\n";

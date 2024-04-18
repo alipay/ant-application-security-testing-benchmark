@@ -4,7 +4,9 @@ import cn.hutool.core.util.StrUtil;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
+import com.iast.astbenchmark.analyser.cache.CaseStuctCache;
 import com.iast.astbenchmark.analyser.cache.CasetargeCache;
+import com.iast.astbenchmark.analyser.util.MermindUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
@@ -15,6 +17,8 @@ import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static com.iast.astbenchmark.analyser.util.MermindUtil.mermindScript;
 
 @Slf4j
 public class CaseNodeTreeUtil {
@@ -51,7 +55,7 @@ public class CaseNodeTreeUtil {
         BufferedReader reader = null;
         InputStream inputStream = null;
         try {
-            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/caseNodeTree.txt");
+            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/sast评价体系.md");
             reader = new BufferedReader(new InputStreamReader(inputStream));
             List<String> lines = Lists.newArrayList();
             String line;
@@ -92,6 +96,15 @@ public class CaseNodeTreeUtil {
         }
         return null;
     }
+
+    ////将sast,dast,nodjs的评价体系转成mermind格式
+    //public static void main(String[] args) {
+    //    CaseNode root = CaseNodeTreeUtil.initRoot2();
+    //    mermindScript = "```mermind\n";
+    //    MermindUtil.getGraph(root);
+    //    //mermind graph脑图
+    //    System.out.println(mermindScript);
+    //}
 
     public static Map<String, CaseNode> leafMap(CaseNode root) {
         Map<String, CaseNode> leafMap = Maps.newLinkedHashMap();
