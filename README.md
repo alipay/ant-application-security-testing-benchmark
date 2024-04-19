@@ -1,32 +1,11 @@
 <div align='center' ><font size="18">xAST评价体系开源项目简介</font></div>
 
-# 联系我们
-## 微信
+# 项目logo
+ [ 项目官网 ](https://xastbenchmark.github.io/)
 
-<div align="center">
-  <table>
-    <tr>
-      <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
-        <em>微信小助手</em>
-      </td>
-    </tr>
-  </table>
-</div>
+# 中文/英文
 
-
-
-## 邮箱
-
-xast-contact@service.alipay.com
-
-## 传送门
-
-[《评价指标项详见wiki 》](https://github.com/alipay/ant-application-security-testing-benchmark/wiki)
-
-[《nodejs评价体系传送门》](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
-
-# 项目背景
+# 项目简介
 
 xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来越重要的作用，目前每一类产品（SAST/IAST/DAST/SCA/MAST等）都有至少数十款商业化或开源产品供客户选择。与此同时，一些甲方企业也在自研xAST产品。不管是商业采购还是选择开源产品还是自研，大家都面临一个共同的难题，如何客观衡量一款xAST产品的技术水平？
 
@@ -220,6 +199,12 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 
 2024年项目计划落户一家开源基金会或联盟，依托于工作组进行共建，并每年基于xAST评价体系对业界的最新产品进行测评，发布信息安全行业**年度xAST产品的能力评测报告**，通过年度测评报告的方式推动项目的持续发展。
 
+# 评价体系
+### [ sast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
+### [ iast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/iast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
+### [ dast评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/dast%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
+### [ nodejs评价体系](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
+
 # 联系我们
 ## 微信
 
@@ -234,10 +219,24 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
   </table>
 </div>
 
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td style="text-align: center;">
+        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>
+        <em>微信公众号</em>
+      </td>
+    </tr>
+  </table>
+</div>
 
 ## 邮箱
 
 xast-contact@service.alipay.com
+
+# [FAQ](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/FAQ)
+
+# [参与共建](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE)
 
 # License
 This project is licensed under the Apache License 2.0
