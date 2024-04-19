@@ -3,8 +3,8 @@
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
-        <em>微信小助手</em>
+        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/curry240416/floder-img/xastlogo.png" alt="WeChat Assistant" width="200"/><br>
+        <em>WeChat Assistant</em>
       </td>
     </tr>
   </table>
