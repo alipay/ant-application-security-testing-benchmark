@@ -1,9 +1,18 @@
-<div align='center' ><font size="18">xAST评价体系开源项目简介</font></div>
 
-# 项目logo
- [ 项目官网 ](https://xastbenchmark.github.io/)
+<div align="center">
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td style="text-align: center;">
+        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
+        <em>微信小助手</em>
+      </td>
+    </tr>
+  </table>
+</div>
 
-# 中文/英文
+## [ 项目官网 ](https://xastbenchmark.github.io/)
+
+### [简体中文](README.md) / [English](README_en.md)
 
 # 项目简介
 
@@ -223,7 +232,8 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
   <table border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>
+<!--        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>-->
+            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/curry240416/floder-img/gzh.png" alt="微信公众号" width="200"/><br>
         <em>微信公众号</em>
       </td>
     </tr>
