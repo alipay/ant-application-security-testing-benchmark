@@ -1,17 +1,7 @@
-<div align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="text-align: center;">
-        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/curry240416/floder-img/xastlogo.png" alt="WeChat Assistant" width="200"/><br>
-        <em>WeChat Assistant</em>
-      </td>
-    </tr>
-  </table>
-</div>
 
+# <img src="floder-img/xastlogo.png"  />
 ## [Official Website](https://xastbenchmark.github.io/)
-
-### [简体中文](README.md) / [English](README_en.md)
+#### [简体中文](README.md) / [English](README_en.md)
 
 # Project Introduction
 
