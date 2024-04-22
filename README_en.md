@@ -213,20 +213,13 @@ In 2024, the project plans to settle in an open-source foundation or alliance, c
         <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="WeChat Assistant" width="200"/><br>
         <em>WeChat Assistant</em>
       </td>
+      <td style="text-align: center;">
+            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/gzh.png" alt="WeChat Official Account" width="200"/><br>
+       </td>
     </tr>
   </table>
 </div>
 
-<div align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
-      <td style="text-align: center;">
-            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/curry240416/floder-img/gzh.png" alt="WeChat Official Account" width="200"/><br>
-        <em>WeChat Official Account</em>
-      </td>
-    </tr>
-  </table>
-</div>
 
 ## Email
 
