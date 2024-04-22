@@ -213,21 +213,25 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
         <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/xzs.png" alt="微信小助手" width="200"/><br>
         <em>微信小助手</em>
       </td>
-    </tr>
-  </table>
-</div>
-
-<div align="center">
-  <table border="0" cellspacing="0" cellpadding="0">
-    <tr>
       <td style="text-align: center;">
-<!--        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>-->
-            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/curry240416/floder-img/gzh.png" alt="微信公众号" width="200"/><br>
+            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>
         <em>微信公众号</em>
       </td>
     </tr>
   </table>
 </div>
+
+<!--<div align="center">-->
+<!--  <table border="0" cellspacing="0" cellpadding="0">-->
+<!--    <tr>-->
+<!--      <td style="text-align: center;">-->
+<!--&lt;!&ndash;        <img src="https://github.com/alipay/ant-application-security-testing-benchmark/raw/main/floder-img/gzh.png" alt="微信公众号" width="200"/><br>&ndash;&gt;-->
+<!--            <img src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/curry240416/floder-img/gzh.png" alt="微信公众号" width="200"/><br>-->
+<!--        <em>微信公众号</em>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
+<!--</div>-->
 
 ## 邮箱
 
