@@ -4,6 +4,7 @@ awatch3.1.0/
 *.zip
 *.jar
 iast-java/target/
+sast-java/target/
 data/
 iast-java/logs/
 logs/

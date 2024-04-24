@@ -6,7 +6,10 @@ import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
 import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
 import com.iast.astbenchmark.analyser.service.ConfigService;
 import com.iast.astbenchmark.analyser.service.DataAnalysisService;
+import com.iast.astbenchmark.analyser.util.MermindUtil;
 import com.iast.astbenchmark.cli.test.AutoRunTest;
+
+import com.iast.astbenchmark.cli.xmind.XMindReaderUtil;
 import com.iast.astbenchmark.cli.xmind.XmindUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.jline.utils.AttributedString;
@@ -27,7 +30,7 @@ import java.util.stream.Collectors;
 
 @ShellComponent
 @Slf4j
-public class MyCommands {
+public class IastBenchmarkCommand {
 
     @Autowired
     private DataAnalysisService dataAnalysisService;
@@ -42,7 +45,7 @@ public class MyCommands {
      * 1 run Test ?
      */
 
-    @ShellMethod("-v :input vendor;-p :input file;-c :input checkFlag;-o :result to file")
+    @ShellMethod("分析iast软件的跑测结果 -v :input vendor;-p :input file;-c :input checkFlag;-o :result to file")
     public String analysis(@ShellOption("-v") String vendor
             , @ShellOption(defaultValue = "", value = "-p") String path, @ShellOption(defaultValue = "", value = "-c") String checkFlag,
                            @ShellOption(defaultValue = "", value = "-o") String resultFile) {
@@ -77,7 +80,7 @@ public class MyCommands {
         }
     }
 
-    @ShellMethod("-i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）")
+    @ShellMethod("查询已跑测的结果报告 -i :input reportId;-o :result to file;-l list ;-x export results（xmind,plain txt...）")
     public String search(@ShellOption(value = {"-i"}, defaultValue = "") String reportId,
                          @ShellOption(defaultValue = "", value = "-o") String resultFile
             , @ShellOption(defaultValue = "", value = "-l") String listId,
@@ -111,7 +114,7 @@ public class MyCommands {
         return "请根据提示输入操作";
     }
 
-    @ShellMethod("-a :input reportId1;-b: input reportId2;-o:result to file;  (compare reportId1 to reportId2)")
+    @ShellMethod("对比两次跑测报告的差异 -a :input reportId1;-b: input reportId2;-o:result to file;  (compare reportId1 to reportId2)")
     public String compare(@ShellOption(value = "-a") String reportId1, @ShellOption(value = "-b") String reportId2,
                           @ShellOption(defaultValue = "", value = "-o") String resultFile) {
         try {
@@ -134,7 +137,7 @@ public class MyCommands {
         }
     }
 
-    @ShellMethod("-m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)")
+    @ShellMethod("跑测靶场 -m :input MethodName(Which is CaseTag. eg:aTaintCase001);-i: input benchmark host (eg: http://localhost:39100/)")
     public String runtest(@ShellOption(value = {"-m"}, defaultValue = "") String methodName,
                           @ShellOption(defaultValue = "", value = "-i") String url) {
 
@@ -150,7 +153,38 @@ public class MyCommands {
         }
     }
 
+    @ShellMethod("导出评价体系脑图(mermind格式) -o :mermind scripts to md file -x : mermind scripts from xmind file")
+    public String mermind(@ShellOption(defaultValue = "", value = "-o") String resultFile,
+                          @ShellOption(defaultValue = "", value = "-x") String xmindFile) {
+
+        try {
+            if(StrUtil.isNotEmpty(xmindFile)){
+                if(!xmindFile.endsWith(".xmind")){
+                    return "ERROR:请输入以xmind结尾的xmind文件路径";
+                }
+                if(!FileUtil.isFile(xmindFile)){
+                    return "ERROR:请检查xmind文件是否存在";
+                }
+                return XMindReaderUtil.convertXmindToMermind(xmindFile);
+            }else {
+                if(StrUtil.isNotEmpty(resultFile)&&!resultFile.endsWith(".md")){
+                    return "ERROR:请输入以md结尾的markdown文档";
+                }
+                String res = MermindUtil.printMermindScript();
+                if(StrUtil.isNotEmpty(resultFile)){
+                    FileUtil.writeString(res, resultFile, Charset.forName("utf-8"));
+                    return "结果已写入文件" + resultFile + "中,请查看";
+                }
+                return res;
+            }
+        } catch (Exception e) {
+            log.error("异常:{}", e);
+            return "ERROR:异常";
+        }
+    }
+
     private String checkParamSearch(String reportId, String resultFile, String vendor, Boolean exportFlag) {
+
         if (StrUtil.isNotEmpty(reportId) && StrUtil.isNotEmpty(vendor)) {
             return "请选择输入一个操作 -i or -l";
         }

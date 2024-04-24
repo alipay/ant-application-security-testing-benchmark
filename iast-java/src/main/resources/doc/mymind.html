@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My GitHub Pages with MindMup</title>
+    <script src="https://unpkg.com/mindmup-mapjs"></script>
+    <script src="https://unpkg.com/mindmup-mapjs/dist/mapjs-2.0.1.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/mindmup-mapjs/dist/mapjs.css">
+</head>
+<body>
+<div id="map"></div>
+
+<script>
+    // Load and render the mind map
+    const mapUrl = 'https://raw.githubusercontent.com/yourusername/yourrepository/main/mymap.json';
+
+    fetch(mapUrl)
+        .then(response => response.json())
+        .then(data => {
+            const map = new MindMup.Map.Map('map');
+            map.loadFromMap(data);
+            map.selectNode('root'); // Optionally, select the root node
+        })
+        .catch(error => console.error('Error loading mind map:', error));
+</script>
+</body>
+</html>
