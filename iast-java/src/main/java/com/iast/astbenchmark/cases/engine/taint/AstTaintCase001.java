@@ -25,55 +25,6 @@ public class AstTaintCase001 {
 
 
 
-    /** 污点对象完整度 基础类型 **/
-    /**
-     * aTaintCase001 基本类型int 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @GetMapping("case001")
-    @CaseTag(
-            caseNo = "aTaintCase001",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->int",
-            thisMethodTag = "aTaintCase001",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase001(@RequestParam int cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e)  {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
-
-
-    /**
-     * aTaintCase002 基本类型char 作为污点对象
-     * 测试数据传（0～9）
-     *
-     * @return
-     */
-    @GetMapping("case002")
-    @CaseTag(
-            caseNo ="aTaintCase002",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->char",
-            thisMethodTag = "aTaintCase002",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase002(@RequestParam char cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
 
     /**
      * 基本类型byte 作为污点对象
