@@ -26,29 +26,7 @@ public class AstTaintCase001 {
 
 
 
-    /**
-     * 基本类型byte 作为污点对象
-     *
-     * @param cmd
-     * @return
-     */
-    @GetMapping("case003")
-    @CaseTag(
-            caseNo ="aTaintCase003",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->byte",
-            thisMethodTag = "aTaintCase003",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase003(@RequestParam byte cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
+
 
     /**
      * 基础类型long 作为污点对象
