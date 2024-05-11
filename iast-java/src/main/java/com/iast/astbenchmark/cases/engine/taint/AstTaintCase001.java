@@ -1,4 +1,4 @@
-package com.iast.astbenchmark.cases;
+package com.iast.astbenchmark.cases.engine.taint;
 
 import com.iast.astbenchmark.cases.bean.SourceTestObject;
 import com.iast.astbenchmark.cases.bean.SourceTestWith100Filedsbject;

@@ -1,4 +1,4 @@
-package com.iast.astbenchmark.cases;
+package com.iast.astbenchmark.cases.engine.taint;
 
 import cn.hutool.cache.Cache;
 import cn.hutool.cache.CacheUtil;

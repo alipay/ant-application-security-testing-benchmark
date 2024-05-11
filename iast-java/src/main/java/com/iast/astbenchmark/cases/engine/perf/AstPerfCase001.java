@@ -1,4 +1,4 @@
-package com.iast.astbenchmark.cases;
+package com.iast.astbenchmark.cases.engine.perf;
 
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.cases.bean.big.BigParamBean;

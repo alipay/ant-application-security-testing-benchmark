@@ -1,31 +1,19 @@
 package com.iast.astbenchmark.analyser.cache;
 
-import cn.hutool.core.io.IoUtil;
-import cn.hutool.core.io.resource.ClassPathResource;
-import cn.hutool.json.JSONArray;
-import cn.hutool.json.JSONUtil;
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
-import com.iast.astbenchmark.cases.AstTaintCase001;
-import com.iast.astbenchmark.cases.AstTaintCase002;
-import com.iast.astbenchmark.cases.AstTaintCase003;
-import com.iast.astbenchmark.cases.AstTaintCase004;
-import com.iast.astbenchmark.cli.tree.CaseNode;
+import com.iast.astbenchmark.cases.engine.taint.AstTaintCase001;
+import com.iast.astbenchmark.cases.engine.taint.AstTaintCase002;
+import com.iast.astbenchmark.cases.engine.taint.AstTaintCase003;
+import com.iast.astbenchmark.cases.engine.taint.AstTaintCase004;
 import com.iast.astbenchmark.cli.tree.CaseNodeTreeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.nio.charset.Charset;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil.buildCaseMap;
-import static com.iast.astbenchmark.analyser.cache.CaseStuctCache.leafData;
 
 @Component
 @Slf4j

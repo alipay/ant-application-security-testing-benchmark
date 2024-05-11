@@ -27,7 +27,7 @@ public class CaseDataBean {
      *   *       "URL": "/ataint/case00112",
      *   *     "SourceName": "cmd",
      *   *      "SourceType": "Parameter",
-     *   *      "CodeLocation": "com.iast.astbenchmark.cases.AstTaintCase002.aTaintCase00112():1553",
+     *   *      "CodeLocation": "com.iast.astbenchmark.cases.engine.taint.AstTaintCase002.aTaintCase00112():1553",
      */
     private String source;
     private List<String> sinks;

@@ -7,6 +7,7 @@ import com.iast.astbenchmark.analyser.service.DataAnalysisService;
 import com.iast.astbenchmark.analyser.bean.CaseDataCollectResultBean;
 import com.iast.astbenchmark.analyser.bean.consts.VendorEnum;
 import com.iast.astbenchmark.analyser.cache.AnnotationProcessorUtil;
+import com.iast.astbenchmark.cases.engine.taint.AstTaintCase001;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,4 +1,4 @@
-package com.iast.astbenchmark.cases;
+package com.iast.astbenchmark.cases.engine.taint;
 
 import cn.hutool.core.util.StrUtil;
 import com.iast.astbenchmark.cases.bean.SourceTestObject;
