@@ -22,28 +22,7 @@ import static com.iast.astbenchmark.common.CommonConsts.SUCCESS_STR;
  */
 @RestController()
 public class AstTaintCase001 {
-    /**
-     * 字符串对象,String
-     * @param cmd
-     * @return
-     */
-    @PostMapping ("case00901")
-    @CaseTag(
-            caseNo = "aTaintCase00901",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->字符串对象->String",
-            thisMethodTag = "aTaintCase00901",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00901(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", ERROR_STR);
-        }
-        return modelMap;
-    }
+
 
 
     /** 污点对象完整度 基础类型 **/
