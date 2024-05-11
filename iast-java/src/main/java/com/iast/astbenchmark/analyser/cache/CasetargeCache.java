@@ -2,7 +2,6 @@ package com.iast.astbenchmark.analyser.cache;
 
 import com.google.common.collect.Maps;
 import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
-import com.iast.astbenchmark.cases.engine.taint.AstTaintCase001;
 import com.iast.astbenchmark.cases.engine.taint.AstTaintCase002;
 import com.iast.astbenchmark.cases.engine.taint.AstTaintCase003;
 import com.iast.astbenchmark.cases.engine.taint.AstTaintCase004;

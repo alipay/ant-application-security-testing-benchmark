@@ -1,9 +1,8 @@
-package com.iast.astbenchmark.cases.engine.taint.basic.completion;
+package com.iast.astbenchmark.cases.engine.taint.basic.completion.basicType;
 
 import com.iast.astbenchmark.analyser.cache.CaseTag;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -13,7 +12,7 @@ import static com.iast.astbenchmark.common.CommonConsts.ERROR_STR;
 import static com.iast.astbenchmark.common.CommonConsts.SUCCESS_STR;
 
 /**
- * Introduction aTaintCase002 基本类型char 作为污点对象
+ * Introduction
  * Level X
  * Date 2024-05-11
  *
@@ -21,27 +20,26 @@ import static com.iast.astbenchmark.common.CommonConsts.SUCCESS_STR;
  */
 // assession information start
 // real vulnerability = true
-// assession project = IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->char
+// assession project = IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->long
 // compose =
-// bind_url = /case002
+// bind_url = /case004
 // assession information end
-@RestController()
-public class Char_002_T {
+public class Long_long_004_T {
 
     /**
-     * aTaintCase002 基本类型char 作为污点对象
-     * 测试数据传（0～9）
+     * 基础类型long 作为污点对象
      *
+     * @param cmd
      * @return
      */
-    @GetMapping("case002")
+    @GetMapping("case004")
     @CaseTag(
-            caseNo ="aTaintCase002",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->char",
-            thisMethodTag = "aTaintCase002",
+            caseNo ="aTaintCase004",
+            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->long",
+            thisMethodTag = "aTaintCase004",
             thisMethodExpectedResult = true
     )
-    public Map<String, Object> aTaintCase002(@RequestParam char cmd) {
+    public Map<String, Object> aTaintCase004(@RequestParam long cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));

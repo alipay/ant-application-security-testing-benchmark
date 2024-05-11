@@ -1,4 +1,4 @@
-package com.iast.astbenchmark.cases.engine.taint.basic.completion;
+package com.iast.astbenchmark.cases.engine.taint.basic.completion.basicType;
 
 import static com.iast.astbenchmark.common.CommonConsts.ERROR_STR;
 import static com.iast.astbenchmark.common.CommonConsts.SUCCESS_STR;
