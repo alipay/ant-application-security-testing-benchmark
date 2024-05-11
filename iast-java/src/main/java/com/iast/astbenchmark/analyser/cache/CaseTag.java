@@ -8,13 +8,13 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD) // 定义注解可以应用于方法
 @Retention(RetentionPolicy.RUNTIME) // 定义注解在运行时可用
 public @interface CaseTag {
+
     /**
      * Case编码
      *
      * @return
      */
     String caseNo();
-
 
     /**
      * case 全名包括路径
