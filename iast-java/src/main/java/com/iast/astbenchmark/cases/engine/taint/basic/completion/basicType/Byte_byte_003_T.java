@@ -10,7 +10,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -36,11 +36,11 @@ public class Byte_byte_003_T {
      * @return
      */
     @GetMapping("case003")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase003",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->byte",
             thisMethodTag = "aTaintCase003",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase003(@RequestParam byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();

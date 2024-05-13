@@ -10,7 +10,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean2;
 
 /**
@@ -19,9 +19,9 @@ import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean2;
 public class MultiLayer_3_002_T {
 
     @PostMapping("case00923/2")
-    @CaseTag(caseNo = "aTaintCase00923",
+    @IastTestCase(caseNo = "aTaintCase00923",
         caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->多层字段->3层",
-        thisMethodTag = "aTaintCase00923_2", thisMethodExpectedResult = true)
+        thisMethodTag = "aTaintCase00923_2", hasVul = true)
     public Map<String, Object> aTaintCase00923_2(@RequestBody LayerBaseBean2 cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

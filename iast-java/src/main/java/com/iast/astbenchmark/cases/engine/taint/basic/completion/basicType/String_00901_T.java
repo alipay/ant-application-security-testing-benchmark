@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 
 /**
  *
@@ -36,8 +36,8 @@ public class String_00901_T {
      * @return
      */
     @PostMapping("case00901")
-    @CaseTag(caseNo = "aTaintCase00901", caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->字符串对象->String",
-        thisMethodTag = "aTaintCase00901", thisMethodExpectedResult = true)
+    @IastTestCase(caseNo = "aTaintCase00901", caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->字符串对象->String",
+        thisMethodTag = "aTaintCase00901", hasVul = true)
     public Map<java.lang.String, Object> aTaintCase00901(@RequestParam java.lang.String cmd) {
         Map<java.lang.String, Object> modelMap = new HashMap<>();
         try {

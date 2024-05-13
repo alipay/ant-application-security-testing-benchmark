@@ -10,7 +10,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.cases.bean.SourceTestWith10Filedsbject;
 
 /**
@@ -25,9 +25,9 @@ public class SingleLayerObject_10_001_T {
      * @return
      */
     @PostMapping("case00921")
-    @CaseTag(caseNo = "aTaintCase00921",
+    @IastTestCase(caseNo = "aTaintCase00921",
         caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->10",
-        thisMethodTag = "aTaintCase00921", thisMethodExpectedResult = true)
+        thisMethodTag = "aTaintCase00921", hasVul = true)
     public Map<String, Object> aTaintCase00921(@RequestBody SourceTestWith10Filedsbject cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

@@ -10,7 +10,7 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -37,8 +37,8 @@ public class Int_001_T {
      * @return
      */
     @GetMapping("case001")
-    @CaseTag(caseNo = "aTaintCase001", caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->int",
-        thisMethodTag = "aTaintCase001", thisMethodExpectedResult = true)
+    @IastTestCase(caseNo = "aTaintCase001", caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->int",
+        thisMethodTag = "aTaintCase001", hasVul = true)
     public Map<String, Object> aTaintCase001(@RequestParam int cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

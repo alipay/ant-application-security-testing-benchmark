@@ -1,6 +1,6 @@
 package com.iast.astbenchmark.cases.engine.taint.basic.completion.basicType;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,11 +35,11 @@ public class Char_002_T {
      * @return
      */
     @GetMapping("case002")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase002",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->char",
             thisMethodTag = "aTaintCase002",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase002(@RequestParam char cmd) {
         Map<String, Object> modelMap = new HashMap<>();

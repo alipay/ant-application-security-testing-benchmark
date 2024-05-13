@@ -1,6 +1,6 @@
 package com.iast.astbenchmark.cases.engine.taint.basic.completion.basicType;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.cases.bean.SoureWithQueueBean;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,11 +24,11 @@ public class Queue_007_T {
      * @return
      */
     @PostMapping("case007")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase007",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->集合(集合对象全为污点)->Queue元素",
             thisMethodTag = "aTaintCase007",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase007(@RequestBody SoureWithQueueBean queueBean) {
         Map<String, Object> modelMap = new HashMap<>();

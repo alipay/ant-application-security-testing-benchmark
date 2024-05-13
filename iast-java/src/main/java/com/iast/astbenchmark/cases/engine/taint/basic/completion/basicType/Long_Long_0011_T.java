@@ -1,6 +1,6 @@
 package com.iast.astbenchmark.cases.engine.taint.basic.completion.basicType;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,11 +23,11 @@ public class Long_Long_0011_T {
      * @return
      */
     @PostMapping("case0011")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase0011",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->基本数据类型及其封装类型->Long",
             thisMethodTag = "aTaintCase0011",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase0011(@RequestParam Long cmd) {
         Map<String, Object> modelMap = new HashMap<>();

@@ -5,7 +5,7 @@ import com.iast.astbenchmark.cases.bean.SourceTestObject;
 import com.iast.astbenchmark.cases.bean.SoureWithQueueBean;
 import com.iast.astbenchmark.cases.bean.SoureWithSetBean;
 import com.iast.astbenchmark.cases.bean.layers.LayerBaseBean99;
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,7 +22,7 @@ import java.util.Queue;
 import java.util.Set;
 
 /**
- * 准备度（aTaintCase00125～case00137）
+ * 准确度（aTaintCase00125～case00137）
  */
 @RestController()
 public class AstTaintCase004 {
@@ -40,11 +40,11 @@ public class AstTaintCase004 {
     //        pw.flush();
     //    }
     @PostMapping(value = "case00125")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00125",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->变量级别->sink点的值非外部可控，但与某个参数值相同",
             thisMethodTag = "aTaintCase00125",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00125(@RequestParam String cmd1, @RequestParam(defaultValue = "ls") String cmd2) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -59,11 +59,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00125/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00125",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->变量级别->sink点的值非外部可控，但与某个参数值相同",
             thisMethodTag = "aTaintCase00125",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00125_2(@RequestParam String cmd1, @RequestParam(defaultValue = "") String cmd2) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -82,11 +82,11 @@ public class AstTaintCase004 {
      * /2为参照组，期望case被检测出，参照组不被检测出
      */
     @PostMapping(value = "case00126")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00126",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->单层简单对象部分字段为污点",
             thisMethodTag = "aTaintCase00126",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00126(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -103,11 +103,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00126/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00126",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->单层简单对象部分字段为污点",
             thisMethodTag = "aTaintCase00126_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00126_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -127,11 +127,11 @@ public class AstTaintCase004 {
      * aTaintCase00127 污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类
      */
     @PostMapping(value = "case00127")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00127",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类",
             thisMethodTag = "aTaintCase00127",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00127(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -150,11 +150,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00127/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00127",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自父类",
             thisMethodTag = "aTaintCase00127_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00127_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -176,11 +176,11 @@ public class AstTaintCase004 {
      * aTaintCase00128 污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来自子类
      */
     @PostMapping(value = "case00128")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00128",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来当前类字段",
             thisMethodTag = "aTaintCase00128",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00128(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -199,11 +199,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00128/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00128",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->多层复杂对象部分字段为污点->污点来当前类字段",
             thisMethodTag = "aTaintCase00128_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00128_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -226,11 +226,11 @@ public class AstTaintCase004 {
      * aTaintCase00129 污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点
      */
     @PostMapping(value = "case00129")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00129",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00129",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00129(@RequestParam String cmd) {
@@ -249,11 +249,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00129/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00129",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->单维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00129",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00129_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -274,11 +274,11 @@ public class AstTaintCase004 {
      * aTaintCase00130 污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点
      */
     @PostMapping(value = "case00130")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00130",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00130",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00130(@RequestBody String[][] strings) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -300,11 +300,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00130/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00130",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->多维数组中的部分元素为污点",
             thisMethodTag = "aTaintCase00130_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00130_2(@RequestBody String[][] strings) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -325,11 +325,11 @@ public class AstTaintCase004 {
      */
 
     @PostMapping(value = "case00131")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00131",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00131",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00131(@RequestBody String[][] strings) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -350,11 +350,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00131/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00131",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分数据元素为污点->部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00131_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00131_2(@RequestBody String[][] strings) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -378,11 +378,11 @@ public class AstTaintCase004 {
      * aTaintCase00132 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点
      */
     @PostMapping(value = "case00132")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00132",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点",
             thisMethodTag = "aTaintCase00132",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00132(@RequestBody List<String> stringList) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -398,11 +398,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00132/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00132",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->List中部分元素为污点",
             thisMethodTag = "aTaintCase00132_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00132_2(@RequestBody List<String> stringList) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -421,11 +421,11 @@ public class AstTaintCase004 {
      * aTaintCase00133 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点
      */
     @PostMapping(value = "case00133")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00133",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点",
             thisMethodTag = "aTaintCase00133",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00133(@RequestBody Map<String, String> map) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -443,11 +443,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00133/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00133",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Map中部分元素为污点",
             thisMethodTag = "aTaintCase00133_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00133_2(@RequestBody Map<String, String> map) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -466,11 +466,11 @@ public class AstTaintCase004 {
      * aTaintCase00134 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点
      */
     @PostMapping(value = "case00134")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00134",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点",
             thisMethodTag = "aTaintCase00134",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00134(@RequestBody SoureWithSetBean setBean) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -491,11 +491,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00134/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00134",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Set中部分元素为污点",
             thisMethodTag = "aTaintCase00134",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00134_2(@RequestBody SoureWithSetBean setBean) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -519,11 +519,11 @@ public class AstTaintCase004 {
      * aTaintCase00135 污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点
      */
     @PostMapping(value = "case00135")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00135",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点",
             thisMethodTag = "aTaintCase00135",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00135(@RequestBody SoureWithQueueBean queueBean) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -544,11 +544,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00135/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00135",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->Queue中部分元素为污点",
             thisMethodTag = "aTaintCase00135",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00135_2(@RequestBody SoureWithQueueBean queueBean) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -573,11 +573,11 @@ public class AstTaintCase004 {
      */
 
     @PostMapping(value = "case00136")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00136",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->集合中部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00136",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00136(@RequestBody List<String> list) {
@@ -600,11 +600,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00136/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00136",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分集合元素为污点->集合中部分元素为污点，经过JDK序列化后再反序列化",
             thisMethodTag = "aTaintCase00136",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
 
     public Map<String, Object> aTaintCase00136_2(@RequestBody List<String> list) {
@@ -657,11 +657,11 @@ public class AstTaintCase004 {
 
     @PostMapping(value = "case00940")
 
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00940",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcace",
             thisMethodTag = "aTaintCase00940",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00940(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -678,11 +678,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00940/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00940",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcace",
             thisMethodTag = "aTaintCase00940_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00940_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -696,11 +696,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00940/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00940",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcace",
             thisMethodTag = "aTaintCase00940_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00940_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -717,11 +717,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00941")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00941",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcaceAll",
             thisMethodTag = "aTaintCase00941",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00941(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -738,11 +738,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00941/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00941",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcaceAll",
             thisMethodTag = "aTaintCase00941_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00941_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -756,11 +756,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00941/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00941",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->replcaceAll",
             thisMethodTag = "aTaintCase00941_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00941_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -777,11 +777,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00942")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00942",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->split",
             thisMethodTag = "aTaintCase00942",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00942(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -798,11 +798,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00942/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00942",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->split",
             thisMethodTag = "aTaintCase00942_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00942_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -816,11 +816,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00942/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00942",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->split",
             thisMethodTag = "aTaintCase00942_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00942_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -837,11 +837,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00943")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00943",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->subSequence",
             thisMethodTag = "aTaintCase00943",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00943(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -858,11 +858,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00943/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00943",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->subSequence",
             thisMethodTag = "aTaintCase00943_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00943_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -876,11 +876,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00943/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00943",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->subSequence",
             thisMethodTag = "aTaintCase00943_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00943_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -897,11 +897,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00944")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00944",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->substring",
             thisMethodTag = "aTaintCase00944",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00944(@RequestParam String cmd) {
@@ -919,11 +919,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00944/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00944",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->substring",
             thisMethodTag = "aTaintCase00944_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00944_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -937,11 +937,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00944/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00944",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->substring",
             thisMethodTag = "aTaintCase00944_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00944_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -958,11 +958,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00945")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00945",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->trim",
             thisMethodTag = "aTaintCase00945",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00945(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -979,11 +979,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00945/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00945",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->String操作->trim",
             thisMethodTag = "aTaintCase00945_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00945_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -997,11 +997,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00946")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00946",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->delete",
             thisMethodTag = "aTaintCase00946",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00946(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1018,11 +1018,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00946/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00946",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->delete",
             thisMethodTag = "aTaintCase00946_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00946_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1036,11 +1036,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00946/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00946",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->delete",
             thisMethodTag = "aTaintCase00946_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00946_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1058,11 +1058,11 @@ public class AstTaintCase004 {
 
     @PostMapping(value = "case00947")
 
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00947",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->deleteCharAt",
             thisMethodTag = "aTaintCase00947",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00947(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1080,11 +1080,11 @@ public class AstTaintCase004 {
 
     @PostMapping(value = "case00947/2")
 
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00947",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->deleteCharAt",
             thisMethodTag = "aTaintCase00947_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00947_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1098,11 +1098,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00947/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00947",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->deleteCharAt",
             thisMethodTag = "aTaintCase00947_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00947_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1119,11 +1119,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00948")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00948",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->getChars",
             thisMethodTag = "aTaintCase00948",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00948(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1141,11 +1141,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00948/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00948",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->getChars",
             thisMethodTag = "aTaintCase00948_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00948_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1159,11 +1159,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00948/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00948",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->getChars",
             thisMethodTag = "aTaintCase00948_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00948_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1181,11 +1181,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00949")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00949",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->replace",
             thisMethodTag = "aTaintCase00949",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00949(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1203,11 +1203,11 @@ public class AstTaintCase004 {
 
     @PostMapping(value = "case00949/2")
 
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00949",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->replace",
             thisMethodTag = "aTaintCase00949_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00949_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1221,11 +1221,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00949/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00949",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->replace",
             thisMethodTag = "aTaintCase00949_3",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00949_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1242,11 +1242,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00950")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00950",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->subSequence",
             thisMethodTag = "aTaintCase00950",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00950(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1263,11 +1263,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00950/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00950",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->subSequence",
             thisMethodTag = "aTaintCase00950_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00950_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1281,11 +1281,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00950/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00950",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->subSequence",
             thisMethodTag = "aTaintCase00950_3",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00950_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1302,11 +1302,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00951")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00951",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->substring",
             thisMethodTag = "aTaintCase00951",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00951(@RequestParam String cmd) {
@@ -1324,11 +1324,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00951/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00951",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->substring",
             thisMethodTag = "aTaintCase00951_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00951_2(@RequestParam String cmd) {
@@ -1343,11 +1343,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00951/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00951",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->StringBuilder操作->substring",
             thisMethodTag = "aTaintCase00951_3",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00951_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1364,11 +1364,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00952")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00952",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->char[]/byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase00952",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00952(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1387,11 +1387,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00952/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00952",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->char[]/byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase00952_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00952_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1405,11 +1405,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00952/3")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00952",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分->char[]/byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase00952_2",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00952_3(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1434,11 +1434,11 @@ public class AstTaintCase004 {
      * @return
      */
     @PostMapping(value = "case00953")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00953",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->concat",
             thisMethodTag = "aTaintCase00953",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00953(@RequestParam String cmd) {
@@ -1457,11 +1457,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00953/1")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00953",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->concat",
             thisMethodTag = "aTaintCase00953_1",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00953_1(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1479,11 +1479,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00953/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00953",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->concat",
             thisMethodTag = "aTaintCase00953_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00953_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1497,11 +1497,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00954")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00954",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->join",
             thisMethodTag = "aTaintCase00954",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00954(@RequestParam String cmd) {
@@ -1520,11 +1520,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00954/1")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00954",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->join",
             thisMethodTag = "aTaintCase00954_1",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
 
     public Map<String, Object> aTaintCase00954_1(@RequestParam String cmd) {
@@ -1543,11 +1543,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00954/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00954",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->join",
             thisMethodTag = "aTaintCase00954_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00954_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1567,11 +1567,11 @@ public class AstTaintCase004 {
      * @return
      */
     @PostMapping(value = "case00955")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00955",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->replace",
             thisMethodTag = "aTaintCase00955",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00955(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1589,11 +1589,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00955/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00955",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->replace",
             thisMethodTag = "aTaintCase00955_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00955_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1607,11 +1607,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00956")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00956",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->replaceAll",
             thisMethodTag = "aTaintCase00956",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00956(@RequestParam String cmd) {
@@ -1630,11 +1630,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00956/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00956",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->replaceAll",
             thisMethodTag = "aTaintCase00956_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00956_2(@RequestParam String cmd) {
@@ -1655,11 +1655,11 @@ public class AstTaintCase004 {
      * @return
      */
     @PostMapping(value = "case00957")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00957",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->trim",
             thisMethodTag = "aTaintCase00957",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00957(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1677,11 +1677,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00957/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00957",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->String操作->trim",
             thisMethodTag = "aTaintCase00957_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00957_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1695,11 +1695,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00958")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00958",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->StringBuilder操作->append",
             thisMethodTag = "aTaintCase00958",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00958(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1717,11 +1717,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00958/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00958",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->StringBuilder操作->append",
             thisMethodTag = "aTaintCase00958_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00958_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1735,11 +1735,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00959")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00959",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->StringBuilder操作->replace",
             thisMethodTag = "aTaintCase00959",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00959(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1757,11 +1757,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00959/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00959",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->StringBuilder操作->replace",
             thisMethodTag = "aTaintCase00959_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00959_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1775,11 +1775,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00960")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00960",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->char[]/byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase00960",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00960(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1809,11 +1809,11 @@ public class AstTaintCase004 {
     }
 
     @PostMapping(value = "case00960/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo = "aTaintCase00960",
             caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字符串级别->字符串部分存在污点->截取非污点部分后再拼接污点->char[]/byte[]操作->copyOfRange",
             thisMethodTag = "aTaintCase00960_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00960_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -1827,45 +1827,5 @@ public class AstTaintCase004 {
         return modelMap;
     }
 
-    @PostMapping(value = "case00142")
-    @CaseTag(
-            caseNo = "aTaintCase00142",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
-            thisMethodTag = "aTaintCase00142",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00142(@RequestBody SourceTestObject testObject) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //String str = JSON.toJSONString(testObject);
-            //SourceTestObject strings1 = JSON.parseObject(str, SourceTestObject.class);
-            byte[] bytes = JDKSerializationUtil.serialize(testObject);
-            SourceTestObject object = JDKSerializationUtil.deSerialize(bytes);
-            Runtime.getRuntime().exec(object.getCmd());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00142/2")
-    @CaseTag(
-            caseNo = "aTaintCase00142",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->准确度->污点对象跟踪粒度->字段/元素级别->部分字段对象为污点->对象部分字段为污点，经过JDK序列化后再反序列化",
-            thisMethodTag = "aTaintCase00142_2",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00142_2(@RequestBody SourceTestObject testObject) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(testObject.getCmd());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 }

@@ -1,31 +1,13 @@
 package com.iast.astbenchmark.cases.engine.taint;
 
-import cn.hutool.core.util.StrUtil;
-import com.iast.astbenchmark.cases.bean.SourceTestObject;
-import com.iast.astbenchmark.cases.bean.xml.TicketRequest;
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.common.CommonConsts;
-import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
-import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.nio.charset.Charset;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,183 +17,7 @@ import java.util.Map;
 @RestController()
 public class AstTaintCase002 {
 
-    /**  污点链路完整度*/
-    /**
-     * 特殊链路跟踪能力->三方包方法跟踪
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case0022")
-    @CaseTag(
-            caseNo ="aTaintCase0022",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->三方包方法跟踪",
-            thisMethodTag = "aTaintCase0022",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0022(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(StrUtil.addPrefixIfNot(cmd, "pre"));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 特殊链路跟踪能力->超长链路追踪
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case0023")
-    @CaseTag(
-            caseNo ="aTaintCase0023",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪->100层",
-            thisMethodTag = "aTaintCase0023",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0023(@RequestBody String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-            return modelMap;
-        }
-        try {
-            /** 递归100次*/
-            cmd = MyCommonTestUtil.traceDeepth(cmd, 0, 100);
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 特殊链路跟踪能力->超长链路追踪
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case00931")
-    @CaseTag(
-            caseNo ="aTaintCase00931",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->超长链路追踪->1000层",
-            thisMethodTag = "aTaintCase00931",
-            thisMethodExpectedResult = true
-    )
-
-    public Map<String, Object> aTaintCase00931(@RequestBody String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-            return modelMap;
-        }
-        try {
-            /** 递归1000次*/
-            cmd = MyCommonTestUtil.traceDeepth(cmd, 0, 1000);
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 特殊链路跟踪能力->反射调用
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case0024")
-    @CaseTag(
-            caseNo ="aTaintCase0024",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->反射调用方法跟踪",
-            thisMethodTag = "aTaintCase0024",
-            thisMethodExpectedResult = true
-    )
-
-    public Map<String, Object> aTaintCase0024(@RequestParam String cmd)
-            throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-            return modelMap;
-        }
-        try {
-            Class<StringBuilder> clazz = StringBuilder.class;
-            Method method = clazz.getMethod("replace", int.class, int.class, String.class);
-            method.setAccessible(true);
-            StringBuilder builder = new StringBuilder(cmd);
-            Runtime.getRuntime().exec(method.invoke(builder, 0, 1, "l").toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 特殊链路跟踪能力->调用native 方法
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping("case0025")
-    @CaseTag(
-            caseNo ="aTaintCase0025",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->特殊链路跟踪能力->调用native方法",
-            thisMethodTag = "aTaintCase0025",
-            thisMethodExpectedResult = true
-    )
-
-    public Map<String, Object> aTaintCase0025(@RequestBody String[] cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-            return modelMap;
-        }
-        try {
-            //String[] b = {"ls","b"};
-            String[] b = {"oo"};
-            System.arraycopy(cmd, 0, b, 0, 1);
-            Runtime.getRuntime().exec(b);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
     /** 污点来源识别能力*/
-
-    /**
-     * 污点来自http url getQueryString
-     *
-     * @param
-     * @return
-     */
-    @PostMapping("case0027")
-    @CaseTag(
-            caseNo ="aTaintCase0027",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http getQueryString",
-            thisMethodTag = "aTaintCase0027",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0027(HttpServletRequest request, @RequestParam String data) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(request.getQueryString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
     ///**
     // * 污点来自http url getContenPath
@@ -313,247 +119,18 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * 污点来自http body  *json
-     *
-     * @param {"cmd":"ls"}
-     * @return //TODO
-     */
-    @PostMapping("case0033")
-    @CaseTag(
-            caseNo ="aTaintCase0033",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->json/RequestBody",
-            thisMethodTag = "aTaintCase0033",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0033(@RequestBody Map<String, String> json) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(json.get(json.keySet().iterator().next()));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  *xml  contentye==xml
-     *
-     * @param /Users/curry/IdeaProjects/astbenchmark/src/main/resources/data/case0034.xml
-     * @return
-     */
-    @PostMapping(value = "/case0034", consumes = {MediaType.APPLICATION_XML_VALUE}, produces = MediaType.APPLICATION_XML_VALUE)
-    @ResponseBody
-    @CaseTag(
-            caseNo ="aTaintCase0034",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->xml/getInputStream",
-            thisMethodTag = "aTaintCase0034",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0034(@RequestBody TicketRequest ticketRequest) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(ticketRequest.getPhase());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  multipart/form-data Part
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0035")
-    @CaseTag(
-            caseNo ="aTaintCase0035",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data->getPart",
-            thisMethodTag = "aTaintCase0035",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0035(@RequestParam MultipartFile file, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //            String cmd = request.getPart("file").getSubmittedFileName();
-            Runtime.getRuntime().exec(request.getPart("file").getSubmittedFileName());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  multipart/form-data Parts()
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0036")
-    @CaseTag(
-            caseNo ="aTaintCase0036",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->multipart/form-data->getParts",
-            thisMethodTag = "aTaintCase0036",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0036(@RequestParam MultipartFile file, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmd = request.getParts().iterator().next().getSubmittedFileName();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        } catch (ServletException e) {
-            throw new RuntimeException(e);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  form/url-encode getParameter
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0037")
-    @CaseTag(
-            caseNo ="aTaintCase0037",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameter",
-            thisMethodTag = "aTaintCase0037",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0037(@RequestParam("cmd") String cmd, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmdStr = request.getParameter("cmd");
-            Runtime.getRuntime().exec(cmdStr);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  form/url-encode getParameterMap
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0038")
-    @CaseTag(
-            caseNo ="aTaintCase0038",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterMap",
-            thisMethodTag = "aTaintCase0038",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0038(@RequestParam("cmd") String cmd, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmdStr = request.getParameterMap().get("cmd")[0];
-            Runtime.getRuntime().exec(cmdStr);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  form/url-encode getParameterValues
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0039")
-    @CaseTag(
-            caseNo ="aTaintCase0039",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterValues",
-            thisMethodTag = "aTaintCase0039",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0039(@RequestParam("cmd") String cmd, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //String cmdStr = request.getParameterValues("cmd")[0];
-            Runtime.getRuntime().exec(request.getParameterValues("cmd"));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  form/url-encode getParameterNames
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0040")
-    @CaseTag(
-            caseNo ="aTaintCase0040",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->form/url-encode->getParameterNames",
-            thisMethodTag = "aTaintCase0040",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0040(@RequestParam("cmd") String cmd, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmdStr = request.getParameterNames().nextElement();
-            Runtime.getRuntime().exec(cmdStr);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http body  getReader
-     * 测试用例创建文件
-     *
-     * @param /Users/curry/IdeaProjects/astbenchmark/src/main/resources/data/ls
-     * @return
-     */
-    @PostMapping(value = "case0041")
-    @CaseTag(
-            caseNo ="aTaintCase0041",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http body->getReader",
-            thisMethodTag = "aTaintCase0041",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0041(@RequestBody String[] cmd, HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            int len = request.getContentLength();
-            // ServletInputStream in = request.getInputStream();
-            String cmdStr = "";
-            if (len != -1) {
-                BufferedReader reader = request.getReader();
-                String str;
-                while ((str = reader.readLine()) != null) {
-                    cmdStr += str;
-                }
-                reader.close();
-            }
-            Runtime.getRuntime().exec(cmdStr);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+
 
     //    /**
     //     * 污点来自http pathVarlables参数值数字
@@ -589,131 +166,9 @@ public class AstTaintCase002 {
     //        return modelMap;
     //    }
 
-    /**
-     * 污点来自http pathVarlables参数值字母和数字的组合
-     *
-     * @param cmd a1
-     * @return
-     */
-    @PostMapping(value = "case0044/{cmd}")
-    @CaseTag(
-            caseNo ="aTaintCase0044",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http pathVarlables",
-            thisMethodTag = "aTaintCase0044",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0044(@PathVariable String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * 污点来自http headers   getCookies
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0045")
-    @CaseTag(
-            caseNo ="aTaintCase0045",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getCookies",
-            thisMethodTag = "aTaintCase0045",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0045(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Cookie[] cookies = request.getCookies();
-            Runtime.getRuntime().exec(String.valueOf(cookies[0].getName()));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http headers   getHeader
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0046")
-    @CaseTag(
-            caseNo ="aTaintCase0046",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeader",
-            thisMethodTag = "aTaintCase0046",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0046(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmd = request.getHeader("cmd");
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http headers   getHeaders
-     *
-     * @param
-     * @return
-     */
-    @PostMapping(value = "case0047")
-    @CaseTag(
-            caseNo ="aTaintCase0047",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeaders",
-            thisMethodTag = "aTaintCase0047",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0047(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmd = request.getHeaders("cmd").nextElement();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
-
-    /**
-     * 污点来自http headers   getHeaderNames
-     *
-     * @param request
-     * @return
-     */
-    @PostMapping(value = "case00139")
-    @CaseTag(
-            caseNo ="aTaintCase00139",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点来源识别能力(source)->污点来自http header->getHeaderNames",
-            thisMethodTag = "aTaintCase00139",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00139(HttpServletRequest request) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String cmd = request.getHeaderNames().nextElement();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
     /** 污点传播跟踪能力*/
 
@@ -998,329 +453,25 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * aTaintCase0062 传播场景->String操作->构造方法
-     */
-    @PostMapping(value = "case0062")
-    @CaseTag(
-            caseNo ="aTaintCase0062",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(String original)",
-            thisMethodTag = "aTaintCase0062",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0062(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //SourceTestWithConstract01Bean constractBean = new SourceTestWithConstract01Bean(cmd);
-            Runtime.getRuntime().exec(new String(cmd));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00143")
-    @CaseTag(
-            caseNo ="aTaintCase00143",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(char value[])",
-            thisMethodTag = "aTaintCase00143",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00143(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(new String(cmd.toCharArray()));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00144")
-    @CaseTag(
-            caseNo ="aTaintCase00144",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(char value[], int offset, int count)",
-            thisMethodTag = "aTaintCase00144",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase00144(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(new String(cmd.toCharArray(), 0, 2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * @param codePoints
-     * @return
-     */
-    @PostMapping(value = "case00145")
-    @CaseTag(
-            caseNo ="aTaintCase00145",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(int[] codePoints, int offset, int count)",
-            thisMethodTag = "aTaintCase00145",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00145(@RequestBody int[] codePoints) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //String testCode = UnicodeUtil.toUnicode(cmd);
-            //            int[] codePoints = new int[cmd.length()];
-            //            int cpCount = cmd.codePointCount(0, cmd.length());
-            //            for(int index = 0; index < cpCount; ++index) {
-            //                //这里的i是字符的位置
-            //                int i = cmd.offsetByCodePoints(0, index);
-            //                int codepoint = cmd.codePointAt(i);
-            //                codePoints[i]=codepoint;
-            //                //108 105
-            //            }
-            Runtime.getRuntime().exec(new String(codePoints, 0, 2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00146")
-    @CaseTag(
-            caseNo ="aTaintCase00146",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(byte bytes[], int offset, int length, String charsetName)",
-            thisMethodTag = "aTaintCase00146",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00146(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            byte[] bytes = cmd.getBytes();
-            Runtime.getRuntime().exec(new String(bytes, 0, bytes.length, "utf-8"));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00147")
-    @CaseTag(
-            caseNo ="aTaintCase00147",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(byte bytes[], int offset, int length, Charset charset)",
-            thisMethodTag = "aTaintCase00147",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00147(@RequestBody byte[] bytes) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //  byte[] bytes = cmd.getBytes();
-            Runtime.getRuntime().exec(new String(bytes, 0, bytes.length, Charset.forName("utf-8")));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00148")
-    @CaseTag(
-            caseNo ="aTaintCase00148",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(StringBuffer buffer)",
-            thisMethodTag = "aTaintCase00148",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00148(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuffer buffer = new StringBuffer(cmd);
-            Runtime.getRuntime().exec(new String(buffer));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00149")
-    @CaseTag(
-            caseNo ="aTaintCase00149",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->构造方法->String(StringBuilder builder)",
-            thisMethodTag = "aTaintCase00149",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00149(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder buffer = new StringBuilder(cmd);
-            Runtime.getRuntime().exec(new String(buffer));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0063 传播场景->String操作->conact
-     */
-    @PostMapping(value = "case0063")
-    @CaseTag(
-            caseNo ="aTaintCase0063",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->conact",
-            thisMethodTag = "aTaintCase0063",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0063(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.concat(" -la");
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0064 传播场景->String操作->copyValueOf
-     */
-    @PostMapping(value = "case0064")
-    @CaseTag(
-            caseNo ="aTaintCase0064",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->copyValueOf",
-            thisMethodTag = "aTaintCase0064",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0064(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            char data[] = cmd.toCharArray();
-            Runtime.getRuntime().exec(String.copyValueOf(data));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0065 传播场景->String操作->format
-     */
-    @PostMapping(value = "case0065")
-    @CaseTag(
-            caseNo ="aTaintCase0065",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->format",
-            thisMethodTag = "aTaintCase0065",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0065(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = String.format("%s -la", cmd);
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0066 传播场景->String操作->getBytes
-     */
 
-    @PostMapping(value = "case0066")
-    @CaseTag(
-            caseNo ="aTaintCase0066",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->getBytes",
-            thisMethodTag = "aTaintCase0066",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0066(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            byte[] bytes = cmd.getBytes();
-            Runtime.getRuntime().exec(new String(bytes));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0067 传播场景->String操作->getChars
-     */
-    @PostMapping(value = "case0067")
-    @CaseTag(
-            caseNo ="aTaintCase0067",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->getChars",
-            thisMethodTag = "aTaintCase0067",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0067(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            char[] chars = new char[] {0, 0};
-            cmd.getChars(0, 2, chars, 0);
-            Runtime.getRuntime().exec(new String(chars));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0068 传播场景->String操作->intern
-     */
-    @PostMapping(value = "case0068")
-    @CaseTag(
-            caseNo ="aTaintCase0068",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->intern",
-            thisMethodTag = "aTaintCase0068",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0068(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd.intern());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0069 传播场景->String操作->join
-     */
-    @PostMapping(value = "case0069")
-    @CaseTag(
-            caseNo ="aTaintCase0069",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->join",
-            thisMethodTag = "aTaintCase0069",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0069(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = String.join(" ", cmd, "-la");
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+
 
     ///**
     // * aTaintCase0070 传播场景->String操作->repeat
@@ -1340,75 +491,10 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * aTaintCase0071 传播场景->String操作->replace
-     * ls;-la
-     */
-    @PostMapping(value = "case0071")
-    @CaseTag(
-            caseNo ="aTaintCase0071",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->replace",
-            thisMethodTag = "aTaintCase0071",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0071(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.replace(";", " ");
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase00140 传播场景->String操作->replace
-     * alasa
-     */
-    @PostMapping(value = "case00140")
-    @CaseTag(
-            caseNo ="aTaintCase00140",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->replaceAll",
-            thisMethodTag = "aTaintCase00140",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase00140(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.replaceAll("a", "");
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0072 传播场景->String操作->split
-     */
-    @PostMapping(value = "case0072")
-    @CaseTag(
-            caseNo ="aTaintCase0072",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->split",
-            thisMethodTag = "aTaintCase0072",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0072(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.split(" ")[0];
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
     ///**
     // * aTaintCase0073 传播场景->String操作->strip
@@ -1428,228 +514,23 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * aTaintCase0074 传播场景->String操作->subSequence
-     */
-    @PostMapping(value = "case0074")
-    @CaseTag(
-            caseNo ="aTaintCase0074",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->subSequence",
-            thisMethodTag = "aTaintCase0074",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0074(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd.subSequence(0, 2)));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0075 传播场景->String操作->substring
-     * lsabc
-     */
-    @PostMapping(value = "case0075")
-    @CaseTag(
-            caseNo ="aTaintCase0075",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->substring",
-            thisMethodTag = "aTaintCase0075",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0075(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(cmd.substring(0, 2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0076 传播场景->String操作->toCharArray
-     */
-    @PostMapping(value = "case0076")
-    @CaseTag(
-            caseNo ="aTaintCase0076",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->toCharArray",
-            thisMethodTag = "aTaintCase0076",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0076(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            char[] chars = cmd.toCharArray();
-            Runtime.getRuntime().exec(String.valueOf(chars));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0077 传播场景->String操作->toLowerCase
-     */
-    @PostMapping(value = "case0077")
-    @CaseTag(
-            caseNo ="aTaintCase0077",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->toLowerCase",
-            thisMethodTag = "aTaintCase0077",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0077(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.toLowerCase();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0078 传播场景->String操作->toString
-     */
-    @PostMapping(value = "case0078")
-    @CaseTag(
-            caseNo ="aTaintCase0078",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->toString",
-            thisMethodTag = "aTaintCase0078",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0078(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.toString();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0079 传播场景->String操作->toUpperCase
-     */
-    @PostMapping(value = "case0079")
-    @CaseTag(
-            caseNo ="aTaintCase0079",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->toUpperCase",
-            thisMethodTag = "aTaintCase0079",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0079(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.toUpperCase();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0080 传播场景->String操作->trim
-     */
 
-    @PostMapping(value = "case0080")
 
-    @CaseTag(
-            caseNo ="aTaintCase0080",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->trim",
-            thisMethodTag = "aTaintCase0080",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0080(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = cmd.trim();
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0081 传播场景->String操作->valueOf
-     */
-    @PostMapping(value = "case0081")
-    @CaseTag(
-            caseNo ="aTaintCase0081",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->String操作->valueOf",
-            thisMethodTag = "aTaintCase0081",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0081(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            cmd = String.valueOf(cmd);
-            Runtime.getRuntime().exec(cmd);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0082 传播场景->StringBuilder操作->构造方法
-     */
-    @PostMapping(value = "case0082")
-    @CaseTag(
-            caseNo ="aTaintCase0082",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->构造方法",
-            thisMethodTag = "aTaintCase0082",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0082(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            //SourceTestWithConstract02Bean constract02Bean = new SourceTestWithConstract02Bean();
-            Runtime.getRuntime().exec(String.valueOf(new StringBuilder(cmd)));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0083 传播场景->StringBuilder操作->append
-     */
-    @PostMapping(value = "case0083")
-    @CaseTag(
-            caseNo ="aTaintCase0083",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->append",
-            thisMethodTag = "aTaintCase0083",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0083(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+
+
+
+
+
 
     ///**
     // * aTaintCase0084 传播场景->StringBuilder操作->charAt
@@ -1669,288 +550,29 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * aTaintCase0085 传播场景->StringBuilder操作->delete
-     */
-    @PostMapping(value = "case0085")
-    @CaseTag(
-            caseNo ="aTaintCase0085",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->delete",
-            thisMethodTag = "aTaintCase0085",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0085(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            builder.delete(2, cmd.length());
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0086 传播场景->StringBuilder操作->deleteCharAt
-     */
-    @PostMapping(value = "case0086")
-    @CaseTag(
-            caseNo ="aTaintCase0086",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->deleteCharAt",
-            thisMethodTag = "aTaintCase0086",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0086(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            builder.deleteCharAt(2);
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0087 传播场景->StringBuilder操作->getChars
-     */
-    @PostMapping(value = "case0087")
-    @CaseTag(
-            caseNo ="aTaintCase0087",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->getChars",
-            thisMethodTag = "aTaintCase0087",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0087(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            char[] chars = {0, 0};
-            builder.getChars(0, 2, chars, 0);
-            Runtime.getRuntime().exec(String.valueOf(chars));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0088 传播场景->StringBuilder操作->insert
-     */
-    @PostMapping(value = "case0088")
-    @CaseTag(
-            caseNo ="aTaintCase0088",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->insert",
-            thisMethodTag = "aTaintCase0088",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0088(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.insert(0, cmd);
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0089 传播场景->StringBuilder操作->replace
-     */
-    @PostMapping(value = "case0089")
-    @CaseTag(
-            caseNo ="aTaintCase0089",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->replace",
-            thisMethodTag = "aTaintCase0089",
-            thisMethodExpectedResult = true
-    )
 
-    public Map<String, Object> aTaintCase0089(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder(cmd);
-            builder.replace(2, 3, cmd);
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0090 传播场景->StringBuilder操作->subSequence
-     */
-    @PostMapping(value = "case0090")
-    @CaseTag(
-            caseNo ="aTaintCase0090",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->subSequence",
-            thisMethodTag = "aTaintCase0090",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0090(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            builder.subSequence(0, 2);
-            Runtime.getRuntime().exec(String.valueOf(builder.subSequence(0, 2)));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0091 传播场景->StringBuilder操作->subString
-     */
-    @PostMapping(value = "case0091")
-    @CaseTag(
-            caseNo ="aTaintCase0091",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->subString",
-            thisMethodTag = "aTaintCase0091",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0091(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            Runtime.getRuntime().exec(builder.substring(0, 2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0092 传播场景->StringBuilder操作->toString
-     */
-    @PostMapping(value = "case0092")
-    @CaseTag(
-            caseNo ="aTaintCase0092",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->StringBuilder操作->toString",
-            thisMethodTag = "aTaintCase0092",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0092(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            StringBuilder builder = new StringBuilder();
-            builder.append(cmd);
-            Runtime.getRuntime().exec(builder.toString());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0093 传播场景-char[],byte[]操作->copyOf
-     */
-    @PostMapping(value = "case0093")
 
-    @CaseTag(
-            caseNo ="aTaintCase0093",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作->copyOf",
-            thisMethodTag = "aTaintCase0093",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0093(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            byte[] b1 = cmd.getBytes();
-            byte[] b2 = Arrays.copyOf(b1, 10);
-            Runtime.getRuntime().exec(new String(b2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0094 传播场景-char[],byte[]操作-->copyOfRange
-     */
-    @PostMapping(value = "case0094")
-    @CaseTag(
-            caseNo ="aTaintCase0094",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作->copyOfRange",
-            thisMethodTag = "aTaintCase0094",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0094(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            byte[] b1 = cmd.getBytes();
-            byte[] b2 = Arrays.copyOfRange(b1, 0, 2);
-            Runtime.getRuntime().exec(new String(b2));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0095 传播场景-char[],byte[]操作->deepToString
-     * //deepToString  的参数是Object[] *使用Byte[]
-     */
-    @PostMapping(value = "case0095")
-    @CaseTag(
-            caseNo ="aTaintCase0095",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作->deepToString",
-            thisMethodTag = "aTaintCase0095",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0095(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Byte[] bytes = MyCommonTestUtil.toObjects(cmd.getBytes());
-            String str2 = Arrays.deepToString(bytes);
-            Runtime.getRuntime().exec(str2);
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
 
-    /**
-     * aTaintCase0096 传播场景-char[],byte[]操作->toString
-     */
-    @PostMapping(value = "case0096")
-    @CaseTag(
-            caseNo ="aTaintCase0096",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->char[],byte[]操作->toString",
-            thisMethodTag = "aTaintCase0096",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase0096(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            char[] chars = cmd.toCharArray();
-            Runtime.getRuntime().exec(String.valueOf(chars));
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+
+
+
+
+
+
+
+
+
+
 
     ///**
     // * aTaintCase0097 传播场景-数组初始化->new 方式初始化
@@ -1968,32 +590,7 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * jdk 序列化与反序列化
-     *
-     * @param sourceTestObject
-     * @return
-     * @throws ClassNotFoundException
-     */
-    @PostMapping(value = "case00932")
-    @CaseTag(
-            caseNo ="aTaintCase00932",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点传播跟踪能力->传播场景->JDK序列化与反序列化",
-            thisMethodTag = "aTaintCase00932",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00932(@RequestBody SourceTestObject sourceTestObject) throws ClassNotFoundException {
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            byte[] bytes = JDKSerializationUtil.serialize(sourceTestObject);
-            SourceTestObject testObject = JDKSerializationUtil.deSerialize(bytes);
-            Runtime.getRuntime().exec(testObject.getCmd());
-            modelMap.put("status", CommonConsts.SUCCESS_STR);
-        } catch (IOException e) {
-            modelMap.put("status", CommonConsts.ERROR_STR);
-        }
-        return modelMap;
-    }
+
     /**
      *aTaintCase0098 传播场景-数组初始化->{}方式初始化
      */
@@ -2305,50 +902,19 @@ public class AstTaintCase002 {
     //    return modelMap;
     //}
 
-    /**
-     * 污点直接赋值为硬编码值 (硬编码是一种sanitizer方式)
-     *
-     * @param cmd
-     * @return
-     */
-    @PostMapping(value = "case00141")
-    @CaseTag(
-            caseNo ="aTaintCase00141",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->污点直接赋值为硬编码值",
-            thisMethodTag = "aTaintCase00141",
-            thisMethodExpectedResult = false
-    )
-    public Map<String, Object> aTaintCase00141(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        cmd = "test";
-        TaintMethodUtil.sink(cmd);
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
 
-    @PostMapping(value = "case00141/1")
-    @CaseTag(
-            caseNo ="aTaintCase00141",
-            caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->污点直接赋值为硬编码值",
-            thisMethodTag = "aTaintCase00141_1",
-            thisMethodExpectedResult = true
-    )
-    public Map<String, Object> aTaintCase00141_1(@RequestParam String cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        TaintMethodUtil.sink(cmd);
-        modelMap.put("status", CommonConsts.SUCCESS_STR);
-        return modelMap;
-    }
+
+
 
     /**
      * aTaintCase00103 污点无害化处理能力sanitizer->sanitizer支持区分类型
      */
     @PostMapping(value = "case00103/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00103",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00103_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2363,11 +929,11 @@ public class AstTaintCase002 {
     }
 
     @PostMapping(value = "case00103/1")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00103",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103_1",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00103_1(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2377,11 +943,11 @@ public class AstTaintCase002 {
     }
 
     @PostMapping(value = "case00103")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00103",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->sanitizer支持区分类型",
             thisMethodTag = "aTaintCase00103",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00103(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2395,11 +961,11 @@ public class AstTaintCase002 {
      * aTaintCase00104 污点无害化处理能力sanitizer->触发sink后再执行sanitizer
      */
     @PostMapping(value = "case00104")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00104",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00104(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2410,11 +976,11 @@ public class AstTaintCase002 {
     }
 
     @PostMapping(value = "case00104/1")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00104",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104_1",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00104_1(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2425,11 +991,11 @@ public class AstTaintCase002 {
     }
 
     @PostMapping(value = "case00104/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00104",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->触发sink后再执行sanitizer",
             thisMethodTag = "aTaintCase00104_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00104_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2443,11 +1009,11 @@ public class AstTaintCase002 {
      * 检出
      */
     @PostMapping(value = "case00105")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00105",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00105(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2458,11 +1024,11 @@ public class AstTaintCase002 {
 
     // 不检出
     @PostMapping(value = "case00105/1")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00105",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105_1",
-            thisMethodExpectedResult = false
+            hasVul = false
     )
     public Map<String, Object> aTaintCase00105_1(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2474,11 +1040,11 @@ public class AstTaintCase002 {
 
     // 检出
     @PostMapping(value = "case00105/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00105",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->污点无害化处理能力(sanitizer)->支持自定义unSanitizer(再次污点化)",
             thisMethodTag = "aTaintCase00105_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00105_2(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2551,11 +1117,11 @@ public class AstTaintCase002 {
      * aTaintCase00109 触发污点跟踪能力（sink）->单污点来源传播至多sink点
      */
     @PostMapping(value = "case00109")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00109",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->触发污点跟踪能力（sink）->单污点来源传播至多sink点",
             thisMethodTag = "aTaintCase00109",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00109(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
@@ -2575,11 +1141,11 @@ public class AstTaintCase002 {
      * aTaintCase00110 触发污点跟踪能力（sink）->多污点来源传播至单sink点
      */
     @PostMapping(value = "case00110")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00110",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->触发污点跟踪能力（sink）->多污点来源传播至单sink点",
             thisMethodTag = "aTaintCase00110",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
 
     public Map<String, Object> aTaintCase00110(@RequestParam String cmd1, @RequestParam String cmd2) {
@@ -2621,11 +1187,11 @@ public class AstTaintCase002 {
      * aTaintCase00112 触发污点跟踪能力（sink）->无污点传播过程，污点直接传入sink
      */
     @PostMapping(value = "case00112")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00112",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点链路完整度->触发污点跟踪能力（sink）->无污点传播过程，污点直接传入sink",
             thisMethodTag = "aTaintCase00112",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00112(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();

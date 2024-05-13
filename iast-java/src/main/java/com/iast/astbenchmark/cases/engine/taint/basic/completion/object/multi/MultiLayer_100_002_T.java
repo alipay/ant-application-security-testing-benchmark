@@ -1,6 +1,6 @@
 package com.iast.astbenchmark.cases.engine.taint.basic.completion.object.multi;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import com.iast.astbenchmark.cases.bean.SourceTestWith100Filedsbject;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,11 +18,11 @@ import static com.iast.astbenchmark.common.CommonConsts.SUCCESS_STR;
 public class MultiLayer_100_002_T {
 
     @PostMapping("case00922/2")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase00922",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->自定义对象->对象字段->单层字段->100",
             thisMethodTag = "aTaintCase00922_2",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase00922_2(@RequestBody SourceTestWith100Filedsbject cmd) {
         Map<String, Object> modelMap = new HashMap<>();

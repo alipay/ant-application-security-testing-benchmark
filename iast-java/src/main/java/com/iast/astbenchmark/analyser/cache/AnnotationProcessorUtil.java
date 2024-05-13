@@ -22,9 +22,9 @@ public final class AnnotationProcessorUtil {
         // 处理方法注解
         for (Method method : clazz.getDeclaredMethods()) {
             // 判断方法是否有@CaseTag注解
-            if (method.isAnnotationPresent(CaseTag.class)) {
+            if (method.isAnnotationPresent(IastTestCase.class)) {
                 // 获取方法上的@CaseTag注解
-                CaseTag methodAnnotation = method.getAnnotation(CaseTag.class);
+                IastTestCase methodAnnotation = method.getAnnotation(IastTestCase.class);
                 // 打印方法名和注解值
                 System.out.println("Method " + method.getName() + " has annotation with value: " + methodAnnotation.caseNo());
             }
@@ -41,9 +41,9 @@ public final class AnnotationProcessorUtil {
         // 遍历类中的所有方法
         for (Method method : clazz.getDeclaredMethods()) {
             // 判断方法是否被@CaseTag注解标记
-            if (method.isAnnotationPresent(CaseTag.class)) {
+            if (method.isAnnotationPresent(IastTestCase.class)) {
                 // 获取@CaseTag注解实例
-                CaseTag methodAnnotation = method.getAnnotation(CaseTag.class);
+                IastTestCase methodAnnotation = method.getAnnotation(IastTestCase.class);
                 // 获取用例编号
                 String caseNo = methodAnnotation.caseNo();
                 // 判断用例编号对应的目标对象是否已存在
@@ -65,11 +65,11 @@ public final class AnnotationProcessorUtil {
      * @param methodAnnotation 方法注解
      * @return 用例目标 bean
      */
-    private static CaseTargetBean buildTargetBean(CaseTag methodAnnotation) {
+    private static CaseTargetBean buildTargetBean(IastTestCase methodAnnotation) {
         String caseNo = methodAnnotation.caseNo();
         String caseFullName = methodAnnotation.caseFullName();
         String thisMethodTag = methodAnnotation.thisMethodTag();
-        boolean result = methodAnnotation.thisMethodExpectedResult();
+        boolean result = methodAnnotation.hasVul();
         CaseTargetBean targetBean = new CaseTargetBean();
         targetBean.setCaseNo(caseNo);
         CaseTargetItemBean itemBean = new CaseTargetItemBean();
@@ -91,10 +91,10 @@ public final class AnnotationProcessorUtil {
      * @param methodAnnotation 方法注解，包含用例标签和预期结果
      * @return 修改后的用例目标 bean，包含新的用例标签和预期结果
      */
-    private static CaseTargetBean modifyTargetBean(CaseTargetBean caseTargetBean, CaseTag methodAnnotation) {
+    private static CaseTargetBean modifyTargetBean(CaseTargetBean caseTargetBean, IastTestCase methodAnnotation) {
         // 获取方法注解中的用例标签和预期结果
         String thisMethodTag = methodAnnotation.thisMethodTag();
-        boolean result = methodAnnotation.thisMethodExpectedResult();
+        boolean result = methodAnnotation.hasVul();
         // 创建一个新的用例目标项 bean，设置用例标签和预期结果
         CaseTargetItemBean itemBean = new CaseTargetItemBean();
         itemBean.setTag(thisMethodTag);

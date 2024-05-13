@@ -1,6 +1,6 @@
 package com.iast.astbenchmark.cases.engine.taint.basic.completion.array;
 
-import com.iast.astbenchmark.analyser.cache.CaseTag;
+import com.iast.astbenchmark.analyser.cache.IastTestCase;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -23,11 +23,11 @@ public class StringArray_0013_T {
      * @return
      */
     @PostMapping("case0013")
-    @CaseTag(
+    @IastTestCase(
             caseNo ="aTaintCase0013",
             caseFullName = "IAST引擎能力评估体系(JAVA)->完整度->基础跟踪能力->污点对象完整度->数组(数组对象全为污点)->数组对象String[]",
             thisMethodTag = "aTaintCase0013",
-            thisMethodExpectedResult = true
+            hasVul = true
     )
     public Map<String, Object> aTaintCase0013(@RequestBody String[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
