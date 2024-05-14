@@ -49,7 +49,7 @@ check_point_table = {
     "payload_url":{"support":False, "name":"payload编码-url"},
 
     "response_header":{"support":False, "name":"响应检测-header识别"},
-    "response_body":{"support":False, "name":"响应检测-body识别"},
+    "response_body":{"support":False, "name":"响应检测-响应body识别"},
     "response_status":{"support":False, "name":"响应检测-状态码识别"},
     "response_time":{"support":False, "name":"响应检测-响应时长识别"},
     "response_body_acctually":{"support":False, "name":"响应检测-实际body类型识别"},
