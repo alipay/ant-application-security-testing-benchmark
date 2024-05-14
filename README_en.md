@@ -177,31 +177,11 @@ Each sub-module of the evaluation system includes engine capability evaluation s
 
 Users can fully understand the capabilities of the tested product by combining the actual test results of various xAST products on the Benchmark with the evaluation indicator items.
 
-# Project Progress and Plan
-
-The project progress and overall plan can be seen in Figure 10. Currently, the design of IAST-Java, SAST-Java, SAST-Node, and DAST engine capability evaluation systems has been completed. Since the project was open-sourced in 2023, more than ten companies including Alibaba, Huawei, Douyi, China Software Testing Center, iFLYTEK, and Xueqiu have used the evaluation system for commercial procurement/open-source product selection or self-developed product technical measurement. Among them, the IAST-Java and DAST engine capability evaluation systems have been used as technical standards for the Open Atom Open Source Foundation's evaluation projects of open-source security tools.
-
-   <div align=center>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image10.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">Figure 10 Project Progress and Plan</div>
-  </center>
-   </div>
-
-
-In 2024, the project plans to settle in an open-source foundation or alliance, co-build with working groups, and conduct annual evaluations of the latest products in the industry based on the xAST evaluation system, releasing an "Annual xAST Product Capability Evaluation Report" for the information security industry to promote the sustainable development of the project.
-
 # Evaluation System
-### [ SAST-Java Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ IAST-Java Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/iast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ DAST Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/dast%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ Node.js Evaluation System](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
+### [ SAST-Java Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-java-engine-evaluation.md)
+### [ IAST-Java Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/iast-java-engine-evaluation.md)
+### [ DAST Evaluation System ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/dast-engine-evaluation.md)
+### [ SAST-Node Evaluation System](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-node-engine-evaluation.md)
 
 # Contact Us
 ## WeChat

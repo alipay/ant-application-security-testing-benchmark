@@ -5,7 +5,7 @@
 
 # 项目简介
 
-xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来越重要的作用，目前每一类产品（SAST/IAST/DAST/SCA/MAST等）都有至少数十款商业化或开源产品供客户选择。与此同时，一些甲方企业也在自研xAST产品。不管是商业采购还是选择开源产品还是自研，大家都面临一个共同的难题，如何客观衡量一款xAST产品的技术水平？
+应用安全测试技术（xAST）对于保障软件安全可靠发挥着越来越重要的作用，目前每一类应用安全测试产品（SAST/IAST/DAST/SCA/MAST等）都有至少数十款商业化或开源产品供客户选择。与此同时，一些甲方企业也在自研xAST产品。不管是商业采购还是选择开源产品还是自研，大家都面临一个共同的难题，如何客观衡量一款xAST产品的技术水平？
 
 目前工业界和学术界都没有对xAST产品技术能力进行衡量的评价标准，通常是使用若干漏洞样本集的测试结果进行技术评价，业界常见的漏洞样本集见图1，测试结果示例见图2。
 
@@ -39,7 +39,7 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 
 另一方面，由图2可以看出，由于缺乏评价体系，评价结果对用户是个“黑盒”，评价结果只能给出总体的召回率和误报率数据，无法细粒度的刻画产品的技术优势与不足。
 
-针对xAST领域缺乏有效衡量技术能力标准的业界痛点，**蚂蚁安全团队**联合**蚂蚁程序分析团队**、**浙江大学网络空间安全学院**的20余位专家学者，共同设计了xAST评价体系及其测试样本套件Benchmark，致力于成为应用安全测试工具的“**度量衡**”。
+针对xAST领域缺乏有效衡量技术能力标准的业界痛点，**蚂蚁安全团队**联合**浙江大学网络空间安全学院**的20余位专家学者，共同设计了xAST评价体系及其测试样本套件Benchmark，致力于成为应用安全测试工具的“**度量衡**”。
 
 # 项目目标与价值
 
@@ -177,31 +177,16 @@ xAST（应用安全测试技术）对于保障软件安全可靠发挥着越来�
 
 用户通过各xAST产品在Benchmark上的实际测试结果，结合评价指标项，即可全面了解被测产品的能力详情。
 
-# 项目进展与规划
+# 项目进展
 
-项目进展与总体规划见图10，目前已完成IAST\-Java、SAST\-Java、SAST\-Node、DAST引擎能力评价体系的设计。项目自2023年开源以来，已有**阿里**、**华为**、**斗象**、**中国软件评测中心**、**科大讯飞**和**雪球**等十余家企业用户使用评价体系用于商采/开源产品选型或自研产品的技术衡量。其中IAST\-Java和DAST引擎能力评价体系已作为技术标准，用于**开放原子开源基金会**对开源安全工具的测评项目。
+项目自2023年开源以来，已有**阿里**、**华为**、**斗象**、**中国软件评测中心**、**科大讯飞**和**雪球**等十余家企业用户使用评价体系用于商采/开源产品选型或自研产品的技术衡量。其中IAST\-Java和DAST引擎能力评价体系已作为技术标准，用于**开放原子开源基金会**对开源安全工具的测评项目。
 
-   <div align=center>
-<center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);"
-    src="https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/floder-img/image10.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">图10 项目进展与总体规划</div>
-  </center>
-   </div>
-
-
-2024年项目计划落户一家开源基金会或联盟，依托于工作组进行共建，并每年基于xAST评价体系对业界的最新产品进行测评，发布信息安全行业**年度xAST产品的能力评测报告**，通过年度测评报告的方式推动项目的持续发展。
 
 # 评价体系
-### [ sast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ iast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/iast-java%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ dast评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/dast%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB.md)
-### [ nodejs评价体系](https://github.com/alipay/ant-application-security-testing-benchmark-nodejs)
+### [ sast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-java-engine-evaluation.md)
+### [ iast-java评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/iast-java-engine-evaluation.md)
+### [ dast评价体系 ](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/dast-engine-evaluation.md)
+### [ nodejs评价体系](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/doc/sast-node-engine-evaluation.md)
 
 # 联系我们
 ## 微信
@@ -228,7 +213,7 @@ xast-contact@service.alipay.com
 
 # [FAQ](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/FAQ)
 
-# [参与共建](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/%E5%8F%82%E4%B8%8E%E8%B4%A1%E7%8C%AE)
+# [参与测评或共建](https://github.com/alipay/ant-application-security-testing-benchmark/blob/main/CONTRIBUTING.md)
 
 # License
 This project is licensed under the Apache License 2.0
