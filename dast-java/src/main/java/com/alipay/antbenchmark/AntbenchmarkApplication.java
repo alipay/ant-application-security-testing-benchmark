@@ -23,6 +23,11 @@ public class AntbenchmarkApplication {
 
     public static void main(String[] args) {
         try {
+            // 生成testfiles目录
+            String dirStr = "./testfiles";
+            File directory = new File(dirStr);
+            boolean hasSucceeded = directory.mkdir();
+
             SpringApplication.run(AntbenchmarkApplication.class, args);
             LOGGER.info("SpringBoot Web App Start!!!");
             DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
