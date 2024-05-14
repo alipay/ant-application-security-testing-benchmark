@@ -55,7 +55,7 @@ public class CaseNodeTreeUtil {
         BufferedReader reader = null;
         InputStream inputStream = null;
         try {
-            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/sast-java评价体系.md");
+            inputStream = CaseNodeTreeUtil.class.getClassLoader().getResourceAsStream("config/nodezqd.txt");
             reader = new BufferedReader(new InputStreamReader(inputStream));
             List<String> lines = Lists.newArrayList();
             String line;

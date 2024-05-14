@@ -3,19 +3,20 @@
     在这里，您的每一次代码提交、每一份文档的完善、每一项功能的建议，甚至是每一条提出问题的讨论，都是对社区宝贵的贡献。我们珍视每一位贡献者的参与，并致力于创建一个包容、尊重、多元的环境。<br><br>
 
 # 参与代码贡献
-* 如果您有评价项或样本可以贡献，欢迎在Github中提交PR，项目Maintainers每月的社区会议中会对PR进行讨论，符合条件的PR将会被approve merge到项目中。
-* 请先确认样本所对应的评价项，提交评价项的PR（/doc目录下），再提交样本代码的PR
-* 提交的代码请遵守项目的[代码命名规范](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/xAST%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BBcase%E5%BB%BA%E8%AE%BE%E8%A7%84%E8%8C%83%E5%91%BD%E5%90%8D)
-* 如果您对评价项或样本有任何疑问/需求，欢迎在Github中直接提交issue，项目Maintainers或Active Contributors会及时回复。
+  如果您有评价项或样本可以贡献，可以参考以下流程：
+* （1）首先需要补充或修改的评价项，提交PR到[评价项文档](https://github.com/alipay/ant-application-security-testing-benchmark/tree/main/doc)
+* （2）然后设计评价项对应的测试样本，并将样本的代码通过Pull Request提交到代码库，提交的代码请遵守项目[代码命名规范](https://github.com/alipay/ant-application-security-testing-benchmark/wiki/xAST%E8%AF%84%E4%BB%B7%E4%BD%93%E7%B3%BB%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83)
+* （3）项目Maintainers每月的社区会议中会对PR进行讨论，通过评审的PR将会被approve merge到项目中。
+  如果您对评价项或样本有任何疑问/需求，欢迎在Github中直接提交issue，项目Maintainers或Active Contributors会及时回复。
 * 参与代码/文档贡献达到一定程度的用户，将会成为社区的Active Contributors乃至Maintainers，详情请参考社区组织架构。
 * 如果您需要与社区维护同学有更多的交流，也可以通过扫码联系【xAST评价体系小助手】并加入社区交流群进行交流或咨询。
 <br>
 
 # 参与测评
-* 开源社区将每年发布一个年度测评报告，总结当年评价体系的更新情况，总结对当年最新的开源和商业化应用安全测试产品的测评结果，总结应用安全测试产品一年的技术进步。
 * 如果您使用xAST评价体系对一些应用安全测试产品进行了测评，可以在社区交流群中联系【xAST评价体系小助手】把您的测评结果发布到社区官网，供更多的用户参考。
+* 如果您有商业版的应用安全测试产品，也可以联系我们协助您进行测评。
 * 参与测评或社区活动达到一定程度的用户，将会成为社区的Ambassador乃至Community Leader，详情请参考社区组织架构。
-* 其他社区活动，也会及时在社区官网和社区交流群中进行发布，敬请关注。
+* xAST开源社区将每年发布一个年度测评报告，总结当年评价体系的更新情况，总结对当年最新的开源和商业化应用安全测试产品的测评结果，总结应用安全测试产品一年的技术进步。
 <br>
 
 # 参与社区会议
