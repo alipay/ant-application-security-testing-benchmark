@@ -24,7 +24,7 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
 public class Base_StringBuilder_001_T {
-    @PostMapping("case0154")
+    @PostMapping("Base_StringBuilder_001_T")
     public Map<String, Object> aTaintCase0154(@RequestBody String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {

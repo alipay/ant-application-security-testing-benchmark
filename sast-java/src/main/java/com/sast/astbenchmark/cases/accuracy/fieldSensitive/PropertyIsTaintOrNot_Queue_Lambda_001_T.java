@@ -20,11 +20,11 @@ import java.util.Queue;
 // real vulnerability = true
 // assession project = 准确度->域敏感->对象部分属性为污点->Queue+Lambda
 // compose = !PropertyIsTaintOrNot_Queue_Lambda_002_F.java && PropertyIsTaintOrNot_Queue_Lambda_001_T.java
-// bind_url = completeness/base/chain/astTaint/PropertyIsTaintOrNot_Queue_Lambda_001_T
+// bind_url = accuracy/fieldSensitive/PropertyIsTaintOrNot_Queue_Lambda_001_T
 // assession information end
 
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/propertyIsTaintOrNot")
+@RequestMapping("accuracy/fieldSensitive")
 public class PropertyIsTaintOrNot_Queue_Lambda_001_T {
     @PostMapping(value = "PropertyIsTaintOrNot_Queue_Lambda_001_T")
     public Map<String, Object> aTaintCase025(@RequestParam String cmd) {
