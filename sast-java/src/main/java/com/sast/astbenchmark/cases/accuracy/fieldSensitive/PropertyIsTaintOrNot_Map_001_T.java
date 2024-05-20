@@ -19,11 +19,11 @@ import java.util.Map;
 // real vulnerability = true
 // assession project = 准确度->域敏感->对象部分属性为污点->Map
 // compose = !PropertyIsTaintOrNot_Map_002_F.java && PropertyIsTaintOrNot_Map_001_T.java
-// bind_url = completeness/base/chain/astTaint/PropertyIsTaintOrNot_Map_001_T
+// bind_url = accuracy/fieldSensitive/PropertyIsTaintOrNot_Map_001_T
 // assession information end
 
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/propertyIsTaintOrNot")
+@RequestMapping("accuracy/fieldSensitive")
 public class PropertyIsTaintOrNot_Map_001_T {
     @PostMapping(value = "PropertyIsTaintOrNot_Map_001_T")
     public Map<String, Object> aTaintCase024(@RequestParam String url) {
