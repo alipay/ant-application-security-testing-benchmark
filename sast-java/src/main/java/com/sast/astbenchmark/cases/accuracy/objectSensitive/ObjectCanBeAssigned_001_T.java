@@ -26,6 +26,7 @@ public class ObjectCanBeAssigned_001_T {
     public Map<String, Object> aTaintCase021(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
+            String exec = "ls";
             Runtime.getRuntime().exec(cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {

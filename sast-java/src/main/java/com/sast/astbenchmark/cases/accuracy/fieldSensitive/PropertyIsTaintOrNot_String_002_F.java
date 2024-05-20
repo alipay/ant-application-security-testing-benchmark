@@ -24,10 +24,13 @@ import java.util.Map;
 @RequestMapping("accuracy/fieldSensitive/propertyIsTaintOrNot")
 public class PropertyIsTaintOrNot_String_002_F {
     @PostMapping(value = "PropertyIsTaintOrNot_String_002_F-2")
-    public Map<String, Object> aTaintCase023_2(@RequestParam String path) {
+    public Map<String, Object> aTaintCase023_2(@RequestParam String param) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            HttpUtil.doGet("https://www.test.com/api"+path);
+            String domain = "www.fixdomain.com/a";
+            String url = domain+param;
+            String not_taint = url.substring(0,17);
+            HttpUtil.doGet(not_taint);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

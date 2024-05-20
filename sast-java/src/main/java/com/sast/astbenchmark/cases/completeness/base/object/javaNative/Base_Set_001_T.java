@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,13 +33,8 @@ public class Base_Set_001_T {
             return modelMap;
         }
         Set<String> stringSet = new HashSet<>(cmd);
-        try {
-
-            Runtime.getRuntime().exec(stringSet.stream().iterator().next());
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(stringSet);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,12 +33,8 @@ public class Base_CharArray_001_T {
             return modelMap;
         }
         char[] data = {(char) cmd[0], 2};
-        try {
-            Runtime.getRuntime().exec(data.toString());
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(data);
+        modelMap.put("status", "success");
         return modelMap;
     }
 
