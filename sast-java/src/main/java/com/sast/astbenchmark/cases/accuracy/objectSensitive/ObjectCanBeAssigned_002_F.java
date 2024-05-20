@@ -14,7 +14,7 @@ import java.util.Map;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 准确度->对象敏感->同名对象是否真正外部可控
 // compose = !ObjectCanBeAssigned_002_F.java && ObjectCanBeAssigned_001_T.java
 // bind_url = completeness/base/chain/astTaint/ObjectCanBeAssigned_002_F

@@ -15,7 +15,7 @@ import java.util.Map;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 准确度->域敏感->对象部分属性为污点->自定义对象
 // compose = !PropertyIsTaintOrNot_Object_002_F.java && PropertyIsTaintOrNot_Object_001_T.java
 // bind_url = completeness/base/chain/astTaint/PropertyIsTaintOrNot_Object_002_F
