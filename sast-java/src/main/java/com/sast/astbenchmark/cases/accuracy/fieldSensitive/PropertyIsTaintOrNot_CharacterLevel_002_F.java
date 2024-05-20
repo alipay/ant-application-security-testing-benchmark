@@ -23,7 +23,7 @@ import java.util.Map;
 @RestController()
 @RequestMapping("accuracy/fieldSensitive/propertyIsTaintOrNot")
 public class PropertyIsTaintOrNot_CharacterLevel_002_F {
-    @PostMapping(value = "PropertyIsTaintOrNot_CharacterLevel_002_F-2")
+    @PostMapping(value = "PropertyIsTaintOrNot_CharacterLevel_002_F")
     public Map<String, Object> aTaintCase023_2(@RequestParam String param) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
