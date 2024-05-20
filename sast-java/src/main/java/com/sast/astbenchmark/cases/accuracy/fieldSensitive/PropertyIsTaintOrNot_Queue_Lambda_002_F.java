@@ -17,7 +17,7 @@ import java.util.Queue;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 准确度->域敏感->对象部分属性为污点->Queue+Lambda
 // compose = !PropertyIsTaintOrNot_Queue_Lambda_002_F.java && PropertyIsTaintOrNot_Queue_Lambda_001_T.java
 // bind_url = completeness/base/chain/astTaint/PropertyIsTaintOrNot_Queue_Lambda_002_F

@@ -14,7 +14,7 @@ import java.util.Map;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 准确度->流敏感->数据流不可达->被固定值赋值
 // compose = !AssignedByFixedValue_001_F.java && AssignedByFixedValue_002_T.java
 // bind_url = completeness/base/chain/astTaint/AssignedByFixedValue_001_F
