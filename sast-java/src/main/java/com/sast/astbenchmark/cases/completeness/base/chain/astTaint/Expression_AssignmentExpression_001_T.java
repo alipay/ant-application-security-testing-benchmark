@@ -24,7 +24,7 @@ import java.util.Map;
 @RequestMapping("completeness/base/chain/astTaint")
 public class Expression_AssignmentExpression_001_T {
     @PostMapping("Expression_AssignmentExpression_001_T/{cmd}")
-    public Map<String, Object> aTaintCase018(@PathVariable String cmd) {
+    public Map<String, Object> aTaintCase018(@PathVariable String[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", "error");
