@@ -26,7 +26,7 @@ import java.util.Map;
 @RequestMapping("completeness/base/chain/astTaint")
 public class Expression_Reflection_001_T {
     @GetMapping("Expression_Reflection_001_T/{cmd}/{methodname}")
-    public Map<String, Object> aTaintCase0134(@PathVariable String cmd, @PathVariable String methodname) {
+    public Map<String, Object> aTaintCase0134(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
             modelMap.put("status", "error");
@@ -34,10 +34,10 @@ public class Expression_Reflection_001_T {
         }
         try {
             Class<CmdUtil> clazz = CmdUtil.class;
-            Method method = clazz.getMethod(methodname, String.class);
+            Method method = clazz.getMethod("run", String.class);
             method.setAccessible(true);
-            cmd = (String) method.invoke(clazz.newInstance(), cmd);
-            Runtime.getRuntime().exec(cmd);
+            //静态方法不需要创建对象实例
+            method.invoke(null, cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");
