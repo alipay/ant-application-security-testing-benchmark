@@ -15,13 +15,13 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 准确度->上下文敏感->xxx
-// compose = !DifferentParamsForFunction_004_F.java && DifferentParamsForFunction_003_T.java
-// bind_url = accuracy/contextSensitive/DifferentParamsForFunction_004_F
+// assession project = 准确度->上下文敏感->相同函数调用不同参数
+// compose = !DifferentParamsForFunction_002_F.java && DifferentParamsForFunction_001_T.java
+// bind_url = accuracy/contextSensitive/DifferentParamsForFunction_002_F
 // assession information end
-public class DifferentParamsForFunction_004_F {
-    @PostMapping(value = "DifferentParamsForFunction_004_F")
-    public Map<String, Object> aTaintCase002_2(@RequestParam String cmd) {
+public class DifferentParamsForFunction_002_F {
+    @PostMapping(value = "DifferentParamsForFunction_002_F")
+    public Map<String, Object> differentParamsForFunction_002_F(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = CmdUtil.getCmdWithContextSensitive(-1, cmd);
         try {

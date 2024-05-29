@@ -9,12 +9,12 @@ import com.sast.astbenchmark.common.utils.JDBCUtil;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->source对象->source未被污染->source传入sink
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->safe source->source传入sink
 // compose = !SafeKind_010_F.java && !SafeKind_011_F.java && !SafeKind_012_F.java
 // bind_url =
 // assession information end
 public class SafeKind_010_F {
-    public void aTaintCase() {
+    public void safeKind_010_F() {
         String sql = "select * from user where username = zhangsan";
         JDBCUtil.execSql(sql);
     }

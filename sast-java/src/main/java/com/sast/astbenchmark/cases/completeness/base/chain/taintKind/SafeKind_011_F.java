@@ -7,12 +7,12 @@ package com.sast.astbenchmark.cases.completeness.base.chain.taintKind;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->source对象->source未被污染->没有sink
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->safe source->没有sink
 // compose = !SafeKind_010_F.java && !SafeKind_011_F.java && !SafeKind_012_F.java
 // bind_url =
 // assession information end
 public class SafeKind_011_F {
-    public void aTaintCase() {
+    public void safeKind_011_F() {
         String sql = "select * from user where username = zhangsan";
     }
 }

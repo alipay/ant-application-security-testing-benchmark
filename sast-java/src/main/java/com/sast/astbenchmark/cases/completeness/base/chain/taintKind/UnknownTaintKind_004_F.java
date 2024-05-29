@@ -9,12 +9,12 @@ import com.sast.astbenchmark.common.utils.JDBCUtil;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->source对象->source是否被污染未知->source传入sink
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->unknown taint->source传入sink
 // compose = !UnknownTaintKind_004_F.java && !UnknownTaintKind_005_F.java && !UnknownTaintKind_006_F.java
 // bind_url =
 // assession information end
 public class UnknownTaintKind_004_F {
-    public void aTaintCase(String name) {
+    public void unknownTaintKind_004_F(String name) {
         String sql = "select * from user where username = " + name;
         JDBCUtil.execSql(sql);
     }

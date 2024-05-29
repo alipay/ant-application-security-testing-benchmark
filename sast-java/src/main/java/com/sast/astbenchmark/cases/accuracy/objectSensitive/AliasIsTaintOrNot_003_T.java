@@ -17,14 +17,14 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 准确度->对象敏感->别名是否被污染
-// compose = !AliasIsTaintOrNot_006_F.java && AliasIsTaintOrNot_005_T.java
-// bind_url = accuracy/objectSensitive/AliasIsTaintOrNot_005_T
+// compose = !AliasIsTaintOrNot_004_F.java && AliasIsTaintOrNot_003_T.java
+// bind_url = accuracy/objectSensitive/AliasIsTaintOrNot_003_T
 // assession information end
 @RestController
 @RequestMapping("accuracy/objectSensitive")
-public class AliasIsTaintOrNot_005_T {
-    @PostMapping(value = "AliasIsTaintOrNot_005_T")
-    public Map<String, Object> aTaintCase003(@RequestParam String cmd) {
+public class AliasIsTaintOrNot_003_T {
+    @PostMapping(value = "AliasIsTaintOrNot_003_T")
+    public Map<String, Object> aliasIsTaintOrNot_003_T(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         B b1 = new B();
         b1.attr = new A();

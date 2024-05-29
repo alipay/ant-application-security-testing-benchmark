@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->source对象->source一定被污染->source传入sink
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->may taint->source传入sink
 // compose = MayTaintKind_007_T.java && !MayTaintKind_008_F.java && !MayTaintKind_009_F.java
-// bind_url = completeness/base/source/MayTaintKind_007_T
+// bind_url = completeness/base/chain/taintKind/MayTaintKind_007_T
 // assession information end
 @RestController
-@RequestMapping("completeness/base/source")
+@RequestMapping("completeness/base/chain/taintKind")
 public class MayTaintKind_007_T {
     @GetMapping("MayTaintKind_007_T")
-    public void aTaintCase(@RequestParam String name, @RequestParam Integer condition) {
+    public void mayTaintKind_007_T(@RequestParam String name, @RequestParam Integer condition) {
         String sql;
         if (condition > 0) {
             sql = "select * from user where username = " + name;

@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.cases.accuracy.pathSensitive;
+package com.sast.astbenchmark.cases.accuracy.pathSensitive.notCalculateValue.multiReturn;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,15 +16,15 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 准确度->路径敏感->变量是否被污染
+// assession project = 准确度->路径敏感->不涉及求解问题->多个return语句->变量是否被污染
 // compose = !VariableIsTaintOrNot_002_F.java && VariableIsTaintOrNot_001_T.java
-// bind_url = accuracy/pathSensitive/VariableIsTaintOrNot_002_F
+// bind_url = accuracy/pathSensitive/notCalculateValue/multiReturn/VariableIsTaintOrNot_002_F
 // assession information end
 @RestController
-@RequestMapping("accuracy/pathSensitive")
+@RequestMapping("accuracy/pathSensitive/notCalculateValue/multiReturn")
 public class VariableIsTaintOrNot_002_F {
-    @PostMapping(value = "VariableIsTaintOrNot_001_T")
-    public Map<String, Object> aTaintCase001_2(@RequestParam String cmd) {
+    @PostMapping(value = "VariableIsTaintOrNot_002_F")
+    public Map<String, Object> variableIsTaintOrNot_002_F(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = getCmdWithPathSensitive(cmd);
         try {
