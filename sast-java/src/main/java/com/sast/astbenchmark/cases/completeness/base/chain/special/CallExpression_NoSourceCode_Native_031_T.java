@@ -9,26 +9,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-无源码函数-string trim
+ * Introduction 污点链路样本中的特殊场景-无源码函数-stringBuilder.insert
  * Level X
  * Date 2024-05-09
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.trim
-// compose = CallExpression_NoSourceCode_Native_019_T.java
-// bind_url = completeness/base/chain/special/CallExpression_NoSourceCode_Native_019_T
+// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.insert()
+// compose = CallExpression_NoSourceCode_Native_031_T.java
+// bind_url = completeness/base/chain/special/CallExpression_NoSourceCode_Native_031_T
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/special")
-public class CallExpression_NoSourceCode_Native_019_T {
-    @PostMapping(value = "CallExpression_NoSourceCode_Native_019_T")
-    public Map<String, Object> aTaintCase0179(@RequestParam String cmd) {
+public class CallExpression_NoSourceCode_Native_031_T {
+    @PostMapping(value = "CallExpression_NoSourceCode_Native_031_T")
+    public Map<String, Object> aTaintCase0187(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            cmd=cmd.trim();
-            Runtime.getRuntime().exec(cmd);
+            StringBuilder builder = new StringBuilder();
+            builder.insert(0, cmd);
+            Runtime.getRuntime().exec(builder.toString());
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");
