@@ -9,4 +9,15 @@ public class CmdUtil {
             return;
         }
     }
+
+    public static String getCmdWithContextSensitive(int x, String cmd) {
+        String res;
+        if (x > 0) {
+            res = cmd;
+        }
+        else {
+            res = "ls";
+        }
+        return res;
+    }
 }
