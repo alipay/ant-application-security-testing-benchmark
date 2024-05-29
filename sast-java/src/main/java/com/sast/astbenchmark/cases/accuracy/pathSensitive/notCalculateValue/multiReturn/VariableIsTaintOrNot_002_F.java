@@ -24,7 +24,7 @@ import java.util.Map;
 @RequestMapping("accuracy/pathSensitive/notCalculateValue/multiReturn")
 public class VariableIsTaintOrNot_002_F {
     @PostMapping(value = "VariableIsTaintOrNot_002_F")
-    public Map<String, Object> variableIsTaintOrNot_002_F(@RequestParam String cmd) {
+    public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = getCmdWithPathSensitive(cmd);
         try {

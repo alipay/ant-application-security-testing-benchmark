@@ -24,7 +24,7 @@ import java.util.Map;
 @RequestMapping("accuracy/objectSensitive")
 public class AliasIsTaintOrNot_004_F {
     @PostMapping(value = "AliasIsTaintOrNot_004_F")
-    public Map<String, Object> aliasIsTaintOrNot_004_F(@RequestParam String cmd) {
+    public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         B b1 = new B();
         B b2 = new B();

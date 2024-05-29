@@ -25,7 +25,7 @@ import java.util.Map;
 @RequestMapping("accuracy/contextSensitive")
 public class DifferentParamsForFunction_001_T {
     @PostMapping(value = "DifferentParamsForFunction_001_T")
-    public Map<String, Object> differentParamsForFunction_001_T(@RequestParam String cmd) {
+    public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = CmdUtil.getCmdWithContextSensitive(1, cmd);
         try {

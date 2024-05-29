@@ -21,7 +21,7 @@ import java.util.Map;
 // assession information end
 public class DifferentParamsForFunction_002_F {
     @PostMapping(value = "DifferentParamsForFunction_002_F")
-    public Map<String, Object> differentParamsForFunction_002_F(@RequestParam String cmd) {
+    public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = CmdUtil.getCmdWithContextSensitive(-1, cmd);
         try {

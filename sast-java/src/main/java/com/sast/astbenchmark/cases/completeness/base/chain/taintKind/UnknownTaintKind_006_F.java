@@ -14,7 +14,7 @@ import com.sast.astbenchmark.common.utils.JDBCUtil;
 // bind_url =
 // assession information end
 public class UnknownTaintKind_006_F {
-    public void unknownTaintKind_006_F(String name) {
+    public void testcase(String name) {
         String sql = "select * from user where username = " + name;
         String sql2 = "select * from user where username = " + "zhangsan";
         JDBCUtil.execSql(sql2);

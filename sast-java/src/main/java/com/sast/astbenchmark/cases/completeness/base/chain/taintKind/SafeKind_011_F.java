@@ -12,7 +12,7 @@ package com.sast.astbenchmark.cases.completeness.base.chain.taintKind;
 // bind_url =
 // assession information end
 public class SafeKind_011_F {
-    public void safeKind_011_F() {
+    public void testcase() {
         String sql = "select * from user where username = zhangsan";
     }
 }

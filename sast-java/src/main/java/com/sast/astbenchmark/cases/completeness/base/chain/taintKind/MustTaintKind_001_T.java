@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("completeness/base/chain/taintKind")
 public class MustTaintKind_001_T {
     @GetMapping("MustTaintKind_001_T")
-    public void mustTaintKind_001_T(@RequestParam String name) {
+    public void testcase(@RequestParam String name) {
         String sql = "select * from user where username = " + name;
         JDBCUtil.execSql(sql);
     }
