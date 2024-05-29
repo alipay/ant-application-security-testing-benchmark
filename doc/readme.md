@@ -1,4 +1,5 @@
-## Mermind线上编辑器-  [ https://mermaid.live/edit](https://mermaid.live/edit)
+### 简述
+为了支持xast评价体系指标项的共建能力，实践过程中发现github原生不支持复杂的脑图，mermind一定程度上可以支持这样效果文档的编辑与渲染；在下面介绍下您在共建评价体系需要注意的事项
 ### 评价体系格式
 
 ```mermind
@@ -22,9 +23,10 @@ L5H1["性能"]==>MaHb["我的新节点"]
 ```
 3.节点的文字描述通常使用中文/英文/()/-这些字符，尽量不要使用复杂的符号；使用复杂符号需要在自己的仓库中充分测试，无异常展示再提交
 
-
+### mermind线上编辑器-  [ https://mermaid.live/edit](https://mermaid.live/edit)
+您可以在线上编辑器中快速在浏览或者编辑您的mermind代码
 
 ### 常见问题
-1.节点的文字描述中如需要使用单引号,例如:MaHb["描述'引号'文本"]
+1.由于github的mermind版本原因，实践中发现节点的文字描述中只能使用单引号，不可使用双引号,例如:MaHb["描述'引号'文本"]，而不是MaHb["描述\"引号\"文本"]
 
 [mermind官方文档](https://mermaid.js.org/intro/getting-started.html#_1-using-the-mermaid-live-editor)
