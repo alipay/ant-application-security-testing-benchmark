@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->may taint->source是否传入sink
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->source可能被污染
 // compose = MayTaintKind_001_T.java && !MayTaintKind_002_F.java && !MayTaintKind_003_F.java
 // bind_url = completeness/base/chain/taintKind/MayTaintKind_003_F
 // assession information end

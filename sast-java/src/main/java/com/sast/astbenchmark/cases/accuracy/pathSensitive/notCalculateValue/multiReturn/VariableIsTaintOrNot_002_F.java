@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-不涉及求解问题-多个return语句
+ * Introduction 路径敏感-不涉及求解问题-多个return语句-变量是否被污染
  * Level X
  * Date 2024-05-23
  */
