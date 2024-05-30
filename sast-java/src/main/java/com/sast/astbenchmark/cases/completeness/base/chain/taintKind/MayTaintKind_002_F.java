@@ -6,20 +6,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Introduction 污点链路样本中的source点-source可能被污染-没有sink
+ * Introduction 污点链路样本中的污点分类，source可能被污染，且没有sink
  * Level X
  * Date 2024-05-23
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->may taint->没有sink
-// compose = MayTaintKind_007_T.java && !MayTaintKind_008_F.java && !MayTaintKind_009_F.java
-// bind_url = completeness/base/chain/taintKind/MayTaintKind_008_F
+// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->may taint->source是否传入sink
+// compose = MayTaintKind_001_T.java && !MayTaintKind_002_F.java && !MayTaintKind_003_F.java
+// bind_url = completeness/base/chain/taintKind/MayTaintKind_002_F
 // assession information end
 @RestController
 @RequestMapping("completeness/base/chain/taintKind")
-public class MayTaintKind_008_F {
-    @GetMapping("MayTaintKind_008_F")
+public class MayTaintKind_002_F {
+    @GetMapping("MayTaintKind_002_F")
     public void testcase(@RequestParam String name, @RequestParam Integer condition) {
         String sql;
         if (condition > 0) {

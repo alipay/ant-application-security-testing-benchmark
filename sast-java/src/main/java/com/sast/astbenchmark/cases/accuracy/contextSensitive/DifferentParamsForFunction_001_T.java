@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 上下文敏感-调用相同函数传入不同参数
+ * Introduction 上下文敏感-相同函数调用不同参数
  * Level X
  * Date 2024-05-23
  */
