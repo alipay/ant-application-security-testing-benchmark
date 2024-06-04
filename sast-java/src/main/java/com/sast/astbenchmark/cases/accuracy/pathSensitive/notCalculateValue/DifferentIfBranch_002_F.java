@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.cases.accuracy.pathSensitive.notCalculateValue.multiReturn;
+package com.sast.astbenchmark.cases.accuracy.pathSensitive.notCalculateValue;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-不涉及求解问题-多个return语句-不同if分支
+ * Introduction 路径敏感-不涉及求解问题-不同if分支
  * Level X
  * Date 2024-05-23
  */
 // assession information start
 // real vulnerability = false
-// assession project = 准确度->路径敏感->不涉及求解问题->多个return语句->不同if分支
+// assession project = 准确度->路径敏感->不涉及求解问题->不同if分支
 // compose = !DifferentIfBranch_002_F.java && DifferentIfBranch_001_T.java
 // bind_url = accuracy/pathSensitive/notCalculateValue/multiReturn/DifferentIfBranch_002_F
 // assession information end
