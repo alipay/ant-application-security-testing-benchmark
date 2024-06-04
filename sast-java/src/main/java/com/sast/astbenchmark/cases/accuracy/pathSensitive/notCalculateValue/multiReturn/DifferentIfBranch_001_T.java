@@ -10,20 +10,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-不涉及求解问题-多个return语句-变量是否被污染
+ * Introduction 路径敏感-不涉及求解问题-多个return语句-不同if分支
  * Level X
  * Date 2024-05-23
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->路径敏感->不涉及求解问题->多个return语句->变量是否被污染
-// compose = !VariableIsTaintOrNot_002_F.java && VariableIsTaintOrNot_001_T.java
-// bind_url = accuracy/pathSensitive/notCalculateValue/multiReturn/VariableIsTaintOrNot_001_T
+// assession project = 准确度->路径敏感->不涉及求解问题->多个return语句->不同if分支
+// compose = !DifferentIfBranch_002_F.java && DifferentIfBranch_001_T.java
+// bind_url = accuracy/pathSensitive/notCalculateValue/multiReturn/DifferentIfBranch_001_T
 // assession information end
 @RestController
 @RequestMapping("accuracy/pathSensitive/notCalculateValue/multiReturn")
-public class VariableIsTaintOrNot_001_T {
-    @PostMapping(value = "VariableIsTaintOrNot_001_T")
+public class DifferentIfBranch_001_T {
+    @PostMapping(value = "DifferentIfBranch_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec = getCmdWithPathSensitive(cmd);
