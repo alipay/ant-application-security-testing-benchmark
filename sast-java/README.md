@@ -31,34 +31,7 @@ SinkUtil#sink (本评价体系靶场自定义)
 自主分析测试产品/引擎的输出，结合case路由对应相应的评价项，分析该款产品当前可以检出的场景、不可检出的场景以及存在误报的场景有哪些。从而分析出测试产品/引擎的能力。
 
 #### 自动化获取评价体系测试结果（正在建设，还未完全完成）
-（1）安装maven插件xastutils-maven-plugin</br>
-进入xastutils目录
-```
-cd xast-utils
-```
-执行安装命令
-```
-mvn install
-```
-（2）尝试生成xast统一评价结果</br>
-运行命令
-```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=xast靶场绝对路径 -DresultFile=工具扫描结果绝对路径
-```
-修改需要指定的两个参数并运行
-例如
-```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DresultFile=/Users/admin/Downloads/Benchmark_1.2-pmd-v5.2.3-11.xml
-```
-如果xast-utils中没有扫描工具生成的结果文件的处理类，即Reader，可以编写对应的Reader类放到xast-utils中（欢迎将编写的Reader类提交到我们的仓库中），再运行上述命令
-或者也可以手动填写靶场中的样本csv文件，修改其中的【被工具识别为漏洞】列，注意不要修改文件名最后的工具类型（sast/iast/dast）填写完成后，运行如下命令
-```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=靶场的绝对路径 -DcsvFile=人工填写后的csv文件绝对路径
-```
-例如：
-```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DcsvFile=/Users/admin/javaProject/ant-application-security-testing-benchmark/results/xAST_v_1.0.0_pmd_v5.2.3_sast.csv
-```
-运行成功后，会生成csv表和html文件，其中csv表记录了扫描工具在每个靶场case上的识别情况，html文件为最终的评价结果，使用浏览器打开html文件，根据html文件中的各项数值了解扫描工具在xast评价体系中的表现。
+当前正在研发基于测试产品的结果自动化生成测试结果的工具，可以自动将SAST产品的输出结果和评价项进行对应并输出测评报告，免去自主分析的繁琐工作。当前正在努力开发中，敬请期待...
+
 ### License
 This project is licensed under the Apache License 2.0
