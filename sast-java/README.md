@@ -22,10 +22,12 @@ SAST引擎能力测评包括三步：</br>
 #### 准备前置条件
 （1）确认被测的SAST产品配置了以下sink点规则
 ```
-Runtime.getRuntime().exec
-org.apache.http.impl.client.CloseableHttpClient#execute
-java.sql.Statement#executeQuery
-SinkUtil#sink (本评价体系靶场自定义)
+Runtime.getRuntime().exec() -- 参数位置0
+org.apache.http.impl.client.CloseableHttpClient#execute -- 参数位置0
+cn.hutool.http.HttpRequest#post -- 参数位置0
+java.net.URL#openConnection -- URL对象为污点被调用
+java.sql.Statement#executeQuery -- 参数位置0
+SinkUtil#sink (本评价体系靶场自定义) -- 参数位置0
 ```
 #### 自主分析靶场测试结果
 自主分析测试产品/引擎的输出，结合case路由对应相应的评价项，分析该款产品当前可以检出的场景、不可检出的场景以及存在误报的场景有哪些。从而分析出测试产品/引擎的能力。
