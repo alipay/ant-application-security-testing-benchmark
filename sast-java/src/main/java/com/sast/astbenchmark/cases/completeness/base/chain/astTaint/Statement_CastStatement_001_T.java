@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->cast语句
+// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->cast语句-参数传递
 // compose = Statement_CastStatement_001_T.java || Statement_CastStatement_002_T.java
 // bind_url = completeness/base/chain/astTaint/Statement_CastStatement_001_T/{cmd}
 // assession information end

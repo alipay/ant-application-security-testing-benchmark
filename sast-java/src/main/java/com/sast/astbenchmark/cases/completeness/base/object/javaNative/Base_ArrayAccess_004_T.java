@@ -15,8 +15,8 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Argument ArrayAccess
-// compose = Base_ArrayAccess_001_T.java || Base_ArrayAccess_002_T.java || Base_ArrayAccess_003_T.java || Base_ArrayAccess_004_T.java
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Argument_ArrayAccess-element assignment
+// compose = Base_ArrayAccess_004_T.java
 // bind_url = completeness/base/object/javaNative/Base_ArrayAccess_004_T
 // assession information end
 
