@@ -18,7 +18,7 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Char
-// compose = Base_Char_002_T.java
+// compose = Base_Char_001_T.java || Base_Char_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_Char_002_T/{cmd}
 // assession information end
 
