@@ -117,6 +117,12 @@
             <classifier>jdk15</classifier>
         </dependency>
 
+        <dependency>
+             <groupId>commons-beanutils</groupId>
+             <artifactId>commons-beanutils</artifactId>
+             <version>1.9.2</version>
+         </dependency>
+
         <!-- springshell!-->
         <dependency>
             <groupId>org.springframework.shell</groupId>
