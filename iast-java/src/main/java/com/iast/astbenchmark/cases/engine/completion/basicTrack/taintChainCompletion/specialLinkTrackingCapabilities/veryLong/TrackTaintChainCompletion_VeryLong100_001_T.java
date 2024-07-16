@@ -16,9 +16,19 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 
 /**
- * @author CC11001100
- */
+* Introduction 特殊链路跟踪能力->超长链路追踪
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 特殊链路跟踪能力 -> 超长链路追踪（100层）
+// compose = 
+// bind_url = /case0023
+// assession information end
 public class TrackTaintChainCompletion_VeryLong100_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     @PostMapping("case0023")

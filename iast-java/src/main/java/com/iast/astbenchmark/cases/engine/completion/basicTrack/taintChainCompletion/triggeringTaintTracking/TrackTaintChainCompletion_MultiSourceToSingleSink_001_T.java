@@ -15,9 +15,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 触发污点跟踪能力（sink） -> 多污点来源传播至单sink点
+// compose = 
+// bind_url = /case00110
+// assession information end
 public class TrackTaintChainCompletion_MultiSourceToSingleSink_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

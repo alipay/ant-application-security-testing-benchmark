@@ -1,11 +1,13 @@
 package com.iast.astbenchmark.casetool.generator;
 
+import cn.hutool.core.io.FileUtil;
 import com.iast.astbenchmark.casetool.parser.CaseJavaSourceCodeFileParser;
 import com.iast.astbenchmark.casetool.parser.domain.CaseJavaFileParseResult;
 import com.iast.astbenchmark.casetool.parser.domain.ParseTask;
 import com.iast.astbenchmark.common.XastIastException;
 
 import java.io.File;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -91,6 +93,14 @@ public class GeneratorMain {
         return resultList;
     }
 
+    /**
+     * @param result
+     * @param javaSourceCode
+     */
+    private static void replace(CaseJavaFileParseResult result, String javaSourceCode) {
+        FileUtil.writeString(javaSourceCode, new File(result.getJavaSourceFilePath()), StandardCharsets.UTF_8);
+    }
+
     public static void main(String[] args) throws XastGeneratorException {
 
         String casePath = getCasePath();
@@ -106,6 +116,7 @@ public class GeneratorMain {
             task.setCaseJavaFileParseResult(result);
             String newJavaSourceCode = generator.generate(task);
             System.out.println(newJavaSourceCode);
+            replace(result, newJavaSourceCode);
         }
 
     }

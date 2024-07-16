@@ -16,9 +16,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 污点传播跟踪能力 -> 传播场景 -> char[],byte[]操作 -> deepToString
+// compose = 
+// bind_url = /case0095
+// assession information end
 public class TrackTaintChainCompletion_StringBuilderDeepToString_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

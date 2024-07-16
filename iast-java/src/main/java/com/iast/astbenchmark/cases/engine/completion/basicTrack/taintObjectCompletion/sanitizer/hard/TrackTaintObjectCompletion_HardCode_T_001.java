@@ -15,9 +15,19 @@ import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author CC11001100
- */
+* Introduction 污点直接赋值为硬编码值
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 污点无害化处理能力(sanitizer) -> 污点直接赋值为硬编码值
+// compose = 
+// bind_url = /case00141/1
+// assession information end
 public class TrackTaintObjectCompletion_HardCode_T_001 implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     @PostMapping(value = "case00141/1")

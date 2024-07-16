@@ -15,8 +15,18 @@ import com.iast.astbenchmark.analyser.cache.RequestPayloadConstant;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字符串级别 -> 字符串部分存在污点 -> 截取非污点部分后再拼接污点 -> String操作 -> replaceAll
+// compose = 
+// bind_url = /case00956
+// assession information end
 public class AccuracyTrackTaintString_StringReplaceAll_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     @PostMapping(value = "case00956")

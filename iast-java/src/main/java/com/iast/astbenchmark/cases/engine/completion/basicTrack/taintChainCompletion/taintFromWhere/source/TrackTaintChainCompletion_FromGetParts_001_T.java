@@ -19,9 +19,19 @@ import com.iast.astbenchmark.analyser.cache.RequestPayloadConstant;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 污点来源识别能力(source) -> 污点来自http body -> multipart/form-data -> getParts
+// compose = 
+// bind_url = /case0036
+// assession information end
 public class TrackTaintChainCompletion_FromGetParts_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

@@ -14,9 +14,19 @@ import com.iast.astbenchmark.analyser.cache.RequestPayloadConstant;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字符串级别 -> 字符串部分存在污点 -> 截取非污点部分 -> StringBuilder操作 -> deleteCharAt
+// compose = 
+// bind_url = /case00947/2
+// assession information end
 public class AccuracyTrackTaintStringBuilder_DeleteCharAt_002_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

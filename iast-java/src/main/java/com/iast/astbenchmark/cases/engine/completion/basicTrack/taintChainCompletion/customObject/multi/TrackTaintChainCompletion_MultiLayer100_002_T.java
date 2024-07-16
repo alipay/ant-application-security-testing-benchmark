@@ -17,9 +17,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.cases.bean.SourceTestWith100Filedsbject;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 自定义对象 -> 对象字段 -> 多层字段 -> 100层
+// compose = 
+// bind_url = /case00922/2
+// assession information end
 public class TrackTaintChainCompletion_MultiLayer100_002_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

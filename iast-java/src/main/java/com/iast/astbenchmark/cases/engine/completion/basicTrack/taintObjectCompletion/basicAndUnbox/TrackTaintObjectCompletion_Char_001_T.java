@@ -16,9 +16,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCaseDescriptor;
 import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController()
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 基本数据类型及其封装类型 -> char
+// compose = 
+// bind_url = /case002
+// assession information end
 public class TrackTaintObjectCompletion_Char_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

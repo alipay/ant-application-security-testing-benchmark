@@ -69,13 +69,15 @@ public class XastCommentGenerator {
         if (result.getXastSingleLineCommentParseResult() != null && result.getXastSingleLineCommentParseResult().isHasSingleComment()) {
             // 单行注释已经存在
             XastCommentPosition position = result.getXastSingleLineCommentParseResult().getPosition();
-            newJavaSourceCode.append(javaSourceCode.substring(nextBegin, position.getBeginOffset()));
+            if (position.getBeginOffset() > nextBegin) {
+                newJavaSourceCode.append(javaSourceCode.substring(nextBegin - 1, position.getBeginOffset()));
+            }
             newJavaSourceCode.append(xastSingleLineComment);
             nextBegin = position.getEndOffset();
         } else {
             // 单行注释不存在，则插入一个新的单行注释
             if (result.getPublicClassDefineIndex() > nextBegin) {
-                newJavaSourceCode.append(javaSourceCode.substring(nextBegin -1, result.getPublicClassDefineIndex()));
+                newJavaSourceCode.append(javaSourceCode.substring(nextBegin - 1, result.getPublicClassDefineIndex()));
             }
             newJavaSourceCode.append(xastSingleLineComment);
             nextBegin = result.getPublicClassDefineIndex();
@@ -109,7 +111,7 @@ public class XastCommentGenerator {
 
         StringBuilder sb = new StringBuilder();
 
-        sb.append("// assession information start").append("\n");
+        sb.append("\n").append("// assession information start").append("\n");
 
         if (result.getHasVul() != null) {
             sb.append("// real vulnerability = ").append(result.getHasVul()).append("\n");

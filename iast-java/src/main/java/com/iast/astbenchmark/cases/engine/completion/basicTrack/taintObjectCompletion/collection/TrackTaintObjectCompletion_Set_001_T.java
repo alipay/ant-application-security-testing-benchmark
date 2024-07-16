@@ -19,9 +19,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.cases.bean.SoureWithSetBean;
 
 /**
- * @author CC11001100
- */
+* Introduction 引用类型Set 作为污点对象
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 集合(集合对象全为污点) -> Set元素
+// compose = 
+// bind_url = /case008
+// assession information end
 public class TrackTaintObjectCompletion_Set_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

@@ -16,9 +16,19 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 基础跟踪能力 -> 污点链路完整度 -> 污点无害化处理能力(sanitizer) -> 触发sink后再执行sanitizer
+// compose = 
+// bind_url = /case00104/2
+// assession information end
 public class TrackTaintChainCompletion_UnSanitizerThenSanitizer_003_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

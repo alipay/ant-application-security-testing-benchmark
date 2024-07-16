@@ -15,9 +15,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction 污点通过Redis的setKey保存到了Redis上，后续getKey读取到了污点进行命令执行
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = false
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过缓存存储后触发 -> 非本地缓存
+// compose = 
+// bind_url = /case00138
+// assession information end
 public class TrackTaintObjectCompletion_NotLocalCache_001_F
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

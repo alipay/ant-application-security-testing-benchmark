@@ -17,9 +17,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字段/元素级别 -> 部分集合元素为污点 -> List中部分元素为污点
+// compose = 
+// bind_url = /case00132
+// assession information end
 public class AccuracyTrackTaintObject_ListHasTaint_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

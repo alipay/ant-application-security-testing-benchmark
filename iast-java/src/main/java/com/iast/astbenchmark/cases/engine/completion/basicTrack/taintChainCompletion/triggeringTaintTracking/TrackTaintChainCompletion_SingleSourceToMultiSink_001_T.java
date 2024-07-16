@@ -16,9 +16,19 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 触发污点跟踪能力（sink） -> 单污点来源传播至多sink点
+// compose = 
+// bind_url = /case00109
+// assession information end
 public class TrackTaintChainCompletion_SingleSourceToMultiSink_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

@@ -16,9 +16,19 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.SessionUtil;
 
 /**
- * @author CC11001100
- */
+* Introduction 通过Session存储污点，后续取出污点后将其命令执行
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过session存储后触发
+// compose = 
+// bind_url = /case00114/{session}
+// assession information end
 public class TrackTaintObjectCompletion_SessionStorage_001_F implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

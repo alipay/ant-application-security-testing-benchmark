@@ -18,9 +18,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.analyser.cache.RequestPayloadConstant;
 
 /**
- * @author CC11001100
- */
+* Introduction 数组 byte[] 作为污点对象
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 数组(数组对象全为污点) -> 数组对象byte[]
+// compose = 
+// bind_url = /case0015
+// assession information end
 public class TrackTaintObjectCompletion_ByteArray_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

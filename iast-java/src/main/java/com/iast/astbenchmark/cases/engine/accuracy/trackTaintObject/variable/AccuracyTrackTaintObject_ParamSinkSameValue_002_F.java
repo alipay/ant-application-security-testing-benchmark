@@ -13,9 +13,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction sink点的值非外部可控，但与某个参数值相同 这个case期望不能被检出污点
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = false
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 变量级别 -> sink点的值非外部可控，但与某个参数值相同
+// compose = 
+// bind_url = /case00125/2
+// assession information end
 public class AccuracyTrackTaintObject_ParamSinkSameValue_002_F
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

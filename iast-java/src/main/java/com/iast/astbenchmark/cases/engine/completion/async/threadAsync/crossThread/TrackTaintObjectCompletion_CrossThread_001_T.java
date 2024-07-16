@@ -15,9 +15,19 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 多线程异步 -> 污点的来源和触发在不同线程
+// compose = 
+// bind_url = /case00119
+// assession information end
 public class TrackTaintObjectCompletion_CrossThread_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

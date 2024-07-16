@@ -16,9 +16,19 @@ import com.iast.astbenchmark.analyser.cache.RequestPayloadConstant;
 import com.iast.astbenchmark.common.CommonConsts;
 
 /**
- * @author CC11001100
- */
+* Introduction 污点对象被赋值给单维数组的某个下标，然后再通过数组数组下标访问，看是否能够追踪得到
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字段/元素级别 -> 部分数据元素为污点 -> 单维数组中的部分元素为污点
+// compose = 
+// bind_url = /case00129
+// assession information end
 public class AccuracyTrackTaintObject_SingleArrayTaint_001_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 

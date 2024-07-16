@@ -14,9 +14,19 @@ import com.iast.astbenchmark.common.CommonConsts;
 import com.iast.astbenchmark.common.utils.MyCommonTestUtil;
 
 /**
- * @author CC11001100
- */
+* Introduction X
+* Level X  
+* Date 2024-07-16
+* @author CC11001100 
+*/
 @RestController
+
+// assession information start
+// real vulnerability = true
+// assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过文件存储后触发 -> 本地文件
+// compose = 
+// bind_url = /case00116/1
+// assession information end
 public class TrackTaintObjectCompletion_StorageLocalFile_002_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
