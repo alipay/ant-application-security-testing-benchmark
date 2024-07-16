@@ -75,7 +75,8 @@ public class CasetargeCache {
     private void goinit() {
         if (targetMap.isEmpty()) {
             try {
-                buildCaseMap(AstTaintCase001.class);
+                // TODO 2024-06-17 19:22:07
+                //buildCaseMap(AstTaintCase001.class);
                 buildCaseMap(AstTaintCase002.class);
                 buildCaseMap(AstTaintCase003.class);
                 buildCaseMap(AstTaintCase004.class);

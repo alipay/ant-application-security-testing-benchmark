@@ -21,39 +21,39 @@ import java.sql.SQLException;
 @RestController
 @Slf4j
 public class TestController {
-    @Autowired
-    DataAnalysisService dataAnalysisService;
-    @PostMapping(value = "analysis/strategy/{vendor}")
-    public void test003(@PathVariable String vendor) {
-        VendorEnum vendorEnum = VendorEnum.valueOf(vendor);
-        if(vendorEnum==null){
-            return;
-        }
-        try {
-            dataAnalysisService.doAnalysisAndDB(vendorEnum);
-        } catch (SQLException e) {
-            log.error("分析存储报告异常");
-        }
-    }
-
-    @PostMapping(value = "analysis/{id}")
-    public void test003(@PathVariable Long id) {
-        Entity res = null;
-        try {
-            res = Db.use().get(Entity.create("REPORT").set("id",id));
-            Object data = res.get("REPORT_DATA");
-            JSONObject json = JSONUtil.parseObj(data);
-            String vendor = json.getStr("vendor");
-            CaseDataCollectResultBean collectResultBean = JSONUtil.toBean(json,CaseDataCollectResultBean.class);
-            collectResultBean.setVendor(VendorEnum.valueOf(vendor));
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        System.out.println(res);
-    }
-
-    @PostMapping(value = "process")
-    public void test004() {
-        AnnotationProcessorUtil.processAnnotations(AstTaintCase001.class);
-    }
+    //@Autowired
+    //DataAnalysisService dataAnalysisService;
+    //@PostMapping(value = "analysis/strategy/{vendor}")
+    //public void test003(@PathVariable String vendor) {
+    //    VendorEnum vendorEnum = VendorEnum.valueOf(vendor);
+    //    if(vendorEnum==null){
+    //        return;
+    //    }
+    //    try {
+    //        dataAnalysisService.doAnalysisAndDB(vendorEnum);
+    //    } catch (SQLException e) {
+    //        log.error("分析存储报告异常");
+    //    }
+    //}
+    //
+    //@PostMapping(value = "analysis/{id}")
+    //public void test003(@PathVariable Long id) {
+    //    Entity res = null;
+    //    try {
+    //        res = Db.use().get(Entity.create("REPORT").set("id",id));
+    //        Object data = res.get("REPORT_DATA");
+    //        JSONObject json = JSONUtil.parseObj(data);
+    //        String vendor = json.getStr("vendor");
+    //        CaseDataCollectResultBean collectResultBean = JSONUtil.toBean(json,CaseDataCollectResultBean.class);
+    //        collectResultBean.setVendor(VendorEnum.valueOf(vendor));
+    //    } catch (SQLException e) {
+    //        throw new RuntimeException(e);
+    //    }
+    //    System.out.println(res);
+    //}
+    //
+    //@PostMapping(value = "process")
+    //public void test004() {
+    //    AnnotationProcessorUtil.processAnnotations(AstTaintCase001.class);
+    //}
 }

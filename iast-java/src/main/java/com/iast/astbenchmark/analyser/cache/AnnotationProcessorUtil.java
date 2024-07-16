@@ -1,19 +1,20 @@
 package com.iast.astbenchmark.analyser.cache;
 
+import java.lang.reflect.Method;
+import java.util.List;
+
+import org.springframework.util.CollectionUtils;
+
 import com.google.common.collect.Lists;
 import com.iast.astbenchmark.analyser.bean.CaseTargetBean;
 import com.iast.astbenchmark.analyser.bean.CaseTargetItemBean;
 import com.iast.astbenchmark.analyser.bean.consts.CaseTypeEnum;
-import org.springframework.util.CollectionUtils;
-
-import java.lang.reflect.Method;
-import java.util.List;
 
 public final class AnnotationProcessorUtil {
 
     /**
-     * 处理类注解
-     * test method
+     * 处理类注解 test method
+     * 
      * @param clazz 待处理的类
      */
     public static void processAnnotations(Class<?> clazz) {
@@ -26,11 +27,11 @@ public final class AnnotationProcessorUtil {
                 // 获取方法上的@CaseTag注解
                 IastTestCase methodAnnotation = method.getAnnotation(IastTestCase.class);
                 // 打印方法名和注解值
-                System.out.println("Method " + method.getName() + " has annotation with value: " + methodAnnotation.caseNo());
+                System.out
+                    .println("Method " + method.getName() + " has annotation with value: " + methodAnnotation.caseNo());
             }
         }
     }
-
 
     /**
      * 构建用例映射
@@ -52,7 +53,8 @@ public final class AnnotationProcessorUtil {
                     CasetargeCache.targetMap.put(caseNo, buildTargetBean(methodAnnotation));
                 } else {
                     // 如果已存在，则修改目标对象并替换缓存中的对象
-                    CaseTargetBean modifyBean = modifyTargetBean(CasetargeCache.targetMap.get(caseNo), methodAnnotation);
+                    CaseTargetBean modifyBean =
+                        modifyTargetBean(CasetargeCache.targetMap.get(caseNo), methodAnnotation);
                     CasetargeCache.targetMap.replace(caseNo, modifyBean);
                 }
             }
@@ -87,7 +89,7 @@ public final class AnnotationProcessorUtil {
     /**
      * 修改用例目标 bean
      *
-     * @param caseTargetBean   原始的用例目标 bean
+     * @param caseTargetBean 原始的用例目标 bean
      * @param methodAnnotation 方法注解，包含用例标签和预期结果
      * @return 修改后的用例目标 bean，包含新的用例标签和预期结果
      */
