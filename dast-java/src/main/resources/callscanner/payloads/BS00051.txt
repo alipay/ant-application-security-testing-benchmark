@@ -1,4 +1,4 @@
-POST /redirect/BS00051 HTTP/1.1
+GET /redirect/BS00051?BS00051%3dhttps%3a//www.taobao.com/ HTTP/1.1
 Host: localhost
 Connection: close
 Accept-Encoding: gzip, deflate
@@ -10,4 +10,3 @@ Content-Type: application/x-www-form-urlencoded
 scannerauth:cd117e0a9365670f19c768032f8dabfe
 Content-Length: 31
 
-BS00051=https://www.taobao.com/

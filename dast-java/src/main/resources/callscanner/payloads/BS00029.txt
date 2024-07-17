@@ -1,4 +1,4 @@
-POST /xss/BS00029 HTTP/1.1
+GET /xss/BS00029?BS00029%3d<script>alert(1)%3b</script> HTTP/1.1
 Host: localhost
 Connection: close
 Accept-Encoding: gzip, deflate
@@ -11,4 +11,3 @@ Content-Type: application/x-www-form-urlencoded
 scannerauth:cd117e0a9365670f19c768032f8dabfe
 Content-Length: 34
 
-BS00029=<script>alert(1);</script>

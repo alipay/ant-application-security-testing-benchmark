@@ -1,4 +1,4 @@
-POST /sqli/BS00132 HTTP/1.1
+GET /sqli/BS00132?BS00132={"rs"%3a{"BS00132"%3a+"'union+select+1,+2,+'3"}} HTTP/1.1
 Host: localhost
 Upgrade-Insecure-Requests: 1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36
@@ -9,6 +9,4 @@ Cookie: sdvt=llP0OkDDP8FzDXBFp45J8SEsbQeEHuOV;  rtk=JWcET0tg1NDnwTHqAqSrx2sVxXIL
 scannerauth: cd117e0a9365670f19c768032f8dabfe
 Content-Type: application/x-www-form-urlencoded;
 Connection: close
-Content-Length: 52
 
-BS00132={"rs":{"BS00132": "'union select 1, 2, '3"}}

@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +18,7 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Long
-// compose = Base_Long_001_T.java
+// compose = Base_Long_001_T.java || Base_Long_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_Long_001_T/{cmd}
 // assession information end
 
@@ -27,12 +28,8 @@ public class Base_Long_001_T {
     @GetMapping("Base_Long_001_T/{cmd}")
     public Map<String, Object> aTaintCase0139(@PathVariable long cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(cmd);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

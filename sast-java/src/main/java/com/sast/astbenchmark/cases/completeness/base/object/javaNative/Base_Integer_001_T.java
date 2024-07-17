@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,12 +32,8 @@ public class Base_Integer_001_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(cmd);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

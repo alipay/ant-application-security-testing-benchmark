@@ -17,13 +17,13 @@ import java.util.Map;
 // real vulnerability = true
 // assession project = 准确度->流敏感->数据流不可达->被固定值赋值
 // compose = !AssignedByFixedValue_001_F.java && AssignedByFixedValue_002_T.java
-// bind_url = completeness/base/chain/astTaint/AssignedByFixedValue_002_T
+// bind_url = accuracy/flowSensitive/flowUnReachable/AssignedByFixedValue_002_T
 // assession information end
 @RestController()
 @RequestMapping("accuracy/flowSensitive/flowUnReachable")
 public class AssignedByFixedValue_002_T {
     @PostMapping(value = "AssignedByFixedValue_002_T")
-    public Map<String, Object> caseTest(@RequestParam String cmd) {
+    public Map<String, Object> case01582(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(cmd);

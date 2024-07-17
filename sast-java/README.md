@@ -13,6 +13,27 @@
     │   │               ├── cases   
       
 ```
+### 快速开始
+#### 测试流程简介
+SAST引擎能力测评包括三步：</br>
+（1）准备前置条件</br>
+（2）测试目标产品/引擎扫描SAST靶场</br>
+（3）自主分析靶场测试结果 或 自动化获取评价体系测试结果（正在建设，还未完全完成） </br>
+#### 准备前置条件
+（1）确认被测的SAST产品配置了以下sink点规则
+```
+Runtime.getRuntime().exec() -- 参数位置0
+org.apache.http.impl.client.CloseableHttpClient#execute -- 参数位置0
+cn.hutool.http.HttpRequest#post -- 参数位置0
+java.net.URL#openConnection -- URL对象为污点被调用
+java.sql.Statement#executeQuery -- 参数位置0
+SinkUtil#sink (本评价体系靶场自定义) -- 参数位置0
+```
+#### 自主分析靶场测试结果
+自主分析测试产品/引擎的输出，结合case路由对应相应的评价项，分析该款产品当前可以检出的场景、不可检出的场景以及存在误报的场景有哪些。从而分析出测试产品/引擎的能力。
+
+#### 自动化获取评价体系测试结果（正在建设，还未完全完成）
+当前正在研发基于测试产品的结果自动化生成测试结果的工具，可以自动将SAST产品的输出结果和评价项进行对应并输出测评报告，免去自主分析的繁琐工作。当前正在努力开发中，敬请期待...
 
 ### License
 This project is licensed under the Apache License 2.0

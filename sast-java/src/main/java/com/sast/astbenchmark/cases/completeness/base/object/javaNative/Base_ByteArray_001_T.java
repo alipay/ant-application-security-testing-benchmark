@@ -1,7 +1,10 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -18,7 +21,8 @@ import java.util.Map;
 // compose = Base_ByteArray_001_T.java
 // bind_url = completeness/base/object/javaNative/Base_ByteArray_001_T
 // assession information end
-
+@RestController()
+@RequestMapping("completeness/base/object/javaNative")
 public class Base_ByteArray_001_T {
     @PostMapping("Base_ByteArray_001_T")
     public Map<String, Object> aTaintCase0151(@RequestBody byte[] cmd) {
@@ -27,12 +31,8 @@ public class Base_ByteArray_001_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        try {
-            Runtime.getRuntime().exec(cmd.toString());
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(cmd);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

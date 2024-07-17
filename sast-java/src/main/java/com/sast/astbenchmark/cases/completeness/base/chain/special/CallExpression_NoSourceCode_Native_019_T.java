@@ -23,7 +23,7 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/base/chain/special")
 public class CallExpression_NoSourceCode_Native_019_T {
-    @PostMapping(value = "case0179")
+    @PostMapping(value = "CallExpression_NoSourceCode_Native_019_T")
     public Map<String, Object> aTaintCase0179(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

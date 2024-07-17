@@ -28,7 +28,7 @@ public class Expression_PostfixExpression_001_T {
     public Map<String, Object> aTaintCase0136(@PathVariable int cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            ++cmd;
+            cmd++;
             Runtime.getRuntime().exec(String.valueOf(cmd));
             modelMap.put("status", "success");
         } catch (Exception e) {

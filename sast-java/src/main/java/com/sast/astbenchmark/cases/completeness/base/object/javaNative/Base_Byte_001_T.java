@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,12 +29,8 @@ public class Base_Byte_001_T {
     @GetMapping("Base_Byte_001_T/{cmd}")
     public Map<String, Object> aTaintCase0138(@PathVariable byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        try {
-            Runtime.getRuntime().exec(String.valueOf(cmd));
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        SinkUtil.sink(cmd);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

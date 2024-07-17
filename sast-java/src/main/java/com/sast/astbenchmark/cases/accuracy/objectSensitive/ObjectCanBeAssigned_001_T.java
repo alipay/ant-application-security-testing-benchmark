@@ -16,16 +16,17 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 准确度->对象敏感->同名对象是否真正外部可控
-// compose = !ObjectCanBeAssigned_002_F.java && ObjectCanBeAssigned_001_T.java
-// bind_url = completeness/base/chain/astTaint/ObjectCanBeAssigned_001_T
+// compose = !ObjectCanBeAssigned_03_F.java && !ObjectCanBeAssigned_002_F.java && ObjectCanBeAssigned_001_T.java
+// bind_url = accuracy/objectSensitive/ObjectCanBeAssigned_001_T
 // assession information end
 @RestController()
-@RequestMapping("accuracy/objectSensitive/objectCanBeAssigned")
+@RequestMapping("accuracy/objectSensitive")
 public class ObjectCanBeAssigned_001_T {
     @PostMapping(value = "ObjectCanBeAssigned_001_T")
     public Map<String, Object> aTaintCase021(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
+            String exec = "ls";
             Runtime.getRuntime().exec(cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {

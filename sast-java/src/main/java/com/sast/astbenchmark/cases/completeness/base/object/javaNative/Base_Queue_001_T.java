@@ -1,5 +1,6 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
+import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,13 +37,9 @@ public class Base_Queue_001_T {
             return modelMap;
         }
         Queue<String> queue = new LinkedBlockingQueue();
-        try {
-            queue.add(cmd.get(0));
-            Runtime.getRuntime().exec(queue.peek());
-            modelMap.put("status", "success");
-        } catch (IOException e) {
-            modelMap.put("status", "error");
-        }
+        queue.add(cmd.get(0));
+        SinkUtil.sink(queue);
+        modelMap.put("status", "success");
         return modelMap;
     }
 }

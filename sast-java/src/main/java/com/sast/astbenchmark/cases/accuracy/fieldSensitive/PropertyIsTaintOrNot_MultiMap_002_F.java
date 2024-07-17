@@ -16,14 +16,14 @@ import java.util.Map;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 准确度->域敏感->对象部分属性为污点->Multi-Map
 // compose = !PropertyIsTaintOrNot_MultiMap_002_F.java && PropertyIsTaintOrNot_MultiMap_001_T.java
-// bind_url = completeness/base/chain/astTaint/PropertyIsTaintOrNot_MultiMap_002_F
+// bind_url = accuracy/fieldSensitive/PropertyIsTaintOrNot_MultiMap_002_F
 // assession information end
 
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/propertyIsTaintOrNot")
+@RequestMapping("accuracy/fieldSensitive")
 public class PropertyIsTaintOrNot_MultiMap_002_F {
     @PostMapping(value = "PropertyIsTaintOrNot_MultiMap_002_F")
     public Map<String, Object> aTaintCase026_2(@RequestParam String url) {
