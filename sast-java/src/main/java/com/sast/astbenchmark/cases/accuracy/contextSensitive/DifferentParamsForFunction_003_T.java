@@ -1,41 +1,37 @@
 package com.sast.astbenchmark.cases.accuracy.contextSensitive;
 
-import com.sast.astbenchmark.common.utils.CmdUtil;
+import com.sast.astbenchmark.model.alias.Invoke;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 上下文敏感-相同函数调用不同参数-scene1
+ * Introduction 上下文敏感-相同函数调用不同参数-scene2
  * Level X
- * Date 2024-05-23
+ * Date 2024-07-05
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->上下文敏感->相同函数调用不同参数-scene1
-// compose = !DifferentParamsForFunction_002_F.java && DifferentParamsForFunction_001_T.java
-// bind_url = accuracy/contextSensitive/DifferentParamsForFunction_001_T
+// assession project = 准确度->上下文敏感->相同函数调用不同参数-scene2
+// compose = !DifferentParamsForFunction_004_F.java && DifferentParamsForFunction_003_T.java
+// bind_url = accuracy/contextSensitive/DifferentParamsForFunction_003_T
 // assession information end
 @RestController
 @RequestMapping("accuracy/contextSensitive")
-public class DifferentParamsForFunction_001_T {
-    @PostMapping(value = "DifferentParamsForFunction_001_T")
+public class DifferentParamsForFunction_003_T {
+    @PostMapping(value = "DifferentParamsForFunction_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        String exec1, exec2;
-        int i = -1;
-        exec1 = CmdUtil.getCmdWithContextSensitive(i, cmd);
-        i = 1;
-        exec2 = CmdUtil.getCmdWithContextSensitive(i, cmd);
         try {
-            Runtime.getRuntime().exec(exec2);
+            String c1 = Invoke.id(cmd);
+            String c2 = Invoke.id("foo");
+            Runtime.getRuntime().exec(c1);
             modelMap.put("status", "success");
-        } catch (IOException e) {
+        } catch (Exception e) {
             modelMap.put("status", "error");
         }
         return modelMap;

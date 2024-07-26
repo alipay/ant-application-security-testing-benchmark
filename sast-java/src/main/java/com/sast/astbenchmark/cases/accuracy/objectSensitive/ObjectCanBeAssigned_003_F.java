@@ -23,7 +23,7 @@ import java.util.Map;
 @RequestMapping("accuracy/objectSensitive")
 public class ObjectCanBeAssigned_003_F {
     @PostMapping(value = "ObjectCanBeAssigned_003_F")
-    public Map<String, Object> aTaintCase021_3(@PathVariable String cmd) {
+    public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             cmd = "ls";
