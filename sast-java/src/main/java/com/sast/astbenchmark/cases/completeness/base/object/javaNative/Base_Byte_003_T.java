@@ -1,6 +1,5 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
-import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,25 +10,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，long作为污点
+ * Introduction 对象中的简单类型对象，byte作为污点
  * Level X
  * Date 2024-05-09
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->long
-// compose = Base_Long_001_T.java || Base_Long_003_T.java
-// bind_url = completeness/base/object/javaNative/Base_Long_001_T/{cmd}
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->byte
+// compose = Base_Byte_001_T.java || Base_Byte_003_T.java
+// bind_url = completeness/base/object/javaNative/Base_Byte_003_T/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
-public class Base_Long_001_T {
-    @GetMapping("Base_Long_001_T/{cmd}")
-    public Map<String, Object> aTaintCase0139(@PathVariable long cmd) {
+public class Base_Byte_003_T {
+    @GetMapping("Base_Byte_003_T/{cmd}")
+    public Map<String, Object> aTaintCase0138_2(@PathVariable byte cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        SinkUtil.sink(cmd);
-        modelMap.put("status", "success");
+        try {
+            Runtime.getRuntime().exec(String.valueOf(cmd));
+            modelMap.put("status", "success");
+        } catch (IOException e) {
+            modelMap.put("status", "error");
+        }
         return modelMap;
     }
+
 }

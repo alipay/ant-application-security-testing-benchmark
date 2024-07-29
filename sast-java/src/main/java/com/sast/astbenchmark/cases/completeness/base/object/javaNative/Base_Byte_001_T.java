@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,8 +17,8 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte
-// compose = Base_Byte_001_T.java
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->byte
+// compose = Base_Byte_001_T.java || Base_Byte_003_T.java
 // bind_url = completeness/base/object/javaNative/Base_Byte_001_T/{cmd}
 // assession information end
 

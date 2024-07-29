@@ -18,9 +18,10 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte[]
-// compose = Base_ByteArray_001_T.java
+// compose = Base_ByteArray_001_T.java || Base_ByteArray_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_ByteArray_001_T
 // assession information end
+
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
 public class Base_ByteArray_001_T {

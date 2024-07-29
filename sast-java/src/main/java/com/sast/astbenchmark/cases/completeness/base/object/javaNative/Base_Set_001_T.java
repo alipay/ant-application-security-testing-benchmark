@@ -18,7 +18,7 @@ import java.util.*;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Set
-// compose = Base_Set_001_T.java
+// compose = Base_Set_001_T.java || Base_Set_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_Set_001_T
 // assession information end
 

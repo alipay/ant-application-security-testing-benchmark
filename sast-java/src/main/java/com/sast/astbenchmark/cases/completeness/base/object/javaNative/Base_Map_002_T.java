@@ -1,6 +1,5 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
-import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,21 +18,25 @@ import java.util.Map;
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Map
 // compose = Base_Map_001_T.java || Base_Map_002_T.java
-// bind_url = completeness/base/object/javaNative/Base_Map_001_T
+// bind_url = completeness/base/object/javaNative/Base_Map_002_T
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
-public class Base_Map_001_T {
-    @PostMapping("Base_Map_001_T")
+public class Base_Map_002_T {
+    @PostMapping("Base_Map_002_T")
     public Map<String, Object> aTaintCase0140(@RequestBody Map<String, String> cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null || cmd.isEmpty()) {
             modelMap.put("status", "error");
             return modelMap;
         }
-        SinkUtil.sink(cmd);
-        modelMap.put("status", "success");
+        try {
+            Runtime.getRuntime().exec(String.valueOf(cmd));
+            modelMap.put("status", "success");
+        } catch (IOException e) {
+            modelMap.put("status", "error");
+        }
         return modelMap;
     }
 }
