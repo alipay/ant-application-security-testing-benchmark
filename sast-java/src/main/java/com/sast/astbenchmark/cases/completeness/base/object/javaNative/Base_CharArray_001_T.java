@@ -17,8 +17,8 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Char[]
-// compose = Base_CharArray_001_T.java
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]
+// compose = Base_CharArray_001_T.java || Base_CharArray_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_CharArray_001_T
 // assession information end
 
@@ -26,14 +26,13 @@ import java.util.Map;
 @RequestMapping("completeness/base/object/javaNative")
 public class Base_CharArray_001_T {
     @PostMapping("Base_CharArray_001_T")
-    public Map<String, Object> aTaintCase0150(@RequestBody int[] cmd) {
+    public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null || cmd.length < 1) {
             modelMap.put("status", "error");
             return modelMap;
         }
-        char[] data = {(char) cmd[0], 2};
-        SinkUtil.sink(data);
+        SinkUtil.sink(cmd);
         modelMap.put("status", "success");
         return modelMap;
     }

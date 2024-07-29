@@ -1,6 +1,5 @@
 package com.sast.astbenchmark.cases.completeness.base.object.javaNative;
 
-import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,13 +22,13 @@ import java.util.concurrent.LinkedBlockingQueue;
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue
 // compose = Base_Queue_001_T.java || Base_Queue_002_T.java
-// bind_url = completeness/base/object/javaNative/Base_Queue_001_T
+// bind_url = completeness/base/object/javaNative/Base_Queue_002_T
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
-public class Base_Queue_001_T {
-    @PostMapping("Base_Queue_001_T")
+public class Base_Queue_002_T {
+    @PostMapping("Base_Queue_002_T")
     public Map<String, Object> aTaintCase0142(@RequestBody List<String> cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null || CollectionUtils.isEmpty(cmd)) {
@@ -37,9 +36,13 @@ public class Base_Queue_001_T {
             return modelMap;
         }
         Queue<String> queue = new LinkedBlockingQueue();
-        queue.add(cmd.get(0));
-        SinkUtil.sink(queue);
-        modelMap.put("status", "success");
+        try {
+            queue.add(cmd.get(0));
+            Runtime.getRuntime().exec(queue.peek());
+            modelMap.put("status", "success");
+        } catch (IOException e) {
+            modelMap.put("status", "error");
+        }
         return modelMap;
     }
 }
