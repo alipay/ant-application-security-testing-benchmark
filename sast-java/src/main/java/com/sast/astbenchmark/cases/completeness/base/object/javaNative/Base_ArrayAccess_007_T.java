@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Array中的对象为污点
+ * Introduction 对象中的简单类型对象，Array中的对象为污点-数组覆盖
  * Level X
  * Date 2024-06-28
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Array
-// compose = Base_ArrayAccess_007_T.java
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-array overwrite
+// compose = Base_ArrayAccess_007_T.java && !Base_ArrayAccess_008_F.java
 // bind_url = completeness/base/object/javaNative/Base_ArrayAccess_007_T
 // assession information end
 @RestController()

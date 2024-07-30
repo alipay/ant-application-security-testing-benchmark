@@ -9,31 +9,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Array中的对象为污点
+ * Introduction 对象中的简单类型对象，Array中的对象为污点-数组越界
  * Level X
  * Date 2024-06-28
  */
 // assession information start
 // real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Array
-// compose = !Base_ArrayAccess_009_F.java
-// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_009_F
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-OutOfBoundOrNot
+// compose = Base_ArrayAccess_011_T.java && !Base_ArrayAccess_012_F.java
+// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_012_F
 // assession information end
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
-public class Base_ArrayAccess_009_F {
-    @PostMapping("Base_ArrayAccess_009_F")
+public class Base_ArrayAccess_012_F {
+    @PostMapping("Base_ArrayAccess_012_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String[] arr = new String[]{"foo", cmd, "bar", "test"};
-            if (Math.random() < 0.5) {
-                arr[1] = arr[0];
-            } else if (Math.random() < 0.5) {
-                arr[1] = arr[2];
-            } else {
-                arr[1] = arr[3];
-            }
+            String[] arr = new String[]{"foo", "xx", "bar"};
+            arr[3] = cmd; // OutOfBound
             Runtime.getRuntime().exec(arr);
             modelMap.put("status", "success");
         } catch (Exception e) {
