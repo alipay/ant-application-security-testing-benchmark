@@ -16,7 +16,7 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 准确度->对象敏感->同名对象是否真正外部可控
-// compose = !ObjectCanBeAssigned_03_F.java && !ObjectCanBeAssigned_002_F.java && ObjectCanBeAssigned_001_T.java
+// compose = !ObjectCanBeAssigned_003_F.java && !ObjectCanBeAssigned_002_F.java && ObjectCanBeAssigned_001_T.java
 // bind_url = accuracy/objectSensitive/ObjectCanBeAssigned_001_T
 // assession information end
 @RestController()
