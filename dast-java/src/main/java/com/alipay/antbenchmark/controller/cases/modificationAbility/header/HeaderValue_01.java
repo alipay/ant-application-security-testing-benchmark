@@ -19,7 +19,7 @@ import java.util.List;
 // assession information start
 // real vulnerability = true
 // assession project = 改包能力->header->value
-// compose = HeaderValue.java
+// compose = HeaderValue_01.java
 // bind_url = /cmdi/BS00002
 // assession information end
 /**
