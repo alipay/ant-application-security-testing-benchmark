@@ -9,10 +9,12 @@ import java.util.List;
  */
 @Data
 public class CaseTargetBean {
+
     /**
      * case标签
      */
     private List<String> tags;
+
     /**
      * 权重（1～10）
      */
@@ -33,5 +35,6 @@ public class CaseTargetBean {
                 ", data=" + data +
                 '}';
     }
+
 }
 

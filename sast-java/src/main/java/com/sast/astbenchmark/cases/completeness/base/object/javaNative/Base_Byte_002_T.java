@@ -19,7 +19,7 @@ import java.util.Map;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte
-// compose = Base_Byte_002_T.java
+// compose = Base_Byte_002_T.java || Base_Byte_004_T.java
 // bind_url = completeness/base/object/javaNative/Base_Byte_002_T/{cmd}
 // assession information end
 

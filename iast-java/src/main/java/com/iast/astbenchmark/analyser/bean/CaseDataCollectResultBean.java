@@ -12,6 +12,7 @@ public class CaseDataCollectResultBean implements Serializable {
     private VendorEnum vendor;
     private String reportId;
     private Long caseTime;
+
     /**
      * 用于存储case检出结果
      */

@@ -176,10 +176,16 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version> 1.2.70</version>
+            <version>1.2.70</version>
         </dependency>
         <!-- rpc-->
         <!-- dubbo-->
+
+        <dependency>
+            <groupId>com.github.javaparser</groupId>
+            <artifactId>javaparser-symbol-solver-core</artifactId>
+            <version>3.26.1</version>
+        </dependency>
     </dependencies>
 
     <repositories>

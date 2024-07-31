@@ -22,7 +22,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue
-// compose = Base_Queue_001_T.java
+// compose = Base_Queue_001_T.java || Base_Queue_002_T.java
 // bind_url = completeness/base/object/javaNative/Base_Queue_001_T
 // assession information end
 

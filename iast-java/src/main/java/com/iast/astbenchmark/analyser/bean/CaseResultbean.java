@@ -6,9 +6,11 @@ import lombok.Data;
 
 @Data
 public class CaseResultbean {
+
     private CaseTypeEnum caseTypeEnum;
     private String caseNo;
     private String caseDesc;
+
     /**
      * Case 结果
      */
@@ -21,4 +23,5 @@ public class CaseResultbean {
      * 用于存储Case的分析结果（这一步暂时未适配，因为这一步和厂商强相关）
      */
     private CaseDataBean analysisData;
+
 }

@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+参数获取
+// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+CharArrayGet
 // compose = Expression_MethodInvocation_Argument_001_T.java
 // bind_url = completeness/base/chain/astTaint/Expression_MethodInvocation_Argument_001_T
 // assession information end

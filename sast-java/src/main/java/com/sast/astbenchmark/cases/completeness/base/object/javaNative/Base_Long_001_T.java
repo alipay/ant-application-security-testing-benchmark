@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Long作为污点
+ * Introduction 对象中的简单类型对象，long作为污点
  * Level X
  * Date 2024-05-09
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Long
-// compose = Base_Long_001_T.java
+// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->long
+// compose = Base_Long_001_T.java || Base_Long_003_T.java
 // bind_url = completeness/base/object/javaNative/Base_Long_001_T/{cmd}
 // assession information end
 
