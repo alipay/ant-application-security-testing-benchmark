@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 域敏感-MapPutGet
+ * Introduction 域敏感-MapPutGet-scene1
  * Level X
  * Date 2024-05-09
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->域敏感->容器->MapPutGet
+// assession project = 准确度->域敏感->容器->MapPutGet-scene1
 // compose = !MapPutGet_002_F.java && MapPutGet_001_T.java
 // bind_url = accuracy/fieldSensitive/baseCollection/MapPutGet_001_T
 // assession information end

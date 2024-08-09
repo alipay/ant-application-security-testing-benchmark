@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 域敏感-对象属性-对象指针-流敏感指针分析-过程间分析
+ * Introduction 域敏感-对象属性-对象指针-流敏感指针分析-过程间分析-scene2
  * Level X
  * Date 2024-07-02
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->域敏感->对象属性->对象指针->流敏感指针分析-过程间分析
+// assession project = 准确度->域敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene2
 // compose = !FlowSensitiveAlias_004_F.java && FlowSensitiveAlias_003_T.java
 // bind_url = accuracy/fieldSensitive/objectField/FlowSensitiveAlias_003_T
 // assession information end

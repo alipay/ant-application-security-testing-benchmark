@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-cast表达式
+ * Introduction 污点链路样本中的语句-强转表达式
  * Level X
  * Date 2024-05-09
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->cast表达式-函数调用
-// compose = Expression_CastExpression_001_T.java
+// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->强转表达式-函数调用
+// compose = Expression_CastExpression_002_T.java
 // bind_url = completeness/base/chain/astTaint/Expression_CastExpression_002_T/{cmd}
 // assession information end
 
