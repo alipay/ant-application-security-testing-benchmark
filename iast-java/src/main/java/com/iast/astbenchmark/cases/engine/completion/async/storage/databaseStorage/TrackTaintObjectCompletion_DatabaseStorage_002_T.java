@@ -20,7 +20,7 @@ import cn.hutool.db.Entity;
 /**
 * Introduction 污点通过Database存储，后续读取将其作为命令执行
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -28,7 +28,7 @@ import cn.hutool.db.Entity;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过db存储后触发
-// compose = 
+// compose = TrackTaintObjectCompletion_DatabaseStorage_002_T.java && !TrackTaintObjectCompletion_DatabaseStorage_001_F.java
 // bind_url = /case00113/1
 // assession information end
 public class TrackTaintObjectCompletion_DatabaseStorage_002_T

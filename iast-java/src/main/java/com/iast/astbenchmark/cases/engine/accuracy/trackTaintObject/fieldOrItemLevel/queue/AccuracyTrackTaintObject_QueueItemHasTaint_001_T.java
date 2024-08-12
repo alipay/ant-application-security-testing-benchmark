@@ -21,7 +21,7 @@ import lombok.SneakyThrows;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -29,7 +29,7 @@ import lombok.SneakyThrows;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字段/元素级别 -> 部分集合元素为污点 -> Queue中部分元素为污点
-// compose = 
+// compose = AccuracyTrackTaintObject_QueueItemHasTaint_001_T.java && !AccuracyTrackTaintObject_QueueItemHasTaint_002_F.java
 // bind_url = /case00135
 // assession information end
 public class AccuracyTrackTaintObject_QueueItemHasTaint_001_T

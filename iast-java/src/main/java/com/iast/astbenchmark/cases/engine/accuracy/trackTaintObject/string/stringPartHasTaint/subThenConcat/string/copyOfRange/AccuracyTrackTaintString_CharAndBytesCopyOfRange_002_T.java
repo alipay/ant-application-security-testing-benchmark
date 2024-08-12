@@ -16,14 +16,14 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字符串级别 -> 字符串部分存在污点 -> 截取非污点部分后再拼接污点 -> char[]/byte[]操作 -> copyOfRange
-// compose = 
+// compose = AccuracyTrackTaintString_CharAndBytesCopyOfRange_001_T.java && AccuracyTrackTaintString_CharAndBytesCopyOfRange_002_T.java
 // bind_url = /case00960/2
 // assession information end
 public class AccuracyTrackTaintString_CharAndBytesCopyOfRange_002_T

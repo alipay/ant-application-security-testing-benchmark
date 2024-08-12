@@ -17,7 +17,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -25,7 +25,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 多线程异步 -> 污点的来源和触发在不同线程
-// compose = 
+// compose = TrackTaintObjectCompletion_CrossThread_001_T.java
 // bind_url = /case00119
 // assession information end
 public class TrackTaintObjectCompletion_CrossThread_001_T

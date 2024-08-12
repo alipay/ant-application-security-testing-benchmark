@@ -26,6 +26,6 @@ public class GeneratorTask {
     /**
      * 如果此case有依赖其他文件的话
      */
-    private List<CaseJavaFileParseResult> dependencyCaseList;
+    private List<CaseJavaFileParseResult> groupCaseList;
 
 }

@@ -17,7 +17,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction 污点通过Redis的setKey保存到了Redis上，后续getKey读取到了污点进行命令执行
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -25,7 +25,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过缓存存储后触发 -> 非本地缓存
-// compose = 
+// compose = !TrackTaintObjectCompletion_NotLocalCache_001_F.java && TrackTaintObjectCompletion_NotLocalCache_002_T.java
 // bind_url = /case00138/1
 // assession information end
 public class TrackTaintObjectCompletion_NotLocalCache_002_T

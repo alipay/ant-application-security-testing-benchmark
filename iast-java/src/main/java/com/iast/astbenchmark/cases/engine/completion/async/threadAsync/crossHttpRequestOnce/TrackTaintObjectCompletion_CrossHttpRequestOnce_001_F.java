@@ -17,7 +17,7 @@ import cn.hutool.http.HttpRequest;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -25,7 +25,7 @@ import cn.hutool.http.HttpRequest;
 // assession information start
 // real vulnerability = false
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 跨进程跟踪能力 -> 调用方式 -> http -> 跨一层进程调用
-// compose = 
+// compose = TrackTaintObjectCompletion_CrossHttpRequestOnce_002_T.java && !TrackTaintObjectCompletion_CrossHttpRequestOnce_001_F.java
 // bind_url = /case00123
 // assession information end
 public class TrackTaintObjectCompletion_CrossHttpRequestOnce_001_F

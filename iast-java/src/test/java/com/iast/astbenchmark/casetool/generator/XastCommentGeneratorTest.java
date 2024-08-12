@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import com.iast.astbenchmark.casetool.parser.CaseJavaSourceCodeFileParser;
 import com.iast.astbenchmark.casetool.parser.domain.CaseJavaFileParseResult;
 import com.iast.astbenchmark.casetool.parser.domain.ParseTask;
-import com.iast.astbenchmark.casetool.parser.XastCaseParserException;
 import com.iast.astbenchmark.common.utils.FileUtil;
 
 /**
@@ -27,7 +26,7 @@ class XastCommentGeneratorTest {
         CaseJavaFileParseResult result = new CaseJavaSourceCodeFileParser().parse(build);
 
         XastCommentGenerator xastCommentGenerator = new XastCommentGenerator();
-        GeneratorTask task = GeneratorTask.builder().caseJavaFileParseResult(result).dependencyCaseList(null).build();
+        GeneratorTask task = GeneratorTask.builder().caseJavaFileParseResult(result).groupCaseList(null).build();
         String newJavaCode = xastCommentGenerator.generate(task);
         System.out.println(newJavaCode);
 

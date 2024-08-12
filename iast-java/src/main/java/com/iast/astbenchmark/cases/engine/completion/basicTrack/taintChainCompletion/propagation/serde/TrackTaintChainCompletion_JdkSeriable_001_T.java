@@ -19,7 +19,7 @@ import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -27,7 +27,7 @@ import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 污点传播跟踪能力 -> 传播场景 -> JDK序列化与反序列化
-// compose = 
+// compose = TrackTaintChainCompletion_JdkSeriable_001_T.java
 // bind_url = /case00932
 // assession information end
 public class TrackTaintChainCompletion_JdkSeriable_001_T
