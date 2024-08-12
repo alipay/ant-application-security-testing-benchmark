@@ -18,7 +18,7 @@ import cn.hutool.core.io.FileUtil;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -26,7 +26,7 @@ import cn.hutool.core.io.FileUtil;
 // assession information start
 // real vulnerability = false
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过文件存储后触发 -> 本地文件
-// compose = 
+// compose = !TrackTaintObjectCompletion_StorageLocalFile_001_F.java && TrackTaintObjectCompletion_StorageLocalFile_002_T.java
 // bind_url = /case00116
 // assession information end
 public class TrackTaintObjectCompletion_StorageLocalFile_001_F
