@@ -1,6 +1,7 @@
 package com.iast.astbenchmark.casetool.generator;
 
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.crypto.digest.DigestUtil;
 import com.iast.astbenchmark.casetool.parser.CaseJavaSourceCodeFileParser;
 import com.iast.astbenchmark.casetool.parser.domain.CaseJavaFileParseResult;
 import com.iast.astbenchmark.casetool.parser.domain.ParseTask;
@@ -8,10 +9,7 @@ import com.iast.astbenchmark.common.XastIastException;
 
 import java.io.File;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * @author CC11001100
@@ -101,6 +99,42 @@ public class GeneratorMain {
         FileUtil.writeString(javaSourceCode, new File(result.getJavaSourceFilePath()), StandardCharsets.UTF_8);
     }
 
+    /**
+     * 对解析好的java源代码文件进行分组计算
+     *
+     * @param list
+     * @return
+     */
+    private static Map<String, List<CaseJavaFileParseResult>> group(List<CaseJavaFileParseResult> list) {
+        Map<String, List<CaseJavaFileParseResult>> groupMap = new HashMap<>();
+        for (CaseJavaFileParseResult result : list) {
+            String groupId = computeGroupId(result);
+            List<CaseJavaFileParseResult> groupList = groupMap.get(groupId);
+            if (groupList == null) {
+                groupList = new ArrayList<>();
+                groupMap.put(groupId, groupList);
+            }
+            groupList.add(result);
+        }
+        return groupMap;
+    }
+
+    /**
+     * 计算分组信息
+     *
+     * @param result
+     * @return
+     */
+    private static String computeGroupId(CaseJavaFileParseResult result) {
+        String javaSourceFilePath = result.getJavaSourceFilePath();
+        // AccuracyTrackTaintString_CopyOfRange_001_T.java
+        String suffix = "_001_T.java";
+        if (javaSourceFilePath.length() > suffix.length()) {
+            javaSourceFilePath = javaSourceFilePath.substring(0, javaSourceFilePath.length() - suffix.length());
+        }
+        return DigestUtil.md5Hex(javaSourceFilePath);
+    }
+
     public static void main(String[] args) throws XastGeneratorException {
 
         String casePath = getCasePath();
@@ -110,10 +144,21 @@ public class GeneratorMain {
         List<CaseJavaFileParseResult> results = executeParseTask(taskList);
 //        System.out.println(results);
 
+        // 计算组件之间的分组关系
+        Map<String, List<CaseJavaFileParseResult>> groupMap = group(results);
+        // 对应用进行分组
+        Map<CaseJavaFileParseResult, List<CaseJavaFileParseResult>> resultToGroupMap = new HashMap<>();
+        for (Map.Entry<String, List<CaseJavaFileParseResult>> groupEntry : groupMap.entrySet()) {
+            for (CaseJavaFileParseResult result : groupEntry.getValue()) {
+                resultToGroupMap.put(result, groupEntry.getValue());
+            }
+        }
+
         XastCommentGenerator generator = new XastCommentGenerator();
         for (CaseJavaFileParseResult result : results) {
             GeneratorTask task = new GeneratorTask();
             task.setCaseJavaFileParseResult(result);
+            task.setGroupCaseList(resultToGroupMap.get(result));
             String newJavaSourceCode = generator.generate(task);
             System.out.println(newJavaSourceCode);
             replace(result, newJavaSourceCode);
