@@ -1,13 +1,3 @@
-.idea/
-awatch3.1.0/
-*.class
-*.zip
-*.jar
-iast-java/target/
-sast-java/target/
-data/
-iast-java/logs/
-logs/
-*.log
-*.iml
-
+.vscode/*
+.DS_Store
+.gitignore

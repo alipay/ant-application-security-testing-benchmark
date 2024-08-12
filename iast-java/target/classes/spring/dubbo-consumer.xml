@@ -1,0 +1,12 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">-->
+
+<!--&lt;!&ndash; 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 &ndash;&gt;-->
+<!--<dubbo:application name="dubbo-consumer-qssj" />-->
+<!--<dubbo:consumer timeout="1800000" retries="0" />-->
+<!--<dubbo:registry protocol="zookeeper" address="192.168.1.160:2181" />-->
+<!--<dubbo:reference id="testDubboService" interface="test.spring.dubboService.TestDubboService" check="false"  version="1.0.0.1"/>-->
+<!--</beans>-->

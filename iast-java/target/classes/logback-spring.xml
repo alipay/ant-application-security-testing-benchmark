@@ -1,0 +1,29 @@
+<configuration>
+    <appender name="ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/astbenchmark.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <!-- rollover daily -->
+            <fileNamePattern>logs/astbenchmark/application.%d{yyyy-MM-dd}.%i.log.zip</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>60</maxHistory>
+            <totalSizeCap>50GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%12.12thread]) %highlight(%-5level{5}) -&#45;&#45; %24.24logger.%12.12M\(\) : %msg%n-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%12.12thread] %-5level{5} --- %24.24logger.%12.12M\(\) : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %magenta([%12.12thread]) %highlight(%-5level{5}) -&#45;&#45; %24.24logger.%12.12M\(\) : %msg%n-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%12.12thread] %-5level{5} --- %24.24logger.%12.12M\(\) : %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="ROLLING"/>
+    </root>
+</configuration>
