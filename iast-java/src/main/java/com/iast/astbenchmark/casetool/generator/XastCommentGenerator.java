@@ -1,5 +1,7 @@
 package com.iast.astbenchmark.casetool.generator;
 
+import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.io.file.FileNameUtil;
 import com.iast.astbenchmark.analyser.Category;
 import com.iast.astbenchmark.casetool.parser.domain.CaseJavaFileParseResult;
 import com.iast.astbenchmark.casetool.parser.domain.XastCommentPosition;
@@ -8,7 +10,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 用于根据case的配置情况为其生成xast规则的注释
@@ -26,7 +30,7 @@ public class XastCommentGenerator {
      */
     public String generate(GeneratorTask task) throws XastGeneratorException {
         CaseJavaFileParseResult result = task.getCaseJavaFileParseResult();
-        String singleLineXastComment = this.buildSingleLineXastComment(result);
+        String singleLineXastComment = this.buildSingleLineXastComment(task);
         String multiLineXastComment = this.buildMultiLineXastComment(result);
         return this.replaceXastComment(result, singleLineXastComment, multiLineXastComment);
     }
@@ -107,7 +111,8 @@ public class XastCommentGenerator {
      * @param task
      * @return
      */
-    private String buildSingleLineXastComment(CaseJavaFileParseResult result) {
+    private String buildSingleLineXastComment(GeneratorTask task) {
+        CaseJavaFileParseResult result = task.getCaseJavaFileParseResult();
 
         StringBuilder sb = new StringBuilder();
 
@@ -120,7 +125,9 @@ public class XastCommentGenerator {
         String category = String.join(Category.CATEGORY_LEVEL_DELIMITER, result.getCategory());
         sb.append("// assession project = ").append(category).append("\n");
 
-        sb.append("// compose = ").append("\n");
+        // TODO 2024-08-12 12:20:25 这里计算出来分组信息
+        String compose = this.buildCompose(task.getGroupCaseList());
+        sb.append("// compose = ").append(compose).append("\n");
 
         if (result.getUrl() != null) {
             sb.append("// bind_url = ").append(result.getUrl()).append("\n");
@@ -129,6 +136,30 @@ public class XastCommentGenerator {
         sb.append("// assession information end").append("\n");
 
         return sb.toString();
+    }
+
+    /**
+     * 构造同一个组之间多个case之间的互相依赖的关系
+     *
+     * @param groupList
+     * @return
+     */
+    private String buildCompose(List<CaseJavaFileParseResult> groupList) {
+
+        if (CollectionUtil.isEmpty(groupList)) {
+            return "";
+        }
+
+        List<String> groupComposeList = new ArrayList<>();
+        for (CaseJavaFileParseResult result : groupList) {
+            String sourceCodeFileName = FileNameUtil.getName(result.getJavaSourceFilePath());
+            if (result.getHasVul()) {
+                groupComposeList.add(sourceCodeFileName);
+            } else {
+                groupComposeList.add("!" + sourceCodeFileName);
+            }
+        }
+        return String.join(" && ", groupComposeList);
     }
 
     /**

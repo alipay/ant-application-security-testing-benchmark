@@ -18,7 +18,7 @@ import cn.hutool.cache.CacheUtil;
 /**
 * Introduction 污点保存到当前进程的内存缓存，后续读取将其作为命令执行
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -26,7 +26,7 @@ import cn.hutool.cache.CacheUtil;
 // assession information start
 // real vulnerability = false
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 异步跟踪能力 -> 存储型异步 -> 污点通过缓存存储后触发 -> 本地缓存
-// compose = 
+// compose = !TrackTaintObjectCompletion_SameJvmCache_001_F.java && TrackTaintObjectCompletion_SameJvmCache_002_T.java
 // bind_url = /case00115
 // assession information end
 public class TrackTaintObjectCompletion_SameJvmCache_001_F implements IastTestCaseDescriptor, IastTestCasePayloadProvider {

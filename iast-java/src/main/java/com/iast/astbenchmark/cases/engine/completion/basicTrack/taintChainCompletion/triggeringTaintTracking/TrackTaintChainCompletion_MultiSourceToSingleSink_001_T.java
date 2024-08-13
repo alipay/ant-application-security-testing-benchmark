@@ -17,7 +17,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -25,7 +25,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点链路完整度 -> 触发污点跟踪能力（sink） -> 多污点来源传播至单sink点
-// compose = 
+// compose = TrackTaintChainCompletion_MultiSourceToSingleSink_001_T.java
 // bind_url = /case00110
 // assession information end
 public class TrackTaintChainCompletion_MultiSourceToSingleSink_001_T

@@ -18,7 +18,7 @@ import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -26,7 +26,7 @@ import com.iast.astbenchmark.common.utils.TaintMethodUtil;
 // assession information start
 // real vulnerability = false
 // assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 基础跟踪能力 -> 污点链路完整度 -> 污点无害化处理能力(sanitizer) -> 触发sink后再执行sanitizer
-// compose = 
+// compose = TrackTaintChainCompletion_UnSanitizerThenSanitizer_001_T.java && TrackTaintChainCompletion_UnSanitizerThenSanitizer_003_T.java && !TrackTaintChainCompletion_UnSanitizerThenSanitizer_002_F.java
 // bind_url = /case00104/1
 // assession information end
 public class TrackTaintChainCompletion_UnSanitizerThenSanitizer_002_F

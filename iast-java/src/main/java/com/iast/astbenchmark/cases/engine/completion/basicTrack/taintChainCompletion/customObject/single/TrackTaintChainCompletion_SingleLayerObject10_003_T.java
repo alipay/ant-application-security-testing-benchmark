@@ -19,7 +19,7 @@ import com.iast.astbenchmark.cases.bean.SourceTestWith10Filedsbject;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -27,7 +27,7 @@ import com.iast.astbenchmark.cases.bean.SourceTestWith10Filedsbject;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 自定义对象 -> 对象字段 -> 单层字段 -> 10
-// compose = 
+// compose = TrackTaintChainCompletion_SingleLayerObject10_003_T.java && TrackTaintChainCompletion_SingleLayerObject10_001_T.java && TrackTaintChainCompletion_SingleLayerObject10_002_T.java
 // bind_url = /case00921/3
 // assession information end
 public class TrackTaintChainCompletion_SingleLayerObject10_003_T

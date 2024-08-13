@@ -16,7 +16,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -24,7 +24,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字符串级别 -> 字符串部分存在污点 -> 截取非污点部分 -> StringBuilder操作 -> substring
-// compose = 
+// compose = AccuracyTrackTaintStringBuilder_SubString_003.java && AccuracyTrackTaintStringBuilder_SubString_002.java && AccuracyTrackTaintStringBuilder_SubString_001.java
 // bind_url = /case00951/3
 // assession information end
 public class AccuracyTrackTaintStringBuilder_SubString_003

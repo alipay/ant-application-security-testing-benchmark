@@ -19,7 +19,7 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -27,7 +27,7 @@ import com.iast.astbenchmark.analyser.cache.IastTestCasePayloadProvider;
 // assession information start
 // real vulnerability = true
 // assession project = IAST引擎能力评估体系(JAVA) -> 完整度 -> 基础跟踪能力 -> 污点对象完整度 -> 集合(集合对象全为污点) -> Map元素
-// compose = 
+// compose = TrackTaintObjectCompletion_Map_001_T.java
 // bind_url = /case005
 // assession information end
 public class TrackTaintObjectCompletion_Map_001_T implements IastTestCaseDescriptor, IastTestCasePayloadProvider {

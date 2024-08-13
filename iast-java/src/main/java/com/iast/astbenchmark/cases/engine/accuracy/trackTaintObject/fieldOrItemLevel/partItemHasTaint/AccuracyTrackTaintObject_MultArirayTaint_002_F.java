@@ -16,7 +16,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 /**
 * Introduction X
 * Level X  
-* Date 2024-07-16
+* Date 2024-08-12
 * @author CC11001100 
 */
 @RestController
@@ -24,7 +24,7 @@ import com.iast.astbenchmark.common.CommonConsts;
 // assession information start
 // real vulnerability = false
 // assession project = IAST引擎能力评估体系(JAVA) -> 准确度 -> 污点对象跟踪粒度 -> 字段/元素级别 -> 部分数据元素为污点 -> 多维数组中的部分元素为污点
-// compose = 
+// compose = AccuracyTrackTaintObject_MultArirayTaint_001_T.java && !AccuracyTrackTaintObject_MultArirayTaint_002_F.java
 // bind_url = /case00130/2
 // assession information end
 public class AccuracyTrackTaintObject_MultArirayTaint_002_F
