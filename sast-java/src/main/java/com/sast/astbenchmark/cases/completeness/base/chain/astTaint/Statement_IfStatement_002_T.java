@@ -13,24 +13,28 @@ import java.util.Map;
 /**
  * Introduction 污点链路样本中的语句-if语句
  * Level X
- * Date 2024-05-09
+ * Date 2024-08-16
  */
 // assession information start
 // real vulnerability = true
 // assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句
 // compose = Statement_IfStatement_001_T.java && Statement_IfStatement_002_T.java
-// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_001_T/{cmd}
+// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_002_T/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/astTaint")
-public class Statement_IfStatement_001_T {
-    @GetMapping("Statement_IfStatement_001_T/{cmd}")
-    public Map<String, Object> aTaintCase015(@PathVariable String cmd) {
+public class Statement_IfStatement_002_T {
+    @GetMapping("Statement_IfStatement_002_T/{cmd}")
+    public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            if(true == false){
+            int a = 5;
+            if(a < 5){
+                cmd = "untainted";
+                CmdUtil.run(cmd);
+            }else if(a == 5){
                 CmdUtil.run(cmd);
             }else{
                 String cmdString = HttpUtil.doGet("www.test.com");
