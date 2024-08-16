@@ -37,7 +37,7 @@ public class CallExpression_CustomCode_Interface_002_T {
         return modelMap;
     }
 
-   interface Inter {
+    private interface Inter {
         String getCmd(String cmd, String cmd2);
     }
 }

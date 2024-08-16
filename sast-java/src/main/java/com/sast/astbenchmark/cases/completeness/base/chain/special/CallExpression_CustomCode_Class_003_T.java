@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sast.astbenchmark.model.custom.ABS;
+import com.sast.astbenchmark.model.custom.AC;
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -28,7 +31,7 @@ public class CallExpression_CustomCode_Class_003_T {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            AbsCmdObject ac;
+            ABS ac;
             ac = new AC();
             ac.setCmd(cmd);
             Runtime.getRuntime().exec(ac.getCmd());
@@ -37,20 +40,5 @@ public class CallExpression_CustomCode_Class_003_T {
             modelMap.put("status", "error");
         }
         return modelMap;
-    }
-}
-
-abstract class AbsCmdObject {
-    protected String cmd;
-    public void setCmd(String cmd){
-        this.cmd = cmd;
-    }
-    public abstract String getCmd();
-}
-
-class AC extends AbsCmdObject{
-    @Override
-    public String getCmd(){
-        return super.cmd;
     }
 }

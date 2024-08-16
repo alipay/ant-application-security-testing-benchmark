@@ -49,13 +49,13 @@ public class CallExpression_CustomCode_Interface_001_T {
         }
         return modelMap;
     }
-}
 
-class S implements Serializable {
-        
-    public String s;
-
-    public S(String s) {
-        this.s = s;
-    }  
+    private static class S implements Serializable {
+            
+        public String s;
+    
+        public S(String s) {
+            this.s = s;
+        }  
+    }
 }

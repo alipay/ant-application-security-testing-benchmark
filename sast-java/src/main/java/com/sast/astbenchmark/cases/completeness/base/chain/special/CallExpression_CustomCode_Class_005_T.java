@@ -1,5 +1,7 @@
 package com.sast.astbenchmark.cases.completeness.base.chain.special;
 
+import com.sast.astbenchmark.model.custom.G;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,24 +25,12 @@ public class CallExpression_CustomCode_Class_005_T {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Generic<String> a = new Generic<>(cmd);
+            G<String> a = new G<>(cmd);
             Runtime.getRuntime().exec(a.getCmd());
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");
         }
         return modelMap;
-    }
-}
-
-class Generic<T> {
-    private T cmd;
-
-    public Generic(T cmd) {
-        this.cmd = cmd;
-    }
-
-    public T getCmd() {
-        return this.cmd;
     }
 }

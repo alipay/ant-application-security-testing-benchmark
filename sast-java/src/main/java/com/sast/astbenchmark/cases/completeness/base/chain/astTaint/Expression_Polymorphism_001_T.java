@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sast.astbenchmark.model.custom.PS;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,35 +37,4 @@ public class Expression_Polymorphism_001_T {
         }
         return modelMap;
     }
-}
-
-class P {
-    private String cmd;
-
-    public P(String cmd) {
-        this.cmd = cmd;
-    }
-
-    public String getCmd() {
-        return this.cmd;
-    }
-
-}
-
-class PS extends P {
-    private String cmd2;
-
-    public PS(String cmd, String cmd2) {
-        super(cmd);
-        this.cmd2 = cmd2;
-    }
-
-    public String getCmd() {
-        return super.getCmd() + this.cmd2;
-    }
-
-    public String getCmd(String cmd) {
-        return cmd + this.cmd2;
-    }
-
 }

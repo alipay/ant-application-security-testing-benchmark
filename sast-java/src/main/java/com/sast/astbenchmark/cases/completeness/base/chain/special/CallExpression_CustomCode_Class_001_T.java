@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+  
+import com.sast.astbenchmark.model.custom.O;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,9 +28,9 @@ public class CallExpression_CustomCode_Class_001_T {
     @PostMapping(value = "CallExpression_CustomCode_Class_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
-        Outer a = new Outer(cmd);
+        O a = new O(cmd);
         try {
-            Runtime.getRuntime().exec(a.testMember());
+            Runtime.getRuntime().exec(a.getCmd());
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");
@@ -37,21 +39,3 @@ public class CallExpression_CustomCode_Class_001_T {
     }
 }
 
-class Outer {
-    private String cmd;
-
-    Outer(String cmd){
-        this.cmd = cmd;
-    }
-
-    class MemberClass {
-        String getCmd(){
-            return Outer.this.cmd;
-        }
-    }
-
-    public String testMember(){
-        Outer.MemberClass member = new MemberClass();
-        return member.getCmd();
-    }
-}
