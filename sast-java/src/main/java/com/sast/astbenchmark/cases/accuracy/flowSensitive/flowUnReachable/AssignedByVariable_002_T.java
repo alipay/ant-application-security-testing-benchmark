@@ -23,7 +23,7 @@ import java.util.Map;
 @RequestMapping("accuracy/flowSensitive/flowUnReachable")
 public class AssignedByVariable_002_T {
     @PostMapping(value = "AssignedByVariable_002_T")
-    public Map<String, Object> case01582(@RequestParam String cmd) {
+    public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a = cmd;

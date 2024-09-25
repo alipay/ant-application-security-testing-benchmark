@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.cases.accuracy.objectSensitive;
+package com.sast.astbenchmark.cases.accuracy.flowSensitive.flowUnReachable;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,30 +11,28 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象敏感-不同对象相同属性-scene2
+ * Introduction 数据流不可达-对象属性set赋值为非污点
  * Level X
  * Date 2024-08-16
  */
 // assession information start
 // real vulnerability = false
-// assession project = 准确度->对象敏感->不同对象相同属性-scene2
-// compose = !ObjectDiffAttribute_005_F.java && ObjectDiffAttribute_004_T.java && ObjectDiffAttribute_003_T.java
-// bind_url = accuracy/objectSensitive/ObjectDiffAttribute_004_F
+// assession project = 准确度->流敏感->数据流不可达->对象属性set赋值为非污点
+// compose = !AssignObjectAttribute_001_F.java && AssignObjectAttribute_002_T.java
+// bind_url = accuracy/flowSensitive/flowUnReachable/AssignObjectAttribute_001_F
 // assession information end
 @RestController()
-@RequestMapping("accuracy/objectSensitive")
-public class ObjectDiffAttribute_005_F {
-    @PostMapping(value = "ObjectDiffAttribute_005_F")
+@RequestMapping("accuracy/flowSensitive/flowUnReachable")
+public class AssignObjectAttribute_001_F {
+    @PostMapping(value = "AssignObjectAttribute_001_F")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a;
             CmdObject b = new CmdObject();
             a = cmd;
-            b.setCmd(cmd);
             a = "untainted";
-            b.setCmd("untainted");
-            Runtime.getRuntime().exec(a);
+            b.setCmd(a);
             Runtime.getRuntime().exec(b.getCmd());
         } catch (Exception e) {
             modelMap.put("status", "error");

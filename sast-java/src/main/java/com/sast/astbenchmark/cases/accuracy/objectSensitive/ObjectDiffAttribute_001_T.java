@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象敏感-不同对象相同属性-scene1
+ * Introduction 对象敏感-不同对象相同属性
  * Level X
  * Date 2024-08-16
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->对象敏感->不同对象相同属性-scene1
+// assession project = 准确度->对象敏感->不同对象相同属性
 // compose = !ObjectDiffAttribute_002_F.java && ObjectDiffAttribute_001_T.java
 // bind_url = accuracy/objectSensitive/ObjectDiffAttribute_001_T
 // assession information end
