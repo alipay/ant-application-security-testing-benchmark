@@ -14,21 +14,20 @@ import java.util.Map;
  * Date 2024-08-16
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->多维数组
 // compose = Base_ArrayAccess_007_T.java && !Base_ArrayAccess_008_F.java
-// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_007_T
+// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_008_F
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/object/javaNative")
-public class Base_ArrayAccess_007_T {
-    @PostMapping(value = "Base_ArrayAccess_007_T")
+public class Base_ArrayAccess_008_F {
+    @PostMapping(value = "Base_ArrayAccess_008_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String[][] data = new String[1][1];
-            data[0][0] = cmd;
             String[] slice = data[0];
             Runtime.getRuntime().exec(slice[0]);
             modelMap.put("status", "success");

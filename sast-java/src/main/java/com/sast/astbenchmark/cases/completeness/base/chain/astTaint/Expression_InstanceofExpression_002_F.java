@@ -14,21 +14,21 @@ import java.util.Map;
  * Date 2024-08-16
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->instanceof表达式
 // compose = Expression_InstanceofExpression_001_T.java && !Expression_InstanceofExpression_002_F.java
-// bind_url = completeness/base/chain/astTaint/Expression_InstanceofExpression_001_T/{cmd}
+// bind_url = completeness/base/chain/astTaint/Expression_InstanceofExpression_002_F/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/astTaint")
-public class Expression_InstanceofExpression_001_T {
-    @GetMapping("Expression_InstanceofExpression_001_T/{cmd}")
+public class Expression_InstanceofExpression_002_F {
+    @GetMapping("Expression_InstanceofExpression_002_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable Object cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             if (cmd instanceof String) {
-                String data = (String) cmd;
+                String data = "ls";
                 Runtime.getRuntime().exec(data);
                 modelMap.put("status", "success");
             } else {

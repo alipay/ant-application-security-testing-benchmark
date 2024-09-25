@@ -9,25 +9,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-assert语句
+ * Introduction 污点链路样本中的语句-assert语句-错误表达式sink
  * Level X
  * Date 2024-08-16
  */
 // assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->assert语句
+// real vulnerability = false
+// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->assert语句-错误表达式sink
 // compose = Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java
-// bind_url = completeness/base/chain/astTaint/Statement_AssertStatement_001_T/{cmd}
+// bind_url = completeness/base/chain/astTaint/Statement_AssertStatement_002_F/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/astTaint")
-public class Statement_AssertStatement_001_T {
-    @GetMapping("Statement_AssertStatement_001_T/{cmd}")
+public class Statement_AssertStatement_002_F {
+    @GetMapping("Statement_AssertStatement_002_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            assert cmd == null : Runtime.getRuntime().exec(cmd);
+            assert cmd != null : Runtime.getRuntime().exec(cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

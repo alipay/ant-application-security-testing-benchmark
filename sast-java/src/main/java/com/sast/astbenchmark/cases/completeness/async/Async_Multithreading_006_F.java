@@ -15,18 +15,19 @@ import org.springframework.web.bind.annotation.RestController;
  * Date 2024-07-31
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 完整度->异步跟踪能力->存储型异步->多线程->Executors
 // compose = !Async_Multithreading_006_F.java && Async_Multithreading_005_T.java
-// bind_url = completeness/async/Async_Multithreading_005_T/{cmd}
+// bind_url = completeness/async/Async_Multithreading_006_F/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/async")
-public class Async_Multithreading_005_T {
-    @PostMapping("Async_Multithreading_005_T/{cmd}")
+public class Async_Multithreading_006_F {
+    @PostMapping("Async_Multithreading_006_F/{cmd}")
     public Map<String, Object> testcase(@RequestParam String cmd) {
-        R r = new R(cmd);
+        String a = "ls";
+        R r = new R(a);
         Executors.newCachedThreadPool().execute(r);
         return r.getMap();
     }
