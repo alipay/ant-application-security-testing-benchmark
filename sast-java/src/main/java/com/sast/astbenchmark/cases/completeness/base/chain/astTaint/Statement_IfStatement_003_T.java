@@ -11,31 +11,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-if语句-else body
+ * Introduction 污点链路样本中的语句-if语句-if body
  * Level X
- * Date 2024-05-09
+ * Date 2024-09-18
  */
 // assession information start
 // real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-else body
-// compose = Statement_IfStatement_001_T.java && !Statement_IfStatement_002_F.java
-// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_001_T/{cmd}
+// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-if body
+// compose = Statement_IfStatement_003_T.java && !Statement_IfStatement_004_F.java
+// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_003_T/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/astTaint")
-public class Statement_IfStatement_001_T {
-    @GetMapping("Statement_IfStatement_001_T/{cmd}")
-    public Map<String, Object> aTaintCase015(@PathVariable String cmd) {
+public class Statement_IfStatement_003_T {
+    @GetMapping("Statement_IfStatement_003_T/{cmd}")
+    public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            if(true == false){
-                cmd="ls";
-                CmdUtil.run(cmd);
-            }else{
+            if(true == true){
                 String cmdString = HttpUtil.doGet("www.test.com");
                 CmdUtil.run(cmd+cmdString);
+            }else{
+                cmd="ls";
+                CmdUtil.run(cmd);
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // assession information start
 // real vulnerability = true
-// assession project = 准确度->域敏感->对象属性->对象指针->AccessPathChain-Tree
+// assession project = 准确度->域敏感->对象属性->对象指针->AccessPathChain-LinkedList
 // compose = AccessPathChainAlias_003_T.java && !AccessPathChainAlias_004_F.java
 // bind_url = accuracy/fieldSensitive/objectField/AccessPathChainAlias_003_T
 // assession information end
