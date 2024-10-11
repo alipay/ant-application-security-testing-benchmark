@@ -16,26 +16,25 @@ import java.util.Map;
  * Date 2024-05-09
  */
 // assession information start
-// real vulnerability = true
+// real vulnerability = false
 // assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-else body
 // compose = Statement_IfStatement_001_T.java && !Statement_IfStatement_002_F.java
-// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_001_T/{cmd}
+// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_002_F/{cmd}
 // assession information end
 
 @RestController()
 @RequestMapping("completeness/base/chain/astTaint")
-public class Statement_IfStatement_001_T {
-    @GetMapping("Statement_IfStatement_001_T/{cmd}")
-    public Map<String, Object> aTaintCase015(@PathVariable String cmd) {
+public class Statement_IfStatement_002_F {
+    @GetMapping("Statement_IfStatement_002_F/{cmd}")
+    public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
             if(true == false){
-                cmd="ls";
                 CmdUtil.run(cmd);
             }else{
                 String cmdString = HttpUtil.doGet("www.test.com");
-                CmdUtil.run(cmd+cmdString);
+                CmdUtil.run(cmdString);
             }
             modelMap.put("status", "success");
         } catch (Exception e) {
