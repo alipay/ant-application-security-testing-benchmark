@@ -32,12 +32,12 @@ public class Statement_IfStatement_006_F {
         try {
             int a = 5;
             if(a < 5){
-                CmdUtil.run(cmd);
+
             }else if(a == 5){
                 String cmdString = HttpUtil.doGet("www.test.com");
                 CmdUtil.run(cmdString);
             }else{
-                CmdUtil.run(cmd+"ls");
+
             }
             modelMap.put("status", "success");
         } catch (Exception e) {
