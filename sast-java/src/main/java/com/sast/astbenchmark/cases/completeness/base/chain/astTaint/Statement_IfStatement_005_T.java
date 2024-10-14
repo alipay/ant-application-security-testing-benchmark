@@ -32,11 +32,9 @@ public class Statement_IfStatement_005_T {
         try {
             int a = 5;
             if(a < 5){
-                cmd = "ls";
-                CmdUtil.run(cmd);
+
             }else if(a == 5){
-                String cmdString = HttpUtil.doGet("www.test.com");
-                CmdUtil.run(cmd+cmdString);
+                CmdUtil.run(cmd);
             }else{
                 cmd="ls";
             }

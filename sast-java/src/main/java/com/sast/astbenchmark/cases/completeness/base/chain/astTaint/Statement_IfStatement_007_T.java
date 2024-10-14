@@ -33,8 +33,7 @@ public class Statement_IfStatement_007_T {
             if((a = cmd) != null){
                 CmdUtil.run(a);
             }else{
-                String cmdString = HttpUtil.doGet("www.test.com");
-                CmdUtil.run(cmdString);
+
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

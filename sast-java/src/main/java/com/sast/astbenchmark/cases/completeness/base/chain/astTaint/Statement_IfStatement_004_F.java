@@ -34,7 +34,6 @@ public class Statement_IfStatement_004_F {
                 String cmdString = HttpUtil.doGet("www.test.com");
                 CmdUtil.run(cmdString);
             }else{
-                CmdUtil.run(cmd);
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

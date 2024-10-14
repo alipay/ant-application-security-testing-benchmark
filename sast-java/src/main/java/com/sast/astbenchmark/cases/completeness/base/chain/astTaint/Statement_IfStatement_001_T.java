@@ -30,12 +30,9 @@ public class Statement_IfStatement_001_T {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            if(true == false){
-                cmd="ls";
-                CmdUtil.run(cmd);
+            if(false){
             }else{
-                String cmdString = HttpUtil.doGet("www.test.com");
-                CmdUtil.run(cmd+cmdString);
+                CmdUtil.run(cmd);
             }
             modelMap.put("status", "success");
         } catch (Exception e) {
