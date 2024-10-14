@@ -11,3 +11,4 @@ iast-java/logs/
 logs/
 *.log
 *.iml
+*/.DS_Store
