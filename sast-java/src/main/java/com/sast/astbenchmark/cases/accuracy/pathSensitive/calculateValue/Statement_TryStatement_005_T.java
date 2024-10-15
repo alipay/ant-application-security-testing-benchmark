@@ -10,18 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-try语句-污点传递发生在try中
- * Level X
- * Date 2024-08-16
- */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->try语句-污点传递发生在try中
-// compose = !Statement_TryStatement_003_F.java && Statement_TryStatement_002_T.java
-// bind_url = completeness/base/chain/astTaint/Statement_TryStatement_006_F/{cmd}
-// assession information end
-
-/**
  * Introduction 路径敏感-try语句-数组越界异常or抛出异常
  * Level X
  * Date 2024-08-16
