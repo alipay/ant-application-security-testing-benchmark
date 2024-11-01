@@ -1,0 +1,29 @@
+{
+  "decorator_function": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->装饰器函数->类装饰器一阶",
+      "compose": "!class_decorator_001_F.js && class_decorator_002_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->装饰器函数->类装饰器二阶",
+      "compose": "!class_decorator_003_F.js && class_decorator_004_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->装饰器函数->member装饰器",
+      "compose": "!class_member_decorator_001_F.js && class_member_decorator_002_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->装饰器函数->函数装饰器",
+      "compose": "!function_decorator_001_F.js && function_decorator_002_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->装饰器函数->函数装饰器",
+      "compose": "!function_decorator_003_F.js && function_decorator_004_T.js",
+      "level": "4"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "interface_class": [
+    {
+      "evaluation item": "准确度->对象敏感->接口/类->类对象",
+      "compose": "constructor_obj_001_T.js && !constructor_obj_002_F.js",
+      "level": "2"
+    }
+  ]
+}

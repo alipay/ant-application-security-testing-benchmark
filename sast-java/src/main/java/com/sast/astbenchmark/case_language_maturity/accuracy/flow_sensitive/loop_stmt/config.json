@@ -1,0 +1,19 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation item": "准确度->流敏感->循环结构->for->body流敏感",
+      "compose": "for_001_T.js && !for_002_F.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->流敏感->循环结构->for->init流敏感",
+      "compose": "for_003_T.js && !for_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->流敏感->循环结构->dowhile",
+      "compose": "dowhile_body_003_T.js && !dowhile_body_004_F.js",
+      "level": "4"
+    }
+  ]
+}

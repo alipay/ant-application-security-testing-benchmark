@@ -1,0 +1,44 @@
+{
+  "interface_class": [
+    {
+      "evaluation item": "准确度->域敏感->接口/类->域敏感",
+      "compose": "constructor_field_001_T.js && !constructor_field_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口/类->构造函数",
+      "compose": "!constructor_field_003_F.js && constructor_field_004_T.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口/类->路径长度",
+      "compose": "field_len_001_T.js && !field_len_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口/类->路径长度",
+      "compose": "field_len_003_T.js && !field_len_004_F.js",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口/类->路径长度",
+      "compose": "field_len_005_T.js && !field_len_006_F.js",
+      "level": "3++"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口类->解构赋值",
+      "compose": "destructuring_assignment_009_T.js && !destructuring_assignment_010_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口类->剩余参数",
+      "compose": "rest_parameter_009_T.js && !rest_parameter_010_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->接口类->扩展运算符",
+      "compose": "spread_operator_007_T.js && !spread_operator_008_F.js",
+      "level": "3"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "asynchronous_execution": [
+    {
+      "evaluation item": "准确度->流敏感->异步执行-await",
+      "compose": "asynchronous_await_001_T && !asynchronous_await_002_F",
+      "level": "3"
+    }
+  ]
+}

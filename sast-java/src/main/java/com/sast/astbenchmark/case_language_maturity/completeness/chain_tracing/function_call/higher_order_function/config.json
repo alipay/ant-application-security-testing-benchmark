@@ -1,0 +1,29 @@
+{
+  "higher_order_function": [
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->高阶函数-一阶",
+      "compose": "!higher_order_function_001_F.js && higher_order_function_002_T.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->高阶函数-二阶",
+      "compose": "!higher_order_function_003_F.js && higher_order_function_004_T.js",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->高阶函数-三阶",
+      "compose": "!higher_order_function_005_F.js && higher_order_function_006_T.js",
+      "level": "3++"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->高阶函数-箭头函数是参数",
+      "compose": "!higher_order_function_007_F.js && higher_order_function_008_T.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->高阶函数-匿名函数为参数",
+      "compose": "!higher_order_function_009_F.js && higher_order_function_010_T.js",
+      "level": "3"
+    }
+  ]
+}

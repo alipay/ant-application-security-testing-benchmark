@@ -1,0 +1,39 @@
+{
+  "argument_passing": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->默认值传递",
+      "compose": "!argument_passing_default_value_001_F.js && argument_passing_default_value_002_T.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递",
+      "compose": "!argument_passing_reference_001_F.js && argument_passing_reference_002_T.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递数组",
+      "compose": "!argument_passing_reference_003_F.js && argument_passing_reference_004_T.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递map",
+      "compose": "!argument_passing_reference_005_F.js && argument_passing_reference_006_T.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递",
+      "compose": "!argument_passing_value_001_F.js && argument_passing_value_002_T.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递",
+      "compose": "!argument_passing_value_003_F.js && argument_passing_value_004_T.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递嵌套函数",
+      "compose": "!argument_passing_value_005_F.js && argument_passing_value_006_T.js",
+      "level": "2"
+    }
+  ]
+}

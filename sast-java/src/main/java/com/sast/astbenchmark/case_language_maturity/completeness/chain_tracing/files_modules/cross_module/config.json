@@ -1,0 +1,34 @@
+{
+  "cross_module": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->export/import",
+      "compose": "(cross_module_001_T/A/cross_module_001_T_a.js || cross_module_001_T/B/cross_module_001_T_b.js) && !(cross_module_002_F/A/cross_module_002_F_a.js || cross_module_002_F/B/cross_module_002_F_b.js)",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->export_default",
+      "compose": "(cross_module_003_T/A/cross_module_003_T_a.js || cross_module_003_T/B/cross_module_003_T_b.js) && !(cross_module_004_F/A/cross_module_004_F_a.js || cross_module_004_F/B/cross_module_004_F_b.js)",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->module_exports",
+      "compose": "(cross_module_005_T/A/cross_module_005_T_a.js || cross_module_005_T/B/cross_module_005_T_b.js) && !(cross_module_006_F/A/cross_module_006_F_a.js || cross_module_006_F/B/cross_module_006_F_b.js)",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->别名",
+      "compose": "(cross_module_007_T/A/cross_module_007_T_a.js || cross_module_007_T/B/cross_module_007_T_b.js) && !(cross_module_008_F/A/cross_module_008_F_a.js || cross_module_008_F/B/cross_module_008_F_b.js)",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->路径别名",
+      "compose": "(cross_module_009_T/A/cross_module_009_T_a.js || cross_module_009_T/B/cross_module_009_T_b.js) && !(cross_module_010_F/A/cross_module_010_F_a.js || cross_module_010_F/B/cross_module_010_F_b.js)",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->文件/模块->变量",
+      "compose": "(cross_module_011_T/A/cross_module_011_T_a.js || cross_module_011_T/B/cross_module_011_T_b.js) && !(cross_module_012_F/A/cross_module_012_F_a.js || cross_module_012_F/B/cross_module_012_F_b.js)",
+      "level": "2"
+    }
+  ]
+}

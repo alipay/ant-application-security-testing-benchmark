@@ -1,0 +1,24 @@
+{
+  "conditional_stmt": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->if",
+      "compose": "conditional_if_001_T.js && !conditional_if_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->else",
+      "compose": "conditional_if_003_T.js && !conditional_if_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->elseif",
+      "compose": "conditional_if_005_T.js && !conditional_if_006_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->switch",
+      "compose": "conditional_switch_001_T.js && !conditional_switch_002_F.js",
+      "level": "2"
+    }
+  ]
+}

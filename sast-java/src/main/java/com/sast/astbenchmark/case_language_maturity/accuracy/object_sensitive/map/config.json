@@ -1,0 +1,19 @@
+{
+  "map": [
+    {
+      "evaluation item": "准确度->对象敏感->字典->字典对象",
+      "compose": "map_object_sensitive_001_T.js && !map_object_sensitive_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->字典->字典对象",
+      "compose": "map_object_sensitive_003_T.js && map_object_sensitive_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->字典->字典对象",
+      "compose": "map_object_sensitive_005_T.js && map_object_sensitive_006_F.js",
+      "level": "2"
+    }
+  ]
+}

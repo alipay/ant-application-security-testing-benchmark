@@ -1,0 +1,54 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->dowhile",
+      "compose": "dowhile_body_001_T.js && !dowhile_body_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->every",
+      "compose": "every_001_T.js && !every_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->for_body",
+      "compose": "for_body_001_T.js && !for_body_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->for_init",
+      "compose": "for_init_001_T.js && !for_init_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->for_update",
+      "compose": "for_update_001_T.js && !for_update_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->for_each",
+      "compose": "for_each_001_T.js && !for_each_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->forin_body",
+      "compose": "forin_body_001_T.js && !forin_body_002F",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->forof_body",
+      "compose": "forof_body_001_T.js && !forof_body_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->some",
+      "compose": "some_001_T.js && !some_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->循环语句->while",
+      "compose": "while_body_001_T.js && !while_body_002_F.js",
+      "level": "2"
+    }
+  ]
+}

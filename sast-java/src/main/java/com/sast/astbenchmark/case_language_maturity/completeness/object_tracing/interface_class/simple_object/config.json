@@ -1,0 +1,9 @@
+{
+  "simple_object": [
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->接口/类->简单类",
+      "compose": "simple_object_001_T.js && !simple_object_002_F.js",
+      "level": "2"
+    }
+  ]
+}

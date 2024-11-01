@@ -1,0 +1,14 @@
+{
+  "complex_object": [
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->接口/类->复杂类->跨类访问-成员变量",
+      "compose": "cross_class_001_T.js && !cross_class_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->接口/类->复杂类->跨类访问-对象别名",
+      "compose": "cross_class_003_T.js && !cross_class_004_F.js",
+      "level": "3"
+    }
+  ]
+}

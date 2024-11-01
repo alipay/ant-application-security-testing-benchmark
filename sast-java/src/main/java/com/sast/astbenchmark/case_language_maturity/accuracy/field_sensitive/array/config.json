@@ -1,0 +1,34 @@
+{
+  "array": [
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引",
+      "compose": "array_007_T.js && !array_008_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引",
+      "compose": "array_009_T.js && !array_010_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引->二维",
+      "compose": "array_011_T.js && !array_012_F.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引->需求解",
+      "compose": "array_013_T.js && !array_014_F.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引->剩余参数",
+      "compose": "rest_parameter_007_T.js && !rest_parameter_008_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->数组->数组索引->扩展运算符",
+      "compose": "spread_operator_005_T.js && !spread_operator_006_F.js",
+      "level": "3"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "promise_callback_await": [
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->async/await",
+      "compose": "asynchronous_await_001_T.js && !asynchronous_await_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise",
+      "compose": "asynchronous_promise_001_T.js && !asynchronous_promise_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise",
+      "compose": "asynchronous_promise_003_T.js && !asynchronous_promise_004_F.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise",
+      "compose": "asynchronous_promise_005_T.js && !asynchronous_promise_006_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise",
+      "compose": "asynchronous_promise_007_T.js && !asynchronous_promise_008_F.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise",
+      "compose": "asynchronous_promise_009_T.js && !asynchronous_promise_010_F.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->Promise错误处理",
+      "compose": "asynchronous_promise_011_T.js && !asynchronous_promise_012_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->异步完整度->promise_callback_await->promisify异步分析",
+      "compose": "asynchronous_promisify_001_T.js && !asynchronous_promisify_002_F.js",
+      "level": "2+"
+    }
+  ]
+}

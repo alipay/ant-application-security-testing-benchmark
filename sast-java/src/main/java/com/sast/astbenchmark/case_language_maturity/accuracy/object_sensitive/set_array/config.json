@@ -1,0 +1,29 @@
+{
+  "set_array": [
+    {
+      "evaluation item": "准确度->对象敏感->数组/集合->数组对象",
+      "compose": "array_001_T.js && !array_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->数组/集合->数组对象",
+      "compose": "array_003_T.js && !array_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->数组/集合->数组对象",
+      "compose": "array_005_T.js && !array_006_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->数组/集合->集合对象",
+      "compose": "set_object_sensitive_001_T.js && !set_object_sensitive_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->数组/集合->集合对象->add/delete",
+      "compose": "set_object_sensitive_003_T.js && !set_object_sensitive_004_F.js",
+      "level": "2"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "conditional_stmt": [
+    {
+      "evaluation item": "准确度->路径敏感->if->扁平化实现",
+      "compose": "conditional_if_007_F.js && !conditional_if_008_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->if->区分分支",
+      "compose": "!conditional_if_007_F.js && !conditional_if_008_F.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->if->区分具体执行路径->不求解",
+      "compose": "conditional_if_009_T.js && !conditional_if_010_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->if->区分具体执行路径->求解",
+      "compose": "conditional_if_011_T.js && !conditional_if_012_F.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->switch->扁平化实现",
+      "compose": "conditional_switch_003_F.js && !conditional_switch_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->switch->区分分支",
+      "compose": "!conditional_switch_003_F.js && !conditional_switch_004_F.js",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->switch->区分具体执行路径->不求解",
+      "compose": "!conditional_switch_005_F.js && conditional_switch_006_T.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->switch->区分具体执行路径->求解",
+      "compose": "!conditional_switch_007_F.js && conditional_switch_008_T.js",
+      "level": "4"
+    }
+  ]
+}

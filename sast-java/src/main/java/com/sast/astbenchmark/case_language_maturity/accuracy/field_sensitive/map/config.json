@@ -1,0 +1,24 @@
+{
+  "map": [
+    {
+      "evaluation item": "准确度->域敏感->字典->域敏感",
+      "compose": "map_field_sensitive_001_T.js && !map_field_sensitive_002_F.js && !map_field_sensitive_003_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->映射->域敏感->delete函数",
+      "compose": "map_field_sensitive_004_T.js && !map_field_sensitive_005_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->字典->域敏感->map类库函数values()",
+      "compose": "map_field_sensitive_006_T.js && !map_field_sensitive_007_F.js",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->字典->域敏感->map类库函数keys()",
+      "compose": "map_field_sensitive_008_T.js && !map_field_sensitive_009_F.js",
+      "level": "3+"
+    }
+  ]
+}

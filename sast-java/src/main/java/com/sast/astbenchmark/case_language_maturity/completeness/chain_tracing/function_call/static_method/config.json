@@ -1,0 +1,9 @@
+{
+  "static": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->静态方法调用",
+      "compose": "static_method_001_T.js && !static_method_002_F.js",
+      "level": "2"
+    }
+  ]
+}

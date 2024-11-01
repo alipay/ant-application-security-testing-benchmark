@@ -1,0 +1,9 @@
+{
+  "collections": [
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->集合",
+      "compose": "set_001_T.js && !set_002_F.js",
+      "level": "2"
+    }
+  ]
+}

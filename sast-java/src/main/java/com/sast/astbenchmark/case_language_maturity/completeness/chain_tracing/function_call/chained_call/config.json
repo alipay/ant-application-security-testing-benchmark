@@ -1,0 +1,9 @@
+{
+  "chained_call": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->函数调用->链式调用",
+      "compose": "!chained_call_001_F.js && chained_call_002_T.js",
+      "level": "3"
+    }
+  ]
+}

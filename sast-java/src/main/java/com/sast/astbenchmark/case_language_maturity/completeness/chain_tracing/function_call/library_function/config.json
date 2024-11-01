@@ -1,0 +1,14 @@
+{
+  "library_function": [
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->库函数-json库",
+      "compose": "json_001_T.js && !json_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->库函数-字符串库",
+      "compose": "string_001_T.js && !string_002_F.js",
+      "level": "2"
+    }
+  ]
+}

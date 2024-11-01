@@ -1,0 +1,9 @@
+{
+  "map": [
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->字典",
+      "compose": "map_001_T.js && !map_002_F.js",
+      "level": "2"
+    }
+  ]
+}

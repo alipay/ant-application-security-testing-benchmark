@@ -1,0 +1,94 @@
+{
+  "special_expression": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->模板字面量",
+      "compose": "template_literal_001_T.js && !template_literal_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->模板字面量",
+      "compose": "template_literal_003_T.js && !template_literal_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->模板字面量",
+      "compose": "template_literal_005_T.js && !template_literal_006_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->解构赋值表达式->数组解构赋值",
+      "compose": "destructuring_assignment_001_T.js && !destructuring_assignment_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->解构赋值表达式->对象解构赋值",
+      "compose": "destructuring_assignment_003_T.js && !destructuring_assignment_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->解构赋值表达式->数组解构赋值->二维",
+      "compose": "destructuring_assignment_005_T.js && !destructuring_assignment_006_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->解构赋值表达式->对象解构赋值->二维",
+      "compose": "destructuring_assignment_007_T.js && !destructuring_assignment_008_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->指数运算符",
+      "compose": "exponentiation_operator_001_T.js && !exponentiation_operator_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->空合并运算符",
+      "compose": "nullish_coalescing_001_T.js && !nullish_coalescing_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->空合并运算符",
+      "compose": "nullish_coalescing_003_T.js && !nullish_coalescing_004_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->可选链操作符",
+      "compose": "optional_chaining_operator_001_T.js && !optional_chaining_operator_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->扩展运算符",
+      "compose": "spread_operator_001_T.js && !spread_operator_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->扩展运算符",
+      "compose": "spread_operator_003_T.js && !spread_operator_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->扩展运算符",
+      "compose": "rest_parameter_001_T.js && !rest_parameter_002_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->扩展运算符",
+      "compose": "rest_parameter_003_T.js && !rest_parameter_004_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->扩展运算符",
+      "compose": "rest_parameter_005_T.js && !rest_parameter_006_F.js",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->delete运算符->对象field",
+      "compose": "delete_expression_001_T.js && !delete_expression_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->特殊表达式运算->delete运算符->数组索引",
+      "compose": "delete_expression_003_T.js && !delete_expression_004_F.js",
+      "level": "3"
+    }
+  ]
+}

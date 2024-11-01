@@ -1,0 +1,15 @@
+{
+  "this_expression": [
+    {
+      "evaluation item": "完整度->链路完整度->表达式->this表达式",
+      "compose": "this_expression_001_T.js && !this_expression_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路完整度->表达式->this表达式",
+      "compose": "this_expression_003_T.js && !this_expression_004_F.js",
+      "level": "3"
+    }
+  ]
+}
+  

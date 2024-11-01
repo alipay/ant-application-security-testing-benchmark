@@ -1,0 +1,24 @@
+{
+  "explicit_jump_control": [
+    {
+      "evaluation item": "准确度->路径敏感->显式跳转控制->break",
+      "compose": "!break_001_F.js && break_002_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->显式跳转控制->break_label",
+      "compose": "!break_label_001_F.js && break_label_002_T.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->显式跳转控制->continue",
+      "compose": "continue_001_T.js && !continue_002_F.js",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->显式跳转控制->return",
+      "compose": "return_001_T.js && !return_002_F.js",
+      "level": "4"
+    }
+  ]
+}

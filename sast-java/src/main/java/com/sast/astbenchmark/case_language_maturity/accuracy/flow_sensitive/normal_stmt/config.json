@@ -1,0 +1,9 @@
+{
+  "sequential_execution": [
+    {
+      "evaluation item": "准确度->流敏感->常规语句->赋值表达式",
+      "compose": "assign_expression_001_T.js && !assign_expression_002_F.js",
+      "level": "2"
+    }
+  ]
+}

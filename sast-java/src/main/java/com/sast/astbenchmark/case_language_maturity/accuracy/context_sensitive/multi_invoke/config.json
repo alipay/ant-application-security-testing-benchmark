@@ -1,0 +1,9 @@
+{
+  "polymorphism": [
+    {
+      "evaluation item": "准确度->上下文敏感->多次调用->普通",
+      "compose": "multi_invoke_001_T.js && !multi_invoke_002_F.js",
+      "level": "2"
+    }
+  ]
+}

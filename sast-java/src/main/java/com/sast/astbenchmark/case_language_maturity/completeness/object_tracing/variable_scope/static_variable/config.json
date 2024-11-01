@@ -1,0 +1,14 @@
+{
+  "static_variable": [
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->变量->静态变量",
+      "compose": "static_variable_001_T.js && !static_variable_002_F.js",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->变量->跨类访问-static变量",
+      "compose": "static_variable_003_T.js && !static_variable_004_F.js",
+      "level": "3+"
+    }
+  ]
+}

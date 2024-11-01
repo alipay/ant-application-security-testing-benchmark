@@ -1,0 +1,9 @@
+{
+  "alias": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名",
+      "compose": "!alias_001_F.js && !alias_002_F.js && alias_003_T.js",
+      "level": "3"
+    }
+  ]
+}
