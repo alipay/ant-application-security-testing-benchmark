@@ -29,7 +29,7 @@ import com.iast.astbenchmark.common.utils.JDKSerializationUtil;
 // compose = AccuracyTrackTaintObject_SerializeDeSerialize_001_T.java && !AccuracyTrackTaintObject_SerializeDeSerialize_002_F.java
 // bind_url = /case00131
 // assession information end
-public class AccuracyTrackTaintObject_SerializeDeSerialize_001_T
+public class AccuracyTrackTaintObject_SerializeDeSerialize_003_T
     implements IastTestCaseDescriptor, IastTestCasePayloadProvider {
 
     /**

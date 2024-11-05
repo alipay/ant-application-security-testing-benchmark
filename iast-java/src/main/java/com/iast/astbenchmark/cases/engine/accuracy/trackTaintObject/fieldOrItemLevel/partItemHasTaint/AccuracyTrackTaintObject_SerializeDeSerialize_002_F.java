@@ -61,7 +61,7 @@ public class AccuracyTrackTaintObject_SerializeDeSerialize_002_F
 
     @Override
     public IastTestCaseDescriptor followIastTestCaseDescriptor() {
-        return new AccuracyTrackTaintObject_SerializeDeSerialize_001_T();
+        return new AccuracyTrackTaintObject_SerializeDeSerialize_003_T();
     }
 
     @Override
