@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<w3af-run start="1234567890" start-long="Thu Jan 01 01:01:01 1970" version="2.1">
+    <w3af-version>w3af - Web Application Attack and Audit Framework
+        Version: 1.7.6
+        Revision: 27b1516a3f - 04 Apr 2017 20:45
+        Branch: master
+        Local changes: Yes
+        Author: Andres Riancho and the w3af team.
+    </w3af-version>
+    <scan-info target="https://localhost:8443/benchmark/xss-Index.html">
+        <audit>
+            <plugin name="xss" />
+        </audit>
+        <infrastructure />
+        <bruteforce />
+        <grep />
+        <evasion />
+        <output>
+            <plugin name="xml_file">
+                <config parameter="output_file" value="/tmp/OwaspBenchmarkXssW3af.xml" />
+            </plugin>
+            <plugin name="console">
+                <config parameter="verbose" value="False" />
+                <config parameter="use_colors" value="True" />
+            </plugin>
+        </output>
+        <mangle />
+        <crawl>
+            <plugin name="web_spider">
+                <config parameter="only_forward" value="False" />
+                <config parameter="follow_regex" value=".*" />
+                <config parameter="ignore_regex" value="(.*(cmdi).*|.*(crypto).*|.*(hash).*|.*(ldapi).*|.*(pathtraver).*|.*(securecookie).*|.*(sqli).*|.*(trustbound).*|.*(weakrand).*|.*(xpathi).*)" />
+            </plugin>
+        </crawl>
+        <auth />
+    </scan-info>
+    <vulnerability id="[177898]" method="GET" name="Cross site scripting vulnerability" plugin="xss" severity="Medium" url="https://localhost:8443/benchmark/xss-01/BenchmarkTest00001" var="BenchmarkTest00001">
+        <description>Description</description>
+        <long-description>Long Description</long-description>
+        <fix-guidance>Fix Guidance</fix-guidance>
+        <fix-effort>10</fix-effort>
+        <references>
+            <reference title="WASC" url="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting" />
+            <reference title="Secunia" url="http://secunia.com/advisories/9716/" />
+            <reference title="OWASP" url="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet" />
+        </references>
+        <http-transactions>
+            <http-transaction id="177898">
+                <http-request>
+                    <status>GET https://localhost:8443/benchmark/xss-01/BenchmarkTest00001?</status>
+                    <headers>
+                        <header content="0" field="Content-length" />
+                    </headers>
+                </http-request>
+                <http-response>
+                    <status>HTTP/1.1 200 OK</status>
+                    <headers>
+                        <header content="142" field="content-length" />
+                    </headers>
+                    <body content-encoding="text">Body</body>
+                </http-response>
+            </http-transaction>
+        </http-transactions>
+    </vulnerability>
+    <vulnerability id="[178965]" method="POST" name="Cross site scripting vulnerability" plugin="xss" severity="Medium" url="https://localhost:8443/benchmark/xss-03/BenchmarkTest00002" var="BenchmarkTest00002">
+        <description>Description</description>
+        <long-description>Long Description</long-description>
+        <fix-guidance>Fix Guidance</fix-guidance>
+        <fix-effort>10</fix-effort>
+        <references>
+            <reference title="WASC" url="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting" />
+            <reference title="Secunia" url="http://secunia.com/advisories/9716/" />
+            <reference title="OWASP" url="https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet" />
+        </references>
+        <http-transactions>
+            <http-transaction id="177898">
+                <http-request>
+                    <status>GET https://localhost:8443/benchmark/xss-01/BenchmarkTest00001?</status>
+                    <headers>
+                        <header content="0" field="Content-length" />
+                    </headers>
+                </http-request>
+                <http-response>
+                    <status>HTTP/1.1 200 OK</status>
+                    <headers>
+                        <header content="142" field="content-length" />
+                    </headers>
+                    <body content-encoding="text">Body</body>
+                </http-response>
+            </http-transaction>
+        </http-transactions>
+    </vulnerability>
+</w3af-run>

@@ -1,0 +1,202 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "check_id": "java.lang.security.audit.command-injection-formatted-runtime-call.command-injection-formatted-runtime-call",
+      "end": {
+        "col": 44,
+        "line": 63,
+        "offset": 2350
+      },
+      "extra": {
+        "fingerprint": "b04b2629a927ec0c62a65dbf719260f058c7591b15db57c22eaa4c0d50068efa3731782ca98ff43f75f99a17de166835c74b932b5bc35c709e09a19f83328056_0",
+        "is_ignored": false,
+        "lines": "            Process p = r.exec(cmd + param);",
+        "message": "A formatted or concatenated string was detected as input to a java.lang.Runtime call. This is dangerous if a variable is controlled by user input and could result in a command injection. Ensure your variables are not controlled by users or sufficiently sanitized. 'what'",
+        "metadata": {
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "impact": "HIGH",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "shortlink": "https://sg.run/rd90",
+          "source": "https://semgrep.dev/r/java.lang.security.audit.command-injection-formatted-runtime-call.command-injection-formatted-runtime-call",
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#COMMAND_INJECTION.",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "java"
+          ]
+        },
+        "metavars": {
+          "$RUNTIME": {
+            "abstract_content": "r",
+            "end": {
+              "col": 26,
+              "line": 63,
+              "offset": 2332
+            },
+            "propagated_value": {
+              "svalue_abstract_content": "Runtime.getRuntime()",
+              "svalue_end": {
+                "col": 41,
+                "line": 60,
+                "offset": 2290
+              },
+              "svalue_start": {
+                "col": 21,
+                "line": 60,
+                "offset": 2270
+              }
+            },
+            "start": {
+              "col": 25,
+              "line": 63,
+              "offset": 2331
+            }
+          },
+          "$TYPE": {
+            "abstract_content": "Runtime",
+            "end": {
+              "col": 16,
+              "line": 60,
+              "offset": 2265
+            },
+            "start": {
+              "col": 9,
+              "line": 60,
+              "offset": 2258
+            }
+          },
+          "$X": {
+            "abstract_content": "cmd",
+            "end": {
+              "col": 35,
+              "line": 63,
+              "offset": 2341
+            },
+            "start": {
+              "col": 32,
+              "line": 63,
+              "offset": 2338
+            }
+          },
+          "$Y": {
+            "abstract_content": "param",
+            "end": {
+              "col": 43,
+              "line": 63,
+              "offset": 2349
+            },
+            "start": {
+              "col": 38,
+              "line": 63,
+              "offset": 2344
+            }
+          }
+        },
+        "severity": "ERROR"
+      },
+      "path": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00003.java",
+      "start": {
+        "col": 13,
+        "line": 63,
+        "offset": 2319
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly",
+      "end": {
+        "col": 40,
+        "line": 42,
+        "offset": 1833
+      },
+      "extra": {
+        "fingerprint": "4c3df9b11fc18bb0371952e86b7fb99b8d6887a7318e27c21c9efea697cece407aec6c67e7998fda8889af9418d3af1cf8cec783ca9a1f8353792348b5e50ae1_0",
+        "is_ignored": false,
+        "lines": "        response.addCookie(userCookie);",
+        "message": "A cookie was detected without setting the 'HttpOnly' flag. The 'HttpOnly' flag for cookies instructs the browser to forbid client-side scripts from reading the cookie. Set the 'HttpOnly' flag by calling 'cookie.setHttpOnly(true);'",
+        "metadata": {
+          "asvs": {
+            "control_id": "3.4.2 Missing Cookie Attribute",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x12-V3-Session-management.md#v34-cookie-based-session-management",
+            "section": "V3: Session Management Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "confidence": "LOW",
+          "cwe": [
+            "CWE-1004: Sensitive Cookie Without 'HttpOnly' Flag"
+          ],
+          "impact": "LOW",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "likelihood": "LOW",
+          "owasp": [
+            "A05:2021 - Security Misconfiguration"
+          ],
+          "references": [
+            "https://owasp.org/Top10/A05_2021-Security_Misconfiguration"
+          ],
+          "shortlink": "https://sg.run/b7Be",
+          "source": "https://semgrep.dev/r/java.lang.security.audit.cookie-missing-httponly.cookie-missing-httponly",
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#HTTPONLY_COOKIE",
+          "subcategory": [
+            "audit"
+          ],
+          "technology": [
+            "java"
+          ]
+        },
+        "metavars": {
+          "$COOKIE": {
+            "abstract_content": "userCookie",
+            "end": {
+              "col": 38,
+              "line": 42,
+              "offset": 1831
+            },
+            "start": {
+              "col": 28,
+              "line": 42,
+              "offset": 1821
+            }
+          },
+          "$RESPONSE": {
+            "abstract_content": "response",
+            "end": {
+              "col": 17,
+              "line": 42,
+              "offset": 1810
+            },
+            "start": {
+              "col": 9,
+              "line": 42,
+              "offset": 1802
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00004.java",
+      "start": {
+        "col": 9,
+        "line": 42,
+        "offset": 1802
+      }
+    }
+  ],
+  "version": "0.121.0"
+}

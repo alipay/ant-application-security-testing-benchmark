@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<analysisReportResult>
+    <id>00000000-0000-0000-0000-000000000000</id>
+    <status>COMPLETED</status>
+    <creationTimestamp>1970-01-01T01:01:01.001-01:00</creationTimestamp>
+    <engineVersion>2.3.2.1</engineVersion>
+    <runDuration>123456</runDuration>
+    <warning>
+        <artifacts>benchmark.jar</artifacts>
+        <CWEid>614</CWEid>
+        <className>org.owasp.benchmark.testcode.BenchmarkTest00001</className>
+        <kind>Cookie</kind>
+        <line>1</line>
+        <memberName>doPost</memberName>
+        <progressive>1</progressive>
+        <rank>1</rank>
+        <simpleName>InsecureCookieWarning</simpleName>
+        <source>org/owasp/benchmark/testcode/BenchmarkTest00001.java</source>
+        <warningAboutAField>false</warningAboutAField>
+        <warningCWECategory>Security_Features</warningCWECategory>
+        <warningCategory>BUG</warningCategory>
+        <warningDescription>Lorem Ipsum</warningDescription>
+        <warningMessage>Lorem Ipsum</warningMessage>
+    </warning>
+    <warning>
+        <artifacts>benchmark.jar</artifacts>
+        <CWEid>327</CWEid>
+        <className>org.owasp.benchmark.testcode.BenchmarkTest00002</className>
+        <kind>Cryptography</kind>
+        <line>1</line>
+        <memberName>doPost</memberName>
+        <progressive>1</progressive>
+        <rank>1</rank>
+        <simpleName>RiskyCryptographicAlgorithmWarning</simpleName>
+        <source>org/owasp/benchmark/testcode/BenchmarkTest00002.java</source>
+        <warningAboutAField>false</warningAboutAField>
+        <warningCWECategory>Security_Features</warningCWECategory>
+        <warningCategory>BUG</warningCategory>
+        <warningDescription>Lorem Ipsum</warningDescription>
+        <warningMessage>Lorem Ipsum</warningMessage>
+    </warning>
+    <formattedRunDuration>0:01:01.123</formattedRunDuration>
+</analysisReportResult>

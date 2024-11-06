@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ResultsSession time="1970-01-01T01:01:01-01:00" toolVer="10.2.3.87654321">
+    <CodingStandards ownerId="com.parasoft.xtest.checkers.api.standards" time="0:12:34">
+        <StdViols>
+            <FlowViol sev="1" rule="BD.SECURITY.TDFNAMES" msg="Injection of data received from servlet request (&quot;fileName&quot;) to filename setting method" locFile="/benchmark/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java">
+            </FlowViol>
+            <FlowViol sev="1" rule="BD.SECURITY.TDXSS" msg="Injection of data received from servlet request (&quot;&quot;Now ready to write to file: &quot; + org.owasp.esapi.ESAPI.encod...odeForHTML(fileName)&quot;) to servlet response (possible XSS attack)" locFile="/benchmark/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java">
+            </FlowViol>
+        </StdViols>
+    </CodingStandards>
+</ResultsSession>

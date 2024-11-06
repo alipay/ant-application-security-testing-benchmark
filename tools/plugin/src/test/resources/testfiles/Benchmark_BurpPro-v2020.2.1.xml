@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<issues burpVersion="2020.2.1" exportTime="Thu Jan 01 01:01:01 EDT 1970">
+    <issue>
+        <serialNumber>0000000000000000000</serialNumber>
+        <type>1048832</type>
+        <name><![CDATA[OS command injection]]></name>
+        <host ip="127.0.0.1">https://localhost:8443</host>
+        <path><![CDATA[/benchmark/cmdi-01/BenchmarkTest00001]]></path>
+        <location><![CDATA[/benchmark/cmdi-01/BenchmarkTest00001 [BenchmarkTest00001 cookie]]]></location>
+        <severity>High</severity>
+        <confidence>Certain</confidence>
+        <issueBackground>Lorem Ipsum</issueBackground>
+        <remediationBackground>Lorem Ipsum</remediationBackground>
+        <references>Lorem Ipsum</references>
+        <vulnerabilityClassifications>Lorem Ipsum</vulnerabilityClassifications>
+        <issueDetail>Lorem Ipsum</issueDetail>
+    </issue>
+    <issue>
+        <serialNumber>0000000000000000000</serialNumber>
+        <type>1049088</type>
+        <name><![CDATA[SQL injection]]></name>
+        <host ip="127.0.0.1">https://localhost:8443</host>
+        <path><![CDATA[/benchmark/sqli-01/BenchmarkTest00002]]></path>
+        <location><![CDATA[/benchmark/sqli-01/BenchmarkTest00002 [BenchmarkTest00002 parameter]]]></location>
+        <severity>High</severity>
+        <confidence>Certain</confidence>
+        <issueBackground>Lorem Ipsum</issueBackground>
+        <remediationBackground>Lorem Ipsum</remediationBackground>
+        <references>Lorem Ipsum</references>
+        <vulnerabilityClassifications>Lorem Ipsum</vulnerabilityClassifications>
+        <issueDetail>Lorem Ipsum</issueDetail>
+        <remediationDetail>Lorem Ipsum</remediationDetail>
+    </issue>
+</issues>

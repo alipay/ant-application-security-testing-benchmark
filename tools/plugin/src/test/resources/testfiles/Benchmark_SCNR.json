@@ -1,0 +1,395 @@
+{
+  "version": "1.0dev",
+  "status": "done",
+  "seed": "11111111111111111111111111111111",
+  "options": {
+    "audit": {
+      "parameter_values": true,
+      "mode": "moderate",
+      "exclude_vector_patterns": [],
+      "include_vector_patterns": [],
+      "link_templates": [],
+      "links": true,
+      "forms": true,
+      "cookies": true,
+      "ui_inputs": true,
+      "ui_forms": true,
+      "jsons": true,
+      "xmls": true
+    },
+    "datastore": {
+    },
+    "device": {
+      "visible": false,
+      "width": 1600,
+      "height": 1200,
+      "user_agent": "Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev",
+      "pixel_ratio": 1.0,
+      "touch": false
+    },
+    "dom": {
+      "engine": "chrome",
+      "local_storage": {
+      },
+      "session_storage": {
+      },
+      "wait_for_elements": {
+      },
+      "pool_size": 6,
+      "job_timeout": 120,
+      "worker_time_to_live": 1000,
+      "wait_for_timers": false
+    },
+    "http": {
+      "request_timeout": 20000,
+      "request_redirect_limit": 5,
+      "request_concurrency": 10,
+      "request_queue_size": 50,
+      "request_headers": {
+      },
+      "response_max_size": 500000,
+      "cookies": {
+      },
+      "authentication_type": "auto"
+    },
+    "input": {
+      "values": {
+      },
+      "default_values": {
+        "name": "scnr_engine_name",
+        "user": "scnr_engine_user",
+        "usr": "scnr_engine_user",
+        "pass": "5543!%scnr_engine_secret",
+        "txt": "scnr_engine_text",
+        "num": "132",
+        "amount": "100",
+        "mail": "scnr_engine@email.gr",
+        "account": "12",
+        "id": "1"
+      },
+      "without_defaults": false,
+      "force": false
+    }
+  },
+  "start_datetime": "2024-01-01 00:00:00 +0100",
+  "finish_datetime": "2024-01-01 12:34:56 +0100",
+  "delta_time": "12:34:56",
+  "issues": [
+    {
+      "name": "SQL Injection",
+      "description": "\nDue to the requirement for dynamic content of today's web applications, many\nrely on a database backend to store data that will be called upon and processed\nby the web application (or other programs).\nWeb applications retrieve data from the database by using Structured Query Language\n(SQL) queries.\n\nTo meet demands of many developers, database servers (such as MSSQL, MySQL,\nOracle etc.) have additional built-in functionality that can allow extensive\ncontrol of the database and interaction with the host operating system itself.\n\nAn SQL injection occurs when a value originating from the client's request is used\nwithin a SQL query without prior sanitisation. This could allow cyber-criminals\nto execute arbitrary SQL code and steal data or use the additional functionality\nof the database server to take control of more server components.\n\nThe successful exploitation of a SQL injection can be devastating to an\norganisation and is one of the most commonly exploited web application vulnerabilities.\n\nThis injection was detected as SCNR::Engine was able to cause the server to respond to\nthe request with a database related error.\n",
+      "references": {
+        "UnixWiz": "http://unixwiz.net/techtips/sql-injection.html",
+        "Wikipedia": "http://en.wikipedia.org/wiki/SQL_injection",
+        "SecuriTeam": "http://www.securiteam.com/securityreviews/5DP0N1P76E.html",
+        "OWASP": "https://www.owasp.org/index.php/SQL_Injection",
+        "WASC": "http://projects.webappsec.org/w/page/13246963/SQL%20Injection",
+        "W3 Schools": "http://www.w3schools.com/sql/sql_injection.asp"
+      },
+      "tags": [
+        "sql",
+        "injection",
+        "regexp",
+        "database",
+        "error"
+      ],
+      "cwe": 89,
+      "severity": "high",
+      "remedy_guidance": "\nThe only proven method to prevent against SQL injection attacks while still\nmaintaining full application functionality is to use parameterized queries\n(also known as prepared statements).\nWhen utilising this method of querying the database, any value supplied by the\nclient will be handled as a string value rather than part of the SQL query.\n\nAdditionally, when utilising parameterized queries, the database engine will\nautomatically check to make sure the string being used matches that of the column.\nFor example, the database engine will check that the user supplied input is an\ninteger if the database column is configured to contain integers.\n",
+      "check": {
+        "name": "SQL Injection",
+        "description": "\nSQL injection check, uses known SQL DB errors to identify vulnerabilities.\n",
+        "elements": [
+          "link",
+          "form",
+          "cookie",
+          "header",
+          "nested_cookie",
+          "link_template",
+          "json",
+          "xml"
+        ],
+        "sink": {
+          "areas": [
+            "active"
+          ],
+          "seed": "\"'`--)"
+        },
+        "cost": 2,
+        "author": "Tasos \"Zapotek\" Laskos <tasos.laskos@gmail.com>",
+        "version": "0.2.4",
+        "platforms": [
+          "access",
+          "db2",
+          "emc",
+          "firebird",
+          "hsqldb",
+          "informix",
+          "ingres",
+          "interbase",
+          "java",
+          "mssql",
+          "mysql",
+          "oracle",
+          "pgsql",
+          "sqlite",
+          "sybase",
+          "frontbase",
+          "maxdb"
+        ],
+        "shortname": "sql_injection"
+      },
+      "proof": "org.hsqldb.jdbc",
+      "signature": "org.hsqldb.jdbc",
+      "vector": {
+        "class": "SCNR::Engine::Element::Form",
+        "type": "form",
+        "url": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001.html?BenchmarkTest00001=SafeText",
+        "source": "<form action=\"/benchmark/sqli-06/BenchmarkTest00001\" method=\"GET\" id=\"FormBenchmarkTest00001\" autocomplete=\"off\">\n    <div>\n        <label>\n        </label>\n    </div>\n    <br />\n    <div>\n        <label>\n        </label>\n    </div>\n    <div>\n        <input type=\"text\" id=\"username\" name=\"username\" />\n    </div>\n    <div>\n        <label>\n        </label>\n    </div>\n    <div>\n        <input type=\"text\" id=\"password\" name=\"password\" value=\"\" />\n    </div>\n    <div>\n    </div>\n    <div>\n        <label>\n            <br />\n        </label>\n        <input type=\"text\" id=\"BenchmarkTest00001\" name=\"BenchmarkTest00001\" value=\"bar\" />\n    </div>\n    <br />\n    <div>\n        <input type=\"submit\" value=\"Login\" />\n    </div>\n</form>",
+        "inputs": {
+          "username": "scnr_engine_name",
+          "password": "5543!%scnr_engine_secret",
+          "BenchmarkTest00001": "bar\"'`--"
+        },
+        "raw_inputs": [
+        ],
+        "default_inputs": {
+          "username": "",
+          "password": "",
+          "BenchmarkTest00001": "bar"
+        },
+        "action": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001",
+        "method": "get",
+        "affected_input_name": "BenchmarkTest00001",
+        "affected_input_value": "bar\"'`--",
+        "seed": "\"'`--"
+      },
+      "referring_page": {
+        "body": "<!DOCTYPE html>\n<html lang=\"en-US\">\n<head>\n<meta charset=\"utf-8\">\n<script src=\"/benchmark/js/jquery.min.js\" type=\"text/javascript\"></script>\n<script type=\"text/javascript\" src=\"/benchmark/js/js.cookie.js\"></script>\n<script src=\"/benchmark/js/testsuiteutils.js\" type=\"text/javascript\"></script>\n<link rel=\"icon\" type=\"image/png\" href=\"/benchmark/favicon.ico\">\n<title>BenchmarkTest00001</title>\n</head>\n<body>\n    <form action=\"/benchmark/sqli-06/BenchmarkTest00001\" method=\"GET\" id=\"FormBenchmarkTest00001\" autocomplete=\"off\">\n        <div>\n            <label>Please enter your details:</label>\n        </div>\n        <br>\n        <div>\n            <label>Username:</label>\n        </div>\n        <div>\n            <input type=\"text\" id=\"username\" name=\"username\">\n        </div>\n        <div>\n            <label>Password:</label>\n        </div>\n        <div>\n            <input type=\"text\" id=\"password\" name=\"password\" value=\"\">\n        </div>\n        <div>&nbsp;</div>\n        <div>\n            <label>Parameter: BenchmarkTest00001 <br>Value:\n            </label> <input type=\"text\" id=\"BenchmarkTest00001\" name=\"BenchmarkTest00001\" value=\"bar\">\n        </div>\n        <br>\n        <div>\n            <input type=\"submit\" value=\"Login\">\n        </div>\n    </form>\n</body>\n</html>\n",
+        "dom": {
+          "url": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001.html?BenchmarkTest00001=SafeText",
+          "transitions": [
+          ],
+          "digest": null,
+          "data_flow_sinks": [
+          ],
+          "execution_flow_sinks": [
+          ]
+        }
+      },
+      "platform_name": "hsqldb",
+      "platform_type": "db",
+      "page": {
+        "body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 500 – Internal Server Error</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 500 – Internal Server Error</h1><hr class=\"line\" /><p><b>Type</b> Exception Report</p><p><b>Message</b> java.sql.SQLSyntaxErrorException: unexpected token:  required: )</p><p><b>Description</b> The server encountered an unexpected condition that prevented it from fulfilling the request.</p><p><b>Exception</b></p><pre>javax.servlet.ServletException: java.sql.SQLSyntaxErrorException: unexpected token:  required: )\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:83)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Root Cause</b></p><pre>java.sql.SQLSyntaxErrorException: unexpected token:  required: )\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.executeUpdate(Unknown Source)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:77)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Root Cause</b></p><pre>org.hsqldb.HsqlException: unexpected token:  required: )\n\torg.hsqldb.error.Error.error(Unknown Source)\n\torg.hsqldb.result.Result.getException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.executeUpdate(Unknown Source)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:77)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Note</b> The full stack trace of the root cause is available in the server logs.</p><hr class=\"line\" /><h3>Apache Tomcat/9.0.84</h3></body></html>",
+        "dom": {
+          "url": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001?username=scnr_engine_name&password=5543!%scnr_engine_secret&BenchmarkTest00001=bar%22'`--",
+          "transitions": [
+          ],
+          "digest": null,
+          "data_flow_sinks": [
+          ],
+          "execution_flow_sinks": [
+          ]
+        }
+      },
+      "remarks": {
+      },
+      "trusted": true,
+      "cwe_url": "http://cwe.mitre.org/data/definitions/89.html",
+      "digest": 189102633,
+      "response": {
+        "headers": {
+          "Content-Security-Policy": "frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          "Strict-Transport-Security": "max-age=31536000;includeSubDomains",
+          "X-Frame-Options": "DENY",
+          "X-Content-Type-Options": "nosniff",
+          "Content-Type": "text/html;charset=utf-8",
+          "Content-Language": "en",
+          "Content-Length": "4010",
+          "Date": "Sat, 13 Jan 2024 08:12:38 GMT",
+          "Connection": "close"
+        },
+        "body": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 500 – Internal Server Error</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 500 – Internal Server Error</h1><hr class=\"line\" /><p><b>Type</b> Exception Report</p><p><b>Message</b> java.sql.SQLSyntaxErrorException: unexpected token:  required: )</p><p><b>Description</b> The server encountered an unexpected condition that prevented it from fulfilling the request.</p><p><b>Exception</b></p><pre>javax.servlet.ServletException: java.sql.SQLSyntaxErrorException: unexpected token:  required: )\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:83)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Root Cause</b></p><pre>java.sql.SQLSyntaxErrorException: unexpected token:  required: )\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.executeUpdate(Unknown Source)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:77)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Root Cause</b></p><pre>org.hsqldb.HsqlException: unexpected token:  required: )\n\torg.hsqldb.error.Error.error(Unknown Source)\n\torg.hsqldb.result.Result.getException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCUtil.sqlException(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.fetchResult(Unknown Source)\n\torg.hsqldb.jdbc.JDBCStatement.executeUpdate(Unknown Source)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.apache.tomcat.dbcp.dbcp2.DelegatingStatement.executeUpdate(DelegatingStatement.java:340)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doPost(BenchmarkTest00001.java:77)\n\torg.owasp.benchmark.testcode.BenchmarkTest00001.doGet(BenchmarkTest00001.java:35)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:529)\n\tjavax.servlet.http.HttpServlet.service(HttpServlet.java:623)\n\torg.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\n\torg.apache.catalina.filters.HttpHeaderSecurityFilter.doFilter(HttpHeaderSecurityFilter.java:129)\n\torg.owasp.benchmark.helpers.filters.HTTPResponseHeaderFilter.doFilter(HTTPResponseHeaderFilter.java:61)\n\torg.owasp.benchmark.helpers.filters.DataBaseFilter.doFilter(DataBaseFilter.java:41)\n</pre><p><b>Note</b> The full stack trace of the root cause is available in the server logs.</p><hr class=\"line\" /><h3>Apache Tomcat/9.0.84</h3></body></html>",
+        "headers_string": "HTTP/1.1 500 \r\nContent-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com\r\nCache-Control: no-cache, no-store, must-revalidate\r\nStrict-Transport-Security: max-age=31536000;includeSubDomains\r\nX-Frame-Options: DENY\r\nX-Content-Type-Options: nosniff\r\nContent-Type: text/html;charset=utf-8\r\nContent-Language: en\r\nContent-Length: 4010\r\nDate: Sat, 13 Jan 2024 08:12:38 GMT\r\nConnection: close\r\n\r\n",
+        "url": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001?username=scnr_engine_name&password=5543!%scnr_engine_secret&BenchmarkTest00001=bar%22'`--",
+        "return_code": "ok",
+        "code": 500,
+        "ip_address": "127.0.0.1",
+        "return_message": "No error",
+        "total_time": 0.005384,
+        "time": 0.005384,
+        "app_time": 0.005091,
+        "size_upload": 0.0,
+        "size_download": 4010.0
+      },
+      "request": {
+        "url": "https://localhost:8443/benchmark/sqli-06/BenchmarkTest00001",
+        "parameters": {
+          "username": "scnr_engine_name",
+          "password": "5543!%scnr_engine_secret",
+          "BenchmarkTest00001": "bar\"'`--"
+        },
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "User-Agent": "Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev",
+          "Accept-Language": "en-US,en;q=0.8,he;q=0.6",
+          "X-Scnr-Engine-Scan-Seed": "be206b8f69b9755caaf4c04145ce6e66",
+          "X-Scnr-Introspector-Taint": "be206b8f69b9755caaf4c04145ce6e66",
+          "X-Scnr-Introspector-Trace": "369951"
+        },
+        "headers_string": "GET /benchmark/sqli-06/BenchmarkTest00001?username=scnr_engine_name&password=5543%21%25scnr_engine_secret&BenchmarkTest00001=bar%22%27%60-- HTTP/1.1\r\nHost: localhost:8443\r\nAccept-Encoding: gzip, deflate\r\nUser-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.8,he;q=0.6\r\nX-Scnr-Engine-Scan-Seed: be206b8f69b9755caaf4c04145ce6e66\r\nX-Scnr-Introspector-Taint: be206b8f69b9755caaf4c04145ce6e66\r\nX-Scnr-Introspector-Trace: 369951\r\n\r\n",
+        "effective_body": null,
+        "body": null,
+        "method": "get",
+        "execution_flow": null,
+        "data_flow": null
+      }
+    },
+    {
+      "cwe_url": "http://cwe.mitre.org/data/definitions/79.html",
+      "check": {
+        "name": "XSS",
+        "description": "\nInjects an HTML element into page inputs and then parses the HTML markup of\ntainted responses to look for proof of vulnerability.\n",
+        "elements": [
+          "form",
+          "link",
+          "cookie",
+          "nested_cookie",
+          "header",
+          "link_template"
+        ],
+        "sink": {
+          "areas": [
+            "body"
+          ]
+        },
+        "cost": 6,
+        "author": "Tasos \"Zapotek\" Laskos <tasos.laskos@gmail.com> ",
+        "version": "0.4.10",
+        "shortname": "xss"
+      },
+      "proof": "<xss_020d478a04da5a7b6bcaa3cbc64928d4/>",
+      "description": "\nClient-side scripts are used extensively by modern web applications.\nThey perform from simple functions (such as the formatting of text) up to full\nmanipulation of client-side data and Operating System interaction.\n\nCross Site Scripting (XSS) allows clients to inject scripts into a request and\nhave the server return the script to the client in the response. This occurs\nbecause the application is taking untrusted data (in this example, from the client)\nand reusing it without performing any validation or sanitisation.\n\nIf the injected script is returned immediately this is known as body XSS.\nIf the injected script is stored by the server and returned to any client visiting\nthe affected page, then this is known as persistent XSS (also stored XSS).\n\nSCNR::Engine has discovered that it is possible to insert script content directly into\nHTML element content.\n",
+      "page": {
+        "body": "SafeText<xss_020d478a04da5a7b6bcaa3cbc64928d4/>",
+        "dom": {
+          "url": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002",
+          "transitions": [
+          ],
+          "digest": null,
+          "data_flow_sinks": [
+          ],
+          "execution_flow_sinks": [
+          ]
+        }
+      },
+      "name": "Cross-Site Scripting (XSS)",
+      "severity": "high",
+      "remedy_guidance": "\nTo remedy XSS vulnerabilities, it is important to never use untrusted or unfiltered\ndata within the code of a HTML page.\n\nUntrusted data can originate not only form the client but potentially a third\nparty or previously uploaded file etc.\n\nFiltering of untrusted data typically involves converting special characters to\ntheir HTML entity encoded counterparts (however, other methods do exist, see references).\nThese special characters include:\n\n* `&`\n* `<`\n* `>`\n* `\"`\n* `'`\n* `/`\n\nAn example of HTML entity encoding is converting `<` to `&lt;`.\n\nAlthough it is possible to filter untrusted input, there are five locations\nwithin an HTML page where untrusted input (even if it has been filtered) should\nnever be placed:\n\n1. Directly in a script.\n2. Inside an HTML comment.\n3. In an attribute name.\n4. In a tag name.\n5. Directly in CSS.\n\nEach of these locations have their own form of escaping and filtering.\n\n_Because many browsers attempt to implement XSS protection, any manual verification\nof this finding should be conducted using multiple different browsers and browser\nversions._\n",
+      "remarks": {
+      },
+      "references": {
+        "Secunia": "http://secunia.com/advisories/9716/",
+        "WASC": "http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting",
+        "OWASP": "https://www.owasp.org/index.php/XSS_%28Cross_Site_Scripting%29_Prevention_Cheat_Sheet"
+      },
+      "tags": [
+        "xss",
+        "regexp",
+        "injection",
+        "script"
+      ],
+      "trusted": true,
+      "vector": {
+        "class": "SCNR::Engine::Element::Form",
+        "type": "form",
+        "url": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002.html?BenchmarkTest00002=SafeText",
+        "source": "<form action=\"/benchmark/xss-04/BenchmarkTest00002\" method=\"POST\" id=\"FormBenchmarkTest00002\" autocomplete=\"off\">\n    <div>\n        <label>\n        </label>\n    </div>\n    <div>\n        <label>\n        </label>\n        <input type=\"text\" id=\"secure\" name=\"secure\" />\n    </div>\n    <div>\n        <label>\n        </label>\n        <input type=\"text\" id=\"productID\" name=\"productID\" />\n    </div>\n    <div>\n        <label>\n        </label>\n        <input type=\"text\" id=\"foo\" name=\"foo\" value=\"foo\" />\n    </div>\n    <div>\n        <label>\n            <br />\n        </label>\n        <input type=\"text\" id=\"BenchmarkTest00002\" name=\"BenchmarkTest00002\" value=\"SafeText\" />\n    </div>\n    <div>\n        <input type=\"submit\" value=\"Post it\" />\n    </div>\n</form>",
+        "inputs": {
+          "secure": "1",
+          "productID": "1",
+          "foo": "foo",
+          "BenchmarkTest00002": "SafeText<xss_020d478a04da5a7b6bcaa3cbc64928d4/>"
+        },
+        "raw_inputs": [
+        ],
+        "default_inputs": {
+          "secure": "",
+          "productID": "",
+          "foo": "foo",
+          "BenchmarkTest00002": "SafeText"
+        },
+        "action": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002",
+        "method": "post",
+        "affected_input_name": "BenchmarkTest00002",
+        "affected_input_value": "SafeText<xss_020d478a04da5a7b6bcaa3cbc64928d4/>",
+        "seed": "<xss_020d478a04da5a7b6bcaa3cbc64928d4/>"
+      },
+      "digest": 1203494676,
+      "cwe": 79,
+      "referring_page": {
+        "body": "<!DOCTYPE html>\n<html lang=\"en-US\">\n<head>\n<meta charset=\"utf-8\">\n<script src=\"/benchmark/js/jquery.min.js\" type=\"text/javascript\"></script>\n<script type=\"text/javascript\" src=\"/benchmark/js/js.cookie.js\"></script>\n<script src=\"/benchmark/js/testsuiteutils.js\" type=\"text/javascript\"></script>\n<link rel=\"icon\" type=\"image/png\" href=\"/benchmark/favicon.ico\">\n<title>BenchmarkTest00002</title>\n</head>\n<body>\n    <form action=\"/benchmark/xss-04/BenchmarkTest00002\" method=\"POST\" id=\"FormBenchmarkTest00002\" autocomplete=\"off\">\n        <div>\n            <label>Please enter your details:</label>\n        </div>\n        <div>\n            <label>Is your information secure?:</label> <input type=\"text\" id=\"secure\" name=\"secure\">\n        </div>\n        <div>\n            <label>Provide your product ID:</label> <input type=\"text\" id=\"productID\" name=\"productID\">\n        </div>\n        <div>\n            <label>Do you even foo?</label> <input type=\"text\" id=\"foo\" name=\"foo\" value=\"foo\">\n        </div>\n        <div>\n            <label>Parameter: BenchmarkTest00002 <br>Value:\n            </label> <input type=\"text\" id=\"BenchmarkTest00002\" name=\"BenchmarkTest00002\" value=\"SafeText\">\n        </div>\n        <div>\n            <input type=\"submit\" value=\"Post it\">\n        </div>\n    </form>\n</body>\n</html>\n",
+        "dom": {
+          "url": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002.html?BenchmarkTest00002=SafeText",
+          "transitions": [
+          ],
+          "digest": null,
+          "data_flow_sinks": [
+          ],
+          "execution_flow_sinks": [
+          ]
+        }
+      },
+      "response": {
+        "headers": {
+          "Content-Security-Policy": "frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          "Strict-Transport-Security": "max-age=31536000;includeSubDomains",
+          "X-Frame-Options": "DENY",
+          "X-Content-Type-Options": "nosniff",
+          "X-Xss-Protection": "0",
+          "Content-Type": "text/html;charset=UTF-8",
+          "Content-Length": "47",
+          "Date": "Mon, 01 Jan 2024 08:08:36 GMT"
+        },
+        "url": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002",
+        "code": 200,
+        "ip_address": "127.0.0.1",
+        "headers_string": "HTTP/1.1 200 \r\nContent-Security-Policy: frame-ancestors 'self'; form-action 'self'; default-src 'unsafe-inline' 'unsafe-eval' 'self'; style-src 'unsafe-inline' 'self'; style-src-elem 'self' fonts.googleapis.com; font-src 'self' fonts.gstatic.com\r\nCache-Control: no-cache, no-store, must-revalidate\r\nStrict-Transport-Security: max-age=31536000;includeSubDomains\r\nX-Frame-Options: DENY\r\nX-Content-Type-Options: nosniff\r\nX-XSS-Protection: 0\r\nContent-Type: text/html;charset=UTF-8\r\nContent-Length: 47\r\nDate: Mon, 01 Jan 2024 08:08:36 GMT\r\n\r\n",
+        "body": "SafeText<xss_020d478a04da5a7b6bcaa3cbc64928d4/>",
+        "time": 0.031042,
+        "app_time": 0.003804000000000002,
+        "total_time": 0.031042,
+        "return_code": "ok",
+        "return_message": "No error",
+        "size_upload": 101.0,
+        "size_download": 47.0
+      },
+      "request": {
+        "url": "https://localhost:8443/benchmark/xss-04/BenchmarkTest00002",
+        "parameters": {
+        },
+        "headers": {
+          "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+          "User-Agent": "Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev",
+          "Accept-Language": "en-US,en;q=0.8,he;q=0.6",
+          "X-Scnr-Engine-Scan-Seed": "020d478a04da5a7b6bcaa3cbc64928d4",
+          "X-Scnr-Introspector-Taint": "020d478a04da5a7b6bcaa3cbc64928d4",
+          "X-Scnr-Introspector-Trace": "200465"
+        },
+        "headers_string": "POST /benchmark/xss-04/BenchmarkTest00002 HTTP/1.1\r\nHost: localhost:8443\r\nAccept-Encoding: gzip, deflate\r\nUser-Agent: Mozilla/5.0 (Gecko) SCNR::Engine/v1.0dev\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.8,he;q=0.6\r\nX-Scnr-Engine-Scan-Seed: 020d478a04da5a7b6bcaa3cbc64928d4\r\nX-Scnr-Introspector-Taint: 020d478a04da5a7b6bcaa3cbc64928d4\r\nX-Scnr-Introspector-Trace: 200465\r\nContent-Length: 101\r\nContent-Type: application/x-www-form-urlencoded\r\n\r\n",
+        "effective_body": "secure=1&productID=1&foo=foo&BenchmarkTest00002=SafeText%3Cxss_020d478a04da5a7b6bcaa3cbc64928d4%2F%3E",
+        "body": {
+          "secure": "1",
+          "productID": "1",
+          "foo": "foo",
+          "BenchmarkTest00002": "SafeText<xss_020d478a04da5a7b6bcaa3cbc64928d4/>"
+        },
+        "method": "post",
+        "execution_flow": null,
+        "data_flow": null
+      }
+    }
+  ]
+}

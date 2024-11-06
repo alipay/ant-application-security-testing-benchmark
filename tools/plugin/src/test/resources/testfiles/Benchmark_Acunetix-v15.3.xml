@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<ScanGroup ExportedOn="1970-01-03">
+<Scan>
+        <Name><![CDATA[scan_name]]></Name>
+        <ShortName><![CDATA[scan_short_name]]></ShortName>
+        <StartURL><![CDATA[https://localhost:8443/benchmark/]]></StartURL>
+        <StartTime><![CDATA[1970-01-01T00:01:01.000000+08:00]]></StartTime>
+        <FinishTime><![CDATA[1970-01-02T00:01:01.000000+08:00]]></FinishTime>
+        <ScanTime><![CDATA[60 minutes, 0 seconds]]></ScanTime>
+        <ReportItems>
+<ReportItem id="1" color="red">
+                <Name><![CDATA[LDAP injection]]></Name>
+                <Affects><![CDATA[/benchmark/ldapi-00/BenchmarkTest00044]]></Affects>
+                <Severity><![CDATA[high]]></Severity>
+                <Type><![CDATA[ldapinjection]]></Type>
+                <CWEList>
+                    <CWE id="20"><![CDATA[CWE-20]]></CWE>
+                </CWEList>
+            </ReportItem>
+<ReportItem id="2" color="red">
+                <Name><![CDATA[SQL injection]]></Name>
+                <Affects><![CDATA[/benchmark/sqli-05/BenchmarkTest02629]]></Affects>
+                <Severity><![CDATA[high]]></Severity>
+                <Type><![CDATA[sqlinjection]]></Type>
+                <CWEList>
+                    <CWE id="89"><![CDATA[CWE-89]]></CWE>
+                </CWEList>
+            </ReportItem>
+<ReportItem id="3" color="orange">
+                <Name><![CDATA[Application error messages]]></Name>
+                <Affects><![CDATA[/]]></Affects>
+                <Severity><![CDATA[medium]]></Severity>
+                <Type><![CDATA[informationdisclosure]]></Type>
+                <CWEList>
+                    <CWE id="209"><![CDATA[CWE-209]]></CWE>
+                </CWEList>
+            </ReportItem>
+        </ReportItems>
+    </Scan>
+</ScanGroup>
