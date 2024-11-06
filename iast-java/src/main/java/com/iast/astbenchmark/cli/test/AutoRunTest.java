@@ -37,7 +37,7 @@ public class AutoRunTest {
             CopyTestCaseForRun.url_root = url;
         }
         try {
-            Method method = clazz.getMethod(metheodName);
+            Method method = clazz.getDeclaredMethod(metheodName);
             method.setAccessible(true);
             method.invoke(clazz.newInstance());
         } catch (NoSuchMethodException e) {
