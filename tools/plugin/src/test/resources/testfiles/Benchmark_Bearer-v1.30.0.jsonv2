@@ -1,0 +1,108 @@
+{
+  "source": "Bearer",
+  "version": "v1.30.0",
+  "findings": [
+    {
+      "cwe_ids": ["78"],
+      "id": "java_lang_os_command_injection",
+      "title": "Command injection vulnerability detected.",
+      "description": "## Description\n\nUsing external or user-defined input directly in an OS command can allow attackers to perform dangerous commands on the operating system.\n\n## Remediations\n\n❌ Avoid using OS commands, with or without dynamic input, wherever possible. For example, look for an equivalent library or function to use instead.\n\n✅ For dynamic input, rely on hardcoded values wherever possible\n\n```java\n  String filePattern = \"*.json\";\n  if request.getParameter(\"format\") == \"xml\" {\n    filePattern = \"*.xml\"\n  }\n\n  Process process = Runtime.getRuntime().exec(\"ls /myDir/\" + extension);\n```\n\n## Resources\n- [OWASP command injection explained](https://owasp.org/www-community/attacks/Command_Injection)\n",
+      "documentation_url": "https://docs.bearer.com/reference/rules/java_lang_os_command_injection",
+      "line_number": 61,
+      "full_filename": "../../OWASP/BenchmarkJava/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00007.java",
+      "filename": "java/org/owasp/benchmark/testcode/BenchmarkTest00007.java",
+      "category_groups": ["PII", "Personal Data"],
+      "source": {
+        "start": 61,
+        "end": 61,
+        "column": {
+          "start": 25,
+          "end": 46
+        }
+      },
+      "sink": {
+        "start": 61,
+        "end": 61,
+        "column": {
+          "start": 25,
+          "end": 46
+        },
+        "content": "r.exec(args, argsEnv)"
+      },
+      "parent_line_number": 61,
+      "snippet": "r.exec(args, argsEnv)",
+      "fingerprint": "a7d389038dcf77969a24604f7d2b3d93_0",
+      "old_fingerprint": "d45907bfb55a9cd885577ae854996b20_2",
+      "code_extract": "            Process p = r.exec(args, argsEnv);",
+      "severity": "high"
+    },
+    {
+      "cwe_ids": ["327"],
+      "id": "java_lang_padding_oracle_encryption_vulnerability",
+      "title": "Padding Oracle encryption vulnerability detected.",
+      "description": "## Description\n\nUsing a block cipher algorithm mode, such as CBC, together with a padding scheme is vulnerable to Padding Oracle attacks.\n\n## Remediations\n\n❌  Do not use CBC (Cipher Block Chaining) mode with padding\n\n```java\n  Cipher c = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n```\n\n✅ Prefer GCM (Galois/Counter Mode) instead\n\n```java\n  Cipher c = Cipher.getInstance(\"AES/GCM/PKCS5Padding\");\n```\n\n## Resources\n- [Java Cipher class](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/javax/crypto/Cipher.html)\n- [Java Security Standard Algorithm Names](https://docs.oracle.com/en/java/javase/20/docs/specs/security/standard-names.html)\n",
+      "documentation_url": "https://docs.bearer.com/reference/rules/java_lang_padding_oracle_encryption_vulnerability",
+      "line_number": 63,
+      "full_filename": "../../OWASP/BenchmarkJava/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00005.java",
+      "filename": "java/org/owasp/benchmark/testcode/BenchmarkTest00005.java",
+      "category_groups": ["PII", "Personal Data"],
+      "source": {
+        "start": 63,
+        "end": 63,
+        "column": {
+          "start": 37,
+          "end": 92
+        }
+      },
+      "sink": {
+        "start": 63,
+        "end": 63,
+        "column": {
+          "start": 37,
+          "end": 92
+        },
+        "content": "javax.crypto.Cipher.getInstance(\"DES/CBC/PKCS5Padding\")"
+      },
+      "parent_line_number": 63,
+      "snippet": "javax.crypto.Cipher.getInstance(\"DES/CBC/PKCS5Padding\")",
+      "fingerprint": "2b05bdeb1248912e33258917421e91ff_0",
+      "old_fingerprint": "1bff95a3cb3020fab82cd9495bf9010c_12",
+      "code_extract": "            javax.crypto.Cipher c = javax.crypto.Cipher.getInstance(\"DES/CBC/PKCS5Padding\");",
+      "severity": "medium"
+    },
+    {
+      "cwe_ids": ["326", "327"],
+      "id": "java_lang_weak_encryption_des",
+      "title": "Weak encryption algorithm (DES) detected.",
+      "description": "## Description\n\nA weak encryption library can lead to data breaches and greater security risk.\n\n## Remediations\nAccording to [OWASP](https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/09-Testing_for_Weak_Cryptography/04-Testing_for_Weak_Encryption), DES (Data Encryption Standard) is considered a weak encryption algorithm and therefore shouldn't be used.\n\n✅ Use stronger encryption algorithms when storing data.\n\n```java\n  Cipher c = Cipher.getInstance(\"AES/CBC/PKCS5Padding\");\n```\n\n## Resources\n- [Java Cipher class](https://docs.oracle.com/en/java/javase/20/docs/api/java.base/javax/crypto/Cipher.html)\n",
+      "documentation_url": "https://docs.bearer.com/reference/rules/java_lang_weak_encryption_des",
+      "line_number": 87,
+      "full_filename": "../../OWASP/BenchmarkJava/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00035.java",
+      "filename": "java/org/owasp/benchmark/testcode/BenchmarkTest00035.java",
+      "category_groups": ["PII", "Personal Data"],
+      "source": {
+        "start": 87,
+        "end": 87,
+        "column": {
+          "start": 29,
+          "end": 45
+        }
+      },
+      "sink": {
+        "start": 87,
+        "end": 87,
+        "column": {
+          "start": 29,
+          "end": 45
+        },
+        "content": "c.doFinal(input)"
+      },
+      "parent_line_number": 87,
+      "snippet": "c.doFinal(input)",
+      "fingerprint": "9163934a23bdb461be27983fa49e0695_0",
+      "old_fingerprint": "47611adbe4c6acbdd6d00c66b06db103_57",
+      "code_extract": "            byte[] result = c.doFinal(input);",
+      "severity": "medium"
+    }
+  ]
+}

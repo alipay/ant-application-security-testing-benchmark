@@ -1,0 +1,215 @@
+{
+  "libraries": [
+    {
+      "name": "javax:javaee-api",
+      "current": "7.0"
+    },
+    {
+      "name": "com.sun.jersey:jersey-servlet",
+      "current": "${version.jersey}"
+    },
+    {
+      "name": "commons-codec:commons-codec",
+      "current": "1.15"
+    },
+    {
+      "name": "commons-dbcp:commons-dbcp",
+      "current": "1.4"
+    },
+    {
+      "name": "commons-io:commons-io",
+      "current": "2.6"
+    },
+    {
+      "name": "commons-lang:commons-lang",
+      "current": "2.6"
+    },
+    {
+      "name": "org.slf4j:slf4j-log4j12",
+      "current": "${version.slf4j}"
+    },
+    {
+      "name": "org.apache.commons:commons-csv",
+      "current": "1.6"
+    },
+    {
+      "name": "org.apache.commons:commons-lang3",
+      "current": "3.8.1"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-core",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-core-api",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-core-constants",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-jdbm-partition",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-jdbm-store",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-ldif-partition",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-protocol-ldap",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-protocol-shared",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.server:apacheds-xdbm-base",
+      "current": "${version.apacheds}"
+    },
+    {
+      "name": "org.apache.directory.shared:shared-ldap",
+      "current": "${version.apache-shared-ldap}"
+    },
+    {
+      "name": "org.apache.directory.shared:shared-ldap-schema",
+      "current": "${version.apache-shared-ldap}"
+    },
+    {
+      "name": "org.apache.directory.shared:shared-ldap-schema-loader",
+      "current": "${version.apache-shared-ldap}"
+    },
+    {
+      "name": "org.apache.directory.shared:shared-ldap-schema-manager",
+      "current": "${version.apache-shared-ldap}"
+    },
+    {
+      "name": "org.apache.httpcomponents:httpclient",
+      "current": "4.5.13"
+    },
+    {
+      "name": "org.apache.httpcomponents:httpcore",
+      "current": "4.4.14"
+    },
+    {
+      "name": "org.bouncycastle:bcprov-jdk15on",
+      "current": "1.69"
+    },
+    {
+      "name": "org.hibernate:hibernate-core",
+      "current": "${version.hibernate}"
+    },
+    {
+      "name": "org.hibernate:hibernate-entitymanager",
+      "current": "${version.hibernate}"
+    },
+    {
+      "name": "org.jdom:jdom2",
+      "current": "2.0.6"
+    },
+    {
+      "name": "asm:asm",
+      "current": "3.3.1"
+    },
+    {
+      "name": "cglib:cglib-nodep",
+      "current": "3.3.0"
+    },
+    {
+      "name": "org.hsqldb:hsqldb",
+      "current": "2.3.6"
+    },
+    {
+      "name": "org.jfree:jcommon",
+      "current": "1.0.24"
+    },
+    {
+      "name": "org.jfree:jfreechart",
+      "current": "1.5.0"
+    },
+    {
+      "name": "org.json:json",
+      "current": "20201115"
+    },
+    {
+      "name": "org.mockito:mockito-core",
+      "current": "1.10.19"
+    },
+    {
+      "name": "org.owasp.esapi:esapi",
+      "current": "2.2.3.0"
+    },
+    {
+      "name": "org.springframework:spring-context",
+      "current": "${version.springframework}"
+    },
+    {
+      "name": "org.springframework:spring-jdbc",
+      "current": "${version.springframework}"
+    },
+    {
+      "name": "org.springframework:spring-tx",
+      "current": "${version.springframework}"
+    },
+    {
+      "name": "org.springframework:spring-web",
+      "current": "${version.springframework}"
+    },
+    {
+      "name": "org.springframework:spring-webmvc",
+      "current": "${version.springframework}"
+    },
+    {
+      "name": "org.yaml:snakeyaml",
+      "current": "1.29"
+    },
+    {
+      "name": "xml-apis:xml-apis",
+      "current": "1.4.01"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "cvss": 4.2,
+      "cwe": "CWE-78",
+      "line": 0,
+      "class": "BenchmarkTest00001.java (0:0)",
+      "vul_id": "00000000000000000000000000000000",
+      "method": "Runtime r = Runtime.getRuntime();",
+      "column": 0,
+      "description": "The application executes Commands directly on the Operating System. If using any user input, it must be sanitized to the maximum, cleaning any unnecessary characters. In general, it is recommended to never use calls to native commands, being recommended the JNI (Java Native Interface) for such low level operations.",
+      "classMessage": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java (0:0)"
+    },
+    {
+      "cvss": 4.2,
+      "cwe": "CWE-327",
+      "line": 0,
+      "class": "BenchmarkTest00002.java (0:0)",
+      "vul_id": "00000000000000000000000000000000",
+      "method": "javax.crypto.Cipher c = javax.crypto.Cipher.getInstance(\"DES/CBC/PKCS5Padding\");",
+      "column": 0,
+      "description": "DES (Data Encryption Standard) is a symmetric key cryptographic algorithm. Its 56-bit key makes it insecure for modern applications, it was developed in 1970, approved as a standard in 1976 and in 1977 the first vulnerability was discovered. Today it can be broken in about 2 days with a modern graphics card.",
+      "classMessage": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java (0:0)",
+      "recomendation": "Whenever possible, the use of DES encryption should be avoided, the recommended encryption is AES (Advanced Encryption Standard) with 256 bits, which has been approved by the American security agency (NSA) for encrypting top secret information."
+    }
+  ],
+  "none": 0,
+  "low": 0,
+  "medium": 0,
+  "high": 0,
+  "critical": 0,
+  "total": 0,
+  "sast": {
+    "name": "org.owasp:benchmark",
+    "version": "1.2",
+    "averageCvss": 0,
+    "securityScore": 0,
+    "size": "0 Bytes",
+    "numberOfLines": 0
+  }
+}

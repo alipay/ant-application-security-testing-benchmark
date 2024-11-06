@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BugCollection sequence="0" release="" analysisTimestamp="0" version="4.2.3" timestamp="0">
+    <Project projectName="OWASP Benchmark Project">
+        <Jar>/somepath/Benchmark/target/classes</Jar>
+        <AuxClasspathEntry>/root/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar</AuxClasspathEntry>
+        <AuxClasspathEntry>/root/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar</AuxClasspathEntry>
+        <Plugin id="com.h3xstream.findsecbugs" enabled="true" />
+        <SrcDir>/somepath/Benchmark/src/main/java</SrcDir>
+        <SrcDir>/somepath/Benchmark/target/generated-sources/annotations</SrcDir>
+        <WrkDir>/somepath/Benchmark/target</WrkDir>
+    </Project>
+    <BugInstance instanceOccurrenceNum="0" instanceHash="00000000000000000000000000000000" cweid="79" rank="12" abbrev="SECXSS2" category="SECURITY" priority="2" type="XSS_SERVLET" instanceOccurrenceMax="0">
+        <ShortMessage>Potential XSS in Servlet</ShortMessage>
+        <LongMessage>This use of java/io/PrintWriter.println(Ljava/lang/String;)V could be vulnerable to XSS in the
+            Servlet
+        </LongMessage>
+        <Class classname="org.owasp.benchmark.testcode.BenchmarkTest00001" primary="true">
+            <SourceLine classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="28" end="115" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java">
+                <Message>At BenchmarkTest00001.java:[lines 28-115]</Message>
+            </SourceLine>
+            <Message>In class org.owasp.benchmark.testcode.BenchmarkTest00001</Message>
+        </Class>
+        <Method isStatic="false" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" name="doPost" primary="true">
+            <SourceLine endBytecode="1060" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="41" end="101" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="0" />
+            <Message>In method org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(HttpServletRequest,
+                HttpServletResponse)
+            </Message>
+        </Method>
+        <SourceLine endBytecode="259" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="74" end="74" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="259" primary="true">
+            <Message>At BenchmarkTest00001.java:[line 74]</Message>
+        </SourceLine>
+        <String role="Sink method" value="java/io/PrintWriter.println(Ljava/lang/String;)V">
+            <Message>Sink method java/io/PrintWriter.println(Ljava/lang/String;)V</Message>
+        </String>
+        <String role="Sink parameter" value="0">
+            <Message>Sink parameter 0</Message>
+        </String>
+        <String role="Unknown source" value="javax/naming/directory/Attribute.get()Ljava/lang/Object;">
+            <Message>Unknown source javax/naming/directory/Attribute.get()Ljava/lang/Object;</Message>
+        </String>
+        <SourceLine endBytecode="238" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="77" end="77" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="238">
+            <Message>At BenchmarkTest00001.java:[line 77]</Message>
+        </SourceLine>
+        <SourceLine endBytecode="248" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="80" end="80" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="248">
+            <Message>At BenchmarkTest00001.java:[line 80]</Message>
+        </SourceLine>
+    </BugInstance>
+    <BugInstance instanceOccurrenceNum='0' instanceHash='00000000000000000000000000000000' cweid='89' rank='10' abbrev='SECSQLIJDBC' category='SECURITY' priority='1' type='SQL_INJECTION_JDBC' instanceOccurrenceMax='0'>
+        <ShortMessage>Potential JDBC Injection</ShortMessage>
+        <LongMessage>This use of java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement; can be
+            vulnerable to SQL injection (with JDBC)
+        </LongMessage>
+        <Class classname='org.owasp.benchmark.testcode.BenchmarkTest00002' primary='true'>
+            <SourceLine classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='28' end='67' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java'>
+                <Message>At BenchmarkTest00002.java:[lines 28-67]</Message>
+            </SourceLine>
+            <Message>In class org.owasp.benchmark.testcode.BenchmarkTest00002</Message>
+        </Class>
+        <Method isStatic='false' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' signature='(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V' name='doPost' primary='true'>
+            <SourceLine endBytecode='334' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='42' end='67' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java' startBytecode='0'></SourceLine>
+            <Message>In method org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(HttpServletRequest,
+                HttpServletResponse)
+            </Message>
+        </Method>
+        <SourceLine endBytecode='73' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='57' end='57' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java' startBytecode='73' primary='true'>
+            <Message>At BenchmarkTest00002.java:[line 57]</Message>
+        </SourceLine>
+        <String role='Sink method' value='java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;'>
+            <Message>Sink method java/sql/Connection.prepareCall(Ljava/lang/String;)Ljava/sql/CallableStatement;
+            </Message>
+        </String>
+        <String role='Sink parameter' value='0'>
+            <Message>Sink parameter 0</Message>
+        </String>
+        <String role='Tainted source' value='java/net/URLDecoder.decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;'>
+            <Message>Tainted source java/net/URLDecoder.decode(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+            </Message>
+        </String>
+        <String role='Tainted source' value='javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;'>
+            <Message>Tainted source
+                javax/servlet/http/HttpServletRequest.getHeader(Ljava/lang/String;)Ljava/lang/String;
+            </Message>
+        </String>
+        <SourceLine endBytecode='25' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='46' end='46' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java' startBytecode='25'>
+            <Message>At BenchmarkTest00002.java:[line 46]</Message>
+        </SourceLine>
+        <SourceLine endBytecode='34' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='50' end='50' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java' startBytecode='34'>
+            <Message>At BenchmarkTest00002.java:[line 50]</Message>
+        </SourceLine>
+        <SourceLine endBytecode='51' classname='org.owasp.benchmark.testcode.BenchmarkTest00002' start='52' end='52' sourcepath='org/owasp/benchmark/testcode/BenchmarkTest00002.java' sourcefile='BenchmarkTest00002.java' startBytecode='51'>
+            <Message>At BenchmarkTest00002.java:[line 52]</Message>
+        </SourceLine>
+    </BugInstance>
+    <BugCategory category="SECURITY">
+        <Description>Security</Description>
+    </BugCategory>
+    <BugCode abbrev="SECPR">
+        <Description>Predictable Pseudo Random Generator</Description>
+    </BugCode>
+    <BugCode abbrev="SECLDAPI">
+        <Description>LDAP Injection</Description>
+    </BugCode>
+    <BugCode abbrev="SECSHR">
+        <Description>Referer Header</Description>
+    </BugCode>
+    <BugCode abbrev="PT">
+        <Description>Path traversal</Description>
+    </BugCode>
+    <BugCode abbrev="SECHOC">
+        <Description>Cookie without the HttpOnly flag</Description>
+    </BugCode>
+    <BugCode cweid="113" abbrev="HRS">
+        <Description>HTTP Response splitting vulnerability</Description>
+    </BugCode>
+    <BugCode abbrev="SECSQLIHIB">
+        <Description>HQL Injection</Description>
+    </BugCode>
+    <BugCode abbrev="SECSQLIJDBC">
+        <Description>SQL Injection (JDBC)</Description>
+    </BugCode>
+    <BugCode abbrev="SECXPI">
+        <Description>XPath Injection</Description>
+    </BugCode>
+    <BugCode abbrev="SECCU">
+        <Description>Potentially Sensitive Data in Cookie</Description>
+    </BugCode>
+    <BugCode abbrev="ERRMSG">
+        <Description>Information Exposure Through An Error Message</Description>
+    </BugCode>
+    <BugCode abbrev="STAIV">
+        <Description>Static IV</Description>
+    </BugCode>
+    <BugCode abbrev="SECXSS2">
+        <Description>Potential XSS in Servlet</Description>
+    </BugCode>
+    <BugCode abbrev="SECTBV">
+        <Description>Trust Boundary Violation</Description>
+    </BugCode>
+    <BugCode abbrev="SECTDU">
+        <Description>DESede</Description>
+    </BugCode>
+    <BugCode abbrev="CIPINT">
+        <Description>Cipher with no integrity</Description>
+    </BugCode>
+    <BugCode abbrev="PADORA">
+        <Description>Cipher is susceptible to padding oracle attack</Description>
+    </BugCode>
+    <BugCode abbrev="SECXXEDOC">
+        <Description>XXE Vulnerability using DocumentBuilder</Description>
+    </BugCode>
+    <BugCode abbrev="SECXXETFXSLT">
+        <Description>XXE Vulnerability using XSLT in TransformerFactory</Description>
+    </BugCode>
+    <BugCode abbrev="SECMD5">
+        <Description>MD2, MD4 and MD5 are weak hash functions</Description>
+    </BugCode>
+    <BugCode abbrev="SECOPFP">
+        <Description>Overly permissive file permission</Description>
+    </BugCode>
+    <BugCode abbrev="SECCI">
+        <Description>Command Injection</Description>
+    </BugCode>
+    <BugCode abbrev="Dm">
+        <Description>Dubious method used</Description>
+    </BugCode>
+    <BugCode abbrev="SECHCP">
+        <Description>Hard coded password</Description>
+    </BugCode>
+    <BugCode abbrev="SECXXETFDTD">
+        <Description>XXE Vulnerability using TransformerFactory</Description>
+    </BugCode>
+    <BugCode abbrev="SECSHA1">
+        <Description>SHA-1 is a weak hash function</Description>
+    </BugCode>
+    <BugCode abbrev="SECSSQ">
+        <Description>Query String</Description>
+    </BugCode>
+    <BugCode abbrev="SQL">
+        <Description>Potential SQL Problem</Description>
+    </BugCode>
+    <BugCode abbrev="SECDU">
+        <Description>DES</Description>
+    </BugCode>
+    <BugCode abbrev="SECUNI">
+        <Description>Improper handling of Unicode transformations</Description>
+    </BugCode>
+    <BugCode abbrev="SECSC">
+        <Description>Spring Endpoint</Description>
+    </BugCode>
+    <BugCode abbrev="SECPTO">
+        <Description>Potential Path Traversal (File Write)</Description>
+    </BugCode>
+    <BugCode abbrev="SECSH">
+        <Description>HTTP Headers Untrusted</Description>
+    </BugCode>
+    <BugCode abbrev="SECSQLISPRJDBC">
+        <Description>SQL Injection (Spring JDBC)</Description>
+    </BugCode>
+    <BugCode abbrev="SECHRS">
+        <Description>HTTP Response Splitting</Description>
+    </BugCode>
+    <BugCode abbrev="SECIC">
+        <Description>Cookie without the secure flag</Description>
+    </BugCode>
+    <BugCode cweid="79" abbrev="XSS">
+        <Description>Cross site scripting vulnerability</Description>
+    </BugCode>
+    <BugCode abbrev="SECHPP">
+        <Description>HTTP Parameter Pollution</Description>
+    </BugCode>
+    <BugCode abbrev="SECPTI">
+        <Description>Potential Path Traversal (file read)</Description>
+    </BugCode>
+    <BugCode abbrev="SECSP">
+        <Description>Servlet Parameter</Description>
+    </BugCode>
+    <Errors missingClasses="0" errors="0" />
+    <ClassFeatures />
+    <History />
+</BugCollection>

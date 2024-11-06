@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xml-report name="AppScan Report" technology="DAST" xmlExportVersion="2.6">
+    <scan-information>
+        <product-name>HCL AppScan Standard</product-name>
+        <product-version>10.0.6</product-version>
+    </scan-information>
+    <scan-configuration>
+        <starting-url>https://localhost:8443/benchmark</starting-url>
+    </scan-configuration>
+    <scan-summary>
+        <scan-Duration>01:23:45.6789012</scan-Duration>
+    </scan-summary>
+    <url-group>
+        <item id="1111111111">
+            <name>https://localhost:8443/benchmark/sqli-00/BenchmarkTest00001</name>
+            <issue-type>attSqlInjectionChecks</issue-type>
+        </item>
+        <item id="2222222222">
+            <name>https://localhost:8443/benchmark/sqli-00/BenchmarkTest00002</name>
+            <issue-type>attSqlInjectionChecks</issue-type>
+        </item>
+        <item id="3333333333">
+            <name>https://localhost:8443/</name>
+            <issue-type>attSameSiteCookie</issue-type>
+        </item>
+    </url-group>
+    <issue-group total="4">
+        <item id="1234567890" id-v2="-1234567890">
+            <cwe>89</cwe>
+            <issue-type>
+                <ref>attSqlInjectionChecks</ref>
+            </issue-type>
+            <url>
+                <ref>1111111111</ref>
+            </url>
+            <variant-group>
+                <item id="1111111111">
+                    <test-http-traffic>GET /benchmark/sqli-00/BenchmarkTest00001.html?BenchmarkTest00001=SafeText
+                        HTTP/1.1
+                    </test-http-traffic>
+                </item>
+                <item id="2222222222">
+                    <test-http-traffic>POST /benchmark/sqli-00/BenchmarkTest00002 HTTP/1.1</test-http-traffic>
+                </item>
+            </variant-group>
+        </item>
+        <item id="2345678901" id-v2="-2345678901">
+            <cwe>614</cwe>
+            <issue-type>
+                <ref>attRespCookieNotSecureSSL</ref>
+            </issue-type>
+            <url>
+                <ref>3333333333</ref>
+            </url>
+            <variant-group>
+                <item id="3333333333">
+                    <test-http-traffic>POST /benchmark/securecookie-00/BenchmarkTest00300 HTTP/1.1</test-http-traffic>
+                </item>
+                <item id="4444444444">
+                    <test-http-traffic>POST /benchmark/securecookie-00/BenchmarkTest00348 HTTP/1.1</test-http-traffic>
+                </item>
+            </variant-group>
+        </item>
+    </issue-group>
+</xml-report>

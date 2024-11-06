@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "key": "AXv-ikHUnNrc2VzNo8Sp",
+      "rule": "java:S5542",
+      "severity": "CRITICAL",
+      "component": "benchmark:src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java",
+      "project": "benchmark",
+      "line": 0,
+      "hash": "00000000000000000000000000000000",
+      "textRange": {
+        "startLine": 0,
+        "endLine": 0,
+        "startOffset": 0,
+        "endOffset": 0
+      },
+      "flows": [],
+      "status": "OPEN",
+      "message": "Use secure mode and padding scheme.",
+      "effort": "45min",
+      "debt": "45min",
+      "author": "someone@somewhere.com",
+      "tags": [
+        "cwe",
+        "owasp-a3",
+        "owasp-a6",
+        "owasp-m5",
+        "privacy",
+        "sans-top25-porous"
+      ],
+      "creationDate": "1970-01-01T01:01:01+0000",
+      "updateDate": "1970-01-01T01:01:01+0000",
+      "type": "VULNERABILITY",
+      "scope": "MAIN"
+    }
+  ],
+  "hotspots": [
+    {
+      "key": "AXv-ikHwnNrc2VzNo8T3",
+      "component": "benchmark:src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java",
+      "project": "benchmark",
+      "securityCategory": "sql-injection",
+      "vulnerabilityProbability": "HIGH",
+      "status": "TO_REVIEW",
+      "line": 0,
+      "message": "Make sure using a dynamically formatted SQL query is safe here.",
+      "author": "someone@somewhere.com",
+      "creationDate": "1970-01-01T01:01:01+0000",
+      "updateDate": "1970-01-01T01:01:01+0000"
+    }
+  ]
+}

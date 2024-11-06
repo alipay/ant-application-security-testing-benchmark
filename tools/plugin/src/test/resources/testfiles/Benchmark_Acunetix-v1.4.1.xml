@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<acunetix-360 generated="01/01/1970 02:02 PM">
+    <target>
+        <scan-id>00000000000000000000000000000000</scan-id>
+        <url>https://localhost:8443/benchmark/</url>
+        <initiated>01/01/1970 01:01 AM</initiated>
+        <duration>1.23:45:67.0123456</duration>
+    </target>
+    <vulnerabilities>
+        <vulnerability>
+            <LookupId>00000000-0000-0000-0000-000000000000</LookupId>
+            <url>https://localhost:8443/benchmark/cmdi-01/BenchmarkTest00001</url>
+            <type>CommandInjection</type>
+            <name>Command Injection</name>
+            <severity>Critical</severity>
+            <certainty>100</certainty>
+            <confirmed>True</confirmed>
+            <state>Revived</state>
+            <FirstSeenDate>1/01/1970 1:01:01 PM -01:00</FirstSeenDate>
+            <LastSeenDate>1/01/1970 1:01:01 PM -01:00</LastSeenDate>
+            <classification>
+                <cwe>78</cwe>
+            </classification>
+        </vulnerability>
+        <vulnerability>
+            <LookupId>00000000-0000-0000-0000-000000000000</LookupId>
+            <url>https://localhost:8443/benchmark/xss-01/BenchmarkTest00002</url>
+            <type>Cross-siteScripting</type>
+            <name>Cross-site Scripting</name>
+            <severity>High</severity>
+            <certainty>100</certainty>
+            <confirmed>True</confirmed>
+            <state>Revived</state>
+            <FirstSeenDate>1/01/1970 1:01:01 PM -01:00</FirstSeenDate>
+            <LastSeenDate>1/01/1970 1:01:01 PM -01:00</LastSeenDate>
+            <classification>
+                <cwe>79</cwe>
+            </classification>
+        </vulnerability>
+    </vulnerabilities>
+</acunetix-360>

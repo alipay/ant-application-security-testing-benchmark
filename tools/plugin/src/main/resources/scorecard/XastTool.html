@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsmind@0.8.3/style/jsmind.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jsmind@0.8.3/es6/jsmind.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        #jsmind_container {
+            height: 700px;
+        }
+
+        body {
+            margin: 0px;
+            /* padding: 0 0 120px 0; */
+        }
+
+        main {
+            float: left;
+            width: 100%;
+            padding: 10px 0px;
+        }
+
+        main ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        main ul li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 10%;
+            padding: 10px;
+        }
+
+        .header {
+            width: 100%;
+            height: 40px;
+            background-color: #000;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: fixed;
+            top: 0;
+        }
+
+
+        .child-item {
+            color: #FFF;
+            display: inline-block;
+            width: auto;
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .child-2 {
+            margin-left: auto;
+        }
+
+        .child-item:not(:first-child :nth-child(2)) {
+            margin: 0px 12px;
+        }
+
+        .child-item:not(:first-child) {
+            color: #aaa;
+        }
+
+        section {
+            padding: 80px 20% 0;
+        }
+
+        .table {
+            width: 100%;
+        }
+
+        .xmind {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            margin-bottom: 50px;
+        }
+
+        .importance {
+            padding: 10px;
+        }
+
+        a {
+            color: inherit;
+            /* 让链接颜色继承父元素的颜色 */
+            text-decoration: none;
+            /* 移除下划线 */
+            background-color: transparent;
+            /* 清除背景颜色 */
+        }
+
+        a:hover,
+        a:active,
+        a:focus {
+            color: inherit;
+            /* 将悬浮、点击、聚焦时的颜色也设为继承父元素的颜色 */
+            text-decoration: none;
+            /* 在悬浮、点击、聚焦时移除下划线 */
+            background-color: transparent;
+            /* 悬浮、点击、聚焦时的背景颜色也设为透明 */
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="child-item child-1">xAST评价体系</div>
+    <div class="child-item child-2"><a href="https://xastbenchmark.github.io/">Home</a></div>
+    <div class="child-item child-5"><a
+            href=" https://github.com/alipay/ant-application-security-testing-benchmark">Github</a></div>
+</header>
+<section>
+    <article>
+        <h2>xAST评价结果-${工具名}(${工具类型})</h2>
+        <p>针对应用安全测试领域（AST）缺乏有效衡量技术能力标准的业界痛点， 蚂蚁安全团队联合浙江大学网络空间安全学院的20余位专家学者， 共同设计了xAST评价体系及其测试样本套件Benchmark。以下是
+            ${工具名} 工具在 xAST XX 版本的测试结果，根据准确率、召回率、评价项达成率和评价项具体达成情况，可以评估扫描工具的引擎能力</p>
+    </article>
+    <main>
+        <h2>统计数据</h2>
+        <ul>
+            <hr>
+            <li class="importance">
+                <div>测试用例个数</div>
+                <div>${case总数}</div>
+            </li>
+            <hr>
+            <li class="importance">
+                <div>TP</div>
+                <div>${TP}</div>
+            </li>
+            <hr>
+            <li>
+                <div>FP</div>
+                <div>${FP}</div>
+            </li>
+            <hr>
+            <li>
+                <div>TN</div>
+                <div>${TN}</div>
+            </li>
+            <hr>
+            <li>
+                <div>FN</div>
+                <div>${FN}</div>
+            </li>
+            <hr>
+            <li>
+                <div>准确率</div>
+                <div>${准确率}</div>
+            </li>
+            <hr>
+            <li>
+                <div>召回率</div>
+                <div>${召回率}</div>
+            </li>
+            <hr>
+            <li>
+                <div>评价项达成率</div>
+                <div>${评价项达成率}</div>
+                <!-- <div>评价项达成数 / 评价项总个数 = 保留两位小数的百分数</div> -->
+            </li>
+            <hr>
+            <li>注1:TP = 测试用例实际有漏洞，被工具检出有漏洞</li>
+            <li>注2:评价项达成率 = 评价项达成数 / 评价项总个数</li>
+            <!--                 <li><a href="https://ant-design.antgroup.com/components/table-cn">下载原始结果 = file://文件的绝对路径</a></li>
+             -->            </ul>
+        <h2>引擎评价项达成详情</h2>
+        <div id="jsmind_container"></div>
+    </main>
+</section>
+<script type="text/javascript">
+    var _jm = null;
+    // var list = `[{"id": "root", "isroot": true, "topic": "X科技有限公司"}, {"id": "sub1", "parentid": "root", "topic": "国际部"}, {"id": "sub11", "parentid": "sub1", "topic": "美国国际部"}, {"id": "sub12", "parentid": "sub1", "topic": "德国国际部"}, {"id": "sub13", "parentid": "sub1", "topic": "俄罗斯国际部"}, {"id": "sub2", "parentid": "root", "topic": "营销部"}, {"id": "sub21", "parentid": "sub2", "topic": "商务中心"}, {"id": "sub22", "parentid": "sub2", "topic": "销售部"}, {"id": "sub23", "parentid": "sub2", "topic": "售后服务部"}, {"id": "sub3", "parentid": "root", "topic": "监察部"}, {"id": "sub4", "parentid": "root", "topic": "质管部"}, {"id": "sub41", "parentid": "sub4", "topic": "质管部"}, {"id": "sub42", "parentid": "sub4", "topic": "质检部"}]`
+    var list = `${xmind_data}`
+    var data = JSON.parse(list);
+    function load_jsmind() {
+        var mind = {
+            meta: {
+                name: '公司组织架构图',
+                author: 'poya',
+                version: '0.2'
+            },
+            format: 'node_array',
+            data: data,
+        };
+        var options = {
+            container: 'jsmind_container',
+            editable: true,
+            theme: 'primary',
+            shortcut: {
+                handles: {
+                    test: function (j, e) {
+                        console.log(j);
+                    }
+                },
+                mapping: {
+                    test: 89
+                }
+            }
+        }
+        _jm = jsMind.show(options, mind);
+        // jm.set_readonly(true);
+        // var mind_data = jm.get_data();
+        // alert(mind_data);
+    }
+
+    function load_file(fi) {
+        var files = fi.files;
+        if (files.length > 0) {
+            var file_data = files[0];
+            jsMind.util.file.read(file_data, function (freemind_data, jsmind_name) {
+                var mind = jsmind_data;
+                if (!!mind) {
+                    _jm.show(mind);
+                } else {
+                    console.error('can not open this file as mindmap');
+                }
+            });
+        }
+    }
+
+    function save_nodetree() {
+        var mind_data = _jm.get_data('node_tree');
+        console.log(mind_data);
+    }
+
+    function replay() {
+        var shell = _jm.shell;
+        if (!!shell) {
+            shell.replay();
+        }
+    }
+
+    load_jsmind();
+</script>
+</body>
+
+</html>

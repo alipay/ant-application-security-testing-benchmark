@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<OWASPZAPReport version="D-1970-01-01" generated="Thu, 01 Jan 1970 01:01:01">
+    <site name="https://localhost:8443" host="localhost" port="8443" ssl="true">
+        <alerts>
+            <alertitem>
+                <pluginid>40012</pluginid>
+                <alert>Cross Site Scripting (Reflected)</alert>
+                <name>Cross Site Scripting (Reflected)</name>
+                <riskcode>3</riskcode>
+                <confidence>2</confidence>
+                <riskdesc>High (Medium)</riskdesc>
+                <desc>Lorem Ipsum</desc>
+                <instances>
+                    <instance>
+                        <uri>https://localhost:8443/benchmark/xss-01/BenchmarkTest00001</uri>
+                        <method>POST</method>
+                        <param>BenchmarkTest00001</param>
+                        <attack>&lt;script&gt;alert(1);&lt;/script&gt;</attack>
+                        <evidence>&lt;script&gt;alert(1);&lt;/script&gt;</evidence>
+                    </instance>
+                </instances>
+                <count>1</count>
+                <solution>Lorem Ipsum</solution>
+                <reference>&lt;p&gt;http://projects.webappsec.org/Cross-Site-Scripting&lt;/p&gt;&lt;p&gt;http://cwe.mitre.org/data/definitions/79.html&lt;/p&gt;</reference>
+                <cweid>79</cweid>
+                <wascid>8</wascid>
+                <sourceid>1</sourceid>
+            </alertitem>
+            <alertitem>
+                <pluginid>40018</pluginid>
+                <alert>SQL Injection - Hypersonic SQL</alert>
+                <name>SQL Injection - Hypersonic SQL</name>
+                <riskcode>3</riskcode>
+                <confidence>2</confidence>
+                <riskdesc>High (Medium)</riskdesc>
+                <desc>Lorem Ipsum</desc>
+                <instances>
+                    <instance>
+                        <uri>https://localhost:8443/benchmark/sqli-01/BenchmarkTest00002</uri>
+                        <method>POST</method>
+                        <param>BenchmarkTest00002</param>
+                        <attack>&apos;</attack>
+                        <evidence>org.hsql</evidence>
+                    </instance>
+                </instances>
+                <count>1</count>
+                <solution>Lorem Ipsum</solution>
+                <otherinfo>Lorem Ipsum</otherinfo>
+                <reference>&lt;p&gt;https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html&lt;/p&gt;</reference>
+                <cweid>89</cweid>
+                <wascid>19</wascid>
+                <sourceid>1</sourceid>
+            </alertitem>
+        </alerts>
+        <portscan></portscan>
+    </site>
+</OWASPZAPReport>

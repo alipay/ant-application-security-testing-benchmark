@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<detailedreport xmlns:xsi="http&#x3a;&#x2f;&#x2f;www.w3.org&#x2f;2001&#x2f;XMLSchema-instance" xmlns="https&#x3a;&#x2f;&#x2f;www.veracode.com&#x2f;schema&#x2f;reports&#x2f;export&#x2f;1.0" xsi:schemaLocation="https&#x3a;&#x2f;&#x2f;www.veracode.com&#x2f;schema&#x2f;reports&#x2f;export&#x2f;1.0 https&#x3a;&#x2f;&#x2f;analysiscenter.veracode.com&#x2f;resource&#x2f;detailedreport.xsd">
+   <severity level="5">
+      <category categoryid="18" categoryname="Command or Argument Injection" pcirelated="true">
+         <desc>
+            <para text="Command or argument injection vulnerabilities occur when data enters an application from an untrusted source and is used to dynamically construct and execute a command.  In the case of OS command injection, an attacker may be able to either alter the command executed by the application or append additional commands.  In the case of argument injection, the attacker may influence the behavior of the program in other ways, for example, changing the destination of an outbound network request or injecting additional commands into an argument or parameter. The command is typically executed with the privileges of the executing process and gives an attacker a privilege or capability that he would not otherwise have."/>
+         </desc>
+         <recommendations>
+            <para text="Careful handling of all untrusted data is critical in preventing injection attacks.   Using one or more of the following techniques provides defense-in-depth and minimizes the likelihood of an vulnerability.">
+               <bulletitem text="If possible, use library calls rather than external processes to recreate the desired functionality."/>
+               <bulletitem text="Validate user-supplied input using positive filters &#x28;white lists&#x29; to ensure that it conforms to the expected format, using centralized data validation routines when possible. "/>
+               <bulletitem text="Select safe API routines.  Some APIs that execute system commands take an array of strings as input rather than a single string, which protects against some forms of command injection by ensuring that a user-supplied argument cannot be interpreted as part of the command."/>
+            </para>
+         </recommendations>
+         <cwe cweid="78" cwename="Improper Neutralization of Special Elements used in an OS Command &#x28;&#x27;OS Command Injection&#x27;&#x29;" pcirelated="true" owasp="1347" sans="864" certc="1165" certcpp="875" certjava="1134">
+            <description>
+               <text text="This call contains a command injection flaw.  The argument to the function is constructed using untrusted input.  If an attacker is allowed to specify all or part of the command, it may be possible to execute commands on the server with the privileges of the executing process.  The level of exposure depends on the effectiveness of input validation routines, if any."/>
+            </description>
+            <staticflaws>
+               <flaw severity="5" categoryname="Improper Neutralization of Special Elements used in an OS Command &#x28;&#x27;OS Command Injection&#x27;&#x29;" count="1" issueid="213" module="benchmark.war" type="java.lang.ProcessBuilder.start" description="This call to java.lang.ProcessBuilder.start&#x28;&#x29; contains a command injection flaw. The argument to the function is constructed using untrusted input. If an attacker is allowed to specify all or part of the command, it may be possible to execute commands on the server with the privileges of the executing process. The level of exposure depends on the effectiveness of input validation routines, if any. start&#x28;&#x29; was called on the pb object, which contains tainted data. The tainted data originated from an earlier call to javax.servlet.http.HttpServletRequest.getHeader.&#xd;&#xa;&#xd;&#xa;Validate all untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible. When using blocklists, be sure that the sanitizing routine performs a sufficient number of iterations to remove all instances of disallowed characters. Most APIs that execute system commands also have a &#x22;safe&#x22; version of the method that takes an array of strings as input rather than a single string, which protects against some forms of command injection.&#xd;&#xa;&#xd;&#xa;References&#x3a; &#xd;&#xa;CWE &#x28;https&#x3a;&#x2f;&#x2f;cwe.mitre.org&#x2f;data&#x2f;definitions&#x2f;78.html&#x29; &#xd;&#xa;OWASP &#x28;https&#x3a;&#x2f;&#x2f;owasp.org&#x2f;www-community&#x2f;attacks&#x2f;Command_Injection&#x29;&#xd;&#xa;&#xd;&#xa;" note="" cweid="78" remediationeffort="3" exploitLevel="2" categoryid="18" pcirelated="true" date_first_occurrence="2023-02-13 13&#x3a;42&#x3a;32 UTC" remediation_status="New" cia_impact="ccp" grace_period_expires="2023-02-13 15&#x3a;19&#x3a;13 UTC" affects_policy_compliance="true" mitigation_status="none" mitigation_status_desc="Not Mitigated" sourcefile="BenchmarkTest00006.java" line="69" sourcefilepath="org&#x2f;owasp&#x2f;benchmark&#x2f;testcode&#x2f;" scope="org.owasp.benchmark.testcode.BenchmarkTest00006" functionprototype="void doPost&#x28;javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse&#x29;" functionrelativelocation="83">
+                  <exploitability_adjustments>
+                     <exploitability_adjustment score_adjustment="1">
+                        <note>This source of the tainted data is an external web request.</note>
+                     </exploitability_adjustment>
+                  </exploitability_adjustments>
+               </flaw>
+               <flaw severity="5" categoryname="Improper Neutralization of Special Elements used in an OS Command &#x28;&#x27;OS Command Injection&#x27;&#x29;" count="1" issueid="212" module="benchmark.war" type="java.lang.Runtime.exec" description="This call to java.lang.Runtime.exec&#x28;&#x29; contains a command injection flaw. The argument to the function is constructed using untrusted input. If an attacker is allowed to specify all or part of the command, it may be possible to execute commands on the server with the privileges of the executing process. The level of exposure depends on the effectiveness of input validation routines, if any. The first argument to exec&#x28;&#x29; contains tainted data from the variable args. The tainted data originated from an earlier call to javax.servlet.http.HttpServletRequest.getHeader.&#xd;&#xa;&#xd;&#xa;Validate all untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible. When using blocklists, be sure that the sanitizing routine performs a sufficient number of iterations to remove all instances of disallowed characters. Most APIs that execute system commands also have a &#x22;safe&#x22; version of the method that takes an array of strings as input rather than a single string, which protects against some forms of command injection.&#xd;&#xa;&#xd;&#xa;References&#x3a; &#xd;&#xa;CWE &#x28;https&#x3a;&#x2f;&#x2f;cwe.mitre.org&#x2f;data&#x2f;definitions&#x2f;78.html&#x29; &#xd;&#xa;OWASP &#x28;https&#x3a;&#x2f;&#x2f;owasp.org&#x2f;www-community&#x2f;attacks&#x2f;Command_Injection&#x29;&#xd;&#xa;&#xd;&#xa;" note="" cweid="78" remediationeffort="3" exploitLevel="2" categoryid="18" pcirelated="true" date_first_occurrence="2023-02-13 13&#x3a;42&#x3a;32 UTC" remediation_status="New" cia_impact="ccp" grace_period_expires="2023-02-13 15&#x3a;19&#x3a;13 UTC" affects_policy_compliance="true" mitigation_status="none" mitigation_status_desc="Not Mitigated" sourcefile="BenchmarkTest00007.java" line="61" sourcefilepath="org&#x2f;owasp&#x2f;benchmark&#x2f;testcode&#x2f;" scope="org.owasp.benchmark.testcode.BenchmarkTest00007" functionprototype="void doPost&#x28;javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse&#x29;" functionrelativelocation="65">
+                  <exploitability_adjustments>
+                     <exploitability_adjustment score_adjustment="1">
+                        <note>This source of the tainted data is an external web request.</note>
+                     </exploitability_adjustment>
+                  </exploitability_adjustments>
+               </flaw>
+            </staticflaws>
+         </cwe>
+      </category>
+   </severity>
+   <severity level="4">
+      <category categoryid="19" categoryname="SQL Injection" pcirelated="true">
+         <desc>
+            <para text="SQL injection vulnerabilities occur when data enters an application from an untrusted source and is used to dynamically construct a SQL query.  This allows an attacker to manipulate database queries in order to access, modify, or delete arbitrary data.  Depending on the platform, database type, and configuration, it may also be possible to execute administrative operations on the database, access the filesystem, or execute arbitrary system commands.  SQL injection attacks can also be used to subvert authentication and authorization schemes, which would enable an attacker to gain privileged access to restricted portions of the application."/>
+         </desc>
+         <recommendations>
+            <para text="Several techniques can be used to prevent SQL injection attacks. These techniques complement each other and address security at different points in the application. Using multiple techniques provides defense-in-depth and minimizes the likelihood of a SQL injection vulnerability.">
+               <bulletitem text="Use parameterized prepared statements rather than dynamically constructing SQL queries.  This will prevent the database from interpreting the contents of bind variables as part of the query and is the most effective defense against SQL injection."/>
+               <bulletitem text="Validate user-supplied input using positive filters &#x28;white lists&#x29; to ensure that it conforms to the expected format, using centralized data validation routines when possible. "/>
+               <bulletitem text="Normalize all user-supplied data before applying filters or regular expressions, or submitting the data to a database. This means that all URL-encoded &#x28;&#x25;xx&#x29;, HTML-encoded &#x28;&#x26;&#x23;xx&#x3b;&#x29;, or other encoding schemes should be reduced to the internal character representation expected by the application. This prevents attackers from using alternate encoding schemes to bypass filters."/>
+               <bulletitem text="When using database abstraction libraries such as Hibernate, do not assume that all methods exposed by the API will automatically prevent SQL injection attacks.  Most libraries contain methods that pass arbitrary queries to the database in an unsafe manner."/>
+            </para>
+         </recommendations>
+         <cwe cweid="89" cwename="Improper Neutralization of Special Elements used in an SQL Command &#x28;&#x27;SQL Injection&#x27;&#x29;" pcirelated="true" owasp="1347" sans="864">
+            <description>
+               <text text="This database query contains a SQL injection flaw.  The function call constructs a dynamic SQL query using a variable derived from untrusted input.  An attacker could exploit this flaw to execute arbitrary SQL queries against the database."/>
+            </description>
+            <staticflaws>
+               <flaw severity="4" categoryname="Improper Neutralization of Special Elements used in an SQL Command &#x28;&#x27;SQL Injection&#x27;&#x29;" count="1" issueid="642" module="benchmark.war" type="java.sql.PreparedStatement.executeQuery" description="This database query contains a SQL injection flaw. The call to java.sql.PreparedStatement.executeQuery&#x28;&#x29; constructs a dynamic SQL query using a variable derived from untrusted input. An attacker could exploit this flaw to execute arbitrary SQL queries against the database. executeQuery&#x28;&#x29; was called on the statement object, which contains tainted data. The tainted data originated from an earlier call to javax.servlet.http.HttpServletRequest.getHeader.&#xd;&#xa;&#xd;&#xa;Avoid dynamically constructing SQL queries. Instead, use parameterized prepared statements to prevent the database from interpreting the contents of bind variables as part of the query. Always validate untrusted input to ensure that it conforms to the expected format, using centralized data validation routines when possible.&#xd;&#xa;&#xd;&#xa;References&#x3a; &#xd;&#xa;CWE &#x28;https&#x3a;&#x2f;&#x2f;cwe.mitre.org&#x2f;data&#x2f;definitions&#x2f;89.html&#x29; &#xd;&#xa;OWASP &#x28;https&#x3a;&#x2f;&#x2f;owasp.org&#x2f;www-community&#x2f;attacks&#x2f;SQL_Injection&#x29;&#xd;&#xa;&#xd;&#xa;" note="" cweid="89" remediationeffort="3" exploitLevel="2" categoryid="19" pcirelated="true" date_first_occurrence="2023-02-13 13&#x3a;42&#x3a;32 UTC" remediation_status="New" cia_impact="ppp" grace_period_expires="2023-02-13 15&#x3a;19&#x3a;13 UTC" affects_policy_compliance="true" mitigation_status="none" mitigation_status_desc="Not Mitigated" sourcefile="BenchmarkTest00008.java" line="58" sourcefilepath="org&#x2f;owasp&#x2f;benchmark&#x2f;testcode&#x2f;" scope="org.owasp.benchmark.testcode.BenchmarkTest00008" functionprototype="void doPost&#x28;javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse&#x29;" functionrelativelocation="76">
+                  <exploitability_adjustments>
+                     <exploitability_adjustment score_adjustment="1">
+                        <note>This source of the tainted data is an external web request.</note>
+                     </exploitability_adjustment>
+                  </exploitability_adjustments>
+               </flaw>
+            </staticflaws>
+         </cwe>
+      </category>
+   </severity>
+   <severity level="3"/>
+   <severity level="2"/>
+   <severity level="1"/>
+   <severity level="0"/>
+   <flaw-status new="4" reopen="0" open="0" fixed="0" total="4" not_mitigated="4" sev-1-change="0" sev-2-change="0" sev-3-change="0" sev-4-change="2" sev-5-change="2"/>
+</detailedreport>

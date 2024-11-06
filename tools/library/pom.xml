@@ -1,0 +1,27 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>xast.utils</artifactId>
+    <packaging>jar</packaging>
+
+    <name>xAST Benchmark Utilities Library</name>
+    <description>xAST Benchmark is one or more test suites designed to evaluate the accuracy, coverage, and speed of automated software vulnerability detection tools. This library provides classes used by other Benchmark projects, such as the xastutils-maven-plugin, and Benchmark for Java.</description>
+
+    <parent>
+        <groupId>com.alipay.xast</groupId>
+        <artifactId>xastutils-parent</artifactId>
+        <version>1.3</version>
+    </parent>
+
+    <build>
+        <finalName>xastutils</finalName>
+
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+        </resources>
+
+    </build>
+
+</project>
+

@@ -1,0 +1,107 @@
+{
+  "type" : "Coverity issues",
+  "formatVersion" : 3,
+  "suppressedIssueCount" : 0,
+  "issues" : [
+    {
+      "mergeKey" : "00000000000000000000000000000000",
+      "occurrenceCountForMK" : 1,
+      "occurrenceNumberInMK" : 1,
+      "checkerName" : "PATH_MANIPULATION",
+      "subcategory" : "none",
+      "extra" : "fileName",
+      "domain" : "STATIC_JAVA",
+      "mainEventFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00001.java",
+      "strippedMainEventFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00001.java",
+      "mainEventLineNumber" : 0,
+      "properties" : {},
+      "functionDisplayName" : "org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)",
+      "functionMangledName" : "org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)",
+      "ordered" : true,
+      "events" : [
+        {
+          "covLStrEventDescription" : "Lorem Ipsum",
+          "eventDescription" : "Lorem Ipsum",
+          "eventNumber" : 0,
+          "eventTreePosition" : "0",
+          "eventSet" : 0,
+          "eventTag" : "tainted_source",
+          "filePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00001.java",
+          "strippedFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00001.java",
+          "lineNumber" : 0,
+          "main" : false,
+          "moreInformationId" : null,
+          "remediation" : false,
+          "events" : null
+        }
+      ],
+      "stateOnServer" : null,
+      "checkerProperties" : {
+        "category" : "High impact security",
+        "categoryDescription" : "High impact security",
+        "cweCategory" : "22",
+        "issueKinds" : [
+          "SECURITY"
+        ],
+        "eventSetCaptions" : [],
+        "impact" : "High",
+        "impactDescription" : "High",
+        "subcategoryLocalEffect" : "Lorem Ipsum",
+        "subcategoryShortDescription" : "Lorem Ipsum",
+        "subcategoryLongDescription" : "Lorem Ipsum"
+      }
+    },
+    {
+      "mergeKey" : "00000000000000000000000000000000",
+      "occurrenceCountForMK" : 1,
+      "occurrenceNumberInMK" : 1,
+      "checkerName" : "SQLI",
+      "subcategory" : "sink",
+      "extra" : "sql",
+      "domain" : "STATIC_JAVA",
+      "mainEventFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00002.java",
+      "strippedMainEventFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00002.java",
+      "mainEventLineNumber" : 0,
+      "properties" : {},
+      "functionDisplayName" : "org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)",
+      "functionMangledName" : "org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)",
+      "ordered" : true,
+      "events" : [
+        {
+          "covLStrEventDescription" : "Lorem Ipsum",
+          "eventDescription" : "Lorem Ipsum",
+          "eventNumber" : 1,
+          "eventTreePosition" : "0",
+          "eventSet" : 0,
+          "eventTag" : "tainted_source",
+          "filePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00002.java",
+          "strippedFilePathname" : "somepath\\src\\main\\java\\org\\owasp\\benchmark\\testcode\\BenchmarkTest00002.java",
+          "lineNumber" : 0,
+          "main" : false,
+          "moreInformationId" : null,
+          "remediation" : false,
+          "events" : null
+        }
+      ],
+      "stateOnServer" : null,
+      "checkerProperties" : {
+        "category" : "High impact security",
+        "categoryDescription" : "High impact security",
+        "cweCategory" : "89",
+        "issueKinds" : [
+          "SECURITY"
+        ],
+        "eventSetCaptions" : [
+          "Lorem Ipsum"
+        ],
+        "impact" : "High",
+        "impactDescription" : "High",
+        "subcategoryLocalEffect" : "Lorem Ipsum",
+        "subcategoryShortDescription" : "Lorem Ipsum",
+        "subcategoryLongDescription" : "Lorem Ipsum"
+      }
+    }
+  ],
+  "desktopAnalysisSettings" : null,
+  "error" : null
+}

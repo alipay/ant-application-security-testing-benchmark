@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<castaip version="CAST_AIP_8.2.3" timestamp="1970-01-01T01:01:01.000">
+    <file name="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java">
+        <violation beginline="1" endline="2" begincolumn="1" endcolumn="2" rule=" " ruleset="Secure Coding - Input Validation" fullname="org.owasp.benchmark.testcode.BenchmarkTest00001.doPost" type="Java Method" critical="YES">Avoid OS command injection vulnerabilities ( CWE-78 )</violation>
+    </file>
+    <file name="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java">
+        <violation beginline="1" endline="2" begincolumn="1" endcolumn="2" rule=" " ruleset="Secure Coding - Input Validation" fullname="org.owasp.benchmark.testcode.BenchmarkTest00002.doPost" type="Java Method" critical="YES">Avoid SQL injection vulnerabilities ( CWE-89 )</violation>
+    </file>
+</castaip>

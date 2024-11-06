@@ -1,0 +1,57 @@
+<Report>
+    <ProjectName>DefenseCode Source Code Audit</ProjectName>
+    <CompanyName>DefenseCode LTD</CompanyName>
+    <AuthorName>Lorem Ipsum</AuthorName>
+    <ContactEmail>lorem@ipsum.com</ContactEmail>
+    <Description />
+    <VulnerabilityType ID="1" Name="SQL Injection" Risk="HIGH" Found="1">
+        <Vulnerability ID="1" Risk="HIGH" Line="1">
+            <File>C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java</File>
+            <Function>connection.prepareCall</Function>
+            <Variable>getHeader</Variable>
+            <FunctionCalls>
+                <CallStackItem ID="1" FunctionName="connection.prepareCall" Line="58" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java" />
+            </FunctionCalls>
+            <UserInputFlow>
+                <CallStackItem ID="1" VariableName="getHeader" Line="47" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java" />
+                <CallStackItem ID="2" VariableName="param" Line="47" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java" />
+                <CallStackItem ID="3" VariableName="param" Line="51" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java" />
+                <CallStackItem ID="4" VariableName="sql" Line="54" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java" />
+            </UserInputFlow>
+            <Filter>NOT_SAFE</Filter>
+            <MitigatingFactor>No mitigating factors, input variable did not pass through Java input validation functions.</MitigatingFactor>
+        </Vulnerability>
+    </VulnerabilityType>
+    <VulnerabilityType ID="2" Name="File Disclosure" Risk="HIGH" Found="0" />
+    <VulnerabilityType ID="3" Name="JSP Page Execution" Risk="HIGH" Found="0" />
+    <VulnerabilityType ID="4" Name="Command Execution" Risk="HIGH" Found="0" />
+    <VulnerabilityType ID="5" Name="Cross Site Scripting" Risk="MEDIUM" Found="0" />
+    <VulnerabilityType ID="6" Name="File Manipulation" Risk="MEDIUM" Found="0" />
+    <VulnerabilityType ID="7" Name="HTTP Response Splitting" Risk="MEDIUM" Found="0" />
+    <VulnerabilityType ID="8" Name="LDAP Injection" Risk="LOW" Found="0" />
+    <VulnerabilityType ID="9" Name="XPATH Injection" Risk="LOW" Found="1">
+        <Vulnerability ID="1" Risk="LOW" Line="86">
+            <File>C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java</File>
+            <Function>xp.evaluate</Function>
+            <Variable>getCookies</Variable>
+            <FunctionCalls>
+                <CallStackItem ID="1" FunctionName="xp.evaluate" Line="86" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+            </FunctionCalls>
+            <UserInputFlow>
+                <CallStackItem ID="1" VariableName="getCookies" Line="49" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+                <CallStackItem ID="2" VariableName="theCookies" Line="49" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+                <CallStackItem ID="3" VariableName="theCookie" Line="53" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+                <CallStackItem ID="4" VariableName="param" Line="55" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+                <CallStackItem ID="5" VariableName="bar" Line="68" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+                <CallStackItem ID="6" VariableName="expression" Line="85" File="C:\somepath\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java" />
+            </UserInputFlow>
+            <Filter>NOT_SAFE</Filter>
+            <MitigatingFactor>No mitigating factors, input variable did not pass through Java input validation functions.</MitigatingFactor>
+        </Vulnerability>
+    </VulnerabilityType>
+    <VulnerabilityType ID="10" Name="Mail Relay" Risk="LOW" Found="0" />
+    <VulnerabilityType ID="11" Name="Log Forging" Risk="LOW" Found="0" />
+    <VulnerabilityType ID="12" Name="Misc. Dangerous Functions" Risk="LOW" Found="0" />
+    <VulnerabilityType ID="13" Name="Arbitrary Server Connection" Risk="LOW" Found="0" />
+    <VulnerabilityType ID="14" Name="Dangerous File Extensions" Risk="LOW" Found="0" />
+</Report>

@@ -1,0 +1,117 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Precaution",
+          "organization": "Secure Sauce",
+          "rules": [
+            {
+              "id": "JAV002",
+              "help": {
+                "text": "The Java `MessageDigest` class provides a number of options for algorithms\nto hash data. However, some of the hash algorithms are insecure and should\nnot be used. These insecure hash algorithms include `MD5` and `SHA-1`.\n\nThe MD5 hash algorithm is a cryptographic hash function that was designed in\nthe early 1990s. MD5 is no longer considered secure, and passwords hashed\nwith MD5 can be easily cracked by attackers.\n\nThe SHA-1 hash algorithm is also a cryptographic hash function that was\ndesigned in the early 1990s. SHA-1 is no longer considered secure, and\npasswords hashed with SHA-1 can be easily cracked by attackers.\n\n## Example\n\n```java\nimport java.security.*;\n\npublic class MessageDigestMD5 {\n    public static void main(String[] args) {\n        try {\n            MessageDigest md = MessageDigest.getInstance(\"MD5\");\n        } catch (NoSuchAlgorithmException e) {\n            System.err.println(\"MD5 hashing algorithm not available.\");\n        }\n    }\n}\n```\n\n## Remediation\n\nThe recommendation is to swap the insecure hashing method to one of the more\nsecure alternatives, `SHA-256` or `SHA-512`.\n\n```java\nimport java.security.*;\n\npublic class MessageDigestSHA256 {\n    public static void main(String[] args) {\n        try {\n            MessageDigest md = MessageDigest.getInstance(\"SHA-256\");\n        } catch (NoSuchAlgorithmException e) {\n            System.err.println(\"SHA-256 hashing algorithm not available.\");\n        }\n    }\n}\n```\n\n## See also\n\n- [MessageDigest (Java SE & JDK)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/security/MessageDigest.html#getInstance(java.lang.String))\n- [CWE-328: Use of Weak Hash](https://cwe.mitre.org/data/definitions/328.html)\n- [NIST Policy on Hash Functions](https://csrc.nist.gov/projects/hash-functions)\n\n_New in version 0.5.0_\n\n",
+                "markdown": "The Java `MessageDigest` class provides a number of options for algorithms\nto hash data. However, some of the hash algorithms are insecure and should\nnot be used. These insecure hash algorithms include `MD5` and `SHA-1`.\n\nThe MD5 hash algorithm is a cryptographic hash function that was designed in\nthe early 1990s. MD5 is no longer considered secure, and passwords hashed\nwith MD5 can be easily cracked by attackers.\n\nThe SHA-1 hash algorithm is also a cryptographic hash function that was\ndesigned in the early 1990s. SHA-1 is no longer considered secure, and\npasswords hashed with SHA-1 can be easily cracked by attackers.\n\n## Example\n\n```java\nimport java.security.*;\n\npublic class MessageDigestMD5 {\n    public static void main(String[] args) {\n        try {\n            MessageDigest md = MessageDigest.getInstance(\"MD5\");\n        } catch (NoSuchAlgorithmException e) {\n            System.err.println(\"MD5 hashing algorithm not available.\");\n        }\n    }\n}\n```\n\n## Remediation\n\nThe recommendation is to swap the insecure hashing method to one of the more\nsecure alternatives, `SHA-256` or `SHA-512`.\n\n```java\nimport java.security.*;\n\npublic class MessageDigestSHA256 {\n    public static void main(String[] args) {\n        try {\n            MessageDigest md = MessageDigest.getInstance(\"SHA-256\");\n        } catch (NoSuchAlgorithmException e) {\n            System.err.println(\"SHA-256 hashing algorithm not available.\");\n        }\n    }\n}\n```\n\n## See also\n\n- [MessageDigest (Java SE & JDK)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/security/MessageDigest.html#getInstance(java.lang.String))\n- [CWE-328: Use of Weak Hash](https://cwe.mitre.org/data/definitions/328.html)\n- [NIST Policy on Hash Functions](https://csrc.nist.gov/projects/hash-functions)\n\n_New in version 0.5.0_\n\n"
+              },
+              "name": "MessageDigestWeakHash",
+              "properties": {
+                "tags": [
+                  "security",
+                  "external/cwe/cwe-328"
+                ],
+                "security-severity": "8.0"
+              },
+              "helpUri": "https://docs.securesauce.dev/rules/JAV002",
+              "messageStrings": {
+                "default": {
+                  "text": "The hash function '{0}' is vulnerable to collision and pre-image attacks."
+                }
+              },
+              "shortDescription": {
+                "text": "Reversible One Way Hash in java.security Package"
+              }
+            }
+          ],
+          "downloadUri": "https://pypi.org/project/precli/#files",
+          "fullDescription": {
+            "text": "Static analysis security tool command line"
+          },
+          "informationUri": "https://github.com/securesauce/precli",
+          "semanticVersion": "0.5.0",
+          "shortDescription": {
+            "text": "Static analysis security tool command line"
+          }
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "endTimeUtc": "2024-04-16T22:00:01Z"
+        }
+      ],
+      "results": [
+        {
+          "message": {
+            "text": "The hash function 'MD5' is vulnerable to collision and pre-image attacks."
+          },
+          "fixes": [
+            {
+              "description": {
+                "text": "For cryptographic purposes, use a hash length of at least 256-bits with hashes such as SHA-256."
+              },
+              "artifactChanges": [
+                {
+                  "replacements": [
+                    {
+                      "deletedRegion": {
+                        "endColumn": 91,
+                        "endLine": 87,
+                        "startColumn": 86,
+                        "startLine": 87
+                      },
+                      "insertedContent": {
+                        "text": "\"SHA-256\""
+                      }
+                    }
+                  ],
+                  "artifactLocation": {
+                    "uri": "BenchmarkJava/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00073.java"
+                  }
+                }
+              ]
+            }
+          ],
+          "level": "error",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "            java.security.MessageDigest md = java.security.MessageDigest.getInstance(\"MD5\");\n"
+                  },
+                  "endColumn": 91,
+                  "endLine": 87,
+                  "startColumn": 86,
+                  "startLine": 87
+                },
+                "artifactLocation": {
+                  "uri": "BenchmarkJava/src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00073.java"
+                },
+                "contextRegion": {
+                  "snippet": {
+                    "text": "        try {\n            java.security.MessageDigest md = java.security.MessageDigest.getInstance(\"MD5\");\n            byte[] input = {(byte) '?'};\n"
+                  },
+                  "endLine": 88,
+                  "startLine": 86
+                }
+              }
+            }
+          ],
+          "ruleId": "JAV002",
+          "ruleIndex": 0
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json"
+}

@@ -1,0 +1,5 @@
+2023-10-03 01:23:45.666 [main] INFO lorem.ipsum:dolor - doing the magic
+2023-10-03 01:23:45.777 [https-jsse-nio-127.0.0.1-8443-exec-3] DEBUG utils.TaintTracker:enterAction - [checking URL: /benchmark/pathtraver-01/BenchmarkTest00001 queryString: ]
+2023-10-03 01:23:45.888 [Distributor Thread] DEBUG utils.distributor.Distributor:writeVulnerabilityToFile - {"agent-version":"some-agent","issue-group":[{"id":"-000000000","issue-type":{"ref":"PathTraversal"},"variant-group":[{"id":"1","request":{"uri":"/benchmark/pathtraver-01/BenchmarkTest00001","method":"POST","queryString":""}}]}]}
+2023-10-03 01:23:45.999 [https-jsse-nio-127.0.0.1-8443-exec-6] DEBUG utils.TaintTracker:enterAction - [checking URL: /benchmark/sqli-01/BenchmarkTest00002 queryString: ]
+2023-10-03 01:23:46.000 [Distributor Thread] DEBUG utils.distributor.Distributor:writeVulnerabilityToFile - {"agent-version":"some-agent","issue-group":[{"id":"-000000000","issue-type":{"ref":"Injection.SQL"},"variant-group":[{"id":"1","request":{"uri":"/benchmark/sqli-01/BenchmarkTest00002","method":"POST","queryString":""}}]}]}

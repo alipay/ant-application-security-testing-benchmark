@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BugCollection sequence="0" release="" analysisTimestamp="0" version="4.1.4" timestamp="0">
+    <Project projectName="OWASP Benchmark Project">
+        <Jar>/somepath/Benchmark//target/classes</Jar>
+        <AuxClasspathEntry>/root/.m2/repository/javax/javaee-api/7.0/javaee-api-7.0.jar</AuxClasspathEntry>
+        <AuxClasspathEntry>/root/.m2/repository/com/sun/mail/javax.mail/1.5.0/javax.mail-1.5.0.jar</AuxClasspathEntry>
+        <SrcDir>/somepath/Benchmark//src/main/java</SrcDir>
+        <SrcDir>/somepath/Benchmark//target/generated-sources/annotations</SrcDir>
+        <WrkDir>/somepath/Benchmark//target</WrkDir>
+    </Project>
+    <BugInstance instanceOccurrenceNum="0" instanceHash="00000000000000000000000000000000" cweid="89" rank="10" abbrev="SQL" category="SECURITY" priority="1" type="SQL_NONCONSTANT_STRING_PASSED_TO_EXECUTE" instanceOccurrenceMax="0">
+        <ShortMessage>Nonconstant string passed to execute or addBatch method on an SQL statement</ShortMessage>
+        <LongMessage>org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(HttpServletRequest, HttpServletResponse) passes a nonconstant String to an execute or addBatch method on an SQL statement</LongMessage>
+        <Class classname="org.owasp.benchmark.testcode.BenchmarkTest00001" primary="true">
+            <SourceLine classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="30" end="71" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java">
+                <Message>At BenchmarkTest00001.java:[lines 30-71]</Message>
+            </SourceLine>
+            <Message>In class org.owasp.benchmark.testcode.BenchmarkTest00001</Message>
+        </Class>
+        <Method isStatic="false" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" name="doPost" primary="true">
+            <SourceLine endBytecode="49" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="42" end="71" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="0" />
+            <Message>In method org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(HttpServletRequest, HttpServletResponse)</Message>
+        </Method>
+        <SourceLine endBytecode="89" classname="org.owasp.benchmark.testcode.BenchmarkTest00001" start="60" end="60" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00001.java" sourcefile="BenchmarkTest00001.java" startBytecode="89" primary="true">
+            <Message>At BenchmarkTest00001.java:[line 60]</Message>
+        </SourceLine>
+    </BugInstance>
+    <BugInstance instanceOccurrenceNum="0" instanceHash="36c3171dd75c2e841419e4cd491bbefc" cweid="23" rank="7" abbrev="PT" category="SECURITY" priority="2" type="PT_RELATIVE_PATH_TRAVERSAL" instanceOccurrenceMax="0">
+        <ShortMessage>Relative path traversal in servlet</ShortMessage>
+        <LongMessage>Relative path traversal in org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(HttpServletRequest, HttpServletResponse)</LongMessage>
+        <Class classname="org.owasp.benchmark.testcode.BenchmarkTest00002" primary="true">
+            <SourceLine classname="org.owasp.benchmark.testcode.BenchmarkTest00002" start="30" end="96" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00002.java" sourcefile="BenchmarkTest00002.java">
+                <Message>At BenchmarkTest00002.java:[lines 30-96]</Message>
+            </SourceLine>
+            <Message>In class org.owasp.benchmark.testcode.BenchmarkTest00002</Message>
+        </Class>
+        <Method isStatic="false" classname="org.owasp.benchmark.testcode.BenchmarkTest00002" signature="(Ljavax/servlet/http/HttpServletRequest;Ljavax/servlet/http/HttpServletResponse;)V" name="doPost" primary="true">
+            <SourceLine endBytecode="876" classname="org.owasp.benchmark.testcode.BenchmarkTest00002" start="41" end="96" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00002.java" sourcefile="BenchmarkTest00002.java" startBytecode="0" />
+            <Message>In method org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(HttpServletRequest, HttpServletResponse)</Message>
+        </Method>
+        <Method isStatic="false" role="METHOD_CALLED" classname="java.io.FileInputStream" signature="(Ljava/lang/String;)V" name="&lt;init&gt;">
+            <SourceLine endBytecode="73" classname="java.io.FileInputStream" start="93" end="94" sourcepath="java/io/FileInputStream.java" sourcefile="FileInputStream.java" startBytecode="0" />
+            <Message>Called method new java.io.FileInputStream(String)</Message>
+        </Method>
+        <String role="STRING_PARAMETER_NAME" value="BenchmarkTest00002">
+            <Message>Parameter "BenchmarkTest00002"</Message>
+        </String>
+        <SourceLine role="SOURCE_LINE_GENERATED_AT" endBytecode="11" classname="org.owasp.benchmark.testcode.BenchmarkTest00002" start="43" end="43" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00002.java" sourcefile="BenchmarkTest00002.java" startBytecode="11">
+            <Message>Value generated at BenchmarkTest00002.java:[line 43]</Message>
+        </SourceLine>
+        <LocalVariable role="LOCAL_VARIABLE_NAMED" pc="125" name="fileName" register="7">
+            <Message>Local variable named fileName</Message>
+        </LocalVariable>
+        <SourceLine endBytecode="126" classname="org.owasp.benchmark.testcode.BenchmarkTest00002" start="74" end="74" sourcepath="org/owasp/benchmark/testcode/BenchmarkTest00002.java" sourcefile="BenchmarkTest00002.java" startBytecode="126" primary="true">
+            <Message>At BenchmarkTest00002.java:[line 74]</Message>
+        </SourceLine>
+    </BugInstance>
+    <BugCategory category="BAD_PRACTICE">
+        <Description>Bad practice</Description>
+    </BugCategory>
+    <BugCategory category="MALICIOUS_CODE">
+        <Description>Malicious code vulnerability</Description>
+    </BugCategory>
+    <BugCategory category="PERFORMANCE">
+        <Description>Performance</Description>
+    </BugCategory>
+    <BugCategory category="CORRECTNESS">
+        <Description>Correctness</Description>
+    </BugCategory>
+    <BugCategory category="STYLE">
+        <Description>Dodgy code</Description>
+    </BugCategory>
+    <BugCategory category="SECURITY">
+        <Description>Security</Description>
+    </BugCategory>
+    <BugCategory category="EXPERIMENTAL">
+        <Description>Experimental</Description>
+    </BugCategory>
+    <BugCategory category="MT_CORRECTNESS">
+        <Description>Multithreaded correctness</Description>
+    </BugCategory>
+    <BugCategory category="I18N">
+        <Description>Internationalization</Description>
+    </BugCategory>
+    <ClassFeatures />
+    <History />
+</BugCollection>
