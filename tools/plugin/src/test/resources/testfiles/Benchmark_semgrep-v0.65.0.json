@@ -1,0 +1,112 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "check_id": "java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+      "end": {
+        "col": 0,
+        "line": 0
+      },
+      "extra": {
+        "is_ignored": false,
+        "lines": "        String sql = \"SELECT * from USERS where USERNAME='foo' and PASSWORD='\" + bar + \"'\";\n\n        try {\n            java.sql.Statement statement =\n                    org.owasp.benchmark.helpers.DatabaseHelper.getSqlStatement();\n            java.sql.ResultSet rs = statement.executeQuery(sql);\n            org.owasp.benchmark.helpers.DatabaseHelper.printResults(rs, sql, response);\n        } catch (java.sql.SQLException e) {\n            if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {\n                response.getWriter().println(\"Error processing request.\");\n                return;\n            } else throw new ServletException(e);\n        }",
+        "message": "Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement) instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.",
+        "metadata": {
+          "asvs": {
+            "control_id": "5.3.5 Injection",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v53-output-encoding-and-injection-prevention-requirements",
+            "section": "V5: Validation, Sanitization and Encoding Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "cwe": "CWE-89: Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "owasp": "A1: Injection",
+          "references": [
+            "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+            "https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html#create_ps",
+            "https://software-security.sans.org/developer-how-to/fix-sql-injection-in-java-using-prepared-callable-statement"
+          ],
+          "source": "https://semgrep.dev/r/java.lang.security.audit.formatted-sql-string.formatted-sql-string",
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#SQL_INJECTION"
+        },
+        "metavars": {
+          "$CIPHER": {
+            "abstract_content": "javax.crypto.Cipher",
+            "end": {
+              "col": 0,
+              "line": 0,
+              "offset": 0
+            },
+            "start": {
+              "col": 0,
+              "line": 0,
+              "offset": 0
+            },
+            "unique_id": {
+              "md5sum": "00000000000000000000000000000000",
+              "type": "AST"
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java",
+      "start": {
+        "col": 0,
+        "line": 0
+      }
+    },
+    {
+      "check_id": "java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag",
+      "end": {
+        "col": 0,
+        "line": 0
+      },
+      "extra": {
+        "is_ignored": false,
+        "lines": "        cookie.setSecure(false);",
+        "message": "A cookie was detected without setting the 'secure' flag. The 'secure' flag for cookies prevents the client from transmitting the cookie over insecure channels such as HTTP. Set the 'secure' flag by calling 'cookie.setSecure(true);'",
+        "metadata": {
+          "asvs": {
+            "control_id": "3.4.1 Missing Cookie Attribute",
+            "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x12-V3-Session-management.md#v34-cookie-based-session-management",
+            "section": "V3: Session Management Verification Requirements",
+            "version": "4"
+          },
+          "category": "security",
+          "cwe": "CWE-614: Sensitive Cookie in HTTPS Session Without 'Secure' Attribute",
+          "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+          "owasp": "A3: Sensitive Data Exposure",
+          "source": "https://semgrep.dev/r/java.lang.security.audit.cookie-missing-secure-flag.cookie-missing-secure-flag",
+          "source-rule-url": "https://find-sec-bugs.github.io/bugs.htm#INSECURE_COOKIE"
+        },
+        "metavars": {
+          "$CIPHER": {
+            "abstract_content": "javax.crypto.Cipher",
+            "end": {
+              "col": 0,
+              "line": 0,
+              "offset": 0
+            },
+            "start": {
+              "col": 0,
+              "line": 0,
+              "offset": 0
+            },
+            "unique_id": {
+              "md5sum": "00000000000000000000000000000000",
+              "type": "AST"
+            }
+          }
+        },
+        "severity": "WARNING"
+      },
+      "path": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java",
+      "start": {
+        "col": 0,
+        "line": 0
+      }
+    }
+  ]
+}

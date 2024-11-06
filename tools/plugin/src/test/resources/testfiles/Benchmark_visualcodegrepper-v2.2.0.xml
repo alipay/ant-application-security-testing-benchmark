@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeIssueCollection>
+    <CodeIssue>
+        <Priority>1</Priority>
+        <Severity>Critical</Severity>
+        <Title>Potential SQL Injection</Title>
+        <Description>Lorem Ipsum</Description>
+        <FileName>C:\somepath\benchmark\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00001.java</FileName>
+        <Line>1</Line>
+        <CodeLine>someEvilCode()</CodeLine>
+        <Checked>False</Checked>
+        <CheckColour>LawnGreen</CheckColour>
+    </CodeIssue>
+    <CodeIssue>
+        <Priority>2</Priority>
+        <Severity>High</Severity>
+        <Title>Potential XSS</Title>
+        <Description>Lorem Ipsum</Description>
+        <FileName>C:\somepath\benchmark\src\main\java\org\owasp\benchmark\testcode\BenchmarkTest00002.java</FileName>
+        <Line>1</Line>
+        <CodeLine>someEvilCode()</CodeLine>
+        <Checked>False</Checked>
+        <CheckColour>LawnGreen</CheckColour>
+    </CodeIssue>
+</CodeIssueCollection>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CxXMLResults InitiatorName="lorem ipsum" Owner="lorem@ipsum" ScanId="1234567" ProjectId="12" ProjectName="OWASP Benchmark v1.2" TeamFullPathOnReportDate="LoremIpsumServer" DeepLink="http://somewhere" ScanStart="Thursday, January 01, 1970 1:01:01 AM" Preset="All" ScanTime="01h:23m:45s" LinesOfCodeScanned="123456" FilesScanned="1234" ReportCreationTime="Thursday, January 01, 1970 1:01:01 AM" Team="Lorem Ipsum" CheckmarxVersion="8.2.0" ScanComments="" ScanType="Full" SourceOrigin="LocalPath" Visibility="Public">
+    <Query id="591" categories="PCI DSS v3.1;PCI DSS (3.1) - 6.5.7 - Cross-site scripting (XSS),OWASP Top 10 2013;A3-Cross-Site Scripting (XSS)" cweId="79" name="Reflected_XSS_All_Clients" group="Java_High_Risk" Severity="High" Language="Java" LanguageHash="0000000000000000" LanguageChangeDate="1970-01-01T01:01:01.0000000" SeverityIndex="3" QueryPath="Java\Cx\Java High Risk\Reflected XSS All Clients Version:2">
+        <Result NodeId="00000000000" FileName="/testcode/BenchmarkTest00001.java" Status="Recurrent" Line="1" Column="1" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="http://somewhere" SeverityIndex="3">
+            <Path ResultId="0000000" PathId="0" SimilarityId="-0000000000">
+                <PathNode>
+                    <FileName>/testcode/BenchmarkTest00001.java</FileName>
+                </PathNode>
+            </Path>
+        </Result>
+    </Query>
+    <Query id="594" categories="PCI DSS v3.1;PCI DSS (3.1) - 6.5.1 - Injection flaws - particularly SQL injection,OWASP Top 10 2013;A1-Injection" cweId="89" name="SQL_Injection" group="Java_High_Risk" Severity="High" Language="Java" LanguageHash="0000000000000000" LanguageChangeDate="1970-01-01T01:01:01.0000000" SeverityIndex="3" QueryPath="Java\Cx\Java High Risk\SQL Injection Version:1">
+        <Result NodeId="00000000000" FileName="/testcode/BenchmarkTest00002.java" Status="New" Line="1" Column="1" FalsePositive="False" Severity="High" AssignToUser="" state="0" Remark="" DeepLink="http://somewhere" SeverityIndex="3">
+            <Path ResultId="0000000" PathId="0" SimilarityId="-0000000000">
+                <PathNode>
+                    <FileName>/testcode/BenchmarkTest00002.java</FileName>
+                </PathNode>
+            </Path>
+        </Result>
+    </Query>
+</CxXMLResults>

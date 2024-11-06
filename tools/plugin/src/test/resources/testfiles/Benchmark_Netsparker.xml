@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="vulnerabilities-list.xsl" type="text/xsl" ?>
+<netsparker generated="1/1/1970 1:01:01 AM">
+    <target>
+        <url>https://localhost:8443/benchmark/</url>
+        <scantime>123456</scantime>
+    </target>
+    <vulnerability confirmed="True">
+        <url>https://localhost:8443/benchmark/securecookie-00/BenchmarkTest00001?BenchmarkTest00001=whatever</url>
+        <type>CookieNotMarkedAsSecure</type>
+        <severity>Important</severity>
+        <certainty>100</certainty>
+        <rawrequest><![CDATA[Raw Request]]></rawrequest>
+        <rawresponse><![CDATA[Raw Response]]></rawresponse>
+        <extrainformation>
+            <info name="Identified Cookie">Extra Information</info>
+        </extrainformation>
+        <classification>
+            <OWASP2010>A9</OWASP2010>
+            <OWASP2013>A6</OWASP2013>
+            <WASC>15</WASC>
+            <CWE>614</CWE>
+            <CAPEC>102</CAPEC>
+            <PCI2>6.5.4</PCI2>
+            <PCI3>6.5.10</PCI3>
+            <PCI31>6.5.10</PCI31>
+        </classification>
+    </vulnerability>
+    <vulnerability confirmed="True">
+        <url>https://localhost:8443/benchmark/securecookie-00/BenchmarkTest00002</url>
+        <type>CookieNotMarkedAsHttpOnly</type>
+        <severity>Low</severity>
+        <certainty>100</certainty>
+        <rawrequest><![CDATA[Raw Request]]></rawrequest>
+        <rawresponse><![CDATA[Raw Response]]></rawresponse>
+        <extrainformation>
+            <info name="Identified Cookie">Extra Information</info>
+        </extrainformation>
+        <classification>
+            <OWASP2010>A6</OWASP2010>
+            <OWASP2013>A5</OWASP2013>
+            <WASC>15</WASC>
+            <CWE>1004</CWE>
+            <CAPEC>107</CAPEC>
+            <PCI2 />
+            <PCI3 />
+            <PCI31 />
+        </classification>
+    </vulnerability>
+</netsparker>

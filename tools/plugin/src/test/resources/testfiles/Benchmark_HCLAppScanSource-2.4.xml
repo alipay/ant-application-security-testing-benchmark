@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml-report name="AppScan Report" xmlExportVersion="2.4" technology="SAST" job-id="jobid">
+    <scan-information>
+        <product-version>1.0</product-version>
+    </scan-information>
+    <issue-group total="2" hash-version="4">
+        <item caller="org.owasp.benchmark.testcode.BenchmarkTest00001.doPost(javax.servlet.http.HttpServletRequest;javax.servlet.http.HttpServletResponse):void" filename="org.owasp.benchmark.testcode.BenchmarkTest00001" cve="" sink="java.io.File.&lt;init&gt;(java.lang.String):void" context="new java.io.File ( fileName )" language="Java" id="-1" source="javax.servlet.http.HttpServletRequest.getCookies():javax.servlet.http.Cookie[]" cve-date="">
+            <issue-type>
+                <ref>PathTraversal</ref>
+            </issue-type>
+        </item>
+        <item caller="org.owasp.benchmark.testcode.BenchmarkTest00002.doPost(javax.servlet.http.HttpServletRequest;javax.servlet.http.HttpServletResponse):void" filename="org.owasp.benchmark.testcode.BenchmarkTest00002" cve="" sink="java.sql.Connection.prepareCall(java.lang.String):java.sql.CallableStatement" context="statement = connection . java.sql.Connection.prepareCall ( sql )" language="Java" id="-1" source="javax.servlet.http.HttpServletRequest.getHeader(java.lang.String):java.lang.String" cve-date="">
+            <issue-type>
+                <ref>Injection.SQL</ref>
+            </issue-type>
+        </item>
+    </issue-group>
+</xml-report>

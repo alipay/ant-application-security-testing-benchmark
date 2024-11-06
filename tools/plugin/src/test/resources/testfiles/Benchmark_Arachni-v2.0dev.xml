@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/Arachni/arachni/v2.0dev/components/reporters/xml/schema.xsd">
+    <version>2.0dev</version>
+    <start_datetime>1970-01-01T01:01:01+01:00</start_datetime>
+    <finish_datetime>1970-01-01T01:02:03+01:00</finish_datetime>
+    <issues>
+        <issue>
+            <name>DOM-based Cross-Site Scripting (XSS) via input fields</name>
+            <remedy_code />
+            <severity>high</severity>
+            <check>
+                <name>DOM XSS via input field</name>
+                <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+                <version>0.2.1</version>
+                <shortname>xss_dom_inputs</shortname>
+            </check>
+            <cwe>79</cwe>
+            <digest>0000000000</digest>
+            <references>
+                <reference title="WASC" url="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting" />
+                <reference title="OWASP" url="https://www.owasp.org/index.php/DOM_Based_XSS" />
+                <reference title="OWASP - Prevention" url="https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet" />
+            </references>
+            <vector>
+                <class>Arachni::Element::GenericDOM</class>
+                <type>input</type>
+                <url>https://127.0.0.2:8443/benchmark/BenchmarkTest00001.html</url>
+                <action>https://127.0.0.2:8443/benchmark/BenchmarkTest00001.html</action>
+                <source>&lt;input type="button" id="login-btn" value="Login"&gt;</source>
+                <method>click</method>
+                <affected_input_name>login-btn</affected_input_name>
+            </vector>
+        </issue>
+        <issue>
+            <name>DOM-based Cross-Site Scripting (XSS) via input fields</name>
+            <remedy_code />
+            <severity>high</severity>
+            <check>
+                <name>DOM XSS via input field</name>
+                <author>Tasos "Zapotek" Laskos &lt;tasos.laskos@arachni-scanner.com&gt;</author>
+                <version>0.2.1</version>
+                <shortname>xss_dom_inputs</shortname>
+            </check>
+            <cwe>79</cwe>
+            <digest>0000000000</digest>
+            <references>
+                <reference title="WASC" url="http://projects.webappsec.org/w/page/13246920/Cross%20Site%20Scripting" />
+                <reference title="OWASP" url="https://www.owasp.org/index.php/DOM_Based_XSS" />
+                <reference title="OWASP - Prevention" url="https://www.owasp.org/index.php/DOM_based_XSS_Prevention_Cheat_Sheet" />
+            </references>
+            <vector>
+                <class>Arachni::Element::GenericDOM</class>
+                <type>input</type>
+                <url>https://127.0.0.2:8443/benchmark/BenchmarkTest00002.html</url>
+                <action>https://127.0.0.2:8443/benchmark/BenchmarkTest00002.html</action>
+                <source>&lt;input type="button" id="login-btn" value="Login"&gt;</source>
+                <method>click</method>
+                <affected_input_name>login-btn</affected_input_name>
+            </vector>
+        </issue>
+    </issues>
+</report>

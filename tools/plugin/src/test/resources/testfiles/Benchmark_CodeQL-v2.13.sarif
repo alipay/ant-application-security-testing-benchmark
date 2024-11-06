@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "CodeQL",
+          "organization": "GitHub",
+          "semanticVersion": "2.13.1",
+          "notifications": [],
+          "rules": []
+        },
+        "extensions": [
+          {
+            "name": "codeql/java-queries",
+            "semanticVersion": "0.6.1+c1a52031cfd323b34a039cc6dcda4f73d7ad892e",
+            "notifications": [],
+            "rules": [
+              {
+                "id": "java/xss",
+                "name": "java/xss",
+                "shortDescription": {
+                  "text": "Cross-site scripting"
+                },
+                "fullDescription": {
+                  "text": "Writing user input directly to a web page allows for a cross-site scripting vulnerability."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "error"
+                },
+                "help": {
+                  "text": "# Cross-site scripting\nDirectly writing user input (for example, an HTTP request parameter) to a web page, without properly sanitizing the input first, allows for a cross-site scripting vulnerability.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing user input to the page, or one of the other solutions that are mentioned in the reference.\n\n\n## Example\nThe following example shows the `page` parameter being written directly to the page, leaving the website vulnerable to cross-site scripting.\n\n\n```java\npublic class XSS extends HttpServlet {\n\tprotected void doGet(HttpServletRequest request, HttpServletResponse response)\n\tthrows ServletException, IOException {\n\t\t// BAD: a request parameter is written directly to the Servlet response stream\n\t\tresponse.getWriter().print(\n\t\t\t\t\"The page \\\"\" + request.getParameter(\"page\") + \"\\\" was not found.\");\n\n\t}\n}\n\n```\n\n## References\n* OWASP: [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).\n* Wikipedia: [Cross-site scripting](http://en.wikipedia.org/wiki/Cross-site_scripting).\n* Common Weakness Enumeration: [CWE-79](https://cwe.mitre.org/data/definitions/79.html).\n",
+                  "markdown": "# Cross-site scripting\nDirectly writing user input (for example, an HTTP request parameter) to a web page, without properly sanitizing the input first, allows for a cross-site scripting vulnerability.\n\n\n## Recommendation\nTo guard against cross-site scripting, consider using contextual output encoding/escaping before writing user input to the page, or one of the other solutions that are mentioned in the reference.\n\n\n## Example\nThe following example shows the `page` parameter being written directly to the page, leaving the website vulnerable to cross-site scripting.\n\n\n```java\npublic class XSS extends HttpServlet {\n\tprotected void doGet(HttpServletRequest request, HttpServletResponse response)\n\tthrows ServletException, IOException {\n\t\t// BAD: a request parameter is written directly to the Servlet response stream\n\t\tresponse.getWriter().print(\n\t\t\t\t\"The page \\\"\" + request.getParameter(\"page\") + \"\\\" was not found.\");\n\n\t}\n}\n\n```\n\n## References\n* OWASP: [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html).\n* Wikipedia: [Cross-site scripting](http://en.wikipedia.org/wiki/Cross-site_scripting).\n* Common Weakness Enumeration: [CWE-79](https://cwe.mitre.org/data/definitions/79.html).\n"
+                },
+                "properties": {
+                  "tags": [
+                    "security",
+                    "external/cwe/cwe-079"
+                  ],
+                  "description": "Writing user input directly to a web page\n              allows for a cross-site scripting vulnerability.",
+                  "id": "java/xss",
+                  "kind": "path-problem",
+                  "name": "Cross-site scripting",
+                  "precision": "high",
+                  "problem.severity": "error",
+                  "security-severity": "6.1"
+                }
+              },
+              {
+                "id": "java/sql-injection",
+                "name": "java/sql-injection",
+                "shortDescription": {
+                  "text": "Query built from user-controlled sources"
+                },
+                "fullDescription": {
+                  "text": "Building a SQL or Java Persistence query from user-controlled sources is vulnerable to insertion of malicious code by the user."
+                },
+                "defaultConfiguration": {
+                  "enabled": true,
+                  "level": "error"
+                },
+                "help": {
+                  "text": "# Query built from user-controlled sources\nIf a database query is built using string concatenation, and the components of the concatenation include user input, a user is likely to be able to run malicious database queries. This applies to various database query languages, including SQL and the Java Persistence Query Language.\n\n\n## Recommendation\nUsually, it is better to use a SQL prepared statement than to build a complete SQL query with string concatenation. A prepared statement can include a wildcard, written as a question mark (?), for each part of the SQL query that is expected to be filled in by a different value each time it is run. When the query is later executed, a value must be supplied for each wildcard in the query.\n\nIn the Java Persistence Query Language, it is better to use queries with parameters than to build a complete query with string concatenation. A Java Persistence query can include a parameter placeholder for each part of the query that is expected to be filled in by a different value when run. A parameter placeholder may be indicated by a colon (:) followed by a parameter name, or by a question mark (?) followed by an integer position. When the query is later executed, a value must be supplied for each parameter in the query, using the `setParameter` method. Specifying the query using the `@NamedQuery` annotation introduces an additional level of safety: the query must be a constant string literal, preventing construction by string concatenation, and the only way to fill in values for parts of the query is by setting positional parameters.\n\nIt is good practice to use prepared statements (in SQL) or query parameters (in the Java Persistence Query Language) for supplying parameter values to a query, whether or not any of the parameters are directly traceable to user input. Doing so avoids any need to worry about quoting and escaping.\n\n\n## Example\nIn the following example, the code runs a simple SQL query in two different ways.\n\nThe first way involves building a query, `query1`, by concatenating an environment variable with some string literals. The environment variable can include special characters, so this code allows for SQL injection attacks.\n\nThe second way, which shows good practice, involves building a query, `query2`, with a single string literal that includes a wildcard (`?`). The wildcard is then given a value by calling `setString`. This version is immune to injection attacks, because any special characters in the environment variable are not given any special treatment.\n\n\n```java\n{\n    // BAD: the category might have SQL special characters in it\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Statement statement = connection.createStatement();\n    String query1 = \"SELECT ITEM,PRICE FROM PRODUCT WHERE ITEM_CATEGORY='\"\n        + category + \"' ORDER BY PRICE\";\n    ResultSet results = statement.executeQuery(query1);\n}\n\n{\n    // GOOD: use a prepared query\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query2 = \"SELECT ITEM,PRICE FROM PRODUCT WHERE ITEM_CATEGORY=? ORDER BY PRICE\";\n    PreparedStatement statement = connection.prepareStatement(query2);\n    statement.setString(1, category);\n    ResultSet results = statement.executeQuery();\n}\n```\n\n## Example\nThe following code shows several different ways to run a Java Persistence query.\n\nThe first example involves building a query, `query1`, by concatenating an environment variable with some string literals. Just like the SQL example, the environment variable can include special characters, so this code allows for Java Persistence query injection attacks.\n\nThe remaining examples demonstrate different methods for safely building a Java Persistence query with user-supplied values:\n\n1. `query2` uses a single string literal that includes a placeholder for a parameter, indicated by a colon (`:`) and parameter name (`category`).\n1. `query3` uses a single string literal that includes a placeholder for a parameter, indicated by a question mark (`?`) and position number (`1`).\n1. `namedQuery1` is defined using the `@NamedQuery` annotation, whose `query` attribute is a string literal that includes a placeholder for a parameter, indicated by a colon (`:`) and parameter name (`category`).\n1. `namedQuery2` is defined using the `@NamedQuery` annotation, whose `query` attribute includes a placeholder for a parameter, indicated by a question mark (`?`) and position number (`1`).\nThe parameter is then given a value by calling `setParameter`. These versions are immune to injection attacks, because any special characters in the environment variable or user-supplied value are not given any special treatment.\n\n\n```java\n{\n    // BAD: the category might have Java Persistence Query Language special characters in it\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Statement statement = connection.createStatement();\n    String query1 = \"SELECT p FROM Product p WHERE p.category LIKE '\"\n        + category + \"' ORDER BY p.price\";\n    Query q = entityManager.createQuery(query1);\n}\n\n{\n    // GOOD: use a named parameter and set its value\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query2 = \"SELECT p FROM Product p WHERE p.category LIKE :category ORDER BY p.price\"\n    Query q = entityManager.createQuery(query2);\n    q.setParameter(\"category\", category);\n}\n\n{\n    // GOOD: use a positional parameter and set its value\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query3 = \"SELECT p FROM Product p WHERE p.category LIKE ?1 ORDER BY p.price\"\n    Query q = entityManager.createQuery(query3);\n    q.setParameter(1, category);\n}\n\n{\n    // GOOD: use a named query with a named parameter and set its value\n    @NamedQuery(\n            name=\"lookupByCategory\",\n            query=\"SELECT p FROM Product p WHERE p.category LIKE :category ORDER BY p.price\")\n    private static class NQ {}\n    ...\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Query namedQuery1 = entityManager.createNamedQuery(\"lookupByCategory\");\n    namedQuery1.setParameter(\"category\", category);\n}\n\n{\n    // GOOD: use a named query with a positional parameter and set its value\n    @NamedQuery(\n            name=\"lookupByCategory\",\n            query=\"SELECT p FROM Product p WHERE p.category LIKE ?1 ORDER BY p.price\")\n    private static class NQ {}\n    ...\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Query namedQuery2 = entityManager.createNamedQuery(\"lookupByCategory\");\n    namedQuery2.setParameter(1, category);\n}\n```\n\n## References\n* OWASP: [SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html).\n* SEI CERT Oracle Coding Standard for Java: [IDS00-J. Prevent SQL injection](https://wiki.sei.cmu.edu/confluence/display/java/IDS00-J.+Prevent+SQL+injection).\n* The Java Tutorials: [Using Prepared Statements](https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html).\n* The Java EE Tutorial: [The Java Persistence Query Language](https://docs.oracle.com/javaee/7/tutorial/persistence-querylanguage.htm).\n* Common Weakness Enumeration: [CWE-89](https://cwe.mitre.org/data/definitions/89.html).\n* Common Weakness Enumeration: [CWE-564](https://cwe.mitre.org/data/definitions/564.html).\n",
+                  "markdown": "# Query built from user-controlled sources\nIf a database query is built using string concatenation, and the components of the concatenation include user input, a user is likely to be able to run malicious database queries. This applies to various database query languages, including SQL and the Java Persistence Query Language.\n\n\n## Recommendation\nUsually, it is better to use a SQL prepared statement than to build a complete SQL query with string concatenation. A prepared statement can include a wildcard, written as a question mark (?), for each part of the SQL query that is expected to be filled in by a different value each time it is run. When the query is later executed, a value must be supplied for each wildcard in the query.\n\nIn the Java Persistence Query Language, it is better to use queries with parameters than to build a complete query with string concatenation. A Java Persistence query can include a parameter placeholder for each part of the query that is expected to be filled in by a different value when run. A parameter placeholder may be indicated by a colon (:) followed by a parameter name, or by a question mark (?) followed by an integer position. When the query is later executed, a value must be supplied for each parameter in the query, using the `setParameter` method. Specifying the query using the `@NamedQuery` annotation introduces an additional level of safety: the query must be a constant string literal, preventing construction by string concatenation, and the only way to fill in values for parts of the query is by setting positional parameters.\n\nIt is good practice to use prepared statements (in SQL) or query parameters (in the Java Persistence Query Language) for supplying parameter values to a query, whether or not any of the parameters are directly traceable to user input. Doing so avoids any need to worry about quoting and escaping.\n\n\n## Example\nIn the following example, the code runs a simple SQL query in two different ways.\n\nThe first way involves building a query, `query1`, by concatenating an environment variable with some string literals. The environment variable can include special characters, so this code allows for SQL injection attacks.\n\nThe second way, which shows good practice, involves building a query, `query2`, with a single string literal that includes a wildcard (`?`). The wildcard is then given a value by calling `setString`. This version is immune to injection attacks, because any special characters in the environment variable are not given any special treatment.\n\n\n```java\n{\n    // BAD: the category might have SQL special characters in it\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Statement statement = connection.createStatement();\n    String query1 = \"SELECT ITEM,PRICE FROM PRODUCT WHERE ITEM_CATEGORY='\"\n        + category + \"' ORDER BY PRICE\";\n    ResultSet results = statement.executeQuery(query1);\n}\n\n{\n    // GOOD: use a prepared query\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query2 = \"SELECT ITEM,PRICE FROM PRODUCT WHERE ITEM_CATEGORY=? ORDER BY PRICE\";\n    PreparedStatement statement = connection.prepareStatement(query2);\n    statement.setString(1, category);\n    ResultSet results = statement.executeQuery();\n}\n```\n\n## Example\nThe following code shows several different ways to run a Java Persistence query.\n\nThe first example involves building a query, `query1`, by concatenating an environment variable with some string literals. Just like the SQL example, the environment variable can include special characters, so this code allows for Java Persistence query injection attacks.\n\nThe remaining examples demonstrate different methods for safely building a Java Persistence query with user-supplied values:\n\n1. `query2` uses a single string literal that includes a placeholder for a parameter, indicated by a colon (`:`) and parameter name (`category`).\n1. `query3` uses a single string literal that includes a placeholder for a parameter, indicated by a question mark (`?`) and position number (`1`).\n1. `namedQuery1` is defined using the `@NamedQuery` annotation, whose `query` attribute is a string literal that includes a placeholder for a parameter, indicated by a colon (`:`) and parameter name (`category`).\n1. `namedQuery2` is defined using the `@NamedQuery` annotation, whose `query` attribute includes a placeholder for a parameter, indicated by a question mark (`?`) and position number (`1`).\nThe parameter is then given a value by calling `setParameter`. These versions are immune to injection attacks, because any special characters in the environment variable or user-supplied value are not given any special treatment.\n\n\n```java\n{\n    // BAD: the category might have Java Persistence Query Language special characters in it\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Statement statement = connection.createStatement();\n    String query1 = \"SELECT p FROM Product p WHERE p.category LIKE '\"\n        + category + \"' ORDER BY p.price\";\n    Query q = entityManager.createQuery(query1);\n}\n\n{\n    // GOOD: use a named parameter and set its value\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query2 = \"SELECT p FROM Product p WHERE p.category LIKE :category ORDER BY p.price\"\n    Query q = entityManager.createQuery(query2);\n    q.setParameter(\"category\", category);\n}\n\n{\n    // GOOD: use a positional parameter and set its value\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    String query3 = \"SELECT p FROM Product p WHERE p.category LIKE ?1 ORDER BY p.price\"\n    Query q = entityManager.createQuery(query3);\n    q.setParameter(1, category);\n}\n\n{\n    // GOOD: use a named query with a named parameter and set its value\n    @NamedQuery(\n            name=\"lookupByCategory\",\n            query=\"SELECT p FROM Product p WHERE p.category LIKE :category ORDER BY p.price\")\n    private static class NQ {}\n    ...\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Query namedQuery1 = entityManager.createNamedQuery(\"lookupByCategory\");\n    namedQuery1.setParameter(\"category\", category);\n}\n\n{\n    // GOOD: use a named query with a positional parameter and set its value\n    @NamedQuery(\n            name=\"lookupByCategory\",\n            query=\"SELECT p FROM Product p WHERE p.category LIKE ?1 ORDER BY p.price\")\n    private static class NQ {}\n    ...\n    String category = System.getenv(\"ITEM_CATEGORY\");\n    Query namedQuery2 = entityManager.createNamedQuery(\"lookupByCategory\");\n    namedQuery2.setParameter(1, category);\n}\n```\n\n## References\n* OWASP: [SQL Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html).\n* SEI CERT Oracle Coding Standard for Java: [IDS00-J. Prevent SQL injection](https://wiki.sei.cmu.edu/confluence/display/java/IDS00-J.+Prevent+SQL+injection).\n* The Java Tutorials: [Using Prepared Statements](https://docs.oracle.com/javase/tutorial/jdbc/basics/prepared.html).\n* The Java EE Tutorial: [The Java Persistence Query Language](https://docs.oracle.com/javaee/7/tutorial/persistence-querylanguage.htm).\n* Common Weakness Enumeration: [CWE-89](https://cwe.mitre.org/data/definitions/89.html).\n* Common Weakness Enumeration: [CWE-564](https://cwe.mitre.org/data/definitions/564.html).\n"
+                },
+                "properties": {
+                  "tags": [
+                    "security",
+                    "external/cwe/cwe-089",
+                    "external/cwe/cwe-564"
+                  ],
+                  "description": "Building a SQL or Java Persistence query from user-controlled sources is vulnerable to insertion of\n              malicious code by the user.",
+                  "id": "java/sql-injection",
+                  "kind": "path-problem",
+                  "name": "Query built from user-controlled sources",
+                  "precision": "high",
+                  "problem.severity": "error",
+                  "security-severity": "8.8"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "artifacts": [
+        {
+          "location": {
+            "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java",
+            "uriBaseId": "%SRCROOT%",
+            "index": 0
+          }
+        },
+        {
+          "location": {
+            "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java",
+            "uriBaseId": "%SRCROOT%",
+            "index": 1
+          }
+        }
+      ],
+      "results": [
+        {
+          "ruleId": "java/xss",
+          "rule": {
+            "id": "java/xss",
+            "index": 0,
+            "toolComponent": {
+              "index": 0
+            }
+          },
+          "message": {
+            "text": "Cross-site scripting vulnerability due to a [user-provided value](1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "java/sql-injection",
+          "rule": {
+            "id": "java/sql-injection",
+            "index": 1,
+            "toolComponent": {
+              "index": 0
+            }
+          },
+          "message": {
+            "text": "This query depends on a [user-provided value](1)."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java",
+                  "uriBaseId": "%SRCROOT%"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

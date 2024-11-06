@@ -1,0 +1,51 @@
+<total>12345</total>
+<languages>
+    <name>Java</name>
+    <key>java</key>
+</languages>
+<projects>
+    <id>1234</id>
+    <name>OWASP Benchmark Project</name>
+    <longName>OWASP Benchmark Project</longName>
+    <qualifier>ABC</qualifier>
+    <uuid>00000000-0000-0000-0000-000000000000</uuid>
+    <key>org.owasp:benchmark</key>
+</projects>
+<issues>
+    <tags>cwe</tags>
+    <tags>owasp-a1</tags>
+    <tags>sans-top25-insecure</tags>
+    <tags>security</tags>
+    <status>OPEN</status>
+    <debt>42min</debt>
+    <line>42</line>
+    <severity>CRITICAL</severity>
+    <componentId>9470</componentId>
+    <updateDate>1970-01-01T01:01:01-0100</updateDate>
+    <fUpdateAge>42 minutes</fUpdateAge>
+    <message>Make sure "args" is properly sanitized before use in this OS command.</message>
+    <project>org.owasp:benchmark</project>
+    <creationDate>1970-01-01T01:01:01-0100</creationDate>
+    <component>org.owasp:benchmark:src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java</component>
+    <rule>squid:S2076</rule>
+    <key>00000000-0000-0000-0000-000000000000</key>
+</issues>
+<issues>
+    <tags>cert</tags>
+    <tags>cwe</tags>
+    <tags>owasp-a6</tags>
+    <tags>security</tags>
+    <status>OPEN</status>
+    <debt>42min</debt>
+    <line>42</line>
+    <severity>CRITICAL</severity>
+    <componentId>11349</componentId>
+    <updateDate>1970-01-01T01:01:01-0100</updateDate>
+    <fUpdateAge>42 minutes</fUpdateAge>
+    <message>Use a cryptographically strong random number generator (RNG) like "java.security.SecureRandom" in place of this PRNG</message>
+    <project>org.owasp:benchmark</project>
+    <creationDate>1970-01-01T01:01:01-0100</creationDate>
+    <component>org.owasp:benchmark:src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java</component>
+    <rule>squid:S2245</rule>
+    <key>00000000-0000-0000-0000-000000000000</key>
+</issues>

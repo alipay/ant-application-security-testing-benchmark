@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VulnSummary>
+    <AppVersion>7.2.119.1</AppVersion>
+    <ScanName>Lorem Ipsum</ScanName>
+    <Metadata />
+    <ScanStarted>1970-01-01 01:01:01</ScanStarted>
+    <ScanDuration>0:12:34</ScanDuration>
+    <ScanEnded>1970-01-01 01:01:01</ScanEnded>
+    <UTCOffset>-1</UTCOffset>
+    <VulnList>
+        <Vuln>
+            <VulnType>Blind SQL Injection</VulnType>
+            <VulnUrl>https://adcvbsaws06:8443/benchmark/sqli-01/BenchmarkTest00001</VulnUrl>
+            <NormalizedUrl>https://adcvbsaws06:8443/benchmark/sqli-01/BenchmarkTest00001?</NormalizedUrl>
+            <Url>https://adcvbsaws06:8443/benchmark/sqli-01/BenchmarkTest00001</Url>
+            <CweId>89</CweId>
+            <Confidence>Medium</Confidence>
+        </Vuln>
+        <Vuln>
+            <VulnType>Command Injection</VulnType>
+            <VulnUrl>https://adcvbsaws06:8443/benchmark/cmdi-02/BenchmarkTest00002</VulnUrl>
+            <NormalizedUrl>https://adcvbsaws06:8443/benchmark/cmdi-02/BenchmarkTest00002</NormalizedUrl>
+            <AttackType>ECHO command (pipe)</AttackType>
+            <Url>https://adcvbsaws06:8443/benchmark/cmdi-02/BenchmarkTest00002</Url>
+            <CweId>78</CweId>
+            <Confidence>High</Confidence>
+        </Vuln>
+    </VulnList>
+</VulnSummary>

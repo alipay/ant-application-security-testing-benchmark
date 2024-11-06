@@ -1,0 +1,74 @@
+{
+  "runs": [
+    {
+      "results": [
+        {
+          "fixes": [],
+          "level": "warning",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "BenchmarkTest00010.java"
+                },
+                "region": {
+                  "endColumn": 67,
+                  "endLine": 79,
+                  "startColumn": 21,
+                  "startLine": 79
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "the http only flag is not set on the cookie"
+          },
+          "partialFingerprints": {
+            "DATADOG_FINGERPRINT": "e4e9899ecb58e179da4fff7e5ce8aadf6bffba5dc40df7e67f1c686fb99fb6ec"
+          },
+          "properties": {
+            "tags": [
+              "DATADOG_CATEGORY:SECURITY",
+              "CWE:614"
+            ]
+          },
+          "ruleId": "java-security/cookies-http-only",
+          "ruleIndex": 0
+        }
+      ],
+      "tool": {
+        "driver": {
+          "informationUri": "https://www.datadoghq.com",
+          "name": "datadog-static-analyzer",
+          "properties": {
+            "tags": [
+              "DATADOG_DIFF_AWARE_CONFIG_DIGEST:1199c81a70ecaada6cbd3abf5c3ff7c5c1538cab6158bd955abb1c5f319d86e3",
+              "DATADOG_EXECUTION_TIME_SECS:0",
+              "DATADOG_DIFF_AWARE_ENABLED:false"
+            ]
+          },
+          "rules": [
+            {
+              "fullDescription": {
+                "text": "A cookie must always be created with `HttpOnly`. The flag is set to prevent malicious script to use the cookie. Always set `HttpOnly`.\n\n#### Learn More\n\n - [OWASP HTTP Only](https://owasp.org/www-community/HttpOnly)\n - [Coding Horror - Protecting Your Cookies: HttpOnly](https://blog.codinghorror.com/protecting-your-cookies-httponly/)"
+              },
+              "helpUri": "https://docs.datadoghq.com/static_analysis/rules/owasp10/cookies-http-only",
+              "id": "java-security/cookies-http-only",
+              "properties": {
+                "tags": [
+                  "DATADOG_RULE_TYPE:STATIC_ANALYSIS",
+                  "CWE:614"
+                ]
+              },
+              "shortDescription": {
+                "text": "Cookies HTTP only"
+              }
+            }
+          ],
+          "version": "0.2.9"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

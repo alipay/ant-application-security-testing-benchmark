@@ -1,0 +1,184 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "SnykCode",
+          "semanticVersion": "1.0.0",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "java/WebCookieWithSecureFalse",
+              "name": "WebCookieWithSecureFalse",
+              "shortDescription": {
+                "text": "Sensitive Cookie in HTTPS Session Without 'Secure' Attribute"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "help": {
+                "markdown": "\n## Details\n\nIn a session hijacking attack, if a cookie containing sensitive data is set without the `secure` attribute, an attacker might be able to intercept that cookie. Once the attacker has this information, they can potentially impersonate a user, accessing confidential data and performing actions that they would not normally be authorized to do. Attackers often gain access to this sensitive cookie data when it is transmitted insecurely in plain text over a standard HTTP session, rather than being encrypted and sent over an HTTPS session. This type of attack is highly preventable by following best practices when setting sensitive session cookies.\n\n## Best practices for prevention\n* Set the `secure` attribute in the response header when setting cookies on the client side, and use a test tool to verify that secure cookie transmission is in place.\n* Always use HTTPS for all login pages and never redirect from HTTP to HTTPS, which leaves secure session data open to interception.\n* Follow other best practices when it comes to session cookies, such as setting the HttpOnly flag and maintaining highly time-limited sessions.\n* Consider implementing browser checks and providing secure data only within a browser that supports tight cookie security.\n* Generate session IDs in a way that is not easily predictable, invalidate sessions upon logout, and never reuse session IDs.\n* Educate developers to use built-in secure session-management functionality within the development environment instead of taking a DIY approach.",
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "java",
+                  "WebCookieWithSecureFalse",
+                  "Security"
+                ],
+                "categories": [
+                  "Security"
+                ],
+                "exampleCommitFixes": [],
+                "exampleCommitDescriptions": [],
+                "precision": "very-high",
+                "repoDatasetSize": 3,
+                "cwe": [
+                  "CWE-614"
+                ]
+              }
+            },
+            {
+              "id": "java/Xpath",
+              "name": "Xpath",
+              "shortDescription": {
+                "text": "XPath Injection"
+              },
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "help": {
+                "markdown": "\n## Details\n\nXPath expressions are a standard method of querying data stored in XML format, allowing applications to return data based on attributes, patterns, and more. However, as with other injection-type attacks, if a malicious user is able to manipulate the query that is sent to the server, they may be able to gain control of application flow and logic or access unauthorized data, including user authentication data. This weakness is an inherent design flaw that can be easily corrected through awareness of the hazards of allowing unchecked user input in XPath queries.\n\n## Best practices for prevention\n* Use a parameterized XPath interface for all types of user input if possible.\n* Avoid passing unsanitized parameters to the XML database.\n* Never pass a query directly from the user to the server without sanitizing input.\n* Use a denylist to eliminate user-entered forbidden query characters.\n* Consider using precompiled XPath queries to circumvent issues with user-entered parameters altogether.",
+                "text": ""
+              },
+              "properties": {
+                "tags": [
+                  "java",
+                  "Xpath",
+                  "Security",
+                  "SourceServer",
+                  "SourceHttpHeader",
+                  "Taint"
+                ],
+                "categories": [
+                  "Security"
+                ],
+                "exampleCommitFixes": [],
+                "exampleCommitDescriptions": [],
+                "precision": "very-high",
+                "repoDatasetSize": 0,
+                "cwe": [
+                  "CWE-643"
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "java/WebCookieWithSecureFalse",
+          "ruleIndex": 0,
+          "level": "note",
+          "message": {
+            "text": "The cookie's Secure flag is set to setSecure. Set it to true to protect the cookie from man-in-the-middle attacks.",
+            "markdown": "The cookie's Secure flag is set to {0}. Set it to true to protect the cookie from man-in-the-middle attacks.",
+            "arguments": [
+              "[setSecure](0)"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00001.java",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 65,
+                  "endLine": 65,
+                  "startColumn": 9,
+                  "endColumn": 25
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "0": "0",
+            "1": "1"
+          },
+          "codeFlows": [],
+          "properties": {
+            "priorityScore": 402,
+            "priorityScoreFactors": [
+              {
+                "label": true,
+                "type": "multipleOccurrence"
+              },
+              {
+                "label": true,
+                "type": "hotFileSource"
+              },
+              {
+                "label": true,
+                "type": "fixExamples"
+              }
+            ],
+            "isAutofixable": false
+          }
+        },
+        {
+          "ruleId": "java/Xpath",
+          "ruleIndex": 8,
+          "level": "error",
+          "message": {
+            "text": "Unsanitized input from an HTTP parameter flows into compile, where it is used in an XPath query. This may result in an XPath Injection vulnerability.",
+            "markdown": "Unsanitized input from {0} {1} into {2}, where it is used in an XPath query. This may result in an XPath Injection vulnerability.",
+            "arguments": [
+              "[an HTTP parameter](0)",
+              "[flows](1),(2),(3),(4),(5),(6),(7),(8)",
+              "[compile](9)"
+            ]
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main/java/org/owasp/benchmark/testcode/BenchmarkTest00002.java",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "startLine": 67,
+                  "endLine": 67,
+                  "startColumn": 29,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "fingerprints": {
+            "0": "0",
+            "1": "1"
+          },
+          "codeFlows": [],
+          "properties": {
+            "priorityScore": 601,
+            "priorityScoreFactors": [
+              {
+                "label": true,
+                "type": "multipleOccurrence"
+              },
+              {
+                "label": true,
+                "type": "hotFileSource"
+              }
+            ],
+            "isAutofixable": false
+          }
+        }
+      ]
+    }
+  ]
+}
