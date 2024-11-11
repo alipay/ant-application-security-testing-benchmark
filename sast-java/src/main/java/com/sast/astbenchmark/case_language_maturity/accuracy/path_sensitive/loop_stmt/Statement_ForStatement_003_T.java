@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.path_sensitive.conditional_stmt;
+package com.sast.astbenchmark.case_language_maturity.accuracy.path_sensitive.loop_stmt;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,24 +9,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-assert语句-条件不成立
+ * Introduction 循环语句-for
  * Level 4
- * Date 2024-09-18
+ * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
-// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_003_T/{cmd}
+// evaluation item = 准确度->路径敏感->循环语句->for
+// bind_url = accuracy/path_sensitive/loop_stmt/Statement_ForStatement_003_T.java/{cmd}
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/path_sensitive/conditional_stmt")
-public class Statement_AssertStatement_003_T {
-    @GetMapping("Statement_AssertStatement_003_T/{cmd}")
+@RequestMapping("accuracy/path_sensitive/loop_stmt")
+public class Statement_ForStatement_003_T {
+    @GetMapping("Statement_ForStatement_003_T.java/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            int a = 1;
-            assert a > 0 : Runtime.getRuntime().exec(cmd);
+            String a ="mkdir";
+            for(int i =0 ;i<10; i++){
+                a = cmd+"|";
+            }
+            Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

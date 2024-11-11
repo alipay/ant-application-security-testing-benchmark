@@ -11,13 +11,12 @@ import java.util.Map;
 /**
  * Introduction 污点链路样本中的语句-do_while语句
  * Level 2
- * Date 2024-05-09
+ * Date 2024-11-10
  */
-
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->do-while语句
-// bind_url = completeness/chain_tracing/control_flow/loop_stmt/Statement_DoStatement_001_T
+// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->do_while语句
+// bind_url = completeness/chain_tracing/control_flow/loop_stmt/Statement_DoStatement_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/chain_tracing/control_flow/loop_stmt")

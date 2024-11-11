@@ -13,13 +13,12 @@ import java.util.Map;
 /**
  * Introduction 污点链路样本中的语句-if语句-else body
  * Level X
- * Date 2024-05-09
+ * Date 2024-11-10
  */
-
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-else body
-// bind_url = completeness/chain_tracing/control_flow/conditional_stmt/Statement_IfStatement_002_F
+// evaluation item = 完整度->链路跟踪完整度->控制流->条件语句->if语句-else body
+// bind_url = completeness/chain_tracing/control_flow/conditional_stmt/Statement_IfStatement_002_F/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/chain_tracing/control_flow/conditional_stmt")

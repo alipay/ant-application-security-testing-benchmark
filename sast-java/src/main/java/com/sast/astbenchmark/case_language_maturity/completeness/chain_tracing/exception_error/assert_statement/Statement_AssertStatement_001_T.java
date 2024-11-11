@@ -11,13 +11,12 @@ import java.util.Map;
 /**
  * Introduction 污点链路样本中的语句-assert语句
  * Level 3
- * Date 2024-08-16
+ * Date 2024-11-10
  */
-
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->assert语句
-// bind_url = completeness/chain_tracing/exception_error/assert_statement/Statement_AssertStatement_001_T
+// evaluation item = 完整度->链路跟踪完整度->异常与错误处理->断言语句->assert语句
+// bind_url = completeness/chain_tracing/exception_error/assert_statement/Statement_AssertStatement_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/chain_tracing/exception_error/assert_statement")

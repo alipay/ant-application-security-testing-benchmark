@@ -1,9 +1,9 @@
 {
   "dynamic_call": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->反射调用",
-      "compose": "Expression_Reflection_001_T.java",
-      "level": ""
+      "evaluation item": "完整度->动态特性跟踪完整度->动态调用->反射调用",
+      "compose": "Expression_Reflection_001_T.java && !Expression_Reflection_002_F.java",
+      "level": "4"
     }
   ]
 }

@@ -15,10 +15,9 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation project = 准确度->路径敏感->不涉及求解问题->instanceof表达式-null
+// evaluation item = 准确度->路径敏感->不涉及求解问题->instanceof表达式-null
 // bind_url = accuracy/path_sensitive/conditional_stmt/Expression_InstanceofExpression_003_T/{cmd}
 // evaluation information end
-
 @RestController()
 @RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class Expression_InstanceofExpression_003_T {

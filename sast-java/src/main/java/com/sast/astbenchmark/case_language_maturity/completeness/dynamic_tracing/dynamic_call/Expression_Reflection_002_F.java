@@ -16,14 +16,14 @@ import java.util.Map;
  * Date 2024-11-10
  */
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->动态特性跟踪完整度->动态调用->反射调用
-// bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_001_T/{cmd}/{methodname}
+// bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_002_F/{cmd}/{methodname}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/dynamic_tracing/dynamic_call")
-public class Expression_Reflection_001_T {
-    @GetMapping("Expression_Reflection_001_T/{cmd}/{methodname}")
+public class Expression_Reflection_002_F {
+    @GetMapping("Expression_Reflection_002_F/{cmd}/{methodname}")
     public Map<String, Object> aTaintCase0134(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {
@@ -31,11 +31,12 @@ public class Expression_Reflection_001_T {
             return modelMap;
         }
         try {
+            String param = "run";
             Class<CmdUtil> clazz = CmdUtil.class;
             Method method = clazz.getMethod("run", String.class);
             method.setAccessible(true);
             //静态方法不需要创建对象实例
-            method.invoke(null, cmd);
+            method.invoke(null, param);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

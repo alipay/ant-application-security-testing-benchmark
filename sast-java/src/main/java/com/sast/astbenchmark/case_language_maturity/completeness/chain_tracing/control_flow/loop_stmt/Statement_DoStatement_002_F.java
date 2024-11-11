@@ -9,26 +9,30 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-for语句
+ * Introduction 污点链路样本中的语句-do_while语句
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
-// real case = true
-// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->for语句
-// bind_url = completeness/chain_tracing/control_flow/loop_stmt/Statement_ForStatement_001_T/{cmd}
+// real case = false
+// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->do_while语句
+// bind_url = completeness/chain_tracing/control_flow/loop_stmt/Statement_DoStatement_002_F/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/chain_tracing/control_flow/loop_stmt")
-public class Statement_ForStatement_001_T {
-    @GetMapping("Statement_ForStatement_001_T/{cmd}")
-    public Map<String, Object> aTaintCase0127(@PathVariable String cmd) {
+public class Statement_DoStatement_002_F {
+    @GetMapping("Statement_DoStatement_002_F/{cmd}")
+    public Map<String, Object> aTaintCase0128(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a ="mkdir";
-            for(int i =0 ;i<10; i++){
-                a= cmd+"|";
-            }
+            int i = 10;
+
+            do {
+                a= a+"|";
+                i++;
+            }while (i<20);
+
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");
         } catch (Exception e) {

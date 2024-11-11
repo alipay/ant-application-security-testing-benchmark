@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation project = 准确度->路径敏感->涉及求解问题->数组长度计算
+// evaluation item = 准确度->路径敏感->涉及求解问题->数组长度计算
 // bind_url = accuracy/path_sensitive/conditional_stmt/DifferentIfBranch_ArrayLength_002_F
 // evaluation information end
 @RestController()

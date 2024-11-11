@@ -17,7 +17,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->路径敏感->涉及求解问题->try语句-数组越界异常or抛出异常
-// bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_005_T
+// bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_005_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/path_sensitive/exception_throw")

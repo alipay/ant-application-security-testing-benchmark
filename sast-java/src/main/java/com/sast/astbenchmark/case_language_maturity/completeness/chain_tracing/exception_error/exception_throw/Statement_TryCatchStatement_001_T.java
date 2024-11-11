@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.path_sensitive.exception_throw;
+package com.sast.astbenchmark.case_language_maturity.completeness.chain_tracing.exception_error.exception_throw;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,27 +9,27 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-try语句-数组越界异常
+ * Introduction ->try语句-catch块
  * Level 4
- * Date 2024-08-16
+ * Date 2024-11-10
  */
 // evaluation information start
-// real case = false
-// evaluation item = 准确度->路径敏感->涉及求解问题->try语句-数组越界异常
-// bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_002_F/{cmd}
+// real case = true
+// evaluation item = 完整度->链路跟踪完整度->异常与错误处理->异常处理->try语句-catch块
+// bind_url = completeness/chain_tracing/exception_error/exception_throw/Statement_TryCatchStatement_001_T/{cmd}
 // evaluation information end
-@RestController()
-@RequestMapping("accuracy/path_sensitive/exception_throw")
-public class Statement_TryStatement_002_F {
-    @GetMapping("Statement_TryStatement_002_F/{cmd}")
+@RestController
+@RequestMapping("completeness/chain_tracing/exception_error/exception_throw")
+public class Statement_TryCatchStatement_001_T {
+    @GetMapping("Statement_TryCatchStatement_001_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             int[] data = new int[10];
-            int b = data[15];
-            Runtime.getRuntime().exec(cmd);
+            int a = data[15];
         } catch (Exception ex) {
-            try {    
+            try {
+                Runtime.getRuntime().exec(cmd);
                 modelMap.put("status", "success");
             } catch (Exception e) {
                 modelMap.put("status", "error");
