@@ -17,10 +17,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->域敏感->对象属性->对象指针->PropertyTaint
-// bind_url = accuracy/field_sensitive/interface_class/PropertyIsTaintOrNot_Object_001_T
+// bind_url = accuracy/fieldSensitive/objectField/PropertyIsTaintOrNot_Object_001_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/field_sensitive/interface_class")
+@RequestMapping("accuracy/fieldSensitive/objectField")
 public class PropertyIsTaintOrNot_Object_001_T {
     @PostMapping(value = "PropertyIsTaintOrNot_Object_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

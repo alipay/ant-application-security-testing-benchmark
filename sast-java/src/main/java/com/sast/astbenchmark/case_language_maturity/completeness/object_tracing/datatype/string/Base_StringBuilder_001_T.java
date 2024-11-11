@@ -14,14 +14,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->StringBuilder
-// bind_url = completeness/object_tracing/datatype/string/Base_StringBuilder_001_T
+// bind_url = completeness/base/object/javaNative/Base_StringBuilder_001_T
 // evaluation information end
+
 @RestController()
-@RequestMapping("completeness/object_tracing/datatype/string")
+@RequestMapping("completeness/base/object/javaNative")
 public class Base_StringBuilder_001_T {
     @PostMapping("Base_StringBuilder_001_T")
     public Map<String, Object> aTaintCase0154(@RequestBody String cmd) {

@@ -18,10 +18,10 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->域敏感->容器->数组是否越界-ArrayList
-// bind_url = accuracy/field_sensitive/array/ArrayOutOfBoundOrNot_004_F
+// bind_url = accuracy/fieldSensitive/baseCollection/ArrayOutOfBoundOrNot_004_F
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/field_sensitive/array")
+@RequestMapping("accuracy/fieldSensitive/baseCollection")
 public class ArrayOutOfBoundOrNot_004_F {
     @PostMapping("ArrayOutOfBoundOrNot_004_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

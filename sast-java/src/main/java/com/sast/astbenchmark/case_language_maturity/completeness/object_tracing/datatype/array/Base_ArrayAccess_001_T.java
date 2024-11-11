@@ -14,14 +14,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Argument_ArrayAccess-get+ArrayList
-// bind_url = completeness/object_tracing/datatype/array/Base_ArrayAccess_001_T
+// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_001_T
 // evaluation information end
+
 @RestController()
-@RequestMapping("completeness/object_tracing/datatype/array")
+@RequestMapping("completeness/base/object/javaNative")
 public class Base_ArrayAccess_001_T {
     @PostMapping("Base_ArrayAccess_001_T")
     public Map<String, Object> aTaintCase0110(@RequestParam("cmd") String cmd, HttpServletRequest request) {

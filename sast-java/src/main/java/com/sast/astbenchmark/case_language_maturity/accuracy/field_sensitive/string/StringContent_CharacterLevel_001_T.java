@@ -17,10 +17,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->域敏感->字符串中字符->字符级敏感
-// bind_url = accuracy/field_sensitive/string/StringContent_CharacterLevel_001_T
+// bind_url = accuracy/fieldSensitive/stringContent/StringContent_CharacterLevel_001_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/field_sensitive/string")
+@RequestMapping("accuracy/fieldSensitive/stringContent")
 public class StringContent_CharacterLevel_001_T {
     @PostMapping(value = "StringContent_CharacterLevel_001_T")
     public Map<String, Object> testcase(@RequestParam String domain) {

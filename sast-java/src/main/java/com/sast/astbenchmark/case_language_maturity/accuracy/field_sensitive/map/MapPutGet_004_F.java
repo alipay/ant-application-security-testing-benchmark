@@ -1,7 +1,7 @@
 package com.sast.astbenchmark.case_language_maturity.accuracy.field_sensitive.map;
 
-import com.sast.astbenchmark.model.XCmdObject;
 import com.sast.astbenchmark.common.utils.HttpUtil;
+import com.sast.astbenchmark.model.XCmdObject;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,10 +18,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->域敏感->容器->MapPutGet-scene2
-// bind_url = accuracy/field_sensitive/map/MapPutGet_004_F
+// bind_url = accuracy/fieldSensitive/baseCollection/MapPutGet_004_F
 // evaluation information end
+
 @RestController()
-@RequestMapping("accuracy/field_sensitive/map")
+@RequestMapping("accuracy/fieldSensitive/baseCollection")
 public class MapPutGet_004_F {
     @PostMapping(value = "MapPutGet_004_F")
     public Map<String, Object> testcase(@RequestParam String url) {

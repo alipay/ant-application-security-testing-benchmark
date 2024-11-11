@@ -19,10 +19,11 @@ import java.util.Queue;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->域敏感->容器->Queue+Lambda
-// bind_url = accuracy/field_sensitive/map/QueueWithLambda_002_F
+// bind_url = accuracy/fieldSensitive/baseCollection/QueueWithLambda_002_F
 // evaluation information end
+
 @RestController()
-@RequestMapping("accuracy/field_sensitive/map")
+@RequestMapping("accuracy/fieldSensitive/baseCollection")
 public class QueueWithLambda_002_F {
     @PostMapping(value = "QueueWithLambda_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

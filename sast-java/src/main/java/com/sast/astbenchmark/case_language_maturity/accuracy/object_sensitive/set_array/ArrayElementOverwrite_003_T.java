@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.List;
-
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,10 +18,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->对象敏感->容器->数组元素敏感-ArrayList
-// bind_url = accuracy/object_sensitive/set_array/ArrayElementOverwrite_003_T
+// bind_url = accuracy/objectSensitive/baseCollection/ArrayElementOverwrite_003_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/object_sensitive/set_array")
+@RequestMapping("accuracy/objectSensitive/baseCollection")
 public class ArrayElementOverwrite_003_T {
     @PostMapping("ArrayElementOverwrite_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

@@ -19,10 +19,10 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->域敏感->对象属性->对象指针->AccessPathChain-LinkedList
-// bind_url = accuracy/fieldSensitive/interfaceClass/AccessPathChainAlias_004_F
+// bind_url = accuracy/fieldSensitive/objectField/AccessPathChainAlias_004_F
 // evaluation information end
 @RestController
-@RequestMapping("accuracy/field_sensitive/interface_class")
+@RequestMapping("accuracy/fieldSensitive/objectField")
 public class AccessPathChainAlias_004_F {
     @PostMapping(value = "AccessPathChainAlias_004_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

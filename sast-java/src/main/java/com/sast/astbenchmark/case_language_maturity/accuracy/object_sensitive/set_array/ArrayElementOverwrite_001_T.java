@@ -16,10 +16,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->对象敏感->容器->数组元素敏感
-// bind_url = accuracy/object_sensitive/set_array/ArrayElementOverwrite_001_T
+// bind_url = accuracy/objectSensitive/baseCollection/ArrayElementOverwrite_001_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/object_sensitive/set_array")
+@RequestMapping("accuracy/objectSensitive/baseCollection")
 public class ArrayElementOverwrite_001_T {
     @PostMapping("ArrayElementOverwrite_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

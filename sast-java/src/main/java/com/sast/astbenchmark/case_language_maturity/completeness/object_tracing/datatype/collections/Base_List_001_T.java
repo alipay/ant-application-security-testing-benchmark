@@ -16,14 +16,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->List
-// bind_url = completeness/object_tracing/datatype/collections/Base_List_001_T
+// bind_url = completeness/base/object/javaNative/Base_List_001_T
 // evaluation information end
+
 @RestController()
-@RequestMapping("completeness/object_tracing/datatype/collections")
+@RequestMapping("completeness/base/object/javaNative")
 public class Base_List_001_T {
     @PostMapping("Base_List_001_T")
     public Map<String, Object> aTaintCase0141(@RequestBody List<String> cmd) {

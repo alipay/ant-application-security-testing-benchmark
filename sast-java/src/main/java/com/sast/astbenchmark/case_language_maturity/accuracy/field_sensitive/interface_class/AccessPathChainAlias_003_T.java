@@ -1,6 +1,8 @@
 package com.sast.astbenchmark.case_language_maturity.accuracy.field_sensitive.interface_class;
 
-import com.sast.astbenchmark.model.alias.*;
+import com.sast.astbenchmark.model.alias.A;
+import com.sast.astbenchmark.model.alias.Invoke;
+import com.sast.astbenchmark.model.alias.SimpleLinkedList;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,10 +19,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->域敏感->对象属性->对象指针->AccessPathChain-LinkedList
-// bind_url = accuracy/fieldSensitive/interfaceClass/AccessPathChainAlias_003_T
+// bind_url = accuracy/fieldSensitive/objectField/AccessPathChainAlias_003_T
 // evaluation information end
 @RestController
-@RequestMapping("accuracy/field_sensitive/interface_class")
+@RequestMapping("accuracy/fieldSensitive/objectField")
 public class AccessPathChainAlias_003_T {
     @PostMapping(value = "AccessPathChainAlias_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

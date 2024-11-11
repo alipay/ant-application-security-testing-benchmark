@@ -1,14 +1,14 @@
 {
   "generics": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->泛型类-类型参数",
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->数据类型->泛型类-类型参数",
       "compose": "CallExpression_CustomCode_Class_009_T.java && !CallExpression_CustomCode_Class_010_F.java",
-      "level": ""
+      "level": "2"
     },
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->泛型类-wildcard",
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->数据类型->泛型类-wildcard",
       "compose": "CallExpression_CustomCode_Class_011_T.java && !CallExpression_CustomCode_Class_012_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
 }

@@ -17,10 +17,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->域敏感->容器->MapPutGet-scene1
-// bind_url = accuracy/field_sensitive/map/MapPutGet_002_F
+// bind_url = accuracy/fieldSensitive/baseCollection/MapPutGet_002_F
 // evaluation information end
+
 @RestController()
-@RequestMapping("accuracy/field_sensitive/map")
+@RequestMapping("accuracy/fieldSensitive/baseCollection")
 public class MapPutGet_002_F {
     @PostMapping(value = "MapPutGet_002_F")
     public Map<String, Object> testcase(@RequestParam String url) {
