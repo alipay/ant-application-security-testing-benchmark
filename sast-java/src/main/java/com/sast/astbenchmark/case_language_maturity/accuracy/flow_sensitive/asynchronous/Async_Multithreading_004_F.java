@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation project = 准确度->流敏感->异步->存储型异步->多线程->Runnable
+// evaluation item = 准确度->流敏感->异步->存储型异步->多线程->Runnable
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_004_F/{cmd}
 // evaluation information end
 

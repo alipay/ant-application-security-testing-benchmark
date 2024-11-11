@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 // evaluation information start
 // real case = false
-// evaluation project = 完整度->异步跟踪完整度->存储型异步->多线程->Thread
+// evaluation item = 完整度->异步跟踪完整度->存储型异步->多线程->Thread
 // bind_url = completeness/asynchronous_tracing/multi_thread/Async_Multithreading_002_F/{cmd}
 // evaluation information end
 

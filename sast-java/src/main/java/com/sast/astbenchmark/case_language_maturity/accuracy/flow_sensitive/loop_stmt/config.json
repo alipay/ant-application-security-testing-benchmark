@@ -1,19 +1,14 @@
 {
   "loop_stmt": [
     {
-      "evaluation item": "准确度->流敏感->循环结构->for->body流敏感",
-      "compose": "for_001_T.js && !for_002_F.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->循环语句->for-init流敏感",
+      "compose": "Statement_ForStatement_005_T.java && !Statement_ForStatement_006_F.java",
+      "level": "3"
     },
     {
-      "evaluation item": "准确度->流敏感->循环结构->for->init流敏感",
-      "compose": "for_003_T.js && !for_004_F.js",
-      "level": "2"
-    },
-    {
-      "evaluation item": "准确度->流敏感->循环结构->dowhile",
-      "compose": "dowhile_body_003_T.js && !dowhile_body_004_F.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->循环语句->for-update流敏感",
+      "compose": "Statement_ForStatement_007_T.java && !Statement_ForStatement_008_F.java",
+      "level": "3"
     }
   ]
 }

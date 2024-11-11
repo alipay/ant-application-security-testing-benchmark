@@ -1,9 +1,5 @@
 {
   "tagged_template_literals": [
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->标签函数",
-      "compose": "!tagged_template_literal_001_F.js && tagged_template_literal_002_T.js",
-      "level": "2+"
-    }
+
   ]
 }
