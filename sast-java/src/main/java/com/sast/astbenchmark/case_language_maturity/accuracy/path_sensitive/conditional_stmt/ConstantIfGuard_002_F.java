@@ -14,14 +14,13 @@ import java.util.Map;
  * Level 4
  * Date 2024-05-23
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->路径敏感->不涉及求解问题->常量分支条件
-// compose = !ConstantIfGuard_002_F.java && ConstantIfGuard_001_T.java
-// bind_url = accuracy/pathSensitive/notCalculateValue/ConstantIfGuard_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->路径敏感->不涉及求解问题->常量分支条件
+// bind_url = accuracy/path_sensitive/conditional_stmt/ConstantIfGuard_002_F
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/pathSensitive/notCalculateValue")
+@RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class ConstantIfGuard_002_F {
     @PostMapping(value = "ConstantIfGuard_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

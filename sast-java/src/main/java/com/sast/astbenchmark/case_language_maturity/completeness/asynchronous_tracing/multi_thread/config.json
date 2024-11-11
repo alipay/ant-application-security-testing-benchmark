@@ -1,0 +1,29 @@
+{
+  "multi_thread": [
+    {
+      "evaluation item": "完整度->异步跟踪能力->存储型异步->多线程->Thread",
+      "compose": "Async_Multithreading_001_T.java && !Async_Multithreading_002_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->异步跟踪能力->存储型异步->多线程->Runnable",
+      "compose": "Async_Multithreading_003_T.java && !Async_Multithreading_004_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->异步跟踪能力->存储型异步->多线程->Executors",
+      "compose": "Async_Multithreading_005_T.java && !Async_Multithreading_006_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->异步跟踪能力->存储型异步->多线程->TimerTask",
+      "compose": "Async_Multithreading_007_T.java && !Async_Multithreading_008_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->异步跟踪能力->存储型异步->多线程->Synchronized",
+      "compose": "Async_Multithreading_009_T.java && !Async_Multithreading_010_F.java",
+      "level": ""
+    }
+  ]
+}

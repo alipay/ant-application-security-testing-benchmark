@@ -15,14 +15,13 @@ import java.util.Map;
  * Level 2
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->流敏感->数据流不可达->对象属性set赋值为非污点
-// compose = !AssignObjectAttribute_001_F.java && AssignObjectAttribute_002_T.java
-// bind_url = accuracy/flowSensitive/flowUnReachable/AssignObjectAttribute_002_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->流敏感->数据流不可达->对象属性set赋值为非污点
+// bind_url = accuracy/flow_sensitive/normal_stmt/AssignObjectAttribute_002_T
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/flowSensitive/flowUnReachable")
+@RequestMapping("accuracy/flow_sensitive/normal_stmt")
 public class AssignObjectAttribute_002_T {
     @PostMapping(value = "AssignObjectAttribute_002_T")
     public Map<String, Object> testcase(@PathVariable String cmd) {

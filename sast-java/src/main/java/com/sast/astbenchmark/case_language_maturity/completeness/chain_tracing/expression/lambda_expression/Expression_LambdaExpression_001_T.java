@@ -15,15 +15,14 @@ import java.util.function.Function;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->Lambda表达式
-// compose = Expression_LambdaExpression_001_T.java && !Expression_LambdaExpression_002_F.java
-// bind_url = completeness/base/chain/astTaint/Expression_LambdaExpression_001_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->Lambda表达式
+// bind_url = completeness/chain_tracing/expression/lambda_expression/Expression_LambdaExpression_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/expression/lambda_expression")
 public class Expression_LambdaExpression_001_T {
     @GetMapping("Expression_LambdaExpression_001_T")
     public Map<String, Object> aTaintCase017(@RequestBody String url) {

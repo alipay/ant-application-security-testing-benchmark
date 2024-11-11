@@ -13,18 +13,17 @@ import java.util.Map;
  * Level 4
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->流敏感->中断语句->continue
-// compose = Statement_InterruptStatement_005_T.java && !Statement_InterruptStatement_006_F.java
-// bind_url = accuracy/flowSensitive/InterruptStatement/Statement_InterruptStatement_006_F/{cmd}
-// assession information end
 
 @RestController()
-@RequestMapping("accuracy/flowSensitive/InterruptStatement")
+@RequestMapping("accuracy/path_sensitive/explicit_jump_control")
 public class Statement_InterruptStatement_006_F {
     @GetMapping("Statement_InterruptStatement_006_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->流敏感->中断语句->continue
+// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_006_F
+// evaluation information end
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a ="mkdir";

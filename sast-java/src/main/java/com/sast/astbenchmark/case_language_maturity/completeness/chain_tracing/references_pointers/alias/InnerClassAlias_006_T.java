@@ -14,14 +14,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-05
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene2
-// compose = !InnerClassAlias_003_F.java && !InnerClassAlias_004_F.java && InnerClassAlias_005_T.java && InnerClassAlias_006_T.java
-// bind_url = accuracy/fieldSensitive/objectField/InnerClassAlias_006_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene2
+// bind_url = completeness/chain_tracing/references_pointers/alias/InnerClassAlias_006_T
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("completeness/chain_tracing/references_pointers/alias")
 public class InnerClassAlias_006_T {
     @PostMapping(value = "InnerClassAlias_006_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

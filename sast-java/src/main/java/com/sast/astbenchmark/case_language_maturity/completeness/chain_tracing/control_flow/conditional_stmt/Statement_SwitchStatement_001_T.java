@@ -14,15 +14,14 @@ import java.util.Map;
  * Level X
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->switch语句
-// compose = Statement_SwitchStatement_001_T.java
-// bind_url = completeness/base/chain/astTaint/Statement_SwitchStatement_001_T/{type}/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->switch语句
+// bind_url = completeness/chain_tracing/control_flow/conditional_stmt/Statement_SwitchStatement_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/control_flow/conditional_stmt")
 public class Statement_SwitchStatement_001_T {
     @GetMapping("Statement_SwitchStatement_001_T/{type}/{cmd}")
     public Map<String, Object> aTaintCase016(@PathVariable String cmd, @PathVariable String type) {

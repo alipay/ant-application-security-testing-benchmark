@@ -15,15 +15,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->域敏感->容器->MapPutGet-scene2
-// compose = !MapPutGet_004_F.java && MapPutGet_003_T.java
-// bind_url = accuracy/fieldSensitive/baseCollection/MapPutGet_004_F
-// assession information end
-
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->域敏感->容器->MapPutGet-scene2
+// bind_url = accuracy/field_sensitive/map/MapPutGet_004_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/field_sensitive/map")
 public class MapPutGet_004_F {
     @PostMapping(value = "MapPutGet_004_F")
     public Map<String, Object> testcase(@RequestParam String url) {

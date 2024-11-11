@@ -15,15 +15,14 @@ import java.util.Map;
  * Level X
  * Date 2024-09-18
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-if body
-// compose = Statement_IfStatement_003_T.java && !Statement_IfStatement_004_F.java
-// bind_url = completeness/base/chain/astTaint/Statement_IfStatement_003_T/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-if body
+// bind_url = completeness/chain_tracing/control_flow/conditional_stmt/Statement_IfStatement_003_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/control_flow/conditional_stmt")
 public class Statement_IfStatement_003_T {
     @GetMapping("Statement_IfStatement_003_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

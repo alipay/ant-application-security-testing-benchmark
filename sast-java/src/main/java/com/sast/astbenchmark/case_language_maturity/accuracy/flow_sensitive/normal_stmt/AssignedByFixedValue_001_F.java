@@ -13,14 +13,13 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->流敏感->数据流不可达->被固定值赋值
-// compose = !AssignedByFixedValue_001_F.java && AssignedByFixedValue_002_T.java
-// bind_url = accuracy/flowSensitive/flowUnReachable/AssignedByFixedValue_001_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->流敏感->数据流不可达->被固定值赋值
+// bind_url = accuracy/flow_sensitive/normal_stmt/AssignedByFixedValue_001_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/flowSensitive/flowUnReachable")
+@RequestMapping("accuracy/flow_sensitive/normal_stmt")
 public class AssignedByFixedValue_001_F {
     @PostMapping(value = "AssignedByFixedValue_001_F")
     public Map<String, Object> aTaintCase0158(@RequestParam String cmd) {

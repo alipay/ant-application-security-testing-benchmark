@@ -13,13 +13,11 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Level X
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->泛型类-类型参数
-// compose = CallExpression_CustomCode_Class_009_T.java && !CallExpression_CustomCode_Class_010_F.java
-// bind_url = completeness/base/chain/special/custom/CallExpression_CustomCode_Class_010_F
-// assession information end
-
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->泛型类-类型参数
+// bind_url = completeness/object_tracing/interface_class/anonymous_object/CallExpression_CustomCode_Class_010_F
+// evaluation information end
 public class CallExpression_CustomCode_Class_010_F {
     @PostMapping(value = "CallExpression_CustomCode_Class_010_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

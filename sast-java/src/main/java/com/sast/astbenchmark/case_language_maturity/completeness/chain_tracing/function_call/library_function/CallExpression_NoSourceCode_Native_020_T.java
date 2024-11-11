@@ -9,25 +9,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-无源码函数-StringBuilder构造函数
+ * Introduction 污点链路样本中的特殊场景-无源码函数-string replace
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->StringBuilder构造函数
-// compose = CallExpression_NoSourceCode_Native_020_T.java
-// bind_url = completeness/base/chain/special/nosource/CallExpression_NoSourceCode_Native_020_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.replace
+// bind_url = completeness/chain_tracing/function_call/library_function/CallExpression_NoSourceCode_Native_020_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/special/nosource")
+@RequestMapping("completeness/chain_tracing/function_call/library_function")
 public class CallExpression_NoSourceCode_Native_020_T {
     @PostMapping(value = "CallExpression_NoSourceCode_Native_020_T")
-    public Map<String, Object> aTaintCase0181(@RequestParam String cmd) {
+    public Map<String, Object> aTaintCase0169(@RequestParam String cmd ) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(String.valueOf(new StringBuilder(cmd)));
+            cmd=cmd.replace(";"," ");
+            Runtime.getRuntime().exec(cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

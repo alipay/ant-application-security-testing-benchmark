@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->嵌套类
-// compose = CallExpression_CustomCode_Class_001_T.java && !CallExpression_CustomCode_Class_002_F.java
-// bind_url = completeness/base/chain/special/custom/CallExpression_CustomCode_Class_001_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->嵌套类
+// bind_url = completeness/object_tracing/interface_class/complex_object/CallExpression_CustomCode_Class_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/special/custom")
+@RequestMapping("completeness/object_tracing/interface_class/complex_object")
 public class CallExpression_CustomCode_Class_001_T {
     @PostMapping(value = "CallExpression_CustomCode_Class_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

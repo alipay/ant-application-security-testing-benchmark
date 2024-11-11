@@ -5,31 +5,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-无源码函数-String构造函数
+ * Introduction 污点链路样本中的特殊场景-无源码函数-原生 string.valueof
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->String构造函数
-// compose = CallExpression_NoSourceCode_Native_002_T.java
-// bind_url = completeness/base/chain/special/nosource/CallExpression_NoSourceCode_Native_002_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.valueof
+// bind_url = completeness/chain_tracing/function_call/library_function/CallExpression_NoSourceCode_Native_002_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/special/nosource")
+@RequestMapping("completeness/chain_tracing/function_call/library_function")
 public class CallExpression_NoSourceCode_Native_002_T {
     @PostMapping(value = "CallExpression_NoSourceCode_Native_002_T")
-    public Map<String, Object> aTaintCase0160(@RequestParam String cmd ) {
+    public Map<String, Object> aTaintCase0155(@RequestParam(defaultValue = "ls") String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(new String(cmd));
+            String exec = String.valueOf(cmd);
+            Runtime.getRuntime().exec(exec);
             modelMap.put("status", "success");
-        } catch (Exception e) {
+        } catch (IOException e) {
             modelMap.put("status", "error");
         }
         return modelMap;

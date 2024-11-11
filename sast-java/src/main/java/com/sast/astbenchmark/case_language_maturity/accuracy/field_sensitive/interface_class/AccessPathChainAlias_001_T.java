@@ -14,14 +14,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-05
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->域敏感->对象属性->对象指针->AccessPathChain-Tree
-// compose = AccessPathChainAlias_001_T.java && !AccessPathChainAlias_002_F.java
-// bind_url = accuracy/fieldSensitive/objectField/AccessPathChainAlias_001_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->域敏感->对象属性->对象指针->AccessPathChain-Tree
+// bind_url = accuracy/fieldSensitive/interfaceClass/AccessPathChainAlias_001_T
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("accuracy/field_sensitive/interface_class")
 public class AccessPathChainAlias_001_T {
     @PostMapping(value = "AccessPathChainAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

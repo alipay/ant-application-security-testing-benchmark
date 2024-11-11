@@ -15,14 +15,13 @@ import java.util.Map;
  * Level 2
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->对象敏感->不同对象相同属性
-// compose = !ObjectDiffAttribute_002_F.java && ObjectDiffAttribute_001_T.java
-// bind_url = accuracy/objectSensitive/ObjectDiffAttribute_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->对象敏感->不同对象相同属性
+// bind_url = accuracy/object_sensitive/interface_class/ObjectDiffAttribute_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/objectSensitive")
+@RequestMapping("accuracy/object_sensitive/interface_class")
 public class ObjectDiffAttribute_002_F {
     @PostMapping(value = "ObjectDiffAttribute_002_F")
     public Map<String, Object> testcase(@PathVariable String cmd) {

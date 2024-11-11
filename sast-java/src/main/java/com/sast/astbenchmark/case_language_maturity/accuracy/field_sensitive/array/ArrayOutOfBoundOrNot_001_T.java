@@ -13,14 +13,13 @@ import java.util.Map;
  * Level 3+
  * Date 2024-06-28
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->域敏感->容器->数组是否越界
-// compose = ArrayOutOfBoundOrNot_001_T.java && !ArrayOutOfBoundOrNot_002_F.java
-// bind_url = accuracy/fieldSensitive/baseCollection/ArrayOutOfBoundOrNot_001_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->域敏感->容器->数组是否越界
+// bind_url = accuracy/field_sensitive/array/ArrayOutOfBoundOrNot_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/field_sensitive/array")
 public class ArrayOutOfBoundOrNot_001_T {
     @PostMapping("ArrayOutOfBoundOrNot_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

@@ -15,15 +15,14 @@ import org.springframework.web.bind.annotation.RestController;
  * Level 3
  * Date 2024-07-31
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->异步跟踪能力->存储型异步->多线程->Synchronized
-// compose = !Async_Multithreading_010_F.java && Async_Multithreading_009_T.java
-// bind_url = completeness/async/Async_Multithreading_010_F/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->异步跟踪能力->存储型异步->多线程->Synchronized
+// bind_url = completeness/asynchronous_tracing/multi_thread/Async_Multithreading_010_F
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/async")
+@RequestMapping("completeness/asynchronous_tracing/multi_thread")
 public class Async_Multithreading_010_F {
     private String a;
     @PostMapping("Async_Multithreading_010_F/{cmd}")

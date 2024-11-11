@@ -1,39 +1,19 @@
 {
   "argument_passing": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->默认值传递",
-      "compose": "!argument_passing_default_value_001_F.js && argument_passing_default_value_002_T.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->变量赋值表达式直接引入而不是import",
+      "compose": "Expression_CallExpression_Package_001_T.java && !Expression_CallExpression_Package_002_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递",
-      "compose": "!argument_passing_reference_001_F.js && argument_passing_reference_002_T.js",
-      "level": "2+"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用",
+      "compose": "Expression_MethodInvocation_001_T.java && !Expression_MethodInvocation_002_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递数组",
-      "compose": "!argument_passing_reference_003_F.js && argument_passing_reference_004_T.js",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->引用传递map",
-      "compose": "!argument_passing_reference_005_F.js && argument_passing_reference_006_T.js",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递",
-      "compose": "!argument_passing_value_001_F.js && argument_passing_value_002_T.js",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递",
-      "compose": "!argument_passing_value_003_F.js && argument_passing_value_004_T.js",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->参数传递->值传递嵌套函数",
-      "compose": "!argument_passing_value_005_F.js && argument_passing_value_006_T.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+中缀表达式",
+      "compose": "Expression_MethodInvocation_InfixExpression_001_T.java && !Expression_MethodInvocation_InfixExpression_002_F.java",
+      "level": ""
     }
   ]
 }

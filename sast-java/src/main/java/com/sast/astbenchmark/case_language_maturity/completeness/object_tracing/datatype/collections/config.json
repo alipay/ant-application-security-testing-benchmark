@@ -1,9 +1,19 @@
 {
   "collections": [
     {
-      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->集合",
-      "compose": "set_001_T.js && !set_002_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->List",
+      "compose": "Base_List_001_T.java && Base_List_002_T.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue",
+      "compose": "Base_Queue_001_T.java && Base_Queue_002_T.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Set",
+      "compose": "Base_Set_001_T.java && Base_Set_002_T.java",
+      "level": ""
     }
   ]
 }

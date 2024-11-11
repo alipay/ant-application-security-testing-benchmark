@@ -14,15 +14,14 @@ import java.util.Map;
  * Level 3
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用 + BinaryOperation
-// compose = Expression_MethodInvocation_Argument_002_T.java
-// bind_url = completeness/base/chain/astTaint/Expression_MethodInvocation_Argument_002_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用 + BinaryOperation
+// bind_url = completeness/chain_tracing/function_call/chained_call/Expression_MethodInvocation_Argument_002_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/function_call/chained_call")
 public class Expression_MethodInvocation_Argument_002_T {
     @PostMapping(value = "Expression_MethodInvocation_Argument_002_T")
     public Map<String, Object> aTaintCase0116(@RequestParam String cmd) {

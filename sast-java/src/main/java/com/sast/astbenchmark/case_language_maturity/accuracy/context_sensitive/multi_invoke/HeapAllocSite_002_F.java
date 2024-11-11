@@ -16,14 +16,13 @@ import java.util.Map;
  * Level 2
  * Date 2024-07-05
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->上下文敏感->HeapAllocSite
-// compose = HeapAllocSite_001_T.java && !HeapAllocSite_002_F.java
-// bind_url = accuracy/contextSensitive/HeapAllocSite_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->上下文敏感->HeapAllocSite
+// bind_url = accuracy/context_sensitive/multi_invoke/HeapAllocSite_002_F
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/contextSensitive")
+@RequestMapping("accuracy/context_sensitive/multi_invoke")
 public class HeapAllocSite_002_F {
     @PostMapping(value = "HeapAllocSite_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

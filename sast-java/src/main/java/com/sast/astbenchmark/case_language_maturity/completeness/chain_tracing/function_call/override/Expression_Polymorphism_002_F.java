@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->多态
-// compose = Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java
-// bind_url = completeness/base/chain/astTaint/Expression_Polymorphism_001_T/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->多态
+// bind_url = completeness/chain_tracing/function_call/override/Expression_Polymorphism_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/function_call/override")
 public class Expression_Polymorphism_002_F {
     @GetMapping("Expression_Polymorphism_002_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

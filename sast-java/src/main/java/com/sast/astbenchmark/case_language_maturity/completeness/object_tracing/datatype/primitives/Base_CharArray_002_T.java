@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]
-// compose = Base_CharArray_001_T.java || Base_CharArray_002_T.java
-// bind_url = completeness/base/object/javaNative/Base_CharArray_002_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]
+// bind_url = completeness/object_tracing/datatype/primitives/Base_CharArray_002_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/primitives")
 public class Base_CharArray_002_T {
     @PostMapping("Base_CharArray_002_T")
     public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {

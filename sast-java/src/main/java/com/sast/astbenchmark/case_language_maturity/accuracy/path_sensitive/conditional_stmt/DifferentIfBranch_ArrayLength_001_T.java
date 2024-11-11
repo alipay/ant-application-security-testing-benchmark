@@ -13,14 +13,13 @@ import java.util.Map;
  * Level 4
  * Date 2024-06-28
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->路径敏感->涉及求解问题->数组长度计算
-// compose = DifferentIfBranch_ArrayLength_001_T.java && !DifferentIfBranch_ArrayLength_002_F && DifferentIfBranch_ArrayLength_003_T.java
-// bind_url = accuracy/pathSensitive/calculateValue/DifferentIfBranch_ArrayLength_001_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->路径敏感->涉及求解问题->数组长度计算
+// bind_url = accuracy/path_sensitive/conditional_stmt/DifferentIfBranch_ArrayLength_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/pathSensitive/calculateValue")
+@RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class DifferentIfBranch_ArrayLength_001_T {
     @PostMapping("DifferentIfBranch_ArrayLength_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

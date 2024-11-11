@@ -1,14 +1,14 @@
 {
-    "type_cast":[
-        {
-          "evaluation item": "完整度->链路跟踪完整度->表达式->类型转换->显式类型转换",
-          "compose": "type_cast_001_T.js && !type_cast_002_F.js",
-          "level": "2"
-        },
-        {
-          "evaluation item": "完整度->链路跟踪完整度->表达式->类型转换->隐式类型转换",
-          "compose": "type_cast_003_T.js && type_cast_004_T.js",
-          "level": "2+"
-        }
-    ]
+  "type_cast": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->强转表达式-参数传递",
+      "compose": "Expression_CastExpression_001_T.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->强转表达式-函数调用",
+      "compose": "Expression_CastExpression_002_T.java",
+      "level": ""
+    }
+  ]
 }

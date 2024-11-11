@@ -15,14 +15,13 @@ import java.util.Map;
  * Level 4
  * Date 2024-07-05
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->上下文敏感->相同函数调用不同参数-scene1
-// compose = !DifferentParamsForFunction_002_F.java && DifferentParamsForFunction_001_T.java
-// bind_url = accuracy/contextSensitive/DifferentParamsForFunction_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->上下文敏感->相同函数调用不同参数-scene1
+// bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_002_F
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/contextSensitive")
+@RequestMapping("accuracy/context_sensitive/multi_invoke")
 public class DifferentParamsForFunction_002_F {
     @PostMapping(value = "DifferentParamsForFunction_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

@@ -18,15 +18,14 @@ import java.util.Map;
  * Level 4
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->Serializable接口
-// compose = CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java
-// bind_url = completeness/base/chain/special/custom/CallExpression_CustomCode_Interface_002_F
-// assession information end
 
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->Serializable接口
+// bind_url = completeness/chain_tracing/function_call/library_function/CallExpression_CustomCode_Interface_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/special/custom")
+@RequestMapping("completeness/chain_tracing/function_call/library_function")
 public class CallExpression_CustomCode_Interface_002_F {
     @PostMapping(value = "CallExpression_CustomCode_Interface_002_F")
     public Map<String, Object> testcase(@PathVariable String cmd) {

@@ -14,15 +14,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte
-// compose = Base_Byte_002_T.java || Base_Byte_004_T.java
-// bind_url = completeness/base/object/javaNative/Base_Byte_004_T/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte
+// bind_url = completeness/object_tracing/datatype/primitives/Base_Byte_004_T/{cmd}
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/primitives")
 public class Base_Byte_004_T {
     @PostMapping("Base_Byte_004_T/{cmd}")
     public Map<String, Object> aTaintCase0144_2(@PathVariable Byte cmd) {

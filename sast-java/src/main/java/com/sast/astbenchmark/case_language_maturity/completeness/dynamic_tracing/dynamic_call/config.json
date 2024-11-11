@@ -1,19 +1,9 @@
 {
   "dynamic_call": [
     {
-      "evaluation item": "完整度->动态特性跟踪完整度->动态方法调用->反射",
-      "compose": "!dynamic_call_reflect_001_F.js && dynamic_call_reflect_002_T.js",
-      "level": "4"
-    },
-    {
-      "evaluation item": "完整度->动态特性跟踪完整度->动态方法调用->反射",
-      "compose": "dynamic_call_reflect_003_T.js && !dynamic_call_reflect_004_F.js",
-      "level": "4"
-    },
-    {
-      "evaluation item": "完整度->动态特性跟踪完整度->动态方法调用->反射",
-      "compose": "dynamic_call_reflect_005_T.js && !dynamic_call_reflect_006_F.js",
-      "level": "4"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->反射调用",
+      "compose": "Expression_Reflection_001_T.java",
+      "level": ""
     }
   ]
 }

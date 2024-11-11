@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Long
-// compose = Base_Long_002_T.java || Base_Long_004_T.java
-// bind_url = completeness/base/object/javaNative/Base_Long_004_T/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Long
+// bind_url = completeness/object_tracing/datatype/primitives/Base_Long_004_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/primitives")
 public class Base_Long_004_T {
     @PostMapping("Base_Long_004_T/{cmd}")
     public Map<String, Object> aTaintCase0146(@PathVariable Long cmd) {

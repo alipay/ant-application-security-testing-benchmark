@@ -17,15 +17,14 @@ import java.util.Map;
  * 注意，case中的 SinkUtil.sink 为自定义Sink，由于评测对基础类型无法直接找到sink点，因此设计出了一个自定义Sink。
  * 此评价项（assession project）的达成为"或"条件（参考compose），一个case是自定义case的形式，另一种case是通过String.valueof函数转化为sink点可以接受的入参类型，两个case达成一个即认为本评价项达成。具体要支持哪个可依据不同引擎的情况而定。
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]
-// compose = Base_CharArray_001_T.java || Base_CharArray_002_T.java
-// bind_url = completeness/base/object/javaNative/Base_CharArray_001_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]
+// bind_url = completeness/object_tracing/datatype/primitives/Base_CharArray_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/primitives")
 public class Base_CharArray_001_T {
     @PostMapping("Base_CharArray_001_T")
     public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {

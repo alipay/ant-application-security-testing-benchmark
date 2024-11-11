@@ -13,14 +13,13 @@ import java.util.Map;
  * Level 2
  * Date 2024-06-28
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-element assignment
-// compose = Base_ArrayAccess_003_T.java && !Base_ArrayAccess_004_F.java
-// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_003_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-element assignment
+// bind_url = completeness/object_tracing/datatype/array/Base_ArrayAccess_003_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/array")
 public class Base_ArrayAccess_003_T {
     @PostMapping("Base_ArrayAccess_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

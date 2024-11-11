@@ -1,19 +1,24 @@
 {
   "array": [
     {
-      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->数组",
-      "compose": "array_001_T.js && !array_002_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Argument_ArrayAccess-get+ArrayList",
+      "compose": "Base_ArrayAccess_001_T.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->数组->二维",
-      "compose": "array_003_T.js && !array_004_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Argument_ArrayAccess-ArrayList+get",
+      "compose": "Base_ArrayAccess_002_T.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->污点对象跟踪完整度->数据类型->数组->push操作",
-      "compose": "array_005_T.js && !array_006_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-element assignment",
+      "compose": "Base_ArrayAccess_003_T.java && !Base_ArrayAccess_004_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->多维数组",
+      "compose": "Base_ArrayAccess_005_T.java && !Base_ArrayAccess_006_F.java",
+      "level": ""
     }
   ]
 }

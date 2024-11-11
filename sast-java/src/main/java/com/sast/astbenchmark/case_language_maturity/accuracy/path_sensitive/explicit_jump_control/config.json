@@ -1,24 +1,24 @@
 {
   "explicit_jump_control": [
     {
-      "evaluation item": "准确度->路径敏感->显式跳转控制->break",
-      "compose": "!break_001_F.js && break_002_T.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->中断语句->break",
+      "compose": "Statement_InterruptStatement_001_T.java && !Statement_InterruptStatement_002_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->显式跳转控制->break_label",
-      "compose": "!break_label_001_F.js && break_label_002_T.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->中断语句->break+label",
+      "compose": "Statement_InterruptStatement_003_T.java && !Statement_InterruptStatement_004_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->显式跳转控制->continue",
-      "compose": "continue_001_T.js && !continue_002_F.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->中断语句->continue",
+      "compose": "Statement_InterruptStatement_005_T.java && !Statement_InterruptStatement_006_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->显式跳转控制->return",
-      "compose": "return_001_T.js && !return_002_F.js",
-      "level": "4"
+      "evaluation item": "准确度->流敏感->中断语句->continue+label",
+      "compose": "Statement_InterruptStatement_007_T.java && !Statement_InterruptStatement_008_F.java",
+      "level": ""
     }
   ]
 }

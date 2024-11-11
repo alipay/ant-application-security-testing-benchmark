@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 4
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->反射调用
-// compose = Expression_Reflection_001_T.java
-// bind_url = completeness/base/chain/astTaint/Expression_Reflection_001_T/{cmd}/{methodname}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->反射调用
+// bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/dynamic_tracing/dynamic_call")
 public class Expression_Reflection_001_T {
     @GetMapping("Expression_Reflection_001_T/{cmd}/{methodname}")
     public Map<String, Object> aTaintCase0134(@PathVariable String cmd) {

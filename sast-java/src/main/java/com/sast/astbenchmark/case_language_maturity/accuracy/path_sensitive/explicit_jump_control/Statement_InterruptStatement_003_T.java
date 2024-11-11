@@ -13,15 +13,13 @@ import java.util.Map;
  * Level 4
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->流敏感->中断语句->break+label
-// compose = Statement_InterruptStatement_003_T.java && !Statement_InterruptStatement_004_F.java
-// bind_url = accuracy/flowSensitive/InterruptStatement/Statement_InterruptStatement_003_T/{cmd}
-// assession information end
-
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->流敏感->中断语句->break+label
+// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_003_T
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/flowSensitive/InterruptStatement")
+@RequestMapping("accuracy/path_sensitive/explicit_jump_control")
 public class Statement_InterruptStatement_003_T {
     @GetMapping("Statement_InterruptStatement_003_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

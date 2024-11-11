@@ -14,14 +14,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-02
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->NullAlias
-// compose = NullAlias_001_T.java && !NullAlias_002_F.java
-// bind_url = accuracy/fieldSensitive/objectField/NullAlias_001_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->NullAlias
+// bind_url = completeness/chain_tracing/references_pointers/alias/NullAlias_001_T
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("completeness/chain_tracing/references_pointers/alias")
 public class NullAlias_001_T {
     @PostMapping(value = "NullAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

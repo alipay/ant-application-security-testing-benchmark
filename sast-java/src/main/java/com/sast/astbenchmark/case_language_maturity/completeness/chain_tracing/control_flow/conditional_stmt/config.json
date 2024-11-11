@@ -1,24 +1,29 @@
 {
   "conditional_stmt": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->if",
-      "compose": "conditional_if_001_T.js && !conditional_if_002_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-else body",
+      "compose": "Statement_IfStatement_001_T.java && !Statement_IfStatement_002_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->else",
-      "compose": "conditional_if_003_T.js && !conditional_if_004_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-if body",
+      "compose": "Statement_IfStatement_003_T.java && !Statement_IfStatement_004_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->elseif",
-      "compose": "conditional_if_005_T.js && !conditional_if_006_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-elseif body",
+      "compose": "Statement_IfStatement_005_T.java && !Statement_IfStatement_006_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->流程控制语句->条件语句->switch",
-      "compose": "conditional_switch_001_T.js && !conditional_switch_002_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->if语句-condition",
+      "compose": "Statement_IfStatement_007_T.java && !Statement_IfStatement_008_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->switch语句",
+      "compose": "Statement_SwitchStatement_001_T.java",
+      "level": ""
     }
   ]
 }

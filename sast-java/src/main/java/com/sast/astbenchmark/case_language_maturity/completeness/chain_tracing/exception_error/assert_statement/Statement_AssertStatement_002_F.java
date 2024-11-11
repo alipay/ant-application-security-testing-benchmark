@@ -13,15 +13,14 @@ import java.util.Map;
  * Level 3
  * Date 2024-08-16
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->assert语句-错误表达式sink
-// compose = Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java
-// bind_url = completeness/base/chain/astTaint/Statement_AssertStatement_002_F/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->assert语句-错误表达式sink
+// bind_url = completeness/chain_tracing/exception_error/assert_statement/Statement_AssertStatement_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/exception_error/assert_statement")
 public class Statement_AssertStatement_002_F {
     @GetMapping("Statement_AssertStatement_002_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

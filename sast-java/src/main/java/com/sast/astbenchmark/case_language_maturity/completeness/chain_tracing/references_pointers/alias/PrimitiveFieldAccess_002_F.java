@@ -15,14 +15,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-02
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->PrimitiveFieldAccess-scene1
-// compose = PrimitiveFieldAccess_001_T.java && !PrimitiveFieldAccess_002_F.java
-// bind_url = accuracy/fieldSensitive/objectField/PrimitiveFieldAccess_002_F
-// assession information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+// evaluation information start
+// real case = false
+// evaluation item = 
+// bind_url = completeness/chain_tracing/references_pointers/alias/PrimitiveFieldAccess_002_F
+// evaluation information end
+@RequestMapping("completeness/chain_tracing/references_pointers/alias")
 public class PrimitiveFieldAccess_002_F {
     @PostMapping(value = "PrimitiveFieldAccess_002_F")
     public Map<String, Object> testcase(@RequestParam int id) {

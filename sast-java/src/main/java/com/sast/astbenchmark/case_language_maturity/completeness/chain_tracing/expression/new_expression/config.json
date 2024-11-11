@@ -1,0 +1,9 @@
+{
+  "new_expression": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->new操作+数组对象",
+      "compose": "Expression_NewExpression_Array_001_T.java",
+      "level": ""
+    }
+  ]
+}

@@ -1,24 +1,9 @@
 {
   "override": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->重载->构造函数-super1",
-      "compose": "constructor_extends_001_T.js && !constructor_extends_002_F.js",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->重载->构造函数-super2",
-      "compose": "constructor_extends_003_T.js && !constructor_extends_004_F.js",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->重载->条件表达式->需求解",
-      "compose": "constructor_extends_005_T.js && !constructor_extends_006_F.js",
-      "level": "4"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->函数调用->重载->多态",
-      "compose": "polymorphism_001_T.js && !polymorphism_002_F.js",
-      "level": "2"
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->多态",
+      "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
+      "level": ""
     }
   ]
 }

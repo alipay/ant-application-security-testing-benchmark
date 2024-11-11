@@ -15,14 +15,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-02
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
-// compose = FlowSensitiveAlias_001_T.java && !FlowSensitiveAlias_002_F.java
-// bind_url = accuracy/fieldSensitive/objectField/FlowSensitiveAlias_001_T
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item =  准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
+// bind_url = accuracy/flow_sensitive/normal_stmt/FlowSensitiveAlias_001_T
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("accuracy/flow_sensitive/normal_stmt")
 public class FlowSensitiveAlias_001_T {
     @PostMapping(value = "FlowSensitiveAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

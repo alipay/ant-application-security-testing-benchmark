@@ -16,15 +16,13 @@ import java.util.Queue;
  * Level 4
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->域敏感->容器->Queue+Lambda
-// compose = !QueueWithLambda_002_F.java && QueueWithLambda_001_T.java
-// bind_url = accuracy/fieldSensitive/baseCollection/QueueWithLambda_002_F
-// assession information end
-
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->域敏感->容器->Queue+Lambda
+// bind_url = accuracy/field_sensitive/map/QueueWithLambda_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/field_sensitive/map")
 public class QueueWithLambda_002_F {
     @PostMapping(value = "QueueWithLambda_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

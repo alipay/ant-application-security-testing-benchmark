@@ -1,44 +1,34 @@
 {
   "conditional_stmt": [
     {
-      "evaluation item": "准确度->路径敏感->if->扁平化实现",
-      "compose": "conditional_if_007_F.js && !conditional_if_008_F.js",
-      "level": "2"
+      "evaluation item": "准确度->路径敏感->不涉及求解问题->常量分支条件",
+      "compose": "ConstantIfGuard_001_T.java && !ConstantIfGuard_002_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->if->区分分支",
-      "compose": "!conditional_if_007_F.js && !conditional_if_008_F.js",
-      "level": "2+"
+      "evaluation item": "准确度->路径敏感->涉及求解问题->数组长度计算",
+      "compose": "!DifferentIfBranch_ArrayLength_001_T.java && !DifferentIfBranch_ArrayLength_002_F.java && DifferentIfBranch_ArrayLength_003_T.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->if->区分具体执行路径->不求解",
-      "compose": "conditional_if_009_T.js && !conditional_if_010_F.js",
-      "level": "3"
+      "evaluation item": "准确度->路径敏感->不涉及求解问题->instanceof表达式-null",
+      "compose": "Expression_InstanceofExpression_003_T.java && !Expression_InstanceofExpression_004_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->if->区分具体执行路径->求解",
-      "compose": "conditional_if_011_T.js && !conditional_if_012_F.js",
-      "level": "4"
+      "evaluation item": "准确度->路径敏感->不涉及求解问题->instanceof表达式-Object",
+      "compose": "Expression_InstanceofExpression_005_T.java && !Expression_InstanceofExpression_006_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->switch->扁平化实现",
-      "compose": "conditional_switch_003_F.js && !conditional_switch_004_F.js",
-      "level": "2"
+      "evaluation item": "准确度->路径敏感->不涉及求解问题->assert语句-条件不成立",
+      "compose": "Statement_AssertStatement_003_T.java && !Statement_AssertStatement_004_F.java",
+      "level": ""
     },
     {
-      "evaluation item": "准确度->路径敏感->switch->区分分支",
-      "compose": "!conditional_switch_003_F.js && !conditional_switch_004_F.js",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "准确度->路径敏感->switch->区分具体执行路径->不求解",
-      "compose": "!conditional_switch_005_F.js && conditional_switch_006_T.js",
-      "level": "3"
-    },
-    {
-      "evaluation item": "准确度->路径敏感->switch->区分具体执行路径->求解",
-      "compose": "!conditional_switch_007_F.js && conditional_switch_008_T.js",
-      "level": "4"
+      "evaluation item": "准确度->路径敏感->不涉及求解问题->assert语句-条件成立",
+      "compose": "Statement_AssertStatement_005_T.java && !Statement_AssertStatement_006_F.java",
+      "level": ""
     }
   ]
 }

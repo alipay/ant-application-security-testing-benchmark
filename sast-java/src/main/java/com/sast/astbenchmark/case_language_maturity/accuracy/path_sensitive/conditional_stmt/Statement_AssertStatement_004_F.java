@@ -13,15 +13,14 @@ import java.util.Map;
  * Level 4
  * Date 2024-09-18
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
-// compose = Statement_TryStatement_003_T.java && !Statement_TryStatement_004_F.java
-// bind_url = accuracy/pathSensitive/notcalculateValue/Statement_TryStatement_004_F/{cmd}
-// assession information end
 
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
+// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_004_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/pathSensitive/notcalculateValue")
+@RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class Statement_AssertStatement_004_F {
     @GetMapping("Statement_AssertStatement_004_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

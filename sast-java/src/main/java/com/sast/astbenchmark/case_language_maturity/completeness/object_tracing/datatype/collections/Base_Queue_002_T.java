@@ -18,15 +18,14 @@ import java.util.concurrent.LinkedBlockingQueue;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue
-// compose = Base_Queue_001_T.java || Base_Queue_002_T.java
-// bind_url = completeness/base/object/javaNative/Base_Queue_002_T
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue
+// bind_url = completeness/object_tracing/datatype/collections/Base_Queue_002_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/object_tracing/datatype/collections")
 public class Base_Queue_002_T {
     @PostMapping("Base_Queue_002_T")
     public Map<String, Object> aTaintCase0142(@RequestBody List<String> cmd) {

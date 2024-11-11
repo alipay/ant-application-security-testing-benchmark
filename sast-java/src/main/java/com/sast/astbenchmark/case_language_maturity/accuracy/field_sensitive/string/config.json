@@ -1,0 +1,9 @@
+{
+  "string": [
+    {
+      "evaluation item": "准确度->域敏感->字符串中字符->字符级敏感",
+      "compose": "StringContent_CharacterLevel_001_T.java && !StringContent_CharacterLevel_002_F.java",
+      "level": ""
+    }
+  ]
+}

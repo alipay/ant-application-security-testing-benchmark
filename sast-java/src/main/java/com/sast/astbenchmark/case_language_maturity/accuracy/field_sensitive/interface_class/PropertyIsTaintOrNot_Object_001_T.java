@@ -14,14 +14,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 准确度->域敏感->对象属性->对象指针->PropertyTaint
-// compose = !PropertyIsTaintOrNot_Object_002_F.java && PropertyIsTaintOrNot_Object_001_T.java
-// bind_url = accuracy/fieldSensitive/PropertyIsTaintOrNot_Object_001_T
-// assession information end
+// evaluation information start
+// real case = true
+// evaluation item = 准确度->域敏感->对象属性->对象指针->PropertyTaint
+// bind_url = accuracy/field_sensitive/interface_class/PropertyIsTaintOrNot_Object_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("accuracy/field_sensitive/interface_class")
 public class PropertyIsTaintOrNot_Object_001_T {
     @PostMapping(value = "PropertyIsTaintOrNot_Object_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

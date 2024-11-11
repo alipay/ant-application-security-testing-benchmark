@@ -13,14 +13,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-06-28
  */
-// assession information start
-// real vulnerability = false
-// assession project = 准确度->对象敏感->容器->数组元素敏感
-// compose = ArrayElementOverwrite_001_T.java && !ArrayElementOverwrite_002_F.java
-// bind_url = accuracy/fieldSensitive/baseCollection/ArrayElementOverwrite_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->对象敏感->容器->数组元素敏感
+// bind_url = accuracy/object_sensitive/set_array/ArrayElementOverwrite_002_F
+// evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/object_sensitive/set_array")
 public class ArrayElementOverwrite_002_F {
     @PostMapping("ArrayElementOverwrite_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

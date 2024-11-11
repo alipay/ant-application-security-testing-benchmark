@@ -16,14 +16,13 @@ import java.util.Map;
  * Level 3
  * Date 2024-07-02
  */
-// assession information start
-// real vulnerability = false
-// assession project =  完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->别名参数
-// compose = SameArgumentAlias_001_T.java && !SameArgumentAlias_002_F.java
-// bind_url = accuracy/fieldSensitive/objectField/SameArgumentAlias_002_F
-// assession information end
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->别名参数
+// bind_url = completeness/chain_tracing/references_pointers/alias/SameArgumentAlias_002_F
+// evaluation information end
 @RestController
-@RequestMapping("accuracy/fieldSensitive/objectField")
+@RequestMapping("completeness/chain_tracing/references_pointers/alias")
 public class SameArgumentAlias_002_F {
     @PostMapping(value = "SameArgumentAlias_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

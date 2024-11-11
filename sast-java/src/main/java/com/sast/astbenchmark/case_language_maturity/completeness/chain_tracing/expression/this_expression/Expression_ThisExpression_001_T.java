@@ -15,15 +15,14 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-// assession information start
-// real vulnerability = true
-// assession project = 完整度->基础跟踪能力->污点链路完整度->ast对象->this表达式
-// compose = Expression_ThisExpression_001_T.java
-// bind_url = completeness/base/chain/astTaint/Expression_ThisExpression_001_T/{url}
-// assession information end
 
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->this表达式
+// bind_url = completeness/chain_tracing/expression/this_expression/Expression_ThisExpression_001_T
+// evaluation information end
 @RestController()
-@RequestMapping("completeness/base/chain/astTaint")
+@RequestMapping("completeness/chain_tracing/expression/this_expression")
 public class Expression_ThisExpression_001_T {
     private SSRFShowManager ssrfShowManager = new SSRFShowManageImpl();
 
