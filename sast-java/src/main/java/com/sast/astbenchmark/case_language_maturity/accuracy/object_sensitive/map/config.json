@@ -1,0 +1,19 @@
+{
+  "map": [
+    {
+      "evaluation item": "准确度->对象敏感->容器->Map",
+      "compose": "Map_obj_sensitive_001_T.java && !Map_obj_sensitive_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->容器->Map-replace",
+      "compose": "Map_obj_sensitive_003_T.java && !Map_obj_sensitive_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->对象敏感->容器->Map-remove",
+      "compose": "Map_obj_sensitive_005_T.java && !Map_obj_sensitive_006_F.java",
+      "level": "2"
+    }
+  ]
+}

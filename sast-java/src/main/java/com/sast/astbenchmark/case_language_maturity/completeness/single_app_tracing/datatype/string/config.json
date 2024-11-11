@@ -1,0 +1,24 @@
+{
+  "string": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->String",
+      "compose": "Base_String_001_T.java && !Base_String_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->String[]",
+      "compose": "Base_StringArray_001_T.java && !Base_StringArray_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->StringBuffer",
+      "compose": "Base_StringBuffer_001_T.java && !Base_StringBuffer_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->StringBuilder",
+      "compose": "Base_StringBuilder_001_T.java && !Base_StringBuilder_002_F.java",
+      "level": "2"
+    }
+  ]
+}

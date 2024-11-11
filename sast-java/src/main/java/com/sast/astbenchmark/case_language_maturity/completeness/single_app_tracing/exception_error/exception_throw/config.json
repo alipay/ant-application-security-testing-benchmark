@@ -1,0 +1,19 @@
+{
+  "exception_throw": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->异常与错误处理->异常处理->try语句-catch块",
+      "compose": "Statement_TryCatchStatement_001_T.java && !Statement_TryCatchStatement_002_F.java",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->异常与错误处理->异常处理->try语句",
+      "compose": "Statement_TryStatement_001_T.java && !Statement_TryStatement_002_F.java",
+      "level": "4"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->异常与错误处理->异常处理->try语句-finally块",
+      "compose": "Statement_FinallyStatement_001_T.java && !Statement_FinallyStatement_002_F.java",
+      "level": "4"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "lambda_expression": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->Lambda表达式",
+      "compose": "Expression_LambdaExpression_001_T.java && !Expression_LambdaExpression_002_F.java",
+      "level": "2"
+    }
+  ]
+}

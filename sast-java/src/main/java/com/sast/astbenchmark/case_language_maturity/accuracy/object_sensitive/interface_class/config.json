@@ -1,0 +1,9 @@
+{
+  "interface_class": [
+    {
+      "evaluation item": "准确度->对象敏感->不同对象相同属性",
+      "compose": "ObjectDiffAttribute_001_T.java && !ObjectDiffAttribute_002_F.java",
+      "level": "2"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "static_method": [
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->静态->静态字段",
+      "compose": "static_field_001_T.java && !static_field_002_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->链路完整度->函数调用->静态->静态方法",
+      "compose": "static_method_001_T.java && !static_method_002_F.java",
+      "level": ""
+    }
+  ]
+}

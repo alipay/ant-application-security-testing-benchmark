@@ -1,0 +1,124 @@
+{
+  "primitives": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->byte",
+      "compose": "Base_Byte_001_T.java && !Base_Byte_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte",
+      "compose": "Base_Byte_003_T.java && !Base_Byte_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->byte",
+      "compose": "Base_Byte_005_T.java && !Base_Byte_006_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte",
+      "compose": "Base_Byte_007_T.java && !Base_Byte_008_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte[]",
+      "compose": "Base_ByteArray_001_T.java && !Base_ByteArray_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte[]",
+      "compose": "Base_ByteArray_003_T.java && !Base_ByteArray_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->char",
+      "compose": "Base_Char_001_T.java && !Base_Char_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Char",
+      "compose": "Base_Char_003_T.java && !Base_Char_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->char",
+      "compose": "Base_Char_005_T.java && !Base_Char_006_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Character",
+      "compose": "Base_Char_006_T.java && !Base_Char_008_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]",
+      "compose": "Base_CharArray_001_T.java && !Base_CharArray_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->char[]",
+      "compose": "Base_CharArray_003_T.java && !Base_CharArray_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Integer",
+      "compose": "Base_Integer_001_T.java && !Base_Integer_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Integer",
+      "compose": "Base_Integer_003_T.java && !Base_Integer_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->int",
+      "compose": "Base_Integer_005_T.java && !Base_Integer_006_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->int",
+      "compose": "Base_Integer_007_T.java && !Base_Integer_008_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->long",
+      "compose": "Base_Long_001_T.java && !Base_Long_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Long",
+      "compose": "Base_Long_003_T.java && !Base_Long_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->long",
+      "compose": "Base_Long_005_T.java && !Base_Long_006_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->Long",
+      "compose": "Base_Long_007_T.java && !Base_Long_008_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->double",
+      "compose": "Base_Double_001_T.java && !Base_Double_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->double",
+      "compose": "Base_Double_003_T.java && !Base_Double_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->float",
+      "compose": "Base_Float_001_T.java && !Base_Float_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->java原生对象->float",
+      "compose": "Base_Float_003_T.java && !Base_Float_004_F.java",
+      "level": "2"
+    }
+  ]
+}

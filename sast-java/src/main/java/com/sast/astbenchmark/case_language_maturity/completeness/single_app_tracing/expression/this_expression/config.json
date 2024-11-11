@@ -1,0 +1,20 @@
+{
+  "this_expression": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->this表达式",
+      "compose": "Expression_ThisExpression_001_T.java && !Expression_ThisExpression_002_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->this表达式+匿名函数",
+      "compose": "Expression_ThisExpression_Anonymous_001_T.java && !Expression_ThisExpression_Anonymous_002_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->链路跟踪完整度->表达式->this表达式+lambda表达式",
+      "compose": "Expression_ThisExpression_Lambda_001_T.java && !Expression_ThisExpression_Lambda_002_F.java",
+      "level": "3"
+    }
+  ]
+}
+  

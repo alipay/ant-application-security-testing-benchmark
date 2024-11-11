@@ -1,0 +1,19 @@
+{
+  "complex_object": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->嵌套类",
+      "compose": "CallExpression_CustomCode_Class_001_T.java && !CallExpression_CustomCode_Class_002_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->局部类",
+      "compose": "CallExpression_CustomCode_Class_003_T.java && !CallExpression_CustomCode_Class_004_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->多重接口类型",
+      "compose": "CallExpression_CustomCode_Interface_003_T.java && !CallExpression_CustomCode_Interface_004_F.java",
+      "level": ""
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation item": "准确度->流敏感->循环语句->for-init流敏感",
+      "compose": "Statement_ForStatement_005_T.java && !Statement_ForStatement_006_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->流敏感->循环语句->for-update流敏感",
+      "compose": "Statement_ForStatement_007_T.java && !Statement_ForStatement_008_F.java",
+      "level": "3"
+    }
+  ]
+}

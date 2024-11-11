@@ -1,0 +1,14 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation item": "准确度->路径敏感->循环结构->for",
+      "compose": "Statement_ForStatement_003_T.java && !Statement_ForStatement_004_F.java",
+      "level": "4"
+    },
+    {
+      "evaluation item": "准确度->路径敏感->循环结构->while",
+      "compose": "Statement_WhileStatement_003_T.java && !Statement_WhileStatement_004_F.java",
+      "level": "4"
+    }
+  ]
+}

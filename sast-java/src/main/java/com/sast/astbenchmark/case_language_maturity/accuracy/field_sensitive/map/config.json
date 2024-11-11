@@ -1,0 +1,39 @@
+{
+  "map": [
+    {
+      "evaluation item": "准确度->域敏感->容器->MapPutGet-scene1",
+      "compose": "MapPutGet_001_T.java && !MapPutGet_002_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->MapPutGet-scene2",
+      "compose": "MapPutGet_003_T.java && !MapPutGet_004_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->Queue+Lambda",
+      "compose": "QueueWithLambda_001_T.java && !QueueWithLambda_002_F.java",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->Map-Field",
+      "compose": "MapField_001_T.java && !MapField_002_F.java",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->Map-Values",
+      "compose": "MapField_003_T.java && !MapField_004_F.java",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->Map-keySet",
+      "compose": "MapField_005_T.java && !MapField_006_F.java",
+      "level": "3+"
+    },
+    {
+      "evaluation item": "准确度->域敏感->容器->Map-entrySet",
+      "compose": "MapField_007_T.java && !MapField_008_F.java",
+      "level": "3+"
+    }
+  ]
+}
