@@ -16,8 +16,8 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->涉及求解问题->数组长度计算
-// bind_url = accuracy/path_sensitive/conditional_stmt/DifferentIfBranch_ArrayLength_001_T
+// evaluation project = 准确度->路径敏感->不涉及求解问题->常量分支条件
+// bind_url = accuracy/path_sensitive/conditional_stmt/ConstantIfGuard_001_T
 // evaluation information end
 @RestController
 @RequestMapping("accuracy/path_sensitive/conditional_stmt")

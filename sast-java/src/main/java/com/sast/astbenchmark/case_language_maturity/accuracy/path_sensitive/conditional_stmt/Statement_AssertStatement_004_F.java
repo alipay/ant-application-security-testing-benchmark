@@ -13,12 +13,12 @@ import java.util.Map;
  * Level 4
  * Date 2024-09-18
  */
-
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
-// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_004_F
+// evaluation project = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
+// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_TryStatement_004_F/{cmd}
 // evaluation information end
+
 @RestController()
 @RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class Statement_AssertStatement_004_F {

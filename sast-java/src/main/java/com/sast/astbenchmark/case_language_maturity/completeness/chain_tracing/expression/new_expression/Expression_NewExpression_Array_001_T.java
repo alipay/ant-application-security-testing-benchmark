@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->new操作+数组对象
+// evaluation item = 完整度->链路跟踪完整度->表达式->new操作+数组对象
 // bind_url = completeness/chain_tracing/expression/new_expression/Expression_NewExpression_Array_001_T
 // evaluation information end
 @RestController()

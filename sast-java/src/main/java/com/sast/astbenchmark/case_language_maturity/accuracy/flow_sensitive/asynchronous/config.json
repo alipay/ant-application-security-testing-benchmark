@@ -1,9 +1,34 @@
 {
-  "asynchronous_execution": [
+  "asynchronous": [
     {
-      "evaluation item": "准确度->流敏感->异步执行-await",
-      "compose": "asynchronous_await_001_T && !asynchronous_await_002_F",
+      "evaluation item": "准确度->流敏感->异步->CompletableFuture",
+      "compose": "CompletableFuture_001_T.java && !CompletableFuture_002_F.java",
       "level": "3"
+    },
+    {
+      "evaluation item": "准确度->流敏感->异步->存储型异步->多线程->Thread",
+      "compose": "Async_Multithreading_001_T.java && !Async_Multithreading_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->流敏感->异步->存储型异步->多线程->Runnable",
+      "compose": "Async_Multithreading_003_T.java && !Async_Multithreading_004_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->流敏感->异步->存储型异步->多线程->Executors",
+      "compose": "Async_Multithreading_005_T.java && !Async_Multithreading_006_F.java",
+      "level": "2+"
+    },
+    {
+      "evaluation item": "准确度->流敏感->异步->存储型异步->多线程->TimerTask",
+      "compose": "Async_Multithreading_007_T.java && !Async_Multithreading_008_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": "准确度->流敏感->异步->存储型异步->多线程->Synchronized",
+      "compose": "Async_Multithreading_009_T.java && !Async_Multithreading_010_F.java",
+      "level": "2+"
     }
   ]
 }

@@ -15,21 +15,21 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
-// real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->强转表达式-函数调用
-// bind_url = completeness/chain_tracing/expression/type_cast/Expression_CastExpression_002_T
+// real case = false
+// evaluation item = 完整度->链路跟踪完整度->表达式->强转表达式-函数调用
+// bind_url = completeness/chain_tracing/expression/type_cast/Expression_CastExpression_004_F/{url}
 // evaluation information end
+
 @RestController()
 @RequestMapping("completeness/chain_tracing/expression/type_cast")
-public class Expression_CastExpression_002_T {
-    @GetMapping("Expression_CastExpression_002_T/{url}")
+public class Expression_CastExpression_004_F {
+    @GetMapping("Expression_CastExpression_004_F/{url}")
     public Map<String, Object> aTaintCase0156(@PathVariable String url) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
 
-            URL realUrl = new URL(url);
+            URL realUrl = new URL("clean");
             HttpURLConnection connection = (HttpURLConnection) realUrl.openConnection();
             connection.setRequestMethod("GET");
             connection.getResponseMessage();

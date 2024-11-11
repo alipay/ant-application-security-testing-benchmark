@@ -13,12 +13,12 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->位运算操作
+// evaluation item = 完整度->链路跟踪完整度->表达式->基础表达式->位运算操作
 // bind_url = completeness/chain_tracing/expression/basic_expression_operation/Expression_BitOperation_001_T
 // evaluation information end
+
 @RestController()
 @RequestMapping("completeness/chain_tracing/expression/basic_expression_operation")
 public class Expression_BitOperation_001_T {

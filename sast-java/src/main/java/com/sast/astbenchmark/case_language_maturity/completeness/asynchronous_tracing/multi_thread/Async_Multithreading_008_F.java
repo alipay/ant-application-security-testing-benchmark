@@ -11,16 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 /**
- * Introduction 异步跟踪能力-多线程 TimerTask
+ * Introduction 异步跟踪完整度-多线程 TimerTask
  * Level 4
  * Date 2024-07-31
  */
-
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->异步跟踪能力->存储型异步->多线程->TimerTask
-// bind_url = completeness/asynchronous_tracing/multi_thread/Async_Multithreading_008_F
+// evaluation project = 完整度->异步跟踪完整度->存储型异步->多线程->TimerTask
+// bind_url = completeness/asynchronous_tracing/multi_thread/Async_Multithreading_008_F/{cmd}
 // evaluation information end
+
 @RestController()
 @RequestMapping("completeness/asynchronous_tracing/multi_thread")
 public class Async_Multithreading_008_F {

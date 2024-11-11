@@ -15,11 +15,12 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->中断语句->continue+label
-// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_007_T
+// evaluation project = 准确度->流敏感->中断语句->continue+label
+// bind_url = accuracy/flowSensitive/InterruptStatement/Statement_InterruptStatement_007_T/{cmd}
 // evaluation information end
+
 @RestController()
-@RequestMapping("accuracy/path_sensitive/explicit_jump_control")
+@RequestMapping("completeness/chain_tracing/expression/basic_expression_operation")
 public class Statement_InterruptStatement_007_T {
     @GetMapping("Statement_InterruptStatement_007_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

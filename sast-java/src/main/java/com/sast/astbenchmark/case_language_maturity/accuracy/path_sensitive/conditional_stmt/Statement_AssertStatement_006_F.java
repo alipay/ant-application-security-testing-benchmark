@@ -15,9 +15,10 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->路径敏感->不涉及求解问题->assert语句-条件成立
-// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_006_F
+// evaluation project = 准确度->路径敏感->不涉及求解问题->assert语句-条件成立
+// bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_006_F/{cmd}
 // evaluation information end
+
 @RestController()
 @RequestMapping("accuracy/path_sensitive/conditional_stmt")
 public class Statement_AssertStatement_006_F {

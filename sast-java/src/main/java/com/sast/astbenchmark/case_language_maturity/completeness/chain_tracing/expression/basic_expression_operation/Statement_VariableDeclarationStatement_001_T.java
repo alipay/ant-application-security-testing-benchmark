@@ -14,12 +14,12 @@ import java.util.Map;
  * Level 2
  * Date 2024-05-09
  */
-
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->变量定义语句
+// evaluation item = 完整度->链路跟踪完整度->表达式->基础表达式->变量定义语句
 // bind_url = completeness/chain_tracing/expression/basic_expression_operation/Statement_VariableDeclarationStatement_001_T
 // evaluation information end
+
 @RestController()
 @RequestMapping("completeness/chain_tracing/expression/basic_expression_operation")
 public class Statement_VariableDeclarationStatement_001_T {

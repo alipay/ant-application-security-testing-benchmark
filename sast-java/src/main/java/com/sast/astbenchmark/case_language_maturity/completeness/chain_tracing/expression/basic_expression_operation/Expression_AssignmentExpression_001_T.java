@@ -10,14 +10,14 @@ import java.util.Map;
 
 
 /**
- * Introduction 污点链路样本中的表达式-变量传递通过native方法发生在两个入参上
+ * Introduction 基础表达式-变量传递通过native方法发生在两个入参上
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->变量传递通过native方法发生在两个入参上
-// bind_url = completeness/chain_tracing/expression/basic_expression_operation/Expression_AssignmentExpression_001_T
+// evaluation item = 完整度->链路跟踪完整度->表达式->基础表达式->变量传递通过native方法发生在两个入参上
+// bind_url = completeness/chain_tracing/expression/basic_expression_operation/Expression_AssignmentExpression_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/chain_tracing/expression/basic_expression_operation")
