@@ -3,7 +3,7 @@
     {
       "evaluation item": "完整度->链路跟踪完整度->函数调用->返回值传递->普通",
       "compose": "return_value_passing_001_T.java && !return_value_passing_002_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
 }

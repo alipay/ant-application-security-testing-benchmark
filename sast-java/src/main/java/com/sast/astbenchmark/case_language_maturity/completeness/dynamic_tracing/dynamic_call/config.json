@@ -3,7 +3,7 @@
     {
       "evaluation item": "完整度->动态特性跟踪完整度->动态调用->反射调用",
       "compose": "Expression_Reflection_001_T.java && !Expression_Reflection_002_F.java",
-      "level": "4"
+      "level": "3"
     }
   ]
 }

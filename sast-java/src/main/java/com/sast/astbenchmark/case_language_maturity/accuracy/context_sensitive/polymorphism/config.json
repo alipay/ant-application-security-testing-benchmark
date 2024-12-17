@@ -1,9 +1,9 @@
 {
   "polymorphism": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->多态",
+      "evaluation item": "准确度->上下文敏感->多态",
       "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
 }

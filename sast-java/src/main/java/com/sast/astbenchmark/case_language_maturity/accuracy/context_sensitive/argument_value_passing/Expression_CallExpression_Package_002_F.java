@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->变量赋值表达式直接引入而不是import
+// evaluation item = 准确度->上下文敏感->相同函数调用不同参数->变量赋值表达式直接引入而不是import
 // bind_url = accuracy/context_sensitive/argument_value_passing/Expression_CallExpression_Package_002_F
 // evaluation information end
 @RestController()

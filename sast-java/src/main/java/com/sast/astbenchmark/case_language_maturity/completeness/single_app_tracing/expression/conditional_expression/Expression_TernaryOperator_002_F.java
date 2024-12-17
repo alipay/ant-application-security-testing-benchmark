@@ -31,7 +31,7 @@ public class Expression_TernaryOperator_002_F {
     public Map<String, Object> aTaintCase0133(@PathVariable String url) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String realUrl = StringUtils.isBlank(url) ? "https://www.alipay.com" : url;
+            String realUrl = StringUtils.isBlank(url) ? "https://www.alipay.com" : "";
             this.ssrfShowManager.selfAnonymousFacade(realUrl);
             modelMap.put("status", "success");
         } catch (Exception e) {

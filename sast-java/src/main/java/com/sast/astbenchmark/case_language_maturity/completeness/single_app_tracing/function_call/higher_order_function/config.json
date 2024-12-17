@@ -3,7 +3,7 @@
     {
       "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->高阶函数",
       "compose": "higher_order_function_001_T.java && !higher_order_function_002_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
 }
