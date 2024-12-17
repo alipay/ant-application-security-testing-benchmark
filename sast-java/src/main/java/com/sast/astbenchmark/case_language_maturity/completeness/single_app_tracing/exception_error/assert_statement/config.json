@@ -1,9 +1,9 @@
 {
-    "assert_statement": [
-      {
-        "evaluation item": "完整度->链路跟踪完整度->异常与错误处理->断言语句->assert语句",
-        "compose": "Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java",
-        "level": "3"
-      }
-    ]
-  }
+  "assert_statement": [
+    {
+      "evaluation item": "完整度->链路跟踪完整度->异常与错误处理->断言语句->assert语句",
+      "compose": "Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java",
+      "level": "2+"
+    }
+  ]
+}

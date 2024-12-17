@@ -3,87 +3,87 @@
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->FieldUnAlias FlowSensitive-scene1",
       "compose": "!FieldUnAlias_001_F.java && FieldUnAlias_002_T.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->FieldUnAlias ContextSensitive-scene2",
       "compose": "FieldUnAlias_003_T.java && !FieldUnAlias_004_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->HeapOverwriteAlias-scene1",
       "compose": "HeapOverwriteAlias_001_T.java && !HeapOverwriteAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->HeapOverwriteAlias FlowSensitive-scene2",
       "compose": "HeapOverwriteAlias_003_T.java && !HeapOverwriteAlias_004_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->HeapPointsToSelfAlias FlowSensitive",
       "compose": "HeapPointsToSelfAlias_001_T.java && !HeapPointsToSelfAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene1",
       "compose": "InnerClassAlias_001_T.java && !InnerClassAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene2",
       "compose": "!InnerClassAlias_003_F.java && !InnerClassAlias_004_F.java && InnerClassAlias_005_T.java && InnerClassAlias_006_T.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene3",
       "compose": "InnerClassAlias_007_T.java && !InnerClassAlias_008_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene4",
       "compose": "InnerClassAlias_009_T.java && !InnerClassAlias_010_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->NullAlias",
       "compose": "NullAlias_001_T.java && !NullAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->PrimitiveFieldAccess-scene1",
       "compose": "PrimitiveFieldAccess_001_T.java && !PrimitiveFieldAccess_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->PrimitiveFieldAccess-scene2",
       "compose": "PrimitiveFieldAccess_003_T.java && !PrimitiveFieldAccess_004_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->ReturnAlias FlowSensitive-scene1",
       "compose": "ReturnAlias_001_T.java && !ReturnAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->ReturnAlias FlowSensitive-scene2",
       "compose": "ReturnAlias_003_T.java && !ReturnAlias_004_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->别名参数",
       "compose": "SameArgumentAlias_001_T.java && !SameArgumentAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->SingleFieldAccessAlias",
       "compose": "SingleFieldAccessAlias_001_T.java && !SingleFieldAccessAlias_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->StaticFieldAlias FlowSensitive",
       "compose": "StaticFieldAlias_001_T.java && !StaticFieldAlias_002_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
-}
+} 

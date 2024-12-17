@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->函数调用->返回值传递->普通
+// evaluation item = 准确度->上下文敏感->返回值传递
 // bind_url = accuracy/context_sensitive/return_value_passing/return_value_passing_001_T
 // evaluation information end
 @RestController()

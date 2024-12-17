@@ -1,5 +1,5 @@
-exception_error{
-  "explicit_jump_control": [
+{
+  "explicit_jump_control":[
     {
       "evaluation item": "准确度->路径敏感->中断语句->break",
       "compose": "Statement_InterruptStatement_001_T.java && !Statement_InterruptStatement_002_F.java",

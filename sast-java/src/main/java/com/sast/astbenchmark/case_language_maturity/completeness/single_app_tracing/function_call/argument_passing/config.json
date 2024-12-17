@@ -3,17 +3,17 @@
     {
       "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->变量赋值表达式直接引入而不是import",
       "compose": "Expression_CallExpression_Package_001_T.java && !Expression_CallExpression_Package_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用",
       "compose": "Expression_MethodInvocation_001_T.java && !Expression_MethodInvocation_002_F.java",
-      "level": ""
+      "level": "2"
     },
     {
       "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+中缀表达式",
       "compose": "Expression_MethodInvocation_InfixExpression_001_T.java && !Expression_MethodInvocation_InfixExpression_002_F.java",
-      "level": ""
+      "level": "2"
     }
   ]
 }
