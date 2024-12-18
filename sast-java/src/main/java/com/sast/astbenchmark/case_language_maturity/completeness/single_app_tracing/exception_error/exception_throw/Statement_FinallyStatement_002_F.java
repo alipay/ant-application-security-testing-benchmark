@@ -30,7 +30,8 @@ public class Statement_FinallyStatement_002_F {
 
         } finally {
             try {
-                Runtime.getRuntime().exec(cmd);
+                String a = "ls";
+                Runtime.getRuntime().exec(a);
                 modelMap.put("status", "success");
             } catch (Exception e) {
                 modelMap.put("status", "error");

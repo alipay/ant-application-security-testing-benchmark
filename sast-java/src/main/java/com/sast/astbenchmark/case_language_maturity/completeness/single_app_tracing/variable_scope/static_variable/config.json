@@ -1,5 +1,9 @@
 {
   "static_variable": [
-
+    {
+      "evaluation item": "完整度->污点对象跟踪完整度->变量->静态变量",
+      "compose": "static_variable_001_T.java && !static_variable_002_F.java",
+      "level": "2"
+    }
   ]
 }

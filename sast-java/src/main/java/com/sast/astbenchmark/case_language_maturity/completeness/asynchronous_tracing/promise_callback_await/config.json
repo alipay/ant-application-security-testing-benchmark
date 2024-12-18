@@ -1,0 +1,14 @@
+{
+  "promise_callback_await": [
+    {
+      "evaluation item": "完整度->异步跟踪完整度->promise_callback_await->CompletableFuture",
+      "compose": "CompletableFuture_001_T.java && !CompletableFuture_002_F.java",
+      "level": "3"
+    },
+    {
+      "evaluation item": "完整度->异步跟踪完整度->promise_callback_await->CompletableFuture",
+      "compose": "CompletableFuture_003_T.java && !CompletableFuture_004_F.java",
+      "level": "3"
+    }
+  ]
+}
