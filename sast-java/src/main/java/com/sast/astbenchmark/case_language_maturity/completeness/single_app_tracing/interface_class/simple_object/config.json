@@ -1,5 +1,9 @@
 {
   "simple_object": [
-
+    {
+      "evaluation item": "完整度->基础跟踪能力->类/接口->简单类",
+      "compose": "simple_object_001_T.java && !simple_object_002_F.java",
+      "level": "2"
+    }
   ]
 }

@@ -31,7 +31,7 @@ public class Base_Set_006_F {
         Set<String> stringSet = new HashSet<>();
         stringSet.add(cmd);
         stringSet.add("_");
-        stringSet.remove("cmd");
+        stringSet.remove(cmd);
         try {
             Runtime.getRuntime().exec(stringSet.stream().iterator().next());
             modelMap.put("status", "success");
