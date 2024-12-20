@@ -1,0 +1,24 @@
+{
+  "other_preference": [
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->污点状态->可能被source污染",
+      "compose": "MayTaintKind_001_T.java && !MayTaintKind_002_F.java && !MayTaintKind_003_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->污点状态->一定被source污染",
+      "compose": "MustTaintKind_001_T.java && !MustTaintKind_002_F.java && !MustTaintKind_003_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->污点状态->没有source",
+      "compose": "!SafeKind_001_F.java && !SafeKind_002_F.java && !SafeKind_003_F.java",
+      "level": ""
+    },
+    {
+      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->污点状态->不确定是否被污染",
+      "compose": "!UnknownTaintKind_001_F.java && !UnknownTaintKind_002_F.java && !UnknownTaintKind_003_F.java",
+      "level": ""
+    }
+  ]
+}
