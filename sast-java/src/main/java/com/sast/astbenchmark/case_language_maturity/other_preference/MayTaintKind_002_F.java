@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
  * Level X
  * Date 2024-05-23
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->可能被source污染
-// compose = MayTaintKind_001_T.java && !MayTaintKind_002_F.java && !MayTaintKind_003_F.java
+// evaluation information start
+// real case = false
+// evaluation item  = 完整度->基础跟踪能力->污点链路完整度->污点状态->可能被source污染
 // bind_url = completeness/base/chain/taintKind/MayTaintKind_002_F
-// assession information end
+// evaluation information end
 @RestController
 @RequestMapping("completeness/base/chain/taintKind")
 public class MayTaintKind_002_F {

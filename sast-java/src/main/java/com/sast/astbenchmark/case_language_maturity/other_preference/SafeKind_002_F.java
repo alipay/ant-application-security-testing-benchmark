@@ -5,12 +5,11 @@ package com.sast.astbenchmark.case_language_maturity.other_preference;
  * Level X
  * Date 2024-05-23
  */
-// assession information start
-// real vulnerability = false
-// assession project = 完整度->基础跟踪能力->污点链路完整度->污点状态->没有source
-// compose = !SafeKind_001_F.java && !SafeKind_002_F.java && !SafeKind_003_F.java
+// evaluation information start
+// real case = false
+// evaluation item  = 完整度->基础跟踪能力->污点链路完整度->污点状态->没有source
 // bind_url =
-// assession information end
+// evaluation information end
 public class SafeKind_002_F {
     public void testcase() {
         String sql = "select * from user where username = zhangsan";
