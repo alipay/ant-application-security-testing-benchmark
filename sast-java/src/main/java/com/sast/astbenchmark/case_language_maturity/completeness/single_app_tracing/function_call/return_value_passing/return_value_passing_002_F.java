@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Introduction 递归函数-间接递归
- * Level 4 负样本
+ * Introduction 完整度->链路跟踪完整度->函数调用->返回值传递->普通
+ * Level 2
  */
 // evaluation information start
 // real case = false
@@ -25,7 +25,7 @@ public class return_value_passing_002_F {
 
     private static String process(String __taint_src) {
         String tmp = __taint_src;
-        return tmp;
+        return "_";
     }
 
     private static void __taint_sink(Object o) {
