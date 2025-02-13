@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Array中的对象为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->数组->ArrayAccess-element assignment
  * Level 2
  * Date 2024-06-28
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->ArrayAccess-element assignment
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组->ArrayAccess-element assignment
 // bind_url = completeness/base/object/javaNative/Base_ArrayAccess_005_T
 // evaluation information end
 @RestController()

@@ -10,13 +10,13 @@ import java.util.Map;
 
 
 /**
- * Introduction 污点链路样本中的语句-foreach语句
+ * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->foreach语句
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->foreach语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构->foreach语句
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_ForEachStatement_001_T/{cmd}
 // evaluation information end
 @RestController()

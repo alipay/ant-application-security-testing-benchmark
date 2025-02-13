@@ -1,0 +1,9 @@
+{
+  "interface_class": [
+    {
+      "evaluation item": "准确度->对象敏感与域敏感->区分不同的类对象、结构体/联合体和字典/列表/数组->对象->不同对象相同属性",
+      "compose": "ObjectDiffAttribute_001_T.java && !ObjectDiffAttribute_002_F.java",
+      "level": "2"
+    }
+  ]
+}

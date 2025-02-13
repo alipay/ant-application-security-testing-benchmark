@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-assert语句-条件不成立
+ * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->assert语句-条件不成立
  * Level 4
  * Date 2024-09-18
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->不涉及求解问题->assert语句-条件不成立
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->assert语句-条件不成立
 // bind_url = accuracy/path_sensitive/conditional_stmt/Statement_AssertStatement_003_T/{cmd}
 // evaluation information end
 @RestController()

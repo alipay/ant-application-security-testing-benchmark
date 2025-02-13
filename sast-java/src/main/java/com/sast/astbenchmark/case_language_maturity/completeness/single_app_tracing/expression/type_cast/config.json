@@ -1,12 +1,12 @@
 {
     "type_cast":[
         {
-          "evaluation item": "完整度->链路跟踪完整度->表达式->强转表达式-参数传递",
+          "evaluation item": "完整度->单应用跟踪完整度->表达式->类型转换->强转表达式-参数传递",
           "compose": "Expression_CastExpression_001_T.java && !Expression_CastExpression_002_F.java",
           "level": "2"
         },
         {
-          "evaluation item": "完整度->链路跟踪完整度->表达式->强转表达式-函数调用",
+          "evaluation item": "完整度->单应用跟踪完整度->表达式->类型转换->强转表达式-函数调用",
           "compose": "Expression_CastExpression_003_T.java && !Expression_CastExpression_004_F.java",
           "level": "2"
         }

@@ -11,13 +11,13 @@ import java.util.Map;
 import java.util.function.Function;
 
 /**
- * Introduction 污点链路样本中的表达式-Lambda表达式
+ * Introduction 完整度->单应用跟踪完整度->表达式->Lambda表达式
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->表达式->Lambda表达式
+// evaluation item = 完整度->单应用跟踪完整度->表达式->Lambda表达式
 // bind_url = completeness/single_app_tracing/expression/lambda_expression/Expression_LambdaExpression_001_T
 // evaluation information end
 

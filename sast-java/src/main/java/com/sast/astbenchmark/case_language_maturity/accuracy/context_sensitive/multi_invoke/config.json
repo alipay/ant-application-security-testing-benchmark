@@ -1,22 +1,22 @@
 {
   "multi_invoke": [
     {
-      "evaluation item": "准确度->上下文敏感->相同函数调用不同参数-scene1",
+      "evaluation item": " 准确度->上下文敏感分析->多次调用->相同函数调用不同参数-scene1",
       "compose": "DifferentParamsForFunction_001_T.java && !DifferentParamsForFunction_002_F.java",
-      "level": "4"
+      "level": "2"
     },
     {
-      "evaluation item": "准确度->上下文敏感->相同函数调用不同参数-scene2",
+      "evaluation item": " 准确度->上下文敏感分析->多次调用->相同函数调用不同参数-scene2",
       "compose": "DifferentParamsForFunction_003_T.java && !DifferentParamsForFunction_004_F.java",
       "level": "2"
     },
     {
-      "evaluation item": "准确度->上下文敏感->HeapAllocSite",
+      "evaluation item": " 准确度->上下文敏感分析->多次调用->HeapAllocSite",
       "compose": "HeapAllocSite_001_T.java && !HeapAllocSite_002_F.java",
       "level": "2"
     },
     {
-      "evaluation item": "准确度->上下文敏感->MultipleCallSite",
+      "evaluation item": " 准确度->上下文敏感分析->多次调用->MultipleCallSite",
       "compose": "MultiCallSite_001_T.java && !MultiCallSite_002_F.java",
       "level": "2"
     }

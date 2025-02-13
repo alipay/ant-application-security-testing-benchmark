@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 中断语句-continue+label
+ * Introduction 准确度->路径敏感->跳转语句->中断语句->continue+label
  * Level 4
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->中断语句->continue+label
+// evaluation item = 准确度->路径敏感->跳转语句->中断语句->continue+label
 // bind_url = accuracy/path_sensitive/exception_throw/Statement_InterruptStatement_007_T/{cmd}
 // evaluation information end
 @RestController()

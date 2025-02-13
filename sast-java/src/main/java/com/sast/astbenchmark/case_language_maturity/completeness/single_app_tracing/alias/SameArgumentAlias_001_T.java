@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度-链路跟踪完整度-引用和指针-别名-对象属性-对象指针-别名参数
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->别名->别名参数
+ * Level 2
  * Date 2024-07-02
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->别名参数
+// evaluation item = 完整度->单应用跟踪完整度->别名->别名参数
 // bind_url = completeness/single_app_tracing/references_pointers/alias/SameArgumentAlias_001_T
 // evaluation information end
 @RestController

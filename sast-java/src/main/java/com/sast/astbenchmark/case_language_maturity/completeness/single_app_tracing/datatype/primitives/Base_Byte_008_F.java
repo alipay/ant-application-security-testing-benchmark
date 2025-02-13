@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Byte作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Byte
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte
 // bind_url = completeness/base/object/javaNative/Base_Byte_008_F/{cmd}
 // evaluation information end
 

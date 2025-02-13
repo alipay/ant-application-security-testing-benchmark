@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-不涉及求解问题-常量分支条件
- * Level 4
+ * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->常量分支条件
+ * Level 3
  * Date 2024-05-23
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->不涉及求解问题->常量分支条件
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->常量分支条件
 // bind_url = accuracy/path_sensitive/conditional_stmt/ConstantIfGuard_001_T.java
 // evaluation information end
 @RestController

@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，List作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->集合->List
  * Level 2
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->List
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合->List
 // bind_url = completeness/base/object/javaNative/Base_List_003_T
 // evaluation information end
 

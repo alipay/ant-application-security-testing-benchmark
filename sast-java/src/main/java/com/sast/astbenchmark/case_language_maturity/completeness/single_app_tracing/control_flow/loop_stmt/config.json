@@ -1,22 +1,22 @@
 {
   "loop_stmt": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->控制流->循环语句->do_while语句",
+      "evaluation item": "完整度->单应用跟踪完整度->流程控制语句->循环结构->do_while语句",
       "compose": "Statement_DoStatement_001_T.java && !Statement_DoStatement_002_F.java",
       "level": "2"
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->控制流->循环语句->foreach语句",
+      "evaluation item": "完整度->单应用跟踪完整度->流程控制语句->循环结构->foreach语句",
       "compose": "Statement_ForEachStatement_001_T.java && !Statement_ForEachStatement_002_F.java",
       "level": "2"
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->控制流->循环语句->for语句",
+      "evaluation item": "完整度->单应用跟踪完整度->流程控制语句->循环结构->for语句",
       "compose": "Statement_ForStatement_001_T.java && !Statement_ForStatement_002_F.java",
       "level": "2"
     },
     {
-      "evaluation item": "完整度->链路跟踪完整度->控制流->循环语句->while语句",
+      "evaluation item": "完整度->单应用跟踪完整度->流程控制语句->循环结构->while语句",
       "compose": "Statement_WhileStatement_001_T.java && !Statement_WhileStatement_002_F.java",
       "level": "2"
     }

@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 /**
- * Introduction 对象中的简单类型对象，byte作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte
  * Level 2
  * Date 2024-05-09
  * 注意，case中的 SinkUtil.sink 为自定义Sink，由于评测对基础类型无法直接找到sink点，因此设计出了一个自定义Sink。
@@ -19,7 +19,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->byte
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte
 // bind_url = completeness/base/object/javaNative/Base_Byte_002_F/{cmd}
 // evaluation information end
 

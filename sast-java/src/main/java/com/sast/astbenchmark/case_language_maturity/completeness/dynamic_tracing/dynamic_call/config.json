@@ -1,7 +1,7 @@
 {
   "dynamic_call": [
     {
-      "evaluation item": "完整度->动态特性跟踪完整度->动态调用->反射调用",
+      "evaluation item": "完整度->动态特性跟踪完整度->反射调用->字符串常量",
       "compose": "Expression_Reflection_001_T.java && !Expression_Reflection_002_F.java",
       "level": "3"
     }

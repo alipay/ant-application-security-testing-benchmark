@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-自定义函数-嵌套类
+ * Introduction 完整度->单应用跟踪完整度->接口与类->复杂对象->嵌套类
  * Level 2
  * Date 2024-08-16
  */
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->嵌套类
+// evaluation item = 完整度->单应用跟踪完整度->接口与类->复杂对象->嵌套类
 // bind_url = completeness/single_app_tracing/interface_class/complex_object/CallExpression_CustomCode_Class_001_T
 // evaluation information end
 @RestController()

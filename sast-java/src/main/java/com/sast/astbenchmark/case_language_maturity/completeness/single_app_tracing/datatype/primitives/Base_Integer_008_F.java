@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，int作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->int
  * Level 2
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->int
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->int
 // bind_url = completeness/base/object/javaNative/Base_Integer_008_F/{cmd}
 // evaluation information end
 

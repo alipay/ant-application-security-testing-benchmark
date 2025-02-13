@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->上下文敏感->多态
+// evaluation item =  准确度->上下文敏感分析->多态
 // bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_002_F
 // evaluation information end
 @RestController()

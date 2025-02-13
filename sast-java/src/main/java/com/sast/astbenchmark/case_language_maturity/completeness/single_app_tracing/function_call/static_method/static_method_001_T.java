@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Introduction 高阶函数-匿名函数为参数
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->静态方法->静态方法
+ * Level 2
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路完整度->函数调用->静态->静态方法
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->静态方法->静态方法
 // bind_url = completeness/single_app_tracing/function_call/static_method/static_method_001_T
 // evaluation information end
 @RestController()

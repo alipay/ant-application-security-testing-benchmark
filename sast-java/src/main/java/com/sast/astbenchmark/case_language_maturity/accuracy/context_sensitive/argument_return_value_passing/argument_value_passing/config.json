@@ -1,0 +1,24 @@
+{
+  "argument_value_passing": [
+    {
+      "evaluation item": " 准确度->上下文敏感分析->参数值传递->VarargArrayAccess",
+      "compose": "DifferentParamsForFunction_005_T.java && !DifferentParamsForFunction_006_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": " 准确度->上下文敏感分析->参数值传递->变量赋值表达式直接引入而不是import",
+      "compose": "Expression_CallExpression_Package_001_T.java && !Expression_CallExpression_Package_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": " 准确度->上下文敏感分析->参数值传递->ast对象->函数调用",
+      "compose": "Expression_MethodInvocation_001_T.java && !Expression_MethodInvocation_002_F.java",
+      "level": "2"
+    },
+    {
+      "evaluation item": " 准确度->上下文敏感分析->参数值传递->中缀表达式",
+      "compose": "Expression_MethodInvocation_InfixExpression_001_T.java && !Expression_MethodInvocation_InfixExpression_002_F.java",
+      "level": "2"
+    }
+  ]
+}

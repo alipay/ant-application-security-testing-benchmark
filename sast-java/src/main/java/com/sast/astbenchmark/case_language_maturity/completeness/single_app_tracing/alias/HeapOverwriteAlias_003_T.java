@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度-链路跟踪完整度-引用和指针-别名-对象属性-对象指针-HeapOverwriteAlias FlowSensitive-scene2
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->别名->HeapOverwriteAlias-scene2
+ * Level 2
  * Date 2024-07-05
  */
 @RestController
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->引用和指针->别名->对象属性->对象指针->HeapOverwriteAlias-scene2
+// evaluation item = 完整度->单应用跟踪完整度->别名->HeapOverwriteAlias-scene2
 // bind_url = completeness/single_app_tracing/references_pointers/alias/HeapOverwriteAlias_003_T
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/references_pointers/alias")

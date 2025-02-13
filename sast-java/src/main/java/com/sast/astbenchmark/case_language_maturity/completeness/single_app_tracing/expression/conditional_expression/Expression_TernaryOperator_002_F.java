@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-三目运算符
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->表达式->条件表达式->三目运算符
+ * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->链路跟踪完整度->表达式->条件表达式->三目运算符
+// evaluation item = 完整度->单应用跟踪完整度->表达式->条件表达式->三目运算符
 // bind_url = completeness/single_app_tracing/expression/conditional_expression/Expression_TernaryOperator_002_F/{url}
 // evaluation information end
 

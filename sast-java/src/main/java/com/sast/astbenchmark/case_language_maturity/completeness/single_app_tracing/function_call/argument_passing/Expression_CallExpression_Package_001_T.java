@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-变量赋值表达式直接引入而不是import
- * Level X
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->参数传递->变量赋值表达式直接引入而不是import
+ * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->变量赋值表达式直接引入而不是import
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递->变量赋值表达式直接引入而不是import
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_CallExpression_Package_001_T
 // evaluation information end
 @RestController()

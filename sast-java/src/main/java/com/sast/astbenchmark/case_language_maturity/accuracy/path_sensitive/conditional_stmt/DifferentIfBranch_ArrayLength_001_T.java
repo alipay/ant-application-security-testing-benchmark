@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-数组长度计算
+ * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->涉及求解问题->数组长度计算
  * Level 4
  * Date 2024-06-28
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->涉及求解问题->数组长度计算
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->涉及求解问题->数组长度计算
 // bind_url = accuracy/path_sensitive/conditional_stmt/DifferentIfBranch_ArrayLength_001_T
 // evaluation information end
 @RestController()

@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-中缀表达式+函数调用表达式
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->参数传递->函数调用+中缀表达式
  * Level 2
  * Date 2024-05-09
  */
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+中缀表达式
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递->函数调用+中缀表达式
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_MethodInvocation_InfixExpression_002_F
 // evaluation information end
 @RestController()

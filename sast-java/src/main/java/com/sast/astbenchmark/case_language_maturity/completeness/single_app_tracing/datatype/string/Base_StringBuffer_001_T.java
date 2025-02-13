@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，StringBuffer对象为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->字符串->StringBuffer
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->StringBuffer
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->字符串->StringBuffer
 // bind_url = completeness/base/object/javaNative/Base_StringBuffer_001_T
 // evaluation information end
 

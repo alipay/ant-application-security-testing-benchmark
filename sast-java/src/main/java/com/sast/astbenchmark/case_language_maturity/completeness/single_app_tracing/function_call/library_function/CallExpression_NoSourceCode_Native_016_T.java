@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-无源码函数-string intern
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->库函数调用->string.intern
  * Level 2
  * Date 2024-05-09
  */
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.intern
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->库函数调用->string.intern
 // bind_url = completeness/single_app_tracing/function_call/library_function/CallExpression_NoSourceCode_Native_016_T
 // evaluation information end
 @RestController()

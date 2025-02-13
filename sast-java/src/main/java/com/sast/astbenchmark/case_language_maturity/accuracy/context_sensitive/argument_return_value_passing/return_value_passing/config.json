@@ -1,0 +1,9 @@
+{
+  "return_value_passing": [
+    {
+      "evaluation item": " 准确度->上下文敏感分析->返回值传递",
+      "compose": "return_value_passing_001_T.java && !return_value_passing_002_F.java",
+      "level": "2"
+    }
+  ]
+}

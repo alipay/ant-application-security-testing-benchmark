@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-instanceof表达式-Object
+ * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->instanceof表达式-Object
  * Level 4
  * Date 2024-09-18
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->不涉及求解问题->instanceof表达式-Object
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->不涉及求解问题->instanceof表达式-Object
 // bind_url = accuracy/path_sensitive/conditional_stmt/Expression_InstanceofExpression_005_T/{cmd}
 // evaluation information end
 @RestController()

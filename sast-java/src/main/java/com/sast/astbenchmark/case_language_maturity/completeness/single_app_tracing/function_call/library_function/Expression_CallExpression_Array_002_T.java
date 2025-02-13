@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-函数调用+数组操作
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->库函数调用->函数调用+数组操作
  * Level 2
  * Date 2024-05-09
  */
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+数组操作
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->库函数调用->函数调用+数组操作
 // bind_url = completeness/single_app_tracing/function_call/library_function/Expression_CallExpression_Array_002_T
 // evaluation information end
 @RestController()

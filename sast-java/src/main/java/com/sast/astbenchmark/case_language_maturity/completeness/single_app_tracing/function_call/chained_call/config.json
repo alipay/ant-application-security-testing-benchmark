@@ -1,7 +1,7 @@
 {
   "chained_call": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用 + BinaryOperation",
+      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->链式调用->函数调用 + BinaryOperation",
       "compose": "!Expression_MethodInvocation_Argument_001_F.java && Expression_MethodInvocation_Argument_002_T.java",
       "level": "2"
     }

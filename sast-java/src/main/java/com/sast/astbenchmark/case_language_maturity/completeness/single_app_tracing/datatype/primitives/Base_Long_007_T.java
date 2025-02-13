@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Long作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->long
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Long
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Long
 // bind_url = completeness/base/object/javaNative/Base_Long_007_T/{cmd}
 // evaluation information end
 

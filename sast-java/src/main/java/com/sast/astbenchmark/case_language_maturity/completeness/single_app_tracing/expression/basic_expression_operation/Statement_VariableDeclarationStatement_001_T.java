@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-变量定义语句
+ * Introduction 完整度->单应用跟踪完整度->表达式->基础表达式->变量定义语句
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->表达式->基础表达式->变量定义语句
+// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式->变量定义语句
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Statement_VariableDeclarationStatement_001_T
 // evaluation information end
 

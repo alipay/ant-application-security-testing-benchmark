@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-while语句
+ * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->循环语句->while
  * Level 4
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->循环语句->while
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->循环语句->while
 // bind_url = accuracy/path_sensitive/loop_stmt/Statement_WhileStatement_003_T/{type}/{cmd}
 // evaluation information end
 @RestController()

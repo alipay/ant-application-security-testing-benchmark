@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点对象完整度-泛型类-类型参数
- * Level X
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->指针->泛型类-类型参数
+ * Level 2
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->数据类型->泛型类-类型参数
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->指针->泛型类-类型参数
 // bind_url = completeness/base/object/javaNative/CallExpression_CustomCode_Class_009_T
 // evaluation information end
 

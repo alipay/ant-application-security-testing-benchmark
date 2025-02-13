@@ -1,7 +1,7 @@
 {
   "conditional_expression": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->条件表达式->三目运算符",
+      "evaluation item": "完整度->单应用跟踪完整度->表达式->条件表达式->三目运算符",
       "compose": "Expression_TernaryOperator_001_T.java && !Expression_TernaryOperator_002_F.java",
       "level": "2"
     }
