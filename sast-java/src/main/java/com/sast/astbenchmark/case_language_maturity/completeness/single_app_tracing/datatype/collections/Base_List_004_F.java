@@ -19,11 +19,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合->List
-// bind_url = completeness/base/object/javaNative/Base_List_004_F
+// bind_url = completeness/single_app_tracing/datatype/collections/Base_List_004_F
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/collections")
 public class Base_List_004_F {
     @PostMapping("Base_List_004_F")
     public Map<String, Object> testcase(@RequestBody List<String> cmd) {

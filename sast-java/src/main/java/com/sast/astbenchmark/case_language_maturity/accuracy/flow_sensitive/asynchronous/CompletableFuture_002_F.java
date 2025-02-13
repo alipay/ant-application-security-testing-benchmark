@@ -11,7 +11,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Introduction 流敏感-异步-CompletableFuture
+ * Introduction 准确度->流敏感->异步->CompletableFuture
  * Level 3
  * Date 2024-11-7
  */

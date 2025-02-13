@@ -19,11 +19,11 @@ import java.util.concurrent.LinkedBlockingQueue;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合->Queue-remove
-// bind_url = completeness/base/object/javaNative/Base_Queue_005_T
+// bind_url = completeness/single_app_tracing/datatype/collections/Base_Queue_005_T
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/collections")
 public class Base_Queue_005_T {
     @PostMapping("Base_Queue_005_T")
     public Map<String, Object> aTaintCase0142(@RequestBody String cmd) {

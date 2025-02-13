@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->上下文敏感分析->返回值传递
-// bind_url = accuracy/context_sensitive/return_value_passing/return_value_passing_001_T
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/return_value_passing/return_value_passing_001_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/context_sensitive/return_value_passing")
+@RequestMapping("accuracy/context_sensitive/argument_return_value_passing/return_value_passing")
 public class return_value_passing_001_T {
     @PostMapping(value = "return_value_passing_001_T")
     public static void returnValuePassing001T(@RequestParam String __taint_src) {

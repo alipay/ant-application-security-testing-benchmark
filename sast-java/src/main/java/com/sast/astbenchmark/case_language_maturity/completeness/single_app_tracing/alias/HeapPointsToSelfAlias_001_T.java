@@ -18,9 +18,9 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名->HeapPointsToSelfAlias FlowSensitive
-// bind_url = completeness/single_app_tracing/references_pointers/alias/HeapPointsToSelfAlias_001_T
+// bind_url = completeness/single_app_tracing/alias/HeapPointsToSelfAlias_001_T
 // evaluation information end
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class HeapPointsToSelfAlias_001_T {
     @PostMapping(value = "HeapPointsToSelfAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

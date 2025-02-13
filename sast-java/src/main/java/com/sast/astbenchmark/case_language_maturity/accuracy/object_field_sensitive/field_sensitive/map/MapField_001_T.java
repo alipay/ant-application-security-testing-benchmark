@@ -16,11 +16,11 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item =  准确度->对象敏感与域敏感->区分一维字典/列表/数组的不同元素->Map-Field
-// bind_url = accuracy/fieldSensitive/baseCollection/MapField_001_T
+// bind_url = accuracy/object_field_sensitive/field_sensitive/map/MapField_001_T
 // evaluation information end
 
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/object_field_sensitive/field_sensitive/map")
 public class MapField_001_T {
     @PostMapping(value = "MapField_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

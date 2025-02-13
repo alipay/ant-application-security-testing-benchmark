@@ -19,7 +19,7 @@ import java.util.Map;
 // bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_001_T.java
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/path_sensitive/exception_throw")
+@RequestMapping("accuracy/path_sensitive/explicit_jump_control")
 public class Statement_InterruptStatement_001_T {
     @GetMapping("Statement_InterruptStatement_001_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

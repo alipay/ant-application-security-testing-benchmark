@@ -16,11 +16,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->上下文敏感分析->参数值传递->VarargArrayAccess
-// bind_url = accuracy/context_sensitive/argument_value_passing/DifferentParamsForFunction_006_F
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing/DifferentParamsForFunction_006_F
 // evaluation information end
 
 @RestController()
-@RequestMapping("accuracy/context_sensitive/argument_value_passing")
+@RequestMapping("accuracy/context_sensitive/argument_return_value_passing/argument_value_passing")
 public class DifferentParamsForFunction_006_F {
     @PostMapping("DifferentParamsForFunction_006_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

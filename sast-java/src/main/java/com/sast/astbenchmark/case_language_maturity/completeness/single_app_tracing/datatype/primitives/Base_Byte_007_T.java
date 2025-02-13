@@ -17,11 +17,11 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte
-// bind_url = completeness/base/object/javaNative/Base_Byte_007_T/{cmd}
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Byte_007_T/{cmd}
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Byte_007_T {
     @PostMapping("Base_Byte_007_T/{cmd}")
     public Map<String, Object> aTaintCase0144_2(@PathVariable Byte cmd) {

@@ -17,11 +17,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组->copyOf
-// bind_url = completeness/base/object/javaNative/Base_ArrayAccess_010_F
+// bind_url = completeness/single_app_tracing/datatype/array/Base_ArrayAccess_010_F
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/array")
 public class Base_ArrayAccess_010_F {
     @PostMapping(value = "Base_ArrayAccess_010_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

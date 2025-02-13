@@ -17,11 +17,11 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->指针->泛型类-wildcard
-// bind_url = completeness/base/object/javaNative/CallExpression_CustomCode_Class_012_F
+// bind_url = completeness/single_app_tracing/datatype/generics/CallExpression_CustomCode_Class_012_F
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/generics")
 public class CallExpression_CustomCode_Class_012_F {
     @PostMapping(value = "CallExpression_CustomCode_Class_012_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {

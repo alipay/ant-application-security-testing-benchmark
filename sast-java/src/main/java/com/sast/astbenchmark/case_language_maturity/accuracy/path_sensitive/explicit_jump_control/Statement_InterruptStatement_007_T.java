@@ -16,10 +16,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->路径敏感->跳转语句->中断语句->continue+label
-// bind_url = accuracy/path_sensitive/exception_throw/Statement_InterruptStatement_007_T/{cmd}
+// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_007_T/{cmd}
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/path_sensitive/exception_throw")
+@RequestMapping("accuracy/path_sensitive/explicit_jump_control")
 public class Statement_InterruptStatement_007_T {
     @GetMapping("Statement_InterruptStatement_007_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

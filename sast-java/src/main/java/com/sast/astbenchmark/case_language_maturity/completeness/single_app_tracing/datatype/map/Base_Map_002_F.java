@@ -19,11 +19,11 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->字典->Map
-// bind_url = completeness/base/object/javaNative/Base_Map_002_F
+// bind_url = completeness/single_app_tracing/datatype/map/Base_Map_002_F
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/map")
 public class Base_Map_002_F {
     @PostMapping("Base_Map_002_F")
     public Map<String, Object> aTaintCase0140(@RequestBody Map<String, String> cmd) {

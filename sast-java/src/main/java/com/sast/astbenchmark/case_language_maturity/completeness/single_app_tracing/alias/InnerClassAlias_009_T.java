@@ -17,10 +17,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->单应用跟踪完整度->别名->InnerClassAlias-scene4
-// bind_url = completeness/single_app_tracing/references_pointers/alias/InnerClassAlias_009_T
+// bind_url = completeness/single_app_tracing/alias/InnerClassAlias_009_T
 // evaluation information end
 @RestController
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class InnerClassAlias_009_T {
     @PostMapping(value = "InnerClassAlias_009_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

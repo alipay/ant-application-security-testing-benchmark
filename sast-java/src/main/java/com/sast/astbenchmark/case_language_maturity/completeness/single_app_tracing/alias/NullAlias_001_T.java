@@ -17,10 +17,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名->NullAlias
-// bind_url = completeness/single_app_tracing/references_pointers/alias/NullAlias_001_T
+// bind_url = completeness/single_app_tracing/alias/NullAlias_001_T
 // evaluation information end
 @RestController
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class NullAlias_001_T {
     @PostMapping(value = "NullAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

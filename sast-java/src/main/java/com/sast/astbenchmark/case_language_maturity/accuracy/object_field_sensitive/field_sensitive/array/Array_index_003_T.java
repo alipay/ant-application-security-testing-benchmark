@@ -16,10 +16,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item =  准确度->对象敏感与域敏感->区分一维字典/列表/数组的不同元素->数组索引-二维
-// bind_url = accuracy/fieldSensitive/baseCollection/Array_index_003_T
+// bind_url = accuracy/object_field_sensitive/field_sensitive/array/Array_index_003_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/fieldSensitive/baseCollection")
+@RequestMapping("accuracy/object_field_sensitive/field_sensitive/array")
 public class Array_index_003_T {
     @PostMapping("Array_index_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

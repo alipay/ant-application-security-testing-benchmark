@@ -17,10 +17,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->对象敏感与域敏感->区分不同的类对象、结构体/联合体和字典/列表/数组->对象->不同对象相同属性
-// bind_url = accuracy/objectSensitive/ObjectDiffAttribute_001_T
+// bind_url = accuracy/object_field_sensitive/object_sensitive/interface_class/ObjectDiffAttribute_001_T
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/objectSensitive")
+@RequestMapping("accuracy/object_field_sensitive/object_sensitive/interface_class")
 public class ObjectDiffAttribute_001_T {
     @PostMapping(value = "ObjectDiffAttribute_001_T")
     public Map<String, Object> testcase(@PathVariable String cmd) {

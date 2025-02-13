@@ -19,10 +19,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名->ReturnAlias FlowSensitive-scene1
-// bind_url = completeness/single_app_tracing/references_pointers/alias/ReturnAlias_001_T
+// bind_url = completeness/single_app_tracing/alias/ReturnAlias_001_T
 // evaluation information end
 @RestController
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class ReturnAlias_001_T {
     @PostMapping(value = "ReturnAlias_001_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

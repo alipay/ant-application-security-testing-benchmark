@@ -20,10 +20,10 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名->FieldUnAlias scene2
-// bind_url = completeness/single_app_tracing/references_pointers/alias/FieldUnAlias_003_T
+// bind_url = completeness/single_app_tracing/alias/FieldUnAlias_003_T
 // evaluation information end
 @RestController
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class FieldUnAlias_003_T {
     @PostMapping(value = "FieldUnAlias_003_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {
