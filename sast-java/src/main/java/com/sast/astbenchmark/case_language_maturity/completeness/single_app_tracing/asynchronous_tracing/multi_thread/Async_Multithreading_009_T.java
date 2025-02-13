@@ -18,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->多线程->Synchronized
-// bind_url = completeness/asynchronous_tracing/multi_thread/Async_Multithreading_009_T/{cmd}
+// bind_url = completeness/single_app_tracing/asynchronous_tracing/multi_thread/Async_Multithreading_009_T/{cmd}
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/asynchronous_tracing/multi_thread")
+@RequestMapping("completeness/single_app_tracing/asynchronous_tracing/multi_thread")
 public class Async_Multithreading_009_T {
     private String a;
     @PostMapping("Async_Multithreading_009_T/{cmd}")

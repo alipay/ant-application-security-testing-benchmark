@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
- * Level 3
+ * Introduction 准确度->流敏感->常规顺序执行语句->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
+ * Level 2
  * Date 2024-07-02
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
+// evaluation item =  准确度->流敏感->常规顺序执行语句->对象属性->对象指针->流敏感指针分析-过程间分析-scene1
 // bind_url = accuracy/flow_sensitive/normal_stmt/FlowSensitiveAlias_001_T
 // evaluation information end
 @RestController

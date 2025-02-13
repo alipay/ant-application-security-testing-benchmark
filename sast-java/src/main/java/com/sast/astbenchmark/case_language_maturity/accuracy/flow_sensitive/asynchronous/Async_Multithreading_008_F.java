@@ -11,13 +11,13 @@ import java.util.Timer;
 
 
 /**
- * Introduction 准确度->流敏感->异步->存储型异步->多线程->TimerTask
+ * Introduction 准确度->流敏感->异步执行->存储型异步->多线程->TimerTask
  * Level 4
  * Date 2024-07-31
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->异步->存储型异步->多线程->TimerTask
+// evaluation item = 准确度->流敏感->异步执行->存储型异步->多线程->TimerTask
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_008_F/{cmd}
 // evaluation information end
 

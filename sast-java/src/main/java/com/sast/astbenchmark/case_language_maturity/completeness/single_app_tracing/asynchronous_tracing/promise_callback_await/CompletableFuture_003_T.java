@@ -20,10 +20,10 @@ import java.util.concurrent.atomic.AtomicReference;
 // evaluation information start
 // real case = true
 // evaluation project = 完整度->单应用跟踪完整度->并发、多线程、异步->同步原语->CompletableFuture
-// bind_url = completeness/asynchronous_tracing/promise_callback_await/CompletableFuture_003_T/{cmd}
+// bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/CompletableFuture_003_T/{cmd}
 // evaluation information end
 @RestController
-@RequestMapping("completeness/asynchronous_tracing/promise_callback_await")
+@RequestMapping("completeness/single_app_tracing/asynchronous_tracing/promise_callback_await")
 public class CompletableFuture_003_T {
     private final ExecutorService executorService = Executors.newFixedThreadPool(3);
     @PostMapping(value = "CompletableFuture_003_T/{cmd}")

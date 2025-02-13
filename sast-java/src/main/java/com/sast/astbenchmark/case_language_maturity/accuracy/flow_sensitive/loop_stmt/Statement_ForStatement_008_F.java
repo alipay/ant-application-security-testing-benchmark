@@ -8,13 +8,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->流敏感->循环语句->for-update流敏感
- * Level 3
+ * Introduction 准确度->流敏感->循环顺序执行语句->for-update流敏感
+ * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->循环语句->for-update流敏感
+// evaluation item = 准确度->流敏感->循环顺序执行语句->for-update流敏感
 // bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_008_F.java/{cmd}
 // evaluation information end
 @RestController()

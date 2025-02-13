@@ -18,7 +18,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->表达式->this表达式+匿名函数
-// bind_url = completeness/single_app_tracing/expression/this_expression/Expression_ThisExpression_001_T/{url}
+// bind_url = completeness/single_app_tracing/expression/this_expression/Expression_ThisExpression_Anonymous_001_T/{url}
 // evaluation information end
 
 @RestController()

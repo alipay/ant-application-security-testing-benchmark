@@ -9,19 +9,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->上下文敏感分析->参数值传递->变量赋值表达式直接引入而不是import
+ * Introduction  准确度->上下文敏感分析->参数/返回值传递->参数值传递->变量赋值表达式直接引入而不是import
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->上下文敏感分析->参数值传递->变量赋值表达式直接引入而不是import
-// bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing/Expression_CallExpression_Package_002_F
+// evaluation item =   准确度->上下文敏感分析->参数/返回值传递->参数值传递->变量赋值表达式直接引入而不是import
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing/Expression_CallExpression_Package_002_F/{url}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/argument_return_value_passing/argument_value_passing")
 public class Expression_CallExpression_Package_002_F {
-    @GetMapping("Expression_NewExpression_Package_002_F/{url}")
+    @GetMapping("Expression_CallExpression_Package_002_F/{url}")
     public Map<String, Object> aTaintCase0157(@PathVariable String url) {
 
         Map<String, Object> modelMap = new HashMap<>();

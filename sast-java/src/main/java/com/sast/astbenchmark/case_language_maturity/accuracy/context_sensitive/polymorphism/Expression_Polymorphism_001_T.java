@@ -17,7 +17,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item =  准确度->上下文敏感分析->多态
-// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T
+// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/polymorphism")
