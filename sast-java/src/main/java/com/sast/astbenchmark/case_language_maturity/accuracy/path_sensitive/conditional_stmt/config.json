@@ -7,7 +7,7 @@
     },
     {
       "evaluation item": "准确度->路径敏感->条件语句、条件表达式和循环结构->条件语句、条件表达式和循环结构->涉及求解问题->数组长度计算",
-      "compose": "DifferentIfBranch_ArrayLength_001_T.java && !DifferentIfBranch_ArrayLength_002_F && DifferentIfBranch_ArrayLength_003_T.java",
+      "compose": "DifferentIfBranch_ArrayLength_001_T.java && !DifferentIfBranch_ArrayLength_002_F.java && DifferentIfBranch_ArrayLength_003_T.java",
       "level": "4"
     },
     {
