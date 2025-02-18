@@ -1,0 +1,14 @@
+{
+  "loop_conditional_stmt_solver": [
+    {
+      "evaluation item": "准确度->路径敏感->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态",
+      "level": "4",
+      "scene_list": [
+        {
+          "compose": "DifferentIfBranch_ArrayLength_001_T.java && !DifferentIfBranch_ArrayLength_002_F.java && DifferentIfBranch_ArrayLength_003_T.java",
+          "scene": "数组长度计算"
+        }
+      ]
+    }
+  ]
+}

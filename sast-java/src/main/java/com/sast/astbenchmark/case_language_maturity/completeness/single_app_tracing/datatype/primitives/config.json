@@ -1,8 +1,13 @@
 {
   "primitives": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte",
-      "compose": "Base_Byte_001_T.java && !Base_Byte_002_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型",
+      "scene_list": [
+        {"compose": "Base_Byte_001_T.java && !Base_Byte_002_F.java","scene":"byte1"},
+        {"compose": "Base_Byte_003_T.java && !Base_Byte_004_F.java","scene":"Byte"},
+        {"compose": "Base_Byte_005_T.java && !Base_Byte_006_F.java","scene":"byte2"}
+      ],
+
       "level": "2"
     },
     {
