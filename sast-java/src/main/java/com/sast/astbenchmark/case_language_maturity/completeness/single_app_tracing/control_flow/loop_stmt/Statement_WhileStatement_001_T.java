@@ -29,6 +29,7 @@ public class Statement_WhileStatement_001_T {
             String a ="mkdir";;
             while(StringUtils.equals(type,"mkdir")) {
                 a = " "+ cmd;
+                break;
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

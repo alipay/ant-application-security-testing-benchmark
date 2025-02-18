@@ -23,12 +23,13 @@ import java.util.Map;
 @RequestMapping("accuracy/path_sensitive/loop_stmt")
 public class Statement_WhileStatement_003_T {
     @GetMapping("Statement_WhileStatement_003_T/{type}/{cmd}")
-    public Map<String, Object> testcase(@PathVariable String cmd, @PathVariable String type) {
+    public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a ="mkdir";;
-            while(StringUtils.equals(type,"mkdir")) {
+            while(StringUtils.equals(a,"mkdir")) {
                 a = " "+ cmd;
+                break;
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");
