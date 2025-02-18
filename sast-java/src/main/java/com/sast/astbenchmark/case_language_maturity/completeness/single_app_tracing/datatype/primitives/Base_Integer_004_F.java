@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Integer对象为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Integer
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Integer
-// bind_url = completeness/base/object/javaNative/Base_Integer_004_F/{cmd}
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Integer_004_F/{cmd}
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Integer_004_F {
     @PostMapping("Base_Integer_004_F/{cmd}")
     public Map<String, Object> aTaintCase0145(@PathVariable Integer cmd) {

@@ -1,0 +1,22 @@
+{
+  "interface_class": [
+    {
+      "evaluation item": "准确度->对象敏感与域敏感->区分不同类对象的不同字段",
+      "level": "3",
+      "scene_list": [
+        {
+          "compose": "AccessPathChainAlias_001_T.java && !AccessPathChainAlias_002_F.java",
+          "scene": "对象指针->AccessPathChain-Tree"
+        },
+        {
+          "compose": "AccessPathChainAlias_003_T.java && !AccessPathChainAlias_004_F.java",
+          "scene": "对象指针->AccessPathChain-LinkedList"
+        },
+        {
+          "compose": "PropertyIsTaintOrNot_Object_001_T.java && !PropertyIsTaintOrNot_Object_002_F.java",
+          "scene": "对象指针->PropertyTaint"
+        }
+      ]
+    }
+  ]
+}

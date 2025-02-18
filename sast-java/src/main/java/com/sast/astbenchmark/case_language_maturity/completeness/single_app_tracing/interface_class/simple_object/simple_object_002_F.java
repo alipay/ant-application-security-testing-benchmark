@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度->基础跟踪能力->类/接口->简单类
+ * Introduction 完整度->单应用跟踪完整度->接口与类->简单对象->简单类
  * Level 2
  * Date 2024-08-16
  */
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->类/接口->简单类
+// evaluation item = 完整度->单应用跟踪完整度->接口与类->简单对象
 // bind_url = completeness/single_app_tracing/interface_class/simple_object/simple_object_002_F
 // evaluation information end
 @RestController()

@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-反射调用
+ * Introduction 完整度->动态特性跟踪完整度->反射调用->字符串常量
  * Level 3
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->动态特性跟踪完整度->动态调用->反射调用
+// evaluation item = 完整度->动态特性跟踪完整度->反射调用
 // bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_001_T/{cmd}/{methodname}
 // evaluation information end
 @RestController()

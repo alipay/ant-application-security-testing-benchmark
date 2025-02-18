@@ -1,9 +1,14 @@
 {
   "polymorphism": [
     {
-      "evaluation item": "准确度->上下文敏感->多态",
-      "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
-      "level": "2"
+      "evaluation item": "准确度->上下文敏感分析->多态",
+      "level": "2",
+      "scene_list": [
+        {
+          "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
+          "scene": "1"
+        }
+      ]
     }
   ]
 }

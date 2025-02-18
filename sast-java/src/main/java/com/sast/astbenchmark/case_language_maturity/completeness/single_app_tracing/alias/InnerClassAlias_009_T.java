@@ -10,17 +10,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 域敏感-对象属性-对象指针-InnerClassAlias-scene4
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->别名->InnerClassAlias-scene4
+ * Level 2
  * Date 2024-07-05
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->域敏感->对象属性->对象指针->InnerClassAlias-scene4
-// bind_url = completeness/single_app_tracing/references_pointers/alias/InnerClassAlias_009_T
+// evaluation item = 完整度->单应用跟踪完整度->别名
+// bind_url = completeness/single_app_tracing/alias/InnerClassAlias_009_T
 // evaluation information end
 @RestController
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class InnerClassAlias_009_T {
     @PostMapping(value = "InnerClassAlias_009_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {

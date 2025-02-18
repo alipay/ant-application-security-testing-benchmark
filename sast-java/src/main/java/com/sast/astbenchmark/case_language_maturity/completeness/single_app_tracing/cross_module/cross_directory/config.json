@@ -1,9 +1,0 @@
-{
-  "cross_directory": [
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点对象完整度->跨模块->跨目录",
-      "compose": "(cross_directory_001_T_a.java || cross_directory_001_T_B.java) && !(cross_directory_002_F_a.java || cross_directory_002_F_b.java)",
-      "level": "2"
-    }
-  ]
-}

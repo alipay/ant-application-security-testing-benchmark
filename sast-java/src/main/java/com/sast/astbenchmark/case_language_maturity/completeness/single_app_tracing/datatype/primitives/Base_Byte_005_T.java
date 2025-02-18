@@ -10,18 +10,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，byte作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->byte
-// bind_url = completeness/base/object/javaNative/Base_Byte_005_T/{cmd}
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Byte_005_T/{cmd}
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Byte_005_T {
     @GetMapping("Base_Byte_005_T/{cmd}")
     public Map<String, Object> aTaintCase0138_2(@PathVariable byte cmd) {

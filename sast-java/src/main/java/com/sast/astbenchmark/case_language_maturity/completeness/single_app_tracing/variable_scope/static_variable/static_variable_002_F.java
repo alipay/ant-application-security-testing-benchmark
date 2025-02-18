@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度->污点对象跟踪完整度->变量->静态变量
+ * Introduction 完整度->单应用跟踪完整度->变量作用域->静态变量
  * Level 2
  * Date 2024-08-16
  */
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->污点对象跟踪完整度->变量->静态变量
+// evaluation item = 完整度->单应用跟踪完整度->变量作用域->静态变量
 // bind_url = completeness/single_app_tracing/variable_scope/static_variable/static_variable_002_F
 // evaluation information end
 @RestController()

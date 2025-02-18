@@ -14,7 +14,7 @@ import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * Introduction 对象中的简单类型对象，Queue对象为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->集合->Queue
  * Level 2
  * Date 2024-05-09
  * 注意，case中的 SinkUtil.sink 为自定义Sink，由于评测对基础类型无法直接找到sink点，因此设计出了一个自定义Sink。
@@ -22,12 +22,12 @@ import java.util.concurrent.LinkedBlockingQueue;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->Queue
-// bind_url = completeness/base/object/javaNative/Base_Queue_001_T
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
+// bind_url = completeness/single_app_tracing/datatype/collections/Base_Queue_001_T
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/collections")
 public class Base_Queue_001_T {
     @PostMapping("Base_Queue_001_T")
     public Map<String, Object> aTaintCase0142(@RequestBody List<String> cmd) {

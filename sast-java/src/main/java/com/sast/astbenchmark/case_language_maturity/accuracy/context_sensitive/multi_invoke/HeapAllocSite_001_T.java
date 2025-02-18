@@ -12,13 +12,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 上下文敏感-HeapAllocSite
+ * Introduction 准确度->上下文敏感分析->多次调用->HeapAllocSite
  * Level 2
  * Date 2024-07-05
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->上下文敏感->HeapAllocSite
+// evaluation item =  准确度->上下文敏感分析->多次调用
 // bind_url = accuracy/context_sensitive/multi_invoke/HeapAllocSite_001_T
 // evaluation information end
 @RestController
