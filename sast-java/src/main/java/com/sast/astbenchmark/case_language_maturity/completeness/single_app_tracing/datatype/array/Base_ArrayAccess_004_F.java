@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组->Argument_ArrayAccess-ArrayList+get
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组
 // bind_url = completeness/single_app_tracing/datatype/array/Base_ArrayAccess_004_F
 // evaluation information end
 

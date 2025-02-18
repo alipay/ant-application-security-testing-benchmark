@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式->变量传递通过native方法发生在两个入参上
+// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_AssignmentExpression_002_F/{cmd}
 // evaluation information end
 @RestController()

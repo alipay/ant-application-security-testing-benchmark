@@ -17,7 +17,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->常规顺序执行语句->数据流不可达->对象属性set赋值为非污点
+// evaluation item = 准确度->流敏感->常规顺序执行语句
 // bind_url = accuracy/flow_sensitive/normal_stmt/AssignObjectAttribute_002_T
 // evaluation information end
 @RestController()

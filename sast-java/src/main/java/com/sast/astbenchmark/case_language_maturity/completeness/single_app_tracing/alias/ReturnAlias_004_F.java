@@ -17,7 +17,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->别名->ReturnAlias FlowSensitive-scene2
+// evaluation item = 完整度->单应用跟踪完整度->别名
 // bind_url = completeness/single_app_tracing/alias/ReturnAlias_004_F
 // evaluation information end
 @RestController

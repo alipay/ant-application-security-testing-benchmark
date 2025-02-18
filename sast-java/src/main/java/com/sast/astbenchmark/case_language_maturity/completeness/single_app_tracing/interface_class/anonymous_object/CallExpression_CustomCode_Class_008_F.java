@@ -19,7 +19,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->接口与类->匿名对象->匿名类
+// evaluation item = 完整度->单应用跟踪完整度->接口与类->匿名对象
 // bind_url = completeness/single_app_tracing/interface_class/anonymous_object/CallExpression_CustomCode_Class_008_F
 // evaluation information end
 @RestController()

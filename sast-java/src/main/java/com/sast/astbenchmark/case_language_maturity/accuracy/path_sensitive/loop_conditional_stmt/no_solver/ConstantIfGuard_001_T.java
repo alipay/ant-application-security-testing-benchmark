@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态->常量分支条件
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/ConstantIfGuard_001_T.java
 // evaluation information end
 @RestController

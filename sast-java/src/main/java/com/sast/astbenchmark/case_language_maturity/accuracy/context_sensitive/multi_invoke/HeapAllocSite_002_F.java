@@ -18,7 +18,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->上下文敏感分析->多次调用->HeapAllocSite
+// evaluation item =  准确度->上下文敏感分析->多次调用
 // bind_url = accuracy/context_sensitive/multi_invoke/HeapAllocSite_002_F
 // evaluation information end
 @RestController

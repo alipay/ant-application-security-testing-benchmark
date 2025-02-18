@@ -1,53 +1,19 @@
 {
   "collections": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->List",
-      "compose": "Base_List_001_T.java && !Base_List_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->List",
-      "compose": "Base_List_003_T.java && !Base_List_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Queue",
-      "compose": "Base_Queue_001_T.java && !Base_Queue_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Queue",
-      "compose": "Base_Queue_003_T.java && !Base_Queue_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Set",
-      "compose": "Base_Set_001_T.java && !Base_Set_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Set",
-      "compose": "Base_Set_003_T.java && !Base_Set_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->List-remove",
-      "compose": "Base_List_005_T.java && !Base_List_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->List-set",
-      "compose": "Base_List_007_T.java && !Base_List_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Queue-remove",
-      "compose": "Base_Queue_005_T.java && !Base_Queue_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合->Set-remove",
-      "compose": "Base_Set_005_T.java && !Base_Set_006_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->集合",
+      "scene_list": [
+        {"compose": "Base_List_001_T.java && !Base_List_002_F.java","scene":"List1"},
+        {"compose": "Base_List_003_T.java && !Base_List_004_F.java","scene":"List2"},
+        {"compose": "Base_Queue_001_T.java && !Base_Queue_002_F.java","scene":"Queue1"},
+        {"compose": "Base_Queue_003_T.java && !Base_Queue_004_F.java","scene":"Queue2"},
+        {"compose": "Base_Set_001_T.java && !Base_Set_002_F.java","scene":"Set1"},
+        {"compose": "Base_Set_003_T.java && !Base_Set_004_F.java","scene":"Set2"},
+        {"compose": "Base_List_005_T.java && !Base_List_006_F.java","scene":"List-remove"},
+        {"compose": "Base_List_007_T.java && !Base_List_008_F.java","scene":"List-set"},
+        {"compose": "Base_Queue_005_T.java && !Base_Queue_006_F.java","scene":"Queue-remove"},
+        {"compose": "Base_Set_005_T.java && !Base_Set_006_F.java","scene":"Set-remove"}
+      ],
       "level": "2"
     }
   ]

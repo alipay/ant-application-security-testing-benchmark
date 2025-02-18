@@ -1,34 +1,16 @@
 {
   "library_function": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->Serializable接口",
-      "compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->string.valueof",
-      "compose": "!CallExpression_NoSourceCode_Native_001_F.java && CallExpression_NoSourceCode_Native_002_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->String构造函数",
-      "compose": "!CallExpression_NoSourceCode_Native_003_F.java && CallExpression_NoSourceCode_Native_004_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->string.concat",
-      "compose": "!CallExpression_NoSourceCode_Native_005_F.java && CallExpression_NoSourceCode_Native_006_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->函数调用+数组操作",
-      "compose": "!Expression_CallExpression_Array_001_F.java && Expression_CallExpression_Array_002_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用->函数调用+函数调用",
-      "compose": "!Expression_MethodInvocation_MethodInvocation_001_F.java && Expression_MethodInvocation_MethodInvocation_002_T.java",
-      "level": "2+"
+      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用",
+      "scene_list": [
+        {"compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java","scene":"Serializable接口"},
+        {"compose": "!CallExpression_NoSourceCode_Native_001_F.java && CallExpression_NoSourceCode_Native_002_T.java","scene":"string.valueof"},
+        {"compose": "!CallExpression_NoSourceCode_Native_003_F.java && CallExpression_NoSourceCode_Native_004_T.java","scene":"String构造函数"},
+        {"compose": "!CallExpression_NoSourceCode_Native_005_F.java && CallExpression_NoSourceCode_Native_006_T.java","scene":"string.concat"},
+        {"compose": "!Expression_CallExpression_Array_001_F.java && Expression_CallExpression_Array_002_T.java","scene":"函数调用+数组操作"},
+        {"compose": "!Expression_MethodInvocation_MethodInvocation_001_F.java && Expression_MethodInvocation_MethodInvocation_002_T.java","scene":"函数调用+函数调用"}
+      ],
+      "level": "2"
     }
   ]
 }

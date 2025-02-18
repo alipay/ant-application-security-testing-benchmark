@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item =   准确度->上下文敏感分析->参数/返回值传递->参数值传递->ast对象->函数调用
+// evaluation item =  准确度->上下文敏感分析->参数/返回值传递
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing/Expression_MethodInvocation_001_T/{cmd}
 // evaluation information end
 @RestController()

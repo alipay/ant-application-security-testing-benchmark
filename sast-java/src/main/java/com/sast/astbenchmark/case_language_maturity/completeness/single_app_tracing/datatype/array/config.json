@@ -1,28 +1,14 @@
 {
   "array": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组->Argument_ArrayAccess-get+ArrayList",
-      "compose": "Base_ArrayAccess_001_T.java && !Base_ArrayAccess_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组->Argument_ArrayAccess-ArrayList+get",
-      "compose": "Base_ArrayAccess_003_T.java && !Base_ArrayAccess_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组->ArrayAccess-element assignment",
-      "compose": "Base_ArrayAccess_005_T.java && !Base_ArrayAccess_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组->多维数组",
-      "compose": "Base_ArrayAccess_007_T.java && !Base_ArrayAccess_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组->copyOf",
-      "compose": "Base_ArrayAccess_009_T.java && !Base_ArrayAccess_010_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->数组",
+      "scene_list": [
+        {"compose": "Base_ArrayAccess_001_T.java && !Base_ArrayAccess_002_F.java","scene":"Argument_ArrayAccess-get+ArrayList"},
+        {"compose": "Base_ArrayAccess_003_T.java && !Base_ArrayAccess_004_F.java","scene":"Argument_ArrayAccess-ArrayList+get"},
+        {"compose": "Base_ArrayAccess_005_T.java && !Base_ArrayAccess_006_F.java","scene":"ArrayAccess-element assignment"},
+        {"compose": "Base_ArrayAccess_007_T.java && !Base_ArrayAccess_008_F.java","scene":"多维数组"},
+        {"compose": "Base_ArrayAccess_009_T.java && !Base_ArrayAccess_010_F.java","scene":"copyOf"}
+      ],
       "level": "2"
     }
   ]

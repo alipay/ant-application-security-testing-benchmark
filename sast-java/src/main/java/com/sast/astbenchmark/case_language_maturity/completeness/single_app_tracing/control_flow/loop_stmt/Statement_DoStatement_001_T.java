@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构->do_while语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_DoStatement_001_T/{cmd}
 // evaluation information end
 @RestController()

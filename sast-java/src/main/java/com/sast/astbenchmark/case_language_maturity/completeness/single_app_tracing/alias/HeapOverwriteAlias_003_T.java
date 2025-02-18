@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->别名->HeapOverwriteAlias-scene2
+// evaluation item = 完整度->单应用跟踪完整度->别名
 // bind_url = completeness/single_app_tracing/alias/HeapOverwriteAlias_003_T
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/alias")

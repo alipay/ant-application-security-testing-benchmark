@@ -19,7 +19,7 @@ import java.util.Map;
 @RestController
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->别名->StaticFieldAlias FlowSensitive
+// evaluation item = 完整度->单应用跟踪完整度->别名
 // bind_url = completeness/single_app_tracing/alias/StaticFieldAlias_002_F
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/alias")

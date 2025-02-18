@@ -13,7 +13,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->文件、包、命名空间->跨包->跨目录
+// evaluation item = 完整度->单应用跟踪完整度->文件、包、命名空间->跨包
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_002_F/B/cross_directory_002_F_b
 // evaluation information end
 

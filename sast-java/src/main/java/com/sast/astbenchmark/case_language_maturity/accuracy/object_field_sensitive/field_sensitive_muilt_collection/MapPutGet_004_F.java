@@ -17,7 +17,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->对象敏感与域敏感->区分多维字典/列表/数组的不同元素->MapPutGet-scene2
+// evaluation item =  准确度->对象敏感与域敏感->区分多维字典/列表/数组的不同元素
 // bind_url = accuracy/object_field_sensitive/field_sensitive/map/MapPutGet_004_F
 // evaluation information end
 

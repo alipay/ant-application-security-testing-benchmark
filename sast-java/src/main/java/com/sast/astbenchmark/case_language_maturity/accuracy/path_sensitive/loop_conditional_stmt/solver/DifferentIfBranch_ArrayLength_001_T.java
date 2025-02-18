@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态->数组长度计算
+// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/DifferentIfBranch_ArrayLength_001_T
 // evaluation information end
 @RestController()

@@ -18,7 +18,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->常规顺序执行语句->对象属性->对象指针->流敏感指针分析-过程间分析-scene2
+// evaluation item = 准确度->流敏感->常规顺序执行语句
 // bind_url = accuracy/flow_sensitive/normal_stmt/FlowSensitiveAlias_004_F
 // evaluation information end
 @RestController

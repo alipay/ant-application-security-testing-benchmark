@@ -17,7 +17,7 @@ import java.util.Map;
 @RestController
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->别名->PrimitiveFieldAccess-scene2
+// evaluation item = 完整度->单应用跟踪完整度->别名
 // bind_url = completeness/single_app_tracing/alias/PrimitiveFieldAccess_004_F
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/alias")

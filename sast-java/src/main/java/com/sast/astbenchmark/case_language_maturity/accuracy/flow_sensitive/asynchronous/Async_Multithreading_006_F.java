@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->异步执行->存储型异步->多线程->Executors
+// evaluation item = 准确度->流敏感->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_006_F/{cmd}
 // evaluation information end
 

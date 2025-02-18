@@ -18,7 +18,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合->List-set
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_List_008_F
 // evaluation information end
 

@@ -1,13 +1,11 @@
 {
   "map": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字典->Map",
-      "compose": "Base_Map_001_T.java && !Base_Map_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字典->Map",
-      "compose": "Base_Map_003_T.java && !Base_Map_004_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字典",
+      "scene_list": [
+        {"compose": "Base_Map_001_T.java && !Base_Map_002_F.java","scene":"Map1"},
+        {"compose": "Base_Map_003_T.java && !Base_Map_004_F.java","scene":"Map2"}
+      ],
       "level": "2"
     }
   ]

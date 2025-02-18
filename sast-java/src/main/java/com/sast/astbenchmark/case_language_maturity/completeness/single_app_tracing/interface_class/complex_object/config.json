@@ -1,18 +1,12 @@
 {
   "complex_object": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->接口与类->复杂对象->嵌套类",
-      "compose": "CallExpression_CustomCode_Class_001_T.java && !CallExpression_CustomCode_Class_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->接口与类->复杂对象->局部类",
-      "compose": "CallExpression_CustomCode_Class_003_T.java && !CallExpression_CustomCode_Class_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->接口与类->复杂对象->多重接口类型",
-      "compose": "CallExpression_CustomCode_Interface_003_T.java && !CallExpression_CustomCode_Interface_004_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->接口与类->复杂对象",
+      "scene_list": [
+        {"compose": "CallExpression_CustomCode_Class_001_T.java && !CallExpression_CustomCode_Class_002_F.java","scene":"嵌套类"},
+        {"compose": "CallExpression_CustomCode_Class_003_T.java && !CallExpression_CustomCode_Class_004_F.java","scene":"局部类"},
+        {"compose": "CallExpression_CustomCode_Interface_003_T.java && !CallExpression_CustomCode_Interface_004_F.java","scene":"多重接口类型"}
+      ],
       "level": "2"
     }
   ]

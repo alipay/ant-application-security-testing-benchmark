@@ -20,7 +20,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->接口与类->抽象类的实现类->抽象类
+// evaluation item = 完整度->单应用跟踪完整度->接口与类->抽象类的实现类
 // bind_url = completeness/single_app_tracing/interface_class/abstract_class/CallExpression_CustomCode_Class_006_F
 // evaluation information end
 @RestController()

@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句->switch语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_SwitchStatement_001_T/{type}/{cmd}
 // evaluation information end
 @RestController()

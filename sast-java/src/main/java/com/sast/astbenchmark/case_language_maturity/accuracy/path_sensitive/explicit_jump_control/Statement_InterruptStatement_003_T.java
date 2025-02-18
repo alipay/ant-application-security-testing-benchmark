@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->跳转语句->中断语句->break+label
+// evaluation item = 准确度->路径敏感->跳转语句
 // bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_003_T/{cmd}
 // evaluation information end
 @RestController()

@@ -4,125 +4,30 @@
       "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型",
       "scene_list": [
         {"compose": "Base_Byte_001_T.java && !Base_Byte_002_F.java","scene":"byte1"},
-        {"compose": "Base_Byte_003_T.java && !Base_Byte_004_F.java","scene":"Byte"},
-        {"compose": "Base_Byte_005_T.java && !Base_Byte_006_F.java","scene":"byte2"}
+        {"compose": "Base_Byte_003_T.java && !Base_Byte_004_F.java","scene":"Byte1"},
+        {"compose": "Base_Byte_005_T.java && !Base_Byte_006_F.java","scene":"byte2"},
+        {"compose": "Base_Byte_007_T.java && !Base_Byte_008_F.java","scene":"Byte2" },
+        {"compose": "Base_ByteArray_001_T.java && !Base_ByteArray_002_F.java","scene":"Byte[]1" },
+        {"compose": "Base_ByteArray_003_T.java && !Base_ByteArray_004_F.java","scene":"Byte[]2" },
+        {"compose": "Base_Char_001_T.java && !Base_Char_002_F.java","scene":"char1" },
+        {"compose": "Base_Char_003_T.java && !Base_Char_004_F.java","scene":"Char2" },
+        {"compose": "Base_Char_005_T.java && !Base_Char_006_F.java","scene":"char3" },
+        {"compose": "Base_Char_007_T.java && !Base_Char_008_F.java","scene":"Character" },
+        {"compose": "Base_CharArray_001_T.java && !Base_CharArray_002_F.java","scene":"char[]1" },
+        {"compose": "Base_CharArray_003_T.java && !Base_CharArray_004_F.java","scene":"char[]2" },
+        {"compose": "Base_Integer_001_T.java && !Base_Integer_002_F.java","scene":"Integer1" },
+        {"compose": "Base_Integer_003_T.java && !Base_Integer_004_F.java","scene":"Integer2" },
+        {"compose": "Base_Integer_005_T.java && !Base_Integer_006_F.java","scene":"int1" },
+        {"compose": "Base_Integer_007_T.java && !Base_Integer_008_F.java","scene":"int2" },
+        {"compose": "Base_Long_001_T.java && !Base_Long_002_F.java","scene":"long1" },
+        {"compose": "Base_Long_003_T.java && !Base_Long_004_F.java","scene":"Long2" },
+        {"compose": "Base_Long_005_T.java && !Base_Long_006_F.java","scene":"long3" },
+        {"compose": "Base_Long_007_T.java && !Base_Long_008_F.java","scene":"Long4" },
+        {"compose": "Base_Double_001_T.java && !Base_Double_002_F.java","scene":"double1" },
+        {"compose": "Base_Double_003_T.java && !Base_Double_004_F.java","scene":"double2" },
+        {"compose": "Base_Float_001_T.java && !Base_Float_002_F.java","scene":"float1" },
+        {"compose": "Base_Float_003_T.java && !Base_Float_004_F.java","scene":"float2" }
       ],
-
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte",
-      "compose": "Base_Byte_003_T.java && !Base_Byte_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->byte",
-      "compose": "Base_Byte_005_T.java && !Base_Byte_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte",
-      "compose": "Base_Byte_007_T.java && !Base_Byte_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte[]",
-      "compose": "Base_ByteArray_001_T.java && !Base_ByteArray_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Byte[]",
-      "compose": "Base_ByteArray_003_T.java && !Base_ByteArray_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char",
-      "compose": "Base_Char_001_T.java && !Base_Char_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Char",
-      "compose": "Base_Char_003_T.java && !Base_Char_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char",
-      "compose": "Base_Char_005_T.java && !Base_Char_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Character",
-      "compose": "Base_Char_006_T.java && !Base_Char_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char[]",
-      "compose": "Base_CharArray_001_T.java && !Base_CharArray_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char[]",
-      "compose": "Base_CharArray_003_T.java && !Base_CharArray_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Integer",
-      "compose": "Base_Integer_001_T.java && !Base_Integer_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Integer",
-      "compose": "Base_Integer_003_T.java && !Base_Integer_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->int",
-      "compose": "Base_Integer_005_T.java && !Base_Integer_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->int",
-      "compose": "Base_Integer_007_T.java && !Base_Integer_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->long",
-      "compose": "Base_Long_001_T.java && !Base_Long_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Long",
-      "compose": "Base_Long_003_T.java && !Base_Long_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->long",
-      "compose": "Base_Long_005_T.java && !Base_Long_006_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->Long",
-      "compose": "Base_Long_007_T.java && !Base_Long_008_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->double",
-      "compose": "Base_Double_001_T.java && !Base_Double_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->double",
-      "compose": "Base_Double_003_T.java && !Base_Double_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->float",
-      "compose": "Base_Float_001_T.java && !Base_Float_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->float",
-      "compose": "Base_Float_003_T.java && !Base_Float_004_F.java",
       "level": "2"
     }
   ]

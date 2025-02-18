@@ -17,7 +17,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->异步执行->CompletableFuture
+// evaluation item = 准确度->流敏感->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/CompletableFuture_001_T
 // evaluation information end
 @RestController

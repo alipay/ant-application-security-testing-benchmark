@@ -17,7 +17,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换->强转表达式-函数调用
+// evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
 // bind_url = completeness/single_app_tracing/expression/type_cast/Expression_CastExpression_004_F/{url}
 // evaluation information end
 

@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递->变量赋值表达式直接引入而不是import
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_CallExpression_Package_002_F
 // evaluation information end
 @RestController()

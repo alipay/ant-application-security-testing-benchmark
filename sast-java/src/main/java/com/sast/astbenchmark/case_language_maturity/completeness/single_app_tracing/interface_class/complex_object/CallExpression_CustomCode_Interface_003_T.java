@@ -17,7 +17,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->接口与类->复杂对象->多重接口类型
+// evaluation item = 完整度->单应用跟踪完整度->接口与类->复杂对象
 // bind_url = completeness/single_app_tracing/interface_class/complex_object/CallExpression_CustomCode_Interface_003_T
 // evaluation information end
 @RestController()

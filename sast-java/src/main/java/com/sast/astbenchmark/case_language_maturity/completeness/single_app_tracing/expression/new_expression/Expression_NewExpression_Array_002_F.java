@@ -15,7 +15,7 @@
 //  */
 // // evaluation information start
 // // real case = false
-// // evaluation item = 完整度->单应用跟踪完整度->表达式->new表达式->new操作+数组对象
+// // evaluation item = 完整度->单应用跟踪完整度->表达式->new表达式
 // // bind_url = completeness/single_app_tracing/expression/new_expression/Expression_NewExpression_Array_002_F
 // // evaluation information end
 // @RestController()

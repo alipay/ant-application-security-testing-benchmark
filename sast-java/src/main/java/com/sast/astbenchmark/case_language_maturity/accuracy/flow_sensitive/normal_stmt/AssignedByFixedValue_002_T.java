@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->常规顺序执行语句->数据流不可达->被固定值赋值
+// evaluation item = 准确度->流敏感->常规顺序执行语句
 // bind_url = accuracy/flow_sensitive/normal_stmt/AssignedByFixedValue_002_T
 // evaluation information end
 @RestController()

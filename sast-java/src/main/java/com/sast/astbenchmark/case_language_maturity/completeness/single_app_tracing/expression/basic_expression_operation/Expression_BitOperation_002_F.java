@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式->位运算操作
+// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_BitOperation_002_F
 // evaluation information end
 

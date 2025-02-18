@@ -18,7 +18,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递->函数调用+中缀表达式
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_MethodInvocation_InfixExpression_002_F
 // evaluation information end
 @RestController()

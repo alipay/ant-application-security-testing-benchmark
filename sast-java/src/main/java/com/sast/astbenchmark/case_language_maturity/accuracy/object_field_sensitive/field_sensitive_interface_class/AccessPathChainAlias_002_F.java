@@ -16,7 +16,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->对象敏感与域敏感->区分不同类对象的不同字段->对象指针->AccessPathChain-Tree
+// evaluation item =  准确度->对象敏感与域敏感->区分不同类对象的不同字段
 // bind_url = accuracy/object_field_sensitive/field_sensitive_interface_class/AccessPathChainAlias_002_F
 // evaluation information end
 @RestController

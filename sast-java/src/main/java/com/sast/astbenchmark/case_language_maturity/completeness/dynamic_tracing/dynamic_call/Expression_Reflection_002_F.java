@@ -17,7 +17,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->动态特性跟踪完整度->反射调用->字符串常量
+// evaluation item = 完整度->动态特性跟踪完整度->反射调用
 // bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_002_F/{cmd}/{methodname}
 // evaluation information end
 @RestController()

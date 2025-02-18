@@ -14,7 +14,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->循环顺序执行语句->for-init流敏感
+// evaluation item = 准确度->流敏感->循环顺序执行语句
 // bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_005_T.java/{cmd}
 // evaluation information end
 @RestController()

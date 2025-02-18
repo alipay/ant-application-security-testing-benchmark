@@ -1,13 +1,11 @@
 {
   "static_method": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->静态方法->静态字段",
-      "compose": "static_field_001_T.java && !static_field_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->静态方法->静态方法",
-      "compose": "static_method_001_T.java && !static_method_002_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->静态方法",
+      "scene_list": [
+        {"compose": "static_field_001_T.java && !static_field_002_F.java","scene":"静态字段"},
+        {"compose": "static_method_001_T.java && !static_method_002_F.java","scene":"静态方法"}
+      ],
       "level": "2"
     }
   ]

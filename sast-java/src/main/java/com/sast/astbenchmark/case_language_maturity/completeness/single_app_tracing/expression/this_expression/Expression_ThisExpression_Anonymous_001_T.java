@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度->单应用跟踪完整度->表达式->this表达式+匿名函数
+ * Introduction 完整度->单应用跟踪完整度->表达式->this表达式->this表达式+匿名函数
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->表达式->this表达式+匿名函数
+// evaluation item = 完整度->单应用跟踪完整度->表达式->this表达式
 // bind_url = completeness/single_app_tracing/expression/this_expression/Expression_ThisExpression_Anonymous_001_T/{url}
 // evaluation information end
 

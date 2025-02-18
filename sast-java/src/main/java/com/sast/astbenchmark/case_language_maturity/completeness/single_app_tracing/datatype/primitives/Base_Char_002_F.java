@@ -18,7 +18,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // bind_url = completeness/single_app_tracing/datatype/primitives/Base_Char_002_F/{cmd}
 // evaluation information end
 

@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式->后缀表达式
+// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_PostfixExpression_001_T/{cmd}
 // evaluation information end
 

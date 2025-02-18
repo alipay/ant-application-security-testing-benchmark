@@ -10,12 +10,12 @@ import java.util.Map;
 
 /**
  * Introduction 完整度->单应用跟踪完整度->异常与错误处理->异常抛出和捕获->try语句-catch块
- * Level 2+
+ * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->异常抛出和捕获->try语句-catch块
+// evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->异常抛出和捕获
 // bind_url = completeness/single_app_tracing/exception_error/exception_throw/Statement_TryCatchStatement_001_T/{cmd}
 // evaluation information end
 @RestController

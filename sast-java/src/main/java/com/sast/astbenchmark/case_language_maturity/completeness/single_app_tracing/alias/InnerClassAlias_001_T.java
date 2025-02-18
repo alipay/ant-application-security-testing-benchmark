@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->单应用跟踪完整度->别名->InnerClassAlias-scene1
+ * Introduction 完整度->单应用跟踪完整度->别名->InnerClassAlias-scene1
  * Level 2
  * Date 2024-07-05
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->单应用跟踪完整度->别名->InnerClassAlias-scene1
+// evaluation item = 完整度->单应用跟踪完整度->别名
 // bind_url = completeness/single_app_tracing/alias/InnerClassAlias_001_T
 // evaluation information end
 @RestController

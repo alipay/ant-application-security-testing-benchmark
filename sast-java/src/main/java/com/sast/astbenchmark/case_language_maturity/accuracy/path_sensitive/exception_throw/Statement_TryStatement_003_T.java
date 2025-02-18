@@ -15,7 +15,7 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->异常抛出和捕获->不涉及求解问题->try语句-抛出异常
+// evaluation item = 准确度->路径敏感->异常抛出和捕获
 // bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_003_T/{cmd}
 // evaluation information end
 @RestController()
