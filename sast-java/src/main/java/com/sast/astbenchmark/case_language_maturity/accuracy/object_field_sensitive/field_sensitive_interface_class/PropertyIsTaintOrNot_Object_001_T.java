@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->对象敏感与域敏感->区分不同类对象的不同字段->对象指针->PropertyTaint
+ * Introduction 准确度->对象敏感与域敏感分析->区分不同类对象的不同字段->对象指针->PropertyTaint
  * Level 3
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = true
-// evaluation item =  准确度->对象敏感与域敏感->区分不同类对象的不同字段
+// evaluation item =  准确度->对象敏感与域敏感分析->区分不同类对象的不同字段
 // bind_url = accuracy/object_field_sensitive/field_sensitive_interface_class/PropertyIsTaintOrNot_Object_001_T
 // evaluation information end
 @RestController()

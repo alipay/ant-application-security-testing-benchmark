@@ -5,7 +5,7 @@
       "scene_list": [
         {"compose": "Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java","scene":"assert语句"}
       ],
-      "level": "2"
+      "level": "2+"
     }
   ]
 }

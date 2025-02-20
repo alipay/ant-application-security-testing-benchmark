@@ -19,7 +19,7 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->方法重写
-// bind_url = completeness/single_app_tracing/function_call/override/Expression_Polymorphism_002_F
+// bind_url = completeness/single_app_tracing/function_call/override/Expression_Polymorphism_002_F/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/single_app_tracing/function_call/override")

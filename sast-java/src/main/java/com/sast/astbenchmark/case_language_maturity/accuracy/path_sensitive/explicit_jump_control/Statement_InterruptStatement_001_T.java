@@ -9,14 +9,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->路径敏感->跳转语句->中断语句->break
+ * Introduction 准确度->路径敏感分析->跳转语句->中断语句->break
  * Level 4+
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->跳转语句
-// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_001_T.java
+// evaluation item = 准确度->路径敏感分析->跳转语句
+// bind_url = accuracy/path_sensitive/explicit_jump_control/Statement_InterruptStatement_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/path_sensitive/explicit_jump_control")

@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->对象敏感与域敏感->区分不同的类对象、结构体/联合体和字典/列表/数组->容器->Map
+ * Introduction 准确度->对象敏感与域敏感分析->区分不同的类对象、结构体/联合体和字典/列表/数组->容器->Map
  * Level 2
  * Date 2024-06-28
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->对象敏感与域敏感->区分不同的类对象、结构体/联合体和字典/列表/数组
+// evaluation item = 准确度->对象敏感与域敏感分析->区分不同的类对象、结构体/联合体和字典/列表/数组
 // bind_url = accuracy/object_field_sensitive/object_sensitive/map/Map_obj_sensitive_001_T
 // evaluation information end
 @RestController()

@@ -11,13 +11,13 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.atomic.AtomicReference;
 
 /**
- * Introduction 准确度->流敏感->异步执行->CompletableFuture
+ * Introduction 准确度->流敏感分析->异步执行->CompletableFuture
  * Level 4
  * Date 2024-11-7
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->异步执行
+// evaluation item = 准确度->流敏感分析->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/CompletableFuture_002_F
 // evaluation information end
 @RestController

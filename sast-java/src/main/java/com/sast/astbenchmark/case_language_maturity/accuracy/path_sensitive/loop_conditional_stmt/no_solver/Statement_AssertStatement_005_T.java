@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->路径敏感->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态->assert语句-条件成立
+ * Introduction 准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态->assert语句-条件成立
  * Level 3
  * Date 2024-09-18
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->路径敏感->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态
+// evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/Statement_AssertStatement_005_T/{cmd}
 // evaluation information end
 @RestController()

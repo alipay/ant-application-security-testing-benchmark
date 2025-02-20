@@ -1,7 +1,7 @@
 {
   "interface_class": [
     {
-      "evaluation item": "准确度->对象敏感与域敏感->区分不同类对象的不同字段",
+      "evaluation item": "准确度->对象敏感与域敏感分析->区分不同类对象的不同字段",
       "level": "3",
       "scene_list": [
         {

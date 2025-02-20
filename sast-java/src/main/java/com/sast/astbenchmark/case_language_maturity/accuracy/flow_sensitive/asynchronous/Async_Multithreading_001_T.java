@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 /**
- * Introduction 准确度->流敏感->异步执行->存储型异步->多线程->Thread
+ * Introduction 准确度->流敏感分析->异步执行->存储型异步->多线程->Thread
  * Level 4
  * Date 2024-07-31
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->异步执行
+// evaluation item = 准确度->流敏感分析->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_001_T/{cmd}
 // evaluation information end
 

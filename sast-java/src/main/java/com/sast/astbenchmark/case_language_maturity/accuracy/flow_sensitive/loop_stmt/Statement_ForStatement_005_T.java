@@ -8,19 +8,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->流敏感->循环顺序执行语句->for-init流敏感
+ * Introduction 准确度->流敏感分析->循环顺序执行语句->for-init流敏感
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->循环顺序执行语句
-// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_005_T.java/{cmd}
+// evaluation item = 准确度->流敏感分析->循环顺序执行语句
+// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_005_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/flow_sensitive/loop_stmt")
 public class Statement_ForStatement_005_T {
-    @GetMapping("Statement_ForStatement_005_T.java/{cmd}")
+    @GetMapping("Statement_ForStatement_005_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

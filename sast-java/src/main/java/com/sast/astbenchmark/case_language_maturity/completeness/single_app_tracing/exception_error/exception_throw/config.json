@@ -7,7 +7,7 @@
         {"compose": "Statement_TryStatement_001_T.java && !Statement_TryStatement_002_F.java","scene":"try语句"},
         {"compose": "Statement_FinallyStatement_001_T.java && !Statement_FinallyStatement_002_F.java","scene":"try语句-finally块"}
       ],
-      "level": "2"
+      "level": "2+"
     }
   ]
 }

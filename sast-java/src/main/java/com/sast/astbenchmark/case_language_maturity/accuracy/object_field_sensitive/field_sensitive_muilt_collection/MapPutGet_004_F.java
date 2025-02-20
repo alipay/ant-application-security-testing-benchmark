@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->对象敏感与域敏感->区分多维字典/列表/数组的不同元素->MapPutGet-scene2
+ * Introduction 准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素->MapPutGet-scene2
  * Level 4
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->对象敏感与域敏感->区分多维字典/列表/数组的不同元素
-// bind_url = accuracy/object_field_sensitive/field_sensitive/map/MapPutGet_004_F
+// evaluation item =  准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素
+// bind_url = accuracy/object_field_sensitive/field_sensitive_muilt_collection/MapPutGet_004_F
 // evaluation information end
 
 @RestController()

@@ -1,7 +1,7 @@
 {
   "field_sensitive_muilt_collection": [
     {
-      "evaluation item": "准确度->对象敏感与域敏感->区分多维字典/列表/数组的不同元素",
+      "evaluation item": "准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素",
       "level": "4",
       "scene_list": [
         {

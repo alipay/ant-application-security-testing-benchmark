@@ -22,7 +22,7 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Integer_008_F {
-    @PostMapping("Base_Integer_008_F")
+    @PostMapping("Base_Integer_008_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable int cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         int i = 0;

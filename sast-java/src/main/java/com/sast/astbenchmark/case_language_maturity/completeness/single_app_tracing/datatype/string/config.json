@@ -1,7 +1,7 @@
 {
   "string": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字符串->",
+      "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字符串",
       "scene_list": [
         {"compose": "Base_String_001_T.java && !Base_String_002_F.java","scene":"String"},
         {"compose": "Base_StringArray_001_T.java && !Base_StringArray_002_F.java","scene":"String[]"},

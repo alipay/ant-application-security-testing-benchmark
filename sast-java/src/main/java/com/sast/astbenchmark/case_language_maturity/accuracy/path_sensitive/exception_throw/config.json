@@ -1,7 +1,7 @@
 {
   "exception_throw": [
     {
-      "evaluation item": "准确度->路径敏感->异常抛出和捕获",
+      "evaluation item": "准确度->路径敏感分析->异常抛出和捕获",
       "level": "3",
       "scene_list": [
         {

@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->对象敏感与域敏感->区分不同类对象的不同字段->对象指针->AccessPathChain-Tree
+ * Introduction 准确度->对象敏感与域敏感分析->区分不同类对象的不同字段->对象指针->AccessPathChain-Tree
  * Level 3
  * Date 2024-07-05
  */
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->对象敏感与域敏感->区分不同类对象的不同字段
+// evaluation item =  准确度->对象敏感与域敏感分析->区分不同类对象的不同字段
 // bind_url = accuracy/object_field_sensitive/field_sensitive_interface_class/AccessPathChainAlias_002_F
 // evaluation information end
 @RestController
