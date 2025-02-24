@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.other_preference;
+package com.sast.astbenchmark.other_preference;
 
 /**
  * Introduction 污点链路样本中的污点分类，没有source，且没有sink

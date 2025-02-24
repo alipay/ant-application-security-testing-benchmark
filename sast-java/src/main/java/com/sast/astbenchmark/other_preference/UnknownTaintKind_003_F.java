@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.other_preference;
+package com.sast.astbenchmark.other_preference;
 
 import com.sast.astbenchmark.common.utils.JDBCUtil;
 

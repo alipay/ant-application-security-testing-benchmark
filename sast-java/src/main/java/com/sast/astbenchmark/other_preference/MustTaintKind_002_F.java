@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.other_preference;
+package com.sast.astbenchmark.other_preference;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
