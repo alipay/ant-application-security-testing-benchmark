@@ -31,6 +31,7 @@ public class TestCaseResult {
     private String compose;
     private String identifiedVul;
     private boolean matchResult = false;
+    private String level;
 
     private int number = 0;
     private boolean truePositive = false; // Is this test case a true or false positive?
@@ -213,6 +214,24 @@ public class TestCaseResult {
 
     public void setSink(String sink) {
         this.sink = sink;
+    }
+
+    /**
+     * Getter method for property <tt>level</tt>.
+     *
+     * @return property value of level
+     */
+    public String getLevel() {
+        return level;
+    }
+
+    /**
+     * Setter method for property <tt>level</tt>.
+     *
+     * @param level value to be assigned to property level
+     */
+    public void setLevel(String level) {
+        this.level = level;
     }
 
     @Override

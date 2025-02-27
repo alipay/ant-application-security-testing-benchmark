@@ -108,6 +108,63 @@
             background-color: transparent;
             /* 悬浮、点击、聚焦时的背景颜色也设为透明 */
         }
+
+        .table th,
+        .table td {
+            border: 1px solid #ccc; /* 设置单元格边框 */
+            padding: 10px; /* 设置内边距 */
+            text-align: center; /* 居中对齐内容 */
+        }
+
+        .table th {
+            background-color: #f4f4f4; /* 表头背景色 */
+        }
+        /* 色块说明容器 */
+        .legend-container {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            align-items: flex-start; /* 左对齐 */
+        }
+
+        /* 色块说明区域 */
+        .color-legend {
+            margin-top: 10px; /* 与脑图的间距 */
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            max-width: 400px; /* 控制宽度 */
+        }
+
+        .color-legend h4 {
+            margin: 0 0 8px; /* 标题与内容的间距 */
+            font-size: 16px;
+            color: #333;
+        }
+
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* 色块之间的间距 */
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .color-box {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+        }
+
     </style>
 </head>
 
@@ -174,7 +231,51 @@
             <li>注2:评价项达成率 = 评价项达成数 / 评价项总个数</li>
             <!--                 <li><a href="https://ant-design.antgroup.com/components/table-cn">下载原始结果 = file://文件的绝对路径</a></li>
              -->            </ul>
+        <h2>等级达成情况</h2>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>等级</th>
+                <th>评价项总数</th>
+                <th>达成总数</th>
+                <th>达成率</th>
+            </tr>
+            </thead>
+            <tbody>
+            ${level_table}
+            </tbody>
+        </table>
         <h2>引擎评价项达成详情</h2>
+        <div class="color-legend">
+            <h4>颜色vs评价项等级对照表</h4>
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #9FF6C6;"></span>
+                    <span>2</span>
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #52F69B;"></span>
+                    <span>2+</span>
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #9AF6ED;"></span>
+                    <span>3</span>
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #5FF2E2;"></span>
+                    <span>3+</span>
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #8AC3F6;"></span>
+                    <span>4</span>
+                </div>
+                <div class="legend-item">
+                    <span class="color-box" style="background-color: #4AA2F0;"></span>
+                    <span>4+</span>
+                </div>
+            </div>
+        </div>
+        </div>
         <div id="jsmind_container"></div>
     </main>
 </section>

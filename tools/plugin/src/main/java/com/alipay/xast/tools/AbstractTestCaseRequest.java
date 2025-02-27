@@ -20,21 +20,22 @@ package com.alipay.xast.tools;
 import com.alipay.xast.Category;
 import com.alipay.xast.helpers.CategoryAdapter;
 import com.alipay.xast.helpers.RequestVariable;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.classic.methods.HttpUriRequestBase;
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
-import org.apache.hc.client5.http.classic.methods.HttpUriRequestBase;
-import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @XmlSeeAlso({
     ServletTestCaseRequest.class,

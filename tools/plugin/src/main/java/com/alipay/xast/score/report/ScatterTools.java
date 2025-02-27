@@ -19,12 +19,6 @@ package com.alipay.xast.score.report;
 
 import com.alipay.xast.score.CategoryResults;
 import com.alipay.xast.score.ToolResults;
-import java.awt.Color;
-import java.awt.geom.Point2D;
-import java.security.SecureRandom;
-import java.text.DecimalFormat;
-import java.util.HashMap;
-import java.util.List;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.annotations.XYLineAnnotation;
@@ -35,6 +29,13 @@ import org.jfree.chart.ui.TextAnchor;
 import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+
+import java.awt.*;
+import java.awt.geom.Point2D;
+import java.security.SecureRandom;
+import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.List;
 
 public class ScatterTools extends ScatterPlot {
 

@@ -5,6 +5,9 @@
 package com.alipay.xast.score;
 
 import com.alipay.xast.score.TestSuiteResults.ToolType;
+import org.apache.commons.lang3.StringUtils;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -20,8 +23,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringJoiner;
 import java.util.stream.Stream;
-import org.apache.commons.lang3.StringUtils;
-import org.json.JSONObject;
 
 /**
  * @author wb-chengzhiyong
@@ -179,7 +180,7 @@ public class ParserBenchMark {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println(TestSuiteResults.ToolType.SAST.equals(ToolType.IAST));
-        System.out.println(TestSuiteResults.ToolType.SAST.equals(TestSuiteResults.ToolType.SAST));
+        System.out.println(ToolType.SAST.equals(ToolType.IAST));
+        System.out.println(ToolType.SAST.equals(ToolType.SAST));
     }
 }

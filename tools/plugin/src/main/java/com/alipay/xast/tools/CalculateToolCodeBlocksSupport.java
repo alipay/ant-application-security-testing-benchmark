@@ -22,14 +22,6 @@ import com.alipay.xast.helpers.Utils;
 import com.alipay.xast.score.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
 import com.alipay.xast.score.TestSuiteResults.ToolType;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -46,6 +38,15 @@ import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.w3c.dom.Element;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 @Mojo(
         name = "calculate-codeblock-support",

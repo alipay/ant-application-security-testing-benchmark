@@ -19,6 +19,7 @@ package com.alipay.xast.helpers;
 
 import com.alipay.xast.Categories;
 import com.alipay.xast.Category;
+
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
 public class CategoryAdapter extends XmlAdapter<String, Category> {

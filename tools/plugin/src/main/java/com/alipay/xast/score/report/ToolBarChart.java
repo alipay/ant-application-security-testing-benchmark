@@ -21,11 +21,6 @@ import com.alipay.xast.Categories;
 import com.alipay.xast.score.BenchmarkScore;
 import com.alipay.xast.score.CategoryResults;
 import com.alipay.xast.score.Tool;
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.io.*;
-import java.util.Collection;
-import java.util.Map;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.axis.NumberAxis;
@@ -36,6 +31,12 @@ import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.category.CategoryItemRenderer;
 import org.jfree.chart.ui.RectangleInsets;
 import org.jfree.data.category.DefaultCategoryDataset;
+
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.Collection;
+import java.util.Map;
 
 public class ToolBarChart extends ScatterPlot {
 
@@ -227,17 +228,17 @@ public class ToolBarChart extends ScatterPlot {
             // First create the Dataset required for the chart
             DefaultCategoryDataset toolPrecisionData =
                     ToolBarChart.createToolDataSet(
-                            tool, overallAveToolResults, ToolBarChart.BarChartType.Precision);
+                            tool, overallAveToolResults, BarChartType.Precision);
             // Then create the chart
             ToolBarChart.createBarChart(
-                    tool, toolPrecisionData, ToolBarChart.BarChartType.Precision, scoreCardDir);
+                    tool, toolPrecisionData, BarChartType.Precision, scoreCardDir);
 
             // Generate Recall Chart
             DefaultCategoryDataset toolRecallData =
                     ToolBarChart.createToolDataSet(
-                            tool, overallAveToolResults, ToolBarChart.BarChartType.Recall);
+                            tool, overallAveToolResults, BarChartType.Recall);
             ToolBarChart.createBarChart(
-                    tool, toolRecallData, ToolBarChart.BarChartType.Recall, scoreCardDir);
+                    tool, toolRecallData, BarChartType.Recall, scoreCardDir);
         }
     }
 }

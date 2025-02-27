@@ -18,15 +18,16 @@
 package com.alipay.xast.tools;
 
 import com.alipay.xast.helpers.RequestVariable;
-import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequestBase;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
 import org.apache.hc.core5.http.NameValuePair;
 import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorValue;
+
+import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * This class is used by the crawlers to test the target Benchmark style web application. It tests Servlet style

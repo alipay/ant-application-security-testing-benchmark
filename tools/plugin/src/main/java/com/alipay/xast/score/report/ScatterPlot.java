@@ -17,26 +17,6 @@
  */
 package com.alipay.xast.score.report;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Polygon;
-import java.awt.Rectangle;
-import java.awt.Shape;
-import java.awt.Stroke;
-import java.awt.geom.AffineTransform;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map.Entry;
 import org.jfree.chart.ChartUtils;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.StandardChartTheme;
@@ -50,6 +30,21 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.chart.ui.RectangleInsets;
 import org.jfree.chart.ui.TextAnchor;
+
+import java.awt.*;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map.Entry;
 
 /**
  * This is the base plotting class used to create a scorecard page with a scorecard chart on it.

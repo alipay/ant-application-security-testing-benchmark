@@ -25,6 +25,8 @@ import com.alipay.xast.score.TP_FN_TN_FP_Counts;
 import com.alipay.xast.score.Tool;
 import com.alipay.xast.score.ToolResults;
 import com.alipay.xast.score.report.ToolBarChart.BarChartType;
+import org.apache.commons.io.IOUtils;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,7 +34,6 @@ import java.net.URISyntaxException;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 import java.util.Map;
-import org.apache.commons.io.IOUtils;
 
 public class ToolReport {
 

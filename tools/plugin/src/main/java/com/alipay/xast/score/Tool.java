@@ -21,6 +21,7 @@ import com.alipay.xast.score.TestSuiteResults.ToolType;
 import com.alipay.xast.score.report.ScatterTools;
 import com.alipay.xast.score.report.ToolBarChart;
 import com.alipay.xast.score.report.ToolReport;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

@@ -20,6 +20,12 @@ package com.alipay.xast.tools;
 import com.google.common.collect.Multiset;
 import com.google.common.collect.SortedMultiset;
 import com.google.common.collect.TreeMultiset;
+import org.apache.commons.io.IOUtils;
+import org.apache.hc.client5.http.classic.methods.HttpPost;
+import org.apache.hc.core5.http.Header;
+import org.apache.hc.core5.http.HttpEntity;
+import org.apache.hc.core5.http.HttpMessage;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -29,11 +35,6 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import org.apache.commons.io.IOUtils;
-import org.apache.hc.client5.http.classic.methods.HttpPost;
-import org.apache.hc.core5.http.Header;
-import org.apache.hc.core5.http.HttpEntity;
-import org.apache.hc.core5.http.HttpMessage;
 
 /**
  * Test all supported test cases to verify that the results are as expected and write the report to
