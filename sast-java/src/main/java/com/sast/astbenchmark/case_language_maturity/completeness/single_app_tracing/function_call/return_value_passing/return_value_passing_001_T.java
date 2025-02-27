@@ -28,7 +28,11 @@ public class return_value_passing_001_T {
         return tmp;
     }
 
-    private static void __taint_sink(Object o) {
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (Exception e) {
+        }
     }
 
 }

@@ -17,22 +17,28 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/function_call/static_method")
 class MyClass2 {
-    static Object data;
+    static String data;
 }
 
 public class static_field_002_F {
     @PostMapping(value = "static_field_002_F")
-    public void static_field_002_F(@RequestParam Object __taint_src) {
+    public void static_field_002_F(@RequestParam String __taint_src) {
         MyClass2.data = "safe";
         process();
     }
 
     private void process() {
-        __taint_sink(MyClass2.data);
+        try {
+            Runtime.getRuntime().exec(MyClass2.data);
+        } catch (Exception e) {
+        }
     }
 
-    private void __taint_sink(Object o) {
-
+    private void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (Exception e) {
+        }
     }
 
 }

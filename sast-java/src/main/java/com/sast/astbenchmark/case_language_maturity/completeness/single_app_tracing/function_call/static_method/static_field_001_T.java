@@ -17,22 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/function_call/static_method")
 class MyClass {
-    static Object data;
+    static String data;
 }
 
 public class static_field_001_T {
     @PostMapping(value = "static_field_001_T")
-    public void static_field_001_T(@RequestParam Object __taint_src) {
+    public void static_field_001_T(@RequestParam String __taint_src) {
         MyClass.data = __taint_src;
         process();
     }
 
     private void process() {
-        __taint_sink(MyClass.data);
-    }
-
-    private void __taint_sink(Object o) {
-
+        try {
+            Runtime.getRuntime().exec(MyClass.data);
+        } catch (Exception e) {
+        }
     }
 
 }

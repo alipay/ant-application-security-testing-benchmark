@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.function.Consumer;
 
 /**
@@ -31,6 +32,10 @@ public class higher_order_function_002_F {
     }
 
     private static void __taint_sink(Object o) {
+        try {
+            Runtime.getRuntime().exec(String.valueOf(o));
+        } catch (IOException e) {
+        }
     }
 
     private static void __safe(Object o) {

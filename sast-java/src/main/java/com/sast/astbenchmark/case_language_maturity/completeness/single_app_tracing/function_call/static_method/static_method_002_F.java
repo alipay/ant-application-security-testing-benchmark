@@ -17,18 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/function_call/static_method")
 class MyClass4 {
-    private static void __taint_sink(Object o) {
-
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (Exception e) {
+        }
     }
 
-    public static void process(Object arg) {
+    public static void process(String arg) {
         __taint_sink("safe"); // 传递静态字段到接收点
     }
 }
 
 public class static_method_002_F {
     @PostMapping(value = "static_method_002_F")
-    public void static_method_002_F(@RequestParam Object __taint_src) {
+    public void static_method_002_F(@RequestParam String __taint_src) {
         MyClass4.process(__taint_src);
     }
 }

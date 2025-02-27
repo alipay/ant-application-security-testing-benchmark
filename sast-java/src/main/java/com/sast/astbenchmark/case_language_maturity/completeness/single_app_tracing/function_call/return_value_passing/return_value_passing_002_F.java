@@ -28,7 +28,11 @@ public class return_value_passing_002_F {
         return "_";
     }
 
-    private static void __taint_sink(Object o) {
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (Exception e) {
+        }
     }
 
 }

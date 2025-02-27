@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+
 /**
  * Introduction  准确度->上下文敏感分析->参数/返回值传递->返回值传递
  * Level 2
@@ -30,7 +32,12 @@ public class return_value_passing_002_F {
         return tmp;
     }
 
-    private static void __taint_sink(Object o) {
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

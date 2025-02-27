@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.function.Consumer;
 
 /**
@@ -30,7 +31,11 @@ public class higher_order_function_001_T {
         applyConsumer(higher_order_function_001_T::__taint_sink, __taint_src);
     }
 
-    private static void __taint_sink(Object o) {
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (IOException e) {
+        }
     }
 
 }
