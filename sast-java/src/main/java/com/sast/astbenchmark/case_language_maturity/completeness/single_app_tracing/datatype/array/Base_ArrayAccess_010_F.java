@@ -27,8 +27,8 @@ public class Base_ArrayAccess_010_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String[] data = new String[]{"c","aa","b"};
-            String[] s = Arrays.copyOf(data,3);
+            String[] data = new String[] {"c", "aa", "b"};
+            String[] s = Arrays.copyOf(data, 3);
             Runtime.getRuntime().exec(s);
             modelMap.put("status", "success");
         } catch (Exception e) {

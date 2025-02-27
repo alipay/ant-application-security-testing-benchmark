@@ -28,7 +28,7 @@ public class Expression_MethodInvocation_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         cmd = "safe";
         try {
-            CmdUtil.run(cmd+"|grep a");
+            CmdUtil.run(cmd + "|grep a");
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

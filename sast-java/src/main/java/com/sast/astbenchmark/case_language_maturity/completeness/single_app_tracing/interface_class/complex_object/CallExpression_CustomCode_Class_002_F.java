@@ -1,11 +1,10 @@
 package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tracing.interface_class.complex_object;
 
+import com.sast.astbenchmark.model.custom.O;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-  
-import com.sast.astbenchmark.model.custom.O;
 
 import java.util.HashMap;
 import java.util.Map;

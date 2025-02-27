@@ -31,7 +31,7 @@ public class Statement_TryStatement_004_F {
                 Runtime.getRuntime().exec(ex.getMessage());
                 modelMap.put("status", "success");
             } catch (Exception e) {
-            modelMap.put("status", "error");
+                modelMap.put("status", "error");
             }
         }
         return modelMap;

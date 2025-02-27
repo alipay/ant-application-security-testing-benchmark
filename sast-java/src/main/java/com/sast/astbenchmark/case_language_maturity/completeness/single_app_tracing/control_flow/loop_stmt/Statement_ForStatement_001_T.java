@@ -25,9 +25,9 @@ public class Statement_ForStatement_001_T {
     public Map<String, Object> aTaintCase0127(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
-            for(int i =0 ;i<10; i++){
-                a= cmd+"|";
+            String a = "mkdir";
+            for (int i = 0; i < 10; i++) {
+                a = cmd + "|";
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

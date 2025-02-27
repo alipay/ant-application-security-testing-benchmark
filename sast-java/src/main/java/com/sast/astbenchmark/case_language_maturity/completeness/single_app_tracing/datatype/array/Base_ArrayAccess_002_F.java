@@ -28,7 +28,7 @@ public class Base_ArrayAccess_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Map<String, String[]> s = new HashMap<>();
-            s.put("cmd", new String[]{"aa", "bb"});
+            s.put("cmd", new String[] {"aa", "bb"});
             String cmdStr = s.get("cmd")[0];
             Runtime.getRuntime().exec(cmdStr);
             modelMap.put("status", "success");

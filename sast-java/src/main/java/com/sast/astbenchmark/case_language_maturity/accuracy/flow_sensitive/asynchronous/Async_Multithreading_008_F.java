@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 import java.util.Timer;
 
-
 /**
  * Introduction 准确度->流敏感分析->异步执行->存储型异步->多线程->TimerTask
  * Level 4
@@ -28,8 +27,8 @@ public class Async_Multithreading_008_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         String a = "ls";
         Timer timer = new Timer();
-        TT tt = new TT(a); 
-		timer.schedule(tt, 2000);
-        return tt.getMap(); 
+        TT tt = new TT(a);
+        timer.schedule(tt, 2000);
+        return tt.getMap();
     }
 }

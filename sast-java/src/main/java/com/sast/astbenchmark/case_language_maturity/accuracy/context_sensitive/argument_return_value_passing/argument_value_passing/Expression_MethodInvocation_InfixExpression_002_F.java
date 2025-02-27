@@ -18,7 +18,8 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item =  准确度->上下文敏感分析->参数/返回值传递
-// bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing/Expression_MethodInvocation_InfixExpression_002_F/{cmd}
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_value_passing
+// /Expression_MethodInvocation_InfixExpression_002_F/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/argument_return_value_passing/argument_value_passing")
@@ -29,7 +30,7 @@ public class Expression_MethodInvocation_InfixExpression_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         cmd = "safe";
         try {
-            CmdUtil.run(cmd+ HttpUtil.doGet("www.test.com"));
+            CmdUtil.run(cmd + HttpUtil.doGet("www.test.com"));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

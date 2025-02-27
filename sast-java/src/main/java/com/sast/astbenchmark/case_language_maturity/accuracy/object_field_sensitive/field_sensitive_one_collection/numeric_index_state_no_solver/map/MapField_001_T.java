@@ -27,7 +27,7 @@ public class MapField_001_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Map<String, String> map = new HashMap<>();
-            map.put("key1",cmd);
+            map.put("key1", cmd);
             Runtime.getRuntime().exec(map.get("key1"));
         } catch (Exception e) {
             modelMap.put("status", "error");

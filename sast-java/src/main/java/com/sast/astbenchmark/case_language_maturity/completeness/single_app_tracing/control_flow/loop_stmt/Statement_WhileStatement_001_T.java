@@ -26,9 +26,10 @@ public class Statement_WhileStatement_001_T {
     public Map<String, Object> aTaintCase0118(@PathVariable String cmd, @PathVariable String type) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";;
-            while(StringUtils.equals(type,"mkdir")) {
-                a = " "+ cmd;
+            String a = "mkdir";
+            ;
+            while (StringUtils.equals(type, "mkdir")) {
+                a = " " + cmd;
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

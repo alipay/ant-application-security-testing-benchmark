@@ -29,7 +29,7 @@ public class Expression_MethodInvocation_InfixExpression_001_T {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            CmdUtil.run(cmd+ HttpUtil.doGet("www.test.com"));
+            CmdUtil.run(cmd + HttpUtil.doGet("www.test.com"));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

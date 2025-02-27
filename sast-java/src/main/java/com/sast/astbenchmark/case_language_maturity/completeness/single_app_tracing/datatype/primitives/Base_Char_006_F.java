@@ -29,8 +29,7 @@ public class Base_Char_006_F {
         try {
             Runtime.getRuntime().exec(String.valueOf(c));
             modelMap.put("status", "success");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             modelMap.put("status", "error");
         }
         return modelMap;

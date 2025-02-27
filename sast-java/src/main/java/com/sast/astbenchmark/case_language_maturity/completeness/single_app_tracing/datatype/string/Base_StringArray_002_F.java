@@ -27,7 +27,7 @@ public class Base_StringArray_002_F {
     public Map<String, Object> aTaintCase0149(@RequestBody String[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
 
-        String[] s = {"aa","bb"};
+        String[] s = {"aa", "bb"};
         try {
             Runtime.getRuntime().exec(s[0]);
             modelMap.put("status", "success");

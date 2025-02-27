@@ -28,7 +28,7 @@ public class Expression_InstanceofExpression_004_F {
             if (null instanceof String) {
                 Runtime.getRuntime().exec(cmd);
                 modelMap.put("status", "success");
-            } else { 
+            } else {
                 modelMap.put("status", "error");
             }
         } catch (Exception e) {

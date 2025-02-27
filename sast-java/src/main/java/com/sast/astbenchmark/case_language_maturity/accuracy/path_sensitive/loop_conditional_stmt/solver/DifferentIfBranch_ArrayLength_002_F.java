@@ -25,7 +25,7 @@ public class DifferentIfBranch_ArrayLength_002_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String[] arr = new String[]{"foo", "xx", "bar"};
+            String[] arr = new String[] {"foo", "xx", "bar"};
             if (arr.length > 3) { // always false
                 arr[1] = cmd; // UnReachable
             }

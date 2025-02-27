@@ -1,4 +1,5 @@
 package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.loop_stmt;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +25,8 @@ public class Statement_ForStatement_008_F {
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
-            for(int i = 0; i<1; a= cmd+"|"){
+            String a = "mkdir";
+            for (int i = 0; i < 1; a = cmd + "|") {
                 Runtime.getRuntime().exec(a);
                 i++;
             }

@@ -23,10 +23,10 @@ import java.util.Map;
 @RequestMapping("completeness/single_app_tracing/expression/basic_expression_operation")
 public class Expression_ClassInstance_Infix_001_T {
     @PostMapping(value = "Expression_ClassInstance_Infix_001_T")
-    public Map<String, Object> aTaintCase0113(@RequestParam(defaultValue = "ls") String cmd ) {
+    public Map<String, Object> aTaintCase0113(@RequestParam(defaultValue = "ls") String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Runtime.getRuntime().exec(new String(cmd+" &"));
+            Runtime.getRuntime().exec(new String(cmd + " &"));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

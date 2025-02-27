@@ -3,8 +3,14 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->指针",
       "scene_list": [
-        {"compose": "CallExpression_CustomCode_Class_009_T.java && !CallExpression_CustomCode_Class_010_F.java","scene":"泛型类-类型参数"},
-        {"compose": "CallExpression_CustomCode_Class_011_T.java && !CallExpression_CustomCode_Class_012_F.java","scene":"泛型类-wildcard"}
+        {
+          "compose": "CallExpression_CustomCode_Class_009_T.java && !CallExpression_CustomCode_Class_010_F.java",
+          "scene": "泛型类-类型参数"
+        },
+        {
+          "compose": "CallExpression_CustomCode_Class_011_T.java && !CallExpression_CustomCode_Class_012_F.java",
+          "scene": "泛型类-wildcard"
+        }
       ],
       "level": "2"
     }

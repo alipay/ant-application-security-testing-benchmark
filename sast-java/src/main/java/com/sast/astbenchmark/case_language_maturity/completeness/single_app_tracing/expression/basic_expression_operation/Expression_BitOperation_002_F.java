@@ -23,10 +23,10 @@ import java.util.Map;
 @RequestMapping("completeness/single_app_tracing/expression/basic_expression_operation")
 public class Expression_BitOperation_002_F {
     @PostMapping(value = "Expression_BitOperation_002_F")
-    public Map<String, Object> aTaintCase0159(@RequestParam char cmd ) {
+    public Map<String, Object> aTaintCase0159(@RequestParam char cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            cmd= (char) (cmd<<1);
+            cmd = (char) (cmd << 1);
             cmd = 'c';
             Runtime.getRuntime().exec(String.valueOf(cmd));
             modelMap.put("status", "success");

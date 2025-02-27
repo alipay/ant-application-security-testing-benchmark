@@ -23,7 +23,7 @@ import java.util.Map;
 @RequestMapping("completeness/single_app_tracing/function_call/library_function")
 public class CallExpression_NoSourceCode_Native_004_T {
     @PostMapping(value = "CallExpression_NoSourceCode_Native_004_T")
-    public Map<String, Object> aTaintCase0160(@RequestParam String cmd ) {
+    public Map<String, Object> aTaintCase0160(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Runtime.getRuntime().exec(new String(cmd));

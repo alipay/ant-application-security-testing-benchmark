@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
  * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->foreach语句
  * Level 2
@@ -26,10 +25,10 @@ public class Statement_ForEachStatement_002_F {
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
-            String[] data = new String[]{"ls", "foo", a}; 
-            for(String i : data){
-                a= i+"|";
+            String a = "mkdir";
+            String[] data = new String[] {"ls", "foo", a};
+            for (String i : data) {
+                a = i + "|";
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

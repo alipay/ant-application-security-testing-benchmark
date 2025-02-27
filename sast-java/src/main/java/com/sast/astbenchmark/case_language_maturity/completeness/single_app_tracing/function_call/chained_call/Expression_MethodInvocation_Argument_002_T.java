@@ -27,7 +27,7 @@ public class Expression_MethodInvocation_Argument_002_T {
     public Map<String, Object> aTaintCase0116(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            HttpRequest.post("http://localhost:39100/ataint/case00124/2?cmd="+cmd)
+            HttpRequest.post("http://localhost:39100/ataint/case00124/2?cmd=" + cmd)
                     .execute();
             modelMap.put("status", "success");
         } catch (Exception e) {

@@ -25,7 +25,7 @@ public class Statement_InterruptStatement_008_F {
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
+            String a = "mkdir";
             outerLoop:
             for (int i = 0; i < 10; i++) {
                 for (int j = 0; j < 10; j++) {

@@ -29,7 +29,7 @@ public class Statement_TryStatement_002_F {
             int b = data[15];
             Runtime.getRuntime().exec(cmd);
         } catch (Exception ex) {
-            try {    
+            try {
                 modelMap.put("status", "success");
             } catch (Exception e) {
                 modelMap.put("status", "error");

@@ -3,7 +3,10 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->文件、包、命名空间->跨包",
       "scene_list": [
-        {"compose": "(cross_directory_001_T_a.java || cross_directory_001_T_b.java) && !(cross_directory_002_F_a.java || cross_directory_002_F_b.java)","scene":"跨目录"}
+        {
+          "compose": "(cross_directory_001_T_a.java || cross_directory_001_T_b.java) && !(cross_directory_002_F_a.java || cross_directory_002_F_b.java)",
+          "scene": "跨目录"
+        }
       ],
       "level": "2"
     }

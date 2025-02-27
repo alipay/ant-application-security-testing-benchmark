@@ -27,7 +27,7 @@ public class Base_ArrayAccess_004_F {
     public Map<String, Object> aTaintCase0111(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            Cookie[] cookies = new Cookie[]{new Cookie("username", "_")};
+            Cookie[] cookies = new Cookie[] {new Cookie("username", "_")};
             Runtime.getRuntime().exec(cookies[0].getName());
             modelMap.put("status", "success");
         } catch (Exception e) {

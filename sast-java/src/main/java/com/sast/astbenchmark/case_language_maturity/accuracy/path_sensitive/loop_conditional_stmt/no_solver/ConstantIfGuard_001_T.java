@@ -39,8 +39,7 @@ public class ConstantIfGuard_001_T {
         int x = 1;
         if (x > 0) {
             return cmd;
-        }
-        else {
+        } else {
             return "ls";
         }
     }

@@ -3,8 +3,10 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字典",
       "scene_list": [
-        {"compose": "Base_Map_001_T.java && !Base_Map_002_F.java","scene":"Map1"},
-        {"compose": "Base_Map_003_T.java && !Base_Map_004_F.java","scene":"Map2"}
+        {
+          "compose": "(Base_Map_001_T.java && !Base_Map_002_F.java)||(Base_Map_003_T.java && !Base_Map_004_F.java)",
+          "scene": "Map1"
+        }
       ],
       "level": "2"
     }

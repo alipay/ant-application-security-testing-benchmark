@@ -27,7 +27,7 @@ public class Expression_CastExpression_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Object cmdObject = new Object();
-            cmdObject=cmd;
+            cmdObject = cmd;
             String result = (String) cmdObject;
             result = "clean";
             Runtime.getRuntime().exec(result);

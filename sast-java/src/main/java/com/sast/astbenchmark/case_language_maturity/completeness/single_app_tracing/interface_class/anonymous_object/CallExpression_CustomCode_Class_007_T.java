@@ -1,11 +1,10 @@
 package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tracing.interface_class.anonymous_object;
 
+import com.sast.astbenchmark.model.custom.ABS;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.sast.astbenchmark.model.custom.ABS;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -31,7 +30,7 @@ public class CallExpression_CustomCode_Class_007_T {
         try {
             ABS ac = new ABS() {
                 @Override
-                public String getCmd(){
+                public String getCmd() {
                     return this.cmd;
                 }
             };

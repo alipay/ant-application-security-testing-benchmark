@@ -34,9 +34,9 @@ public class CallExpression_CustomCode_Class_004_F {
         return modelMap;
     }
 
-    public static String local(String cmd){
+    public static String local(String cmd) {
         class LocalClass {
-            String getCmd(){
+            String getCmd() {
                 return cmd;
             }
         }

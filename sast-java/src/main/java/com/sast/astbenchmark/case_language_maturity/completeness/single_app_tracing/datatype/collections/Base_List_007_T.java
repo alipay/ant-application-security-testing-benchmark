@@ -31,7 +31,7 @@ public class Base_List_007_T {
         List<String> list = new ArrayList<>();
         list.add(cmd);
         list.add("_");
-        list.set(1,"a");
+        list.set(1, "a");
         SinkUtil.sink(list);
         modelMap.put("status", "success");
         return modelMap;

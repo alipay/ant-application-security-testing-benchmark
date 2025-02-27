@@ -24,10 +24,12 @@ public class higher_order_function_001_T {
     public static void applyConsumer(Consumer<String> consumer, String message) {
         consumer.accept(message);
     }
+
     @PostMapping(value = "higher_order_function_001_T")
-    public void higher_order_function_001_T(@RequestParam String __taint_src){
+    public void higher_order_function_001_T(@RequestParam String __taint_src) {
         applyConsumer(higher_order_function_001_T::__taint_sink, __taint_src);
     }
+
     private static void __taint_sink(Object o) {
     }
 

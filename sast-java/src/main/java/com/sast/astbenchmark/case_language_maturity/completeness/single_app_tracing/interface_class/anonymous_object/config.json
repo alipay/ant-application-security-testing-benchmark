@@ -3,7 +3,10 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->接口与类->匿名对象",
       "scene_list": [
-        {"compose": "CallExpression_CustomCode_Class_007_T.java && !CallExpression_CustomCode_Class_008_F.java","scene":"匿名类"}
+        {
+          "compose": "CallExpression_CustomCode_Class_007_T.java && !CallExpression_CustomCode_Class_008_F.java",
+          "scene": "匿名类"
+        }
       ],
       "level": "2"
     }

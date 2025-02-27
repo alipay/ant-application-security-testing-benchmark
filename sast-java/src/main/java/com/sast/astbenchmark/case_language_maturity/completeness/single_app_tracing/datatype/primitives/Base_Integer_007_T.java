@@ -28,8 +28,7 @@ public class Base_Integer_007_T {
         try {
             Runtime.getRuntime().exec(String.valueOf(cmd));
             modelMap.put("status", "success");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             modelMap.put("status", "error");
         }
         return modelMap;

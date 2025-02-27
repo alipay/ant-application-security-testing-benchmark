@@ -26,6 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
 @RequestMapping("completeness/single_app_tracing/asynchronous_tracing/promise_callback_await")
 public class CompletableFuture_003_T {
     private final ExecutorService executorService = Executors.newFixedThreadPool(3);
+
     @PostMapping(value = "CompletableFuture_003_T/{cmd}")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();

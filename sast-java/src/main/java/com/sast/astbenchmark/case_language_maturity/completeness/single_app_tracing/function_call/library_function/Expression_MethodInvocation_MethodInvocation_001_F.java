@@ -22,7 +22,7 @@ import java.util.Map;
 @RequestMapping("completeness/single_app_tracing/function_call/library_function")
 public class Expression_MethodInvocation_MethodInvocation_001_F {
     @PostMapping(value = "Expression_MethodInvocation_MethodInvocation_001_F")
-    public Map<String, Object> aTaintCase0114(@RequestParam(defaultValue = "ls") String cmd ) {
+    public Map<String, Object> aTaintCase0114(@RequestParam(defaultValue = "ls") String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             StringBuilder builder = new StringBuilder();

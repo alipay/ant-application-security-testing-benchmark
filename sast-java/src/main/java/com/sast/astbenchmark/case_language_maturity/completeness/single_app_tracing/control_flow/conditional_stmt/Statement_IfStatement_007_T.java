@@ -27,9 +27,9 @@ public class Statement_IfStatement_007_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a;
-            if((a = cmd) != null){
+            if ((a = cmd) != null) {
                 CmdUtil.run(a);
-            }else{
+            } else {
 
             }
             modelMap.put("status", "success");

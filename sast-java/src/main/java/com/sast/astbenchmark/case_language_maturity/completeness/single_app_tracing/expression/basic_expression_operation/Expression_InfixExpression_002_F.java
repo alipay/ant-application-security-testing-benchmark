@@ -26,7 +26,7 @@ public class Expression_InfixExpression_002_F {
     public Map<String, Object> aTaintCase012(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a = cmd+"a";
+            String a = cmd + "a";
             a = new String("clean");
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

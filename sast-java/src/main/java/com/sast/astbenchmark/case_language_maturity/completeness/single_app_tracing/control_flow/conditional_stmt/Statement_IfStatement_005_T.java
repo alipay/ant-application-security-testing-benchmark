@@ -28,12 +28,12 @@ public class Statement_IfStatement_005_T {
 
         try {
             int a = 5;
-            if(a < 5){
+            if (a < 5) {
 
-            }else if(a == 5){
+            } else if (a == 5) {
                 CmdUtil.run(cmd);
-            }else{
-                cmd="ls";
+            } else {
+                cmd = "ls";
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

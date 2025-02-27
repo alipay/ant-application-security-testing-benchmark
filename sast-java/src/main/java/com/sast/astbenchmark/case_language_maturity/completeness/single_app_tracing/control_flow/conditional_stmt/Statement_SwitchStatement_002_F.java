@@ -26,10 +26,10 @@ public class Statement_SwitchStatement_002_F {
     public Map<String, Object> aTaintCase016(@PathVariable String cmd, @PathVariable String type) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            switch (type){
+            switch (type) {
 
                 case "ls":
-                    CmdUtil.run("mkdir"+" "+cmd);
+                    CmdUtil.run("mkdir" + " " + cmd);
                     modelMap.put("status", "success");
                 default:
                     modelMap.put("status", "success");

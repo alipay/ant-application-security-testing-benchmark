@@ -35,7 +35,7 @@ public class CallExpression_CustomCode_Interface_002_F {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(out);
             oos.writeObject(new S("ls"));
-            byte[] bytes = out.toByteArray(); 
+            byte[] bytes = out.toByteArray();
             ByteArrayInputStream in = new ByteArrayInputStream(bytes);
             ObjectInputStream iis = new ObjectInputStream(in);
             S s2 = (S) iis.readObject();
@@ -50,11 +50,11 @@ public class CallExpression_CustomCode_Interface_002_F {
     }
 
     private static class S implements Serializable {
-            
+
         public String s;
-    
+
         public S(String s) {
             this.s = s;
-        }  
+        }
     }
 }

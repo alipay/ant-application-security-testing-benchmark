@@ -27,7 +27,7 @@ public class Expression_MethodInvocation_001_T {
     public Map<String, Object> aTaintCase013(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            CmdUtil.run(cmd+"|grep a");
+            CmdUtil.run(cmd + "|grep a");
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

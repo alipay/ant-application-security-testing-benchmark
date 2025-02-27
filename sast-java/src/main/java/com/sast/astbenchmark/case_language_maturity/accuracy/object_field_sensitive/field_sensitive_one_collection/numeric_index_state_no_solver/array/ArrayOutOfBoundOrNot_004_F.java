@@ -33,7 +33,8 @@ public class ArrayOutOfBoundOrNot_004_F {
                 add("bar");
             }};
             arr.add(4, cmd); // OutOfBound
-            Runtime.getRuntime().exec(arr.toString());;
+            Runtime.getRuntime().exec(arr.toString());
+            ;
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

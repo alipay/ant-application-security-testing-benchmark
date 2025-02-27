@@ -3,7 +3,10 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->表达式->Lambda表达式",
       "scene_list": [
-        {"compose": "Expression_LambdaExpression_001_T.java && !Expression_LambdaExpression_002_F.java","scene":"1"}
+        {
+          "compose": "Expression_LambdaExpression_001_T.java && !Expression_LambdaExpression_002_F.java",
+          "scene": "1"
+        }
       ],
       "level": "2"
     }

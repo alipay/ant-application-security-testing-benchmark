@@ -25,13 +25,13 @@ public class Statement_DoStatement_001_T {
     public Map<String, Object> aTaintCase0128(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
+            String a = "mkdir";
             int i = 10;
 
             do {
-                a= cmd+"|";
+                a = cmd + "|";
                 i++;
-            }while (i<20);
+            } while (i < 20);
 
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

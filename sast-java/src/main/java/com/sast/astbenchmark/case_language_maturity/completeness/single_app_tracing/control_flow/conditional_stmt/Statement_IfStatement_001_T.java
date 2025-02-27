@@ -27,8 +27,8 @@ public class Statement_IfStatement_001_T {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            if(false){
-            }else{
+            if (false) {
+            } else {
                 CmdUtil.run(cmd);
             }
             modelMap.put("status", "success");

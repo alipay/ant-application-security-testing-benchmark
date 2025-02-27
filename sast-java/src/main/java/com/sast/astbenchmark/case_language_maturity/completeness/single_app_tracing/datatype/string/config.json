@@ -3,10 +3,22 @@
     {
       "evaluation item": "完整度->单应用跟踪完整度->数据类型和结构->字符串",
       "scene_list": [
-        {"compose": "Base_String_001_T.java && !Base_String_002_F.java","scene":"String"},
-        {"compose": "Base_StringArray_001_T.java && !Base_StringArray_002_F.java","scene":"String[]"},
-        {"compose": "Base_StringBuffer_001_T.java && !Base_StringBuffer_002_F.java","scene":"StringBuffer"},
-        {"compose": "Base_StringBuilder_001_T.java && !Base_StringBuilder_002_F.java","scene":"StringBuilder"}
+        {
+          "compose": "Base_String_001_T.java && !Base_String_002_F.java",
+          "scene": "String"
+        },
+        {
+          "compose": "Base_StringArray_001_T.java && !Base_StringArray_002_F.java",
+          "scene": "String[]"
+        },
+        {
+          "compose": "Base_StringBuffer_001_T.java && !Base_StringBuffer_002_F.java",
+          "scene": "StringBuffer"
+        },
+        {
+          "compose": "Base_StringBuilder_001_T.java && !Base_StringBuilder_002_F.java",
+          "scene": "StringBuilder"
+        }
       ],
       "level": "2"
     }

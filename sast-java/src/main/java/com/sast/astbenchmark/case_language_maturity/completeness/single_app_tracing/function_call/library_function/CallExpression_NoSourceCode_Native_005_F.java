@@ -23,10 +23,10 @@ import java.util.Map;
 @RequestMapping("completeness/single_app_tracing/function_call/library_function")
 public class CallExpression_NoSourceCode_Native_005_F {
     @PostMapping(value = "CallExpression_NoSourceCode_Native_005_F")
-    public Map<String, Object> aTaintCase0161(@RequestParam String cmd ) {
+    public Map<String, Object> aTaintCase0161(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            cmd=cmd.concat(" -la");
+            cmd = cmd.concat(" -la");
             Runtime.getRuntime().exec("ls");
             modelMap.put("status", "success");
         } catch (Exception e) {

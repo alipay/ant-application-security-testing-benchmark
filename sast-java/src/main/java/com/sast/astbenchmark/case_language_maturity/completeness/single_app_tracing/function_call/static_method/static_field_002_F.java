@@ -27,7 +27,7 @@ public class static_field_002_F {
         process();
     }
 
-    private void process(){
+    private void process() {
         __taint_sink(MyClass2.data);
     }
 

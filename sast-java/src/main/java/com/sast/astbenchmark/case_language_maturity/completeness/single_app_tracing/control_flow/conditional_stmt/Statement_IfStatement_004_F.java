@@ -28,10 +28,10 @@ public class Statement_IfStatement_004_F {
         Map<String, Object> modelMap = new HashMap<>();
 
         try {
-            if(true == true){
+            if (true == true) {
                 String cmdString = HttpUtil.doGet("www.test.com");
                 CmdUtil.run(cmdString);
-            }else{
+            } else {
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

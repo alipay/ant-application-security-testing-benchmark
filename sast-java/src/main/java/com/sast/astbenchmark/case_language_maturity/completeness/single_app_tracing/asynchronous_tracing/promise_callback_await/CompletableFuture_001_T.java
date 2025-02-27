@@ -36,7 +36,7 @@ public class CompletableFuture_001_T {
                     throw new RuntimeException(e);
                 }
             });
-            
+
             future.thenRun(() -> {
                 try {
                     result.set("clean");

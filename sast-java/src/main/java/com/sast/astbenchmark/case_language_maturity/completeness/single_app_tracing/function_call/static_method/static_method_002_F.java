@@ -20,6 +20,7 @@ class MyClass4 {
     private static void __taint_sink(Object o) {
 
     }
+
     public static void process(Object arg) {
         __taint_sink("safe"); // 传递静态字段到接收点
     }

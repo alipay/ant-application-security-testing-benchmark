@@ -25,7 +25,7 @@ public class Array_index_004_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String[][] arr = new String[][]{{cmd}, {"xx","aa"}, {"bar","b","cc"}};
+            String[][] arr = new String[][] {{cmd}, {"xx", "aa"}, {"bar", "b", "cc"}};
             Runtime.getRuntime().exec(arr[1][1]);
             modelMap.put("status", "success");
         } catch (Exception e) {

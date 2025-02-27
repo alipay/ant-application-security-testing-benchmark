@@ -25,10 +25,10 @@ public class Statement_InterruptStatement_006_F {
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
-            for(int i=0; i<10; i++){
-                a = cmd+"|";
-                if(i == 9){
+            String a = "mkdir";
+            for (int i = 0; i < 10; i++) {
+                a = cmd + "|";
+                if (i == 9) {
                     a = "ls";
                     continue;
                 }

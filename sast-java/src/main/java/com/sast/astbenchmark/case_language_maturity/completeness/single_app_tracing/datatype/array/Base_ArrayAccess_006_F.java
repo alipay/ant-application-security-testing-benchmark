@@ -25,7 +25,7 @@ public class Base_ArrayAccess_006_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String[] arr = new String[]{"foo", "xx", "bar"};
+            String[] arr = new String[] {"foo", "xx", "bar"};
             Runtime.getRuntime().exec(arr);
             modelMap.put("status", "success");
         } catch (Exception e) {

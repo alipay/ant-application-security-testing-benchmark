@@ -1,11 +1,10 @@
 package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.normal_stmt;
 
+import com.sast.astbenchmark.model.CmdObject;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.sast.astbenchmark.model.CmdObject;
 
 import java.util.HashMap;
 import java.util.Map;
