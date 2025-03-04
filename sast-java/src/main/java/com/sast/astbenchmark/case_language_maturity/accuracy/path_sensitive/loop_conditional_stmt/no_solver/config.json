@@ -9,28 +9,8 @@
           "scene": "常量分支条件"
         },
         {
-          "compose": "Expression_InstanceofExpression_003_T.java && !Expression_InstanceofExpression_004_F.java",
-          "scene": "instanceof表达式-null"
-        },
-        {
-          "compose": "Expression_InstanceofExpression_005_T.java && !Expression_InstanceofExpression_006_F.java",
-          "scene": "instanceof表达式-Object"
-        },
-        {
-          "compose": "Statement_AssertStatement_003_T.java && !Statement_AssertStatement_004_F.java",
-          "scene": "assert语句-条件不成立"
-        },
-        {
-          "compose": "Statement_AssertStatement_005_T.java && !Statement_AssertStatement_006_F.java",
-          "scene": "assert语句-条件不成立"
-        },
-        {
           "compose": "Statement_ForStatement_003_T.java && !Statement_ForStatement_004_F.java",
           "scene": "循环结构->for"
-        },
-        {
-          "compose": "Statement_WhileStatement_003_T.java && !Statement_WhileStatement_004_F.java",
-          "scene": "循环结构->while"
         }
       ]
     }

@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.path_sensitive.loop_conditional_stmt.no_solver;
+package com.sast.astbenchmark.case_language_maturity.accuracy.path_sensitive.loop_conditional_stmt.solver;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,17 +9,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态->assert语句-条件成立
+ * Introduction 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态->assert语句-条件成立
  * Level 3
  * Date 2024-09-18
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态
-// bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/Statement_AssertStatement_006_F/{cmd}
+// evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
+// bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/Statement_AssertStatement_006_F/{cmd}
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/path_sensitive/loop_conditional_stmt/no_solver")
+@RequestMapping("accuracy/path_sensitive/loop_conditional_stmt/solver")
 public class Statement_AssertStatement_006_F {
     @GetMapping("Statement_AssertStatement_006_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {

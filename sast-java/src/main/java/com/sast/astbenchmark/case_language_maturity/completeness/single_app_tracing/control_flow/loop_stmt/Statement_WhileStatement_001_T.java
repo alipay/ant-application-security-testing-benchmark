@@ -27,9 +27,9 @@ public class Statement_WhileStatement_001_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a = "mkdir";
-            ;
             while (StringUtils.equals(type, "mkdir")) {
                 a = " " + cmd;
+
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

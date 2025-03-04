@@ -27,7 +27,6 @@ public class Statement_WhileStatement_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a = "mkdir";
-            ;
             while (StringUtils.equals(type, "mkdir")) {
                 a = " " + a;
             }
