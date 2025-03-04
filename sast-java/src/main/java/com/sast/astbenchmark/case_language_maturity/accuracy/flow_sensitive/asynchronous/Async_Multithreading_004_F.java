@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 异步跟踪能力-多线程 Runnable
- * Level 3
+ * Introduction 准确度->流敏感分析->异步执行->存储型异步->多线程->Runnable
+ * Level 4
  * Date 2024-07-31
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->异步->存储型异步->多线程->Runnable
+// evaluation item = 准确度->流敏感分析->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_004_F/{cmd}
 // evaluation information end
 

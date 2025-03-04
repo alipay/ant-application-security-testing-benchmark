@@ -17,13 +17,6 @@
  */
 package com.alipay.xast.score.parsers;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import com.alipay.xast.score.ResultFile;
 import com.alipay.xast.score.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
@@ -31,6 +24,12 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class PMDReader extends Reader {
 

@@ -14,6 +14,7 @@ public class ScoreCardHeader {
         head.add(Arrays.asList("评价项达成条件"));
         head.add(Arrays.asList("存在漏洞"));
         head.add(Arrays.asList("扫描识别为漏洞"));
+        head.add(Arrays.asList("评价项等级"));
         return head;
     }
 }

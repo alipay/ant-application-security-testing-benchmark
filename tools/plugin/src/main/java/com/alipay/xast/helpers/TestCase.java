@@ -18,13 +18,14 @@
 package com.alipay.xast.helpers;
 
 import com.alipay.xast.Category;
-import java.util.List;
+import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
+
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import org.eclipse.persistence.oxm.annotations.XmlDiscriminatorNode;
+import java.util.List;
 
 @XmlSeeAlso({ServletTestCase.class, JerseyTestCase.class, SpringTestCase.class})
 @XmlDiscriminatorNode("@tcType")

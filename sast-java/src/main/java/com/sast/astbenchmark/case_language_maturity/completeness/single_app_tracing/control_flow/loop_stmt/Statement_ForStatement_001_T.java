@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-for语句
+ * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->for语句
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->for语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_ForStatement_001_T/{cmd}
 // evaluation information end
 @RestController()
@@ -25,9 +25,9 @@ public class Statement_ForStatement_001_T {
     public Map<String, Object> aTaintCase0127(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
-            for(int i =0 ;i<10; i++){
-                a= cmd+"|";
+            String a = "mkdir";
+            for (int i = 0; i < 10; i++) {
+                a = cmd + "|";
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

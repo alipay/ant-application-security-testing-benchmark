@@ -4,9 +4,9 @@
  */
 package com.alipay.xast.score;
 
-import java.io.Serializable;
-
 import org.json.JSONObject;
+
+import java.io.Serializable;
 
 /**
  * @author lyh01158086@antgroup.com

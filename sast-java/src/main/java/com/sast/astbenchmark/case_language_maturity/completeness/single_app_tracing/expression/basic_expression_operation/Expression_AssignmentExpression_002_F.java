@@ -8,15 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Introduction 污点链路样本中的表达式-变量传递通过native方法发生在两个入参上
+ * Introduction 完整度->单应用跟踪完整度->表达式->基础表达式->变量传递通过native方法发生在两个入参上
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->链路跟踪完整度->表达式->基础表达式->变量传递通过native方法发生在两个入参上
+// evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_AssignmentExpression_002_F/{cmd}
 // evaluation information end
 @RestController()
@@ -30,9 +29,9 @@ public class Expression_AssignmentExpression_002_F {
             return modelMap;
         }
         try {
-            String[] b = {"a","b"};
-            System.arraycopy(cmd,0,b,0,2);
-            b = new String[]{"clean", "clean"};
+            String[] b = {"a", "b"};
+            System.arraycopy(cmd, 0, b, 0, 2);
+            b = new String[] {"clean", "clean"};
             Runtime.getRuntime().exec(b[0]);
             modelMap.put("status", "success");
         } catch (Exception e) {

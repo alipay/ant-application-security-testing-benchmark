@@ -1,48 +1,45 @@
 {
   "basic_expression_operation": [
     {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->变量传递通过native方法发生在两个入参上",
-      "compose": "Expression_AssignmentExpression_001_T.java && !Expression_AssignmentExpression_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->赋值语句",
-      "compose": "Expression_AssignmentExpression_003_T.java && !Expression_AssignmentExpression_004_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->位运算操作",
-      "compose": "Expression_BitOperation_001_T.java && !Expression_BitOperation_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->中缀表达式+对象创建",
-      "compose": "Expression_ClassInstance_Infix_001_T.java && !Expression_ClassInstance_Infix_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->中缀表达式",
-      "compose": "Expression_InfixExpression_001_T.java && !Expression_InfixExpression_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->instanceof表达式",
-      "compose": "Expression_InstanceofExpression_001_T.java && !Expression_InstanceofExpression_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->后缀表达式",
-      "compose": "Expression_PostfixExpression_001_T.java && !Expression_PostfixExpression_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->前缀表达式",
-      "compose": "Expression_PrefixExpression_001_T.java && !Expression_PrefixExpression_002_F.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "完整度->链路跟踪完整度->表达式->基础表达式->变量定义语句",
-      "compose": "Statement_VariableDeclarationStatement_001_T.java && !Statement_VariableDeclarationStatement_002_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->表达式->基础表达式",
+      "scene_list": [
+        {
+          "compose": "Expression_AssignmentExpression_001_T.java && !Expression_AssignmentExpression_002_F.java",
+          "scene": "变量传递通过native方法发生在两个入参上"
+        },
+        {
+          "compose": "Expression_AssignmentExpression_003_T.java && !Expression_AssignmentExpression_004_F.java",
+          "scene": "赋值语句"
+        },
+        {
+          "compose": "Expression_BitOperation_001_T.java && !Expression_BitOperation_002_F.java",
+          "scene": "位运算操作"
+        },
+        {
+          "compose": "Expression_ClassInstance_Infix_001_T.java && !Expression_ClassInstance_Infix_002_F.java",
+          "scene": "中缀表达式+对象创建"
+        },
+        {
+          "compose": "Expression_InfixExpression_001_T.java && !Expression_InfixExpression_002_F.java",
+          "scene": "中缀表达式"
+        },
+        {
+          "compose": "Expression_InstanceofExpression_001_T.java && !Expression_InstanceofExpression_002_F.java",
+          "scene": "instanceof表达式"
+        },
+        {
+          "compose": "Expression_PostfixExpression_001_T.java && !Expression_PostfixExpression_002_F.java",
+          "scene": "后缀表达式"
+        },
+        {
+          "compose": "Expression_PrefixExpression_001_T.java && !Expression_PrefixExpression_002_F.java",
+          "scene": "前缀表达式"
+        },
+        {
+          "compose": "Statement_VariableDeclarationStatement_001_T.java && !Statement_VariableDeclarationStatement_002_F.java",
+          "scene": "变量定义语句"
+        }
+      ],
       "level": "2"
     }
   ]

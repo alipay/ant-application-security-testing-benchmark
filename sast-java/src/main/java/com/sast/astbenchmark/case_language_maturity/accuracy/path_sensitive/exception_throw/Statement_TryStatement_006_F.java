@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 路径敏感-try语句-数组越界异常or抛出异常
+ * Introduction 准确度->路径敏感分析->异常抛出和捕获->涉及求解问题->try语句-数组越界异常or抛出异常
  * Level 3
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->路径敏感->涉及求解问题->try语句-数组越界异常or抛出异常
+// evaluation item = 准确度->路径敏感分析->异常抛出和捕获
 // bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_006_F/{cmd}
 // evaluation information end
 @RestController()

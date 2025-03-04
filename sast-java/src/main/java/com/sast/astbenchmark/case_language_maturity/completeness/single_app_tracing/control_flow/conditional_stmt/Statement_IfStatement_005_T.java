@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-if语句-elseif body
- * Level X
+ * Introduction 完整度->单应用跟踪完整度->流程控制语句->条件语句->if语句-elseif body
+ * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->控制流->条件语句->if语句-elseif body
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_IfStatement_005_T/{cmd}
 // evaluation information end
 @RestController()
@@ -28,12 +28,12 @@ public class Statement_IfStatement_005_T {
 
         try {
             int a = 5;
-            if(a < 5){
+            if (a < 5) {
 
-            }else if(a == 5){
+            } else if (a == 5) {
                 CmdUtil.run(cmd);
-            }else{
-                cmd="ls";
+            } else {
+                cmd = "ls";
             }
             modelMap.put("status", "success");
         } catch (Exception e) {

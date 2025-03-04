@@ -1,0 +1,18 @@
+{
+  "no_solver": [
+    {
+      "evaluation item": "准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态",
+      "level": "3",
+      "scene_list": [
+        {
+          "compose": "ConstantIfGuard_001_T.java && !ConstantIfGuard_002_F.java",
+          "scene": "常量分支条件"
+        },
+        {
+          "compose": "Statement_ForStatement_003_T.java && !Statement_ForStatement_004_F.java",
+          "scene": "循环结构->for"
+        }
+      ]
+    }
+  ]
+}

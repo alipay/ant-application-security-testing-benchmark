@@ -1,29 +1,30 @@
 {
   "normal_stmt": [
     {
-      "evaluation item": "准确度->流敏感->数据流不可达->被固定值赋值",
-      "compose": "!AssignedByFixedValue_001_F.java && AssignedByFixedValue_002_T.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "准确度->流敏感->数据流不可达->被固定值通过变量赋值",
-      "compose": "!AssignedByVariable_001_F.java && AssignedByVariable_002_T.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "准确度->流敏感->数据流不可达->对象属性set赋值为非污点",
-      "compose": "!AssignObjectAttribute_001_F.java && AssignObjectAttribute_002_T.java",
-      "level": "2"
-    },
-    {
-      "evaluation item": "准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene1",
-      "compose": "FlowSensitiveAlias_001_T.java && !FlowSensitiveAlias_002_F.java",
-      "level": "3"
-    },
-    {
-      "evaluation item": "准确度->流敏感->对象属性->对象指针->流敏感指针分析-过程间分析-scene2",
-      "compose": "FlowSensitiveAlias_003_T.java && !FlowSensitiveAlias_004_F.java",
-      "level": "3"
+      "evaluation item": "准确度->流敏感分析->常规顺序执行语句",
+      "level": "2",
+      "scene_list": [
+        {
+          "compose": "!AssignedByFixedValue_001_F.java && AssignedByFixedValue_002_T.java",
+          "scene": "数据流不可达->被固定值赋值"
+        },
+        {
+          "compose": "!AssignedByVariable_001_F.java && AssignedByVariable_002_T.java",
+          "scene": "数据流不可达->被固定值通过变量赋值"
+        },
+        {
+          "compose": "!AssignObjectAttribute_001_F.java && AssignObjectAttribute_002_T.java",
+          "scene": "数据流不可达->对象属性set赋值为非污点"
+        },
+        {
+          "compose": "FlowSensitiveAlias_001_T.java && !FlowSensitiveAlias_002_F.java",
+          "scene": "对象属性->对象指针->流敏感指针分析-过程间分析-scene1"
+        },
+        {
+          "compose": "FlowSensitiveAlias_003_T.java && !FlowSensitiveAlias_004_F.java",
+          "scene": "对象属性->对象指针->流敏感指针分析-过程间分析-scene2"
+        }
+      ]
     }
   ]
 }

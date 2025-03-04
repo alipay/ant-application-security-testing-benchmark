@@ -9,18 +9,18 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 对象中的简单类型对象，Char作为污点
+ * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->char
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点对象完整度->java原生对象->char
-// bind_url = completeness/base/object/javaNative/Base_Char_006_F/{cmd}
+// evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Char_006_F/{cmd}
 // evaluation information end
 
 @RestController()
-@RequestMapping("completeness/base/object/javaNative")
+@RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Char_006_F {
     @GetMapping("Base_Char_006_F/{cmd}")
     public Map<String, Object> aTaintCase0137(@PathVariable char cmd) {
@@ -29,8 +29,7 @@ public class Base_Char_006_F {
         try {
             Runtime.getRuntime().exec(String.valueOf(c));
             modelMap.put("status", "success");
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             modelMap.put("status", "error");
         }
         return modelMap;

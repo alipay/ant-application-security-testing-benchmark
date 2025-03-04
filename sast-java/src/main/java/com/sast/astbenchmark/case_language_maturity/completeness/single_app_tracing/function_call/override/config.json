@@ -1,8 +1,13 @@
 {
   "override": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->多态",
-      "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
+      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->方法重写",
+      "scene_list": [
+        {
+          "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
+          "scene": "多态"
+        }
+      ],
       "level": "2"
     }
   ]

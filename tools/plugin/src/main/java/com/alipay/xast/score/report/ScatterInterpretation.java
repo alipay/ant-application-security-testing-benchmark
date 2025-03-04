@@ -18,14 +18,15 @@
 package com.alipay.xast.score.report;
 
 import com.alipay.xast.score.BenchmarkScore;
-import java.io.File;
-import java.io.IOException;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.ui.TextAnchor;
 import org.jfree.data.xy.XYSeriesCollection;
+
+import java.io.File;
+import java.io.IOException;
 
 public class ScatterInterpretation extends ScatterPlot {
 

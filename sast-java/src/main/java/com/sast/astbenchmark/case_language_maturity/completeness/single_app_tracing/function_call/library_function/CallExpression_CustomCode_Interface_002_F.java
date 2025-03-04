@@ -14,14 +14,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的特殊场景-自定义函数-Serializable接口
- * Level 4
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->库函数调用->Serializable接口
+ * Level 2+
  * Date 2024-08-16
  */
 
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->Serializable接口
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->库函数调用
 // bind_url = completeness/single_app_tracing/function_call/library_function/CallExpression_CustomCode_Interface_002_F
 // evaluation information end
 @RestController()
@@ -35,7 +35,7 @@ public class CallExpression_CustomCode_Interface_002_F {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
             ObjectOutputStream oos = new ObjectOutputStream(out);
             oos.writeObject(new S("ls"));
-            byte[] bytes = out.toByteArray(); 
+            byte[] bytes = out.toByteArray();
             ByteArrayInputStream in = new ByteArrayInputStream(bytes);
             ObjectInputStream iis = new ObjectInputStream(in);
             S s2 = (S) iis.readObject();
@@ -50,11 +50,11 @@ public class CallExpression_CustomCode_Interface_002_F {
     }
 
     private static class S implements Serializable {
-            
+
         public String s;
-    
+
         public S(String s) {
             this.s = s;
-        }  
+        }
     }
 }

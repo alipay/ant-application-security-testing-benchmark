@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Introduction 完整度->链路跟踪完整度->函数调用->返回值传递->普通
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->返回值传递->普通
  * Level 2
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->函数调用->返回值传递->普通
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->返回值传递
 // bind_url = completeness/single_app_tracing/function_call/return_value_passing/return_value_passing_001_T
 // evaluation information end
 @RestController()
@@ -28,7 +28,11 @@ public class return_value_passing_001_T {
         return tmp;
     }
 
-    private static void __taint_sink(Object o) {
+    private static void __taint_sink(String o) {
+        try {
+            Runtime.getRuntime().exec(o);
+        } catch (Exception e) {
+        }
     }
 
 }

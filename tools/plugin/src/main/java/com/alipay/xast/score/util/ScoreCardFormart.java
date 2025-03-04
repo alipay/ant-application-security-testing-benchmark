@@ -19,6 +19,9 @@ public class ScoreCardFormart {
     // 扫描识别为漏洞
     public String foundVul;
 
+    //评价项等级
+    public String level;;
+
     public void setUrl(String url) {
         this.url = url;
     }
@@ -65,6 +68,24 @@ public class ScoreCardFormart {
 
     public String getHasVul() {
         return hasVul;
+    }
+
+    /**
+     * Getter method for property <tt>level</tt>.
+     *
+     * @return property value of level
+     */
+    public String getLevel() {
+        return level;
+    }
+
+    /**
+     * Setter method for property <tt>level</tt>.
+     *
+     * @param level value to be assigned to property level
+     */
+    public void setLevel(String level) {
+        this.level = level;
     }
 }
 

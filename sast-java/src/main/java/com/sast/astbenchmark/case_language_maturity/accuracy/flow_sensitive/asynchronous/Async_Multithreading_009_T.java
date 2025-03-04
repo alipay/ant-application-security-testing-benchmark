@@ -9,15 +9,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
 /**
- * Introduction 异步跟踪能力-多线程 Synchronized
- * Level 3
+ * Introduction 准确度->流敏感分析->异步执行->存储型异步->多线程->Synchronized
+ * Level 4
  * Date 2024-07-31
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->异步->存储型异步->多线程->Synchronized
+// evaluation item = 准确度->流敏感分析->异步执行
 // bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithreading_009_T/{cmd}
 // evaluation information end
 
@@ -25,11 +24,12 @@ import java.util.Map;
 @RequestMapping("accuracy/flow_sensitive/asynchronous")
 public class Async_Multithreading_009_T {
     private String a;
+
     @PostMapping("Async_Multithreading_009_T/{cmd}")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         Async_Multithreading_009_T obj = new Async_Multithreading_009_T();
-        
+
         Thread thread1 = new Thread(() -> {
             synchronized (obj) {
                 obj.a = cmd;

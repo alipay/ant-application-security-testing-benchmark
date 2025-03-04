@@ -17,13 +17,14 @@
  */
 package com.alipay.xast.score.report.html;
 
-import static com.alipay.xast.score.report.Formats.fourDecimalPlacesNumber;
-import static com.alipay.xast.score.report.Formats.twoDecimalPlacesPercentage;
-
 import com.alipay.xast.score.Configuration;
 import com.alipay.xast.score.Tool;
 import com.alipay.xast.score.ToolResults;
+
 import java.util.Set;
+
+import static com.alipay.xast.score.report.Formats.fourDecimalPlacesNumber;
+import static com.alipay.xast.score.report.Formats.twoDecimalPlacesPercentage;
 
 public class OverallStatsTable {
 

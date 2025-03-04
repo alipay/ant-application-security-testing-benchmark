@@ -17,6 +17,26 @@
  */
 package com.alipay.xast.score;
 
+import com.alibaba.excel.EasyExcel;
+import com.alibaba.excel.read.builder.ExcelReaderSheetBuilder;
+import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
+import com.alipay.xast.score.TestSuiteResults.ToolType;
+import com.alipay.xast.score.parsers.Reader;
+import com.alipay.xast.score.util.BooleanExpressionEvaluatorUtil;
+import com.alipay.xast.score.util.ScoreCardFormart;
+import com.alipay.xast.score.util.ScoreCardHeader;
+import com.alipay.xast.score.util.XastSupoortToolType;
+import com.google.common.annotations.VisibleForTesting;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,6 +49,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
@@ -40,34 +62,14 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Stream;
 
-import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.read.builder.ExcelReaderSheetBuilder;
-import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
-
-import com.alipay.xast.score.TestSuiteResults.ToolType;
-import com.alipay.xast.score.parsers.Reader;
-import com.alipay.xast.score.util.BooleanExpressionEvaluatorUtil;
-import com.alipay.xast.score.util.ScoreCardFormart;
-import com.alipay.xast.score.util.ScoreCardHeader;
-import com.alipay.xast.score.util.XastSupoortToolType;
-import com.google.common.annotations.VisibleForTesting;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.maven.plugin.AbstractMojo;
-import org.apache.maven.plugins.annotations.LifecyclePhase;
-import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 @Mojo(name = "create-scorecard", requiresProject = false, defaultPhase = LifecyclePhase.COMPILE)
 public class BenchmarkScore extends AbstractMojo {
 
     @Parameter(property = "configFile")
     String scoringConfigFile;
 
-    private static final String START_MARKER = "assession information start";
-    private static final String END_MARKER = "assession information end";
+    private static final String START_MARKER = "evaluation information start";
+    private static final String END_MARKER = "evaluation information end";
     static final String USAGE_MSG =
             "Usage: -cf /PATH/TO/scoringconfigfile.yaml or -cr scoringconfigfile.yaml (where file is a resource)";
 
@@ -124,6 +126,7 @@ public class BenchmarkScore extends AbstractMojo {
      */
     private static Set<Tool> tools = new TreeSet<Tool>();
 
+    private static HashMap<String, String> levelMap = new HashMap<>();
 
     public static Configuration config;
 
@@ -194,8 +197,11 @@ public class BenchmarkScore extends AbstractMojo {
      * @param args - The command line arguments.
      */
     public static void main(String[] args) throws Exception {
+        //System.setProperty("directoryPath","/Users/curry/IdeaProjects/git/ant-application-security-testing-benchmark");
+        //System.setProperty("resultFile","/Users/curry/Desktop/xast-result/Benchmark_1.2-pmd-v5.2.3-11.xml");
+        //System.setProperty("xlsxFile","/Users/curry/Desktop/xast-result/xAST_v_1.0.0_pmd_v5.2.3_sast.xlsx");
         try {
-            loadConfigFromCommandLineArguments(args);
+             loadConfigFromCommandLineArguments(args);
         } catch (RuntimeException e) {
             System.out.println("Error processing configuration for Scoring. Aborting.");
             System.exit(-1);
@@ -225,7 +231,6 @@ public class BenchmarkScore extends AbstractMojo {
         }else if(StringUtils.isNotEmpty(System.getProperty("resultFile"))){
             cons.put("resultFile",System.getProperty("resultFile"));
         }
-
         mainChange(cons);
     }
 
@@ -351,16 +356,51 @@ public class BenchmarkScore extends AbstractMojo {
         String evaluateAccuracy = null;
         String toolName = "工具名";
         String toolTypeNew = "工具类型";
+        String levelTable = null;
+        StringBuilder levelTableBuilder = new StringBuilder();
         double TP = 0;
         double FN = 0;
         double FP = 0;
         double TN = 0;
         double evaluateValue = 0;
         double cases = 0;
-        double evaluateSum = 0;
+        HashSet<String> oneSet = new HashSet<>();
+        HashSet<String> onePlusSet = new HashSet<>();
+        HashSet<String> twoSet = new HashSet<>();
+        HashSet<String> twoPlusSet = new HashSet<>();
+        HashSet<String> threeSet = new HashSet<>();
+        HashSet<String> threePlusSet = new HashSet<>();
+        HashSet<String> fourSet = new HashSet<>();
+        HashSet<String> fourPlusSet = new HashSet<>();
+        HashSet<String> oneFinishSet = new HashSet<>();
+        HashSet<String> onePlusFinishSet = new HashSet<>();
+        HashSet<String> twoFinishSet = new HashSet<>();
+        HashSet<String> twoPlusFinishSet = new HashSet<>();
+        HashSet<String> threeFinishSet = new HashSet<>();
+        HashSet<String> threePlusFinishSet = new HashSet<>();
+        HashSet<String> fourFinishSet = new HashSet<>();
+        HashSet<String> fourPlusFinishSet = new HashSet<>();
+        String oneFinishRate = null;
+        String onePlusFinishRate = null;
+        String twoFinishRate = null;
+        String twoPlusFinishRate = null;
+        String threeFinishRate = null;
+        String threePlusFinishRate = null;
+        String fourFinishRate = null;
+        String fourPlusFinishRate = null;
+        String oneColour = "#A8F7A9";
+        String onePlusColour = "#76F376";
+        String twoColour = "#9FF6C6";
+        String twoPlusColour = "#52F69B";
+        String threeColour = "#9AF6ED";
+        String threePlusColour = "#5FF2E2";
+        String fourColour = "#8AC3F6";
+        String fourPlusColour = "#4AA2F0";
         HashSet<String> appraiseList = new HashSet<>();
         Map<String,Boolean> booleanMap = new HashMap();
         Map<String,String> evaluateMap = new HashMap();
+        Map<String,String> colourMap = new HashMap();
+        HashSet<String> evaluateSet = new HashSet<>();
         //工具名和工具类型赋值
         String[] fileNameParts = fileName.split("_");
         if (fileNameParts.length >= 2){
@@ -432,12 +472,22 @@ public class BenchmarkScore extends AbstractMojo {
             // 标题
             sheet.head(ScoreCardHeader.getHeader());
             List<LinkedHashMap> data = sheet.doReadSync();
+            Boolean result = false;
+            Set<String> levelList = new HashSet<>();
             for (int i = 0; i < data.size(); i++) {
                 String evaluateFormula = (String) data.get(i).get(3);
                 String evaluate = (String) data.get(i).get(2);
+                if(StringUtils.isBlank(evaluateFormula) || StringUtils.isBlank(evaluate)){
+                    continue;
+                }
+                String[] parts = evaluate.split("->");
+                String level = levelMap.get(evaluate);
                 if (StringUtils.isNotBlank(evaluateFormula) && StringUtils.isNotBlank(evaluate)){
-                    evaluateSum++;
-                    Boolean result = BooleanExpressionEvaluatorUtil.evaluate(evaluateFormula, booleanMap);
+                    if (evaluateSet.contains(evaluate)){
+                        continue;
+                    }
+                     evaluateSet.add(evaluate);
+                     result = BooleanExpressionEvaluatorUtil.evaluate(evaluateFormula, booleanMap);
                     if (result) {
                         evaluateValue++;
                         evaluateMap.put(evaluate, "已达成");
@@ -445,10 +495,132 @@ public class BenchmarkScore extends AbstractMojo {
                         evaluateMap.put(evaluate, "未达成");
                     }
                 }
+                //计算每种等级评价项总数
+                if (StringUtils.equals(level, "1")) {
+                    oneSet.add(evaluate);
+                    levelList.add("1");
+                    colourMap.put(parts[parts.length -1],oneColour);
+                    if (result) {
+                        oneFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "1+")) {
+                    onePlusSet.add(evaluate);
+                    levelList.add("1+");
+                    colourMap.put(parts[parts.length -1],onePlusColour);
+                    if (result) {
+                        onePlusFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "2")) {
+                    twoSet.add(evaluate);
+                    levelList.add("2");
+                    colourMap.put(parts[parts.length -1],twoColour);
+                    if (result) {
+                        twoFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "2+")) {
+                    twoPlusSet.add(evaluate);
+                    levelList.add("2+");
+                    colourMap.put(parts[parts.length -1],twoPlusColour);
+                    if (result) {
+                        twoPlusFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "3")) {
+                    threeSet.add(evaluate);
+                    levelList.add("3");
+                    colourMap.put(parts[parts.length -1],threeColour);
+                    if (result) {
+                        threeFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "3+")) {
+                    threePlusSet.add(evaluate);
+                    levelList.add("3+");
+                    colourMap.put(parts[parts.length -1],threePlusColour);
+                    if (result) {
+                        threePlusFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "4")) {
+                    fourSet.add(evaluate);
+                    levelList.add("4");
+                    colourMap.put(parts[parts.length -1],fourColour);
+                    if (result) {
+                        fourFinishSet.add(evaluate);
+                    }
+                } else if (StringUtils.equals(level, "4+")) {
+                    fourPlusSet.add(evaluate);
+                    levelList.add("4+");
+                    colourMap.put(parts[parts.length -1],fourPlusColour);
+                    if (result) {
+                        fourPlusFinishSet.add(evaluate);
+                    }
+                }
             }
+
+            //计算等级达成率 && 拼装表格数据
+            if (!CollectionUtils.isEmpty(levelList)){
+                //levelList排序
+                List<String> sortedList = new ArrayList<>(levelList);
+                Collections.sort(sortedList, new Comparator<String>() {
+                    @Override
+                    public int compare(String o1, String o2) {
+                        // 指定顺序
+                        return getOrder(o1) - getOrder(o2);
+                    }
+                    // 自定义顺序映射
+                    private int getOrder(String level) {
+                        switch (level) {
+                            case "1": return 1;
+                            case "1+": return 2;
+                            case "2": return 3;
+                            case "2+": return 4;
+                            case "3": return 5;
+                            case "3+": return 6;
+                            case "4": return 7;
+                            case "4+": return 8;
+                            default: return 9;// 默认较大值放后面
+                        }
+                    }
+                });
+                //遍历集合
+                for (String level : sortedList) {
+                    if (StringUtils.equals(level, "1")){
+                        double oneFinishRateValue = (double) oneFinishSet.size() / oneSet.size() ;
+                        oneFinishRate = String.format("%.2f", oneFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + oneSet.size() + "</td>\n" + "    <td>" + oneFinishSet.size() + "</td>\n" + "    <td>" + oneFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "1+")){
+                        double onePlusFinishRateValue = (double) onePlusFinishSet.size() / onePlusSet.size();
+                        onePlusFinishRate = String.format("%.2f", onePlusFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + onePlusSet.size() + "</td>\n" + "    <td>" + onePlusFinishSet.size() + "</td>\n" + "    <td>" + onePlusFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "2")){
+                        double twoFinishRateValue =  (double) twoFinishSet.size() / twoSet.size();
+                        twoFinishRate = String.format("%.2f", twoFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + twoSet.size() + "</td>\n" + "    <td>" + twoFinishSet.size() + "</td>\n" + "    <td>" + twoFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "2+")){
+                        double twoPlusFinishRateValue = (double) twoPlusFinishSet.size() / twoPlusSet.size();
+                        twoPlusFinishRate = String.format("%.2f", twoPlusFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + twoPlusSet.size() + "</td>\n" + "    <td>" + twoPlusFinishSet.size() + "</td>\n" + "    <td>" + twoPlusFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "3")){
+                        double threeFinishRateValue = (double) threeFinishSet.size() / threeSet.size();
+                        threeFinishRate = String.format("%.2f", threeFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + threeSet.size() + "</td>\n" + "    <td>" + threeFinishSet.size() + "</td>\n" + "    <td>" + threeFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "3+")){
+                        double threePlusFinishRateValue = (double) threePlusFinishSet.size() / threePlusSet.size();
+                        threePlusFinishRate = String.format("%.2f", threePlusFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + threePlusSet.size() + "</td>\n" + "    <td>" + threePlusFinishSet.size() + "</td>\n" + "    <td>" + threePlusFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "4")){
+                        double fourFinishRateValue = (double) fourFinishSet.size() / fourSet.size();
+                        fourFinishRate = String.format("%.2f", fourFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + fourSet.size() + "</td>\n" + "    <td>" + fourFinishSet.size() + "</td>\n" + "    <td>" + fourFinishRate + "</td>\n" + "</tr>");
+                        }else if (StringUtils.equals(level, "4+")){
+                        double fourPlusFinishRateValue = (double) fourPlusFinishSet.size() / fourPlusSet.size();
+                        fourPlusFinishRate = String.format("%.2f", fourPlusFinishRateValue * 100) + "%";
+                        levelTableBuilder.append("<tr>\n" + "    <td>" + level + "</td>\n" + "    <td>" + fourPlusSet.size() + "</td>\n" + "    <td>" + fourPlusFinishSet.size() + "</td>\n" + "    <td>" + fourPlusFinishRate + "</td>\n" + "</tr>");
+                        }
+                    }
+                   levelTable = String.valueOf(levelTableBuilder);
+                }
             //达成率
-            if (evaluateSum != 0){
-                double evaluateAccuracyValue = evaluateValue/evaluateSum * 100;
+            if (evaluateSet.size() != 0){
+                double evaluateAccuracyValue = evaluateValue/evaluateSet.size() * 100;
                 evaluateAccuracy = String.format("%.2f", evaluateAccuracyValue) + "%";
             }
         }catch (Exception e){
@@ -466,6 +638,9 @@ public class BenchmarkScore extends AbstractMojo {
             int number = 0;
             for (int i = 0; i < appraiseArrayList.size(); i++) {
                 String appraise = appraiseArrayList.get(i);
+                if (StringUtils.isBlank(appraise)){
+                    continue;
+                }
                 String[] parts = appraise.split("->");
                 for (int k = 0; k < parts.length; k++) {
                     String part = parts[k];
@@ -481,11 +656,15 @@ public class BenchmarkScore extends AbstractMojo {
                     if (k == 0) {
                         Node nodeOne = new Node(finalId, "root", part);
                         nodeList.add(nodeOne);
-                        jsonArray.put(new JSONObject().put("topic", part).put("parentid", "root").put("id", finalId).put("background-color",""));
+                        if (k == parts.length-1){
+                            jsonArray.put(new JSONObject().put("topic", part).put("parentid", "root").put("id", finalId).put("background-color",colourMap.get(parts[k])));
+                        }else {
+                            jsonArray.put(new JSONObject().put("topic", part).put("parentid", "root").put("id", finalId).put("background-color",""));
+                        }
                         if (k == parts.length-1){
                             if (evaluateMap.containsKey(appraise)){
                                 String evaluate = evaluateMap.get(appraise);
-                                if (StringUtils.equals( evaluate, "已达成")){
+                                if (StringUtils.equals(evaluate, "已达成")){
                                     jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
                                 }else {
                                     jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
@@ -502,12 +681,16 @@ public class BenchmarkScore extends AbstractMojo {
                             }
                             Node nodeTwo = new Node(finalId, id, part);
                             nodeList.add(nodeTwo);
-                            jsonArray.put(new JSONObject().put("topic", part).put("parentid", id).put("id", finalId).put("background-color",""));
+                            if(k == parts.length-1){
+                                jsonArray.put(new JSONObject().put("topic", part).put("parentid", id).put("id", finalId).put("background-color",colourMap.get(parts[k])));
+                            }else {
+                                jsonArray.put(new JSONObject().put("topic", part).put("parentid", id).put("id", finalId).put("background-color",""));
+                            }
                             number = 0;
                             if (k == parts.length-1){
                                 if (evaluateMap.containsKey(appraise)){
                                     String evaluate = evaluateMap.get(appraise);
-                                    if (StringUtils.equals( evaluate, "已达成")){
+                                    if (StringUtils.equals(evaluate, "已达成")){
                                         jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
                                     }else {
                                         jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
@@ -517,7 +700,11 @@ public class BenchmarkScore extends AbstractMojo {
                         }else {
                             Node nodeTwo = new Node(finalId, String.valueOf(i) + String.valueOf(k - 1), part);
                             nodeList.add(nodeTwo);
-                            jsonArray.put(new JSONObject().put("topic", part).put("parentid", String.valueOf(i) + String.valueOf(k - 1)).put("id", finalId).put("background-color",""));
+                            if (k == parts.length-1){
+                                jsonArray.put(new JSONObject().put("topic", part).put("parentid", String.valueOf(i) + String.valueOf(k - 1)).put("id", finalId).put("background-color",colourMap.get(parts[k])));
+                            }else {
+                                jsonArray.put(new JSONObject().put("topic", part).put("parentid", String.valueOf(i) + String.valueOf(k - 1)).put("id", finalId).put("background-color",""));
+                            }
                             if (k == parts.length-1){
                                 if (evaluateMap.containsKey(appraise)){
                                     String evaluate = evaluateMap.get(appraise);
@@ -549,7 +736,6 @@ public class BenchmarkScore extends AbstractMojo {
             ClassLoader CL = BenchmarkScore.class.getClassLoader();
             InputStream vulnTemplateStream = CL.getResourceAsStream("scorecard/XastTool.html");
             String html = IOUtils.toString(vulnTemplateStream, StandardCharsets.UTF_8);
-
             html = html.replace("${工具名}", toolName)
                         .replace("${工具类型}", toolTypeNew)
                         .replace("${case总数}", String.valueOf((int)cases))
@@ -560,6 +746,7 @@ public class BenchmarkScore extends AbstractMojo {
                         .replace("${准确率}", accuracy)
                         .replace("${召回率}", recall)
                         .replace("${评价项达成率}", evaluateAccuracy)
+                        .replace("${level_table}", levelTable)
                         .replace("${xmind_data}", jsonArray.toString());
 
             Files.write(xastToolFilePath, html.getBytes());
@@ -800,22 +987,26 @@ public class BenchmarkScore extends AbstractMojo {
                         Integer.MAX_VALUE,
                         (path, attr) ->
                                 attr.isRegularFile()
-                                        && path.toString().contains("cases")
-                                        && (path.toString().contains("dast-java")
-                                                || path.toString().contains("sast-java")
-                                                || path.toString().contains("iast-java") ),
+                                        //&& path.toString().contains("cases"),
+                                        && path.toString().contains("case")
+                                        && ( path.toString().contains("sast-java")
+                                               ),
                         FileVisitOption.FOLLOW_LINKS)) {
+            // 收集所有文件路径到一个 List 中
+            //List<Path> filePaths = filePathStream.collect(Collectors.toList());
             filePathStream.forEach(
                     f -> {
                         try {
                             System.out.println("\nProcessing file: " + f);
-                            if (f.toString().contains("dast-java")) {
-                                putInfoToTr(result.get("dast"), f);
-                            } else if (f.toString().contains("sast-java")) {
-                                putInfoToTr(result.get("sast"), f);
-                            } else if (f.toString().contains("iast-java")) {
-                                putInfoToTr(result.get("iast"), f);
-                            }
+                            //if (f.toString().contains("dast-java")) {
+                            //    putInfoToTr(result.get("dast"), f);
+                            //} else
+                                if (f.toString().contains("sast-java")) {
+                                    putInfoToTr(result.get("sast"), f);
+                                }
+                            //} else if (f.toString().contains("iast-java")) {
+                            //    putInfoToTr(result.get("iast"), f);
+                            //}
                         } catch (IOException e) {
                             System.err.println("Error processing file: " + f);
                             e.printStackTrace();
@@ -825,7 +1016,114 @@ public class BenchmarkScore extends AbstractMojo {
             e.printStackTrace();
             System.exit(-1);
         }
+        try (Stream<Path> filePathStream =
+                     Files.find(
+                             Paths.get(directoryPath),
+                             Integer.MAX_VALUE,
+                             (path, attr) ->
+                                     attr.isRegularFile()
+                                             && path.toString().endsWith(".json")
+                             &&path.toString().contains("sast-java"),
+                                             //&& (path.toString().contains("dast-java")
+                                             //     || path.toString().contains("sast-java")
+                                             //     || path.toString().contains("iast-java")),
+                             FileVisitOption.FOLLOW_LINKS)) {
+            // 收集所有文件路径到一个 List 中
+            //List<Path> filePaths = filePathStream.collect(Collectors.toList());
+            filePathStream.forEach(
+                    f -> {
+                        try {
+                            System.out.println("\nProcessing file: " + f);
+                            //if (f.toString().contains("dast-java") && f.toString().endsWith(".json")) {
+                            //    processJsonFile(result.get("dast"), f);
+                            //}
+                            //else if (f.toString().contains("sast-java") && f.toString().endsWith(".json")) {
+                            //    processJsonFile(result.get("sast"), f);
+                            //}
+                            //else if (f.toString().contains("iast-java") && f.toString().endsWith(".json")) {
+                            //    processJsonFile(result.get("iast"), f);
+                            //}
+                            if (f.toString().contains("sast-java") && f.toString().endsWith(".json")) {
+                                processJsonFile(result.get("sast"), f);
+                            }
+                        } catch (Exception e) {
+                            System.err.println("Error processing file: " + f);
+                            e.printStackTrace();
+                        }
+                    });
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
         return result;
+    }
+
+    private static void processJsonFile(List<TestCaseResult> testCaseResults, Path filePath) {
+        // 实现对 JSON 文件内容的解析逻辑
+        // 这个方法应读取 JSON 文件，解析其内容，并将解析后的结果添加到 result 映射中
+        try{
+            String jsonString = Files.readString(filePath);
+            if (StringUtils.isBlank(jsonString)){
+                System.out.println("jsonString is null,path :" + filePath);
+                return;
+            }
+            //判断是否为json格式
+            if (!isValidJson(jsonString)){
+                System.out.println("jsonString is not json format,path :" + filePath);
+                return;
+            }
+            // 将字符串转换为 JSONObject
+            JSONObject jsonObject = new JSONObject(jsonString);
+            // 获取文件名的父目录
+            Path parentDirectory = filePath.getParent();
+            // 获取最后一个子目录名
+            String key = parentDirectory.getFileName().toString();
+            Object o = jsonObject.get(key);
+            if (o instanceof JSONArray){
+                JSONArray jsonArray = jsonObject.getJSONArray(key);
+                for (Object o1 : jsonArray) {
+                    if (o1 instanceof JSONObject){
+                        // 创建一个 StringBuilder 来存储所有 compose 字段
+                        StringBuilder composeBuilder = new StringBuilder();
+                        JSONObject jsonObject1 = (JSONObject) o1;
+                        String evaluationItem = String.valueOf(jsonObject1.get("evaluation item"));
+                        JSONArray sceneList = jsonObject1.getJSONArray("scene_list");
+                        for (Object scene : sceneList) {
+                            if (scene instanceof JSONObject){
+                                JSONObject sceneJsonObject = (JSONObject) scene;
+                                String compose = String.valueOf(sceneJsonObject.get("compose"));
+                                // 将 compose 添加到 StringBuilder 中
+                                if (composeBuilder.length() > 0) {
+                                    composeBuilder.append(","); // 如果不是第一个元素，先添加逗号
+                                }
+                                composeBuilder.append(compose); // 添加当前的 compose
+                            }
+                        }
+                        String level = String.valueOf(jsonObject1.get("level"));
+                        for (TestCaseResult testCaseResult : testCaseResults) {
+                            if (StringUtils.equals(testCaseResult.getAssesionProject(),evaluationItem)){
+                                testCaseResult.setCompose(String.valueOf(composeBuilder));
+                                testCaseResult.setLevel(level);
+                            }
+                        }
+                        //将评价项和等级关系存入map
+                        levelMap.put(evaluationItem,level);
+                    }
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            System.exit(-1);
+        }
+    }
+
+    public static boolean isValidJson(String jsonString) {
+        try {
+            new JSONObject(jsonString); // 尝试解析为 JSONObject
+        } catch (Exception e) {
+            return false;  // 解析失败，则返回 false
+        }
+        return true;  // 至少一个解析成功，返回 true
     }
 
     public static void putInfoToTr(List<TestCaseResult> testCaseResults, Path filePath)
@@ -842,14 +1140,12 @@ public class BenchmarkScore extends AbstractMojo {
             } else if (insideSection && line.contains("=")) {
                 String[] kv = line.split("=",2);
                 if (kv.length == 2) {
-                    if (kv[0].contains("assession project")) {
+                    if (kv[0].contains("evaluation item")) {
                         datas[2] = kv[1].trim();
-                    } else if (kv[0].contains("compose")) {
-                        datas[3] = kv[1].trim();
                     } else if (kv[0].contains("bind_url")) {
                         String bindUrl = kv[1].trim();
                         datas[1] = bindUrl.startsWith("/") ? bindUrl : "/" + bindUrl;
-                    } else if (kv[0].contains("real vulnerability")) {
+                    } else if (kv[0].contains("real case")) {
                         datas[4] = kv[1].trim();
                     }
                 }
@@ -860,7 +1156,6 @@ public class BenchmarkScore extends AbstractMojo {
             tcr.setTestCaseName(datas[0]);
             tcr.setUrl(datas[1]);
             tcr.setAssesionProject(datas[2]);
-            tcr.setCompose(datas[3]);
             tcr.setIdentifiedVul(datas[4]);
             testCaseResults.add(tcr);
         }
@@ -901,6 +1196,7 @@ public class BenchmarkScore extends AbstractMojo {
                 scoreCardFormart.setCompose(actualResult.getCompose());
                 scoreCardFormart.setHasVul(actualResult.getIdentifiedVul());
                 scoreCardFormart.setFoundVul(String.valueOf(actualResult.isMatchResult()));
+                scoreCardFormart.setLevel(actualResult.getLevel());
                 scoreCards.add(scoreCardFormart);
             }
             xlxWriter.doWrite(scoreCards);

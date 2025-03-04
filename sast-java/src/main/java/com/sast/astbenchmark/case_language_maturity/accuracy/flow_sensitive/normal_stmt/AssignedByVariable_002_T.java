@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 数据流不可达->被固定值通过变量赋值
+ * Introduction 准确度->流敏感分析->常规顺序执行语句->数据流不可达->被固定值通过变量赋值
  * Level 2
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->流敏感->数据流不可达->被固定值通过变量赋值
+// evaluation item = 准确度->流敏感分析->常规顺序执行语句
 // bind_url = accuracy/flow_sensitive/normal_stmt/AssignedByVariable_002_T
 // evaluation information end
 @RestController()

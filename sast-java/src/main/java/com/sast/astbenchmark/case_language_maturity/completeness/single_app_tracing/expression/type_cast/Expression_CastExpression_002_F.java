@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-强转表达式
+ * Introduction 完整度->单应用跟踪完整度->表达式->类型转换->强转表达式-参数传递
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->链路跟踪完整度->表达式->强转表达式-参数传递
+// evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
 // bind_url = completeness/single_app_tracing/expression/type_cast/Expression_CastExpression_002_F/{cmd}
 // evaluation information end
 
@@ -27,7 +27,7 @@ public class Expression_CastExpression_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             Object cmdObject = new Object();
-            cmdObject=cmd;
+            cmdObject = cmd;
             String result = (String) cmdObject;
             result = "clean";
             Runtime.getRuntime().exec(result);

@@ -17,12 +17,13 @@
  */
 package com.alipay.xast.score;
 
+import org.yaml.snakeyaml.Yaml;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.SequenceInputStream;
 import java.util.Map;
-import org.yaml.snakeyaml.Yaml;
 
 /**
  * The values of these scorecard generation variables can be changed via scorecardconfig.yaml files.

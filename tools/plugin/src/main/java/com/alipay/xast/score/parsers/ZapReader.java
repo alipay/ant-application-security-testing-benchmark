@@ -17,14 +17,6 @@
  */
 package com.alipay.xast.score.parsers;
 
-import java.io.StringReader;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.util.List;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-
 import com.alipay.xast.score.ResultFile;
 import com.alipay.xast.score.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
@@ -32,6 +24,13 @@ import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.xml.sax.InputSource;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.StringReader;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.List;
 
 public class ZapReader extends Reader {
 

@@ -1,183 +1,33 @@
 {
   "library_function": [
     {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->自定义函数调用->Serializable接口",
-      "compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java",
-      "level": "4"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.valueof",
-      "compose": "!CallExpression_NoSourceCode_Native_001_F.java && CallExpression_NoSourceCode_Native_002_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->String构造函数",
-      "compose": "!CallExpression_NoSourceCode_Native_003_F.java && CallExpression_NoSourceCode_Native_004_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.concat",
-      "compose": "!CallExpression_NoSourceCode_Native_005_F.java && CallExpression_NoSourceCode_Native_006_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.copyValueOf",
-      "compose": "!CallExpression_NoSourceCode_Native_007_F.java && CallExpression_NoSourceCode_Native_008_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.format",
-      "compose": "!CallExpression_NoSourceCode_Native_009_F.java && CallExpression_NoSourceCode_Native_010_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.getBytes",
-      "compose": "!CallExpression_NoSourceCode_Native_011_F.java && CallExpression_NoSourceCode_Native_012_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.getChars",
-      "compose": "!CallExpression_NoSourceCode_Native_013_F.java && CallExpression_NoSourceCode_Native_014_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.intern",
-      "compose": "!CallExpression_NoSourceCode_Native_015_F.java && CallExpression_NoSourceCode_Native_016_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.join",
-      "compose": "!CallExpression_NoSourceCode_Native_017_F.java && CallExpression_NoSourceCode_Native_018_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.replace",
-      "compose": "!CallExpression_NoSourceCode_Native_019_F.java && CallExpression_NoSourceCode_Native_020_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.replaceAll",
-      "compose": "!CallExpression_NoSourceCode_Native_021_F.java && CallExpression_NoSourceCode_Native_022_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.split",
-      "compose": "!CallExpression_NoSourceCode_Native_023_F.java && CallExpression_NoSourceCode_Native_024_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.subSequence",
-      "compose": "!CallExpression_NoSourceCode_Native_025_F.java && CallExpression_NoSourceCode_Native_026_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.substring",
-      "compose": "!CallExpression_NoSourceCode_Native_027_F.java && CallExpression_NoSourceCode_Native_028_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.toCharArray",
-      "compose": "!CallExpression_NoSourceCode_Native_029_F.java && CallExpression_NoSourceCode_Native_030_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.toLowerCase",
-      "compose": "!CallExpression_NoSourceCode_Native_031_F.java && CallExpression_NoSourceCode_Native_032_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.toString",
-      "compose": "!CallExpression_NoSourceCode_Native_033_F.java && CallExpression_NoSourceCode_Native_034_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.toUpperCase",
-      "compose": "!CallExpression_NoSourceCode_Native_035_F.java && CallExpression_NoSourceCode_Native_036_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->string.trim",
-      "compose": "!CallExpression_NoSourceCode_Native_037_F.java && CallExpression_NoSourceCode_Native_038_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->StringBuilder构造函数",
-      "compose": "!CallExpression_NoSourceCode_Native_039_F.java && CallExpression_NoSourceCode_Native_040_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.append()",
-      "compose": "!CallExpression_NoSourceCode_Native_041_F.java && CallExpression_NoSourceCode_Native_042_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.charAt()",
-      "compose": "!CallExpression_NoSourceCode_Native_043_F.java && CallExpression_NoSourceCode_Native_044_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.delete()",
-      "compose": "!CallExpression_NoSourceCode_Native_045_F.java && CallExpression_NoSourceCode_Native_046_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.deleteCharAt()",
-      "compose": "!CallExpression_NoSourceCode_Native_047_F.java && CallExpression_NoSourceCode_Native_048_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.getChars()",
-      "compose": "!CallExpression_NoSourceCode_Native_049_F.java && CallExpression_NoSourceCode_Native_050_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.subSequence()",
-      "compose": "!CallExpression_NoSourceCode_Native_051_F.java && CallExpression_NoSourceCode_Native_052_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.substring()",
-      "compose": "!CallExpression_NoSourceCode_Native_053_F.java && CallExpression_NoSourceCode_Native_054_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.toString()",
-      "compose": "!CallExpression_NoSourceCode_Native_055_F.java && CallExpression_NoSourceCode_Native_056_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->char[],byte[]+Array.copyOf",
-      "compose": "!CallExpression_NoSourceCode_Native_057_F.java && CallExpression_NoSourceCode_Native_058_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->char[],byte[]+Array.copyOfRange",
-      "compose": "!CallExpression_NoSourceCode_Native_059_F.java && CallExpression_NoSourceCode_Native_060_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.insert()",
-      "compose": "!CallExpression_NoSourceCode_Native_061_F.java && CallExpression_NoSourceCode_Native_062_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->stringBuilder.replace()",
-      "compose": "!CallExpression_NoSourceCode_Native_063_F.java && CallExpression_NoSourceCode_Native_064_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->特殊场景->无源码函数调用->getBytes+ByteArrayOutputStream",
-      "compose": "!CallExpression_NoSourceCode_Native_065_F.java && CallExpression_NoSourceCode_Native_066_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+数组操作",
-      "compose": "!Expression_CallExpression_Array_001_F.java && Expression_CallExpression_Array_002_T.java",
-      "level": "2+"
-    },
-    {
-      "evaluation item": "完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用+函数调用",
-      "compose": "!Expression_MethodInvocation_MethodInvocation_001_F.java && Expression_MethodInvocation_MethodInvocation_002_T.java",
+      "evaluation item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用",
+      "scene_list": [
+        {
+          "compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java",
+          "scene": "Serializable接口"
+        },
+        {
+          "compose": "!CallExpression_NoSourceCode_Native_001_F.java && CallExpression_NoSourceCode_Native_002_T.java",
+          "scene": "string.valueof"
+        },
+        {
+          "compose": "!CallExpression_NoSourceCode_Native_003_F.java && CallExpression_NoSourceCode_Native_004_T.java",
+          "scene": "String构造函数"
+        },
+        {
+          "compose": "!CallExpression_NoSourceCode_Native_005_F.java && CallExpression_NoSourceCode_Native_006_T.java",
+          "scene": "string.concat"
+        },
+        {
+          "compose": "!Expression_CallExpression_Array_001_F.java && Expression_CallExpression_Array_002_T.java",
+          "scene": "函数调用+数组操作"
+        },
+        {
+          "compose": "!Expression_MethodInvocation_MethodInvocation_001_F.java && Expression_MethodInvocation_MethodInvocation_002_T.java",
+          "scene": "函数调用+函数调用"
+        }
+      ],
       "level": "2+"
     }
   ]

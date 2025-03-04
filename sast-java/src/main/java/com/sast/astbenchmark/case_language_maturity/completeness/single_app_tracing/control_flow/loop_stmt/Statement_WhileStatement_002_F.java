@@ -10,13 +10,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-while语句
+ * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->while语句
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->while语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_WhileStatement_002_F/{type}/{cmd}
 // evaluation information end
 @RestController()
@@ -26,10 +26,9 @@ public class Statement_WhileStatement_002_F {
     public Map<String, Object> aTaintCase0118(@PathVariable String cmd, @PathVariable String type) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";;
-            while(StringUtils.equals(type,"mkdir")) {
-                a = " "+ a;
-                break;
+            String a = "mkdir";
+            while (StringUtils.equals(type, "mkdir")) {
+                a = " " + a;
             }
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

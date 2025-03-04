@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 数据流不可达->被固定值赋值
+ * Introduction 准确度->流敏感分析->常规顺序执行语句->数据流不可达->被固定值赋值
  * Level 2
  * Date 2024-05-09
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感->数据流不可达->被固定值赋值
+// evaluation item = 准确度->流敏感分析->常规顺序执行语句
 // bind_url = accuracy/flow_sensitive/normal_stmt/AssignedByFixedValue_001_F
 // evaluation information end
 @RestController()
@@ -25,7 +25,7 @@ public class AssignedByFixedValue_001_F {
     public Map<String, Object> aTaintCase0158(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            cmd= "ls";
+            cmd = "ls";
             Runtime.getRuntime().exec(cmd);
             modelMap.put("status", "success");
         } catch (Exception e) {

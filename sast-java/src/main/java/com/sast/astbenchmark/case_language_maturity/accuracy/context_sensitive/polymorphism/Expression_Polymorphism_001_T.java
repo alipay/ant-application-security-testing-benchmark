@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-多态
+ * Introduction 准确度->上下文敏感分析->多态
  * Level 2
  * Date 2024-08-16
  */
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->上下文敏感->多态
-// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T
+// evaluation item =  准确度->上下文敏感分析->多态
+// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T/{cmd}
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/polymorphism")

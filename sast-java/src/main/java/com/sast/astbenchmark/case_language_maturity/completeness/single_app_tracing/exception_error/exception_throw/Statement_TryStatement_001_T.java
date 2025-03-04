@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction ->try语句
- * Level 4
+ * Introduction 完整度->单应用跟踪完整度->异常与错误处理->异常抛出和捕获->try语句
+ * Level 2+
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->链路跟踪完整度->异常与错误处理->异常处理->try语句
+// evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->异常抛出和捕获
 // bind_url = completeness/single_app_tracing/exception_error/exception_throw/Statement_TryStatement_001_T/{cmd}
 // evaluation information end
 @RestController

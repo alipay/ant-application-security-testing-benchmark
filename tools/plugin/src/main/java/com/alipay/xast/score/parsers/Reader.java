@@ -17,13 +17,6 @@
  */
 package com.alipay.xast.score.parsers;
 
-import java.io.File;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import com.alipay.xast.score.BenchmarkScore;
 import com.alipay.xast.score.ResultFile;
 import com.alipay.xast.score.TestSuiteResults;
@@ -32,6 +25,13 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public abstract class Reader {
 

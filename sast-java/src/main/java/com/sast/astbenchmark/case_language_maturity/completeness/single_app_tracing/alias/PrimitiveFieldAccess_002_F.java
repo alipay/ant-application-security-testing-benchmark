@@ -11,17 +11,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 完整度-链路跟踪完整度-引用和指针-别名-对象指针-PrimitiveFieldAccess-scene1
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->别名->PrimitiveFieldAccess-scene1
+ * Level 2
  * Date 2024-07-02
  */
 @RestController
 // evaluation information start
 // real case = false
-// evaluation item = 
-// bind_url = completeness/single_app_tracing/references_pointers/alias/PrimitiveFieldAccess_002_F
+// evaluation item = 完整度->单应用跟踪完整度->别名
+// bind_url = completeness/single_app_tracing/alias/PrimitiveFieldAccess_002_F
 // evaluation information end
-@RequestMapping("completeness/single_app_tracing/references_pointers/alias")
+@RequestMapping("completeness/single_app_tracing/alias")
 public class PrimitiveFieldAccess_002_F {
     @PostMapping(value = "PrimitiveFieldAccess_002_F")
     public Map<String, Object> testcase(@RequestParam int id) {

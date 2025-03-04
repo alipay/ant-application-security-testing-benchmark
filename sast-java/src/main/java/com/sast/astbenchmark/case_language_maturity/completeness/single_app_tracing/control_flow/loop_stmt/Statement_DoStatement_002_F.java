@@ -9,13 +9,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的语句-do_while语句
+ * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->do_while语句
  * Level 2
  * Date 2024-11-10
  */
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->链路跟踪完整度->控制流->循环语句->do_while语句
+// evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_DoStatement_002_F/{cmd}
 // evaluation information end
 @RestController()
@@ -25,13 +25,13 @@ public class Statement_DoStatement_002_F {
     public Map<String, Object> aTaintCase0128(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String a ="mkdir";
+            String a = "mkdir";
             int i = 10;
 
             do {
-                a= a+"|";
+                a = a + "|";
                 i++;
-            }while (i<20);
+            } while (i < 20);
 
             Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");

@@ -17,17 +17,6 @@
  */
 package com.alipay.xast.score.report;
 
-import java.awt.*;
-import java.awt.geom.Point2D;
-import java.io.File;
-import java.io.IOException;
-import java.security.SecureRandom;
-import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Set;
-
 import com.alipay.xast.score.BenchmarkScore;
 import com.alipay.xast.score.CategoryResults;
 import com.alipay.xast.score.TestSuiteResults;
@@ -41,6 +30,17 @@ import org.jfree.chart.plot.XYPlot;
 import org.jfree.data.xy.XYDataItem;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+
+import java.awt.*;
+import java.awt.geom.Point2D;
+import java.io.File;
+import java.io.IOException;
+import java.security.SecureRandom;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class ScatterVulns extends ScatterPlot {
 

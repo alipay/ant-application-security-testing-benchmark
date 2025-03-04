@@ -17,6 +17,8 @@
  */
 package com.alipay.xast.score;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +26,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * TestSuiteResults contains the expected results for each test case in a test suite, if its

@@ -28,12 +28,13 @@ import com.alipay.xast.score.TestSuiteResults;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class ZapJsonReader extends Reader {
 

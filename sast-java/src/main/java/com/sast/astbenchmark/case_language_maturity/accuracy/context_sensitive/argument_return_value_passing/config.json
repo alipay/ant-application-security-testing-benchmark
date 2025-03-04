@@ -1,0 +1,30 @@
+{
+  "argument_return_value_passing": [
+    {
+      "evaluation item": "准确度->上下文敏感分析->参数/返回值传递",
+      "level": "2",
+      "scene_list": [
+        {
+          "compose": "DifferentParamsForFunction_005_T.java && !DifferentParamsForFunction_006_F.java",
+          "scene": "参数值传递->VarargArrayAccess"
+        },
+        {
+          "compose": "Expression_CallExpression_Package_001_T.java && !Expression_CallExpression_Package_002_F.java",
+          "scene": "参数值传递->变量赋值表达式直接引入而不是import"
+        },
+        {
+          "compose": "Expression_MethodInvocation_001_T.java && !Expression_MethodInvocation_002_F.java",
+          "scene": "参数值传递->ast对象->函数调用"
+        },
+        {
+          "compose": "Expression_MethodInvocation_InfixExpression_001_T.java && !Expression_MethodInvocation_InfixExpression_002_F.java",
+          "scene": "参数值传递->中缀表达式"
+        },
+        {
+          "compose": "return_value_passing_001_T.java && !return_value_passing_002_F.java",
+          "scene": "返回值传递"
+        }
+      ]
+    }
+  ]
+}

@@ -10,14 +10,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 污点链路样本中的表达式-函数调用+参数获取
- * Level 3
+ * Introduction 完整度->单应用跟踪完整度->函数和方法调用->链式调用->函数调用 + BinaryOperation
+ * Level 2
  * Date 2024-05-09
  */
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->基础跟踪能力->污点链路完整度->ast对象->函数调用 + BinaryOperation
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->链式调用
 // bind_url = completeness/single_app_tracing/function_call/chained_call/Expression_MethodInvocation_Argument_002_T
 // evaluation information end
 @RestController()
@@ -27,7 +27,7 @@ public class Expression_MethodInvocation_Argument_002_T {
     public Map<String, Object> aTaintCase0116(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            HttpRequest.post("http://localhost:39100/ataint/case00124/2?cmd="+cmd)
+            HttpRequest.post("http://localhost:39100/ataint/case00124/2?cmd=" + cmd)
                     .execute();
             modelMap.put("status", "success");
         } catch (Exception e) {
