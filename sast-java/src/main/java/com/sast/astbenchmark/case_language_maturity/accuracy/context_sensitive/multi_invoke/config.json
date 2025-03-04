@@ -13,7 +13,7 @@
           "scene": "相同函数调用不同参数-scene2"
         },
         {
-          "compose": "HeapAllocSite_001_T.java && !HeapAllocSite_002_F.java",
+          "compose": "DifferentParamsForFunction_005_T.java && !DifferentParamsForFunction_006_F.java",
           "scene": "HeapAllocSite"
         },
         {
