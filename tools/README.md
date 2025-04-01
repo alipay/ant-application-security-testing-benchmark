@@ -15,7 +15,7 @@
 
 ### 安装
 ```
-cd Ant-xAST-Utils
+cd tools
 mvn install
 ```
 
