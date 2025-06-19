@@ -11,15 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->别名->StaticFieldAlias FlowSensitive
- * Level 2
- * Date 2024-07-05
- */
 @RestController
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->别名
+// scene introduction = StaticFieldAlias FlowSensitive
+// level = 2
 // bind_url = completeness/single_app_tracing/alias/StaticFieldAlias_002_F
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/alias")

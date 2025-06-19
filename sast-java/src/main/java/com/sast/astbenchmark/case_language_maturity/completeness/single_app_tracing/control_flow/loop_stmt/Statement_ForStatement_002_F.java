@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->流程控制语句->循环结构->for语句
- * Level 2
- * Date 2024-11-10
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
+// scene introduction = for语句
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/Statement_ForStatement_002_F/{cmd}
 // evaluation information end
 @RestController()

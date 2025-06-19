@@ -11,14 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->流敏感分析->常规顺序执行语句->对象属性->对象指针->流敏感指针分析-过程间分析-scene2
- * Level 2
- * Date 2024-07-02
- */
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->流敏感分析->常规顺序执行语句
+// scene introduction = 对象属性->对象指针->流敏感指针分析-过程间分析-scene2
+// level = 2
 // bind_url = accuracy/flow_sensitive/normal_stmt/FlowSensitiveAlias_004_F
 // evaluation information end
 @RestController

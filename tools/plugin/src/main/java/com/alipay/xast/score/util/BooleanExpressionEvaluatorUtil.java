@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
 public class BooleanExpressionEvaluatorUtil {
 
     // 正则表达式匹配占位符形
-    private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\b([a-zA-Z0-9_]+\\.java)\\b");
+    private static final Pattern PLACEHOLDER_PATTERN = Pattern.compile("\\b([a-zA-Z0-9_]+\\.(java|py|js|go))\\b");
 
     /**
      * 计算布尔表达式的值
@@ -47,6 +47,7 @@ public class BooleanExpressionEvaluatorUtil {
             }
             matcher.appendTail(buffer);
             String bufferString = buffer.toString();
+            bufferString = bufferString.replaceAll("\\b([a-zA-Z0-9_]+(?:/[a-zA-Z0-9_]+)*)/(true|false)\\b", "$2");
 
             // 使用 ScriptEngine 计算布尔表达式的值
             if (evaluateExpression(bufferString)){

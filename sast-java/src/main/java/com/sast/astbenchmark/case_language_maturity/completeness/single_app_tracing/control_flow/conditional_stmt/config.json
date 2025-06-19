@@ -1,30 +1,34 @@
 {
   "conditional_stmt": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->流程控制语句->条件语句",
-      "scene_list": [
+      "evaluation_item": "完整度->单应用跟踪完整度->流程控制语句->条件语句",
+      "scene_levels": [
         {
-          "compose": "Statement_IfStatement_001_T.java && !Statement_IfStatement_002_F.java",
-          "scene": "if语句-else body"
-        },
-        {
-          "compose": "Statement_IfStatement_003_T.java && !Statement_IfStatement_004_F.java",
-          "scene": "if语句-if body"
-        },
-        {
-          "compose": "Statement_IfStatement_005_T.java && !Statement_IfStatement_006_F.java",
-          "scene": "if语句-elseif body"
-        },
-        {
-          "compose": "Statement_IfStatement_007_T.java && !Statement_IfStatement_008_F.java",
-          "scene": "if语句-condition"
-        },
-        {
-          "compose": "Statement_SwitchStatement_001_T.java && !Statement_SwitchStatement_002_F.java",
-          "scene": "switch语句"
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Statement_IfStatement_001_T.java && !Statement_IfStatement_002_F.java",
+              "scene": "if语句-else body"
+            },
+            {
+              "compose": "Statement_IfStatement_003_T.java && !Statement_IfStatement_004_F.java",
+              "scene": "if语句-if body"
+            },
+            {
+              "compose": "Statement_IfStatement_005_T.java && !Statement_IfStatement_006_F.java",
+              "scene": "if语句-elseif body"
+            },
+            {
+              "compose": "Statement_IfStatement_007_T.java && !Statement_IfStatement_008_F.java",
+              "scene": "if语句-condition"
+            },
+            {
+              "compose": "Statement_SwitchStatement_001_T.java && !Statement_SwitchStatement_002_F.java",
+              "scene": "switch语句"
+            }
+          ]
         }
-      ],
-      "level": "2"
+      ]
     }
   ]
 }

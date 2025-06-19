@@ -27,6 +27,8 @@ import com.alipay.xast.score.util.ScoreCardFormart;
 import com.alipay.xast.score.util.ScoreCardHeader;
 import com.alipay.xast.score.util.XastSupoortToolType;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -49,6 +51,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -60,6 +63,9 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Mojo(name = "create-scorecard", requiresProject = false, defaultPhase = LifecyclePhase.COMPILE)
@@ -127,6 +133,7 @@ public class BenchmarkScore extends AbstractMojo {
     private static Set<Tool> tools = new TreeSet<Tool>();
 
     private static HashMap<String, String> levelMap = new HashMap<>();
+    private static HashMap<String, String> composeMap = new HashMap<>();
 
     public static Configuration config;
 
@@ -197,11 +204,12 @@ public class BenchmarkScore extends AbstractMojo {
      * @param args - The command line arguments.
      */
     public static void main(String[] args) throws Exception {
-        //System.setProperty("directoryPath","/Users/curry/IdeaProjects/git/ant-application-security-testing-benchmark");
-        //System.setProperty("resultFile","/Users/curry/Desktop/xast-result/Benchmark_1.2-pmd-v5.2.3-11.xml");
-        //System.setProperty("xlsxFile","/Users/curry/Desktop/xast-result/xAST_v_1.0.0_pmd_v5.2.3_sast.xlsx");
+        System.setProperty("directoryPath","/Users/curry/IdeaProjects/antcode/ant-application-security-testing-benchmark");
+        System.setProperty("resultFile","/Users/curry/Desktop/xast-result/Benchmark_1.2-pmd-v5.2.3-11.xml");
+        System.setProperty("lang","go");
+        //System.setProperty("xlsxFile","/Users/curry/IdeaProjects/antcode/ant-application-security-testing-benchmark/results/xAST_v_1.0.0_pmd_v5.2.3_sast_python3.xlsx");
         try {
-             loadConfigFromCommandLineArguments(args);
+            loadConfigFromCommandLineArguments(args);
         } catch (RuntimeException e) {
             System.out.println("Error processing configuration for Scoring. Aborting.");
             System.exit(-1);
@@ -231,6 +239,13 @@ public class BenchmarkScore extends AbstractMojo {
         }else if(StringUtils.isNotEmpty(System.getProperty("resultFile"))){
             cons.put("resultFile",System.getProperty("resultFile"));
         }
+        List<String> langs= Lists.newArrayList("java","python3","python2","js","go");
+        if(StringUtils.isEmpty(System.getProperty("lang"))|| !langs.contains(System.getProperty("lang"))){
+            System.out.println("请指定语言类型：lang=java/python3/python2/js/go");
+            System.exit(-1);
+        }else {
+            cons.put("lang",System.getProperty("lang"));
+        }
         mainChange(cons);
     }
 
@@ -238,7 +253,7 @@ public class BenchmarkScore extends AbstractMojo {
         /**
          * 1 读取靶场数据 - 预期结果
          */
-        Map<String, List<TestCaseResult>> expectedResultsMap = readExpectedResultsNew(cons.get("directoryPath"));
+        Map<String, List<TestCaseResult>> expectedResultsMap = readExpectedResultsNew(cons.get("directoryPath"),cons.get("lang"));
         if (expectedResultsMap == null) {
             System.out.println("Couldn't read expected results file: " + expectedResultsMap);
             System.exit(-1);
@@ -290,7 +305,7 @@ public class BenchmarkScore extends AbstractMojo {
 
         try {
             if (!rawToolResultsFile.isDirectory()) {
-                processNew(rawToolResultsFile, expectedResultsMap, tools, scoreCardDir);
+                processNew(rawToolResultsFile, expectedResultsMap, tools, scoreCardDir,cons.get("lang"));
             }
             System.exit(-1);
         } catch (Exception e) {
@@ -303,7 +318,7 @@ public class BenchmarkScore extends AbstractMojo {
             File rawToolResultsFile,
             Map<String, List<TestCaseResult>> expectedResults,
             Set<Tool> tools,
-            File scoreCardDir) {
+            File scoreCardDir,String lang) {
 
         try {
             String resultsFileName = rawToolResultsFile.getName();
@@ -329,10 +344,10 @@ public class BenchmarkScore extends AbstractMojo {
                 String toolType = rawToolResults.toolType.name().toLowerCase(Locale.ROOT);
                 TestSuiteResults actualResults =
                         analyzeNew(
-                                expectedResults.get(toolType), rawToolResults);
+                                expectedResults.get(toolType+"-"+lang), rawToolResults);
                 // Produce a .csv results file of the actual results, except if its a commercial
                 // tool, and we are in showAveOnly mode.
-                String actualResultsFileName = produceResultsFileNew(actualResults, scoreCardDir, toolType);
+                String actualResultsFileName = produceResultsFileNew(actualResults, scoreCardDir, toolType,lang);
 
                 xlsxToHtml(scoreCardDir.getAbsolutePath()+"/"+actualResultsFileName,scoreCardDir);
 
@@ -347,6 +362,11 @@ public class BenchmarkScore extends AbstractMojo {
             System.out.println("Error processing " + rawToolResultsFile + ". Continuing.");
             e.printStackTrace();
         }
+    }
+    private static Map<String,String> buildEvResMap(String level, String result) {
+        Map<String,String> resMap = Maps.newHashMap();
+        resMap.put(level,result);
+        return resMap;
     }
 
     private static void xlsxToHtml(String fileName, File scoreCardDir) throws Exception {
@@ -398,20 +418,21 @@ public class BenchmarkScore extends AbstractMojo {
         String fourPlusColour = "#4AA2F0";
         HashSet<String> appraiseList = new HashSet<>();
         Map<String,Boolean> booleanMap = new HashMap();
-        Map<String,String> evaluateMap = new HashMap();
+        Map<String,Map<String,String>> evaluateMap = new HashMap();
         Map<String,String> colourMap = new HashMap();
-        HashSet<String> evaluateSet = new HashSet<>();
+        //HashSet<String> evaluateSet = new HashSet<>();
+        //HashSet<String> evaluateSet2 = new HashSet<>();
         //工具名和工具类型赋值
         String[] fileNameParts = fileName.split("_");
         if (fileNameParts.length >= 2){
-            toolName = fileNameParts[fileNameParts.length-3];
-            toolTypeNew = fileNameParts[fileNameParts.length-1];
+            toolName = fileNameParts[fileNameParts.length-4];
+            toolTypeNew = fileNameParts[fileNameParts.length-2];
             // 去除扩展名 ".csv"
             toolTypeNew = toolTypeNew.replace(".xlsx", "");
         }
         // 检查文件名中是否指定出工具类型
         if (!XastSupoortToolType.isSupportToolType(toolTypeNew.toLowerCase())){
-            throw new Exception("当前处理的文件名未标名工具类型，请根据工具类型处理为xAST_v_xAST版本_工具名_工具类型.xlsx，例如:xAST_v_1.0.0_alipayscanner_sast.xlsx");
+            throw new Exception("当前处理的文件名未标名工具类型，请根据工具类型处理为xAST_v_xAST版本_工具名_工具类型_语言.xlsx，例如:xAST_v_1.0.0_alipayscanner_sast_java.xlsx");
         }
 
         try {
@@ -427,23 +448,23 @@ public class BenchmarkScore extends AbstractMojo {
                 scanFindVuln = scanFindVuln.toUpperCase();
                 appraiseList.add((String) data.get(i).get(2));
                 //处理获取到的列值
-                if (StringUtils.equals(hasVuln, "TRUE")) {
-                    if (StringUtils.equals(scanFindVuln, "TRUE")) {
+                if (StringUtils.equalsIgnoreCase(hasVuln, "TRUE")) {
+                    if (StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE")) {
                         TP++;
                     }
-                    else if (StringUtils.equals(scanFindVuln, "FALSE")) {
+                    else if (StringUtils.equalsIgnoreCase(scanFindVuln, "FALSE")) {
                         FN++;
                     }
                 }
-                else if (StringUtils.equals(hasVuln, "FALSE")) {
-                    if (StringUtils.equals(scanFindVuln, "TRUE")) {
+                else if (StringUtils.equalsIgnoreCase(hasVuln, "FALSE")) {
+                    if (StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE")) {
                         FP++;
                     }
-                    else if (StringUtils.equals(scanFindVuln, "FALSE")) {
+                    else if (StringUtils.equalsIgnoreCase(scanFindVuln, "FALSE")) {
                         TN++;
                     }
                 }
-                if (StringUtils.equals(scanFindVuln, "TRUE")) {
+                if (StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE")) {
                     booleanMap.put((String) data.get(i).get(0), true);
                 }else {
                     booleanMap.put((String) data.get(i).get(0), false);
@@ -481,19 +502,41 @@ public class BenchmarkScore extends AbstractMojo {
                     continue;
                 }
                 String[] parts = evaluate.split("->");
-                String level = levelMap.get(evaluate);
+                //String level = levelMap.get(evaluate);
+                String level = (String) data.get(i).get(6);
                 if (StringUtils.isNotBlank(evaluateFormula) && StringUtils.isNotBlank(evaluate)){
-                    if (evaluateSet.contains(evaluate)){
-                        continue;
-                    }
-                     evaluateSet.add(evaluate);
+                    //if (evaluateSet.contains(evaluate)){
+                    //    continue;
+                    //}
+                    // evaluateSet.add(evaluate);
                      result = BooleanExpressionEvaluatorUtil.evaluate(evaluateFormula, booleanMap);
+
                     if (result) {
-                        evaluateValue++;
-                        evaluateMap.put(evaluate, "已达成");
+                        if(evaluateMap.get(evaluate) == null) {
+                            evaluateMap.put(evaluate,buildEvResMap(level,"已达成") );
+                        }else {
+                            Map<String,String> resMap = evaluateMap.get(evaluate);
+                            resMap.put(level,"已达成");
+                            evaluateMap.put(evaluate,resMap);
+                        }
                     } else {
-                        evaluateMap.put(evaluate, "未达成");
+                        if(evaluateMap.get(evaluate) == null) {
+                            evaluateMap.put(evaluate,buildEvResMap(level,"未达成") );
+                        }else {
+                            Map<String,String> resMap = evaluateMap.get(evaluate);
+                            resMap.put(level,"未达成");
+                            evaluateMap.put(evaluate,resMap);
+                        }
                     }
+                    //if (result && !level.contains("+")) {
+                    //    evaluateSet2.add(evaluate);
+                    //}
+                    //if (result && !level.contains("+")) {
+                    //    evaluateMap.put(evaluate, "已达成");
+                    //    evaluateSet2.add(evaluate);
+                    //} else if (!result && !level.contains("+")){
+                    //    evaluateMap.put(evaluate, "未达成");
+                    //}
                 }
                 //计算每种等级评价项总数
                 if (StringUtils.equals(level, "1")) {
@@ -506,7 +549,9 @@ public class BenchmarkScore extends AbstractMojo {
                 } else if (StringUtils.equals(level, "1+")) {
                     onePlusSet.add(evaluate);
                     levelList.add("1+");
-                    colourMap.put(parts[parts.length -1],onePlusColour);
+                    if (colourMap.get(parts[parts.length -1]) == null){
+                        colourMap.put(parts[parts.length -1],onePlusColour);
+                    }
                     if (result) {
                         onePlusFinishSet.add(evaluate);
                     }
@@ -520,7 +565,9 @@ public class BenchmarkScore extends AbstractMojo {
                 } else if (StringUtils.equals(level, "2+")) {
                     twoPlusSet.add(evaluate);
                     levelList.add("2+");
-                    colourMap.put(parts[parts.length -1],twoPlusColour);
+                    if (colourMap.get(parts[parts.length -1]) == null){
+                        colourMap.put(parts[parts.length -1],twoPlusColour);
+                    }
                     if (result) {
                         twoPlusFinishSet.add(evaluate);
                     }
@@ -534,14 +581,18 @@ public class BenchmarkScore extends AbstractMojo {
                 } else if (StringUtils.equals(level, "3+")) {
                     threePlusSet.add(evaluate);
                     levelList.add("3+");
-                    colourMap.put(parts[parts.length -1],threePlusColour);
+                    if (colourMap.get(parts[parts.length -1]) == null){
+                        colourMap.put(parts[parts.length -1],threePlusColour);
+                    }
                     if (result) {
                         threePlusFinishSet.add(evaluate);
                     }
                 } else if (StringUtils.equals(level, "4")) {
                     fourSet.add(evaluate);
                     levelList.add("4");
-                    colourMap.put(parts[parts.length -1],fourColour);
+                    if (colourMap.get(parts[parts.length -1]) == null){
+                        colourMap.put(parts[parts.length -1],fourPlusColour);
+                    }
                     if (result) {
                         fourFinishSet.add(evaluate);
                     }
@@ -619,8 +670,29 @@ public class BenchmarkScore extends AbstractMojo {
                    levelTable = String.valueOf(levelTableBuilder);
                 }
             //达成率
-            if (evaluateSet.size() != 0){
-                double evaluateAccuracyValue = evaluateValue/evaluateSet.size() * 100;
+            if (!evaluateMap.isEmpty()){
+                AtomicInteger yes = new AtomicInteger();
+                evaluateMap.forEach((k,v) -> {
+                    if (v.size() >= 2) {
+                        v.forEach((k1,v1)->{
+                            if ("已达成".equals(v1)&&!k1.contains("+")) {
+                                yes.getAndIncrement();
+                            }
+                        });
+                    }else {
+                        v.forEach((k1, v1) -> {
+                            if ("已达成".equals(v1)) {
+                                yes.getAndIncrement();
+                            }
+                        });
+                    }
+                });
+                //for (Map.Entry<String, String> entry : evaluateMap.entrySet()) {
+                //    if ("已达成".equals(entry.getValue())) {
+                //        evaluateSet2.add(entry.getKey());
+                //    }
+                //}
+                double evaluateAccuracyValue = (double) yes.get()/evaluateMap.size() * 100;
                 evaluateAccuracy = String.format("%.2f", evaluateAccuracyValue) + "%";
             }
         }catch (Exception e){
@@ -663,11 +735,22 @@ public class BenchmarkScore extends AbstractMojo {
                         }
                         if (k == parts.length-1){
                             if (evaluateMap.containsKey(appraise)){
-                                String evaluate = evaluateMap.get(appraise);
-                                if (StringUtils.equals(evaluate, "已达成")){
-                                    jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                Map<String,String> evaluate = evaluateMap.get(appraise);
+                                AtomicReference<String> evaluateRes = new AtomicReference<>("");
+                                if(evaluate.size()>=2){
+                                    evaluate.forEach((a, b) -> {
+                                        if (!a.contains("+")){
+                                            evaluateRes.set(b);
+                                        }
+                                       }
+                                    );
                                 }else {
-                                    jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
+                                    evaluate.forEach((a,b)->evaluateRes.set(b));
+                                }
+                                if (StringUtils.equals(evaluateRes.get(), "已达成")){
+                                    jsonArray.put(new JSONObject().put("topic", "已达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                }else {
+                                    jsonArray.put(new JSONObject().put("topic", "未达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
                                 }
                             }
                         }
@@ -689,11 +772,22 @@ public class BenchmarkScore extends AbstractMojo {
                             number = 0;
                             if (k == parts.length-1){
                                 if (evaluateMap.containsKey(appraise)){
-                                    String evaluate = evaluateMap.get(appraise);
-                                    if (StringUtils.equals(evaluate, "已达成")){
-                                        jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                    Map<String,String> evaluate = evaluateMap.get(appraise);
+                                    AtomicReference<String> evaluateRes = new AtomicReference<>("");
+                                    if(evaluate.size()>=2){
+                                        evaluate.forEach((a, b) -> {
+                                                    if (!a.contains("+")){
+                                                        evaluateRes.set(b);
+                                                    }
+                                                }
+                                        );
                                     }else {
-                                        jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
+                                        evaluate.forEach((a,b)->evaluateRes.set(b));
+                                    }
+                                    if (StringUtils.equals(evaluateRes.get(), "已达成")){
+                                        jsonArray.put(new JSONObject().put("topic", "已达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                    }else {
+                                        jsonArray.put(new JSONObject().put("topic", "未达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
                                     }
                                 }
                             }
@@ -707,11 +801,22 @@ public class BenchmarkScore extends AbstractMojo {
                             }
                             if (k == parts.length-1){
                                 if (evaluateMap.containsKey(appraise)){
-                                    String evaluate = evaluateMap.get(appraise);
-                                    if (StringUtils.equals( evaluate, "已达成")){
-                                        jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                    Map<String,String> evaluate = evaluateMap.get(appraise);
+                                    AtomicReference<String> evaluateRes = new AtomicReference<>("");
+                                    if(evaluate.size()>=2){
+                                        evaluate.forEach((a, b) -> {
+                                                    if (!a.contains("+")){
+                                                        evaluateRes.set(b);
+                                                    }
+                                                }
+                                        );
                                     }else {
-                                        jsonArray.put(new JSONObject().put("topic", evaluate).put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
+                                        evaluate.forEach((a,b)->evaluateRes.set(b));
+                                    }
+                                    if (StringUtils.equals(evaluateRes.get(), "已达成")){
+                                        jsonArray.put(new JSONObject().put("topic", "已达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#32CD32"));
+                                    }else {
+                                        jsonArray.put(new JSONObject().put("topic", "未达成").put("parentid", finalId).put("id","sub"+finalId).put("background-color","#FF7F50"));
                                     }
                                 }
                             }
@@ -749,7 +854,8 @@ public class BenchmarkScore extends AbstractMojo {
                         .replace("${level_table}", levelTable)
                         .replace("${xmind_data}", jsonArray.toString());
 
-            Files.write(xastToolFilePath, html.getBytes());
+            //Files.write(xastToolFilePath, html.getBytes());
+            Files.write(xastToolFilePath, Collections.singleton(html), StandardCharsets.UTF_8);
             System.out.println("扫描工具在xAST评价体系下的评价结果已输出到: " + xastToolFilePath);
         } catch (IOException e) {
             System.out.println("Error updating results table in: " + xastToolFilePath.getFileName());
@@ -974,39 +1080,51 @@ public class BenchmarkScore extends AbstractMojo {
         return tr;
     }
 
-    private static Map<String, List<TestCaseResult>> readExpectedResultsNew(String directoryPath) {
+    //private static List<String> benchmarkWithLang= Lists.newArrayList("sast-java","dast-java","iast-java","sast-python");
+    //private static List<String> benchmarkWithLang = Lists.newArrayList("sast-java","sast-python3","sast-python2","sast-js","sast-go","iast-java","dast-java");
+    //
+    //private static List<String> toolPre = Lists.newArrayList("sast","iast","dast");
+    private static boolean containsToolPath(String scanPath,Map<String, List<TestCaseResult>> results){
+        for (String s : results.keySet()) {
+            if (scanPath.contains(s)){
+                return true;
+            }
+        }
+        return false;
+    }
+    private static Map<String, List<TestCaseResult>> readExpectedResultsNew(String directoryPath,String lang) {
         Map<String, List<TestCaseResult>> result = new HashMap<>();
-        // Map<String,List<String>> result = new HashMap<>();
-        result.put("dast", new ArrayList<>());
-        result.put("sast", new ArrayList<>());
-        result.put("iast", new ArrayList<>());
-        List<String> datas = new ArrayList<>();
+
+        //for (String benchmark: benchmarkWithLang) {
+        //    result.put(benchmark,new ArrayList<>());
+        //}
+        for (ToolType value : ToolType.values()) {
+            result.put(value.name().toLowerCase()+"-"+lang,new ArrayList<>());
+        }
+        List<String> benchmarkWithLang=result.keySet().stream().collect(Collectors.toList());
+        //List<String> datas = new ArrayList<>();
         try (Stream<Path> filePathStream =
-                Files.find(
-                        Paths.get(directoryPath),
-                        Integer.MAX_VALUE,
-                        (path, attr) ->
-                                attr.isRegularFile()
-                                        //&& path.toString().contains("cases"),
-                                        && path.toString().contains("case")
-                                        && ( path.toString().contains("sast-java")
-                                               ),
-                        FileVisitOption.FOLLOW_LINKS)) {
+                     Files.find(
+                             Paths.get(directoryPath),
+                             Integer.MAX_VALUE,
+                             (path, attr) ->
+                                     attr.isRegularFile()
+                                             //&& path.toString().contains("cases"),
+                                             && path.toString().contains("case")
+                                             && containsToolPath(path.toString(),result),
+                             FileVisitOption.FOLLOW_LINKS)) {
             // 收集所有文件路径到一个 List 中
             //List<Path> filePaths = filePathStream.collect(Collectors.toList());
             filePathStream.forEach(
                     f -> {
                         try {
                             System.out.println("\nProcessing file: " + f);
-                            //if (f.toString().contains("dast-java")) {
-                            //    putInfoToTr(result.get("dast"), f);
-                            //} else
-                                if (f.toString().contains("sast-java")) {
-                                    putInfoToTr(result.get("sast"), f);
+                            for (String benchmark : benchmarkWithLang) {
+                                if(f.toString().contains(benchmark)){
+                                    putInfoToTr(result.get(benchmark), f);
+                                    break;
                                 }
-                            //} else if (f.toString().contains("iast-java")) {
-                            //    putInfoToTr(result.get("iast"), f);
-                            //}
+                            }
                         } catch (IOException e) {
                             System.err.println("Error processing file: " + f);
                             e.printStackTrace();
@@ -1022,11 +1140,8 @@ public class BenchmarkScore extends AbstractMojo {
                              Integer.MAX_VALUE,
                              (path, attr) ->
                                      attr.isRegularFile()
-                                             && path.toString().endsWith(".json")
-                             &&path.toString().contains("sast-java"),
-                                             //&& (path.toString().contains("dast-java")
-                                             //     || path.toString().contains("sast-java")
-                                             //     || path.toString().contains("iast-java")),
+                                             && path.toString().endsWith("config.json")
+                                             &&containsToolPath(path.toString(),result),
                              FileVisitOption.FOLLOW_LINKS)) {
             // 收集所有文件路径到一个 List 中
             //List<Path> filePaths = filePathStream.collect(Collectors.toList());
@@ -1034,17 +1149,11 @@ public class BenchmarkScore extends AbstractMojo {
                     f -> {
                         try {
                             System.out.println("\nProcessing file: " + f);
-                            //if (f.toString().contains("dast-java") && f.toString().endsWith(".json")) {
-                            //    processJsonFile(result.get("dast"), f);
-                            //}
-                            //else if (f.toString().contains("sast-java") && f.toString().endsWith(".json")) {
-                            //    processJsonFile(result.get("sast"), f);
-                            //}
-                            //else if (f.toString().contains("iast-java") && f.toString().endsWith(".json")) {
-                            //    processJsonFile(result.get("iast"), f);
-                            //}
-                            if (f.toString().contains("sast-java") && f.toString().endsWith(".json")) {
-                                processJsonFile(result.get("sast"), f);
+                            for (String benchmark : benchmarkWithLang) {
+                                if(f.toString().contains(benchmark)){
+                                    processJsonFile(result.get(benchmark), f);
+                                    break;
+                                }
                             }
                         } catch (Exception e) {
                             System.err.println("Error processing file: " + f);
@@ -1058,7 +1167,7 @@ public class BenchmarkScore extends AbstractMojo {
         return result;
     }
 
-    private static void processJsonFile(List<TestCaseResult> testCaseResults, Path filePath) {
+    private static void processJsonFileOld(List<TestCaseResult> testCaseResults, Path filePath) {
         // 实现对 JSON 文件内容的解析逻辑
         // 这个方法应读取 JSON 文件，解析其内容，并将解析后的结果添加到 result 映射中
         try{
@@ -1117,6 +1226,154 @@ public class BenchmarkScore extends AbstractMojo {
         }
     }
 
+    private static void processJsonFile(List<TestCaseResult> testCaseResults, Path filePath) {
+        try {
+            // 记录处理开始的日志
+            //System.out.println("Starting to process file: " + filePath);
+
+            String jsonString = Files.readString(filePath);
+            if (StringUtils.isBlank(jsonString)) {
+                //System.out.println("jsonString is null or blank, path: " + filePath);
+                return;
+            }
+            // 确认JSON字符串读取正确性
+            //System.out.println("Read jsonString from file: " + filePath);
+
+            if (!isValidJson(jsonString)) {
+                //System.out.println("jsonString is not in json format, path: " + filePath);
+                return;
+            }
+
+            JSONObject jsonObject = new JSONObject(jsonString);
+            // 获取并记录父目录信息
+            Path parentDirectory = filePath.getParent();
+
+            String key = parentDirectory.getFileName().toString();
+
+            Object o = jsonObject.get(key);
+
+            if (o instanceof JSONArray) {
+                JSONArray jsonArray = (JSONArray) o;
+                for (Object item : jsonArray) {
+                    if (item instanceof JSONObject) {
+                        JSONObject itemObj = (JSONObject) item;
+                        String evaluationItem = String.valueOf(itemObj.get("evaluation_item"));
+
+
+                        JSONArray sceneLevels = itemObj.getJSONArray("scene_levels");
+                        StringBuilder composeBuilder = new StringBuilder();
+                        StringBuilder composeBuilderAdd = new StringBuilder();
+                        for (Object sceneLevelObj : sceneLevels) {
+                            if (sceneLevelObj instanceof JSONObject) {
+                                JSONObject sceneLevel = (JSONObject) sceneLevelObj;
+                                String level = String.valueOf(sceneLevel.get("level"));
+                                //System.out.println("Processing level: " + level);
+
+
+                                JSONArray sceneList = sceneLevel.getJSONArray("scene_list");
+                                for (Object sceneObj : sceneList) {
+
+                                    if (sceneObj instanceof JSONObject) {
+                                        JSONObject scene = (JSONObject) sceneObj;
+                                        String compose = String.valueOf(scene.get("compose"));
+                                        //if (!compose.contains("/")){
+                                        //    String processed = compose.replace("&&", " ").replace("!", " ")
+                                        //            .replace("||"," ").replace("("," ").replace(")"," ");
+                                        //    List<String> fileNames = new ArrayList<>(Arrays.asList(processed.split("\\s+")));
+                                        //    for (String fileName : fileNames) {
+                                        //        levelMap.put(fileName,level);
+                                        //    }
+                                        //}else {
+                                            List<String> fileNames = extractPyFiles(compose);
+                                            for (String fileName : fileNames) {
+                                                levelMap.put(fileName,level);
+                                            }
+                                        //}
+
+
+                                        //System.out.println("Processing compose: " + compose);
+
+
+                                        if (!level.contains("+")) {
+                                            if (composeBuilder.length() > 0) {
+                                                composeBuilder.append(","); // 如果不是第一个元素，先添加逗号
+                                            }
+                                            composeBuilder.append(compose); // 添加当前的 compose
+
+                                        }
+                                        if (level.contains("+")) {
+                                            if (composeBuilderAdd.length() > 0) {
+                                                composeBuilderAdd.append(","); // 如果不是第一个元素，先添加逗号
+                                            }
+                                            composeBuilderAdd.append(compose); // 添加当前的 compose
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        composeMap.put(evaluationItem, String.valueOf(composeBuilder));
+                        composeMap.put(evaluationItem+"Add", String.valueOf(composeBuilderAdd));
+
+
+                    }
+                }
+
+                for (TestCaseResult testCaseResult : testCaseResults) {
+                    testCaseResult.setLevel(levelMap.get(testCaseResult.getTestCaseName()));
+                    if (StringUtils.isNotEmpty(composeMap.get(testCaseResult.getAssesionProject()))){
+                        //try {
+                        //    levelMap.get(testCaseResult.getTestCaseName()).contains("+");
+                        //}catch (Exception e){
+                        //    System.out.println(testCaseResult.getAssesionProject()+"@@@"+testCaseResult.getTestCaseName());
+                        //}
+
+                        if (!levelMap.get(testCaseResult.getTestCaseName()).contains("+")){
+                            testCaseResult.setCompose(composeMap.get(testCaseResult.getAssesionProject()));
+                        }else {
+                            testCaseResult.setCompose(composeMap.get(testCaseResult.getAssesionProject()+"Add"));
+                        }
+                    }else{
+                        testCaseResult.setCompose(composeMap.get(testCaseResult.getAssesionProject()+"Add"));
+                    }
+
+                }
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.exit(-1);
+        }
+    }
+
+    public static List<String> extractPyFiles(String input) {
+        List<String> validExtensions = Arrays.asList(".js", ".go", ".java", ".py");
+        List<String> fileNames = new ArrayList<>();
+
+        // 按逻辑符号分割路径项（如 ||、&&、括号、!）
+        String[] parts = input.split("\\s*(\\|\\||&&|!|\\(|\\))\\s*");
+
+        for (String part : parts) {
+            String cleanedPart = part.trim();
+            if (cleanedPart.isEmpty()) continue;
+
+            // 提取文件名（保留路径中的最后部分）
+            int lastSlashIndex = cleanedPart.lastIndexOf('/');
+            String fileName = (lastSlashIndex != -1)
+                    ? cleanedPart.substring(lastSlashIndex + 1)
+                    : cleanedPart;
+
+            // 检查扩展名是否合法
+            if (fileName.contains(".") && validExtensions.contains(
+                    fileName.substring(fileName.lastIndexOf('.')).toLowerCase())) {
+                fileNames.add(fileName);
+            }
+        }
+
+        return fileNames;
+    }
+
+
     public static boolean isValidJson(String jsonString) {
         try {
             new JSONObject(jsonString); // 尝试解析为 JSONObject
@@ -1168,7 +1425,7 @@ public class BenchmarkScore extends AbstractMojo {
      * @param actuals The actual TestResults to produce the actual results file for.
      * @return The name of the results file produced
      */
-    private static String produceResultsFileNew(TestSuiteResults actuals, File scoreCardDir, String  toolType) {
+    private static String produceResultsFileNew(TestSuiteResults actuals, File scoreCardDir, String  toolType,String lang) {
         String resultsFileName =
                 scoreCardDir.getAbsolutePath()
                         + File.separator
@@ -1176,6 +1433,8 @@ public class BenchmarkScore extends AbstractMojo {
                         + actuals.getToolNameAndVersion().replace(' ', '_')
                         + "_"
                         + toolType.toLowerCase(Locale.ROOT)
+                        + "_"
+                        + lang
                         + ".xlsx";
         File resultsFile = new File(resultsFileName);
 

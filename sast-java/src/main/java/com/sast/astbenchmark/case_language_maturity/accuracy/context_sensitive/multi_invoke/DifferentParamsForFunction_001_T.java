@@ -10,14 +10,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->上下文敏感分析->多次调用->相同函数调用不同参数-scene1
- * Level 2
- * Date 2024-05-23
- */
 // evaluation information start
 // real case = true
 // evaluation item =  准确度->上下文敏感分析->多次调用
+// scene introduction = 相同函数调用不同参数-scene1
+// level = 2
 // bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_001_T
 // evaluation information end
 @RestController

@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->表达式->基础表达式->赋值语句
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
+// scene introduction = 赋值语句
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_AssignmentExpression_004_F/{cmd}
 // evaluation information end
 

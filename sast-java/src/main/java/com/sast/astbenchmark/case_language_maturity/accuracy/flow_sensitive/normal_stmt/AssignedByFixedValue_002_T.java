@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->流敏感分析->常规顺序执行语句->数据流不可达->被固定值赋值
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->流敏感分析->常规顺序执行语句
+// scene introduction = 数据流不可达->被固定值赋值
+// level = 2
 // bind_url = accuracy/flow_sensitive/normal_stmt/AssignedByFixedValue_002_T
 // evaluation information end
 @RestController()

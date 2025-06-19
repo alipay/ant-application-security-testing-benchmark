@@ -26,12 +26,12 @@ mvn install
 
 使用已有的结果解析器对扫描结果进行解析，并获取结果
 ```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=xast靶场绝对路径 -DresultFile=工具扫描结果绝对路径
+mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -Dlang=语言 -DdirectoryPath=xast靶场绝对路径 -DresultFile=工具扫描结果绝对路径 
 ```
 修改需要指定的两个参数并运行
 例如
 ```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DresultFile=/Users/admin/Downloads/Benchmark_1.2-mySastTool-v2.0.2-11.xml
+mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -Dlang=java -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DresultFile=/Users/admin/Downloads/Benchmark_1.2-mySastTool-v2.0.2-11.xml
 ```
 运行成功后，会生成xlsx表和html文件，其中xlsx表记录了扫描工具在每个靶场case上的识别情况，html文件为最终的评价结果，使用浏览器打开html文件，根据html文件中的各项数值了解扫描工具在xast评价体系中的表现。
 
@@ -43,25 +43,25 @@ mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=/Use
 `也可以手动填写靶场中的样本xlsx文件`，修改其中的【扫描识别为漏洞】列，按实际情况填写true和false，注意不要修改文件名最后的工具类型（sast/iast/dast），填写完成后，运行如下命令
 
 ```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=靶场的绝对路径 -DxlsxFile=人工填写后的xlsx文件绝对路径
+mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -Dlang=语言 -DdirectoryPath=靶场的绝对路径 -DxlsxFile=人工填写后的xlsx文件绝对路径
 ```
 
 例如：
 ```
-mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DxlsxFile=/Users/admin/javaProject/ant-application-security-testing-benchmark/results/xAST_v_1.0.0_mySastTool_v2.0.0_sast.xlsx
+mvn com.alipay.xast:xastutils-maven-plugin:create-scorecard -Dlang=java -DdirectoryPath=/Users/admin/javaProject/ant-application-security-testing-benchmark -DxlsxFile=/Users/admin/javaProject/ant-application-security-testing-benchmark/results/xAST_v_1.0.0_mySastTool_v2.0.0_sast.xlsx
 ```
 
 
 
 ## 背景
-Ant-xAST-Utils是基于OWASP的[BenchmarkUtils](https://github.com/OWASP-Benchmark/BenchmarkUtils/tree/main)框架进行了适配xAST靶场的改造：
+tools是基于OWASP的[BenchmarkUtils](https://github.com/OWASP-Benchmark/BenchmarkUtils/tree/main)框架进行了适配xAST靶场的改造：
 - 增加了不同工具类型的case文件处理
 - 修改了中间数据的文件格式和每列内容
 - 修改了最终评价中的指标参数为召回率、准确率和评价项达成率
 - 增加了xAST各个工具下的引擎评价项达成详情
 
 ## 开源协议说明
-为了方便使用者尽快感知扫描工具在xAST评价体系下的表现，同时尽可能减少使用者改写BenchmarkUtils项目中已有Reader的成本，因此Ant-xAST-Utils设计时引用了BenchmarkUtils的思路，但修改了执行流程中的几乎全部代码。当前目录下的文件与xAST开源项目的一部分，仅是方便使用者快速解析扫描结果而提供的工具，且尊重BenchmarkUtils的开源协议，当前目录下的各类文件同样遵循GPL协议，不影响根目录的其他xAST评价体系文件的开源协议
+为了方便使用者尽快感知扫描工具在xAST评价体系下的表现，同时尽可能减少使用者改写BenchmarkUtils项目中已有Reader的成本，因此tools设计时引用了BenchmarkUtils的思路，但修改了执行流程中的几乎全部代码。当前目录下的文件与xAST开源项目的一部分，仅是方便使用者快速解析扫描结果而提供的工具，且尊重BenchmarkUtils的开源协议，当前目录下的各类文件同样遵循GPL协议，不影响根目录的其他xAST评价体系文件的开源协议
 
 ## FAQ
 https://github.com/alipay/ant-application-security-testing-benchmark/wiki/FAQ
