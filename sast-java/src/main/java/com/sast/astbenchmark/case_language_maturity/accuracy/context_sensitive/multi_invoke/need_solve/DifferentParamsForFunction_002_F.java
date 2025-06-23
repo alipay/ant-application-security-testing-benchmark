@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke;
+package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke.need_solve;
 
 import com.sast.astbenchmark.common.utils.CmdUtil;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,25 +11,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->上下文敏感分析->多次调用->相同函数调用不同参数-scene1
- * Level 2
- * Date 2024-05-23
+ * Introduction 准确度->上下文敏感分析->多次调用->可求解
+ * Level 4
+ * Date 2024-07-05
  */
 // evaluation information start
-// real case = true
-// evaluation item =  准确度->上下文敏感分析->多次调用
-// bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_001_T
+// real case = false
+// evaluation item =  准确度->上下文敏感分析->多次调用->可求解
+// bind_url = accuracy/context_sensitive/multi_invoke/need_solve/DifferentParamsForFunction_002_F
 // evaluation information end
 @RestController
-@RequestMapping("accuracy/context_sensitive/multi_invoke")
-public class DifferentParamsForFunction_001_T {
-    @PostMapping(value = "DifferentParamsForFunction_001_T")
+@RequestMapping("accuracy/context_sensitive/multi_invoke/need_solve")
+public class DifferentParamsForFunction_002_F {
+    @PostMapping(value = "DifferentParamsForFunction_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         String exec1, exec2;
-        int i = -1;
+        int i = 1;
         exec1 = CmdUtil.getCmdWithContextSensitive(i, cmd);
-        i = 1;
+        i = -1;
         exec2 = CmdUtil.getCmdWithContextSensitive(i, cmd);
         try {
             Runtime.getRuntime().exec(exec2);

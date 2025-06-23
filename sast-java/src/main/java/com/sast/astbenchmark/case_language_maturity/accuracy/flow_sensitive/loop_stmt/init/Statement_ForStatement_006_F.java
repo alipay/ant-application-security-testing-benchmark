@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.loop_stmt;
+package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.loop_stmt.init;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +15,11 @@ import java.util.Map;
  */
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感分析->循环顺序执行语句
-// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_006_F/{cmd}
+// evaluation item = 准确度->流敏感分析->循环顺序执行语句->for-init流敏感
+// bind_url = accuracy/flow_sensitive/loop_stmt/init/Statement_ForStatement_006_F/{cmd}
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/flow_sensitive/loop_stmt")
+@RequestMapping("accuracy/flow_sensitive/loop_stmt/init")
 public class Statement_ForStatement_006_F {
     @GetMapping("Statement_ForStatement_006_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
