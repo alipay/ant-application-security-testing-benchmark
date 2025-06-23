@@ -10,7 +10,7 @@ import java.util.Map;
 
 /**
  * Introduction 准确度->流敏感分析->循环顺序执行语句->for-update流敏感
- * Level 2
+ * Level 4
  * Date 2024-11-10
  */
 // evaluation information start
@@ -26,8 +26,8 @@ public class Statement_ForStatement_007_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a = "mkdir";
-            for (int i = 0; i < 1; Runtime.getRuntime().exec(a)) {
-                a = cmd + "|";
+            for (int i = 0; i < 2; a = cmd + "|") {
+                Runtime.getRuntime().exec(a);
                 i++;
             }
             modelMap.put("status", "success");
