@@ -29,7 +29,7 @@ public class Async_Multithreading_010_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         Async_Multithreading_010_F obj = new Async_Multithreading_010_F();
-
+        obj.a = cmd;
         Thread thread1 = new Thread(() -> {
             synchronized (obj) {
                 obj.a = "ls";

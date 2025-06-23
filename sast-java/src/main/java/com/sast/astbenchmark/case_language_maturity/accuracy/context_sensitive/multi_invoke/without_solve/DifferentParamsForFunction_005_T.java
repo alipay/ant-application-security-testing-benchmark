@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke;
+package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke.without_solve;
 
 import com.sast.astbenchmark.model.alias.Invoke;
 import com.sast.astbenchmark.model.alias.X;
@@ -17,14 +17,14 @@ import java.util.Map;
  * Date 2024-07-05
  */
 // evaluation information start
-// real case = false
+// real case = true
 // evaluation item =  准确度->上下文敏感分析->多次调用
-// bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_006_F
+// bind_url = accuracy/context_sensitive/multi_invoke/without_solve/DifferentParamsForFunction_005_T
 // evaluation information end
 @RestController
-@RequestMapping("accuracy/context_sensitive/multi_invoke")
-public class DifferentParamsForFunction_006_F {
-    @PostMapping(value = "DifferentParamsForFunction_006_F")
+@RequestMapping("accuracy/context_sensitive/multi_invoke/without_solve")
+public class DifferentParamsForFunction_005_T {
+    @PostMapping(value = "DifferentParamsForFunction_005_T")
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
@@ -36,7 +36,7 @@ public class DifferentParamsForFunction_006_F {
             y2.f = "foo";
             X rx1 = Invoke.assign(x1, y1);
             X rx2 = Invoke.assign(x2, y2);
-            Runtime.getRuntime().exec(rx2.y.f);
+            Runtime.getRuntime().exec(rx1.y.f);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

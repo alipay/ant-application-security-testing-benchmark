@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.loop_stmt;
+package com.sast.astbenchmark.case_language_maturity.accuracy.flow_sensitive.loop_stmt.update;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,25 +9,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Introduction 准确度->流敏感分析->循环顺序执行语句->for-update流敏感
- * Level 2
+ * Introduction 准确度->流敏感分析->循环顺序执行语句->for-update条件求解
+ * Level 4
  * Date 2024-11-10
  */
 // evaluation information start
-// real case = true
-// evaluation item = 准确度->流敏感分析->循环顺序执行语句
-// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_007_T/{cmd}
+// real case = false
+// evaluation item = 准确度->流敏感分析->循环顺序执行语句->for-update条件求解
+// bind_url = accuracy/flow_sensitive/loop_stmt/update/Statement_ForStatement_008_F/{cmd}
 // evaluation information end
 @RestController()
-@RequestMapping("accuracy/flow_sensitive/loop_stmt")
-public class Statement_ForStatement_007_T {
-    @GetMapping("Statement_ForStatement_007_T/{cmd}")
+@RequestMapping("accuracy/flow_sensitive/loop_stmt/update")
+public class Statement_ForStatement_008_F {
+    @GetMapping("Statement_ForStatement_008_F/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             String a = "mkdir";
-            for (int i = 0; i < 1; Runtime.getRuntime().exec(a)) {
-                a = cmd + "|";
+            for (int i = 0; i < 1; a = cmd + "|") {
+                Runtime.getRuntime().exec(a);
                 i++;
             }
             modelMap.put("status", "success");
