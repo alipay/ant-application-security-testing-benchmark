@@ -10,7 +10,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感分析->for-update条件求解
+// evaluation item = 准确度->流敏感分析->循环顺序执行语句->for-update流敏感
 // scene introduction = for-update流敏感
 // level = 2
 // bind_url = accuracy/flow_sensitive/loop_stmt/loop_stmt_update/Statement_ForStatement_008_F/{cmd}
