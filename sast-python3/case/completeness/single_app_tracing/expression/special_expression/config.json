@@ -1,0 +1,114 @@
+{
+  "special_expression": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->语言特有的表达式",
+      "scene_levels": [
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "template_literal_001_T.py && !template_literal_002_F.py",
+              "scene": "模板字面量1"
+            },
+            {
+              "compose": "template_literal_003_T.py && !template_literal_004_F.py",
+              "scene": "模板字面量2"
+            },
+            {
+              "compose": "template_literal_005_T.py && !template_literal_006_F.py",
+              "scene": "模板字面量3"
+            },
+            {
+              "compose": "destructuring_assignment_001_T.py && !destructuring_assignment_002_F.py",
+              "scene": "解构赋值表达式->数组解构赋值"
+            },
+            {
+              "compose": "destructuring_assignment_003_T.py && !destructuring_assignment_004_F.py",
+              "scene": "解构赋值表达式->对象解构赋值"
+            },
+            {
+              "compose": "destructuring_assignment_005_T.py && !destructuring_assignment_006_F.py",
+              "scene": "解构赋值表达式->数组解构赋值->二维"
+            },
+            {
+              "compose": "destructuring_assignment_007_T.py && !destructuring_assignment_008_F.py",
+              "scene": "解构赋值表达式->对象解构赋值->二维"
+            },
+            {
+              "compose": "exponentiation_operator_001_T.py && !exponentiation_operator_002_F.py",
+              "scene": "指数运算符"
+            },
+            {
+              "compose": "spread_operator_001_T.py && !spread_operator_002_F.py",
+              "scene": "扩展运算符1"
+            },
+            {
+              "compose": "spread_operator_003_T.py && !spread_operator_004_F.py",
+              "scene": "扩展运算符2"
+            },
+            {
+              "compose": "spread_operator_005_T.py && !spread_operator_006_F.py",
+              "scene": "扩展运算符3"
+            },
+            {
+              "compose": "spread_operator_007_T.py && !spread_operator_008_F.py",
+              "scene": "扩展运算符4"
+            },
+            {
+              "compose": "rest_parameter_001_T.py && !rest_parameter_002_F.py",
+              "scene": "捕获剩余值"
+            },
+            {
+              "compose": "del_expression_001_T.py && !del_expression_002_F.py",
+              "scene": "del运算符->对象field"
+            },
+            {
+              "compose": "del_expression_003_T.py && !del_expression_004_F.py",
+              "scene": "del运算符->数组索引"
+            },
+            {
+              "compose": "del_expression_005_T.py && !del_expression_006_F.py",
+              "scene": "del运算符->字典键值对"
+            },
+            {
+              "compose": "del_expression_007_T.py && !del_expression_008_F.py",
+              "scene": "del运算符->单个变量"
+            },
+            {
+              "compose": "del_expression_009_T.py && !del_expression_010_F.py",
+              "scene": "del运算符->多个变量"
+            },
+            {
+              "compose": "del_expression_011_T.py && !del_expression_012_F.py",
+              "scene": "del运算符->切片"
+            },
+            {
+              "compose": "variable_swap_001_T.py && !variable_swap_002_F.py",
+              "scene": "变量交换"
+            },
+            {
+              "compose": "enum_001_T.py && !enum_002_F.py",
+              "scene": "枚举"
+            },
+            {
+              "compose": "multi_target_assignment_001_T.py && !multi_target_assignment_002_F.py",
+              "scene": "多目标赋值"
+            },
+            {
+              "compose": "list_comprehension_001_T.py && !list_comprehension_002_F.py",
+              "scene": "列表推导式"
+            },
+            {
+              "compose": "map_comprehension_001_T.py && !map_comprehension_002_F.py",
+              "scene": "字典推导式"
+            },
+            {
+              "compose": "set_comprehension_001_T.py && !set_comprehension_002_F.py",
+              "scene": "集合推导式"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

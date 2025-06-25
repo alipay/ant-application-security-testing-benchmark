@@ -10,15 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->别名->PrimitiveFieldAccess-scene1
- * Level 2
- * Date 2024-07-02
- */
 @RestController
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->别名
+// scene introduction = PrimitiveFieldAccess-scene1
+// level = 2
 // bind_url = completeness/single_app_tracing/alias/PrimitiveFieldAccess_002_F
 // evaluation information end
 @RequestMapping("completeness/single_app_tracing/alias")

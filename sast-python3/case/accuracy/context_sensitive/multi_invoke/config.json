@@ -1,0 +1,22 @@
+{
+  "multi_invoke": [
+    {
+      "evaluation_item": "准确度->上下文敏感分析->多次调用",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "multi_invoke_001_T.py && !multi_invoke_002_F.py",
+              "scene": "两次调用传入不同参数"
+            },
+            {
+              "compose": "multi_invoke_003_T.py && !multi_invoke_004_F.py",
+              "scene": "嵌套函数调用"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

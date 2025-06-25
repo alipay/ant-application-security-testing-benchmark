@@ -1,0 +1,1 @@
+from .cross_module_022_F_b import function_b

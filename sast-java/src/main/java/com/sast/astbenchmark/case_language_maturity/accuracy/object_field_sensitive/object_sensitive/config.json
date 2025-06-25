@@ -1,32 +1,36 @@
 {
   "object_sensitive": [
     {
-      "evaluation item": "准确度->对象敏感与域敏感分析->区分不同的类对象、结构体/联合体和字典/列表/数组",
-      "level": "2",
-      "scene_list": [
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分不同的类对象、结构体/联合体和字典/列表/数组",
+      "scene_levels": [
         {
-          "compose": "ObjectDiffAttribute_001_T.java && !ObjectDiffAttribute_002_F.java",
-          "scene": "对象->不同对象相同属性"
-        },
-        {
-          "compose": "Map_obj_sensitive_001_T.java && !Map_obj_sensitive_002_F.java",
-          "scene": "容器->Map"
-        },
-        {
-          "compose": "Map_obj_sensitive_003_T.java && !Map_obj_sensitive_004_F.java",
-          "scene": "容器->Map-replace"
-        },
-        {
-          "compose": "Map_obj_sensitive_005_T.java && !Map_obj_sensitive_006_F.java",
-          "scene": "容器->Map-remove"
-        },
-        {
-          "compose": "ArrayElementOverwrite_001_T.java && !ArrayElementOverwrite_002_F.java",
-          "scene": "容器->数组元素敏感"
-        },
-        {
-          "compose": "ArrayElementOverwrite_003_T.java && !ArrayElementOverwrite_004_F.java",
-          "scene": "容器->数组元素敏感-ArrayList"
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "ObjectDiffAttribute_001_T.java && !ObjectDiffAttribute_002_F.java",
+              "scene": "对象->不同对象相同属性"
+            },
+            {
+              "compose": "Map_obj_sensitive_001_T.java && !Map_obj_sensitive_002_F.java",
+              "scene": "容器->Map"
+            },
+            {
+              "compose": "Map_obj_sensitive_003_T.java && !Map_obj_sensitive_004_F.java",
+              "scene": "容器->Map-replace"
+            },
+            {
+              "compose": "Map_obj_sensitive_005_T.java && !Map_obj_sensitive_006_F.java",
+              "scene": "容器->Map-remove"
+            },
+            {
+              "compose": "ArrayElementOverwrite_001_T.java && !ArrayElementOverwrite_002_F.java",
+              "scene": "容器->数组元素敏感"
+            },
+            {
+              "compose": "ArrayElementOverwrite_003_T.java && !ArrayElementOverwrite_004_F.java",
+              "scene": "容器->数组元素敏感-ArrayList"
+            }
+          ]
         }
       ]
     }

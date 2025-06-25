@@ -1,0 +1,30 @@
+{
+  "cross_file": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->文件、包、命名空间->跨文件",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "(cross_file_001_T/cross_file_001_T_a.py || cross_file_001_T/cross_file_001_T_b.py) && !(cross_file_002_F/cross_file_002_F_a.py || cross_file_002_F/cross_file_002_F_b.py)",
+              "scene": "直接导入"
+            },
+            {
+              "compose": "(cross_file_003_T/cross_file_003_T_a.py || cross_file_003_T/cross_file_003_T_b.py) && !(cross_file_004_F/cross_file_004_F_a.py || cross_file_004_F/cross_file_004_F_b.py)",
+              "scene": "默认导出"
+            },
+            {
+              "compose": "(cross_file_005_T/cross_file_005_T_a.py || cross_file_005_T/cross_file_005_T_b.py) && !(cross_file_006_F/cross_file_006_F_a.py || cross_file_006_F/cross_file_006_F_b.py)",
+              "scene": "变量"
+            },
+            {
+              "compose": "(cross_file_007_T/cross_file_007_T_a.py || cross_file_007_T/cross_file_007_T_b.py) && !(cross_file_008_F/cross_file_008_F_a.py || cross_file_008_F/cross_file_008_F_b.py)",
+              "scene": "别名"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

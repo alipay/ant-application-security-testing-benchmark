@@ -1,0 +1,22 @@
+{
+  "class": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分不同类对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "constructor_object_sensitive_001_T.py && !constructor_object_sensitive_002_F.py",
+              "scene": "接口/类->类对象"
+            },
+            {
+              "compose": "constructor_object_sensitive_003_T.py && !constructor_object_sensitive_004_F.py",
+              "scene": "接口/类->继承对象"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

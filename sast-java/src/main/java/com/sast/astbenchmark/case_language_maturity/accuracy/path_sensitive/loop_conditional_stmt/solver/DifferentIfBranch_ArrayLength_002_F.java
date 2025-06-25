@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态->数组长度计算
- * Level 4
- * Date 2024-06-28
- */
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
+// scene introduction = 数组长度计算
+// level = 4
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/DifferentIfBranch_ArrayLength_002_F
 // evaluation information end
 @RestController()

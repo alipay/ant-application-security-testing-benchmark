@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->接口与类->复杂对象->局部类
- * Level 2
- * Date 2024-08-16
- */
 
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->接口与类->复杂对象
+// scene introduction = 局部类
+// level = 2
 // bind_url = completeness/single_app_tracing/interface_class/complex_object/CallExpression_CustomCode_Class_004_F
 // evaluation information end
 @RestController()

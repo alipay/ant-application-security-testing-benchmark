@@ -1,0 +1,18 @@
+{
+  "exception_throw": [
+    {
+      "evaluation_item": "准确度->路径敏感分析->异常抛出和捕获",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "exception_throw_001_T.js && !exception_throw_002_F.js && exception_throw_003_T.js",
+              "scene": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

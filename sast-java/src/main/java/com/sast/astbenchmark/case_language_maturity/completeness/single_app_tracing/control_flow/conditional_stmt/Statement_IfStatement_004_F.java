@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->流程控制语句->条件语句->if语句-if body
- * Level 2
- * Date 2024-11-10
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
+// scene introduction = if语句-if body
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_IfStatement_004_F/{cmd}
 // evaluation information end
 @RestController()

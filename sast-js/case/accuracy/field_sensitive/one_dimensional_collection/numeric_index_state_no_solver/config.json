@@ -1,0 +1,50 @@
+{
+  "numeric_index_state_no_solver": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分一维字典/列表/数组的不同元素->索引值为数字的场景，能够区分不同索引上特定元素的状态(无需求解)",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "array_007_T.js && !array_008_F.js",
+              "scene": "数组索引"
+            },
+            {
+              "compose": "array_009_T.js && !array_010_F.js",
+              "scene": "数组索引2"
+            },
+            {
+              "compose": "map_field_sensitive_001_T.js && !map_field_sensitive_002_F.js && !map_field_sensitive_003_F.js",
+              "scene": "字典/映射（Map）-对象敏感与域敏感分析"
+            },
+            {
+              "compose": "map_field_sensitive_004_T.js && !map_field_sensitive_005_F.js",
+              "scene": "delete函数"
+            },
+            {
+              "compose": "map_field_sensitive_006_T.js && !map_field_sensitive_007_F.js",
+              "scene": "map类库函数values()"
+            },
+            {
+              "compose": "map_field_sensitive_008_T.js && !map_field_sensitive_009_F.js",
+              "scene": "map类库函数keys()"
+            },
+            {
+              "compose": "spread_operator_007_T.js && !spread_operator_008_F.js",
+              "scene": "数组索引->扩展运算符"
+            },
+            {
+              "compose": "spread_operator_009_T.js && !spread_operator_010_F.js",
+              "scene": "数组索引->扩展运算符2"
+            },
+            {
+              "compose": "rest_parameter_007_T.js && !rest_parameter_008_F.js",
+              "scene": "数组索引->剩余参数"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

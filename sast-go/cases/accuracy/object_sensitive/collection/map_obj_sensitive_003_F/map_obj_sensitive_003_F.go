@@ -1,0 +1,21 @@
+
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->对象敏感与域敏感分析->区分字典/列表/数组的不同元素
+// scene introduction = map->对象敏感
+// level = 2
+// bind_url = accuracy/object_sensitive/collection/map_obj_sensitive_003_F/map_obj_sensitive_003_F
+// evaluation information end
+
+package map_obj_sensitive_003_F
+
+func map_obj_sensitive_003_F(__taint_src string) {
+	m := make(map[string]string, 1)
+	m2 := make(map[string]string, 1)
+	m2["key1"] = __taint_src
+	m["key1"] = "value"
+	__taint_sink(m)
+}
+
+func __taint_sink(o interface{}) {
+}

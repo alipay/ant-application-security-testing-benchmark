@@ -1,0 +1,46 @@
+{
+  "primitives": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "bool_001_T.py && !bool_002_F.py",
+              "scene": "布尔型"
+            },
+            {
+              "compose": "complex_001_T.py && !complex_002_F.py",
+              "scene": "复数1"
+            },
+            {
+              "compose": "complex_003_T.py && !complex_004_F.py",
+              "scene": "复数2"
+            },
+            {
+              "compose": "float_001_T.py && !float_002_F.py",
+              "scene": "浮点型"
+            },
+            {
+              "compose": "int_001_T.py && !int_002_F.py",
+              "scene": "整型"
+            },
+            {
+              "compose": "none_001_T.py && !none_002_F.py",
+              "scene": "NoneType"
+            },
+            {
+              "compose": "str_001_T.py && !str_002_F.py",
+              "scene": "字符串"
+            },
+            {
+              "compose": "str_003_T.py && !str_004_F.py",
+              "scene": "字符串->字节字符串"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

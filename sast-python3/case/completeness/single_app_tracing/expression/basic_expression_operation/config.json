@@ -1,0 +1,182 @@
+{
+  "basic_expression_operation": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->基础表达式",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "assign_expression_001_T.py && !assign_expression_002_F.py",
+              "scene": "赋值表达式"
+            },
+            {
+              "compose": "binary_expression_add_001_T.py && !binary_expression_add_002_F.py",
+              "scene": "二元运算->加"
+            },
+            {
+              "compose": "binary_expression_sub_001_T.py && !binary_expression_sub_002_F.py",
+              "scene": "二元运算->减"
+            },
+            {
+              "compose": "binary_expression_mult_001_T.py && !binary_expression_mult_002_F.py",
+              "scene": "二元运算->乘"
+            },
+            {
+              "compose": "binary_expression_add_assignment_001_T.py && !binary_expression_add_assignment_002_F.py",
+              "scene": "二元运算->加等"
+            },
+            {
+              "compose": "binary_expression_divide_assignment_001_T.py && !binary_expression_divide_assignment_002_F.py",
+              "scene": "二元运算->除等"
+            },
+            {
+              "compose": "binary_expression_multiply_assignment_001_T.py && !binary_expression_multiply_assignment_002_F.py",
+              "scene": "二元运算->乘等"
+            },
+            {
+              "compose": "binary_expression_subtract_assignment_001_T.py && !binary_expression_subtract_assignment_002_F.py",
+              "scene": "二元运算->减等"
+            },
+            {
+              "compose": "binary_expression_mod_001_T.py && !binary_expression_mod_002_F.py",
+              "scene": "二元运算->取余"
+            },
+            {
+              "compose": "binary_expression_division_001_T.py && !binary_expression_division_002_F.py",
+              "scene": "二元运算->除法"
+            },
+            {
+              "compose": "binary_expression_floor_div_case_001_T.py && !binary_expression_floor_div_case_002_F.py",
+              "scene": "二元运算->整除"
+            },
+            {
+              "compose": "binary_expression_bitwise_and_001_T.py && !binary_expression_bitwise_and_002_F.py",
+              "scene": "二元运算->按位与赋值"
+            },
+            {
+              "compose": "binary_expression_bitwise_or_001_T.py && !binary_expression_bitwise_or_002_F.py",
+              "scene": "二元运算->按位或赋值"
+            },
+            {
+              "compose": "binary_expression_bitwise_xor_001_T.py && !binary_expression_bitwise_xor_002_F.py",
+              "scene": "二元运算->按位异或赋值"
+            },
+            {
+              "compose": "binary_expression_floor_division_001_T.py && !binary_expression_floor_division_002_F.py",
+              "scene": "二元运算->地板除法赋值"
+            },
+            {
+              "compose": "binary_expression_left_shift_001_T.py && !binary_expression_left_shift_002_F.py",
+              "scene": "二元运算->左移赋值"
+            },
+            {
+              "compose": "binary_expression_modulo_assignment_001_T.py && !binary_expression_modulo_assignment_002_F.py",
+              "scene": "二元运算->取模赋值"
+            },
+            {
+              "compose": "binary_expression_power_assignment_001_T.py && !binary_expression_power_assignment_002_F.py",
+              "scene": "二元运算->幂赋值"
+            },
+            {
+              "compose": "binary_expression_right_shift_001_T.py && !binary_expression_right_shift_002_F.py",
+              "scene": "二元运算->右移赋值"
+            },
+            {
+              "compose": "unary_expression_not_001_T.py && !unary_expression_not_002_F.py",
+              "scene": "一元运算->逻辑非"
+            },
+            {
+              "compose": "unary_expression_usub_001_T.py && !unary_expression_usub_002_F.py",
+              "scene": "一元运算->负号"
+            },
+            {
+              "compose": "binary_expression_namedexpr_basic_001_T.py && !binary_expression_namedexpr_basic_002_F.py",
+              "scene": "一元运算->海象运算"
+            },
+            {
+              "compose": "bitwise_expression_and_001_T.py && !bitwise_expression_and_002_F.py",
+              "scene": "位操作->与"
+            },
+            {
+              "compose": "bitwise_expression_lsh_001_T.py && !bitwise_expression_lsh_002_F.py",
+              "scene": "位操作->左移"
+            },
+            {
+              "compose": "bitwise_expression_rsh_001_T.py && !bitwise_expression_rsh_002_F.py",
+              "scene": "位操作->右移"
+            },
+            {
+              "compose": "bitwise_expression_not_001_T.py && !bitwise_expression_not_002_F.py",
+              "scene": "位操作->按位取反"
+            },
+            {
+              "compose": "bitwise_expression_or_001_T.py && !bitwise_expression_or_002_F.py",
+              "scene": "位操作->或"
+            },
+            {
+              "compose": "bitwise_expression_xor_001_T.py && !bitwise_expression_xor_002_F.py",
+              "scene": "位操作->异或"
+            },
+            {
+              "compose": "!logic_expression_and_001_F.py && logic_expression_and_002_T.py",
+              "scene": "逻辑表达式->与表达式"
+            },
+            {
+              "compose": "logic_expression_or_001_T.py && !logic_expression_or_002_F.py",
+              "scene": "逻辑表达式->或表达式"
+            },
+            {
+              "compose": "relation_expression_equal_001_T.py && !relation_expression_equal_002_F.py",
+              "scene": "关系操作->等于"
+            },
+            {
+              "compose": "relation_expression_greater_001_T.py && !relation_expression_greater_002_F.py",
+              "scene": "关系操作->大于"
+            },
+            {
+              "compose": "relation_expression_less_001_T.py && !relation_expression_less_002_F.py",
+              "scene": "关系操作->小于"
+            },
+            {
+              "compose": "greater_than_equal_001_T.py && !greater_than_equal_002_F.py",
+              "scene": "关系操作->大于等于"
+            },
+            {
+              "compose": "less_than_equal_001_T.py && !less_than_equal_002_F.py",
+              "scene": "关系操作->小于等于"
+            },
+            {
+              "compose": "relation_expression_in_001_T.py && !relation_expression_in_002_F.py",
+              "scene": "关系操作->in"
+            },
+            {
+              "compose": "relation_expression_is_001_T.py && !relation_expression_is_002_F.py",
+              "scene": "关系操作->is"
+            },
+            {
+              "compose": "relation_expression_is_not_001_T.py && !relation_expression_is_not_002_F.py",
+              "scene": "关系操作->is not"
+            },
+            {
+              "compose": "relation_expression_not_equal_001_T.py && !relation_expression_not_equal_002_F.py",
+              "scene": "关系操作->不等于"
+            },
+            {
+              "compose": "relation_expression_not_in_001_T.py && !relation_expression_not_in_002_F.py",
+              "scene": "关系操作->not in"
+            },
+            {
+              "compose": "binary_expression_matrix_multiplication_001_T.py && !binary_expression_matrix_multiplication_002_F.py",
+              "scene": "二元运算->矩阵乘法"
+            },
+            {
+              "compose": "unary_expression_uadd_001_T.py && !unary_expression_uadd_002_F.py",
+              "scene": "一元运算->正号"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

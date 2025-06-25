@@ -8,15 +8,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 import java.util.function.Consumer;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->函数和方法调用->高阶函数
- * Level 2
- * Date 2025-02-13
- */
 
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->高阶函数
+// scene introduction = 
+// level = 2
 // bind_url = completeness/single_app_tracing/function_call/higher_order_function/higher_order_function_002_F
 // evaluation information end
 @RestController()

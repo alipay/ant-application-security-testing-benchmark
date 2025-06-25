@@ -1,0 +1,30 @@
+{
+  "anonymous_function_closure": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->匿名函数/闭包",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!anonymous_function_001_F.py && anonymous_function_002_T.py",
+              "scene": "简单匿名函数"
+            },
+            {
+              "compose": "!anonymous_function_003_F.py && anonymous_function_004_T.py",
+              "scene": "参数传递"
+            },
+            {
+              "compose": "!anonymous_function_005_F.py && anonymous_function_006_T.py",
+              "scene": "直接调用"
+            },
+            {
+              "compose": "!anonymous_function_007_F.py && anonymous_function_008_T.py",
+              "scene": "基本闭包"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

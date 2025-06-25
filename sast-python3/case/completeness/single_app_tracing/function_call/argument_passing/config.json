@@ -1,0 +1,42 @@
+{
+  "argument_passing": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->参数传递",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!argument_passing_keyword_taint_001_T.py && argument_passing_keyword_taint_002_F.py",
+              "scene": "关键字参数"
+            },
+            {
+              "compose": "!argument_passing_reference_001_F.py && argument_passing_reference_002_T.py",
+              "scene": "引用传递"
+            },
+            {
+              "compose": "!argument_passing_reference_003_F.py && argument_passing_reference_004_T.py",
+              "scene": "引用传递数组"
+            },
+            {
+              "compose": "!argument_passing_reference_005_F.py && argument_passing_reference_006_T.py",
+              "scene": "引用传递map"
+            },
+            {
+              "compose": "!argument_passing_value_011_F.py && argument_passing_value_012_T.py",
+              "scene": "值传递嵌套函数"
+            },
+            {
+              "compose": "argument_passing_value_013_T.py && !argument_passing_value_014_F.py",
+              "scene": "类型注解"
+            },
+            {
+              "compose": "argument_passing_various_types_001_T.py && !argument_passing_various_types_002_F.py",
+              "scene": "参数列表"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

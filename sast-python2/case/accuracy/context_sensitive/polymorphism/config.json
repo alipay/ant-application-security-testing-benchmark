@@ -1,0 +1,31 @@
+{
+  "polymorphism": [
+    {
+      "evaluation_item": "准确度->上下文敏感分析->多态",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "polymorphism_001_T.py && !polymorphism_002_F.py",
+              "scene": "不同子类实现相同方法"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "polymorphism_003_T.py && !polymorphism_004_F.py",
+              "scene": "动态方法绑定"
+            },
+            {
+              "compose": "polymorphism_005_T.py && !polymorphism_006_F.py",
+              "scene": "元类控制继承"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

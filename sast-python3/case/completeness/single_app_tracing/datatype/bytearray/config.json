@@ -1,0 +1,18 @@
+{
+  "bytearray": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->可变字节序列",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "bytearray_001_T.py && !bytearray_002_F.py",
+              "scene": "构造函数形式"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

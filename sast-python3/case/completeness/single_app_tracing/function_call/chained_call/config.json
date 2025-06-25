@@ -1,0 +1,26 @@
+{
+  "chained_call": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->链式调用",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!chained_call_001_F.py && chained_call_002_T.py",
+              "scene": "1"
+            },
+            {
+              "compose": "chained_call_003_T.py && !chained_call_004_F.py",
+              "scene": "闭包链式"
+            },
+            {
+              "compose": "chained_call_005_T.py && !chained_call_006_F.py",
+              "scene": "函数组合"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

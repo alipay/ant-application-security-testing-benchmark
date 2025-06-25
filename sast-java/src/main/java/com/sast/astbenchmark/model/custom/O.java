@@ -14,7 +14,7 @@ public class O {
     }
 
     public String getCmd(){
-        O.I i = new I();
+        I i = new I();
         return i.getCmd();
     }
 }

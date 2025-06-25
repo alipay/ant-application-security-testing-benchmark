@@ -1,0 +1,22 @@
+{
+  "this_expression": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->this表达式",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "this_expression_001_T.js && !this_expression_002_F.js",
+              "scene": "this表达式"
+            },
+            {
+              "compose": "this_expression_003_T.js && !this_expression_004_F.js",
+              "scene": "this表达式2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "imports": {
+    "#root/*": "./A/*"
+  }
+}

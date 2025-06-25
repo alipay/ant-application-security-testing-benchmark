@@ -1,0 +1,18 @@
+{
+  "private_variable": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->变量作用域->private变量",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "private_variable_001_T.py && !private_variable_002_F.py",
+              "scene": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

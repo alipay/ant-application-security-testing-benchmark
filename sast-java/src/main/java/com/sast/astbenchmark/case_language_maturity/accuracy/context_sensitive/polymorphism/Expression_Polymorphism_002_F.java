@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->上下文敏感分析->多态
- * Level 2
- * Date 2024-08-16
- */
 // evaluation information start
 // real case = false
 // evaluation item =  准确度->上下文敏感分析->多态
+// scene introduction = 
+// level = 2
 // bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_002_F/{cmd}
 // evaluation information end
 @RestController()

@@ -10,14 +10,11 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->表达式->类型转换->强转表达式-函数调用
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
+// scene introduction = 强转表达式-函数调用
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/type_cast/Expression_CastExpression_003_T/{url}
 // evaluation information end
 

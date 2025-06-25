@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态->循环语句->while
- * Level 3
- * Date 2024-11-10
- */
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
+// scene introduction = 循环语句->while
+// level = 4
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/Statement_WhileStatement_004_F/{type}/{cmd}
 // evaluation information end
 @RestController()

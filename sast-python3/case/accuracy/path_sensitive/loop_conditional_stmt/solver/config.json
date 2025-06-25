@@ -1,0 +1,30 @@
+{
+  "solver": [
+    {
+      "evaluation_item": "准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态",
+      "scene_levels": [
+        {
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "conditional_if_011_T.py && !conditional_if_012_F.py",
+              "scene": "区分if else分支+准入条件（需要求解）->if->区分具体执行路径->求解"
+            },
+            {
+              "compose": "!conditional_match_007_F.py && conditional_match_008_T.py",
+              "scene": "区分match准入条件（需要求解）->match->区分具体执行路径->求解"
+            },
+            {
+              "compose": "for_body_004_T.py && !for_body_005_F.py",
+              "scene": "循环结构->for_body"
+            },
+            {
+              "compose": "!while_body_005_F.py && while_body_006_T.py",
+              "scene": "循环结构->whileElse"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

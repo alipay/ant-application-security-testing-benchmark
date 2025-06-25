@@ -9,14 +9,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->数组->copyOf
- * Level 2
- * Date 2024-08-16
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组
+// scene introduction = copyOf
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/array/Base_ArrayAccess_010_F
 // evaluation information end
 

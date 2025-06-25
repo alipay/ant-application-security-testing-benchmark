@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->数组->ArrayAccess-element assignment
- * Level 2
- * Date 2024-06-28
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组
+// scene introduction = ArrayAccess-element assignment
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/array/Base_ArrayAccess_006_F
 // evaluation information end
 @RestController()

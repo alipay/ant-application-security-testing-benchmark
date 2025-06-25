@@ -11,14 +11,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->集合->List
- * Level 2
- * Date 2024-08-16
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
+// scene introduction = List
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_List_004_F
 // evaluation information end
 

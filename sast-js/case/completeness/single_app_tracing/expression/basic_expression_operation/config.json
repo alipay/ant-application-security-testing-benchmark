@@ -1,0 +1,78 @@
+{
+  "basic_expression_operation": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->基础表达式",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "assign_expression_001_T.js && !assign_expression_002_F.js",
+              "scene": "赋值表达式"
+            },
+            {
+              "compose": "bitwise_expression_and_001_T.js && !bitwise_expression_and_002_F.js",
+              "scene": "位操作-与"
+            },
+            {
+              "compose": "bitwise_expression_lsh_001_T.js && !bitwise_expression_lsh_002_F.js",
+              "scene": "位操作-左移"
+            },
+            {
+              "compose": "bitwise_expression_rsh_001_T.js && !bitwise_expression_rsh_002_F.js",
+              "scene": "位操作-右移"
+            },
+            {
+              "compose": "bitwise_expression_not_001_T.js && !bitwise_expression_not_002_F.js",
+              "scene": "位操作-按位取反"
+            },
+            {
+              "compose": "bitwise_expression_or_001_T.js && !bitwise_expression_or_002_F.js",
+              "scene": "位操作-或"
+            },
+            {
+              "compose": "bitwise_expression_xor_001_T.js && !bitwise_expression_xor_002_F.js",
+              "scene": "位操作-异或"
+            },
+            {
+              "compose": "!logic_expression_and_001_F.js && logic_expression_and_002_T.js",
+              "scene": "逻辑表达式-与表达式"
+            },
+            {
+              "compose": "logic_expression_or_001_T.js && !logic_expression_or_002_F.js",
+              "scene": "逻辑表达式-或表达式"
+            },
+            {
+              "compose": "prefix_expression_001_T.js && !prefix_expression_002_F.js",
+              "scene": "前缀表达式"
+            },
+            {
+              "compose": "relation_expression_equal_001_T.js && !relation_expression_equal_002_F.js",
+              "scene": "关系操作-等于"
+            },
+            {
+              "compose": "relation_expression_greater_001_T.js && !relation_expression_greater_002_F.js",
+              "scene": "关系操作-大于"
+            },
+            {
+              "compose": "relation_expression_less_001_T.js && !relation_expression_less_002_F.js",
+              "scene": "关系操作-小于"
+            },
+            {
+              "compose": "suffix_expression_001_T.js && !suffix_expression_002_F.js",
+              "scene": "后缀表达式"
+            },
+            {
+              "compose": "binary_expression_add_001_T.js && !binary_expression_add_002_F.js",
+              "scene": "二元运算-加"
+            },
+            {
+              "compose": "binary_expression_add_assignment_001_T.js && !binary_expression_add_assignment_002_F.js",
+              "scene": "二元运算-加等"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

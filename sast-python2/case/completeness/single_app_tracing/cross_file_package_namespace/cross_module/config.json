@@ -1,0 +1,70 @@
+{
+  "cross_module": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->文件、包、命名空间->跨模块",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "(cross_module_001_T/A/cross_module_001_T_a.py || cross_module_001_T/B/cross_module_001_T_b.py) && !(cross_module_002_F/A/cross_module_002_F_a.py || cross_module_002_F/B/cross_module_002_F_b.py)",
+              "scene": "跨目录直接导入"
+            },
+            {
+              "compose": "(cross_module_003_T/A/cross_module_003_T_a.py || cross_module_003_T/B/cross_module_003_T_b.py) && !(cross_module_004_F/A/cross_module_004_F_a.py || cross_module_004_F/B/cross_module_004_F_b.py)",
+              "scene": "跨目录默认导出"
+            },
+            {
+              "compose": "(cross_module_005_T/A/cross_module_005_T_a.py || cross_module_005_T/B/cross_module_005_T_b.py) && !(cross_module_006_F/A/cross_module_006_F_a.py || cross_module_006_F/B/cross_module_006_F_b.py)",
+              "scene": "跨目录变量导出"
+            },
+            {
+              "compose": "(cross_module_007_T/A/cross_module_007_T_a.py || cross_module_007_T/B/cross_module_007_T_b.py) && !(cross_module_008_F/A/cross_module_008_F_a.py || cross_module_008_F/B/cross_module_008_F_b.py)",
+              "scene": "跨目录别名导出"
+            },
+            {
+              "compose": "(cross_module_009_T/cross_module_009_T.py || cross_module_009_T/A/cross_module_009_T_a.py || cross_module_009_T/B/cross_module_009_T_b.py) && !(cross_module_010_F/cross_module_010_F.py || cross_module_010_F/A/cross_module_010_F_a.py || cross_module_010_F/B/cross_module_010_F_b.py)",
+              "scene": "子级目录直接导入"
+            },
+            {
+              "compose": "(cross_module_011_T/cross_module_011_T.py || cross_module_011_T/A/cross_module_011_T_a.py || cross_module_011_T/B/cross_module_011_T_b.py) && !(cross_module_012_F/cross_module_012_F.py || cross_module_012_F/A/cross_module_012_F_a.py || cross_module_012_F/B/cross_module_012_F_b.py)",
+              "scene": "子级目录默认导出"
+            },
+            {
+              "compose": "(cross_module_013_T/cross_module_013_T.py || cross_module_013_T/A/cross_module_013_T_a.py || cross_module_013_T/B/cross_module_013_T_b.py) && !(cross_module_014_F/cross_module_014_F.py || cross_module_014_F/A/cross_module_014_F_a.py || cross_module_014_F/B/cross_module_014_F_b.py)",
+              "scene": "子级目录变量导出"
+            },
+            {
+              "compose": "(cross_module_015_T/cross_module_015_T.py || cross_module_015_T/A/cross_module_015_T_a.py || cross_module_015_T/B/cross_module_015_T_b.py) && !(cross_module_016_F/cross_module_016_F.py || cross_module_016_F/A/cross_module_016_F_a.py || cross_module_016_F/B/cross_module_016_F_b.py)",
+              "scene": "子级目录别名导出"
+            },
+            {
+              "compose": "(cross_module_017_T/cross_module_017_T.py || cross_module_017_T/A/cross_module_017_T_a.py || cross_module_017_T/A/cross_module_017_T_b.py) && !(cross_module_018_F/cross_module_018_F.py || cross_module_018_F/A/cross_module_018_F_a.py || cross_module_018_F/A/cross_module_018_F_b.py)",
+              "scene": "在init文件中import1"
+            },
+            {
+              "compose": "(cross_module_019_T/cross_module_019_T.py || cross_module_019_T/A/cross_module_019_T_a.py || cross_module_019_T/A/cross_module_019_T_b.py) && !(cross_module_020_F/cross_module_020_F.py || cross_module_020_F/A/cross_module_020_F_a.py || cross_module_020_F/A/cross_module_020_F_b.py)",
+              "scene": "在init文件中import2"
+            },
+            {
+              "compose": "(cross_module_021_T/cross_module_021_T.py || cross_module_021_T/A/cross_module_021_T_a.py || cross_module_021_T/A/B/cross_module_021_T_b.py) && !(cross_module_022_F/cross_module_022_F.py || cross_module_022_F/A/cross_module_022_F_a.py || cross_module_022_F/A/B/cross_module_022_F_b.py)",
+              "scene": "在init文件中import—双层嵌套1"
+            },
+            {
+              "compose": "(cross_module_023_T/cross_module_023_T.py || cross_module_023_T/A/cross_module_023_T_a.py || cross_module_023_T/A/B/cross_module_023_T_b.py) && !(cross_module_024_F/cross_module_024_F.py || cross_module_024_F/A/cross_module_024_F_a.py || cross_module_024_F/A/B/cross_module_024_F_b.py)",
+              "scene": "在init文件中import—双层嵌套2"
+            },
+            {
+              "compose": "(cross_module_025_T/A/cross_module_025_T_a.py || cross_module_025_T/A/C/cross_module_025_T_c.py || cross_module_025_T/B/cross_module_025_T_b.py) && !(cross_module_026_F/A/cross_module_026_F_a.py || cross_module_026_F/A/C/cross_module_026_F_c.py || cross_module_026_F/B/cross_module_026_F_b.py)",
+              "scene": "跨目录导出—双层嵌套"
+            },
+            {
+              "compose": "(cross_module_027_T/cross_module_027_T.py || cross_module_027_T/A/cross_module_027_T_a.py || cross_module_027_T/A/B/cross_module_027_T_b.py) && !(cross_module_028_F/cross_module_028_F.py || cross_module_028_F/A/cross_module_028_F_a.py || cross_module_028_F/A/B/cross_module_028_F_b.py)",
+              "scene": "子级目录导出—双层嵌套"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

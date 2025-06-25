@@ -1,0 +1,26 @@
+{
+  "static_variable": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->变量作用域->静态变量",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "static_variable_001_T.py && !static_variable_002_F.py",
+              "scene": "1"
+            },
+            {
+              "compose": "static_variable_003_T.py && !static_variable_004_F.py",
+              "scene": "跨类访问-static变量"
+            },
+            {
+              "compose": "static_variable_005_T.py && !static_variable_006_F.py",
+              "scene": "继承覆盖"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

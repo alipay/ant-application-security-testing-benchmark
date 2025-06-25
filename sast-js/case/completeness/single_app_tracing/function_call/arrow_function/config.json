@@ -1,0 +1,34 @@
+{
+  "arrow_function": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->箭头函数",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!arrow_function_001_F.js && arrow_function_002_T.js",
+              "scene": "一阶"
+            },
+            {
+              "compose": "!arrow_function_003_F.js && arrow_function_004_T.js",
+              "scene": "二阶"
+            },
+            {
+              "compose": "!arrow_function_005_F.js && arrow_function_006_T.js",
+              "scene": "结构体"
+            },
+            {
+              "compose": "!arrow_function_007_F.js && arrow_function_008_T.js",
+              "scene": "结构体嵌套匿名函数"
+            },
+            {
+              "compose": "!arrow_function_009_F.js && arrow_function_010_T.js",
+              "scene": "结构体二阶"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

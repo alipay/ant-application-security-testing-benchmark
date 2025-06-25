@@ -1,0 +1,18 @@
+{
+  "async_for": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->并发、多线程、异步->延迟执行异步",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "async_for_001_T.py && !async_for_002_F.py",
+              "scene": "异步循环"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

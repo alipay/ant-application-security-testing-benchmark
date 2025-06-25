@@ -1,0 +1,34 @@
+{
+  "decorator_function": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->装饰器函数",
+      "scene_levels": [
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "!class_decorator_001_F.js && class_decorator_002_T.js",
+              "scene": "类装饰器一阶"
+            },
+            {
+              "compose": "!class_decorator_003_F.js && class_decorator_004_T.js",
+              "scene": "类装饰器二阶"
+            },
+            {
+              "compose": "!class_member_decorator_001_F.js && class_member_decorator_002_T.js",
+              "scene": "member装饰器"
+            },
+            {
+              "compose": "!function_decorator_001_F.js && function_decorator_002_T.js",
+              "scene": "函数装饰器"
+            },
+            {
+              "compose": "!function_decorator_003_F.js && function_decorator_004_T.js",
+              "scene": "函数装饰器2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

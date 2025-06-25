@@ -1,0 +1,18 @@
+{
+  "typeignore": [
+    {
+      "evaluation_item": "完整度->其他->忽略类型检查",
+      "scene_levels": [
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "typeignore_001_T.py && !typeignore_002_F.py",
+              "scene": "忽略类型检查"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

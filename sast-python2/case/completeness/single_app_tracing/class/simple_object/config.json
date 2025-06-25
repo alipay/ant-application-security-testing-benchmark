@@ -1,0 +1,22 @@
+{
+  "simple_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->简单对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "simple_object_001_T.py && !simple_object_002_F.py",
+              "scene": "1"
+            },
+            {
+              "compose": "simple_object_003_T.py && !simple_object_004_F.py",
+              "scene": "直接操作类属性"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

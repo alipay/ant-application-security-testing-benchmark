@@ -1,16 +1,20 @@
 {
   "field_sensitive_muilt_collection": [
     {
-      "evaluation item": "准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素",
-      "level": "4",
-      "scene_list": [
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素",
+      "scene_levels": [
         {
-          "compose": "Array_index_003_T.java && !Array_index_004_F.java",
-          "scene": "数组索引-二维"
-        },
-        {
-          "compose": "MapPutGet_003_T.java && !MapPutGet_004_F.java",
-          "scene": "MapPutGet"
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "Array_index_003_T.java && !Array_index_004_F.java",
+              "scene": "数组索引-二维"
+            },
+            {
+              "compose": "MapPutGet_003_T.java && !MapPutGet_004_F.java",
+              "scene": "MapPutGet"
+            }
+          ]
         }
       ]
     }

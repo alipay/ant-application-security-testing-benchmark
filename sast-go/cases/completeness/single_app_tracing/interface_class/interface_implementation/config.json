@@ -1,0 +1,18 @@
+{
+  "interface_class": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分不同类对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "interface_class_001_c_T/interface_class_001_c_T.go && !interface_class_002_c_F/interface_class_002_c_F.go",
+              "scene": "结构体注入接口"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

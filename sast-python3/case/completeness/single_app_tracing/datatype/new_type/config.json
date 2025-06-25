@@ -1,0 +1,18 @@
+{
+  "new_type": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->名义类型",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "type_annotation_new_type_001_T.py && !type_annotation_new_type_002_F.py",
+              "scene": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

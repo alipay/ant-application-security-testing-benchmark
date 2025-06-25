@@ -1,14 +1,18 @@
 {
   "static_variable": [
     {
-      "evaluation item": "完整度->单应用跟踪完整度->变量作用域->静态变量",
-      "scene_list": [
+      "evaluation_item": "完整度->单应用跟踪完整度->变量作用域->静态变量",
+      "scene_levels": [
         {
-          "compose": "static_variable_001_T.java && !static_variable_002_F.java",
-          "scene": "1"
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "static_variable_001_T.java && !static_variable_002_F.java",
+              "scene": "1"
+            }
+          ]
         }
-      ],
-      "level": "2"
+      ]
     }
   ]
 }

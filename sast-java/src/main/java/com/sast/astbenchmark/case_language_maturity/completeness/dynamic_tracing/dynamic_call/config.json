@@ -1,14 +1,18 @@
 {
   "dynamic_call": [
     {
-      "evaluation item": "完整度->动态特性跟踪完整度->反射调用",
-      "scene_list": [
+      "evaluation_item": "完整度->动态特性跟踪完整度->反射调用",
+      "scene_levels": [
         {
-          "compose": "Expression_Reflection_001_T.java && !Expression_Reflection_002_F.java",
-          "scene": "字符串常量"
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "Expression_Reflection_001_T.java && !Expression_Reflection_002_F.java",
+              "scene": "字符串常量"
+            }
+          ]
         }
-      ],
-      "level": "3"
+      ]
     }
   ]
 }

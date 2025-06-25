@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+# evaluation information start
+# real case = true
+# evaluation item = 完整度->单应用跟踪完整度->接口与类->简单对象
+# scene introduction = 直接操作类属性
+# level = 2
+# bind_url = completeness/single_app_tracing/class/simple_object/simple_object_003_T
+# evaluation information end
+import os
+
+
+def simple_object_003_T(taint_src):
+    class Person:
+        pass
+
+    Person.name = taint_src
+
+    # 创建Person的实例
+    person = Person()
+
+    # 传递person的name属性给taint_sink函数
+    taint_sink(person.name)
+
+def taint_sink(o):
+    os.system(o)
+
+if __name__ == '__main__':
+    taint_src = "taint_src_value"
+    simple_object_003_T(taint_src)
+

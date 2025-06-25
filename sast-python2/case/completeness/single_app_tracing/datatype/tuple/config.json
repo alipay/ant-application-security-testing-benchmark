@@ -1,0 +1,22 @@
+{
+  "tuple": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->元组",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "tuple_001_T.py && !tuple_002_F.py",
+              "scene": "元组字面量"
+            },
+            {
+              "compose": "tuple_003_T.py && !tuple_004_F.py",
+              "scene": "解构赋值"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

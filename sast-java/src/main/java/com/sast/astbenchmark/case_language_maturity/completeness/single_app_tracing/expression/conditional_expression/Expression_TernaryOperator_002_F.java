@@ -11,14 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->表达式->条件表达式->三目运算符
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->表达式->条件表达式
+// scene introduction = 三目运算符
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/conditional_expression/Expression_TernaryOperator_002_F/{url}
 // evaluation information end
 
@@ -31,7 +28,7 @@ public class Expression_TernaryOperator_002_F {
     public Map<String, Object> aTaintCase0133(@PathVariable String url) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            String realUrl = StringUtils.isBlank(url) ? "https://www.alipay.com" : "";
+            String realUrl = StringUtils.isBlank(url) ? "https://www.test.com" : "";
             this.ssrfShowManager.selfAnonymousFacade(realUrl);
             modelMap.put("status", "success");
         } catch (Exception e) {

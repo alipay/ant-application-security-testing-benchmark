@@ -1,32 +1,36 @@
 {
   "asynchronous": [
     {
-      "evaluation item": "准确度->流敏感分析->异步执行",
-      "level": "4",
-      "scene_list": [
+      "evaluation_item": "准确度->流敏感分析->异步执行",
+      "scene_levels": [
         {
-          "compose": "CompletableFuture_001_T.java && !CompletableFuture_002_F.java",
-          "scene": "CompletableFuture"
-        },
-        {
-          "compose": "Async_Multithreading_001_T.java && !Async_Multithreading_002_F.java",
-          "scene": "存储型异步->多线程->Thread"
-        },
-        {
-          "compose": "Async_Multithreading_003_T.java && !Async_Multithreading_004_F.java",
-          "scene": "存储型异步->多线程->Runnable"
-        },
-        {
-          "compose": "Async_Multithreading_005_T.java && !Async_Multithreading_006_F.java",
-          "scene": "存储型异步->多线程->Executors"
-        },
-        {
-          "compose": "Async_Multithreading_007_T.java && !Async_Multithreading_008_F.java",
-          "scene": "存储型异步->多线程->TimerTask"
-        },
-        {
-          "compose": "Async_Multithreading_009_T.java && !Async_Multithreading_010_F.java",
-          "scene": "存储型异步->多线程->Synchronized"
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "CompletableFuture_asynchronous_001_T.java && !CompletableFuture_asynchronous_002_F.java",
+              "scene": "CompletableFuture"
+            },
+            {
+              "compose": "Async_Multithread_001_T.java && !Async_Multithread_002_F.java",
+              "scene": "存储型异步->多线程->Thread"
+            },
+            {
+              "compose": "Async_Multithread_003_T.java && !Async_Multithread_004_F.java",
+              "scene": "存储型异步->多线程->Runnable"
+            },
+            {
+              "compose": "Async_Multithread_005_T.java && !Async_Multithread_006_F.java",
+              "scene": "存储型异步->多线程->Executors"
+            },
+            {
+              "compose": "Async_Multithread_007_T.java && !Async_Multithread_008_F.java",
+              "scene": "存储型异步->多线程->TimerTask"
+            },
+            {
+              "compose": "Async_Multithread_009_T.java && !Async_Multithread_010_F.java",
+              "scene": "存储型异步->多线程->Synchronized"
+            }
+          ]
         }
       ]
     }

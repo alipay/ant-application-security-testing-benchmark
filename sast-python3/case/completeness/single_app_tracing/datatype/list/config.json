@@ -1,0 +1,34 @@
+{
+  "list": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->列表",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "list_001_T.py && !list_002_F.py",
+              "scene": "1"
+            },
+            {
+              "compose": "list_003_T.py && !list_004_F.py",
+              "scene": "二维"
+            },
+            {
+              "compose": "list_005_T.py && !list_006_F.py",
+              "scene": "append操作"
+            },
+            {
+              "compose": "list_009_T.py && !list_010_F.py",
+              "scene": "泛型容器类型"
+            },
+            {
+              "compose": "list_011_T.py && !list_012_F.py",
+              "scene": "泛型序列"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
