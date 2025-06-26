@@ -1,0 +1,43 @@
+{
+  "complex_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->复杂对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "cross_class_001_T.py && !cross_class_002_F.py",
+              "scene": "跨类访问-成员变量"
+            },
+            {
+              "compose": "cross_class_003_T.py && !cross_class_004_F.py",
+              "scene": "跨类访问-对象别名"
+            },
+            {
+              "compose": "inheritance_class_001_T.py && !inheritance_class_002_F.py",
+              "scene": "继承与多态"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "inject_data_new_001_T.py && !inject_data_new_002_F.py",
+              "scene": "实例化中注入污染源"
+            },
+            {
+              "compose": "inject_data_new_003_T.py && !inject_data_new_004_F.py",
+              "scene": "实例化中动态方法注入"
+            },
+            {
+              "compose": "inject_data_new_005_T.py && !inject_data_new_006_F.py",
+              "scene": "运行时动态创建实例"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

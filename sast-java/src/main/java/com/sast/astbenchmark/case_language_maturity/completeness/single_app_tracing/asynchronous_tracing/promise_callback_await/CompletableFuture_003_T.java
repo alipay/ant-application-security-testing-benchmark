@@ -12,14 +12,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->并发、多线程、异步->同步原语->CompletableFuture
- * Level 2
- * Date 2024-12-17
- */
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->同步原语
+// scene introduction = CompletableFuture
+// level = 2
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/CompletableFuture_003_T/{cmd}
 // evaluation information end
 @RestController

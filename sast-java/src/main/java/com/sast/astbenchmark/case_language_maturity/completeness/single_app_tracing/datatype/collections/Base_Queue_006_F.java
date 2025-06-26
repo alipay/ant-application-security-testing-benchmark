@@ -11,14 +11,11 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->集合->Queue-remove
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
+// scene introduction = Queue-remove
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_Queue_006_F
 // evaluation information end
 

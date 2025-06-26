@@ -1,0 +1,66 @@
+{
+  "primitives": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "bool_001_T.py && !bool_002_F.py",
+              "scene": "布尔型"
+            },
+            {
+              "compose": "complex_001_T.py && !complex_002_F.py",
+              "scene": "复数1"
+            },
+            {
+              "compose": "complex_003_T.py && !complex_004_F.py",
+              "scene": "复数2"
+            },
+            {
+              "compose": "float_001_T.py && !float_002_F.py",
+              "scene": "浮点型"
+            },
+            {
+              "compose": "int_001_T.py && !int_002_F.py",
+              "scene": "整型"
+            },
+            {
+              "compose": "none_001_T.py && !none_002_F.py",
+              "scene": "NoneType"
+            },
+            {
+              "compose": "str_001_T.py && !str_002_F.py",
+              "scene": "字符串"
+            },
+            {
+              "compose": "type_annotation_bool_001_T.py && !type_annotation_bool_002_F.py",
+              "scene": "布尔型->类型注解"
+            },
+            {
+              "compose": "type_annotation_complex_001_T.py && !type_annotation_complex_002_F.py",
+              "scene": "复数->类型注解"
+            },
+            {
+              "compose": "type_annotation_float_001_T.py && !type_annotation_float_002_F.py",
+              "scene": "浮点型->类型注解"
+            },
+            {
+              "compose": "type_annotation_int_001_T.py && !type_annotation_int_002_F.py",
+              "scene": "整型->类型注解"
+            },
+            {
+              "compose": "type_annotation_str_001_T.py && !type_annotation_str_002_F.py",
+              "scene": "字符串->类型注解"
+            },
+            {
+              "compose": "type_annotation_none_001_T.py && !type_annotation_none_002_F.py",
+              "scene": "NoneType->类型注解"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "bytes": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->不可变字节序列",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "bytes_001_T.py && !bytes_002_F.py",
+              "scene": "字面量形式"
+            },
+            {
+              "compose": "bytes_003_T.py && !bytes_004_F.py",
+              "scene": "构造函数形式->bytes"
+            },
+            {
+              "compose": "bytes_005_T.py && !bytes_006_F.py",
+              "scene": "索引访问"
+            },
+            {
+              "compose": "bytes_007_T.py && !bytes_008_F.py",
+              "scene": "切片操作"
+            },
+            {
+              "compose": "bytes_009_T.py && !bytes_010_F.py",
+              "scene": "字节拼接"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "bytes_011_T.py && !bytes_012_F.py",
+              "scene": "解码"
+            },
+            {
+              "compose": "bytes_013_T.py && !bytes_014_F.py",
+              "scene": "查找"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

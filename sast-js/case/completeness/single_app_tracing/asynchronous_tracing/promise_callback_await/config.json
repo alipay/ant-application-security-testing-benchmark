@@ -1,0 +1,51 @@
+{
+  "promise_callback_await": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->并发、多线程、异步->同步原语",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "async_await_001_T.js && !async_await_002_F.js",
+              "scene": "async/await"
+            },
+            {
+              "compose": "asynchronous_promise_001_T.js && !asynchronous_promise_002_F.js",
+              "scene": "Promise"
+            },
+            {
+              "compose": "asynchronous_promise_005_T.js && !asynchronous_promise_006_F.js",
+              "scene": "Promise2"
+            },
+            {
+              "compose": "asynchronous_promise_011_T.js && !asynchronous_promise_012_F.js",
+              "scene": "Promise错误处理"
+            },
+            {
+              "compose": "asynchronous_promisify_001_T.js && !asynchronous_promisify_002_F.js",
+              "scene": "promisify异步分析"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "asynchronous_promise_003_T.js && !asynchronous_promise_004_F.js",
+              "scene": "Promise3"
+            },
+            {
+              "compose": "asynchronous_promise_007_T.js && !asynchronous_promise_008_F.js",
+              "scene": "Promise4"
+            },
+            {
+              "compose": "asynchronous_promise_009_T.js && !asynchronous_promise_010_F.js",
+              "scene": "Promise5"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

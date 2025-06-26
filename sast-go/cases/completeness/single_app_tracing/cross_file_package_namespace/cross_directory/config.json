@@ -1,0 +1,18 @@
+{
+  "cross_directory": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->文件、包、命名空间->跨包",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "(cross_directory_001_T/cross_directory_001_T_a/cross_directory_001_T_a.go || cross_directory_001_T/cross_directory_001_T_b/cross_directory_001_T_b.go) && !(cross_directory_002_F/cross_directory_002_F_a/cross_directory_002_F_a.go || cross_directory_002_F/cross_directory_002_F_b/cross_directory_002_F_b.go)",
+              "scene": "跨package"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

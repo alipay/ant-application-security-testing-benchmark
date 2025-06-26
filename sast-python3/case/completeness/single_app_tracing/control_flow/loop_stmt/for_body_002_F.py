@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+# evaluation information start
+# real case = false
+# evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
+# scene introduction = for_body
+# level = 2
+# bind_url = completeness/single_app_tracing/control_flow/loop_stmt/for_body_002_F
+# evaluation information end
+import os
+
+
+def for_body_002_F(taint_src):
+    res = taint_src
+    for i in range(2):
+        res = '_'
+    taint_sink(res)
+
+
+def taint_sink(o):
+    os.system(o)
+
+
+# 示例调用
+if __name__ == "__main__":
+    taint_src = "taint_src_value"
+    for_body_002_F(taint_src)
+

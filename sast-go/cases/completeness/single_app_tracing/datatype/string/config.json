@@ -1,0 +1,18 @@
+{
+  "string": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->字符串",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "string_001_T/string_001_T.go && !string_002_F/string_002_F.go",
+              "scene": "字符串类型"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

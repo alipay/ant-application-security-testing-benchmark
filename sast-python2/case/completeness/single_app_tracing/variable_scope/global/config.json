@@ -1,0 +1,22 @@
+{
+  "global": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->变量作用域->全局变量",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "global_001_T.py && !global_002_F.py",
+              "scene": "单个全局变量"
+            },
+            {
+              "compose": "global_003_T.py && global_004_F.py",
+              "scene": "多个全局变量"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

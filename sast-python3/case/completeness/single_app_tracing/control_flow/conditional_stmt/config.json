@@ -1,0 +1,62 @@
+{
+  "conditional_stmt": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->流程控制语句->条件语句",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "conditional_if_001_T.py && !conditional_if_002_F.py",
+              "scene": "if"
+            },
+            {
+              "compose": "conditional_if_003_T.py && !conditional_if_004_F.py",
+              "scene": "elseif"
+            },
+            {
+              "compose": "conditional_match_001_T.py && !conditional_match_002_F.py",
+              "scene": "match1"
+            },
+            {
+              "compose": "conditional_match_003_T.py && !conditional_match_004_F.py",
+              "scene": "match_or"
+            },
+            {
+              "compose": "conditional_match_005_T.py && !conditional_match_006_F.py",
+              "scene": "match_as"
+            },
+            {
+              "compose": "conditional_match_007_T.py && !conditional_match_008_F.py",
+              "scene": "match_sequence"
+            },
+            {
+              "compose": "conditional_match_009_T.py && !conditional_match_010_F.py",
+              "scene": "match2"
+            },
+            {
+              "compose": "conditional_ternary_001_T.py && !conditional_ternary_002_F.py",
+              "scene": "三元运算符"
+            },
+            {
+              "compose": "conditional_matchClass_001_T.py && !conditional_matchClass_002_F.py",
+              "scene": "matchClass"
+            },
+            {
+              "compose": "conditional_matchMapping_001_T.py && !conditional_matchMapping_002_F.py",
+              "scene": "matchMapping"
+            },
+            {
+              "compose": "conditional_matchStar_001_T.py && !conditional_matchStar_002_F.py",
+              "scene": "星号匹配->列表嵌套"
+            },
+            {
+              "compose": "conditional_matchStar_003_T.py && !conditional_matchStar_004_F.py",
+              "scene": "星号匹配->字典嵌套"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

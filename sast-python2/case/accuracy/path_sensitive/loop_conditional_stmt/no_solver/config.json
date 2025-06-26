@@ -1,0 +1,22 @@
+{
+  "no_solver": [
+    {
+      "evaluation_item": "准确度->路径敏感分析->条件语句、条件表达式和循环结构->无需通过对不同的条件进行求解，即能够区分不同的执行路径的状态",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "!conditional_if_007_F.py && !conditional_if_008_F.py",
+              "scene": "区分if else准入条件（不需求解）->if->区分分支"
+            },
+            {
+              "compose": "conditional_if_009_T.py && !conditional_if_010_F.py",
+              "scene": "区分if else分支+准入条件（不需求解）->if->区分具体执行路径->不求解"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

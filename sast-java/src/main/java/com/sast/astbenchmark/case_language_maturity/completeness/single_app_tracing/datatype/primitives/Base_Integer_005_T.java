@@ -9,14 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型->int
- * Level 2
- * Date 2024-08-16
- */
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
+// scene introduction = int
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/primitives/Base_Integer_005_T/{cmd}
 // evaluation information end
 

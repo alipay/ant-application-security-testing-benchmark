@@ -1,0 +1,22 @@
+{
+  "multidimensional_collection": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分多维字典/列表/数组的不同元素",
+      "scene_levels": [
+        {
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "array_index_005_T/array_index_005_T.go && !array_index_006_F/array_index_006_F.go",
+              "scene": "数组索引->二维"
+            },
+            {
+              "compose": "slice_index_003_T/slice_index_003_T.go && !slice_index_004_F/slice_index_004_F.go",
+              "scene": "切片索引-二维"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

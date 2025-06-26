@@ -1,0 +1,55 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->流程控制语句->循环结构",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "while_break_001_T.py && !while_break_002_F.py",
+              "scene": "while_break"
+            },
+            {
+              "compose": "all_001_T.py && !all_002_F.py",
+              "scene": "all"
+            },
+            {
+              "compose": "for_body_001_T.py && !for_body_002_F.py",
+              "scene": "for_body"
+            },
+            {
+              "compose": "traverse_001_T.py && !traverse_002_F.py",
+              "scene": "遍历"
+            },
+            {
+              "compose": "forin_body_001_T.py && !forin_body_002_F.py",
+              "scene": "forin_body"
+            },
+            {
+              "compose": "any_001_T.py && !any_002_F.py",
+              "scene": "any"
+            },
+            {
+              "compose": "while_body_001_T.py && !while_body_002_F.py",
+              "scene": "while"
+            },
+            {
+              "compose": "while_else_001_T.py && !while_else_002_F.py",
+              "scene": "while_else"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "nested_loop_001_T.py && !nested_loop_002_F.py",
+              "scene": "嵌套循环"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

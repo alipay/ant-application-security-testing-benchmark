@@ -11,14 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->别名->ReturnAlias FlowSensitive-scene1
- * Level 2
- * Date 2024-07-02
- */
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名
+// scene introduction = ReturnAlias FlowSensitive-scene1
+// level = 2
 // bind_url = completeness/single_app_tracing/alias/ReturnAlias_001_T
 // evaluation information end
 @RestController

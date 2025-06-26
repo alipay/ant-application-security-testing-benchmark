@@ -1,0 +1,38 @@
+{
+  "library_function": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->库函数调用",
+      "scene_levels": [
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "json_001_T.py && !json_002_F.py",
+              "scene": "json库"
+            },
+            {
+              "compose": "string_001_T.py && !string_002_F.py",
+              "scene": "字符串库"
+            },
+            {
+              "compose": "datetime_001_T.py && !datetime_002_F.py",
+              "scene": "datetime库"
+            },
+            {
+              "compose": "math_001_T.py && !math_002_F.py",
+              "scene": "math库"
+            },
+            {
+              "compose": "os_001_T.py && !os_002_F.py",
+              "scene": "os库"
+            },
+            {
+              "compose": "re_001_T.py && !re_002_F.py",
+              "scene": "re库"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

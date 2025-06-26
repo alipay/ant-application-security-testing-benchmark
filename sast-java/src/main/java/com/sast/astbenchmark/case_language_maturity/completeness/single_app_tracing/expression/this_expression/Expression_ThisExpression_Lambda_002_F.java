@@ -10,14 +10,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->表达式->this表达式->this表达式+lambda表达式
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->表达式->this表达式
+// scene introduction = this表达式+lambda表达式
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/this_expression/Expression_ThisExpression_Lambda_002_F/{url}
 // evaluation information end
 

@@ -1,0 +1,18 @@
+{
+  "loop_stmt_update": [
+    {
+      "evaluation_item": "准确度->流敏感分析->循环顺序执行语句->for-update流敏感",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Statement_ForStatement_007_T.java && !Statement_ForStatement_008_F.java",
+              "scene": "for-update流敏感"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "anonymous_function_closure": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->匿名函数/闭包",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!anonymous_function_001_F.js && anonymous_function_002_T.js",
+              "scene": "返回值传递"
+            },
+            {
+              "compose": "!anonymous_function_003_F.js && anonymous_function_004_T.js",
+              "scene": "匿名函数"
+            },
+            {
+              "compose": "!anonymous_function_005_F.js && anonymous_function_006_T.js",
+              "scene": "匿名函数直接调用"
+            },
+            {
+              "compose": "!closure_function_001_F.js && closure_function_002_T.js",
+              "scene": "闭包->一阶"
+            },
+            {
+              "compose": "!closure_function_003_F.js && closure_function_004_T.js",
+              "scene": "闭包->二阶"
+            },
+            {
+              "compose": "!closure_function_005_F.js && !closure_function_006_F.js && closure_function_007_T.js",
+              "scene": "闭包->二阶多函数"
+            },
+            {
+              "compose": "!closure_function_008_F.js && closure_function_009_T.js",
+              "scene": "闭包->三阶定义在函数内"
+            },
+            {
+              "compose": "!closure_function_010_F.js && closure_function_011_T.js",
+              "scene": "闭包->三阶定义在函数外"
+            },
+            {
+              "compose": "!closure_function_012_F.js && closure_function_013_T.js",
+              "scene": "闭包->结构体"
+            },
+            {
+              "compose": "!closure_function_014_F.js && closure_function_015_T.js",
+              "scene": "闭包->结构体内嵌套2阶"
+            },
+            {
+              "compose": "!closure_function_016_F.js && closure_function_017_T.js",
+              "scene": "闭包->结构体外嵌套2阶"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

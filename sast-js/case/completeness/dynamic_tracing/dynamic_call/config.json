@@ -1,0 +1,26 @@
+{
+  "dynamic_call": [
+    {
+      "evaluation_item": "完整度->动态特性跟踪完整度->反射调用",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "!dynamic_call_reflect_001_F.js && dynamic_call_reflect_002_T.js",
+              "scene": "反射"
+            },
+            {
+              "compose": "dynamic_call_reflect_003_T.js && !dynamic_call_reflect_004_F.js",
+              "scene": "反射2"
+            },
+            {
+              "compose": "dynamic_call_reflect_005_T.js && !dynamic_call_reflect_006_F.js",
+              "scene": "反射3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "override": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->方法重写",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "constructor_extends_001_T.js && !constructor_extends_002_F.js",
+              "scene": "构造函数"
+            },
+            {
+              "compose": "constructor_extends_003_T.js && !constructor_extends_004_F.js",
+              "scene": "构造函数2"
+            },
+            {
+              "compose": "polymorphism_override_001_T.js && !polymorphism_override_002_F.js",
+              "scene": "多态"
+            },
+            {
+              "compose": "prototype_extends_001_T.js && !prototype_extends_002_F.js",
+              "scene": "构造函数->原型链"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

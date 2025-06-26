@@ -1,0 +1,30 @@
+{
+  "conditional_stmt": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->流程控制语句->条件语句",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "conditional_if_001_T.js && !conditional_if_002_F.js",
+              "scene": "if"
+            },
+            {
+              "compose": "conditional_if_003_T.js && !conditional_if_004_F.js",
+              "scene": "else"
+            },
+            {
+              "compose": "conditional_if_005_T.js && !conditional_if_006_F.js",
+              "scene": "elseif"
+            },
+            {
+              "compose": "conditional_switch_001_T.js && !conditional_switch_002_F.js",
+              "scene": "switch"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->函数和方法调用->参数传递->变量赋值表达式直接引入而不是import
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
+// scene introduction = 变量赋值表达式直接引入而不是import
+// level = 2
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_CallExpression_Package_002_F/{url}
 // evaluation information end
 @RestController()

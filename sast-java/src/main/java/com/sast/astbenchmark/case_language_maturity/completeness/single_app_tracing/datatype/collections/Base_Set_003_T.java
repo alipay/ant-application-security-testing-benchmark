@@ -13,14 +13,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->数据类型和结构->集合->Set
- * Level 2
- * Date 2024-05-09
- */
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
+// scene introduction = Set
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_Set_003_T
 // evaluation information end
 

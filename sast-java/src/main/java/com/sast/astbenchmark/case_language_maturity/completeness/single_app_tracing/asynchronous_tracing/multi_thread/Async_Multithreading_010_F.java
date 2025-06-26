@@ -9,14 +9,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Introduction 完整度->单应用跟踪完整度->并发、多线程、异步->多线程->Synchronized
- * Level 2
- * Date 2024-07-31
- */
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->多线程
+// scene introduction = Synchronized
+// level = 2
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/multi_thread/Async_Multithreading_010_F/{cmd}
 // evaluation information end
 
@@ -29,7 +26,7 @@ public class Async_Multithreading_010_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         Async_Multithreading_010_F obj = new Async_Multithreading_010_F();
-
+        obj.a = cmd;
         Thread thread1 = new Thread(() -> {
             synchronized (obj) {
                 obj.a = "ls";

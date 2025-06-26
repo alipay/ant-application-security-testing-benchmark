@@ -1,0 +1,26 @@
+{
+  "dynamic_call": [
+    {
+      "evaluation_item": "完整度->动态特性跟踪完整度->反射调用",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "!dynamic_call_reflect_001_F.py && dynamic_call_reflect_002_T.py",
+              "scene": "字符串常量->反射1"
+            },
+            {
+              "compose": "dynamic_call_reflect_003_T.py && !dynamic_call_reflect_004_F.py",
+              "scene": "字符串常量->反射2"
+            },
+            {
+              "compose": "dynamic_call_reflect_005_T.py && !dynamic_call_reflect_006_F.py",
+              "scene": "字符串常量->反射3"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

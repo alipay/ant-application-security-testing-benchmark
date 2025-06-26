@@ -1,0 +1,35 @@
+{
+  "collections": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->集合",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "set_001_T.py && !set_002_F.py",
+              "scene": "集合（Set）对象"
+            },
+            {
+              "compose": "set_003_T.py && !set_004_F.py",
+              "scene": "add方法"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "set_005_T.py && !set_006_F.py",
+              "scene": "交集-并集"
+            },
+            {
+              "compose": "set_007_T.py && !set_008_F.py",
+              "scene": "差集操作"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

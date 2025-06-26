@@ -1,0 +1,22 @@
+{
+  "type_cast": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->类型转换",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "type_cast_001_T.js && !type_cast_002_F.js",
+              "scene": "显式类型转换"
+            },
+            {
+              "compose": "type_cast_003_T.js && type_cast_004_T.js",
+              "scene": "隐式类型转换"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

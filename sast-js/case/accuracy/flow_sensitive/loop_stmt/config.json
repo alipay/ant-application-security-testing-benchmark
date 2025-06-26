@@ -1,0 +1,26 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation_item": "准确度->流敏感分析->循环顺序执行语句",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "for_003_T.js && !for_004_F.js",
+              "scene": "for->init流敏感"
+            },
+            {
+              "compose": "for_001_T.js && !for_002_F.js",
+              "scene": "for->body流敏感"
+            },
+            {
+              "compose": "dowhile_body_003_T.js && !dowhile_body_004_F.js",
+              "scene": "dowhile"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

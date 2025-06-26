@@ -1,0 +1,34 @@
+{
+  "map": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->字典",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "map_001_T.py && !map_002_F.py",
+              "scene": "字典/映射（Map）对象1"
+            },
+            {
+              "compose": "map_003_T.py && !map_004_F.py",
+              "scene": "字典/映射（Map）对象2"
+            },
+            {
+              "compose": "map_005_T.py && !map_006_F.py",
+              "scene": "字典/映射（Map）对象3"
+            },
+            {
+              "compose": "map_007_T.py && !map_008_F.py",
+              "scene": "字典/映射（Map）对象4"
+            },
+            {
+              "compose": "map_009_T.py && !map_010_F.py",
+              "scene": "泛型映射"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

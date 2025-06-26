@@ -1,0 +1,18 @@
+{
+  "exec": [
+    {
+      "evaluation_item": "完整度->其他->exec",
+      "scene_levels": [
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "exec_001_T.py && !exec_002_F.py",
+              "scene": "动态执行代码"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

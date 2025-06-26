@@ -1,0 +1,42 @@
+{
+  "argument_return_value_passing": [
+    {
+      "evaluation_item": "准确度->上下文敏感分析->参数/返回值传递",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "argument_passing_value_001_T.py && !argument_passing_value_002_F.py",
+              "scene": "参数值传递->普通"
+            },
+            {
+              "compose": "argument_passing_value_003_T.py && !argument_passing_value_004_F.py",
+              "scene": "参数值传递->参数位置"
+            },
+            {
+              "compose": "argument_passing_value_005_T.py && !argument_passing_value_006_F.py",
+              "scene": "参数值传递->默认参数"
+            },
+            {
+              "compose": "argument_passing_value_007_T.py && !argument_passing_value_008_F.py",
+              "scene": "参数值传递->关键字参数"
+            },
+            {
+              "compose": "argument_passing_value_009_T.py && !argument_passing_value_010_F.py",
+              "scene": "参数值传递->可变参数"
+            },
+            {
+              "compose": "return_value_passing_001_T.py && !return_value_passing_002_F.py",
+              "scene": "返回值传递"
+            },
+            {
+              "compose": "return_value_passing_003_T.py && !return_value_passing_004_F.py",
+              "scene": "返回值传递->多层函数嵌套传递"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

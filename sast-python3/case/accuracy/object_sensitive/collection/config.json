@@ -1,0 +1,59 @@
+{
+  "collection": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分字典/列表/数组的不同元素",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "map_object_sensitive_001_T.py && !map_object_sensitive_002_F.py",
+              "scene": "字典->字典对象->value为source"
+            },
+            {
+              "compose": "map_object_sensitive_003_T.py && !map_object_sensitive_004_F.py",
+              "scene": "字典->字典对象->key为source"
+            },
+            {
+              "compose": "set_object_sensitive_001_T.py && !set_object_sensitive_002_F.py",
+              "scene": "数组/集合->集合对象"
+            },
+            {
+              "compose": "set_object_sensitive_003_T.py && !set_object_sensitive_004_F.py",
+              "scene": "数组/集合->集合对象->add/discard"
+            },
+            {
+              "compose": "list_object_sensitive_001_T.py && !list_object_sensitive_002_F.py",
+              "scene": "列表"
+            },
+            {
+              "compose": "list_object_sensitive_003_T.py && !list_object_sensitive_004_F.py",
+              "scene": "列表->二维"
+            },
+            {
+              "compose": "list_object_sensitive_005_T.py && !list_object_sensitive_006_F.py",
+              "scene": "列表->append函数"
+            },
+            {
+              "compose": "list_object_sensitive_007_T.py && !list_object_sensitive_008_F.py",
+              "scene": "列表->clear-extend函数"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "array_object_sensitive_001_T.py && !array_object_sensitive_002_F.py",
+              "scene": "数组/集合->数组对象1"
+            },
+            {
+              "compose": "array_object_sensitive_003_T.py && !array_object_sensitive_004_F.py",
+              "scene": "数组/集合->数组对象2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
