@@ -29,6 +29,18 @@
             {
               "compose": "argument_passing_various_types_001_T.py && !argument_passing_various_types_002_F.py",
               "scene": "参数列表"
+            },
+            {
+              "compose": "argument_passing_various_types_003_T.py && !argument_passing_various_types_004_F.py",
+              "scene": "参数列表1"
+            },
+            {
+              "compose": "argument_passing_various_types_005_T.py && !argument_passing_various_types_006_F.py",
+              "scene": "参数列表2"
+            },
+            {
+              "compose": "argument_passing_various_types_007_T.py && !argument_passing_various_types_008_F.py",
+              "scene": "参数列表3"
             }
           ]
         }
