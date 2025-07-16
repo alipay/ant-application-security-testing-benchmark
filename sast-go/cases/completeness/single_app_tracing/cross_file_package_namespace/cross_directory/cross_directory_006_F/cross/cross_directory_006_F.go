@@ -11,5 +11,5 @@ import "cross_directory_006_F/cross/cross_01/cross_02"
 // evaluation information end
 
 func Cross_directory_006_F(__taint_src string) {
-	cross_02.Cross_directory_006_F_a(__taint_src)
+	cross_pkg_deep2.Cross_directory_006_F_a(__taint_src)
 }
