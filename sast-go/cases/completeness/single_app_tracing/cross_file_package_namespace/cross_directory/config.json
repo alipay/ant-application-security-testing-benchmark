@@ -17,6 +17,14 @@
             {
               "compose": "(cross_directory_005_T/cross/cross_directory_005_T.go || cross_directory_005_T/cross/cross_01/cross_02/cross_directory_005_T_a.go) && !(cross_directory_006_F/cross/cross_directory_006_F.go || cross_directory_006_F/cross/cross_01/cross_02/cross_directory_006_F_a.go)",
               "scene": "跨package3"
+            },
+            {
+              "compose": "cross_directory_007_T/cross/cross_directory_007_T.go && !cross_directory_008_F/cross/cross_directory_008_F.go)",
+              "scene": "跨package4"
+            },
+            {
+              "compose": "cross_directory_009_T/cross/cross_directory_009_T.go && !cross_directory_010_F/cross/cross_directory_010_F.go)",
+              "scene": "跨package5"
             }
           ]
         }
