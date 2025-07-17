@@ -10,9 +10,6 @@ package pkg
 
 var Arg = "12323"
 
-//	func SetArg(newVal string) {
-//		arg = newVal
-//	}
 func init() {
 	Arg = "_"
 }
