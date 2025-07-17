@@ -8,7 +8,23 @@
           "scene_list": [
             {
               "compose": "(cross_directory_001_T/cross_directory_001_T_a/cross_directory_001_T_a.go || cross_directory_001_T/cross_directory_001_T_b/cross_directory_001_T_b.go) && !(cross_directory_002_F/cross_directory_002_F_a/cross_directory_002_F_a.go || cross_directory_002_F/cross_directory_002_F_b/cross_directory_002_F_b.go)",
-              "scene": "跨package"
+              "scene": "跨package1"
+            },
+            {
+              "compose": "(cross_directory_003_T/cross/cross_directory_003_T.go || cross_directory_003_T/cross/cross_01/cross_02/cross_directory_003_T_a.go) && !(cross_directory_004_F/cross/cross_directory_004_F.go || cross_directory_004_F/cross/cross_01/cross_02/cross_directory_004_F_a.go)",
+              "scene": "跨package2"
+            },
+            {
+              "compose": "(cross_directory_005_T/cross/cross_directory_005_T.go || cross_directory_005_T/cross/cross_01/cross_02/cross_directory_005_T_a.go) && !(cross_directory_006_F/cross/cross_directory_006_F.go || cross_directory_006_F/cross/cross_01/cross_02/cross_directory_006_F_a.go)",
+              "scene": "跨package3"
+            },
+            {
+              "compose": "cross_directory_007_T/cross/cross_directory_007_T.go && !cross_directory_008_F/cross/cross_directory_008_F.go)",
+              "scene": "跨package4"
+            },
+            {
+              "compose": "cross_directory_009_T/cross/cross_directory_009_T.go && !cross_directory_010_F/cross/cross_directory_010_F.go)",
+              "scene": "跨package5"
             }
           ]
         }
