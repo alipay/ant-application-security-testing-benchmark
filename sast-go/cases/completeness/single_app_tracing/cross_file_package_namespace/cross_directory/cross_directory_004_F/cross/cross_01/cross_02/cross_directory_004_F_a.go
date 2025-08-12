@@ -16,4 +16,3 @@ func Cross_directory_004_F_a(o interface{}) {
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
-

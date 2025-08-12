@@ -4,6 +4,7 @@
 // scene introduction = 结构体注入接口
 // level = 2
 // bind_url = completeness/single_app_tracing/interface_class/interface_implementation/interface_class_002_c_F/interface_class_002_c_F
+
 // evaluation information end
 
 package main

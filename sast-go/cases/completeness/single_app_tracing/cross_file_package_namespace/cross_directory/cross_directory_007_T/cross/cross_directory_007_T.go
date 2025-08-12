@@ -24,3 +24,4 @@ func main() {
     __taint_src := "taint_src_value"
     cross_directory_007_T(__taint_src)
 }
+

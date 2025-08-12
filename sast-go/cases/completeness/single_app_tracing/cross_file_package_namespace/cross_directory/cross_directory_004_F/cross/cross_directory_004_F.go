@@ -14,6 +14,7 @@ func cross_directory_004_F(__taint_src string) {
 	cross_pkg_deep2.Cross_directory_004_F_a(__taint_src)
 }
 
+
 func main() {
     __taint_src := "taint_src_value"
     cross_directory_004_F(__taint_src)
