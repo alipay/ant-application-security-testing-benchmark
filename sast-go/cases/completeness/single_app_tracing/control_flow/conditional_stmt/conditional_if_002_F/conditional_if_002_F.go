@@ -1,4 +1,5 @@
-package conditional_if_002_F
+package main
+import "os/exec"
 
 
 // evaluation information start
@@ -17,4 +18,11 @@ func conditional_if_002_F(__taint_src string) {
 	res = __taint_src
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    conditional_if_002_F(__taint_src)
+}

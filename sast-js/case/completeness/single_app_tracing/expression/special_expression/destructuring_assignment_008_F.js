@@ -5,6 +5,8 @@
 // level = 2+
 // bind_url = completeness/single_app_tracing/expression/special_expression/destructuring_assignment_008_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function destructuring_assignment_008_F(__taint_src) {
   let arr = { a: "_", b: "_", c: { __taint_src, d: "a" } };
@@ -12,4 +14,10 @@ function destructuring_assignment_008_F(__taint_src) {
   __taint_sink(a);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+destructuring_assignment_008_F(taint_src);

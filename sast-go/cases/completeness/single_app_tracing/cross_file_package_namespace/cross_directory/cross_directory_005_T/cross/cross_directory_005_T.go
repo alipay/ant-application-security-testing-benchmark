@@ -13,3 +13,9 @@ import "cross_directory_005_T/cross/cross_01/cross_02"
 func cross_directory_005_T(__taint_src string) {
 	cross_pkg_deep2.Cross_directory_005_T_a(__taint_src)
 }
+
+func main() {
+    __taint_src := "taint_src_value"
+    cross_directory_005_T(__taint_src)
+}
+

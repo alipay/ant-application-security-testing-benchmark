@@ -5,10 +5,18 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/special_expression/template_literal_006_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function template_literal_006_F(__taint_src) {
   let result = `_${__taint_src}_`;
   __taint_sink("aa");
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+template_literal_006_F(taint_src);

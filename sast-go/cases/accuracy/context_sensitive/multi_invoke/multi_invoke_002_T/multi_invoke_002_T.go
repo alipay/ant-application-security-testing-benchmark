@@ -7,7 +7,8 @@
 // bind_url = accuracy/context_sensitive/multi_invoke/multi_invoke_002_T/multi_invoke_002_T
 // evaluation information end
 
-package multi_invoke_002_T
+package main
+import "os/exec"
 
 func multi_invoke_002_T(__taint_src string) {
 	a := process(__taint_src)
@@ -21,4 +22,10 @@ func process(arg string) string {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    multi_invoke_002_T(__taint_src)
 }

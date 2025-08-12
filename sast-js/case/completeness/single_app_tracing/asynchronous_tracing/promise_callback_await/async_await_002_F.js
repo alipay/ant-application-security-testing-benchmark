@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/async_await_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 async function async_await_002_F(__taint_src) {
   let data = await process();
@@ -19,4 +21,10 @@ async function async_await_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+async_await_002_F(taint_src);

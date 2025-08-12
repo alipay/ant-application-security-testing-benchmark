@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/synchronization_primitive/synchronization_primitive_003_T/synchronization_primitive_003_T
 // evaluation information end
 
-package synchronization_primitive_003_T
+package main
+import "os/exec"
 
 func synchronization_primitive_003_T(__taint_src string) {
 	ch := make(chan string, 2)
@@ -19,4 +20,11 @@ func synchronization_primitive_003_T(__taint_src string) {
 	__taint_sink(result)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    synchronization_primitive_003_T(__taint_src)
+}

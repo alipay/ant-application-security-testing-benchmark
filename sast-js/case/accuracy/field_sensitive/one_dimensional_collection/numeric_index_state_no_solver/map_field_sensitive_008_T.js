@@ -5,12 +5,20 @@
 // level = 3
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/map_field_sensitive_008_T
 // evaluation information end
+const { execSync } = require('child_process');
 
-function map_object_sensitive_008_T(__taint_src) {
+
+function map_field_sensitive_008_T(__taint_src) {
   let map = new Map();
   map.set(__taint_src, "value1");
   map.set("key2", "value2");
   __taint_sink(map.keys());
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+map_field_sensitive_008_T(taint_src);

@@ -7,6 +7,7 @@
 // evaluation information end
 
 package main
+import "os/exec"
 
 import "fmt"
 
@@ -31,4 +32,10 @@ func (b B) Say(c interface{}) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    complex_struct_002_F(__taint_src)
 }

@@ -5,10 +5,18 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/type_cast/type_cast_003_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function type_cast_003_T(__taint_src) {
   let result = __taint_src == 5;
   __taint_sink(result);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+type_cast_003_T(taint_src);

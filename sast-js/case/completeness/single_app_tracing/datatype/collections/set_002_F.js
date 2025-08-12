@@ -5,10 +5,18 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/set_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function set_002_F(__taint_src) {
   let s = new Set("_");
   __taint_sink(s);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+set_002_F(taint_src);

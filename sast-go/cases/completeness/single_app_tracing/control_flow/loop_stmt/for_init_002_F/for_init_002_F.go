@@ -1,4 +1,5 @@
-package for_init_002_F
+package main
+import "os/exec"
 
 
 // evaluation information start
@@ -19,4 +20,11 @@ func for_init_002_F(__taint_src int) {
 	__taint_sink(res)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    for_init_002_F(__taint_src)
+}

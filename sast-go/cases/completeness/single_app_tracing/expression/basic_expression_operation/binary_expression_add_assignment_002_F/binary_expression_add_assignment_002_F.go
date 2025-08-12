@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/binary_expression_add_assignment_002_F/binary_expression_add_assignment_002_F
 // evaluation information end
 
-package binary_expression_add_assignment_002_F
+package main
+import "os/exec"
 
 func binary_expression_add_assignment_002_F(__taint_src string) {
 	result := "_"
@@ -15,4 +16,11 @@ func binary_expression_add_assignment_002_F(__taint_src string) {
 	__taint_sink("aa")
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    binary_expression_add_assignment_002_F(__taint_src)
+}

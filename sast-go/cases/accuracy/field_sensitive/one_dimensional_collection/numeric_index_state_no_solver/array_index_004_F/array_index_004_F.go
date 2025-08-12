@@ -7,7 +7,8 @@
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/array_index_004_F/array_index_004_F
 // evaluation information end
 
-package array_index_004_F
+package main
+import "os/exec"
 
 func array_index_004_F(__taint_src string) {
 	var str = [3]string{__taint_src, "b", "c"}
@@ -16,4 +17,10 @@ func array_index_004_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    array_index_004_F(__taint_src)
 }

@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/return_value_passing/multiple_return_005_F/multiple_return_005_F
 // evaluation information end
 
-package multiple_return_005_F
+package main
+import "os/exec"
 
 func multiple_return_005_F(__taint_src interface{}) {
 	a := "_"
@@ -21,4 +22,11 @@ func processData(s interface{}, i interface{}) (interface{}, interface{}) {
 	return i, s
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    multiple_return_005_F(__taint_src)
+}

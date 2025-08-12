@@ -7,16 +7,21 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "conditional_expression_001_T.py && !conditional_expression_002_F.py",
-              "scene": "三目运算"
-            },
-            {
               "compose": "logical_and_001_T.py && !logical_and_002_F.py",
               "scene": "逻辑与"
             },
             {
               "compose": "logical_or_001_T.py && !logical_or_002_F.py",
               "scene": "逻辑或"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "conditional_expression_001_T.py && !conditional_expression_002_F.py",
+              "scene": "三目运算"
             }
           ]
         }

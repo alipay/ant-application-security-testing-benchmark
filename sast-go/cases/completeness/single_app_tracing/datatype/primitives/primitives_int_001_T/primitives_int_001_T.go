@@ -7,11 +7,18 @@
 // bind_url = completeness/single_app_tracing/datatype/primitives/primitives_int_001_T/primitives_int_001_T
 // evaluation information end
 
-package primitives_int_001_T
+package main
+import "os/exec"
 
 func primitives_int_001_T(__taint_src int) {
 	__taint_sink(__taint_src)
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    primitives_int_001_T(__taint_src)
 }

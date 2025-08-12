@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/class/complex_object/cross_class_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function cross_class_002_F(__taint_src) {
   class A {
@@ -27,4 +29,10 @@ function cross_class_002_F(__taint_src) {
   __taint_sink(obj);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+cross_class_002_F(taint_src);

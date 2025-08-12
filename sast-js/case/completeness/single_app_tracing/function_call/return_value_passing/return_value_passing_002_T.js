@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/return_value_passing/return_value_passing_002_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function return_value_passing_002_T(__taint_src) {
   let data = process();
@@ -15,4 +17,10 @@ function return_value_passing_002_T(__taint_src) {
   }
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+return_value_passing_002_T(taint_src);

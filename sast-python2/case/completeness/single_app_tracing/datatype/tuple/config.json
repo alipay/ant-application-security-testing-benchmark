@@ -9,7 +9,12 @@
             {
               "compose": "tuple_001_T.py && !tuple_002_F.py",
               "scene": "元组字面量"
-            },
+            }
+          ]
+        } ,
+        {
+          "level": "2+",
+          "scene_list": [
             {
               "compose": "tuple_003_T.py && !tuple_004_F.py",
               "scene": "解构赋值"

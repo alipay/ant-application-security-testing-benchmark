@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/anonymous_function_closure/anonymous_function_001_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 function anonymous_function_001_F(__taint_src) {
   const process = function (a, b) {
     return a + b;
@@ -12,4 +14,10 @@ function anonymous_function_001_F(__taint_src) {
   __taint_sink(process("_", "aa"));
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+anonymous_function_001_F(taint_src);

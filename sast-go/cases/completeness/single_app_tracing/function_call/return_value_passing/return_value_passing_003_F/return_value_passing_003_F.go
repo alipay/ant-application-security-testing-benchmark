@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/return_value_passing/return_value_passing_003_F/return_value_passing_003_F
 // evaluation information end
 
-package return_value_passing_003_F
+package main
+import "os/exec"
 
 func return_value_passing_003_F(__taint_src string) {
 	data := process(__taint_src)
@@ -20,4 +21,11 @@ func process(__taint_src string) string {
 	return tmp
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    return_value_passing_003_F(__taint_src)
+}

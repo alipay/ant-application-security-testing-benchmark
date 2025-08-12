@@ -5,6 +5,8 @@
 // level =  2
 // bind_url = completeness/single_app_tracing/expression/this_expression/this_expression_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function this_expression_002_F(__taint_src) {
   let obj = {
@@ -18,4 +20,10 @@ function this_expression_002_F(__taint_src) {
   __taint_sink(result);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+this_expression_002_F(taint_src);

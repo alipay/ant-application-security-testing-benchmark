@@ -5,6 +5,8 @@
 // level = 4
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/for_body_005_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function for_body_005_F(__taint_src) {
   for (let i = 0; i < 0; i++) {
@@ -13,4 +15,10 @@ function for_body_005_F(__taint_src) {
   __taint_sink(res);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+for_body_005_F(taint_src);

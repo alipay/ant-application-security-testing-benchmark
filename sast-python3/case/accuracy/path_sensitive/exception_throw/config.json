@@ -9,10 +9,6 @@
             {
               "compose": "exception_throw_001_T.py && !exception_throw_002_F.py && exception_throw_003_T.py",
               "scene": "1"
-            },
-            {
-              "compose": "exception_throw_004_T.py && !exception_throw_005_F.py",
-              "scene": "finally块执行路径"
             }
           ]
         }

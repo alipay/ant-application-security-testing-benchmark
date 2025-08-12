@@ -7,7 +7,8 @@
 // bind_url = accuracy/object_sensitive/collection/map_obj_sensitive_004_T/map_obj_sensitive_004_T
 // evaluation information end
 
-package map_obj_sensitive_004_T
+package main
+import "os/exec"
 
 func map_obj_sensitive_004_T(__taint_src string) {
 	m := map[string]string{
@@ -21,4 +22,10 @@ func map_obj_sensitive_004_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    map_obj_sensitive_004_T(__taint_src)
 }

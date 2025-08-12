@@ -6,6 +6,7 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_005_T/A/cross_modules_005_T_a
 // evaluation information end
 
+
 function exportString(__taint_src) {
   return __taint_src;
 }
@@ -13,3 +14,5 @@ function exportString(__taint_src) {
 module.exports = {
   exportString,
 };
+
+

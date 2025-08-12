@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = accuracy/object_sensitive/collection/set_object_sensitive_004_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function set_object_sensitive_004_F(__taint_src) {
   let set = new Set("a");
@@ -13,4 +15,10 @@ function set_object_sensitive_004_F(__taint_src) {
   __taint_sink(set);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+set_object_sensitive_004_F(taint_src);

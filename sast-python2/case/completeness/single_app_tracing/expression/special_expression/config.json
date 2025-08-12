@@ -6,18 +6,7 @@
         {
           "level": "2+",
           "scene_list": [
-            {
-              "compose": "template_literal_001_T.py && !template_literal_002_F.py",
-              "scene": "模板字面量1"
-            },
-            {
-              "compose": "template_literal_003_T.py && !template_literal_004_F.py",
-              "scene": "模板字面量2"
-            },
-            {
-              "compose": "template_literal_005_T.py && !template_literal_006_F.py",
-              "scene": "模板字面量3"
-            },
+            
             {
               "compose": "destructuring_assignment_001_T.py && !destructuring_assignment_002_F.py",
               "scene": "解构赋值表达式->数组解构赋值"
@@ -37,14 +26,6 @@
             {
               "compose": "exponentiation_operator_001_T.py && !exponentiation_operator_002_F.py",
               "scene": "指数运算符"
-            },
-            {
-              "compose": "spread_operator_005_T.py && !spread_operator_006_F.py",
-              "scene": "扩展运算符1"
-            },
-            {
-              "compose": "spread_operator_007_T.py && !spread_operator_008_F.py",
-              "scene": "扩展运算符2"
             },
             {
               "compose": "del_expression_001_T.py && !del_expression_002_F.py",
@@ -75,20 +56,50 @@
               "scene": "变量交换"
             },
             {
-              "compose": "multi_target_assignment_001_T.py && !multi_target_assignment_002_F.py",
-              "scene": "多目标赋值"
+              "compose": "set_comprehension_001_T.py && !set_comprehension_002_F.py",
+              "scene": "集合推导式"
+            }
+          ]
+        },
+         {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "template_literal_001_T.py && !template_literal_002_F.py",
+              "scene": "模板字面量1"
             },
             {
-              "compose": "list_comprehension_001_T.py && !list_comprehension_002_F.py",
-              "scene": "列表推导式"
+              "compose": "template_literal_003_T.py && !template_literal_004_F.py",
+              "scene": "模板字面量2"
             },
+            {
+              "compose": "template_literal_005_T.py && !template_literal_006_F.py",
+              "scene": "模板字面量3"
+            },
+            {
+              "compose": "spread_operator_005_T.py && !spread_operator_006_F.py",
+              "scene": "扩展运算符1"
+            },
+            {
+              "compose": "spread_operator_007_T.py && !spread_operator_008_F.py",
+              "scene": "扩展运算符2"
+            },
+            {
+              "compose": "multi_target_assignment_001_T.py && !multi_target_assignment_002_F.py",
+              "scene": "多目标赋值"
+            }
+          ]
+        },
+         {
+          "level": "3",
+          "scene_list": [
             {
               "compose": "map_comprehension_001_T.py && !map_comprehension_002_F.py",
               "scene": "字典推导式"
             },
             {
-              "compose": "set_comprehension_001_T.py && !set_comprehension_002_F.py",
-              "scene": "集合推导式"
+              "compose": "list_comprehension_001_T.py && !list_comprehension_002_F.py",
+              "scene": "列表推导式"
             }
           ]
         }

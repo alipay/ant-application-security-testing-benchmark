@@ -8,8 +8,12 @@
 // evaluation information end
 
 package cross_file_002_F
+import "os/exec"
 
 func Cross_file_002_F_b(o interface{}) {
 	__taint_sink("_")
 }
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+

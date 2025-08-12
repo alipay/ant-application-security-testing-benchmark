@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/while_body_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function while_body_002_F(__taint_src) {
   let i = 0;
@@ -15,4 +17,10 @@ function while_body_002_F(__taint_src) {
   __taint_sink(res);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+while_body_002_F(taint_src);

@@ -1,4 +1,5 @@
-package exception_throw_001_T
+package main
+import "os/exec"
 
 
 // evaluation information start
@@ -19,4 +20,11 @@ func exception_throw_001_T(__taint_src string) {
 	panic(__taint_src)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    exception_throw_001_T(__taint_src)
+}

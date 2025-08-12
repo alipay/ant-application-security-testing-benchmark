@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/higher_order_function/higher_order_function_001_F/higher_order_function_001_F
 // evaluation information end
 
-package higher_order_function_001_F
+package main
+import "os/exec"
 
 func higher_order_function_001_F(__taint_src string) {
 	f := func(a string, b string) func() string {
@@ -21,4 +22,10 @@ func higher_order_function_001_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    higher_order_function_001_F(__taint_src)
 }

@@ -6,7 +6,8 @@
 // bind_url = completeness/single_app_tracing/function_call/override/polymorphism_override_002_F/polymorphism_override_002_F
 // evaluation information end
 
-package polymorphism_override_002_F
+package main
+import "os/exec"
 
 func polymorphism_override_002_F(__taint_src interface{}) {
 	var sub Base
@@ -31,4 +32,10 @@ func (s Sub2) call(src interface{}) interface{} {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    polymorphism_override_002_F(__taint_src)
 }

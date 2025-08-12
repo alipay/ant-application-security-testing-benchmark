@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/expression/special_expression/rest_parameter_001_T/rest_parameter_001_T
 // evaluation information end
 
-package rest_parameter_001_T
+package main
+import "os/exec"
 
 func rest_parameter_001_T(__taint_src string) {
 	collectArgs("prefix", __taint_src, "suffix")
@@ -18,4 +19,10 @@ func collectArgs(args ...interface{}) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    rest_parameter_001_T(__taint_src)
 }

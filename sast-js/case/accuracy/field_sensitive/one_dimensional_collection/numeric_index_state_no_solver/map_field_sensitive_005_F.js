@@ -5,6 +5,8 @@
 // level = 3
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/map_field_sensitive_005_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function map_field_sensitive_005_F(__taint_src) {
   let map = new Map();
@@ -15,4 +17,10 @@ function map_field_sensitive_005_F(__taint_src) {
   __taint_sink(map.get("key1"));
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+map_field_sensitive_005_F(taint_src);

@@ -14,7 +14,6 @@ import os
 def bytearray_002_F(taint_src):
     # 使用 bytearray() 构造函数创建可变字节序列
     mutable_byte_data = bytearray("aaa", 'utf-8')
-    mutable_byte_data[0] = 65  # 修改第一个字节为 ASCII 码为 65 的字符 'A'
     taint_sink(mutable_byte_data)  # 将修改后的字节序列传递给 taint_sink
 
 

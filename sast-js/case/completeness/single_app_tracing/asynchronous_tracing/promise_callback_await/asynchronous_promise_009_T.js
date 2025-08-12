@@ -5,6 +5,8 @@
 // level = 2+
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/asynchronous_promise_009_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function asynchronous_promise_009_T(__taint_src) {
   let promise = new Promise((resolve, reject) => {
@@ -19,4 +21,10 @@ function asynchronous_promise_009_T(__taint_src) {
     });
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+asynchronous_promise_009_T(taint_src);

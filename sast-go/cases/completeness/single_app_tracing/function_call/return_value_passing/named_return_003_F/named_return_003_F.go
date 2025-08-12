@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/return_value_passing/named_return_003_F/named_return_003_F
 // evaluation information end
 
-package named_return_003_F
+package main
+import "os/exec"
 
 func named_return_003_F(__taint_src interface{}) {
 	a := "_"
@@ -21,4 +22,11 @@ func processData(s interface{}, i interface{}) (ret interface{}) {
 	return
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    named_return_003_F(__taint_src)
+}

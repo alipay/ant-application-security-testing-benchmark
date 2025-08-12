@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/map/map_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function map_002_F(__taint_src) {
   let m = new Map();
@@ -12,4 +14,10 @@ function map_002_F(__taint_src) {
   __taint_sink(m);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+map_002_F(taint_src);

@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/datatype/pointer/pointer_001_T/pointer_001_T
 // evaluation information end
 
-package pointer_001_T
+package main
+import "os/exec"
 
 func pointer_001_T(__taint_src string) {
 	ps := &__taint_src
@@ -15,4 +16,10 @@ func pointer_001_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    pointer_001_T(__taint_src)
 }

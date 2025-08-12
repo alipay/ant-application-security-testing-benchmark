@@ -7,7 +7,8 @@
 // bind_url = accuracy/object_sensitive/collection/array_obj_sensitive_003_T/array_obj_sensitive_003_T
 // evaluation information end
 
-package array_obj_sensitive_003_T
+package main
+import "os/exec"
 
 func array_obj_sensitive_003_T(__taint_src string) {
 	var str = [3][1]string{[1]string{__taint_src}, [1]string{"b"}, [1]string{"c"}}
@@ -17,4 +18,10 @@ func array_obj_sensitive_003_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    array_obj_sensitive_003_T(__taint_src)
 }

@@ -1,4 +1,5 @@
-package arg_return_001_T
+package main
+import "os/exec"
 
 
 // evaluation information start
@@ -22,4 +23,10 @@ func appendTaint(taintSrc []string, newTaint string) []string {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    arg_return_001_T(__taint_src)
 }

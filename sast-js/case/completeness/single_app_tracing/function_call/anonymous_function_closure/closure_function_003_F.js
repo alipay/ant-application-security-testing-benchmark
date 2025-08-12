@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/anonymous_function_closure/closure_function_003_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 function closure_function_003_F(__taint_src) {
   function outer() {
     return function inner() {
@@ -16,4 +18,10 @@ function closure_function_003_F(__taint_src) {
   innerFunction();
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+closure_function_003_F(taint_src);

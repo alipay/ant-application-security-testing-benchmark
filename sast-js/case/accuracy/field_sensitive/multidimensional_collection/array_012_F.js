@@ -5,10 +5,18 @@
 // level = 4
 // bind_url = accuracy/field_sensitive/multidimensional_collection/array_012_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function array_012_F(__taint_src) {
   let s = [[__taint_src], ["b"], "c"];
   __taint_sink(s[1]);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+array_012_F(taint_src);

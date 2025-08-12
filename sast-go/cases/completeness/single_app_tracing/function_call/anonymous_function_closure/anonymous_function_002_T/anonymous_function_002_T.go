@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/anonymous_function_closure/anonymous_function_002_T/anonymous_function_002_T
 // evaluation information end
 
-package anonymous_function_002_T
+package main
+import "os/exec"
 
 func anonymous_function_002_T(__taint_src string) {
 	process := func(a string, b string) string {
@@ -17,4 +18,10 @@ func anonymous_function_002_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    anonymous_function_002_T(__taint_src)
 }
