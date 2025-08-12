@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/every_002_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function every_002_F(__taint_src) {
   let arr = ["a", "b", "c"];
@@ -13,4 +15,10 @@ function every_002_F(__taint_src) {
   });
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+every_002_F(taint_src);

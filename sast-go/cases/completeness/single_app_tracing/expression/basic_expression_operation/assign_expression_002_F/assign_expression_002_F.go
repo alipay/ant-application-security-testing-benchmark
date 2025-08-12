@@ -7,11 +7,19 @@
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/assign_expression_002_F/assign_expression_002_F
 // evaluation information end
 
-package assign_expression_002_F
+package main
+import "os/exec"
 
 func assign_expression_002_F(__taint_src string) {
 	result := "_"
 	__taint_sink(result)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    assign_expression_002_F(__taint_src)
+}

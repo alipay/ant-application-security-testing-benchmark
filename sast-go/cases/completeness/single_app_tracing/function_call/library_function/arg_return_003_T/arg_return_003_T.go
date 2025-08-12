@@ -1,4 +1,5 @@
-package arg_return_003_T
+package main
+import "os/exec"
 
 import "strconv"
 
@@ -18,9 +19,15 @@ func arg_return_003_T(__taint_src int) {
 }
 
 func __taint_sink(o interface{}) {
-}
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
 
 func itoaTaint(taintSrc int) string {
 	b := strconv.Itoa(taintSrc)
 	return b
+}
+
+func main() {
+    __taint_src := "taint_src_value"
+    arg_return_003_T(__taint_src)
 }

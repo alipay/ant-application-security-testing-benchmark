@@ -7,7 +7,7 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_module_004_F/cross_module_004_F_b/cross_module_004_F_b
 // evaluation information end
 
-package cross_module_004_F_b
+package main
 
 import (
 	Mymod "gotest.com/cross_module_004_F_a"
@@ -15,4 +15,9 @@ import (
 
 func cross_module_004_F_b(__taint_src string) {
 	Mymod.Cross_module_004_F_a(__taint_src)
+}
+
+func main() {
+    __taint_src := "taint_src_value"
+    cross_module_004_F_b(__taint_src)
 }

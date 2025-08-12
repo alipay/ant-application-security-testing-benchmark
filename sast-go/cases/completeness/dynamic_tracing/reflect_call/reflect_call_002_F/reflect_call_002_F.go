@@ -7,7 +7,8 @@
 // bind_url = completeness/dynamic_tracing/reflect_call/reflect_call_002_F/reflect_call_002_F
 // evaluation information end
 
-package reflect_call_002_F
+package main
+import "os/exec"
 
 import (
 	"reflect"
@@ -28,4 +29,10 @@ func reflect_call_002_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    reflect_call_002_F(__taint_src)
 }

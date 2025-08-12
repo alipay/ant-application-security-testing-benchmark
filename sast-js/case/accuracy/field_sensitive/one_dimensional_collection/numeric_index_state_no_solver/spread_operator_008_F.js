@@ -5,12 +5,20 @@
 // level = 3
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/spread_operator_007_T
 // evaluation information end
+const { execSync } = require('child_process');
 
-function spread_operator_007_T(__taint_src) {
+
+function spread_operator_008_F(__taint_src) {
   const foo = __taint_src;
   const bar = "hello world";
   const [r1, r2, ...rest] = [123, 456, foo, bar];
   __taint_sink(rest[1]);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+spread_operator_008_F(taint_src);

@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->any",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "2+",
           "scene_list": [
             {
               "compose": "type_annotation_any_001_T.py && !type_annotation_any_002_F.py",

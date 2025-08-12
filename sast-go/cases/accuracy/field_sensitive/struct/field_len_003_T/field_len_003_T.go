@@ -7,7 +7,8 @@
 // bind_url = accuracy/field_sensitive/struct/field_len_003_T/field_len_003_T
 // evaluation information end
 
-package field_len_003_T
+package main
+import "os/exec"
 
 type A struct {
 	data string
@@ -101,4 +102,10 @@ func field_len_003_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    field_len_003_T(__taint_src)
 }

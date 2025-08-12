@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/relation_expression_equal_002_F/relation_expression_equal_002_F
 // evaluation information end
 
-package relation_expression_equal_002_F
+package main
+import "os/exec"
 
 func relation_expression_equal_002_F(__taint_src string) {
 	result := __taint_src == "__taint_src"
@@ -16,4 +17,10 @@ func relation_expression_equal_002_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    relation_expression_equal_002_F(__taint_src)
 }

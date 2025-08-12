@@ -7,6 +7,7 @@
 // evaluation information end
 
 package pkg
+import "os/exec"
 
 var Arg = "12323"
 
@@ -18,4 +19,7 @@ func Cross_directory_010_F(o interface{}) {
 	__taint_sink(Arg)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+

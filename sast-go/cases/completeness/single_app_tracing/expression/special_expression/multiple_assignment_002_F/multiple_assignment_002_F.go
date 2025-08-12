@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/expression/special_expression/multiple_assignment_002_F/multiple_assignment_002_F
 // evaluation information end
 
-package multiple_assignment_002_F
+package main
+import "os/exec"
 
 func multiple_assignment_002_F(__taint_src string) {
 	_, result, _ := "_", "_", __taint_src
@@ -15,4 +16,10 @@ func multiple_assignment_002_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    multiple_assignment_002_F(__taint_src)
 }

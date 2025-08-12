@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/chained_call/chained_call_001_F
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function chained_call_001_F(__taint_src) {
   class A {
@@ -30,4 +32,10 @@ function chained_call_001_F(__taint_src) {
   new A().setName(__taint_src).clearName().setName("_").process();
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+chained_call_001_F(taint_src);

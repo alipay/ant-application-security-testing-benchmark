@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/for_body_001_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function for_body_001_T(__taint_src) {
   let res = "";
@@ -15,4 +17,10 @@ function for_body_001_T(__taint_src) {
   __taint_sink(res);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+for_body_001_T(taint_src);

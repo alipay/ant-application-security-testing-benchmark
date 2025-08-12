@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/datatype/map/map_004_F/map_004_F
 // evaluation information end
 
-package map_004_F
+package main
+import "os/exec"
 
 func map_004_F(__taint_src string) {
 	m := map[string]string{
@@ -16,4 +17,11 @@ func map_004_F(__taint_src string) {
 	__taint_sink(m)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    map_004_F(__taint_src)
+}

@@ -19,6 +19,16 @@
               "scene": "逻辑或"
             }
           ]
+        },
+         {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "conditional_expression_001_T.py && !conditional_expression_002_F.py",
+              "scene": "三目运算"
+            }
+    
+          ]
         }
       ]
     }

@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/arrow_function/arrow_function_008_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function arrow_function_008_T(__taint_src) {
   this.name = __taint_src;
@@ -17,4 +19,10 @@ function arrow_function_008_T(__taint_src) {
   data.show().call(data);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+arrow_function_008_T(taint_src);

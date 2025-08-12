@@ -1,5 +1,6 @@
 
-package for_body_004_F
+package main
+import "os/exec"
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
@@ -16,4 +17,11 @@ func for_body_004_F(__taint_src string) {
 	__taint_sink(res)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    for_body_004_F(__taint_src)
+}

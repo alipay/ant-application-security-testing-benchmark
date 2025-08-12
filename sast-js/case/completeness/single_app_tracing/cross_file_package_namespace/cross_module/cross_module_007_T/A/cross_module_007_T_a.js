@@ -6,5 +6,7 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_007_T/A/cross_modules_007_T_a
 // evaluation information end
 
+
 let __taint_src = "__taint_src";
 export const exportedVariable = __taint_src;
+

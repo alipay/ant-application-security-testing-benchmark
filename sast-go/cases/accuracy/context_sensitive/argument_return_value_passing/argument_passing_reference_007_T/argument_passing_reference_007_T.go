@@ -7,7 +7,8 @@
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_passing_reference_007_T/argument_passing_reference_007_T
 // evaluation information end
 
-package argument_passing_reference_007_T
+package main
+import "os/exec"
 
 type Person struct {
 	Name string
@@ -28,4 +29,10 @@ func (p *Person) GetNamePointer() string {
 	return p.Name
 }
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    argument_passing_reference_007_T(__taint_src)
 }

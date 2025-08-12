@@ -7,9 +7,10 @@
 // bind_url = cases/accuracy/context_sensitive/argument_return_value_passing/argument_passing_reference_005_F/argument_passing_reference_005_F
 // evaluation information end
 
-package argument_passing_reference_005_F
+package main
+import "os/exec"
 
-func argument_passing_reference_006_F(__taint_src interface{}) {
+func argument_passing_reference_005_F(__taint_src interface{}) {
 	objA := map[string]interface{}{"name": __taint_src}
 	objB := map[string]interface{}{"name": "Bob"}
 
@@ -24,4 +25,10 @@ func swap(obj1, obj2 map[string]interface{}) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    argument_passing_reference_005_F(__taint_src)
 }

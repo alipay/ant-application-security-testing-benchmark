@@ -6,6 +6,7 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_006_F/A/cross_modules_006_F_a
 // evaluation information end
 
+
 function exportString() {
   return "_";
 }
@@ -13,3 +14,5 @@ function exportString() {
 module.exports = {
   exportString,
 };
+
+

@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/function_call/anonymous_function_closure/closure_function_008_T/closure_function_008_T
 // evaluation information end
 
-package closure_function_008_T
+package main
+import "os/exec"
 
 func closure_function_008_T(__taint_src interface{}) {
 	outer := func() func() func() {
@@ -32,4 +33,10 @@ func closure_function_008_T(__taint_src interface{}) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    closure_function_008_T(__taint_src)
 }

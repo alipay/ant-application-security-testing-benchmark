@@ -1,4 +1,5 @@
-package for_body_001_T
+package main
+import "os/exec"
 
 
 // evaluation information start
@@ -18,4 +19,11 @@ func for_body_001_T(__taint_src string) {
 	__taint_sink(res)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    for_body_001_T(__taint_src)
+}

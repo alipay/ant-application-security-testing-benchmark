@@ -5,6 +5,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/class/simple_object/simple_object_001_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function simple_object_001_T(__taint_src) {
   class A {
@@ -17,4 +19,10 @@ function simple_object_001_T(__taint_src) {
   __taint_sink(obj);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+simple_object_001_T(taint_src);

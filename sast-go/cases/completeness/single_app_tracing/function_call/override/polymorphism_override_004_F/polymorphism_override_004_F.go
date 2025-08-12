@@ -6,7 +6,8 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/override/polymorphism_override_004_F/polymorphism_override_004_F
 // evaluation information end
-package polymorphism_override_004_F
+package main
+import "os/exec"
 
 func polymorphism_override_004_F(__taint_src string) {
 	var student Person = &Student{Name: "Alice", Age: 20, GPA: 3.8}
@@ -40,4 +41,10 @@ func (t *Teacher) Run() string {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    polymorphism_override_004_F(__taint_src)
 }

@@ -5,6 +5,8 @@
 // level = 4
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/conditional_switch_008_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function conditional_switch_008_T(__taint_src) {
   let data = "";
@@ -16,4 +18,10 @@ function conditional_switch_008_T(__taint_src) {
   __taint_sink(data);
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+conditional_switch_008_T(taint_src);

@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/datatype/primitives/primitives_float_002_F/primitives_float_002_F
 // evaluation information end
 
-package primitives_float_002_F
+package main
+import "os/exec"
 
 func primitives_float_002_F(__taint_src float64) {
 	var sani float64 = __taint_src
@@ -16,4 +17,10 @@ func primitives_float_002_F(__taint_src float64) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    primitives_float_002_F(__taint_src)
 }

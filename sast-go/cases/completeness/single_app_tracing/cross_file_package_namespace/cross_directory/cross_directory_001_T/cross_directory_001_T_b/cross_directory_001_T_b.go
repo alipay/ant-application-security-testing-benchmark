@@ -8,9 +8,13 @@
 // evaluation information end
 
 package cross_directory_001_T_b
+import "os/exec"
 
 func Cross_directory_001_T_b(o interface{}) {
 	__taint_sink(o)
 }
 
-func __taint_sink(o interface{}) {}
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+

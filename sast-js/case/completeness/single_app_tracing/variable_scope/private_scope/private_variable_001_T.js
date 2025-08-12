@@ -5,6 +5,8 @@
 // level = 2+
 // bind_url = completeness/single_app_tracing/variable_scope/private_variable/private_variable_001_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function private_variable_001_T(__taint_src) {
   class A {
@@ -20,4 +22,10 @@ function private_variable_001_T(__taint_src) {
   __taint_sink(o.GetData());
 }
 
-function __taint_sink(o) { }
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+private_variable_001_T(taint_src);

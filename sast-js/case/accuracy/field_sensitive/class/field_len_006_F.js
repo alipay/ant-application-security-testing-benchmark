@@ -5,6 +5,8 @@
 // level = 3+
 // bind_url = accuracy/field_sensitive/class/field_len_006_T
 // evaluation information end
+const { execSync } = require('child_process');
+
 
 function field_len_006_T(__taint_src) {
   class A {
@@ -84,4 +86,10 @@ function field_len_006_T(__taint_src) {
   __taint_sink(a.b.c.d.e.f.g.h.i.j.k.l.sani);
 }
 
-function __taint_sink(o) {}
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+field_len_006_F(taint_src);

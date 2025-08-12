@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/datatype/specialtype/channel_002_F/channel_002_F
 // evaluation information end
 
-package channel_002_F
+package main
+import "os/exec"
 
 func channel_002_F(__taint_src string) {
 	var ch chan string
@@ -18,4 +19,10 @@ func channel_002_F(__taint_src string) {
 	__taint_sink(c)
 }
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    channel_002_F(__taint_src)
 }

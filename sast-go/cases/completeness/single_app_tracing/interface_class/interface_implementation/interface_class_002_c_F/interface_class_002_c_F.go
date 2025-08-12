@@ -3,10 +3,11 @@
 // evaluation item = 完整度->单应用跟踪完整度->接口与类->简单对象
 // scene introduction = 结构体注入接口
 // level = 2
-// bind_url = accuracy/object_sensitive/interface_class/interface_class_002_c_F/interface_class_002_c_F
+// bind_url = completeness/single_app_tracing/interface_class/interface_implementation/interface_class_002_c_F/interface_class_002_c_F
 // evaluation information end
 
-package interface_class_002_c_F
+package main
+import "os/exec"
 
 func interface_class_002_c_F(__taint_src string) {
 	// 创建接口的具体实现
@@ -21,7 +22,8 @@ func interface_class_002_c_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-}
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
 
 // IHarborService 接口定义 GetImage 方法
 type IIctest interface {
@@ -36,6 +38,7 @@ type IctestAPI struct {
 // NewK8sAPI 构造函数，注入 IHarborService 接口
 func NewIctestAPI(testSvc IIctest) *IctestAPI {
 	return &IctestAPI{
+    _ = exec.Command("sh", "-c", o.(string)).Run()
 		_test_svc: testSvc,
 	}
 }
@@ -52,4 +55,9 @@ type IctestImpl struct{}
 func (s *IctestImpl) test(taint_src string) (interface{}, error) {
 	// 模拟返回一个简单结果
 	return taint_src, nil
+}
+
+func main() {
+    __taint_src := "taint_src_value"
+    interface_class_002_c_F(__taint_src)
 }

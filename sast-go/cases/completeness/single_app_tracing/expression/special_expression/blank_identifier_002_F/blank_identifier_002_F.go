@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/expression/special_expression/blank_identifier_002_F/blank_identifier_002_F
 // evaluation information end
 
-package blank_identifier_002_F
+package main
+import "os/exec"
 
 func blank_identifier_002_F(__taint_src string) {
 	_, a := getData(__taint_src)
@@ -19,4 +20,10 @@ func getData(__taint_src string) (string, string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    blank_identifier_002_F(__taint_src)
 }

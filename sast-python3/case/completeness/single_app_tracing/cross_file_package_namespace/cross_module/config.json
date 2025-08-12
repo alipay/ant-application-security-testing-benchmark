@@ -71,12 +71,16 @@
               "scene": "多级模块相对导入"
             },
             {
-              "compose": "(cross_module_035_T/B/cross_module_035_T_b.py || cross_module_035_T/cross_module_035_T_a.py || cross_module_035_T/cross_module_035_T_c.py) && !(cross_module_036_F/B/cross_module_036_F_b.py || cross_module_036_F/cross_module_036_F_a.py || cross_module_036_F/cross_module_036_F_c.py)",
+              "compose": "(cross_module_035_T/B/cross_module_035_T_b.py || cross_module_035_T/cross_module_035_T_a.py ) && !(cross_module_036_F/B/cross_module_036_F_b.py || cross_module_036_F/cross_module_036_F_a.py )",
               "scene": "相对导入-导入整个模块"
             },
             {
-              "compose": "(cross_module_037_T/A/B/C/D/cross_module_037_T_d.py || cross_module_037_T/A/cross_module_037_T_a.py || cross_module_037_T/A/cross_module_037_T_c.py) && !(cross_module_038_F/A/B/C/D/cross_module_038_F_d.py || cross_module_038_F/A/cross_module_038_F_a.py || cross_module_038_F/A/cross_module_038_F_c.py)",
+              "compose": "(cross_module_037_T/A/B/C/D/cross_module_037_T_d.py || cross_module_037_T/A/cross_module_037_T_a.py ) && !(cross_module_038_F/A/B/C/D/cross_module_038_F_d.py || cross_module_038_F/A/cross_module_038_F_a.py )",
               "scene": "相对导入-多级导入整个模块"
+            },
+            {
+              "compose": "(cross_module_039_T/A/B/cross_module_039_T_b.py || cross_module_039_T/cross_module_039_T_a.py ) && !(cross_module_040_F/A/B/cross_module_040_F_b.py || cross_module_040_F/cross_module_040_F_a.py)",
+              "scene": "绝对导入"
             }
           ]
         }

@@ -7,7 +7,8 @@
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/multi_thread/asynchronous_select_001_T/asynchronous_select_001_T
 // evaluation information end
 
-package asynchronous_select_001_T
+package main
+import "os/exec"
 
 import (
 	"fmt"
@@ -30,4 +31,10 @@ func asynchronous_select_001_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    asynchronous_select_001_T(__taint_src)
 }

@@ -7,7 +7,8 @@
 // bind_url = accuracy/field_sensitive/multidimensional_collection/slice_index_003_T/slice_index_003_T
 // evaluation information end
 
-package slice_index_003_T
+package main
+import "os/exec"
 
 func slice_index_003_T(__taint_src string) {
 	s := [][]string{
@@ -19,4 +20,10 @@ func slice_index_003_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+    __taint_src := "taint_src_value"
+    slice_index_003_T(__taint_src)
 }

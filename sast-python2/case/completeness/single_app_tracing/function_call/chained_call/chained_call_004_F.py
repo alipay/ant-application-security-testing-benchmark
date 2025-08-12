@@ -3,7 +3,7 @@
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->链式调用
 # scene introduction = 闭包链式
-# level = 2
+# level = 2+
 # bind_url = completeness/single_app_tracing/function_call/chained_call/chained_call_004_F
 # evaluation information end
 import os
