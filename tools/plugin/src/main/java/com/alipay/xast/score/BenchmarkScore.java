@@ -1110,7 +1110,7 @@ public class BenchmarkScore extends AbstractMojo {
                              (path, attr) ->
                                      attr.isRegularFile()
                                              //&& path.toString().contains("cases"),
-                                             && path.toString().contains("case")
+                                             && path.toString().contains("case") && !path.toString().contains("target")
                                              && containsToolPath(path.toString(),result),
                              FileVisitOption.FOLLOW_LINKS)) {
             // 收集所有文件路径到一个 List 中

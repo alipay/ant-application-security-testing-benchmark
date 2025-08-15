@@ -11,11 +11,11 @@
               "scene": "默认值传递"
             },
             {
-              "compose": "!argument_passing_value_001_F.js && argument_passing_value_002_T.js",
+              "compose": "!argument_passing_normal_value_001_F.js && argument_passing_normal_value_002_T.js",
               "scene": "值传递"
             },
             {
-              "compose": "!argument_passing_value_003_F.js && argument_passing_value_004_T.js",
+              "compose": "!argument_passing_normal_value_003_F.js && argument_passing_normal_value_004_T.js",
               "scene": "值传递上下文敏感"
             }
           ]
@@ -36,7 +36,7 @@
               "scene": "引用传递map"
             },
             {
-              "compose": "!argument_passing_value_005_F.js && argument_passing_value_006_T.js",
+              "compose": "!argument_passing_normal_value_005_F.js && argument_passing_normal_value_006_T.js",
               "scene": "值传递嵌套函数"
             }
           ]

@@ -7,23 +7,23 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "list_no_solver_007_T.py && !list_no_solver_008_F.py",
+              "compose": "list_no_solver_001_T.py && !list_no_solver_002_F.py",
               "scene": "列表->列表索引1"
             },
             {
-              "compose": "list_no_solver_009_T.py && !list_no_solver_010_F.py",
+              "compose": "list_no_solver_003_T.py && !list_no_solver_004_F.py",
               "scene": "列表->列表索引2"
             },
             {
-              "compose": "rest_parameter_007_T.py && !rest_parameter_008_F.py",
+              "compose": "rest_parameter_no_solver_001_T.py && !rest_parameter_no_solver_002_F.py",
               "scene": "列表->列表索引->剩余参数"
             },
             {
-              "compose": "spread_operator_no_solver_005_T.py && !spread_operator_no_solver_006_F.py",
+              "compose": "spread_operator_no_solver_001_T.py && !spread_operator_no_solver_002_F.py",
               "scene": "列表->列表索引->扩展运算符1"
             },
             {
-              "compose": "spread_operator_no_solver_007_T.py && !spread_operator_no_solver_008_F.py",
+              "compose": "spread_operator_no_solver_003_T.py && !spread_operator_no_solver_004_F.py",
               "scene": "列表->列表索引->扩展运算符2"
             },
             {

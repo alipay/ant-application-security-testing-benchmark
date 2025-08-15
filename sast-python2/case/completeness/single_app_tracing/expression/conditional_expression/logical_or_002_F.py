@@ -10,7 +10,7 @@ import os
 
 
 def logical_or_002_F(taint_src):
-     result = taint_src == u"taint_src" or taint_src.endswith(u"_") # 污点通过OR条件传递
+     result = taint_src != u"taint_src_value" or "aa" # 污点通过OR条件传递
      taint_sink(result) 
 
 def taint_sink(o):

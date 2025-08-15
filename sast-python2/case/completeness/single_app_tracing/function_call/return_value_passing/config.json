@@ -7,11 +7,11 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "!return_value_passing_001_F.py && return_value_passing_002_T.py",
+              "compose": "!return_normal_value_passing_001_F.py && return_normal_value_passing_002_T.py",
               "scene": "普通"
             },
             {
-              "compose": "!return_value_passing_003_F.py && return_value_passing_004_T.py",
+              "compose": "!return_normal_value_passing_003_F.py && return_normal_value_passing_004_T.py",
               "scene": "多层函数嵌套传递"
             }
           ]

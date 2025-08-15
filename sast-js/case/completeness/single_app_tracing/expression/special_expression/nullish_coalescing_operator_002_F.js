@@ -8,7 +8,7 @@
 const { execSync } = require('child_process');
 
 
-function nullish_coalescing_002_F(__taint_src) {
+function nullish_coalescing_operator_002_F(__taint_src) {
   let result = null ?? "aa";
   __taint_sink(result);
 }

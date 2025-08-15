@@ -11,7 +11,7 @@
               "scene": "常量分支条件"
             },
             {
-              "compose": "Statement_ForStatement_003_T.java && !Statement_ForStatement_004_F.java",
+              "compose": "Statement_ForStatement_no_solver_001_T.java && !Statement_ForStatement_no_solver_002_F.java",
               "scene": "循环结构->for"
             }
           ]

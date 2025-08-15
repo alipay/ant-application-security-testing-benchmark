@@ -7,7 +7,7 @@
           "level": "2+",
           "scene_list": [
             {
-              "compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java",
+              "compose": "CallExpression_CustomCode_Interface_function_001_T.java && !CallExpression_CustomCode_Interface_function_002_F.java",
               "scene": "Serializable接口"
             },
             {
