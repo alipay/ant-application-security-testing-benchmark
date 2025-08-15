@@ -1,0 +1,38 @@
+{
+  "explicit_jump_control": [
+    {
+      "evaluation_item": "准确度->路径敏感分析->跳转语句",
+      "scene_levels": [
+        {
+          "level": "4+",
+          "scene_list": [
+            {
+              "compose": "break_001_T/break_001_T.go && !break_002_F/break_002_F.go",
+              "scene": "break"
+            },
+            {
+              "compose": "break_label_001_T/break_label_001_T.go && !break_label_002_F/break_label_002_F.go",
+              "scene": "break_label"
+            },
+            {
+              "compose": "continue_001_T/continue_001_T.go && !continue_002_F/continue_002_F.go",
+              "scene": "continue"
+            },
+            {
+              "compose": "fallthrough_001_T/fallthrough_001_T.go && !fallthrough_002_F/fallthrough_002_F.go",
+              "scene": "fallthrough"
+            },
+            {
+              "compose": "goto_001_T/goto_001_T.go && !goto_002_F/goto_002_F.go",
+              "scene": "goto"
+            },
+            {
+              "compose": "return_001_T/return_001_T.go && !return_002_F/return_002_F.go",
+              "scene": "return"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "return_value_passing": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->函数和方法调用->返回值传递",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!multiple_return_001_F/multiple_return_001_F.go && multiple_return_002_T/multiple_return_002_T.go",
+              "scene": "多返回值传递"
+            },
+            {
+              "compose": "!named_return_001_F/named_return_001_F.go && named_return_002_T/named_return_002_T.go",
+              "scene": "具名返回值"
+            },
+            {
+              "compose": "!return_value_passing_001_F/return_value_passing_001_F.go && return_value_passing_002_T/return_value_passing_002_T.go",
+              "scene": "返回值传递"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

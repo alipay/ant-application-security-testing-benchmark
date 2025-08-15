@@ -1,0 +1,38 @@
+{
+  "struct": [
+    {
+      "evaluation_item": "准确度->对象敏感与域敏感分析->区分不同结构体",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "struct_normal_001_T/struct_normal_001_T.go && !struct_normal_002_F/struct_normal_002_F.go",
+              "scene": "结构体对象"
+            },
+            {
+              "compose": "struct_deep10_001_T/struct_deep10_001_T.go && !struct_deep10_002_F/struct_deep10_002_F.go",
+              "scene": "结构体对象->10层对象"
+            },
+            {
+              "compose": "struct_deep3_001_T/struct_deep3_001_T.go && !struct_deep3_002_F/struct_deep3_002_F.go",
+              "scene": "结构体对象->3层对象"
+            },
+            {
+              "compose": "struct_deep3_003_T/struct_deep3_003_T.go && !struct_deep3_004_F/struct_deep3_004_F.go",
+              "scene": "结构体对象->3层对象2"
+            },
+            {
+              "compose": "struct_deep5_001_T/struct_deep5_001_T.go && !struct_deep5_002_F/struct_deep5_002_F.go",
+              "scene": "结构体对象->5层对象"
+            },
+            {
+              "compose": "struct_deep5_003_T/struct_deep5_003_T.go && !struct_deep5_004_F/struct_deep5_004_F.go",
+              "scene": "结构体对象->5层对象2"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

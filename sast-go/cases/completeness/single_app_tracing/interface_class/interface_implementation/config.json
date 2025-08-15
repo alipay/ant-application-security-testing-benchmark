@@ -1,0 +1,18 @@
+{
+  "interface_implementation": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->简单对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "interface_class_001_T/interface_class_001_T.go && !interface_class_002_F/interface_class_002_F.go",
+              "scene": "结构体注入接口"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
