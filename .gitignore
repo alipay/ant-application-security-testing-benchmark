@@ -17,3 +17,4 @@ logs/
 /tools/library/target
 /tools/plugin/target
 /tools/library/target
+*.pyc

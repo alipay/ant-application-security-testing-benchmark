@@ -7,17 +7,16 @@
 // evaluation information end
 
 package main
-
 import "os/exec"
 
 func interface_class_001_T(__taint_src string) {
-	// 创建接口的具体实现
+	// 创建 IctestImpl 实例
 	testSvc := &IctestImpl{}
 
-	// 通过构造函数注入接口
+	// 将业务实现注入到 IctestAPI 中
 	testAPI := NewIctestAPI(testSvc)
 
-	// 调用接口方法
+	// 调用接口方法，返回的数据即为污点源，直接传入 sink
 	result, _ := testAPI.GetTest(__taint_src)
 	__taint_sink(result)
 }
@@ -26,70 +25,38 @@ func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
 }
 
-// IHarborService 接口定义 GetImage 方法
+// IIctest 定义了业务层接口，用于演示接口与实现的解耦
 type IIctest interface {
 	test(taint_src string) (interface{}, error)
 }
 
-// K8sAPI 结构体，依赖 IHarborService 接口
+//IctestAPI 是业务门面，对外暴露统一 API，内部依赖 IIctest 实现
 type IctestAPI struct {
 	_test_svc IIctest
 }
 
-// NewK8sAPI 构造函数，注入 IHarborService 接口
+// NewIctestAPI 构造器，注入 IIctest 实现
 func NewIctestAPI(testSvc IIctest) *IctestAPI {
 	return &IctestAPI{
-		_ = exec.Command("sh", "-c", o.(string)).Run()
 		_test_svc: testSvc,
 	}
 }
 
-// GetHarborImage 方法，调用接口的 GetImage 方法
+//  GetTest 通过接口调用底层实现，将输入原样返回（导致污点传播）
 func (e *IctestAPI) GetTest(taint_src string) (interface{}, error) {
 	return e._test_svc.test(taint_src)
 }
 
-// HarborServiceImpl 是 IHarborService 接口的具体实现
+// IctestImpl 是 IIctest 的默认实现
 type IctestImpl struct{}
 
-// 实现 GetImage 方法
+//test 实现 IIctest 接口，直接将 taint_src 返回，不做任何校验
 func (s *IctestImpl) test(taint_src string) (interface{}, error) {
-	// 模拟返回一个简单结果
+	// 污点数据未经处理直接返回
 	return taint_src, nil
 }
 
 func main() {
 	__taint_src := "taint_src_value"
 	interface_class_001_T(__taint_src)
-}
-
-// IHarborService 接口定义 GetImage 方法
-type IIctest interface {
-	test(taint_src string) (interface{}, error)
-}
-
-// K8sAPI 结构体，依赖 IHarborService 接口
-type IctestAPI struct {
-	_test_svc IIctest
-}
-
-// NewK8sAPI 构造函数，注入 IHarborService 接口
-func NewIctestAPI(testSvc IIctest) *IctestAPI {
-	return &IctestAPI{
-		_test_svc: testSvc,
-	}
-}
-
-// GetHarborImage 方法，调用接口的 GetImage 方法
-func (e *IctestAPI) GetTest(taint_src string) (interface{}, error) {
-	return e._test_svc.test(taint_src)
-}
-
-// HarborServiceImpl 是 IHarborService 接口的具体实现
-type IctestImpl struct{}
-
-// 实现 GetImage 方法
-func (s *IctestImpl) test(taint_src string) (interface{}, error) {
-	// 模拟返回一个简单结果
-	return taint_src, nil
 }
