@@ -8,10 +8,6 @@
           "scene_list": [
             {
               "compose": "lambda_expression_001_T.py && !lambda_expression_002_F.py",
-              "scene": "1"
-            },
-            {
-              "compose": "lambda_expression_003_T.py && !lambda_expression_004_F.py",
               "scene": "lambda关键字"
             }
           ]

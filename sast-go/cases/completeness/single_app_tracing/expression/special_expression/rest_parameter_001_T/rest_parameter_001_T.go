@@ -8,7 +8,10 @@
 // evaluation information end
 
 package main
-import "os/exec"
+import (
+	"os/exec"
+	"fmt"
+)
 
 func rest_parameter_001_T(__taint_src string) {
 	collectArgs("prefix", __taint_src, "suffix")
@@ -19,7 +22,7 @@ func collectArgs(args ...interface{}) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {

@@ -13,3 +13,8 @@ logs/
 *.iml
 */.DS_Store
 .DS_Store
+/dast-java/target
+/tools/library/target
+/tools/plugin/target
+/tools/library/target
+*.pyc

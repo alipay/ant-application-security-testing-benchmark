@@ -10,14 +10,15 @@ const { execSync } = require('child_process');
 
 function asynchronous_promise_012_F(__taint_src) {
   let promise = new Promise((resolve, reject) => {
-    reject(__taint_src);
+    reject("_");
   });
 
   promise
     .then((result) => {
-      __taint_sink(result);
     })
-    .catch((error) => {});
+    .catch((error) => {
+       __taint_sink(error);
+    });
 }
 
 function __taint_sink(o) {

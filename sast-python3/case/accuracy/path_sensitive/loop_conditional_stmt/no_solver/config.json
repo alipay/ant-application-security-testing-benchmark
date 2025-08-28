@@ -7,19 +7,19 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "!conditional_if_007_F.py && !conditional_if_008_F.py",
+              "compose": "!conditional_if_no_solver_001_F.py && !conditional_if_no_solver_002_F.py",
               "scene": "区分if else准入条件（不需求解）->if->区分分支"
             },
             {
-              "compose": "conditional_if_009_T.py && !conditional_if_010_F.py",
+              "compose": "conditional_if_no_solver_003_T.py && !conditional_if_no_solver_004_F.py",
               "scene": "区分if else分支+准入条件（不需求解）->if->区分具体执行路径->不求解"
             },
             {
-              "compose": "!conditional_match_003_F.py && !conditional_match_004_F.py",
+              "compose": "!conditional_match_no_solver_001_F.py && !conditional_match_no_solver_002_F.py",
               "scene": "区分match准入条件（不需求解）->match->区分分支"
             },
             {
-              "compose": "!conditional_match_005_F.py && conditional_match_006_T.py",
+              "compose": "!conditional_match_no_solver_003_F.py && conditional_match_no_solver_004_T.py",
               "scene": "区分match准入条件（不需求解）>match->区分具体执行路径->不求解"
             }
           ]

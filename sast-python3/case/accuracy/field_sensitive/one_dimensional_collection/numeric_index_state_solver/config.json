@@ -7,19 +7,19 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "list_solver_013_T.py && !list_solver_014_F.py",
+              "compose": "list_solver_001_T.py && !list_solver_002_F.py",
               "scene": "列表->列表索引->需求解1"
             },
             {
-              "compose": "list_solver_015_T.py && !list_solver_016_F.py",
+              "compose": "list_solver_003_T.py && !list_solver_004_F.py",
               "scene": "列表->列表索引->需求解2"
             },
             {
-              "compose": "map_solver_005_T.py && !map_solver_006_F.py",
+              "compose": "map_solver_001_T.py && !map_solver_002_F.py",
               "scene": "字典->字典索引->需求解1"
             },
             {
-              "compose": "map_solver_007_T.py && !map_solver_008_F.py",
+              "compose": "map_solver_003_T.py && !map_solver_004_F.py",
               "scene": "字典->字典索引->需求解2"
             }
           ]
@@ -28,11 +28,11 @@
           "level": "4+",
           "scene_list": [
             {
-              "compose": "array_solver_005_T.py && !array_solver_006_F.py",
+              "compose": "array_solver_001_T.py && !array_solver_002_F.py",
               "scene": "数组->数组索引->需求解1"
             },
             {
-              "compose": "array_solver_007_T.py && !array_solver_008_F.py",
+              "compose": "array_solver_003_T.py && !array_solver_004_F.py",
               "scene": "数组->数组索引->需求解2"
             }
           ]

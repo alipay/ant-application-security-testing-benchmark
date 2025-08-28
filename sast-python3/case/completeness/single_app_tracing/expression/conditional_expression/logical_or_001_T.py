@@ -10,11 +10,11 @@ import os
 
 # ?
 def logical_or_001_T(taint_src):
-     result = taint_src == "taint_src_value" or taint_src.endswith("_") # 污点通过OR条件传递
+     result = taint_src != "taint_src_value" or taint_src # 污点通过OR条件传递
      taint_sink(result) 
 
 def taint_sink(o):
-    os.system(str(o))
+    os.system(o)
 
 
 if __name__ == "__main__":

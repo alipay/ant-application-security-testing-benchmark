@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "CallExpression_CustomCode_Class_005_T.java && !CallExpression_CustomCode_Class_006_F.java",
+              "compose": "CallExpression_CustomCode_abstract_class_001_T.java && !CallExpression_CustomCode_abstract_class_002_F.java",
               "scene": "抽象类"
             }
           ]

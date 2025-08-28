@@ -15,7 +15,7 @@
               "scene": "数组->复合数据类型2"
             },
             {
-              "compose": "array_obj_sensitive_007_T/array_obj_sensitive_007_T.go && !array_obj_sensitive_008_F/array_obj_sensitive_008_F.go",
+              "compose": "array_obj_sensitive_005_T/array_obj_sensitive_005_T.go && !array_obj_sensitive_006_F/array_obj_sensitive_006_F.go",
               "scene": "数组->复合数据类型3"
             },
             {

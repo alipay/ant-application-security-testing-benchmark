@@ -8,7 +8,10 @@
 // evaluation information end
 
 package main
-import "os/exec"
+import (
+	"os/exec"
+	"fmt"
+)
 
 func primitives_complex_002_F(__taint_src complex64) {
 	var sani complex64 = __taint_src
@@ -17,10 +20,10 @@ func primitives_complex_002_F(__taint_src complex64) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {
-    __taint_src := "taint_src_value"
-    primitives_complex_002_F(__taint_src)
+    __taint_src := 3
+    primitives_complex_002_F(complex(float32(__taint_src), 0))
 }

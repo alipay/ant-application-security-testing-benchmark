@@ -7,7 +7,7 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "array_index_007_T/array_index_007_T.go && !array_index_008_F/array_index_008_F.go",
+              "compose": "array_index_001_T/array_index_001_T.go && !array_index_002_F/array_index_002_F.go",
               "scene": "数组->数组索引->需求解"
             }
           ]

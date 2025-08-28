@@ -1,5 +1,4 @@
 package main
-import "os/exec"
 
 
 // evaluation information start
@@ -10,7 +9,11 @@ import "os/exec"
 // bind_url = completeness/single_app_tracing/function_call/library_function/arg_arg_001_T/arg_arg_001_T
 // evaluation information end
 
-import "encoding/json"
+import (
+	"os/exec"
+	"encoding/json"
+	"fmt"
+)
 
 func arg_arg_001_T(__taint_src string) {
 	taintedData := __taint_src
@@ -26,7 +29,7 @@ func process(arg string) (map[string]interface{}, error) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {

@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "CallExpression_CustomCode_Class_007_T.java && !CallExpression_CustomCode_Class_008_F.java",
+              "compose": "CallExpression_CustomCode_anonymous_object_001_T.java && !CallExpression_CustomCode_anonymous_object_002_F.java",
               "scene": "匿名类"
             }
           ]

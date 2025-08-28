@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "interface_class_001_c_T/interface_class_001_c_T.go && !interface_class_002_c_F/interface_class_002_c_F.go",
+              "compose": "interface_class_001_T/interface_class_001_T.go && !interface_class_002_F/interface_class_002_F.go",
               "scene": "结构体注入接口"
             }
           ]

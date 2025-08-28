@@ -11,15 +11,14 @@ import os
 
 def dynamic_call_reflect_005_T(taint_src):
     class Obj:
-        def __init__(self, data):
-            self.data = data
-            self.data1 = 'aaa'
+        def __init__(self):
+            self.data = 'aaa'
 
-    obj = Obj(taint_src)
+    obj = Obj()
 
-    del obj.data1
-
-    taint_sink(obj.data)
+    delattr(obj, 'data')
+    setattr(obj, 'data', taint_src)
+    taint_sink(getattr(obj, 'data'))
 
 
 def taint_sink(o):

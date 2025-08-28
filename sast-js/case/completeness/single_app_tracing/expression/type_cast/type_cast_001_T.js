@@ -14,9 +14,9 @@ function type_cast_001_T(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(String(o));
 }
 
-const taint_src = "taint_src_value";
+const taint_src = "1";
 
 type_cast_001_T(taint_src);

@@ -8,7 +8,10 @@
 // evaluation information end
 
 package main
-import "os/exec"
+import (
+	"os/exec"
+	"fmt"
+)
 
 func type_cast_001_T(__taint_src int) {
 	result := float64(__taint_src)
@@ -16,10 +19,10 @@ func type_cast_001_T(__taint_src int) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {
-    __taint_src := "taint_src_value"
+    __taint_src := 123
     type_cast_001_T(__taint_src)
 }

@@ -6,7 +6,6 @@
         {
           "level": "2+",
           "scene_list": [
-            
             {
               "compose": "destructuring_assignment_001_T.py && !destructuring_assignment_002_F.py",
               "scene": "解构赋值表达式->数组解构赋值"
@@ -41,14 +40,6 @@
             },
             {
               "compose": "del_expression_007_T.py && !del_expression_008_F.py",
-              "scene": "del运算符->单个变量"
-            },
-            {
-              "compose": "del_expression_009_T.py && !del_expression_010_F.py",
-              "scene": "del运算符->多个变量"
-            },
-            {
-              "compose": "del_expression_011_T.py && !del_expression_012_F.py",
               "scene": "del运算符->切片"
             },
             {
@@ -61,7 +52,7 @@
             }
           ]
         },
-         {
+        {
           "level": "2",
           "scene_list": [
             {
@@ -77,11 +68,11 @@
               "scene": "模板字面量3"
             },
             {
-              "compose": "spread_operator_005_T.py && !spread_operator_006_F.py",
+              "compose": "spread_operator_001_T.py && !spread_operator_002_F.py",
               "scene": "扩展运算符1"
             },
             {
-              "compose": "spread_operator_007_T.py && !spread_operator_008_F.py",
+              "compose": "spread_operator_003_T.py && !spread_operator_004_F.py",
               "scene": "扩展运算符2"
             },
             {
@@ -90,7 +81,7 @@
             }
           ]
         },
-         {
+        {
           "level": "3",
           "scene_list": [
             {

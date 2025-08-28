@@ -7,7 +7,7 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "polymorphism_003_T.js && !polymorphism_004_F.js",
+              "compose": "polymorphism_001_T.js && !polymorphism_002_F.js",
               "scene": "条件表达式（需求解）"
             }
           ]

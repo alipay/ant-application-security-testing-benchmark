@@ -9,12 +9,12 @@ const { execSync } = require('child_process');
 
 
 function continue_002_F(__taint_src) {
-  let res = "";
+  let res = "abc";
   for (let i = 0; i < 10; i++) {
     if (i === 3) {
+       __taint_sink(res);
       res = __taint_src;
       continue;
-      __taint_sink(res);
     }
   }
 }

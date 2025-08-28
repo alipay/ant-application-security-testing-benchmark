@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "struct_007_T/struct_007_T.go && !struct_008_F/struct_008_F.go",
+              "compose": "struct_normal_001_T/struct_normal_001_T.go && !struct_normal_002_F/struct_normal_002_F.go",
               "scene": "结构体对象"
             },
             {

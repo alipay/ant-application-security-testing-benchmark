@@ -8,7 +8,10 @@
 // evaluation information end
 
 package main
-import "os/exec"
+import (
+	"os/exec"
+	"fmt"
+)
 
 type A struct {
 	data string
@@ -26,7 +29,7 @@ func struct_cross_003_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {

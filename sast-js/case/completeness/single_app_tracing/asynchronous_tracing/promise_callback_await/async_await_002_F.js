@@ -15,7 +15,7 @@ async function async_await_002_F(__taint_src) {
   async function process() {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve("aa");
+        resolve("abc");
       }, 10);
     });
   }

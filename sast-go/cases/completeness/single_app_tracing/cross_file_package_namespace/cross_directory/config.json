@@ -19,11 +19,11 @@
               "scene": "跨package3"
             },
             {
-              "compose": "cross_directory_007_T/cross/cross_directory_007_T.go && !cross_directory_008_F/cross/cross_directory_008_F.go",
+              "compose": "(cross_directory_007_T/cross/cross_directory_007_T.go || cross_directory_007_T/cross/cross_a/cross_directory_a_007_T.go || cross_directory_007_T/cross/cross_a_shadow/cross_directory_shadow_007_T.go) && !(cross_directory_008_F/cross/cross_directory_008_F.go || cross_directory_008_F/cross/cross_a/cross_directory_a_008_F.go || cross_directory_008_F/cross/cross_a_shadow/cross_directory_shadow_008_F.go)",
               "scene": "跨package4"
             },
             {
-              "compose": "cross_directory_009_T/cross/cross_directory_009_T.go && !cross_directory_010_F/cross/cross_directory_010_F.go",
+              "compose": "(cross_directory_009_T/cross/cross_directory_009_T.go || cross_directory_009_T/cross/cross_init/cross_directory_init_009_T.go) && !(cross_directory_010_F/cross/cross_directory_010_F.go || cross_directory_010_F/cross/cross_init/cross_directory_init_010_F.go)",
               "scene": "跨package5"
             }
           ]

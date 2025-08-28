@@ -16,7 +16,7 @@ function map_field_sensitive_006_T(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(JSON.stringify(Array.from(o)));
 }
 
 const taint_src = "taint_src_value";

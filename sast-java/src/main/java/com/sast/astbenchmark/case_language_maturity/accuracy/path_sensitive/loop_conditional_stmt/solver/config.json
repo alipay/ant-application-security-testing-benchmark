@@ -11,23 +11,23 @@
               "scene": "数组长度计算"
             },
             {
-              "compose": "Statement_WhileStatement_003_T.java && !Statement_WhileStatement_004_F.java",
+              "compose": "Statement_WhileStatement_solver_001_T.java && !Statement_WhileStatement_solver_002_F.java",
               "scene": "循环结构->while"
             },
             {
-              "compose": "Statement_AssertStatement_003_T.java && !Statement_AssertStatement_004_F.java",
+              "compose": "Statement_AssertStatement_solver_001_T.java && !Statement_AssertStatement_solver_002_F.java",
               "scene": "assert语句-条件不成立"
             },
             {
-              "compose": "Statement_AssertStatement_005_T.java && !Statement_AssertStatement_006_F.java",
+              "compose": "Statement_AssertStatement_solver_003_T.java && !Statement_AssertStatement_solver_004_F.java",
               "scene": "assert语句-条件不成立"
             },
             {
-              "compose": "Expression_InstanceofExpression_003_T.java && !Expression_InstanceofExpression_004_F.java",
+              "compose": "Expression_InstanceofExpression_solver_001_T.java && !Expression_InstanceofExpression_solver_002_F.java",
               "scene": "instanceof表达式-null"
             },
             {
-              "compose": "Expression_InstanceofExpression_005_T.java && !Expression_InstanceofExpression_006_F.java",
+              "compose": "Expression_InstanceofExpression_solver_003_T.java && !Expression_InstanceofExpression_solver_004_F.java",
               "scene": "instanceof表达式-Object"
             }
           ]

@@ -1,5 +1,8 @@
 package main
-import "os/exec"
+import (
+	"os/exec"
+	"fmt"
+)
 
 
 // evaluation information start
@@ -24,7 +27,7 @@ func appendTaint(newTaint []string, taintSrc string) []string {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 	}
 
 func main() {

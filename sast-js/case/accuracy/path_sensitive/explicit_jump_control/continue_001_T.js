@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 
 function continue_001_T(__taint_src) {
-  let res = "";
+  let res = "abc";
   for (let i = 0; i < 10; i++) {
     if (i === 3) {
       res = __taint_src;
