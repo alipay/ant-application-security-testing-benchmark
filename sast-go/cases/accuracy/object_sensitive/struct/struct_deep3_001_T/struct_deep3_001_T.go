@@ -37,7 +37,6 @@ func struct_deep3_001_T(__taint_src string) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	fmt.Printf("%v", o)
 //模拟污点数据的汇聚点
 }
 

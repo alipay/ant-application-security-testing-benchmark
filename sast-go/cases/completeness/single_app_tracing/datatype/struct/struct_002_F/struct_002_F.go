@@ -26,7 +26,6 @@ func struct_002_F(__taint_src string) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	fmt.Printf("%v", o)
 	}
 
 func main() {

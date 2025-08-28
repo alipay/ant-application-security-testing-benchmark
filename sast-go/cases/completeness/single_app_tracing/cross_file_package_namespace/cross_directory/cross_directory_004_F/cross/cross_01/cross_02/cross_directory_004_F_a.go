@@ -8,7 +8,6 @@
 
 package cross_pkg_deep2
 import "os/exec"
-import "fmt"
 
 func Cross_directory_004_F_a(o interface{}) {
 	__taint_sink("_")
@@ -16,5 +15,4 @@ func Cross_directory_004_F_a(o interface{}) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
-	fmt.Println(o)
 	}

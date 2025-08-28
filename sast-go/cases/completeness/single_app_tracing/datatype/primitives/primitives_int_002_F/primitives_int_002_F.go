@@ -21,7 +21,6 @@ func primitives_int_002_F(__taint_src int) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	fmt.Println(o)
 	}
 
 func main() {

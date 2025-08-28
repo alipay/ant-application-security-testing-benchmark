@@ -6,7 +6,9 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_file/cross_file_001_T/cross_file_001_T
 // evaluation information end
-//跨文件需定义为同一个包，运行时执行go run cross_file_001_T_a.go cross_file_001_T_b.go
+
+
+
 package main
 
 import "os/exec"

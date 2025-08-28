@@ -25,7 +25,6 @@ func process(inputArr []interface{}, src interface{}) {
 
 func __taint_sink(o []interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	fmt.Println(o)
 }
 
 func main() {
