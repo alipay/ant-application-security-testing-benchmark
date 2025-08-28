@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 
 function conditional_if_no_solver_002_F(__taint_src) {
-  let res = "";
+  let res = "_";
   if (true) {
     __taint_sink(res);
   } else {

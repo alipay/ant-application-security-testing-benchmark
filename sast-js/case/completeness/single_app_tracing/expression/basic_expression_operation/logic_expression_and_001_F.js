@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 
 function logic_expression_and_001_F(__taint_src) {
-  let result = "_" && "aa";
+  let result = "_" && "abc";
   __taint_sink(result);
 }
 

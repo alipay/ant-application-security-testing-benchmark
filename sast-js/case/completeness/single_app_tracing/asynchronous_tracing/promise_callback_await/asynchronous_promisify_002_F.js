@@ -21,7 +21,7 @@ function customReadFile(filePath, callback) {
 async function asynchronous_promisify_002_F(__taint_src) {
   const readFileAsync = promisify(customReadFile); // 直接使用解构的promisify
   try {
-    let data = await readFileAsync("aa");
+    let data = await readFileAsync("_");
     __taint_sink(data);
   } catch (error) {
     console.error(error);

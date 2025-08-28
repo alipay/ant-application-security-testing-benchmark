@@ -9,9 +9,9 @@ const { execSync } = require('child_process');
 
 
 function conditional_switch_no_solver_002_F(__taint_src) {
-  let data = "";
+  let data = "_";
   switch (2) {
-    case 1:
+    case 2:
       __taint_sink(data);
       break;
     default:

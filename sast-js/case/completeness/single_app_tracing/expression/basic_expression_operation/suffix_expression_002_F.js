@@ -10,7 +10,7 @@ const { execSync } = require('child_process');
 
 function suffix_expression_002_F(__taint_src) {
   let result = __taint_src++;
-  __taint_sink("aa");
+  __taint_sink("_");
 }
 
 function __taint_sink(o) {

@@ -14,7 +14,7 @@ import (
 
 func cross_directory_010_F(__taint_src string) {
 	pkg.Arg = "_"
-	pkg.Cross_directory_010_F("_")
+	pkg.Cross_directory_init_010_F("_")
 }
 
 

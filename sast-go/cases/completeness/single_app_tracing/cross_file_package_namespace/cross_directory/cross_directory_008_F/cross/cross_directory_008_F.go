@@ -14,8 +14,8 @@ import (
 // evaluation information end
 
 func cross_directory_008_F(__taint_src string) {
-	pkga.Cross_directory_008_F(__taint_src)
-	pkgshadow.Cross_directory_008_F(__taint_src)
+	pkga.Cross_directory_a_008_F(__taint_src)
+	pkgshadow.Cross_directory_shadow_008_F(__taint_src)
 }
 
 func main() {

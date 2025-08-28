@@ -18,7 +18,7 @@ function dynamic_call_reflect_006_F(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(String(o));
 }
 
 const taint_src = "taint_src_value";

@@ -9,7 +9,7 @@
 
 package main
 
-func Cross_file_002_F_a(__taint_src string) {
+func cross_file_002_F_a(__taint_src string) {
 	Cross_file_002_F_b(__taint_src)
 }
 

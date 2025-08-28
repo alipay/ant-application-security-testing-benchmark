@@ -15,7 +15,7 @@ function destructuring_assignment_007_T(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(JSON.stringify(o));
 }
 
 const taint_src = "taint_src_value";

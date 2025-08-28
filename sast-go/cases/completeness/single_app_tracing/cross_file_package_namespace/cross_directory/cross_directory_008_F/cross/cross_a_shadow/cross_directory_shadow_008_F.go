@@ -6,11 +6,11 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_008_F/cross/cross_a_shadow/cross_directory_shadow_008_F
 // evaluation information end
 
-package pkg
+package pkgshadow
 import "os/exec"
 
 
-func cross_directory_shadow_008_F(o interface{}) {
+func Cross_directory_shadow_008_F(o interface{}) {
 	__taint_sink("_")
 }
 

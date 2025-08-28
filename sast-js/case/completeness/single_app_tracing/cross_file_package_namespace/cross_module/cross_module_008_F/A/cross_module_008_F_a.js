@@ -7,8 +7,8 @@
 // evaluation information end
 
 
-let __taint_src = "__taint_src";
-export const exportedVariable = __taint_src;
+let taint_src = "taint_src_value";
+export const exportedVariable = taint_src;
 export const exportedVariable1 = "_";
 
 

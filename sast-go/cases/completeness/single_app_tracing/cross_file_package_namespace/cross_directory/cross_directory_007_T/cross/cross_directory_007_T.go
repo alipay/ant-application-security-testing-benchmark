@@ -15,9 +15,9 @@ import (
 
 func cross_directory_007_T(__taint_src string) {
 	//有污点传播链路
-	pkga.Cross_directory_007_T(__taint_src)
+	pkga.Cross_directory_a_007_T(__taint_src)
 	//无污点链路，污点传播中断
-	pkgshadow.Cross_directory_007_T(__taint_src)
+	pkgshadow.Cross_directory_shadow_007_T(__taint_src)
 }
 
 func main() {

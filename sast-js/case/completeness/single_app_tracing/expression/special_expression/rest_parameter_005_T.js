@@ -17,7 +17,7 @@ function collectArgs(...args) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(JSON.stringify(o));
 }
 
 const taint_src = "taint_src_value";

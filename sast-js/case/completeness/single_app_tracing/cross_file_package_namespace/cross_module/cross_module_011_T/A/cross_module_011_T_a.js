@@ -7,6 +7,6 @@
 // evaluation information end
 
 
-export const exportedVariable = __taint_src;
+export const exportedVariable = "taint_src_value";
 
 

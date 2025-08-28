@@ -6,10 +6,10 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_007_T/cross/cross_a/cross_directory_a_007_T
 // evaluation information end
 
-package pkg
+package pkga
 import "os/exec"
 
-func cross_directory_a_007_T(o interface{}) {
+func Cross_directory_a_007_T(o interface{}) {
 	__taint_sink(o)
 }
 

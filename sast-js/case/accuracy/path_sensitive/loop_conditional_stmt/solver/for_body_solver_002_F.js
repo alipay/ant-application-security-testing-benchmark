@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 
 function for_body_solver_002_F(__taint_src) {
-let res = undefined;
+let res = "_";
   for (let i = 0; i < 0; i++) {
     res = __taint_src;
   }

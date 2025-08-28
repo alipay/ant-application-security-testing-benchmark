@@ -18,7 +18,7 @@ func init() {
 	Arg = "_"
 }
 
-func cross_directory_init_009_T(o interface{}) {
+func Cross_directory_init_009_T(o interface{}) {
 	__taint_sink(Arg)
 }
 

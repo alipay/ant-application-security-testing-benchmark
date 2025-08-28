@@ -17,7 +17,7 @@ function array_object_sensitive_006_F(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(JSON.stringify(o));
 }
 
 

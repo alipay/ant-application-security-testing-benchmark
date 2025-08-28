@@ -14,7 +14,7 @@ function exponentiation_operator_001_T(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(o);
+  execSync(String(o));
 }
 
 const taint_src = 2;

@@ -11,7 +11,7 @@ function exportString() {
   return "_";
 }
 
-module.exports = {
+export  {
   exportString,
 };
 
