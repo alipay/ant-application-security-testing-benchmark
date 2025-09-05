@@ -15,7 +15,7 @@ function asynchronous_promise_004_F(__taint_src) {
     });
   }
 
-  asyncFunc("_").then((value) => __taint_sink(value));
+  asyncFunc("aa").then((value) => __taint_sink(value));
 }
 
 function __taint_sink(o) {

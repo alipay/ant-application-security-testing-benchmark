@@ -8,12 +8,8 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
-//泛型要在go版本为1.18及以上才可以使用
 type Slice[T int | string | float64] []T
 
 func generics_002_F(__taint_src string) {
@@ -23,7 +19,7 @@ func generics_002_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {

@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "static_variable_003_T.py && !static_variable_004_F.py",
+              "compose": "static_variable_005_T.py && !static_variable_006_F.py",
               "scene": "继承覆盖"
             }
           ]

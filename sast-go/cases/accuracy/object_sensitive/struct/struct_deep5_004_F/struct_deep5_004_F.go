@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 type DeepB01 struct {
 	deepB02 DeepB02
@@ -47,7 +44,7 @@ func struct_deep5_004_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 //模拟污点数据的汇聚点
 }
 

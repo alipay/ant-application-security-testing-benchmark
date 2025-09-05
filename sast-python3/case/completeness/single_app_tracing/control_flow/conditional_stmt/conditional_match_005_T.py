@@ -13,16 +13,16 @@ import os
 def conditional_match_005_T(taint_src):
     value = taint_src
     match value:
-        case str() as pair:
+        case [x, y] as pair:
             taint_sink(pair)
         case _ as default:
             taint_sink(default)
 
 
 def taint_sink(o):
-    os.system(o) 
+    os.system(str(o)) 
 
 
 if __name__ == "__main__":
-    taint_src = "taint_src_value"  # 示例输入，可以是列表、字典或任何其他类型
+    taint_src = ["__taint_src_value1", "__taint_src_value2"]  # 示例输入，可以是列表、字典或任何其他类型
     conditional_match_005_T(taint_src)

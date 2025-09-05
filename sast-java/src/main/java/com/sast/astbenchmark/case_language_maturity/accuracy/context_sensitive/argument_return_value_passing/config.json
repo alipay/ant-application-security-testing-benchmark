@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "DifferentParamsPassing_001_T.java && !DifferentParamsPassing_002_F.java",
+              "compose": "DifferentParamsPassing_005_T.java && !DifferentParamsPassing_006_F.java",
               "scene": "参数值传递->VarargArrayAccess"
             },
             {

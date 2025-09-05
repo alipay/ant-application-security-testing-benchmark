@@ -8,12 +8,9 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
-func slice_obj_sensitive_001_T(__taint_src string) {
+func slice_001slice_obj_sensitive_001_T_T(__taint_src string) {
 	var arr [3]string = [3]string{__taint_src, "b", "c"}
 	var arr2 [3]string = [3]string{"a", "b", "c"}
 	var s []string
@@ -23,7 +20,7 @@ func slice_obj_sensitive_001_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {

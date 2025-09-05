@@ -11,7 +11,7 @@ function exportString(__taint_src) {
   return __taint_src;
 }
 
-export {
+module.exports = {
   exportString,
 };
 

@@ -29,6 +29,6 @@ func itoaTaint(taintSrc int) string {
 }
 
 func main() {
-    __taint_src := 3
+    __taint_src := "taint_src_value"
     arg_return_004_F(__taint_src)
 }

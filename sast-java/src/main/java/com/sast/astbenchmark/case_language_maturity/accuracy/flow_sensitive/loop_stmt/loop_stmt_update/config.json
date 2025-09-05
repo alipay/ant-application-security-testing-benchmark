@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "Statement_ForStatement_update_001_T.java && !Statement_ForStatement_update_002_F.java",
+              "compose": "Statement_ForStatement_007_T.java && !Statement_ForStatement_008_F.java",
               "scene": "for-update流敏感"
             }
           ]

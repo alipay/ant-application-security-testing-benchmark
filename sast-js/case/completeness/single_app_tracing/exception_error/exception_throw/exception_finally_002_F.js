@@ -8,7 +8,7 @@
 const { execSync } = require('child_process');
 
 
-function exception_finally_002_F(__taint_src) {
+function exception_finally_001_T(__taint_src) {
   let res = "";
   try {
     throw __taint_src;

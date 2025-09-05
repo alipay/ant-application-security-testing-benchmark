@@ -7,19 +7,19 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "!conditional_if_no_solver_001_F/conditional_if_no_solver_001_F.go && !conditional_if_no_solver_002_F/conditional_if_no_solver_002_F.go",
+              "compose": "!conditional_if_005_F/conditional_if_005_F.go && !conditional_if_006_F/conditional_if_006_F.go",
               "scene": "if->区分if else扁平化与分支（不求解）"
             },
             {
-              "compose": "conditional_if_no_solver_003_T/conditional_if_no_solver_003_T.go && !conditional_if_no_solver_004_F/conditional_if_no_solver_004_F.go",
+              "compose": "conditional_if_007_T/conditional_if_007_T.go && !conditional_if_008_F/conditional_if_008_F.go",
               "scene": "if->区分if else具体路径（不求解）"
             },
             {
-              "compose": "!conditional_switch_no_solver_001_F/conditional_switch_no_solver_001_F.go && !conditional_switch_no_solver_002_F/conditional_switch_no_solver_002_F.go",
+              "compose": "!conditional_switch_stmt_003_F/conditional_switch_stmt_003_F.go && !conditional_switch_stmt_004_F/conditional_switch_stmt_004_F.go",
               "scene": "switch->区分switch平坦化与分支（不需求解）"
             },
             {
-              "compose": "conditional_switch_no_solver_003_T/conditional_switch_no_solver_003_T.go && !conditional_switch_no_solver_004_F/conditional_switch_no_solver_004_F.go",
+              "compose": "conditional_switch_stmt_005_T/conditional_switch_stmt_005_T.go && !conditional_switch_stmt_006_F/conditional_switch_stmt_006_F.go",
               "scene": "switch->区分switch具体路径（不求解）"
             }
           ]

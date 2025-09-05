@@ -28,6 +28,10 @@
             },
             {
               "compose": "conditional_match_007_T.py && !conditional_match_008_F.py",
+              "scene": "match_sequence"
+            },
+            {
+              "compose": "conditional_match_009_T.py && !conditional_match_010_F.py",
               "scene": "match2"
             },
             {

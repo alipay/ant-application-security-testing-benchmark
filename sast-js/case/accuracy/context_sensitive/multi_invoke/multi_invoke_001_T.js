@@ -7,7 +7,7 @@
 // evaluation information end
 const { execSync } = require('child_process');
 
-function multi_invoke_001_T(__taint_src) {
+function argument_passing_value_001_T(__taint_src) {
   let a = process(__taint_src);
   let b = process("_");
   __taint_sink(a);

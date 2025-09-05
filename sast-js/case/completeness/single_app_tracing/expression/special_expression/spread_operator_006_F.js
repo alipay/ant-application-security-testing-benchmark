@@ -8,7 +8,7 @@
 const { execSync } = require('child_process');
 
 
-function spread_operator_006_F(__taint_src) {
+function spread_operator_006_T(__taint_src) {
   const foo = __taint_src;
   const bar = "hello world";
   const [r1, r2, ...rest] = [123, 456, foo, bar];
@@ -16,7 +16,7 @@ function spread_operator_006_F(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(String(o));
+  execSync(o);
 }
 
 const taint_src = "taint_src_value";

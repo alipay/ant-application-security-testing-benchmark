@@ -36,9 +36,7 @@ function cross_class_004_F(__taint_src) {
   __taint_sink(a);
 }
 
-function __taint_sink(data) {
-  execSync(JSON.stringify(data));
-}
+function __taint_sink(data) {}
 
 const taint_src = "taint_src_value";
 

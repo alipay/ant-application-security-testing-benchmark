@@ -10,11 +10,11 @@ import os
 
 # ?
 def logical_and_001_T(taint_src):
-     result = taint_src.startswith("t") and taint_src  # 污点通过AND条件传递
+     result = taint_src.startswith("t") and taint_src.endswith("e")  # 污点通过AND条件传递
      taint_sink(result) 
 
 def taint_sink(o):
-    os.system(o)
+    os.system(str(o))
 
 
 if __name__ == "__main__":

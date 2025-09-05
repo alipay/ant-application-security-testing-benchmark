@@ -1,6 +1,6 @@
 module gotest.com/cross_module_003_T_b
 
-go 1.14
+go 1.22.7
 
 replace gotest.com/cross_module_003_T_a => ../cross_module_003_T_a
 

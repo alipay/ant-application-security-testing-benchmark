@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 func map_obj_sensitive_003_F(__taint_src string) {
 	m := make(map[string]string, 1)
@@ -22,7 +19,7 @@ func map_obj_sensitive_003_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {

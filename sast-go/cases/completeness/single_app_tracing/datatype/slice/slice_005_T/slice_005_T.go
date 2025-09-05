@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 func slice_005_T(__taint_src string) {
 	s := [][]string{
@@ -23,7 +20,7 @@ func slice_005_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {

@@ -7,11 +7,11 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "DifferentParamsForFunction_001_T.java && !DifferentParamsForFunction_002_F.java",
+              "compose": "DifferentParamsForFunction_003_T.java && !DifferentParamsForFunction_004_F.java",
               "scene": "相同函数调用不同参数-scene2"
             },
             {
-              "compose": "DifferentParamsForFunction_003_T.java && !DifferentParamsForFunction_004_F.java",
+              "compose": "DifferentParamsForFunction_005_T.java && !DifferentParamsForFunction_006_F.java",
               "scene": "HeapAllocSite"
             },
             {

@@ -8,7 +8,7 @@
 const { execSync } = require('child_process');
 
 
-function field_len_006_F(__taint_src) {
+function field_len_006_T(__taint_src) {
   class A {
     constructor() {
       this.b = new B();

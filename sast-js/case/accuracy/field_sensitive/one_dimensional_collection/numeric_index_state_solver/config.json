@@ -7,7 +7,7 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "array_solver_001_T.js && !array_solver_002_F.js",
+              "compose": "array_013_T.js && !array_014_F.js",
               "scene": "数组索引->需求解"
             }
           ]

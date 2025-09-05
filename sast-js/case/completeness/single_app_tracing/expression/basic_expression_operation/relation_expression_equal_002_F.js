@@ -10,11 +10,11 @@ const { execSync } = require('child_process');
 
 function relation_expression_equal_002_F(__taint_src) {
   let result = __taint_src === "__taint_src";
-  __taint_sink(result);
+  __taint_sink("aa");
 }
 
 function __taint_sink(o) {
-  execSync(String(o));
+  execSync(o);
 }
 
 const taint_src = "taint_src_value";

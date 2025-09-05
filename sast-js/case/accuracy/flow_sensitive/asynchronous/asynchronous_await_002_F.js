@@ -9,7 +9,7 @@ const { execSync } = require('child_process');
 
 
 async function asynchronous_await_002_F(__taint_src) {
-  let data = "abc";
+  let data = "";
   __taint_sink(data);
   data = await process();
 

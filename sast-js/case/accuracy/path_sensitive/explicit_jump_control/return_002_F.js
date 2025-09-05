@@ -13,10 +13,9 @@ function return_002_F(__taint_src) {
 
   function process(arg1, arg2) {
     if (arg2 === "some_condition") {
-       arg1 = "_";
-      __taint_sink(arg1);
       return;
     }
+    __taint_sink(arg1);
   }
 }
 

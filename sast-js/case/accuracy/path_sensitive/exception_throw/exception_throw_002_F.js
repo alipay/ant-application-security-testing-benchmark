@@ -12,9 +12,7 @@ function exception_throw_002_F(__taint_src) {
   try {
     throw "_";
     __taint_sink(__taint_src);
-  } catch (e) {
-     __taint_sink(e);
-   }
+  } catch (e) { }
 }
 
 function __taint_sink(o) {

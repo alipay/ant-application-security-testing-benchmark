@@ -11,15 +11,15 @@ package main
 import "os/exec"
 
 func named_return_003_F(__taint_src interface{}) {
-	a := "abc"
+	a := "_"
 
 	ret := processData(__taint_src, a)
 	__taint_sink(ret)
 }
 
 func processData(s interface{}, i interface{}) (ret interface{}) {
-	ret = "_"
-	return i
+	ret = i
+	return
 }
 
 func __taint_sink(o interface{}) {

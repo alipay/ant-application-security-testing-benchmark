@@ -11,7 +11,7 @@
               "scene": "异步执行-await"
             },
             {
-              "compose": "asynchronous_chain_001_T.py && !asynchronous_chain_002_F.py",
+              "compose": "asynchronous_chain_003_T.py && !asynchronous_chain_004_F.py",
               "scene": "异步函数链"
             }
           ]

@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 func primitives_bool_002_F(__taint_src bool) {
 	sani := __taint_src
@@ -20,10 +17,10 @@ func primitives_bool_002_F(__taint_src bool) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {
-    __taint_src := false
+    __taint_src := "taint_src_value"
     primitives_bool_002_F(__taint_src)
 }

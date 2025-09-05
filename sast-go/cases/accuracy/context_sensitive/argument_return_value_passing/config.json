@@ -7,15 +7,15 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "!argument_passing_value_return_001_F/argument_passing_value_return_001_F.go && argument_passing_value_return_002_T/argument_passing_value_return_002_T.go",
+              "compose": "!argument_passing_value_011_F/argument_passing_value_011_F.go && argument_passing_value_012_T/argument_passing_value_012_T.go",
               "scene": "1"
             },
             {
-              "compose": "!argument_passing_value_return_003_F/argument_passing_value_return_003_F.go && argument_passing_value_return_004_T/argument_passing_value_return_004_T.go",
+              "compose": "!argument_passing_value_013_F/argument_passing_value_013_F.go && argument_passing_value_014_T/argument_passing_value_014_T.go",
               "scene": "参数值传递->多函数"
             },
             {
-              "compose": "!argument_passing_value_return_005_F/argument_passing_value_return_005_F.go && argument_passing_value_return_006_T/argument_passing_value_return_006_T.go",
+              "compose": "!argument_passing_value_015_F/argument_passing_value_015_F.go && argument_passing_value_016_T/argument_passing_value_016_T.go",
               "scene": "参数值传递->参数顺序"
             },
             {
@@ -35,19 +35,19 @@
               "scene": "参数值传递->引用传递->this"
             },
             {
-              "compose": "!multiple_return_value_passing_001_F/multiple_return_value_passing_001_F.go && multiple_return_value_passing_002_T/multiple_return_value_passing_002_T.go",
+              "compose": "!multiple_return_001_F/multiple_return_001_F.go && multiple_return_002_T/multiple_return_002_T.go",
               "scene": "返回值传递->多返回值传递"
             },
             {
-              "compose": "!multiple_return_value_passing_003_F/multiple_return_value_passing_003_F.go && multiple_return_value_passing_004_T/multiple_return_value_passing_004_T.go",
+              "compose": "!multiple_return_003_F/multiple_return_003_F.go && multiple_return_004_T/multiple_return_004_T.go",
               "scene": "返回值传递->函数内交换位置"
             },
             {
-              "compose": "!named_return_value_passing_001_F/named_return_value_passing_001_F.go && named_return_value_passing_002_T/named_return_value_passing_002_T.go",
+              "compose": "!named_return_001_F/named_return_001_F.go && named_return_002_T/named_return_002_T.go",
               "scene": "返回值传递->具名返回值"
             },
             {
-              "compose": "!return_normal_value_passing_001_F/return_normal_value_passing_001_F.go && return_normal_value_passing_002_T/return_normal_value_passing_002_T.go",
+              "compose": "!return_value_passing_001_F/return_value_passing_001_F.go && return_value_passing_002_T/return_value_passing_002_T.go",
               "scene": "2"
             }
           ]

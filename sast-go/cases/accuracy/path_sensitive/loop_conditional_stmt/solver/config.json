@@ -7,15 +7,15 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "conditional_if_solver_001_T/conditional_if_solver_001_T.go && !conditional_if_solver_002_F/conditional_if_solver_002_F.go",
+              "compose": "conditional_if_009_T/conditional_if_009_T.go && !conditional_if_010_F/conditional_if_010_F.go",
               "scene": "if->区分if else准入条件（需求解）"
             },
             {
-              "compose": "conditional_switch_stmt_001_T/conditional_switch_stmt_001_T.go && !conditional_switch_stmt_002_F/conditional_switch_stmt_002_F.go",
+              "compose": "conditional_switch_stmt_007_T/conditional_switch_stmt_007_T.go && !conditional_switch_stmt_008_F/conditional_switch_stmt_008_F.go",
               "scene": "switch->区分switch具体路径（求解）"
             },
             {
-              "compose": "for_body_solver_001_T/for_body_solver_001_T.go &&  !for_body_solver_002_F/for_body_solver_002_F.go",
+              "compose": "for_body_003_T/for_body_003_T.go &&  !for_body_004_F/for_body_004_F.go",
               "scene": "for_body"
             }
           ]

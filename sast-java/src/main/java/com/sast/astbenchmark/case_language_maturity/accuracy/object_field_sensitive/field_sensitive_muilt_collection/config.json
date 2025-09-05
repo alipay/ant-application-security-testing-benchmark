@@ -7,11 +7,11 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "Array_index_muilt_collection_001_T.java && !Array_index_muilt_collection_002_F.java",
+              "compose": "Array_index_003_T.java && !Array_index_004_F.java",
               "scene": "数组索引-二维"
             },
             {
-              "compose": "MapPutGet_muilt_collection_001_T.java && !MapPutGet_muilt_collection_002_F.java",
+              "compose": "MapPutGet_003_T.java && !MapPutGet_004_F.java",
               "scene": "MapPutGet"
             }
           ]

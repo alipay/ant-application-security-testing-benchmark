@@ -19,11 +19,11 @@
               "scene": "append操作"
             },
             {
-              "compose": "list_007_T.py && !list_008_F.py",
+              "compose": "list_009_T.py && !list_010_F.py",
               "scene": "泛型容器类型"
             },
             {
-              "compose": "list_009_T.py && !list_010_F.py",
+              "compose": "list_011_T.py && !list_012_F.py",
               "scene": "泛型序列"
             }
           ]

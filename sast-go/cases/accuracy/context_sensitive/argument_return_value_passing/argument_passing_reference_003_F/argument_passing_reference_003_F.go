@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-			"fmt"
-			"os/exec"
-	)
+import "os/exec"
 
 func argument_passing_reference_003_F(__taint_src interface{}) {
 	arr := []interface{}{__taint_src}
@@ -24,7 +21,7 @@ func process(inputArr []interface{}) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c",fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {

@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 func bitwise_expression_rsh_002_F(__taint_src int) {
 	result := __taint_src >> 1
@@ -20,10 +17,10 @@ func bitwise_expression_rsh_002_F(__taint_src int) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c",fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {
-    __taint_src := 123
+    __taint_src := "taint_src_value"
     bitwise_expression_rsh_002_F(__taint_src)
 }

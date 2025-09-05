@@ -6,7 +6,8 @@
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/promisify_002_F
 // evaluation information end
 const { execSync } = require('child_process');
-const { promisify } = require('util');
+
+const { util } = import("util");
 
 function customReadFile(filePath, callback) {
   setTimeout(() => {
@@ -19,9 +20,9 @@ function customReadFile(filePath, callback) {
 }
 
 async function asynchronous_promisify_002_F(__taint_src) {
-  const readFileAsync = promisify(customReadFile); // 直接使用解构的promisify
+  const readFileAsync = util.promisify(customReadFile);
   try {
-    let data = await readFileAsync("_");
+    let data = await readFileAsync("aa");
     __taint_sink(data);
   } catch (error) {
     console.error(error);

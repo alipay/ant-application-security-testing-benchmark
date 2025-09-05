@@ -7,31 +7,15 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "if_return_nil_001_T/if_return_nil_001_T.go && !if_return_nil_002_F/if_return_nil_002_F.go",
-              "scene": "条件返回nil"
-            },
-            {
-              "compose": "if_return_tuple_001_T/if_return_tuple_001_T.go && !if_return_tuple_002_F/if_return_tuple_002_F.go",
-              "scene": "条件返回tuple"
-            },
-            {
-              "compose": "!multiple_return_001_F/multiple_return_001_F.go && multiple_return_002_T/multiple_return_002_T.go",
+              "compose": "!multiple_return_005_F/multiple_return_005_F.go && multiple_return_006_T/multiple_return_006_T.go",
               "scene": "多返回值传递"
             },
             {
-              "compose": "!multiple_return_struct_001_F/multiple_return_struct_001_F.go && multiple_return_struct_002_T/multiple_return_struct_002_T.go",
-              "scene": "多返回值传递给结构体"
-            },
-            {
-              "compose": "!named_return_001_F/named_return_001_F.go && named_return_002_T/named_return_002_T.go",
+              "compose": "!named_return_003_F/named_return_003_F.go && named_return_004_T/named_return_004_T.go",
               "scene": "具名返回值"
             },
             {
-              "compose": "!named_return_003_F/named_return_003_F.go && named_return_004_T/named_return_004_T.go",
-              "scene": "具名返回值2"
-            },
-            {
-              "compose": "!return_value_passing_001_F/return_value_passing_001_F.go && return_value_passing_002_T/return_value_passing_002_T.go",
+              "compose": "!return_value_passing_003_F/return_value_passing_003_F.go && return_value_passing_004_T/return_value_passing_004_T.go",
               "scene": "返回值传递"
             }
           ]

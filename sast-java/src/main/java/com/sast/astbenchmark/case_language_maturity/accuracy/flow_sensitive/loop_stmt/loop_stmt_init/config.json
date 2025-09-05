@@ -7,7 +7,7 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "Statement_ForStatement_init_001_T.java && !Statement_ForStatement_init_002_F.java",
+              "compose": "Statement_ForStatement_005_T.java && !Statement_ForStatement_006_F.java",
               "scene": "for-init流敏感"
             }
           ]

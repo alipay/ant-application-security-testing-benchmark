@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"os/exec"
-	"fmt"
-)
+import "os/exec"
 
 func logic_expression_or_001_T(__taint_src bool) {
 	result := false || __taint_src
@@ -19,10 +16,10 @@ func logic_expression_or_001_T(__taint_src bool) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {
-    __taint_src := true
+    __taint_src := "taint_src_value"
     logic_expression_or_001_T(__taint_src)
 }

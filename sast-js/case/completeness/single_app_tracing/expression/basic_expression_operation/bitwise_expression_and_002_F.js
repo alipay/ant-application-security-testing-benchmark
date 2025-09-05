@@ -10,7 +10,7 @@ const { execSync } = require('child_process');
 
 function bitwise_expression_and_002_F(__taint_src) {
   let result = __taint_src & 1;
-  __taint_sink("_");
+  __taint_sink("aa");
 }
 
 function __taint_sink(o) {

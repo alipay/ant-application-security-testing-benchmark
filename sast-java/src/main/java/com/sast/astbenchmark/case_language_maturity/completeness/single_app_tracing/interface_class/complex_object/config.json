@@ -15,7 +15,7 @@
               "scene": "局部类"
             },
             {
-              "compose": "CallExpression_CustomCode_Interface_001_T.java && !CallExpression_CustomCode_Interface_002_F.java",
+              "compose": "CallExpression_CustomCode_Interface_003_T.java && !CallExpression_CustomCode_Interface_004_F.java",
               "scene": "多重接口类型"
             }
           ]

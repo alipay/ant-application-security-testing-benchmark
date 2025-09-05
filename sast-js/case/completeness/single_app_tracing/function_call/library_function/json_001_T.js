@@ -8,7 +8,7 @@
 const { execSync } = require('child_process');
 
 function json_001_T(__taint_src) {
-  process(JSON.stringify(__taint_src));
+  process(__taint_src);
 
   function process(arg) {
     let obj = JSON.parse(arg);

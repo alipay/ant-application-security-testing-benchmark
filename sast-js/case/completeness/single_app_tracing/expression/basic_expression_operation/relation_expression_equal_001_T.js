@@ -9,12 +9,12 @@ const { execSync } = require('child_process');
 
 
 function relation_expression_equal_001_T(__taint_src) {
-  let result = __taint_src === "taint_src_value";
+  let result = __taint_src === "__taint_src";
   __taint_sink(result);
 }
 
 function __taint_sink(o) {
-  execSync(String(o));
+  execSync(o);
 }
 
 const taint_src = "taint_src_value";

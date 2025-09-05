@@ -10,7 +10,7 @@ const { execSync } = require('child_process');
 
 function asynchronous_promise_002_F(__taint_src) {
   let promise = new Promise((resolve, reject) => {
-    resolve("_");
+    resolve("aa");
   });
 
   promise

@@ -7,7 +7,7 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "DifferentParamsForFunction_need_solve_001_T.java && !DifferentParamsForFunction_need_solve_002_F.java",
+              "compose": "DifferentParamsForFunction_001_T.java && !DifferentParamsForFunction_002_F.java",
               "scene": "相同函数调用不同参数-scene1-可求解"
             }
           ]

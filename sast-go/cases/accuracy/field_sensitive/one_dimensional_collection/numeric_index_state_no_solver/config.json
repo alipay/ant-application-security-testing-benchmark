@@ -7,15 +7,15 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "array_index_no_solver_001_T/array_index_no_solver_001_T.go && !array_index_no_solver_002_F/array_index_no_solver_002_F.go",
+              "compose": "array_index_001_T/array_index_001_T.go && !array_index_002_F/array_index_002_F.go",
               "scene": "数组->数组索引"
             },
             {
-              "compose": "array_index_no_solver_003_T/array_index_no_solver_003_T.go && !array_index_no_solver_004_F/array_index_no_solver_004_F.go",
+              "compose": "array_index_003_T/array_index_003_T.go && !array_index_004_F/array_index_004_F.go",
               "scene": "数组->数组索引2"
             },
             {
-              "compose": "array_index_no_solver_005_T/array_index_no_solver_005_T.go && !array_index_no_solver_006_F/array_index_no_solver_006_F.go",
+              "compose": "array_index_009_T/array_index_009_T.go && !array_index_010_F/array_index_010_F.go",
               "scene": "数组->数组赋值"
             },
             {
@@ -35,7 +35,7 @@
               "scene": "切片->切片索引"
             },
             {
-              "compose": "slice_index_003_T/slice_index_003_T.go && !slice_index_004_F/slice_index_004_F.go",
+              "compose": "slice_index_005_T/slice_index_005_T.go && !slice_index_006_F/slice_index_006_F.go",
               "scene": "切片->切片截取"
             }
           ]

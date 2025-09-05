@@ -7,11 +7,11 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "array_no_solver_001_T.js && !array_no_solver_002_F.js",
+              "compose": "array_007_T.js && !array_008_F.js",
               "scene": "数组索引"
             },
             {
-              "compose": "array_no_solver_003_T.js && !array_no_solver_004_F.js",
+              "compose": "array_009_T.js && !array_010_F.js",
               "scene": "数组索引2"
             },
             {
@@ -31,15 +31,15 @@
               "scene": "map类库函数keys()"
             },
             {
-              "compose": "spread_operator_no_solver_001_T.js && !spread_operator_no_solver_002_F.js",
+              "compose": "spread_operator_007_T.js && !spread_operator_008_F.js",
               "scene": "数组索引->扩展运算符"
             },
             {
-              "compose": "spread_operator_no_solver_003_T.js && !spread_operator_no_solver_004_F.js",
+              "compose": "spread_operator_009_T.js && !spread_operator_010_F.js",
               "scene": "数组索引->扩展运算符2"
             },
             {
-              "compose": "rest_parameter_no_solver_001_T.js && !rest_parameter_no_solver_002_F.js",
+              "compose": "rest_parameter_007_T.js && !rest_parameter_008_F.js",
               "scene": "数组索引->剩余参数"
             }
           ]

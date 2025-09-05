@@ -8,9 +8,9 @@
 const { execSync } = require('child_process');
 
 
-function binary_expression_add_assignment_002_F(__taint_src) {
+function binary_expression_add_assignment_001_T(__taint_src) {
   let result = "_";
-  result += "aa";
+  result += aa;
   __taint_sink(result);
 }
 

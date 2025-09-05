@@ -8,10 +8,7 @@
 // evaluation information end
 
 package main
-import (
-	"fmt"
-	"os/exec"
-)
+import "os/exec"
 
 func primitives_float_002_F(__taint_src float64) {
 	var sani float64 = __taint_src
@@ -20,10 +17,10 @@ func primitives_float_002_F(__taint_src float64) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func main() {
-    __taint_src := 3
-    primitives_float_002_F(float64(__taint_src))
+    __taint_src := "taint_src_value"
+    primitives_float_002_F(__taint_src)
 }

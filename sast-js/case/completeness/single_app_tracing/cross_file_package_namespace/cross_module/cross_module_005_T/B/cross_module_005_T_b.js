@@ -5,11 +5,12 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_005_T/B/cross_module_005_T_b
 // evaluation information end
-import { execSync } from 'child_process';
-import { exportString } from "../A/cross_module_005_T_a.js";
+const { execSync } = require('child_process');
 
-function cross_module_005_T_b(taint_src) {
-  let result = exportString(taint_src);
+const { exportString } = require("../A/cross_module_005_T_a.js");
+
+function cross_module_005_T_b() {
+  let result = exportString();
   __taint_sink(result);
 }
 

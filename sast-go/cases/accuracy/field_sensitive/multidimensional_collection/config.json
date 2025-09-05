@@ -7,11 +7,11 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "array_index_mc_001_T/array_index_mc_001_T.go && !array_index_mc_002_F/array_index_mc_002_F.go",
+              "compose": "array_index_005_T/array_index_005_T.go && !array_index_006_F/array_index_006_F.go",
               "scene": "数组索引->二维"
             },
             {
-              "compose": "slice_index_mc_001_T/slice_index_mc_001_T.go && !slice_index_mc_002_F/slice_index_mc_002_F.go",
+              "compose": "slice_index_003_T/slice_index_003_T.go && !slice_index_004_F/slice_index_004_F.go",
               "scene": "切片索引-二维"
             }
           ]

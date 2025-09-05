@@ -28,6 +28,14 @@
             },
             {
               "compose": "del_expression_007_T.py && !del_expression_008_F.py",
+              "scene": "del运算符->单个变量"
+            },
+            {
+              "compose": "del_expression_009_T.py && !del_expression_010_F.py",
+              "scene": "del运算符->多个变量"
+            },
+            {
+              "compose": "del_expression_011_T.py && !del_expression_012_F.py",
               "scene": "del运算符->切片"
             },
             {

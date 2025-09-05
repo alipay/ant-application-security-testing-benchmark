@@ -15,7 +15,7 @@
               "scene": "for->body流敏感"
             },
             {
-              "compose": "dowhile_body_loop_stmt_001_T.js && !dowhile_body_loop_stmt_002_F.js",
+              "compose": "dowhile_body_003_T.js && !dowhile_body_004_F.js",
               "scene": "dowhile"
             }
           ]

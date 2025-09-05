@@ -1,6 +1,6 @@
 package main
 import "os/exec"
-import "fmt"
+
 import "strconv"
 
 
@@ -19,7 +19,7 @@ func arg_return_003_T(__taint_src int) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 
 func itoaTaint(taintSrc int) string {
@@ -28,6 +28,6 @@ func itoaTaint(taintSrc int) string {
 }
 
 func main() {
-    __taint_src := 123
+    __taint_src := "taint_src_value"
     arg_return_003_T(__taint_src)
 }

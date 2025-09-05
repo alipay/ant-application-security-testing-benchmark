@@ -14,7 +14,7 @@ function suffix_expression_001_T(__taint_src) {
 }
 
 function __taint_sink(o) {
-  execSync(String(o));
+  execSync(o);
 }
 
 const taint_src = 7;

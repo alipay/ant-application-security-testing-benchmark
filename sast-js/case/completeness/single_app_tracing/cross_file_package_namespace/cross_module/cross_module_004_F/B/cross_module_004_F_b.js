@@ -5,7 +5,9 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_004_F/B/cross_modules_004_F_b
 // evaluation information end
-import { execSync } from 'child_process';
+const { execSync } = require('child_process');
+
+
 import defaultExport from "../A/cross_module_004_F_a.js";
 
 function cross_module_004_F_b() {

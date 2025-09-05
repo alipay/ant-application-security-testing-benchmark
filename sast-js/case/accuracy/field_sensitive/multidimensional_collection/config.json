@@ -7,7 +7,7 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "array_multidimensional_collection_001_T.js && !array_multidimensional_collection_002_F.js",
+              "compose": "array_011_T.js && !array_012_F.js",
               "scene": "数组索引->二维"
             }
           ]
