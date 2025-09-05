@@ -83,6 +83,10 @@
               "scene": "二元运算->右移赋值"
             },
             {
+              "compose": "unary_expression_not_001_T.py && !unary_expression_not_002_F.py",
+              "scene": "一元运算->逻辑非"
+            },
+            {
               "compose": "unary_expression_usub_001_T.py && !unary_expression_usub_002_F.py",
               "scene": "一元运算->负号"
             },
@@ -119,57 +123,48 @@
               "scene": "逻辑表达式->或表达式"
             },
             {
-              "compose": "unary_expression_uadd_001_T.py && !unary_expression_uadd_002_F.py",
-              "scene": "一元运算->正号"
-            }
-          ]
-        },
-         {
-          "level": "2+",
-          "scene_list": [
-            {
-              "compose": "greater_than_equal_001_T.py && !greater_than_equal_002_F.py",
-              "scene": "关系操作->大于等于"
-            },
-            {
-              "compose": "unary_expression_not_001_T.py && !unary_expression_not_002_F.py",
-              "scene": "一元运算->逻辑非"
-            },
-            {
-              "compose": "relation_expression_not_in_001_T.py && !relation_expression_not_in_002_F.py",
-              "scene": "关系操作->not in"
-            },
-            {
-              "compose": "relation_expression_not_equal_001_T.py && !relation_expression_not_equal_002_F.py",
-              "scene": "关系操作->不等于"
-            },
-            {
-              "compose": "relation_expression_less_001_T.py && !relation_expression_less_002_F.py",
-              "scene": "关系操作->小于"
-            },
-            {
-              "compose": "relation_expression_is_not_001_T.py && !relation_expression_is_not_002_F.py",
-              "scene": "关系操作->is not"
-            },
-            {
-              "compose": "relation_expression_is_001_T.py && !relation_expression_is_002_F.py",
-              "scene": "关系操作->is"
-            },
-            {
-              "compose": "relation_expression_in_001_T.py && !relation_expression_in_002_F.py",
-              "scene": "关系操作->in"
+              "compose": "relation_expression_equal_001_T.py && !relation_expression_equal_002_F.py",
+              "scene": "关系操作->等于"
             },
             {
               "compose": "relation_expression_greater_001_T.py && !relation_expression_greater_002_F.py",
               "scene": "关系操作->大于"
             },
             {
-              "compose": "relation_expression_equal_001_T.py && !relation_expression_equal_002_F.py",
-              "scene": "关系操作->等于"
+              "compose": "relation_expression_less_001_T.py && !relation_expression_less_002_F.py",
+              "scene": "关系操作->小于"
+            },
+            {
+              "compose": "greater_than_equal_001_T.py && !greater_than_equal_002_F.py",
+              "scene": "关系操作->大于等于"
             },
             {
               "compose": "less_than_equal_001_T.py && !less_than_equal_002_F.py",
               "scene": "关系操作->小于等于"
+            },
+            {
+              "compose": "relation_expression_in_001_T.py && !relation_expression_in_002_F.py",
+              "scene": "关系操作->in"
+            },
+            {
+              "compose": "relation_expression_is_001_T.py && !relation_expression_is_002_F.py",
+              "scene": "关系操作->is"
+            },
+            {
+              "compose": "relation_expression_is_not_001_T.py && !relation_expression_is_not_002_F.py",
+              "scene": "关系操作->is not"
+            },
+            {
+              "compose": "relation_expression_not_equal_001_T.py && !relation_expression_not_equal_002_F.py",
+              "scene": "关系操作->不等于"
+            },
+            {
+              "compose": "relation_expression_not_in_001_T.py && !relation_expression_not_in_002_F.py",
+              "scene": "关系操作->not in"
+            },
+            {
+              "compose": "unary_expression_uadd_001_T.py && !unary_expression_uadd_002_F.py",
+              "scene": "一元运算->正号"
             }
           ]
         }

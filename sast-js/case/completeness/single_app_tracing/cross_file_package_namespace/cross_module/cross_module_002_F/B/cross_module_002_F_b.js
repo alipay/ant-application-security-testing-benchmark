@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_002_F/B/cross_modules_002_F_b
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 import { cross_module_002_F_a } from "../A/cross_module_002_F_a.js";
 
@@ -15,10 +13,4 @@ function cross_module_002_F_b() {
   __taint_sink(result);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-cross_module_002_F_b(taint_src);
+function __taint_sink(o) {}

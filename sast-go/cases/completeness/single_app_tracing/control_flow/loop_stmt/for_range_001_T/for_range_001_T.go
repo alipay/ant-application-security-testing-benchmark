@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package for_range_001_T
 
 
 // evaluation information start
@@ -17,11 +16,4 @@ func for_range_001_T(__taint_src string) {
 	}
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    for_range_001_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

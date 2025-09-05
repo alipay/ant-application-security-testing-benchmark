@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/binary_expression_add_assignment_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function binary_expression_add_assignment_001_T(__taint_src) {
   let result = "_";
@@ -14,10 +12,4 @@ function binary_expression_add_assignment_001_T(__taint_src) {
   __taint_sink(result);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-binary_expression_add_assignment_002_F(taint_src);
+function __taint_sink(o) { }

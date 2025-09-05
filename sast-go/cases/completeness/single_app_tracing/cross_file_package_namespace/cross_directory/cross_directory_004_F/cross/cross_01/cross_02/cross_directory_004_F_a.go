@@ -7,12 +7,9 @@
 // evaluation information end
 
 package cross_pkg_deep2
-import "os/exec"
 
 func Cross_directory_004_F_a(o interface{}) {
 	__taint_sink("_")
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
+func __taint_sink(o interface{}) {}

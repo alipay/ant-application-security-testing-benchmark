@@ -7,5 +7,5 @@
 # bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_file/cross_file_005_T/cross_file_005_T_a
 # evaluation information end
 
-taint_src = "taint_src_value"
-exportedVariable = taint_src
+exportedVariable = "taint_src_value"
+

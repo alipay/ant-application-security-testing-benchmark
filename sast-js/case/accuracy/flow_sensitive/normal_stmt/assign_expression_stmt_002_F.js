@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = accuracy/flow_sensitive/normal_stmt/assign_expression_stmt_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function assign_expression_stmt_002_F(__taint_src) {
   let result = "";
@@ -14,10 +12,4 @@ function assign_expression_stmt_002_F(__taint_src) {
   result = __taint_src;
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-assign_expression_stmt_002_F(taint_src);
+function __taint_sink(o) { }

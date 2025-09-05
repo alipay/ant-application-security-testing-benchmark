@@ -7,19 +7,11 @@
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/bitwise_expression_lsh_001_T/bitwise_expression_lsh_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package bitwise_expression_lsh_001_T
 
 func bitwise_expression_lsh_001_T(__taint_src int) {
 	result := __taint_src << 1
 	__taint_sink(result)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    bitwise_expression_lsh_001_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

@@ -5,18 +5,10 @@
 // level = 4
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_solver/array_014_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function array_014_F(__taint_src) {
   let s = ["a", "b", __taint_src, "c", "d"];
   __taint_sink(s[1 + 2]);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-array_014_F(taint_src);
+function __taint_sink(o) { }

@@ -5,8 +5,6 @@
 // level = 4+
 // bind_url = accuracy/path_sensitive/explicit_jump_control/break_label_001_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function break_label_001_F(__taint_src) {
   let res = "";
@@ -27,10 +25,4 @@ function break_label_001_F(__taint_src) {
   __taint_sink(res);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-break_label_001_F(taint_src);
+function __taint_sink(o) { }

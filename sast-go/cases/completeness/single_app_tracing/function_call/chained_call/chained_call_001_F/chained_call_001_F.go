@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/function_call/chained_call/chained_call_001_F/chained_call_001_F
 // evaluation information end
 
-package main
-import "os/exec"
+package chained_call_001_F
 
 func chained_call_001_F(__taint_src string) {
 	new(A).setName(__taint_src).clearName().setName("_").process()
@@ -32,11 +31,4 @@ func (a *A) process() {
 	__taint_sink(a.name)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    chained_call_001_F(__taint_src)
-}
+func __taint_sink(o interface{}) {}

@@ -5,18 +5,10 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/suffix_expression_001_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function suffix_expression_001_T(__taint_src) {
   let result = __taint_src++;
   __taint_sink(result);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = 7;
-
-suffix_expression_001_T(taint_src);
+function __taint_sink(o) {}

@@ -7,8 +7,7 @@
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/map_field_sensitive_003_F/map_field_sensitive_003_F
 // evaluation information end
 
-package main
-import "os/exec"
+package map_field_sensitive_003_F
 
 func map_field_sensitive_003_F(__taint_src string) {
 	m := make(map[string]string, 2)
@@ -18,10 +17,4 @@ func map_field_sensitive_003_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    map_field_sensitive_003_F(__taint_src)
 }

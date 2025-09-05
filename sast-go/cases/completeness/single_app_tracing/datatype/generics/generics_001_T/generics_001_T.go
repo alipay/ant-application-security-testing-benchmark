@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/generics/generics_001_T/generics_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package generics_001_T
 
 type Slice[T int | string | float64] []T
 
@@ -18,10 +17,4 @@ func generics_001_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    generics_001_T(__taint_src)
 }

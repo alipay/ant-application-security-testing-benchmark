@@ -7,8 +7,7 @@
 // bind_url = accuracy/flow_sensitive/asynchronous/asynchronous_execution_001_T/asynchronous_execution_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package asynchronous_execution_001_T
 
 import (
 	"sync"
@@ -29,10 +28,4 @@ func worker(ch chan string, wg *sync.WaitGroup) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    asynchronous_execution_001_T(__taint_src)
 }

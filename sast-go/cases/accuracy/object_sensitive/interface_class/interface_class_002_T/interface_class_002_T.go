@@ -7,8 +7,7 @@
 // bind_url = accuracy/object_sensitive/interface_class/interface_class_002_T/interface_class_002_T
 // evaluation information end
 
-package main
-import "os/exec"
+package interface_class_002_T
 
 type ITestService interface {
 	process(data string) string
@@ -43,10 +42,4 @@ func interface_class_002_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    interface_class_002_T(__taint_src)
 }

@@ -7,7 +7,7 @@
 # bind_url = accuracy/object_sensitive/collection/map_object_sensitive_001_T
 # evaluation information end
 import os
-
+# 命名
 def map_object_sensitive_001_T(taint_src):
     map = {}
     map["key1"] = taint_src

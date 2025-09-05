@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package break_label_003_T
 
 
 // evaluation information start
@@ -22,11 +21,4 @@ myLabel:
 	__taint_sink(res)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    break_label_003_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

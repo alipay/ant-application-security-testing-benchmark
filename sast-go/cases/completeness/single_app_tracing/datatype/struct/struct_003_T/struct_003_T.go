@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/struct/struct_003_T/struct_003_T
 // evaluation information end
 
-package main
-import "os/exec"
+package struct_003_T
 
 type A struct {
 	data string
@@ -21,10 +20,4 @@ func struct_003_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    struct_003_T(__taint_src)
 }

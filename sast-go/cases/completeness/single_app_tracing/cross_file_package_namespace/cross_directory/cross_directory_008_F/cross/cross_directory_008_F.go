@@ -17,8 +17,3 @@ func cross_directory_008_F(__taint_src string) {
 	pkga.Cross_directory_008_F(__taint_src)
 	pkgshadow.Cross_directory_008_F(__taint_src)
 }
-
-func main() {
-    __taint_src := "taint_src_value"
-    cross_directory_008_F(__taint_src)
-}

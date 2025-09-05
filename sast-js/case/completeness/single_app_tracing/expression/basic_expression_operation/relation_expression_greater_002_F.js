@@ -5,18 +5,10 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/relation_expression_greater_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function relation_expression_greater_002_F(__taint_src) {
   let result = __taint_src > "__taint_src";
   __taint_sink("aa");
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-relation_expression_greater_002_F(taint_src);
+function __taint_sink(o) {}

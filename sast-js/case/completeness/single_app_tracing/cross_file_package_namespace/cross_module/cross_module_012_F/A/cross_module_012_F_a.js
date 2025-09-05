@@ -6,7 +6,4 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_modules_012_F/A/cross_modules_012_F_a
 // evaluation information end
 
-
 export const exportedVariable = "_";
-
-

@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = accuracy/object_sensitive/collection/array_object_sensitive_006_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function array_object_sensitive_006_F(__taint_src) {
   let s = [];
@@ -15,7 +13,3 @@ function array_object_sensitive_006_F(__taint_src) {
   s2.push("a");
   __taint_sink(s2);
 }
-
-const taint_src = "taint_src_value";
-
-array_object_sensitive_006_F(taint_src);

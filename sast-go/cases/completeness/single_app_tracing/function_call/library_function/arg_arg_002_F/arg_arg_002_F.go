@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package arg_arg_002_F
 
 
 // evaluation information start
@@ -27,10 +26,4 @@ func process(arg string) (map[string]interface{}, error) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    arg_arg_002_F(__taint_src)
 }

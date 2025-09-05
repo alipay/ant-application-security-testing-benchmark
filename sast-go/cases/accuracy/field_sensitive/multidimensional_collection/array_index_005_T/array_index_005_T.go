@@ -7,8 +7,7 @@
 // bind_url = accuracy/field_sensitive/multidimensional_collection/array_index_005_T/array_index_005_T
 // evaluation information end
 
-package main
-import "os/exec"
+package array_index_005_T
 
 func array_index_005_T(__taint_src string) {
 	var str = [3][1]string{[1]string{__taint_src}, [1]string{"b"}, [1]string{"c"}}
@@ -16,10 +15,4 @@ func array_index_005_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    array_index_005_T(__taint_src)
 }

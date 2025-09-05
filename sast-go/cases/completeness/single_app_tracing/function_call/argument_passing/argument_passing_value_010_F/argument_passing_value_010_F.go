@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/argument_passing_value_010_F/argument_passing_value_010_F
 // evaluation information end
 
-package main
-import "os/exec"
+package argument_passing_value_010_F
 
 type Person struct {
 	Name string
@@ -30,10 +29,4 @@ func (p Person) GetNamePointer() string {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    argument_passing_value_010_F(__taint_src)
 }

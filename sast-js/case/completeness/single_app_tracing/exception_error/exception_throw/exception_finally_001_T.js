@@ -5,8 +5,6 @@
 // level = 2+
 // bind_url = completeness/chain_tracing/exception_error/exception_throw/exception_finally_001_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function exception_finally_001_T(__taint_src) {
   let res = "";
@@ -19,10 +17,4 @@ function exception_finally_001_T(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-exception_finally_001_T(taint_src);
+function __taint_sink(o) { }

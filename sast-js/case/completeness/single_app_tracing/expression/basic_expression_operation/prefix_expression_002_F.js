@@ -5,18 +5,10 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/prefix_expression_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function prefix_expression_002_F(__taint_src) {
   let result = ++__taint_src;
   __taint_sink("aa");
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = 7;
-
-prefix_expression_002_F(taint_src);
+function __taint_sink(o) {}

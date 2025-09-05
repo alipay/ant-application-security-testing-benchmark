@@ -5,8 +5,6 @@
 // level = 4+
 // bind_url = accuracy/path_sensitive/explicit_jump_control/continue_001_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function continue_001_T(__taint_src) {
   let res = "";
@@ -19,10 +17,4 @@ function continue_001_T(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-continue_001_T(taint_src);
+function __taint_sink(o) { }

@@ -6,8 +6,7 @@
 // level = 2 
 // bind_url = accuracy/context_sensitive/polymorphism/polymorphism_004_F/polymorphism_004_F
 // evaluation information end
-package main
-import "os/exec"
+package polymorphism_004_F
 
 func polymorphism_004_F(__taint_src string) {
 	var student Person = &Student{Name: "Alice", Age: 20, GPA: 3.8}
@@ -41,10 +40,4 @@ func (t *Teacher) Run() string {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    polymorphism_004_F(__taint_src)
 }

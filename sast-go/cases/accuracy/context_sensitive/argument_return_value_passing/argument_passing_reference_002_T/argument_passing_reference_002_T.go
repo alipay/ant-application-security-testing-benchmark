@@ -7,8 +7,7 @@
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_passing_reference_002_T/argument_passing_reference_002_T
 // evaluation information end
 
-package main
-import "os/exec"
+package argument_passing_reference_002_T
 
 func argument_passing_reference_002_T(__taint_src interface{}) {
 	obj := map[string]interface{}{
@@ -23,10 +22,4 @@ func process(obj map[string]interface{}, src interface{}) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    argument_passing_reference_002_T(__taint_src)
 }

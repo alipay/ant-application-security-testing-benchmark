@@ -6,8 +6,7 @@
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/return_value_passing_001_F/return_value_passing_001_F
 // evaluation information end
 
-package main
-import "os/exec"
+package return_value_passing_001_F
 
 func return_value_passing_001_F(__taint_src string) {
 	data := process(__taint_src)
@@ -20,11 +19,4 @@ func process(__taint_src string) string {
 	return tmp
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    return_value_passing_001_F(__taint_src)
-}
+func __taint_sink(o interface{}) {}

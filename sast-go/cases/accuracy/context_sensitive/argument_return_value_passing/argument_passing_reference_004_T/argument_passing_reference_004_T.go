@@ -7,10 +7,9 @@
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/argument_passing_reference_004_T/argument_passing_reference_004_T
 // evaluation information end
 
-package main
-import "os/exec"
+package argument_passing_reference_004_T
 
-func argument_passing_reference_004_T(__taint_src interface{}) {
+func argument_passing_reference_005_T(__taint_src interface{}) {
 	arr := []interface{}{"_"}
 	process(arr, __taint_src)
 	__taint_sink(arr)
@@ -21,9 +20,4 @@ func process(inputArr []interface{}, src interface{}) {
 }
 
 func __taint_sink(o []interface{}) {
-}
-
-func main() {
-    __taint_src := "taint_src_value"
-    argument_passing_reference_004_T(__taint_src)
 }

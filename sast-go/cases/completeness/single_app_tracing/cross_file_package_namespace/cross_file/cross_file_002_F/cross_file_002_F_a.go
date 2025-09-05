@@ -7,13 +7,8 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_file/cross_file_002_F/cross_file_002_F
 // evaluation information end
 
-package main
+package cross_file_002_F
 
 func Cross_file_002_F_a(__taint_src string) {
 	Cross_file_002_F_b(__taint_src)
-}
-
-func main() {
-    __taint_src := "taint_src_value"
-    cross_file_002_F_a(__taint_src)
 }

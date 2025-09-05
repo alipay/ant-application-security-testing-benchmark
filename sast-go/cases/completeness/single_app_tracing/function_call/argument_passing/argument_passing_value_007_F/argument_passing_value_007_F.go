@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/argument_passing_value_007_F/argument_passing_value_007_F
 // evaluation information end
 
-package main
-import "os/exec"
+package argument_passing_value_007_F
 
 func argument_passing_value_007_F(__taint_src string) {
 	outer := func(input string) {
@@ -22,11 +21,4 @@ func argument_passing_value_007_F(__taint_src string) {
 	outer(__taint_src)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    argument_passing_value_007_F(__taint_src)
-}
+func __taint_sink(o interface{}) {}

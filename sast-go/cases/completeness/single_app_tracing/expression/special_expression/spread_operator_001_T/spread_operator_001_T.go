@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/expression/special_expression/spread_operator_001_T/spread_operator_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package spread_operator_001_T
 
 func spread_operator_001_T(__taint_src string) {
 	array1 := []string{"a", "b", __taint_src}
@@ -17,10 +16,4 @@ func spread_operator_001_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    spread_operator_001_T(__taint_src)
 }

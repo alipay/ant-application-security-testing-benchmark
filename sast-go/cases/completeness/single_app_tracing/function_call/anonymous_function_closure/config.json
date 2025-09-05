@@ -19,10 +19,6 @@
               "scene": "无参数"
             },
             {
-              "compose": "!anonymous_function_007_F/anonymous_function_007_F.go && anonymous_function_008_T/anonymous_function_008_T.go",
-              "scene": "命名返回值变量"
-            },
-            {
               "compose": "!closure_function_001_F/closure_function_001_F.go && closure_function_002_T/closure_function_002_T.go",
               "scene": "一阶闭包"
             },

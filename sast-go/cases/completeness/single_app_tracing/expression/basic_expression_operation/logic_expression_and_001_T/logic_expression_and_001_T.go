@@ -7,19 +7,11 @@
 // bind_url = completeness/single_app_tracing/expression/basic_expression_operation/logic_expression_and_001_T/logic_expression_and_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package logic_expression_and_001_T
 
 func logic_expression_and_001_T(__taint_src bool) {
 	result := __taint_src && true
 	__taint_sink(result)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    logic_expression_and_001_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

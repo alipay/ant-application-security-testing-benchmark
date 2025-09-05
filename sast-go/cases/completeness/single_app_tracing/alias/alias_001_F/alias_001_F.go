@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/alias/alias_001_F/alias_001_F
 // evaluation information end
 
-package main
-import "os/exec"
+package alias_001_F
 
 func alias_001_F(__taint_src string) {
 	type Container struct {
@@ -23,10 +22,4 @@ func alias_001_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    alias_001_F(__taint_src)
 }

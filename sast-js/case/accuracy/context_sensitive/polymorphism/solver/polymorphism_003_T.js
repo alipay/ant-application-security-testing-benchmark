@@ -5,8 +5,6 @@
 // level = 4
 // bind_url = accuracy/context_sensitive/polymorphism/polymorphism_003_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 function polymorphism_003_T(__taint_src) {
   class BaseClass1 {
     constructor() {
@@ -43,10 +41,4 @@ function polymorphism_003_T(__taint_src) {
   __taint_sink(subClass.describe());
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-polymorphism_003_T(taint_src);
+function __taint_sink(o) { }

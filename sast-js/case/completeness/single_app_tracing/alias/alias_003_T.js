@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/alias/alias_003_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function alias_003_T(__taint_src) {
   let a = { value: "_" };
@@ -15,10 +13,4 @@ function alias_003_T(__taint_src) {
   __taint_sink(a.value);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-alias_003_T(taint_src);
+function __taint_sink(o) {}

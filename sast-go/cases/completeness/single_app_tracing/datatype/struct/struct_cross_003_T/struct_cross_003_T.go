@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/struct/struct_cross_003_T/struct_cross_003_T
 // evaluation information end
 
-package main
-import "os/exec"
+package struct_cross_003_T
 
 type A struct {
 	data string
@@ -25,11 +24,4 @@ func struct_cross_003_T(__taint_src string) {
 	__taint_sink(p)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    struct_cross_003_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = accuracy/context_sensitive/polymorphism/polymorphism_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 function polymorphism_002_F(__taint_src) {
   class Base { }
 
@@ -26,10 +24,4 @@ function polymorphism_002_F(__taint_src) {
   __taint_sink(sub.call());
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-polymorphism_002_F(taint_src);
+function __taint_sink(o) { }

@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package goto_003_T
 // evaluation information start
 // real case = true
 // evaluation item =准确度->路径敏感分析->跳转语句
@@ -24,11 +23,4 @@ Sink:
 End:
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    goto_003_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

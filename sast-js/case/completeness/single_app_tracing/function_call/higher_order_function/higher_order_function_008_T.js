@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/higher_order_function/higher_order_function_008_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function higher_order_function_008_T(__taint_src) {
   function higherOrderFunction(callback) {
@@ -17,10 +15,4 @@ function higher_order_function_008_T(__taint_src) {
   __taint_sink(result);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-higher_order_function_008_T(taint_src);
+function __taint_sink(o) {}

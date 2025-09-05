@@ -29,6 +29,14 @@
             {
               "compose": "list_object_sensitive_003_T.py && !list_object_sensitive_004_F.py",
               "scene": "列表->二维"
+            },
+            {
+              "compose": "list_object_sensitive_005_T.py && !list_object_sensitive_006_F.py",
+              "scene": "列表->append函数"
+            },
+            {
+              "compose": "list_object_sensitive_007_T.py && !list_object_sensitive_008_F.py",
+              "scene": "列表->clear-extend函数"
             }
           ]
         },
@@ -42,14 +50,6 @@
             {
               "compose": "array_object_sensitive_003_T.py && !array_object_sensitive_004_F.py",
               "scene": "数组/集合->数组对象2"
-            },
-            {
-              "compose": "list_object_sensitive_005_T.py && !list_object_sensitive_006_F.py",
-              "scene": "列表->append函数"
-            },
-            {
-              "compose": "list_object_sensitive_007_T.py && !list_object_sensitive_008_F.py",
-              "scene": "列表->clear-extend函数"
             }
           ]
         }

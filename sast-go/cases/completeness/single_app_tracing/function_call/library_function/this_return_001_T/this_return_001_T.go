@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package this_return_001_T
 
 
 // evaluation information start
@@ -22,10 +21,4 @@ func taintToString(s interface{}) string {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    this_return_001_T(__taint_src)
 }

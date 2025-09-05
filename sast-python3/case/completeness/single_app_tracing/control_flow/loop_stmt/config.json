@@ -19,6 +19,10 @@
               "scene": "for_body"
             },
             {
+              "compose": "traverse_001_T.py && !traverse_002_F.py",
+              "scene": "遍历"
+            },
+            {
               "compose": "forin_body_001_T.py && !forin_body_002_F.py",
               "scene": "forin_body"
             },
@@ -29,6 +33,10 @@
             {
               "compose": "while_body_001_T.py && !while_body_002_F.py",
               "scene": "while"
+            },
+            {
+              "compose": "while_else_001_T.py && !while_else_002_F.py",
+              "scene": "while_else"
             }
           ]
         },
@@ -38,19 +46,6 @@
             {
               "compose": "nested_loop_001_T.py && !nested_loop_002_F.py",
               "scene": "嵌套循环"
-            },
-            {
-              "compose": "traverse_001_T.py && !traverse_002_F.py",
-              "scene": "遍历"
-            }
-          ]
-        },
-        {
-          "level": "4",
-          "scene_list": [
-            {
-              "compose": "while_else_001_T.py && !while_else_002_F.py",
-              "scene": "while_else"
             }
           ]
         }

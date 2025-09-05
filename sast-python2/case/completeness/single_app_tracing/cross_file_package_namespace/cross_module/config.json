@@ -61,10 +61,6 @@
             {
               "compose": "(cross_module_027_T/cross_module_027_T.py || cross_module_027_T/A/cross_module_027_T_a.py || cross_module_027_T/A/B/cross_module_027_T_b.py) && !(cross_module_028_F/cross_module_028_F.py || cross_module_028_F/A/cross_module_028_F_a.py || cross_module_028_F/A/B/cross_module_028_F_b.py)",
               "scene": "子级目录导出—双层嵌套"
-            },
-            {
-              "compose": "(cross_module_029_T/A/B/cross_module_029_T_b.py || cross_module_029_T/cross_module_029_T_a.py ) && !(cross_module_030_F/A/B/cross_module_030_F_b.py || cross_module_030_F/cross_module_030_F_a.py)",
-              "scene": "绝对导入"
             }
           ]
         }

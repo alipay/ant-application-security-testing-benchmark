@@ -7,8 +7,7 @@
 // bind_url = accuracy/object_sensitive/struct/struct_deep10_002_F/struct_deep10_002_F
 // evaluation information end
 
-package main
-import "os/exec"
+package struct_deep10_002_F
 
 type DeepA01 struct {
 	deepA02 DeepA02
@@ -59,11 +58,5 @@ func struct_deep10_002_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-//模拟污点数据的汇聚点
-}
-
-func main() {
-    __taint_src := "taint_src_value"
-    struct_deep10_002_F(__taint_src)
+	//模拟污点数据的汇聚点
 }

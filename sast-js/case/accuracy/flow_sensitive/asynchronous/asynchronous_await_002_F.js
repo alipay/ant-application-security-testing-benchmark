@@ -5,8 +5,6 @@
 // level = 4
 // bind_url = accuracy/flow_sensitive/asynchronous/asynchronous_await_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 async function asynchronous_await_002_F(__taint_src) {
   let data = "";
@@ -22,10 +20,4 @@ async function asynchronous_await_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-asynchronous_await_002_F(taint_src);
+function __taint_sink(o) { }

@@ -16,8 +16,3 @@ func cross_directory_009_T(__taint_src string) {
 	pkg.Arg = __taint_src
 	pkg.Cross_directory_009_T("_")
 }
-
-func main() {
-    __taint_src := "taint_src_value"
-    cross_directory_009_T(__taint_src)
-}

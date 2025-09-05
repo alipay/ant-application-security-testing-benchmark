@@ -7,8 +7,7 @@
 // bind_url = accuracy/field_sensitive/struct/struct_field_005_T/struct_field_005_T
 // evaluation information end
 
-package main
-import "os/exec"
+package struct_field_005_T
 
 type A struct {
 	string
@@ -21,10 +20,4 @@ func struct_field_005_T(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    struct_field_005_T(__taint_src)
 }

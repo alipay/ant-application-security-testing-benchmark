@@ -5,8 +5,6 @@
 // level = 2+
 // bind_url = completeness/single_app_tracing/function_call/library_function/json_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 function json_002_F(__taint_src) {
   process("aa");
 
@@ -16,10 +14,4 @@ function json_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-json_002_F(taint_src);
+function __taint_sink(o) { }

@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/argument_passing_value_006_T/argument_passing_value_006_T
 // evaluation information end
 
-package main
-import "os/exec"
+package argument_passing_value_006_T
 
 func argument_passing_value_006_T(__taint_src string) {
 	process(__taint_src, "_")
@@ -18,11 +17,4 @@ func process(arg1 string, arg2 string) {
 	__taint_sink(arg1)
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    argument_passing_value_006_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

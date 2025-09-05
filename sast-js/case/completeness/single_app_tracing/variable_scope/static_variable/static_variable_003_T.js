@@ -5,8 +5,6 @@
 // level = 2+
 // bind_url = completeness/single_app_tracing/variable_scope/static_variable/static_variable_003_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function static_variable_003_T(__taint_src) {
   class A {
@@ -32,10 +30,4 @@ function static_variable_003_T(__taint_src) {
   a.processA();
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-static_variable_003_T(taint_src);
+function __taint_sink(o) { }

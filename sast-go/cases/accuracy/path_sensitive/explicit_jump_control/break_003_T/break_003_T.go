@@ -1,5 +1,4 @@
-package main
-import "os/exec"
+package break_003_T
 
 
 // evaluation information start
@@ -20,11 +19,4 @@ func break_003_T(__taint_src string) {
 	}
 }
 
-func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    break_003_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

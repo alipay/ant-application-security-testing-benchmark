@@ -9,10 +9,6 @@
             {
               "compose": "string_001_T/string_001_T.go && !string_002_F/string_002_F.go",
               "scene": "字符串类型"
-            },
-            {
-              "compose": "string_003_T/string_003_T.go && !string_004_F/string_004_F.go",
-              "scene": "字符串拼接"
             }
           ]
         }

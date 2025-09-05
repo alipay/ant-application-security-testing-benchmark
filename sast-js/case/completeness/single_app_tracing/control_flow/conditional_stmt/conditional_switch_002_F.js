@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/conditional_switch_002_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function conditional_switch_002_F(__taint_src) {
   let data = "";
@@ -16,10 +14,4 @@ function conditional_switch_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-conditional_switch_002_F(taint_src);
+function __taint_sink(o) {}

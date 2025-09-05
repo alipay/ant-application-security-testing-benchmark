@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/conditional_if_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function conditional_if_002_F(__taint_src) {
   res = "";
@@ -16,10 +14,4 @@ function conditional_if_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-conditional_if_002_F(taint_src);
+function __taint_sink(o) {}

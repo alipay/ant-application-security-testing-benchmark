@@ -5,8 +5,6 @@
 // level = 3
 // bind_url = accuracy/field_sensitive/one_dimensional_collection/numeric_index_state_no_solver/rest_parameter_007_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function rest_parameter_007_T(__taint_src) {
   collectArgs("prefix", __taint_src, "suffix");
@@ -16,10 +14,4 @@ function collectArgs(...args) {
   __taint_sink(args[1]);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-rest_parameter_007_T(taint_src);
+function __taint_sink(o) { }

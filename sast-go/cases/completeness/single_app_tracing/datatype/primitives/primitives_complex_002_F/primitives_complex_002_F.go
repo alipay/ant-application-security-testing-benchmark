@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/primitives/primitives_complex_002_F/primitives_complex_002_F
 // evaluation information end
 
-package main
-import "os/exec"
+package primitives_complex_002_F
 
 func primitives_complex_002_F(__taint_src complex64) {
 	var sani complex64 = __taint_src
@@ -17,10 +16,4 @@ func primitives_complex_002_F(__taint_src complex64) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    primitives_complex_002_F(__taint_src)
 }

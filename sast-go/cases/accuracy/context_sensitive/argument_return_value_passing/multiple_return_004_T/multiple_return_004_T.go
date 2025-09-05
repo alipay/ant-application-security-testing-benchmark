@@ -7,8 +7,7 @@
 // bind_url = accuracy/context_sensitive/argument_return_value_passing_value_passing/multiple_return_004_T/multiple_return_004_T
 // evaluation information end
 
-package main
-import "os/exec"
+package multiple_return_004_T
 
 func multiple_return_004_T(__taint_src interface{}) {
 	a := "_"
@@ -22,9 +21,4 @@ func processData(s interface{}, i interface{}) (interface{}, interface{}) {
 	return i, s
 }
 
-func __taint_sink(o interface{}) { _ = exec.Command("sh", "-c", o.(string)).Run()  }
-
-func main() {
-    __taint_src := "taint_src_value"
-    multiple_return_004_T(__taint_src)
-}
+func __taint_sink(o interface{}) {}

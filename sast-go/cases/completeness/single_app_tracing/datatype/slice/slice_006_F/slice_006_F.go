@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/slice/slice_006_F/slice_006_F
 // evaluation information end
 
-package main
-import "os/exec"
+package slice_006_F
 
 func slice_006_F(__taint_src string) {
 	s := [][]string{
@@ -26,10 +25,4 @@ func slice_006_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    slice_006_F(__taint_src)
 }

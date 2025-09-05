@@ -7,8 +7,7 @@
 // bind_url = accuracy/flow_sensitive/defer_exectution/defer_exectution_001_T/defer_exectution_001_T
 // evaluation information end
 
-package main
-import "os/exec"
+package defer_exectution_001_T
 
 func defer_exectution_001_T(__taint_src string) {
 	result := __taint_src
@@ -19,10 +18,4 @@ func defer_exectution_001_T(__taint_src string) {
 }
 
 func ___taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-}
-
-func main() {
-    __taint_src := "taint_src_value"
-    defer_exectution_001_T(__taint_src)
 }

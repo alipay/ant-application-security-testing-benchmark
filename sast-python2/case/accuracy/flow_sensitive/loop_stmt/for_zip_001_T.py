@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 准确度->流敏感分析->循环顺序执行语句
 # scene introduction = for_zip
-# level = 2+
+# level = 2
 # bind_url = accuracy/flow_sensitive/loop_stmt/for_zip_001_T
 # evaluation information end
 

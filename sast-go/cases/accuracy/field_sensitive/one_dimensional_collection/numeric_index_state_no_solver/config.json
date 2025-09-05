@@ -15,10 +15,6 @@
               "scene": "数组->数组索引2"
             },
             {
-              "compose": "array_index_009_T/array_index_009_T.go && !array_index_010_F/array_index_010_F.go",
-              "scene": "数组->数组赋值"
-            },
-            {
               "compose": "map_field_sensitive_001_T/map_field_sensitive_001_T.go && !map_field_sensitive_002_F/map_field_sensitive_002_F.go",
               "scene": "map->字典/映射（Map）-域敏感"
             },

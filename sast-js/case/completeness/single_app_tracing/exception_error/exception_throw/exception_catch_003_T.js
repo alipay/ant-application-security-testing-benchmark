@@ -5,8 +5,6 @@
 // level = 2+
 // bind_url = completeness/chain_tracing/exception_error/exception_throw/exception_catch_003_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function exception_catch_003_T(__taint_src) {
   try {
@@ -16,10 +14,4 @@ function exception_catch_003_T(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-exception_catch_003_T(taint_src);
+function __taint_sink(o) { }

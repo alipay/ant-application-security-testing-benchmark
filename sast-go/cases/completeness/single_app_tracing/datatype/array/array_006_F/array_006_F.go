@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/datatype/array/array_006_F/array_006_F
 // evaluation information end
 
-package main
-import "os/exec"
+package array_006_F
 
 func array_006_F(__taint_src [3]string) {
 	sani := __taint_src
@@ -17,10 +16,4 @@ func array_006_F(__taint_src [3]string) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    array_006_F(__taint_src)
 }

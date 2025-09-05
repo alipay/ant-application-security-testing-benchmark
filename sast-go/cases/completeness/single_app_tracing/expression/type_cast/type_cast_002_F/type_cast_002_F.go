@@ -7,8 +7,7 @@
 // bind_url = completeness/single_app_tracing/expression/type_cast/type_cast_002_F/type_cast_002_F
 // evaluation information end
 
-package main
-import "os/exec"
+package type_cast_002_F
 
 func type_cast_002_F(__taint_src int) {
 	result := float64(__taint_src)
@@ -17,10 +16,4 @@ func type_cast_002_F(__taint_src int) {
 }
 
 func __taint_sink(o interface{}) {
-	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
-
-func main() {
-    __taint_src := "taint_src_value"
-    type_cast_002_F(__taint_src)
 }

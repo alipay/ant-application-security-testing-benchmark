@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/promisify_002_F
 // evaluation information end
-const { execSync } = require('child_process');
-
 const { util } = import("util");
 
 function customReadFile(filePath, callback) {
@@ -19,7 +17,7 @@ function customReadFile(filePath, callback) {
   }, 100);
 }
 
-async function asynchronous_promisify_002_F(__taint_src) {
+async function promisify_002_F(__taint_src) {
   const readFileAsync = util.promisify(customReadFile);
   try {
     let data = await readFileAsync("aa");
@@ -29,10 +27,4 @@ async function asynchronous_promisify_002_F(__taint_src) {
   }
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-asynchronous_promisify_002_F(taint_src);
+function __taint_sink(o) { }

@@ -5,8 +5,6 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/special_expression/spread_operator_001_T
 // evaluation information end
-const { execSync } = require('child_process');
-
 
 function spread_operator_001_T(__taint_src) {
   let array1 = ["a", "b", __taint_src];
@@ -14,10 +12,4 @@ function spread_operator_001_T(__taint_src) {
   __taint_sink(array);
 }
 
-function __taint_sink(o) {
-  execSync(o);
-}
-
-const taint_src = "taint_src_value";
-
-spread_operator_001_T(taint_src);
+function __taint_sink(o) {}
