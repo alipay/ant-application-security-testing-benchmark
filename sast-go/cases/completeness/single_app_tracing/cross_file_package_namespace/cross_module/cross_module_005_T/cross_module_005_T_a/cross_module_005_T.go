@@ -13,7 +13,6 @@ package main
 import "os/exec"
 
 // Go语言中，允许多个main包和main函数（只要不在同一个目录）
-// 考察特性：@@@@是否能否对多个main包和main函数的情况正确包管理和找到main函数
 
 func cross_module_005_T_a(__taint_src string) {
 	__taint_sink(__taint_src)

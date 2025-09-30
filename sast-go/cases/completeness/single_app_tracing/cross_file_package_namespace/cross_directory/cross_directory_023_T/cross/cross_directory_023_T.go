@@ -17,7 +17,6 @@ import (
 )
 
 // Go语言中，一个包内只有大写开头的Symbol能够被导出(对外部可见)
-// 考察特性：@@@@是否会错误地将小写的(非public的)Symbol错误的import过来
 
 func cross_directory_023_T() {
 	__taint_sink(cross_01.Status) //Status大写 应该被正确import过来

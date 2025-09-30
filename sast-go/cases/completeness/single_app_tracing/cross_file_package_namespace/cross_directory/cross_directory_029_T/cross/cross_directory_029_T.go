@@ -6,29 +6,26 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_029_T/cross/cross_directory_029_T
 // evaluation information end
 
-
 // 先cd到sast-go/cases/completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_029_T/cross
 // 再执行go run cross_directory_029_T.go
 
 package main
 
 import (
-	"rainy/cross_01"
 	"os/exec"
 )
+
 // Go语言中的import： import 项目名(代表根目录)/目录名1/目录名2/目录名3
 // 所谓的根目录 指 go.mod所在的目录
-// 考察特性：是否支持识别go项目的根目录，从根目录开始解析并找到import语句
-
 
 func cross_directory_029_T(__taint_src string) {
-	value :=	cross_directory_029_T_a.Person{}.Skiing(__taint_src)// 看这些符号值能不能被解析出来
+	value := cross_directory_029_T_a.Person{}.Skiing(__taint_src) // 看这些符号值能不能被解析出来
 	__taint_sink(value)
 }
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
+}
 
 func main() {
 	__taint_src := "taint_src_value"
