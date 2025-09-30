@@ -17,7 +17,7 @@ import "cross_directory_021_T/other/cross"
 var __taint_src = "taint_src_value"
 
 func init() {
-	cross.SayHello(__taint_src)
+	cross_same_name_021_T.SayHello(__taint_src)
 }
 
 func main() {

@@ -19,7 +19,7 @@ import (
 // 然而，导入后，使用的符号值是包名。比如这边，import cross_01，使用的却是pkg
 
 func cross_directory_026_F(__taint_src string) {
-	__taint_sink(pkg.Person{}.Swimming("_")) 
+	__taint_sink(cross_directory_026_F_a.Person{}.Swimming("_")) 
 }
 
 func __taint_sink(o interface{}) {

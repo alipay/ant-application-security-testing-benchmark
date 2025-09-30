@@ -18,7 +18,7 @@ import "cross_directory_028_F/cross_02"
 
 // 考察特性：YASA-Go的**包管理逻辑**(this.packageManager)，是否能够区分并保存同名包
 func cross_directory_028_F(__taint_src string) {
-	pkg.Fun(__taint_src)
+	cross_same_name_028_F.Fun(__taint_src)
 }
 
 func main() {

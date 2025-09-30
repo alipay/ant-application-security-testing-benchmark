@@ -14,7 +14,7 @@ package main
 import "cross/other/cross_01"
 
 func cross_directory_013_T_a(__taint_src string) {
-	cross_01.SayHello(__taint_src)
+	cross_directory_013_T_b.SayHello(__taint_src)
 }
 
 func main() {

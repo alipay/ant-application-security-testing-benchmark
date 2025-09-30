@@ -16,7 +16,6 @@ import (
 	"cross_directory_017_T/cross/cross_init"
 	"os/exec"
 )
-
 // Go语言支持同一个包中有多个init函数，这些init可以在同一个文件也可以在不同文件中。
 // init函数之间的执行是有顺序的，不同文件中则按文件排序顺序、同一文件则按init声明从上之下的顺序
 // init函数是先执行的，所有init函数执行完后才会执行自定义函数

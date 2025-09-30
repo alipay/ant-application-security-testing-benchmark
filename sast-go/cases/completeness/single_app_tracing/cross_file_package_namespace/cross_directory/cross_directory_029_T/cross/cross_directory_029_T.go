@@ -13,17 +13,16 @@
 package main
 
 import (
-	"rainy/pkg"
+	"rainy/cross_01"
 	"os/exec"
 )
-
 // Go语言中的import： import 项目名(代表根目录)/目录名1/目录名2/目录名3
 // 所谓的根目录 指 go.mod所在的目录
 // 考察特性：是否支持识别go项目的根目录，从根目录开始解析并找到import语句
 
 
 func cross_directory_029_T(__taint_src string) {
-	value :=	pkg.Person{}.Skiing(__taint_src)// 看这些符号值能不能被解析出来
+	value :=	cross_directory_029_T_a.Person{}.Skiing(__taint_src)// 看这些符号值能不能被解析出来
 	__taint_sink(value)
 }
 

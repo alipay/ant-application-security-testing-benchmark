@@ -1,3 +1,3 @@
-module cross_directory_026_F
+module cross_directory_025_T
 
 go 1.20

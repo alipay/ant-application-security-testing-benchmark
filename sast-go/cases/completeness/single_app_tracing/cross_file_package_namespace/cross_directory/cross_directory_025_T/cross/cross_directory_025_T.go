@@ -16,10 +16,10 @@ import (
 )
 
 // Go语言中，import路径从第二项开始的每项一定是目录名，包括最后一项(并非包名)。
-// 然而，导入后，使用的符号值是包名。比如这边，import cross_01，使用的却是pkg
+// 然而，导入后，使用的符号值是包名。比如这边，import cross_01，使用的却是cross_directory_025_T_a
 
 func cross_directory_025_T(__taint_src string) {
-	__taint_sink(pkg.Person{}.Swimming(__taint_src)) 
+	__taint_sink(cross_directory_025_T_a.Person{}.Swimming(__taint_src)) 
 }
 
 func __taint_sink(o interface{}) {

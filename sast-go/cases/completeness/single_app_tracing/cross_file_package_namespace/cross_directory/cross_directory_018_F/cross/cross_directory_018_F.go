@@ -15,7 +15,6 @@ package main
 import (
 	"cross_directory_018_F/cross/cross_init"
 	"os/exec"
-	"fmt"
 )
 
 // Go语言支持同一个包中有多个init函数，这些init可以在同一个文件也可以在不同文件中。
@@ -30,7 +29,6 @@ func cross_directory_018_F(__taint_src string) {
 }
 
 func __taint_sink(o interface{}) {
-	fmt.Println("o 的值:", o)
 	_ = exec.Command("sh", "-c", o.(string)).Run()
 	}
 

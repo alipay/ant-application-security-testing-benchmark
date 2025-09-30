@@ -17,7 +17,6 @@ import (
 	"os/exec"
 )
 
-
 func cross_directory_016_F() {
 	__taint_sink(cross_init.Status)
 }
