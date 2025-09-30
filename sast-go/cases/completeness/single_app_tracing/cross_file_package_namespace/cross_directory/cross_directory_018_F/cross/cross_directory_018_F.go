@@ -1,0 +1,40 @@
+// evaluation information start
+// real case = false
+// evaluation item = 完整度->单应用跟踪完整度->文件、包、命名空间->跨包
+// scene introduction = 多init函数顺序执行
+// level = 2
+// bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_018_F/cross/cross_directory_018_F
+// evaluation information end
+
+
+// 先cd到sast-go/cases/completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_018_F/cross
+// 再执行go run cross_directory_018_F.go
+
+package main
+
+import (
+	"cross_directory_018_F/cross/cross_init"
+	"os/exec"
+	"fmt"
+)
+
+// Go语言支持同一个包中有多个init函数，这些init可以在同一个文件也可以在不同文件中。
+// init函数之间的执行是有顺序的，不同文件中则按文件排序顺序、同一文件则按init声明从上之下的顺序
+// init函数是先执行的，所有init函数执行完后才会执行自定义函数
+
+func cross_directory_018_F(__taint_src string) {
+	cross_init.In_init_after("abc")
+
+	 // 若正确处理，Status的值应该是"1234abc"
+	__taint_sink(cross_init.Status)
+}
+
+func __taint_sink(o interface{}) {
+	fmt.Println("o 的值:", o)
+	_ = exec.Command("sh", "-c", o.(string)).Run()
+	}
+
+func main() {
+	__taint_src := "taint_src_value"
+	cross_directory_018_F(__taint_src)
+}

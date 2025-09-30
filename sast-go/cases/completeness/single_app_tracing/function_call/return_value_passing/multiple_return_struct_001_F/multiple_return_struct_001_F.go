@@ -11,24 +11,25 @@ package main
 import (
 	"fmt"
 	"os/exec"
+	"database/sql"
 )
 
 type Request struct {
 	Name string
-	prop string
+	prop sql.DB
 }
 
 func multiple_return_struct_001_F(__taint_src string) {
 	req := Request{}
-	a := "_"
 
-	req.prop, _ = processData(__taint_src, a)
+	req.prop, _ = processData(__taint_src, "_")
 
 	__taint_sink(req)
 }
 
-func processData(s string, i interface{}) (string, interface{}) {
-	return "abc", i
+func processData(s string, i string) (sql.DB, string) {
+	var db sql.DB
+	return db , i
 }
 
 func __taint_sink(o interface{}) {

@@ -11,24 +11,25 @@ package main
 import (
 	"fmt"
 	"os/exec"
+	"database/sql"
 )
+// req.prop, _ = c.Cookie() uast4Go会将这句翻译成variableDecl，导致taint无法写入到req对象中
 
 type Request struct {
 	Name string
-	prop string
+	prop sql.DB
 }
 
-func multiple_return_struct_002_T(__taint_src string) {
+func multiple_return_struct_002_T(__taint_src sql.DB) {
 	req := Request{}
-	a := "_"
 
-	req.prop, _ = processData(__taint_src, a)
+	req.prop, _ = processData(__taint_src, "_")
 
 	__taint_sink(req)
 }
 
-func processData(s string, i interface{}) (string, interface{}) {
-	return s, i
+func processData(s sql.DB, i string) (sql.DB, string) {
+	return s , i
 }
 
 func __taint_sink(o interface{}) {
@@ -36,6 +37,6 @@ func __taint_sink(o interface{}) {
 	}
 
 func main() {
-    __taint_src := "taint_src_value"
+	  var __taint_src sql.DB
     multiple_return_struct_002_T(__taint_src)
 }
