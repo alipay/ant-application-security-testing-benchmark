@@ -35,18 +35,6 @@
               "scene": "replace包层级调用链2"
             },
             {
-              "compose": "(cross_directory_015_T/cross/cross_init/cross_directory_init_015_T.go || cross_directory_015_T/cross/cross_directory_015_T.go) && !(cross_directory_016_F/cross/cross_init/cross_directory_init_016_F.go || cross_directory_016_F/cross/cross_directory_016_F.go)",
-              "scene": "init函数自动执行"
-            },
-            {
-              "compose": "(cross_directory_017_T/cross/cross_init/cross_directory_init_017_T_a.go || cross_directory_017_T/cross/cross_init/cross_directory_init_017_T_b.go || cross_directory_017_T/cross/cross_directory_017_T.go) && !(cross_directory_018_F/cross/cross_init/cross_directory_init_018_F_a.go || cross_directory_018_F/cross/cross_init/cross_directory_init_018_F_b.go || cross_directory_018_F/cross/cross_directory_018_F.go)",
-              "scene": "多init函数顺序执行1"
-            },
-            {
-              "compose": "(cross_directory_019_T/cross/cross_init/cross_directory_init_019_T_a.go || cross_directory_019_T/cross/cross_init/cross_directory_init_019_T_b.go || cross_directory_019_T/cross/cross_directory_019_T.go) && !(cross_directory_020_F/cross/cross_init/cross_directory_init_020_F_a.go || cross_directory_020_F/cross/cross_init/cross_directory_init_020_F_b.go || cross_directory_020_F/cross/cross_directory_020_F.go)",
-              "scene": "多init函数顺序执行2"
-            },
-            {
               "compose": "(cross_directory_021_T/cross/cross_same_name_021_T.go || cross_directory_021_T/main_dir/cross_directory_021_T_a.go || cross_directory_021_T/main_dir/cross_directory_021_T_b.go || cross_directory_021_T/other/cross/cross_same_name_021_T.go) && !(cross_directory_022_F/cross/cross_same_name_022_F.go || cross_directory_022_F/main_dir/cross_directory_022_F_a.go || cross_directory_022_F/main_dir/cross_directory_022_F_b.go || cross_directory_022_F/other/cross/cross_same_name_022_F.go)",
               "scene": "同名包导入区分"
             },

@@ -6,17 +6,15 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_027_T/cross_directory_027_T
 // evaluation information end
 
-
 // 先cd sast-go/cases/completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_027_T
 // 再执行 go run cross_directory_027_T.go
 
 package main
-import "cross_directory_027_T/cross_01"
 
 // Go语言中，一个包以文件结构路径唯一标识。允许同名包。
-// 旧版YASA以包名作为key来进行包管理，导致同名包丢失。
+// 旧版@@@@以包名作为key来进行包管理，导致同名包丢失。
 
-// 考察特性：YASA-Go的**包管理逻辑**(this.packageManager)，是否能够区分并保存同名包
+// 考察特性：@@@@-Go的**包管理逻辑**(this.packageManager)，是否能够区分并保存同名包
 func cross_directory_027_T(__taint_src string) {
 	cross_same_name_027_T.Fun(__taint_src)
 }
