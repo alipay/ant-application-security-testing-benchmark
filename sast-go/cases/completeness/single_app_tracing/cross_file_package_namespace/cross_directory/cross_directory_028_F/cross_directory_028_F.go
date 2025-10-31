@@ -11,9 +11,12 @@
 
 package main
 
-// Go语言中，一个包以文件结构路径唯一标识。允许同名包。
-// --以包名作为key来进行包管理，导致同名包丢失。
+import cross_same_name_028_F "cross_directory_028_F/cross_02"
 
+// Go语言中，一个包以文件结构路径唯一标识。允许同名包。
+// 旧版@@以包名作为key来进行包管理，导致同名包丢失。
+
+// 考察特性：@@-Go的**包管理逻辑**(this.packageManager)，是否能够区分并保存同名包
 func cross_directory_028_F(__taint_src string) {
 	cross_same_name_028_F.Fun(__taint_src)
 }
