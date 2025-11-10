@@ -21,7 +21,7 @@ IAST引擎能力评价体系V1.0和Benchmark。如果您有任何好的想法，
 
 - - ##### 驱动靶场
     ```
-    项目启动后您可以直接运行AstbenchmarkApplicationTests驱动靶场用例
+    项目启动后您可以在iast-java/src/test目录下面运行AstbenchmarkApplicationTests.java来驱动靶场用例
     ```
 
 - - ##### 交互命令
