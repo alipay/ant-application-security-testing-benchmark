@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = true
+# real case = false
 # evaluation item = 完整度->其他->ellipsis
 # scene introduction = 占位符
 # level = 2+

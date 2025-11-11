@@ -1,5 +1,5 @@
 # evaluation information start
-# real case = true
+# real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->元组
 # scene introduction = 元组字面量
 # level = 2

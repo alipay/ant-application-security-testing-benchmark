@@ -25,6 +25,10 @@
             {
               "compose": "inheritance_001_T.py && !inheritance_002_F.py",
               "scene": "继承覆盖父类字段"
+            },
+            {
+              "compose": "dynamic_field_001_T.py && !dynamic_field_002_F.py",
+              "scene": "动态参数"
             }
           ]
         },

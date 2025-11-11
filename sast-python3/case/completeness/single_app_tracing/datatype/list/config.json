@@ -19,6 +19,26 @@
               "scene": "append操作"
             },
             {
+              "compose": "list_extend_001_T.py && !list_extend_002_F.py",
+              "scene": "extend操作"
+            },
+            {
+              "compose": "list_insert_001_T.py && !list_insert_002_F.py",
+              "scene": "insert操作"
+            },
+            {
+              "compose": "list_remove_001_T.py && !list_remove_002_F.py",
+              "scene": "remove操作"
+            },
+            {
+              "compose": "list_pop_001_T.py && !list_pop_002_F.py",
+              "scene": "pop操作"
+            },
+            {
+              "compose": "list_concat_001_T.py && !list_concat_002_F.py",
+              "scene": "连接操作"
+            },
+            {
               "compose": "list_007_T.py && !list_008_F.py",
               "scene": "泛型容器类型"
             },

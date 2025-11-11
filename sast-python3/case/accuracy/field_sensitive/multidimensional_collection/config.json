@@ -17,6 +17,14 @@
             {
               "compose": "map_mc_001_T.py && !map_mc_002_F.py",
               "scene": "字典键路径->嵌套"
+            },
+            {
+              "compose": "list_slice_001_T.py && !list_slice_002_F.py",
+              "scene": "字典键路径->切片后访问"
+            },
+            {
+              "compose": "map_mc_005_T.py && !map_mc_006_F.py",
+              "scene": "字典键路径->get方法链"
             }
           ]
         },

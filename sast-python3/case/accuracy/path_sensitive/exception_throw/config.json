@@ -9,6 +9,22 @@
             {
               "compose": "exception_throw_001_T.py && !exception_throw_002_F.py && exception_throw_003_T.py",
               "scene": "1"
+            },
+            {
+              "compose": "exception_finally_throw_001_T.py && !exception_finally_throw_002_F.py",
+              "scene": "异常抛出-finally块执行"
+            },
+            {
+              "compose": "exception_multiple_except_001_T.py && !exception_multiple_except_002_F.py",
+              "scene": "异常抛出-多个except分支"
+            },
+            {
+              "compose": "exception_else_001_T.py && !exception_else_002_F.py",
+              "scene": "异常抛出-else块执行"
+            },
+            {
+              "compose": "exception_args_001_T.py && !exception_args_002_F.py",
+              "scene": "异常抛出-多参数异常对象"
             }
           ]
         }

@@ -26,6 +26,10 @@
             {
               "compose": "set_007_T.py && !set_008_F.py",
               "scene": "差集操作"
+            },
+            {
+              "compose": "set_remove_001_T.py && !set_remove_002_F.py",
+              "scene": "set元素删除操作"
             }
           ]
         }

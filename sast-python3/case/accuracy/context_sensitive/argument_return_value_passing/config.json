@@ -33,6 +33,14 @@
             {
               "compose": "return_value_passing_003_T.py && !return_value_passing_004_F.py",
               "scene": "返回值传递->多层函数嵌套传递"
+            },
+            {
+              "compose": "return_value_passing_005_T.py && !return_value_passing_006_F.py",
+              "scene": "返回值传递->迭代器"
+            },
+            {
+              "compose": "return_value_passing_007_T.py && !return_value_passing_008_F.py",
+              "scene": "返回值传递->多返回值解包"
             }
           ]
         }

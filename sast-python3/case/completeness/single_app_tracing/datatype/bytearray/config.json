@@ -9,6 +9,14 @@
             {
               "compose": "bytearray_001_T.py && !bytearray_002_F.py",
               "scene": "构造函数形式"
+            },
+            {
+              "compose": "bytearray_slice_001_T.py && !bytearray_slice_002_F.py",
+              "scene": "切片操作"
+            },
+            {
+              "compose": "bytearray_extend_001_T.py && !bytearray_extend_002_F.py",
+              "scene": "扩展操作"
             }
           ]
         }

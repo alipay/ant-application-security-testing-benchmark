@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = true
+# real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->元组
 # scene introduction = 解包操作
 # level = 2+

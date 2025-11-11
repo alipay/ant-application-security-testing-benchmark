@@ -19,6 +19,10 @@
               "scene": "continue"
             },
             {
+              "compose": "continue_nested_001_T.py && !continue_nested_002_F.py",
+              "scene": "continue-嵌套循环"
+            },
+            {
               "compose": "return_001_T.py && !return_002_F.py",
               "scene": "return"
             }

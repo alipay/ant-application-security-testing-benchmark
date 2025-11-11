@@ -13,6 +13,14 @@
             {
               "compose": "for_zip_001_T.py && !for_zip_002_F.py",
               "scene": "for_zip"
+            },
+            {
+              "compose": "nested_loop_for_in_001_T.py && !nested_loop_for_in_002_F.py",
+              "scene": " 循环语句->嵌套循环"
+            },
+            {
+              "compose": "while_loop_001_T.py && !while_loop_002_F.py",
+              "scene": "循环语句->while循环"
             }
           ]
         }

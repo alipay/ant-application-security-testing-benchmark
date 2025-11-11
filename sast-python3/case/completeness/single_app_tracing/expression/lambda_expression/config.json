@@ -9,6 +9,10 @@
             {
               "compose": "lambda_expression_001_T.py && !lambda_expression_002_F.py",
               "scene": "lambda关键字"
+            },
+            {
+              "compose": "lambda_multi_params_001_T.py && !lambda_multi_params_002_F.py",
+              "scene": "多参数lambda表达式"
             }
           ]
         }

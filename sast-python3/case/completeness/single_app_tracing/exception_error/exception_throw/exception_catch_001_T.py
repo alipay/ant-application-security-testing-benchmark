@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = false
+# real case = true
 # evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->异常抛出与捕获
 # scene introduction = exception_catch
 # level = 2+

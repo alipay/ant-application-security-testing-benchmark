@@ -34,6 +34,18 @@
             {
               "compose": "inject_data_new_005_T.py && !inject_data_new_006_F.py",
               "scene": "运行时动态创建实例"
+            },
+            {
+              "compose": "multi_level_inheritance_001_T.py && !multi_level_inheritance_002_F.py",
+              "scene": "多级继承"
+            },
+            {
+              "compose": "multiple_inheritance_001_T.py && !multiple_inheritance_002_F.py",
+              "scene": "多重继承"
+            },
+            {
+              "compose": "no_init_child_class_001_T.py && !no_init_child_class_002_F.py",
+              "scene": "父类init函数自动调用"
             }
           ]
         }

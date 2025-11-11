@@ -9,11 +9,12 @@
 import os
 
 def bool_002_F(taint_src):
-    taint_sink(taint_src)
+    tainted_bool = False
+    taint_sink(tainted_bool)
 
 def taint_sink(o):
     os.system(str(o))
 
 if __name__ == "__main__":
-    taint_src = False
+    taint_src = True
     bool_002_F(taint_src)

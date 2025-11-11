@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = false
+# real case = true
 # evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->生成器函数
 # scene introduction = yield_from
 # level = 2+

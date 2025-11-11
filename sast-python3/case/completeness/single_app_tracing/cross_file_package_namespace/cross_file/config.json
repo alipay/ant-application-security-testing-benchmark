@@ -25,6 +25,10 @@
             {
               "compose": "(cross_file_009_T/cross_file_009_T_a.py || cross_file_009_T/cross_file_009_T_b.py) && !(cross_file_010_F/cross_file_010_F_a.py || cross_file_010_F/cross_file_010_F_b.py)",
               "scene": "同级目录相对导入"
+            },
+            {
+              "compose": "(dynamic_import_001_T/dynamic_import_001_T_a.py || dynamic_import_001_T/dynamic_import_001_T_b.py) && !(dynamic_import_002_F/dynamic_import_002_F_a.py || dynamic_import_002_F/dynamic_import_002_F_b.py)",
+              "scene": "动态导入"
             }
           ]
         }

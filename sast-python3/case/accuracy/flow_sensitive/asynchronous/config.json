@@ -13,6 +13,14 @@
             {
               "compose": "asynchronous_chain_001_T.py && !asynchronous_chain_002_F.py",
               "scene": "异步函数链"
+            },
+            {
+              "compose": "async_concurrent_001_T.py && !async_concurrent_002_F.py",
+              "scene": "异步执行->并发执行"
+            },
+            {
+              "compose": "async_generator_001_T.py && !async_generator_002_F.py",
+              "scene": "异步执行->生成器"
             }
           ]
         }

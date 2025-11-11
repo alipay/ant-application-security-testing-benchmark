@@ -18,6 +18,22 @@
             {
               "compose": "tuple_003_T.py && !tuple_004_F.py",
               "scene": "解包操作"
+            },
+            {
+              "compose": "tuple_index_001_T.py && !tuple_index_002_F.py",
+              "scene": "元组索引访问"
+            },
+            {
+              "compose": "tuple_slice_001_T.py && !tuple_slice_002_F.py",
+              "scene": "元组切片操作"
+            },
+            {
+              "compose": "tuple_concat_001_T.py && !tuple_concat_002_F.py",
+              "scene": "元组连接操作"
+            },
+            {
+              "compose": "tuple_repeat_001_T.py && !tuple_repeat_002_F.py",
+              "scene": "元组重复操作"
             }
           ]
         }

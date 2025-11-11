@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = true
+# real case = false
 # evaluation item = 完整度->单应用跟踪完整度->表达式->语言特有的表达式
 # scene introduction = del运算符->字典键值对
 # level = 2+

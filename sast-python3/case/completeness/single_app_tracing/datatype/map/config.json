@@ -15,6 +15,10 @@
               "scene": "字典/映射（Map）对象2"
             },
             {
+              "compose": "map_pop_001_T.py && !map_pop_002_F.py",
+              "scene": "pop操作"
+            },
+            {
               "compose": "map_009_T.py && !map_010_F.py",
               "scene": "泛型映射"
             }

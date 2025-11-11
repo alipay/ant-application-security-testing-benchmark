@@ -24,6 +24,10 @@
               "scene": "append操作"
             },
             {
+              "compose": "array_extend_001_T.py && !array_extend_002_F.py",
+              "scene": "extend操作"
+            },
+            {
               "compose": "extslice_001_T.py && !extslice_002_F.py",
               "scene": "多维切片"
             }
