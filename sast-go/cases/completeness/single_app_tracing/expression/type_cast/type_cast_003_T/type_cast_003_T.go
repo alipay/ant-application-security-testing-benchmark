@@ -1,4 +1,3 @@
-
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
@@ -8,6 +7,7 @@
 // evaluation information end
 
 package main
+
 import "os/exec"
 
 func type_cast_003_T(__taint_src interface{}) {
@@ -18,9 +18,9 @@ func type_cast_003_T(__taint_src interface{}) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
+}
 
 func main() {
-    __taint_src := "taint_src_value"
-    type_cast_003_T(__taint_src)
+	__taint_src := "taint_src_value"
+	type_cast_003_T(__taint_src)
 }

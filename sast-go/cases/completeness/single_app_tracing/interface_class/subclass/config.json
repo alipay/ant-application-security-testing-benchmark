@@ -1,0 +1,26 @@
+{
+  "subclass": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->子类对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "object_creation_001_T/object_creation_001_T.go && !object_creation_002_F/object_creation_002_F.go",
+              "scene": "子类对象创建"
+            },
+            {
+              "compose": "field_write_001_T/field_write_001_T.go && !field_write_002_F/field_write_002_F.go",
+              "scene": "子类字段写入"
+            },
+            {
+              "compose": "method_call_001_T/method_call_001_T.go && !method_call_002_F/method_call_002_F.go",
+              "scene": "子类方法调用"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

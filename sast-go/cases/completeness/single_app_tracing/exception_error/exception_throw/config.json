@@ -8,7 +8,11 @@
           "scene_list": [
             {
               "compose": "exception_throw_001_T/exception_throw_001_T.go && !exception_throw_002_F/exception_throw_002_F.go",
-              "scene": "异常抛出"
+              "scene": "异常抛出->函数内抛出"
+            },
+            {
+              "compose": "exception_throw_003_T/exception_throw_003_T.go && !exception_throw_004_F/exception_throw_004_F.go",
+              "scene": "异常抛出->自定义异常抛出"
             }
           ]
         }
