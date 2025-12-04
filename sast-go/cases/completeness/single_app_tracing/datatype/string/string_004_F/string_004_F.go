@@ -1,4 +1,3 @@
-
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->字符串
@@ -8,20 +7,21 @@
 // evaluation information end
 
 package main
+
 import (
-	"os/exec"
 	"fmt"
+	"os/exec"
 )
 
 func string_004_F(__taint_src string) {
 	object := "abc" + " "
-	__taint_sink(object[0])
+	__taint_sink(object)
 }
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	}
+}
 func main() {
-    __taint_src := "taint_src_value"
-    string_004_F(__taint_src)
+	__taint_src := "taint_src_value"
+	string_004_F(__taint_src)
 }

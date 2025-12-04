@@ -16,5 +16,5 @@ logs/
 /dast-java/target
 /tools/library/target
 /tools/plugin/target
-/tools/library/target
 *.pyc
+results/

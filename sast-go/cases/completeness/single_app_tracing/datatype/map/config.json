@@ -13,6 +13,10 @@
             {
               "compose": "map_003_T/map_003_T.go && !map_004_F/map_004_F.go",
               "scene": "字典/映射（Map）对象2"
+            },
+            {
+              "compose": "map_delete_001_T/map_delete_001_T.go && !map_delete_002_F/map_delete_002_F.go",
+              "scene": "Map删除操作"
             }
           ]
         }
