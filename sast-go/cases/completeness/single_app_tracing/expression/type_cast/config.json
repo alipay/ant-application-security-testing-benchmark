@@ -13,6 +13,14 @@
             {
               "compose": "type_cast_003_T/type_cast_003_T.go && !type_cast_004_F/type_cast_004_F.go",
               "scene": "类型断言"
+            },
+            {
+              "compose": "type_cast_005_T/type_cast_005_T.go && !type_cast_006_F/type_cast_006_F.go",
+              "scene": "字符串到数值转换"
+            },
+            {
+              "compose": "type_cast_007_T/type_cast_007_T.go && !type_cast_008_F/type_cast_008_F.go",
+              "scene": "指针类型转换"
             }
           ]
         }

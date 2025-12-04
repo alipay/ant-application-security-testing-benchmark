@@ -1,0 +1,26 @@
+{
+  "abstract_class": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->抽象类的实现类",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "create_implement_object_001_T/create_implement_object_001_T.go && !create_implement_object_002_F/create_implement_object_002_F.go",
+              "scene": "创建实现类对象"
+            },
+            {
+              "compose": "write_implement_field_001_T/write_implement_field_001_T.go && !write_implement_field_002_F/write_implement_field_002_F.go",
+              "scene": "实现类字段写入"
+            },
+            {
+              "compose": "call_implement_method_001_T/call_implement_method_001_T.go && !call_implement_method_002_F/call_implement_method_002_F.go",
+              "scene": "实现类方法调用"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

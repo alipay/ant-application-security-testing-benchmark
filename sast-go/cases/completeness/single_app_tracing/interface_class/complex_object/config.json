@@ -1,0 +1,51 @@
+{
+  "complex_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->复杂对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "nested_struct_create_001_T/nested_struct_create_001_T.go && !nested_struct_create_002_F/nested_struct_create_002_F.go",
+              "scene": "嵌套结构体创建"
+            },
+            {
+              "compose": "struct_pointer_field_001_T/struct_pointer_field_001_T.go && !struct_pointer_field_002_F/struct_pointer_field_002_F.go",
+              "scene": "结构体指针字段访问"
+            },
+            {
+              "compose": "interface_field_access_001_T/interface_field_access_001_T.go && !interface_field_access_002_F/interface_field_access_002_F.go",
+              "scene": "接口类型字段访问"
+            },
+            {
+              "compose": "nested_pointer_field_001_T/nested_pointer_field_001_T.go && !nested_pointer_field_002_F/nested_pointer_field_002_F.go",
+              "scene": "结构体嵌套指针字段"
+            },
+            {
+              "compose": "anonymous_struct_field_001_T/anonymous_struct_field_001_T.go && !anonymous_struct_field_002_F/anonymous_struct_field_002_F.go",
+              "scene": "匿名结构体字段访问"
+            },
+            {
+              "compose": "struct_tag_field_001_T/struct_tag_field_001_T.go && !struct_tag_field_002_F/struct_tag_field_002_F.go",
+              "scene": "结构体标签字段处理"
+            }
+          ]
+        },
+        {
+          "level": "2+",
+          "scene_list":[
+            {
+              "compose": "deep_nested_field_read_001_T/deep_nested_field_read_001_T.go && !deep_nested_field_read_002_F/deep_nested_field_read_002_F.go",
+              "scene": "多层嵌套字段读取"
+            },
+            {
+              "compose": "deep_nested_field_write_001_T/deep_nested_field_write_001_T.go && !deep_nested_field_write_002_F/deep_nested_field_write_002_F.go",
+              "scene": "多层嵌套字段写入"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

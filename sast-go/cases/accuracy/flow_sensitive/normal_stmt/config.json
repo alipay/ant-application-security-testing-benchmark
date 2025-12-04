@@ -1,0 +1,18 @@
+{
+  "normal_stmt": [
+    {
+      "evaluation_item": "准确度->流敏感分析->常规顺序执行语句",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "sequential_assign_001_T/sequential_assign_001_T.go && !sequential_assign_002_F/sequential_assign_002_F.go",
+              "scene": "顺序赋值语句"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
