@@ -9,6 +9,22 @@
             {
               "compose": "(Base_Map_001_T.java && !Base_Map_002_F.java)||(Base_Map_003_T.java && !Base_Map_004_F.java)",
               "scene": "Map"
+            },
+            {
+              "compose": "Map_Write_Single_001_T.java && !Map_Write_Single_002_F.java",
+              "scene": "Map写入"
+            },
+            {
+              "compose": "Map_Read_Single_001_T.java && !Map_Read_Single_002_F.java",
+              "scene": "Map读取"
+            },
+            {
+              "compose": "Map_Delete_Single_001_T.java && !Map_Delete_Single_002_F.java",
+              "scene": "Map删除"
+            },
+            {
+              "compose": "Map_Clear_All_001_T.java && !Map_Clear_All_002_F.java",
+              "scene": "Map清空"
             }
           ]
         }
