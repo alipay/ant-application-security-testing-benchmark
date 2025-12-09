@@ -9,6 +9,10 @@
             {
               "compose": "higher_order_function_001_T.java && !higher_order_function_002_F.java",
               "scene": "1"
+            },
+            {
+              "compose": "Higher_Order_Function_003_T.java && !Higher_Order_Function_004_F.java",
+              "scene": "高阶函数"
             }
           ]
         }
