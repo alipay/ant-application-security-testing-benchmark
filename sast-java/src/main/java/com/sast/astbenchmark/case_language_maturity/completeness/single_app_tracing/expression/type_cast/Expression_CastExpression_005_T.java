@@ -1,0 +1,40 @@
+package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tracing.expression.type_cast;
+
+import com.sast.astbenchmark.common.utils.SinkUtil;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
+
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
+// scene introduction = 接口转型
+// level = 2
+// bind_url = completeness/single_app_tracing/expression/type_cast/Expression_CastExpression_005_T
+// date = 2025-12-09 11:21:00
+// evaluation information end
+
+@RestController()
+@RequestMapping("completeness/single_app_tracing/expression/type_cast")
+public class Expression_CastExpression_005_T {
+
+  @GetMapping("Expression_CastExpression_005_T/{cmd}")
+  public Map<String, Object> expression_castexpression_005_t(@PathVariable String cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    try {
+      // 场景特点：接口转型实现类对象
+      Object command = cmd;
+      CharSequence sequence = (CharSequence) command;
+      String result = sequence.toString();
+      SinkUtil.sink(result);
+      modelMap.put("status", "success");
+    } catch (Exception e) {
+      modelMap.put("status", "error");
+    }
+    return modelMap;
+  }
+}
