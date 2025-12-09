@@ -13,6 +13,22 @@
             {
               "compose": "Expression_CastExpression_003_T.java && !Expression_CastExpression_004_F.java",
               "scene": "强转表达式-函数调用"
+            },
+            {
+              "compose": "Expression_CastExpression_005_T.java && !Expression_CastExpression_006_F.java",
+              "scene": "接口转型"
+            },
+            {
+              "compose": "Expression_CastExpression_007_T.java && !Expression_CastExpression_008_F.java",
+              "scene": "向上转型-父类引用"
+            },
+            {
+              "compose": "Expression_CastExpression_009_T.java && !Expression_CastExpression_010_F.java",
+              "scene": "向下转型-子类引用"
+            },
+            {
+              "compose": "Expression_CastExpression_011_T.java && !Expression_CastExpression_012_F.java",
+              "scene": "包装类型(装箱/拆箱)"
             }
           ]
         }
