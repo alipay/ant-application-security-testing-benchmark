@@ -1,0 +1,34 @@
+{
+  "loop_stmt_update": [
+    {
+      "evaluation_item": "准确度->流敏感分析->循环顺序执行语句",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Statement_ForStatement_update_001_T.java && !Statement_ForStatement_update_002_F.java",
+              "scene": "for-update流敏感"
+            },
+            {
+              "compose": "Statement_ForStatement_init_001_T.java && !Statement_ForStatement_init_002_F.java",
+              "scene": "for-init流敏感"
+            },
+            {
+              "compose": "Statement_WhileLoop_001_T.java && !Statement_WhileLoop_002_F.java",
+              "scene": "while循环体"
+            },
+            {
+              "compose": "Statement_DoWhileLoop_001_T.java && !Statement_DoWhileLoop_002_F.java",
+              "scene": "do-while循环体"
+            },
+            {
+              "compose": "Statement_ForEachLoop_001_T.java && !Statement_ForEachLoop_002_F.java",
+              "scene": "for-each循环"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
