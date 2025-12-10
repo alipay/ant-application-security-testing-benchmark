@@ -29,6 +29,46 @@
             {
               "compose": "ArrayElementOverwrite_003_T.java && !ArrayElementOverwrite_004_F.java",
               "scene": "容器->数组元素敏感-ArrayList"
+            },
+            {
+              "compose": "List_obj_sensitive_001_T.java && !List_obj_sensitive_002_F.java",
+              "scene": "List-add"
+            },
+            {
+              "compose": "List_obj_sensitive_003_T.java && !List_obj_sensitive_004_F.java",
+              "scene": "List-set"
+            },
+            {
+              "compose": "List_obj_sensitive_005_T.java && !List_obj_sensitive_006_F.java",
+              "scene": "List-remove"
+            },
+            {
+              "compose": "List_obj_sensitive_007_T.java && !List_obj_sensitive_008_F.java",
+              "scene": "List-clear"
+            },
+            {
+              "compose": "Set_obj_sensitive_001_T.java && !Set_obj_sensitive_002_F.java",
+              "scene": "Set-add"
+            },
+            {
+              "compose": "Set_obj_sensitive_003_T.java && !Set_obj_sensitive_004_F.java",
+              "scene": "Set-remove"
+            },
+            {
+              "compose": "Set_obj_sensitive_005_T.java && !Set_obj_sensitive_006_F.java",
+              "scene": "Set-clear"
+            },
+            {
+              "compose": "Queue_obj_sensitive_001_T.java && !Queue_obj_sensitive_002_F.java",
+              "scene": "Queue-offer"
+            },
+            {
+              "compose": "Queue_obj_sensitive_003_T.java && !Queue_obj_sensitive_004_F.java",
+              "scene": "Queue-poll"
+            },
+            {
+              "compose": "Queue_obj_sensitive_005_T.java && !Queue_obj_sensitive_006_F.java",
+              "scene": "Queue-clear"
             }
           ]
         }
