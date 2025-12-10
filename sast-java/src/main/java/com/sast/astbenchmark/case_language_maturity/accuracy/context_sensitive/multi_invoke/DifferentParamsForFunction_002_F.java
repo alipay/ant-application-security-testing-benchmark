@@ -1,4 +1,4 @@
-package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke.multi_invoke_without_solve;
+package com.sast.astbenchmark.case_language_maturity.accuracy.context_sensitive.multi_invoke;
 
 import com.sast.astbenchmark.model.alias.Invoke;
 import com.sast.astbenchmark.model.alias.X;
@@ -16,10 +16,10 @@ import java.util.Map;
 // evaluation item =  准确度->上下文敏感分析->多次调用->无需求解
 // scene introduction = HeapAllocSite
 // level = 2
-// bind_url = accuracy/context_sensitive/multi_invoke/multi_invoke_without_solve/DifferentParamsForFunction_002_F
+// bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_002_F
 // evaluation information end
 @RestController
-@RequestMapping("accuracy/context_sensitive/multi_invoke/multi_invoke_without_solve")
+@RequestMapping("accuracy/context_sensitive/multi_invoke")
 public class DifferentParamsForFunction_002_F {
     @PostMapping(value = "DifferentParamsForFunction_002_F")
     public Map<String, Object> testcase(@RequestParam String cmd) {
