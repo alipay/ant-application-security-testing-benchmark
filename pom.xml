@@ -10,5 +10,6 @@
     <modules>
         <module>iast-java</module>
         <module>sast-java</module>
+        <module>sast-java-cross-module</module>
     </modules>
 </project>
