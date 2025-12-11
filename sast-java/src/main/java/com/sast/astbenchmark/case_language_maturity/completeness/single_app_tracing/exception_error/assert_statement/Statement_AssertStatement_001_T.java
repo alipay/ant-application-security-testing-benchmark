@@ -13,7 +13,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->断言
 // scene introduction = assert语句
 // level = 2+
-// bind_url = completeness/single_app_tracing/exception_error/assert_statement/Statement_AssertStatement_001_T/{cmd}
+// bind_url = completeness/single_app_tracing/exception_error/assert_statement/Statement_AssertStatement_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/single_app_tracing/exception_error/assert_statement")

@@ -10,8 +10,8 @@ import java.util.function.Function;
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
-// scene introduction = 参数传递->单个参数
+// evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->高阶函数
+// scene introduction = 高阶函数
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/higher_order_function/Higher_Order_Function_003_T
 // date = 2025-12-09 14:12:00

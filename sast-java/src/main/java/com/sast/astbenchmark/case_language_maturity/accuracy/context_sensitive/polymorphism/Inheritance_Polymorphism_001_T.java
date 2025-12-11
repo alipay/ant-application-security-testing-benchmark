@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item = 准确度->上下文敏感分析->多态
 // scene introduction = 子类重写父类方法
 // level = 2
-// bind_url = accuracy/context_sensitive/polymorphism/Inheritance_Polymorphism_001_T/{cmd}
+// bind_url = accuracy/context_sensitive/polymorphism/Inheritance_Polymorphism_001_T
 // date = 2025-12-10 15:57:27
 // evaluation information end
 

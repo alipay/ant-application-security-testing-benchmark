@@ -12,7 +12,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item =  准确度->上下文敏感分析->多次调用->可求解
+// evaluation item =  准确度->上下文敏感分析->多次调用
 // scene introduction = 相同函数调用不同参数-scene1
 // level = 4
 // bind_url = accuracy/context_sensitive/multi_invoke/DifferentParamsForFunction_need_solve_002_F

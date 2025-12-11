@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // scene introduction = short
 // level = 2
-// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Short_002_F/
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Short_002_F
 // date = 2025-12-05 17:22:10
 // evaluation information end
 

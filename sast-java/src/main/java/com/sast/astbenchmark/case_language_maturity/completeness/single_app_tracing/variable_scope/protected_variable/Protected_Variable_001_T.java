@@ -12,8 +12,8 @@ import java.util.Map;
 
 // evaluation information start
 // real case = true
-// evaluation item = 完整度->单应用跟踪完整度->变量作用域->静态变量
-// scene introduction = 
+// evaluation item = 完整度->单应用跟踪完整度->变量作用域->protected变量
+// scene introduction = protected变量
 // level = 2
 // bind_url = completeness/single_app_tracing/variable_scope/protected_variable/Protected_Variable_001_T
 // evaluation information end

@@ -10,7 +10,7 @@ import java.util.Map;
 
 // evaluation information start
 // real case = true
-// evaluation item = 准确度->上下文敏感分析->多次调用->无需求解
+// evaluation item = 准确度->上下文敏感分析->多次调用
 // scene introduction = 流式API->Stream操作
 // level = 2
 // bind_url = accuracy/context_sensitive/multi_invoke/StreamAPI_001_T

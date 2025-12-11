@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item = 准确度->流敏感分析->异步执行
 // scene introduction = 存储型异步->多线程->Runnable
 // level = 4
-// bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithread_003_T/{cmd}
+// bind_url = accuracy/flow_sensitive/asynchronous/Async_Multithread_003_T
 // evaluation information end
 
 @RestController()

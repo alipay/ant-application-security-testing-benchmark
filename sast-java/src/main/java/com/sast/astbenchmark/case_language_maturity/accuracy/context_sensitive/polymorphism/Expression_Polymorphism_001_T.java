@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item =  准确度->上下文敏感分析->多态
 // scene introduction = 
 // level = 2
-// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T/{cmd}
+// bind_url = accuracy/context_sensitive/polymorphism/Expression_Polymorphism_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/polymorphism")

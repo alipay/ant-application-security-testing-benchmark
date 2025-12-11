@@ -14,7 +14,7 @@ import java.util.Timer;
 // evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->多线程
 // scene introduction = TimerTask
 // level = 2
-// bind_url = completeness/single_app_tracing/asynchronous_tracing/multi_thread/Async_Multithreading_008_F/{cmd}
+// bind_url = completeness/single_app_tracing/asynchronous_tracing/multi_thread/Async_Multithreading_008_F
 // evaluation information end
 
 @RestController()

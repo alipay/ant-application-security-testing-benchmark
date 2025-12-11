@@ -14,12 +14,12 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
 // scene introduction = switch语句
 // level = 2
-// bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_SwitchStatement_001_T/{type}/{cmd}
+// bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_SwitchStatement_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/single_app_tracing/control_flow/conditional_stmt")
 public class Statement_SwitchStatement_001_T {
-    @GetMapping("Statement_SwitchStatement_001_T/{type}/{cmd}")
+    @GetMapping("Statement_SwitchStatement_001_T/{cmd}")
     public Map<String, Object> aTaintCase016(@PathVariable String cmd, @PathVariable String type) {
         Map<String, Object> modelMap = new HashMap<>();
         try {

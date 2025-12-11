@@ -14,12 +14,12 @@ import java.util.Map;
 // evaluation item = 准确度->路径敏感分析->条件语句、条件表达式和循环结构->能够对上下文条件进行求解，以区分不同执行路径的状态
 // scene introduction = 循环语句->while
 // level = 4
-// bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/Statement_WhileStatement_solver_001_T/{type}/{cmd}
+// bind_url = accuracy/path_sensitive/loop_conditional_stmt/solver/Statement_WhileStatement_solver_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/path_sensitive/loop_conditional_stmt/solver")
 public class Statement_WhileStatement_solver_001_T {
-    @GetMapping("Statement_WhileStatement_solver_001_T/{type}/{cmd}")
+    @GetMapping("Statement_WhileStatement_solver_001_T/{cmd}")
     public Map<String, Object> testcase(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {String a = "mkdir";
