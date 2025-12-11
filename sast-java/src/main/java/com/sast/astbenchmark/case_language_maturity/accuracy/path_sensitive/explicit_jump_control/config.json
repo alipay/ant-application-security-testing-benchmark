@@ -21,6 +21,10 @@
             {
               "compose": "Statement_InterruptStatement_007_T.java && !Statement_InterruptStatement_008_F.java",
               "scene": "中断语句->continue+label"
+            },
+            {
+              "compose": "Statement_InterruptStatement_009_T.java && !Statement_InterruptStatement_010_F.java",
+              "scene": "中断语句->return"
             }
           ]
         }
