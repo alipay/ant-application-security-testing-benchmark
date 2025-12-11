@@ -5,7 +5,12 @@
       "scene_levels": [
         {
           "level": "2",
-          "scene_list": []
+          "scene_list": [
+            {
+              "compose": "Subclass_001_T.java && !Subclass_002_F.java",
+              "scene": "嵌套类"
+            }
+          ]
         }
       ]
     }

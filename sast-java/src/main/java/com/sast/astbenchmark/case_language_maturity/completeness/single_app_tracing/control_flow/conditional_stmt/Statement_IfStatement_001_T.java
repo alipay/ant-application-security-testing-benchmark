@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
 // scene introduction = if语句-else body
 // level = 2
-// bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_IfStatement_001_T/{cmd}
+// bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/Statement_IfStatement_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/single_app_tracing/control_flow/conditional_stmt")

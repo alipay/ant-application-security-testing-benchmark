@@ -13,7 +13,7 @@ import java.util.Map;
 // evaluation item =  准确度->上下文敏感分析->参数/返回值传递
 // scene introduction = 参数值传递->变量赋值表达式直接引入而不是import
 // level = 2
-// bind_url = accuracy/context_sensitive/argument_return_value_passing/CallExpression_Package_002_F/{url}
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/CallExpression_Package_002_F
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/argument_return_value_passing")

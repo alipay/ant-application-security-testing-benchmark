@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "Protected_Variable_001_T.java && !Protected_Variable_002_F.java",
-              "scene": "1"
+              "scene": "protected变量"
             }
           ]
         }

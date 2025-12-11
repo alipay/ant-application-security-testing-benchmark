@@ -1,7 +1,7 @@
 {
-  "multi_invoke_without_solve": [
+  "multi_invoke": [
     {
-      "evaluation_item": "准确度->上下文敏感分析->多次调用->无需求解",
+      "evaluation_item": "准确度->上下文敏感分析->多次调用",
       "scene_levels": [
         {
           "level": "2",

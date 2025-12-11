@@ -15,7 +15,7 @@ import com.sast.astbenchmark.common.utils.SinkUtil;
 // evaluation item = 完整度->单应用跟踪完整度->表达式->基础表达式
 // scene introduction = 逻辑运算->非运算
 // level = 2
-// bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_Logical_005_T/{cmd}
+// bind_url = completeness/single_app_tracing/expression/basic_expression_operation/Expression_Logical_005_T
 // date = 2025-12-08 19:07:00
 // evaluation information end
 

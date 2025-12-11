@@ -10,10 +10,10 @@ import java.util.Map;
 
 // evaluation information start
 // real case = false
-// evaluation item = 准确度->流敏感分析->循环顺序执行语句->for-update流敏感
+// evaluation item = 准确度->流敏感分析->循环顺序执行语句
 // scene introduction = for-update流敏感
 // level = 2
-// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_update_002_F/{cmd}
+// bind_url = accuracy/flow_sensitive/loop_stmt/Statement_ForStatement_update_002_F
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/flow_sensitive/loop_stmt")

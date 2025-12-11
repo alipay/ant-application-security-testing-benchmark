@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同的类对象、结构体/联合体和字典/列表/数组
 // scene introduction = Set-remove
 // level = 2
