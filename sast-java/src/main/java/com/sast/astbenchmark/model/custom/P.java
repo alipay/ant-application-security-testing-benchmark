@@ -1,17 +1,22 @@
 package com.sast.astbenchmark.model.custom;
 
 public class P {
-    public static String t;
+  public static String t;
 
-    private String cmd;
+  public String str;
 
-    public P(String cmd) {
-        this.cmd = cmd;
-    }
+  private String cmd;
 
-    public String getCmd() {
-        return this.cmd;
-    }
+  public P() {
+  }
+
+  public P(String cmd) {
+    this.cmd = cmd;
+  }
+
+  public String getCmd() {
+    return this.cmd;
+  }
 
 }
 
