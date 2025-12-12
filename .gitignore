@@ -6,6 +6,8 @@ awatch3.1.0/
 *.jar
 iast-java/target/
 sast-java/target/
+tools/target/
+sast-java-cross-module/target/
 data/
 iast-java/logs/
 logs/
@@ -16,5 +18,5 @@ logs/
 /dast-java/target
 /tools/library/target
 /tools/plugin/target
-/tools/library/target
 *.pyc
+results/
