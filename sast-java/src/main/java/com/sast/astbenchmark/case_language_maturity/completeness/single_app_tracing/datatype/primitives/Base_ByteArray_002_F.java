@@ -27,7 +27,7 @@ public class Base_ByteArray_002_F {
     public Map<String, Object> aTaintCase0151(@RequestBody byte[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         byte[] bytes = {1, 2, 3, 4, 5};
-        SinkUtil.sink(bytes);
+        Runtime.getRuntime().exec(bytes);
         modelMap.put("status", "success");
         return modelMap;
     }

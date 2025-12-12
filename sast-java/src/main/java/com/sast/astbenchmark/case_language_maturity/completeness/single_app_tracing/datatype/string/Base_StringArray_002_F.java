@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->字符串
 // scene introduction = String[]
 // level = 2
@@ -24,7 +24,7 @@ public class Base_StringArray_002_F {
     public Map<String, Object> aTaintCase0149(@RequestBody String[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
 
-        String[] s = {"aa", "bb"};
+        String[] s = { "aa", "bb" };
         try {
             Runtime.getRuntime().exec(s[0]);
             modelMap.put("status", "success");

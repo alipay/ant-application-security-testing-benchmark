@@ -26,7 +26,7 @@ public class static_variable_001_T {
         Map<String, Object> modelMap = new HashMap<>();
         P.t = cmd;
         try {
-            SinkUtil.sink(P.t);
+            Runtime.getRuntime().exec(P.t);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

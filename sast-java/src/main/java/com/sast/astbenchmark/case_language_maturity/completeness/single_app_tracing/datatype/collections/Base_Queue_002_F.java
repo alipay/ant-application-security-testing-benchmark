@@ -33,7 +33,7 @@ public class Base_Queue_002_F {
         List<String> list = Arrays.asList("a", "b", "c");
         Queue<String> queue = new LinkedBlockingQueue();
         queue.add(list.get(0));
-        SinkUtil.sink(queue);
+        Runtime.getRuntime().exec(queue);
         modelMap.put("status", "success");
         return modelMap;
     }

@@ -29,7 +29,7 @@ public class Base_Queue_006_F {
         queue.add(cmd);
         queue.add("_");
         queue.remove();
-        SinkUtil.sink(queue);
+        Runtime.getRuntime().exec(queue);
         modelMap.put("status", "success");
         return modelMap;
     }

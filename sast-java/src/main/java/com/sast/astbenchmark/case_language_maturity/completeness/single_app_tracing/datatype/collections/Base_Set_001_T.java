@@ -35,7 +35,7 @@ public class Base_Set_001_T {
             return modelMap;
         }
         Set<String> stringSet = new HashSet<>(cmd);
-        SinkUtil.sink(stringSet);
+        Runtime.getRuntime().exec(stringSet);
         modelMap.put("status", "success");
         return modelMap;
     }

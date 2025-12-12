@@ -32,7 +32,7 @@ public class Base_Set_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         List<String> list = Arrays.asList("a", "b", "c");
         Set<String> stringSet = new HashSet<>(list);
-        SinkUtil.sink(stringSet);
+        Runtime.getRuntime().exec(stringSet);
         modelMap.put("status", "success");
         return modelMap;
     }

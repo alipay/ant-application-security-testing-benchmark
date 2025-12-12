@@ -26,7 +26,7 @@ public class simple_object_001_T {
         Map<String, Object> modelMap = new HashMap<>();
         O a = new O(cmd);
         try {
-            SinkUtil.sink(a);
+            Runtime.getRuntime().exec(a);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

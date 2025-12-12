@@ -27,7 +27,7 @@ public class Base_CharArray_002_F {
     public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         char[] chars = {'a', 'b', 'c', 'd', 'e'};
-        SinkUtil.sink(chars);
+        Runtime.getRuntime().exec(chars);
         modelMap.put("status", "success");
         return modelMap;
     }

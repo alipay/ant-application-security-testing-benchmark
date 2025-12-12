@@ -29,7 +29,7 @@ public class Base_List_005_T {
         list.add(cmd);
         list.add("_");
         list.remove("_");
-        SinkUtil.sink(list);
+        Runtime.getRuntime().exec(list);
         modelMap.put("status", "success");
         return modelMap;
     }

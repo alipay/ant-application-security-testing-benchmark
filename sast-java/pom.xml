@@ -2,6 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <artifactId>sast-java</artifactId>
+    <groupId>com.ant.security</groupId>
+    <version>1.0-SNAPSHOT</version>
     <name>Archetype - sast-java</name>
     <url>http://maven.apache.org</url>
     <parent>
@@ -154,6 +156,13 @@
         </dependency>
         <!-- rpc-->
         <!-- dubbo-->
+        
+        <!-- 跨模块依赖 -->
+        <dependency>
+            <groupId>com.ant.security</groupId>
+            <artifactId>sast-java-cross-module</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <repositories>

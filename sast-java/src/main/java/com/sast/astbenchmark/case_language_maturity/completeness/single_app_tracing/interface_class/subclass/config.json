@@ -1,0 +1,18 @@
+{
+  "subclass": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->子类对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Subclass_001_T.java && !Subclass_002_F.java",
+              "scene": "嵌套类"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

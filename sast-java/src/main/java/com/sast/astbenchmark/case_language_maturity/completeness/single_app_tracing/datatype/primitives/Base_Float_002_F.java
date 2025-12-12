@@ -17,7 +17,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // scene introduction = float
 // level = 2
-// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Float_002_F/{cmd}
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Float_002_F
 // evaluation information end
 
 @RestController()
@@ -27,7 +27,7 @@ public class Base_Float_002_F {
     public Map<String, Object> aTaintCase0139(@PathVariable float cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         float f = 0.1F;
-        SinkUtil.sink(f);
+        Runtime.getRuntime().exec(f);
         modelMap.put("status", "success");
         return modelMap;
     }

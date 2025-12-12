@@ -27,7 +27,7 @@ public class simple_object_002_F {
         O a = new O(cmd);
         O b = new O("_");
         try {
-            SinkUtil.sink(b);
+            Runtime.getRuntime().exec(b);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

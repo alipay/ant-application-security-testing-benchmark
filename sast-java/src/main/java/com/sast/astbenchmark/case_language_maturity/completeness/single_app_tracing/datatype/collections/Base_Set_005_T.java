@@ -29,7 +29,7 @@ public class Base_Set_005_T {
         stringSet.add(cmd);
         stringSet.add("_");
         stringSet.remove("_");
-        SinkUtil.sink(stringSet);
+        Runtime.getRuntime().exec(stringSet);
         modelMap.put("status", "success");
         return modelMap;
     }

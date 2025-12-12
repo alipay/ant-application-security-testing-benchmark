@@ -26,7 +26,7 @@ public class Base_List_004_F {
     public Map<String, Object> testcase(@RequestBody List<String> cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         List<String> list = Arrays.asList("a", "b", "c");
-        SinkUtil.sink(list);
+        Runtime.getRuntime().exec(list);
         modelMap.put("status", "success");
         return modelMap;
     }

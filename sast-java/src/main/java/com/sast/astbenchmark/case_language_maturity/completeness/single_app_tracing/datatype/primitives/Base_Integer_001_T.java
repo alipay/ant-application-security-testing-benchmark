@@ -17,7 +17,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // scene introduction = Integer
 // level = 2
-// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Integer_001_T/{cmd}
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Integer_001_T
 // evaluation information end
 
 @RestController()
@@ -30,7 +30,7 @@ public class Base_Integer_001_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        SinkUtil.sink(cmd);
+        Runtime.getRuntime().exec(cmd);
         modelMap.put("status", "success");
         return modelMap;
     }

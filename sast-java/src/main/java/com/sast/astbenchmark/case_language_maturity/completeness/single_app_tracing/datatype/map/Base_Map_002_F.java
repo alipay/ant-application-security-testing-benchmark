@@ -28,7 +28,7 @@ public class Base_Map_002_F {
         Map<String, Object> modelMap = new HashMap<>();
         Map<String, String> map = new HashMap<>();
         map.put("key1", "_");
-        SinkUtil.sink(map);
+        Runtime.getRuntime().exec(map);
         modelMap.put("status", "success");
         return modelMap;
     }

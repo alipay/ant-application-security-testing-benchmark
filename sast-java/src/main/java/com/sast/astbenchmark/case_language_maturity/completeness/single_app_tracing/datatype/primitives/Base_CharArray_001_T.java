@@ -30,7 +30,7 @@ public class Base_CharArray_001_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        SinkUtil.sink(cmd);
+        Runtime.getRuntime().exec(cmd);
         modelMap.put("status", "success");
         return modelMap;
     }
