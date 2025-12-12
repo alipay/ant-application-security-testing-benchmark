@@ -21,6 +21,10 @@
             {
               "compose": "array_007_T/array_007_T.go && !array_008_F/array_008_F.go",
               "scene": "3"
+            },
+            {
+              "compose": "array_slice_001_T/array_slice_001_T.go && !array_slice_002_F/array_slice_002_F.go",
+              "scene": "数组切片操作"
             }
           ]
         }

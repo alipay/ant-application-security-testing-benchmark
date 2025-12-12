@@ -12,28 +12,29 @@ import (
 	"os/exec"
 )
 
+// 旧版中，对nil没有进行处理限制，允许将nil值转换成返回值类型(S)，且允许对nil进行memberAccess读取
 
 type S struct {
 	name string
 	id   int
 }
 
-func Func1(__taint_src string) (*S, string) {
+func Func1(__taint_src string) (*S) {
 	s1 := &S{
 		name: __taint_src,
 		id:   98,
 	}
-	err := "abc"
+	err := "error"
 
 	if err != "nil" {
-		return nil, err
+		return nil
 	}
 	
-	return s1, "abc"
+	return s1
 }
 
 func if_return_nil_002_F(__taint_src string) {
-	res, _ := Func1(__taint_src)
+	res := Func1(__taint_src)
 	__taint_sink(res)
 }
 

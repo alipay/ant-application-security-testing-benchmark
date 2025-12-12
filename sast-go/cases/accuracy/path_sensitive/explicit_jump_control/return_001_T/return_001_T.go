@@ -7,7 +7,7 @@ import "os/exec"
 // evaluation item = 准确度->路径敏感分析->跳转语句
 // scene introduction = return
 // level = 4+
-// bind_url = accuracy/path_sensitive/explicit_jump_control/return/return_001_T/return_001_T
+// bind_url = accuracy/path_sensitive/explicit_jump_control/return_001_T/return_001_T
 // evaluation information end
 
 func return_001_T(__taint_src string) string {

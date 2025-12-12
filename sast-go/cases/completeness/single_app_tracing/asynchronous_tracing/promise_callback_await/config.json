@@ -1,8 +1,46 @@
 {
   "promise_callback_await": [
     {
-      "evaluation_item": "",
-      "scene_levels": []
+      "evaluation_item": "完整度->单应用跟踪完整度->并发、多线程、异步->同步原语",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "mutex_synchronization_001_T/mutex_synchronization_001_T.go && !mutex_synchronization_002_F/mutex_synchronization_002_F.go",
+              "scene": "互斥锁"
+            },
+            {
+              "compose": "rwmutex_synchronization_001_T/rwmutex_synchronization_001_T.go && !rwmutex_synchronization_002_F/rwmutex_synchronization_002_F.go",
+              "scene": "读写锁"
+            },
+            {
+              "compose": "cond_synchronization_001_T/cond_synchronization_001_T.go && !cond_synchronization_002_F/cond_synchronization_002_F.go",
+              "scene": "条件变量"
+            },
+            {
+              "compose": "atomic_synchronization_001_T/atomic_synchronization_001_T.go && !atomic_synchronization_002_F/atomic_synchronization_002_F.go",
+              "scene": "原子操作"
+            },
+            {
+              "compose": "waitgroup_synchronization_001_T/waitgroup_synchronization_001_T.go && !waitgroup_synchronization_002_F/waitgroup_synchronization_002_F.go",
+              "scene": "WaitGroup"
+            },
+            {
+              "compose": "once_execution_001_T/once_execution_001_T.go && !once_execution_002_F/once_execution_002_F.go",
+              "scene": "Once单次执行"
+            },
+            {
+              "compose": "synchronization_primitive_001_T/synchronization_primitive_001_T.go && !synchronization_primitive_002_F/synchronization_primitive_002_F.go",
+              "scene": "同步原语-'<-'"
+            },
+            {
+              "compose": "synchronization_primitive_003_T/synchronization_primitive_003_T.go && !synchronization_primitive_004_F/synchronization_primitive_004_F.go",
+              "scene": "同步原语-'<-'2"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -13,6 +13,14 @@
             {
               "compose": "string_003_T/string_003_T.go && !string_004_F/string_004_F.go",
               "scene": "字符串拼接"
+            },
+            {
+              "compose": "string_index_001_T/string_index_001_T.go && !string_index_002_F/string_index_002_F.go",
+              "scene": "字符串索引访问"
+            },
+            {
+              "compose": "string_slice_001_T/string_slice_001_T.go && !string_slice_002_F/string_slice_002_F.go",
+              "scene": "字符串切片"
             }
           ]
         }

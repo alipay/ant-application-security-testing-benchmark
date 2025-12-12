@@ -1,0 +1,30 @@
+{
+  "simple_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->简单对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "create_object_001_T/create_object_001_T.go && !create_object_002_F/create_object_002_F.go",
+              "scene": "创建对象->结构体初始化"
+            },
+            {
+              "compose": "create_object_003_T/create_object_003_T.go && !create_object_004_F/create_object_004_F.go",
+              "scene": "创建对象->new分配"
+            },
+            {
+              "compose": "write_object_property_001_T/write_object_property_001_T.go && !write_object_property_002_F/write_object_property_002_F.go",
+              "scene": "写入对象属性->直接赋值"
+            },
+            {
+              "compose": "write_object_property_003_T/write_object_property_003_T.go && !write_object_property_004_F/write_object_property_004_F.go",
+              "scene": "写入对象属性->指针赋值"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

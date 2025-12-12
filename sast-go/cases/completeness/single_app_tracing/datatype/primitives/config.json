@@ -21,6 +21,22 @@
             {
               "compose": "primitives_float_001_T/primitives_float_001_T.go && !primitives_float_002_F/primitives_float_002_F.go",
               "scene": "浮点型"
+            },
+            {
+              "compose": "primitives_string_001_T/primitives_string_001_T.go && !primitives_string_002_F/primitives_string_002_F.go",
+              "scene": "字符串类型"
+            },
+            {
+              "compose": "primitives_char_001_T/primitives_char_001_T.go && !primitives_char_002_F/primitives_char_002_F.go",
+              "scene": "字符类型"
+            },
+            {
+              "compose": "primitives_byte_001_T/primitives_byte_001_T.go && !primitives_byte_002_F/primitives_byte_002_F.go",
+              "scene": "字节类型"
+            },
+            {
+              "compose": "primitives_uint_001_T/primitives_uint_001_T.go && !primitives_uint_002_F/primitives_uint_002_F.go",
+              "scene": "无符号整型"
             }
           ]
         }

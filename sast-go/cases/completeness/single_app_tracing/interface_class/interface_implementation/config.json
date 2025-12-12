@@ -1,14 +1,22 @@
 {
   "interface_implementation": [
     {
-      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->简单对象",
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->接口的实现",
       "scene_levels": [
         {
           "level": "2",
           "scene_list": [
             {
-              "compose": "interface_class_001_T/interface_class_001_T.go && !interface_class_002_F/interface_class_002_F.go",
+              "compose": "struct_injection_interface_001_T/struct_injection_interface_001_T.go && !struct_injection_interface_002_F/struct_injection_interface_002_F.go",
               "scene": "结构体注入接口"
+            },
+            {
+              "compose": "direct_assignment_001_T/direct_assignment_002_T.go && !direct_assignment_002_F/direct_assignment_002_F.go",
+              "scene": "接口直接赋值"
+            },
+            {
+              "compose": "field_assignment_001_T/field_assignment_001_T.go && !field_assignment_002_F/field_assignment_002_F.go",
+              "scene": "接口字段赋值"
             }
           ]
         }
