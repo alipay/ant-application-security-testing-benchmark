@@ -7,11 +7,11 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "!chained_call_001_F/chained_call_001_F.go && chained_call_002_T/chained_call_002_T.go",
+              "compose": "chained_call_001_T/chained_call_001_T.go && !chained_call_002_F/chained_call_002_F.go",
               "scene": "链式调用"
             },
             {
-              "compose": "!chained_call_003_F/chained_call_003_F.go && chained_call_004_T/chained_call_004_T.go",
+              "compose": "chained_call_003_T/chained_call_003_T.go && !chained_call_004_F/chained_call_004_F.go",
               "scene": "链式调用2"
             }
           ]

@@ -1,0 +1,18 @@
+{
+  "assert_statement": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->异常与错误处理->断言",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "!assert_statement_001_T/assert_statement_001_T.go && assert_statement_002_F/assert_statement_002_F.go",
+              "scene": "类型断言"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

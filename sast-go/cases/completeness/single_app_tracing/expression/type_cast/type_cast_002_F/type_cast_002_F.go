@@ -1,4 +1,3 @@
-
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
@@ -8,9 +7,10 @@
 // evaluation information end
 
 package main
+
 import (
-	"os/exec"
 	"fmt"
+	"os/exec"
 )
 
 func type_cast_002_F(__taint_src int) {
@@ -21,9 +21,9 @@ func type_cast_002_F(__taint_src int) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	}
+}
 
 func main() {
-    __taint_src := 13
-    type_cast_002_F(__taint_src)
+	__taint_src := 13
+	type_cast_002_F(__taint_src)
 }

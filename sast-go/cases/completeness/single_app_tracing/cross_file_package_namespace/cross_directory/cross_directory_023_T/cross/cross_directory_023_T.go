@@ -1,0 +1,32 @@
+// evaluation information start
+// real case = true
+// evaluation item = 完整度->单应用跟踪完整度->文件、包、命名空间->跨包
+// scene introduction = 可见性校验
+// level = 2
+// bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_023_T/cross/cross_directory_023_T
+// evaluation information end
+
+// 先cd sast-go/cases/completeness/single_app_tracing/cross_file_package_namespace/cross_directory/cross_directory_023_T
+// 再执行 go run cross/cross_directory_023_T.go
+package main
+
+import (
+	"cross_directory_023_T/cross/cross_01"
+	"fmt"
+	"os/exec"
+)
+
+// Go语言中，一个包内只有大写开头的Symbol能够被导出(对外部可见)
+// 考察特性：@@@@是否会错误地将小写的(非public的)Symbol错误的import过来
+
+func cross_directory_023_T() {
+	__taint_sink(cross_01.Status) //Status大写 应该被正确import过来
+}
+
+func __taint_sink(o interface{}) {
+	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
+}
+
+func main() {
+	cross_directory_023_T()
+}

@@ -7,6 +7,7 @@
 // evaluation information end
 
 package main
+
 import "os/exec"
 
 func callee(taint string) (string, string) {
@@ -17,16 +18,16 @@ func callee(taint string) (string, string) {
 }
 
 func if_return_tuple_001_T(__taint_src string) {
-	a,b := callee(__taint_src)
+	a, b := callee(__taint_src)
 	_ = a
 	__taint_sink(b)
 }
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", o.(string)).Run()
-	}
+}
 
 func main() {
-    __taint_src := "taint_src_value"
-    if_return_tuple_001_T(__taint_src)
+	__taint_src := "taint_src_value"
+	if_return_tuple_001_T(__taint_src)
 }

@@ -18,7 +18,7 @@ type S struct {
 	id   int
 }
 
-func Func1(__taint_src string) (*S, string) {
+func Func1(__taint_src string) (*S) {
 	s1 := &S{
 		name: __taint_src,
 		id:   98,
@@ -26,14 +26,14 @@ func Func1(__taint_src string) (*S, string) {
 	err := "nil"
 
 	if err != "nil" {
-		return nil, err
+		return nil
 	}
 	
-	return s1, "abc"
+	return s1
 }
 
 func if_return_nil_001_T(__taint_src string) {
-	res, _ := Func1(__taint_src)
+	res := Func1(__taint_src)
 	__taint_sink(res)
 }
 

@@ -1,0 +1,26 @@
+{
+  "anonymous_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->匿名对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "create_anonymous_object_001_T/create_anonymous_object_001_T.go && !create_anonymous_object_002_F/create_anonymous_object_002_F.go",
+              "scene": "创建匿名对象"
+            },
+            {
+              "compose": "write_anonymous_object_field_001_T/write_anonymous_object_field_001_T.go && !write_anonymous_object_field_002_F/write_anonymous_object_field_002_F.go",
+              "scene": "写入匿名对象字段"
+            },
+            {
+              "compose": "call_anonymous_object_method_001_T/call_anonymous_object_method_001_T.go && !call_anonymous_object_method_002_F/call_anonymous_object_method_002_F.go",
+              "scene": "调用匿名对象方法"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
