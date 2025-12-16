@@ -29,7 +29,7 @@ public class List_obj_sensitive_008_F {
       list.add(cmd);
       list.clear();
       list.add("safe_value");
-      Runtime.getRuntime().exec(list);
+      Runtime.getRuntime().exec(list.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

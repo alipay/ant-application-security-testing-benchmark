@@ -28,7 +28,7 @@ public class Expression_CastExpression_011_T {
     try {
       // 场景特点：int类型强制转换为double类型
       Integer integer = cmd;
-      Runtime.getRuntime().exec(integer);
+      Runtime.getRuntime().exec(String.valueOf(integer));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

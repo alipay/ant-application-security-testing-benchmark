@@ -26,7 +26,7 @@ public class simple_object_001_T {
         Map<String, Object> modelMap = new HashMap<>();
         O a = new O(cmd);
         try {
-            Runtime.getRuntime().exec(a);
+            Runtime.getRuntime().exec(String.valueOf(a));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

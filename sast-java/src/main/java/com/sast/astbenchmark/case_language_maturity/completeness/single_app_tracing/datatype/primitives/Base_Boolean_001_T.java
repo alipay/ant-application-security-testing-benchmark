@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,8 +26,12 @@ public class Base_Boolean_001_T {
   public Map<String, Object> base_boolean_001_t(@PathVariable boolean cmd) {
     Map<String, Object> modelMap = new HashMap<>();
     // 场景特点：基本布尔类型变量传递
-    Runtime.getRuntime().exec(cmd);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(String.valueOf(cmd));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

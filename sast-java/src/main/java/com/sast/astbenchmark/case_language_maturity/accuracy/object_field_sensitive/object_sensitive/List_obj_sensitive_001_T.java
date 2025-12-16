@@ -27,7 +27,7 @@ public class List_obj_sensitive_001_T {
       // 场景特点：List添加操作，污点数据通过add方法传播
       List<String> list = new ArrayList<>();
       list.add(cmd);
-      Runtime.getRuntime().exec(list);
+      Runtime.getRuntime().exec(list.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

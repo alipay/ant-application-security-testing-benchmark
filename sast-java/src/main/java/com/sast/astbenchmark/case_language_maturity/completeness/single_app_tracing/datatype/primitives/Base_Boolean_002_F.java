@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,8 +27,12 @@ public class Base_Boolean_002_F {
     Map<String, Object> modelMap = new HashMap<>();
     // 场景特点：基本布尔类型变量传递但使用固定值
     boolean b = false;
-    Runtime.getRuntime().exec(b);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(String.valueOf(b));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

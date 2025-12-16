@@ -18,17 +18,17 @@ import java.util.Map;
 @RestController()
 @RequestMapping("accuracy/context_sensitive/argument_return_value_passing")
 public class CallExpression_Package_001_T {
-    @GetMapping("CallExpression_Package_001_T/{url}")
-    public Map<String, Object> aTaintCase0157(@PathVariable String url) {
+  @GetMapping("CallExpression_Package_001_T/{url}")
+  public Map<String, Object> aTaintCase0157(@PathVariable String url) {
 
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String result = com.sast.astbenchmark.common.utils.HttpUtil.doGet(url);
-            modelMap.put("status", "success");
-            modelMap.put("result", result);
-        } catch (Exception e) {
-            modelMap.put("status", "error");
-        }
-        return modelMap;
+    Map<String, Object> modelMap = new HashMap<>();
+    try {
+      String result = com.sast.astbenchmark.common.utils.HttpUtil.doGet(url);
+      Runtime.getRuntime().exec(result);
+      modelMap.put("status", "success");
+    } catch (Exception e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 }

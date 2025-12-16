@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,8 +26,12 @@ public class Argument_Passing_002_F {
     Map<String, Object> modelMap = new HashMap<>();
     // 场景特点：参数被安全值覆盖，输入与输出不一致
     String result = testFunc(cmd);
-    Runtime.getRuntime().exec(result);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(result);
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 

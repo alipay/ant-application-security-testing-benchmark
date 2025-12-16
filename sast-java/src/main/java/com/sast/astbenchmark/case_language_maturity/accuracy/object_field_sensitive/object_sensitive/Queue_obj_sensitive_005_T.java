@@ -28,7 +28,7 @@ public class Queue_obj_sensitive_005_T {
       Queue<String> queue = new LinkedList<>();
       queue.offer(cmd);
       queue.clear();
-      Runtime.getRuntime().exec(queue);
+      Runtime.getRuntime().exec(String.valueOf(queue));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

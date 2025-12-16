@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -27,14 +28,18 @@ import java.util.concurrent.LinkedBlockingQueue;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/collections")
 public class Base_Queue_002_F {
-    @PostMapping("Base_Queue_002_F")
-    public Map<String, Object> aTaintCase0142(@RequestBody List<String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        List<String> list = Arrays.asList("a", "b", "c");
-        Queue<String> queue = new LinkedBlockingQueue();
-        queue.add(list.get(0));
-        Runtime.getRuntime().exec(queue);
-        modelMap.put("status", "success");
-        return modelMap;
+  @PostMapping("Base_Queue_002_F")
+  public Map<String, Object> aTaintCase0142(@RequestBody List<String> cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    List<String> list = Arrays.asList("a", "b", "c");
+    Queue<String> queue = new LinkedBlockingQueue();
+    queue.add(list.get(0));
+    try {
+      Runtime.getRuntime().exec(String.valueOf(queue));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 }

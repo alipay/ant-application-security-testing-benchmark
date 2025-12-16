@@ -28,7 +28,7 @@ public class Expression_Logical_005_T {
         try {
             // 场景特点：非运算保持污点传播
             boolean result = !cmd;
-            Runtime.getRuntime().exec(result);
+            Runtime.getRuntime().exec(String.valueOf(result));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

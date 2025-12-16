@@ -31,7 +31,7 @@ public class Expression_Arithmetic_003_T {
     try {
       // 场景特点：减法运算保持污点传播
       int result = cmd - 50;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

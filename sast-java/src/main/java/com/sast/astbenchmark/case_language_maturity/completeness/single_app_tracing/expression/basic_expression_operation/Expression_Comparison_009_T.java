@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import com.sast.astbenchmark.common.utils.SinkUtil;import java.util.Map;
+import com.sast.astbenchmark.common.utils.SinkUtil;
+import java.util.Map;
 
 // evaluation information start
 // real case = true
@@ -26,7 +27,7 @@ public class Expression_Comparison_009_T {
     try {
       // 场景特点：大于等于比较运算保持污点传播
       int result = cmd;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

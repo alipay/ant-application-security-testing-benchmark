@@ -28,7 +28,7 @@ public class Expression_Comparison_001_T {
     try {
       // 场景特点：等于比较运算保持污点传播
       int result = (cmd == 100) ? cmd : 200;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

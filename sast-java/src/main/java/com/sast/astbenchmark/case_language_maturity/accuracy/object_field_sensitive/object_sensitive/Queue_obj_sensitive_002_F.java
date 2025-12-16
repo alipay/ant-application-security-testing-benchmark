@@ -27,7 +27,7 @@ public class Queue_obj_sensitive_002_F {
       // 场景特点：Queue入队操作，但使用固定安全值，输入与输出不一致
       Queue<String> queue = new LinkedList<>();
       queue.offer("safe_value");
-      Runtime.getRuntime().exec(queue);
+      Runtime.getRuntime().exec(String.valueOf(queue));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

@@ -28,7 +28,7 @@ public class Expression_Logical_002_F {
       // 场景特点：与运算后结果被固定值覆盖，输入与输出不一致
       boolean result = cmd && true;
       result = false;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

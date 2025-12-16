@@ -28,7 +28,7 @@ public class Set_obj_sensitive_001_T {
       Set<String> set = new HashSet<>();
       set.add(cmd);
       // 由于Set无序，这里简化处理，实际场景中需要迭代器
-      Runtime.getRuntime().exec(set.toArray());
+      Runtime.getRuntime().exec(set.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

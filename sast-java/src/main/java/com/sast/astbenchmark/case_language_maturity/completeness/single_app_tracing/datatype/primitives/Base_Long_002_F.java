@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,12 +24,16 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_Long_002_F {
-    @GetMapping("Base_Long_002_F/{cmd}")
-    public Map<String, Object> aTaintCase0139(@PathVariable long cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        long l = 123456789L;
-        Runtime.getRuntime().exec(l);
-        modelMap.put("status", "success");
-        return modelMap;
+  @GetMapping("Base_Long_002_F/{cmd}")
+  public Map<String, Object> aTaintCase0139(@PathVariable long cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    long l = 123456789L;
+    try {
+      Runtime.getRuntime().exec(String.valueOf(l));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 }

@@ -27,7 +27,7 @@ public class List_obj_sensitive_002_F {
       // 场景特点：List添加操作，但使用固定安全值，输入与输出不一致
       List<String> list = new ArrayList<>();
       list.add("safe_value");
-      Runtime.getRuntime().exec(list);
+      Runtime.getRuntime().exec(list.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

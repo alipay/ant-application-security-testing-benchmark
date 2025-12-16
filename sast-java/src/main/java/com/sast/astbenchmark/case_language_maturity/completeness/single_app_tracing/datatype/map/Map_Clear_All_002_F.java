@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +35,12 @@ public class Map_Clear_All_002_F {
     // 场景特点：清空Map后传递固定值，输入与输出不一致
     map.clear();
     map.put("key", "safe_value");
-    Runtime.getRuntime().exec(map);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(map.toString());
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

@@ -29,7 +29,7 @@ public class Base_List_006_F {
         list.add(cmd);
         list.add("_");
         list.remove(cmd);
-        Runtime.getRuntime().exec(list);
+        Runtime.getRuntime().exec(list.toString());
         modelMap.put("status", "success");
         return modelMap;
     }

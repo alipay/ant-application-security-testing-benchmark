@@ -29,7 +29,7 @@ public class List_obj_sensitive_005_T {
       list.add(cmd);
       list.add("safe_value");
       list.remove(1); // 移除安全值，保留污点
-      Runtime.getRuntime().exec(list);
+      Runtime.getRuntime().exec(list.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

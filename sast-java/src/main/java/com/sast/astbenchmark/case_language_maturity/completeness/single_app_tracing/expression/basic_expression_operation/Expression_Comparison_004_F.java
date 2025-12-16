@@ -28,7 +28,7 @@ public class Expression_Comparison_004_F {
       // 场景特点：不等于比较运算后结果被固定值覆盖，输入与输出不一致
       int result = (cmd != 100) ? cmd : 200;
       result = 999;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

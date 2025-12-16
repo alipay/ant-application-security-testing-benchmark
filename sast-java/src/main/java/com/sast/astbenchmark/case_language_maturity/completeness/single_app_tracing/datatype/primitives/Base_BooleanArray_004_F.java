@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,8 +32,12 @@ public class Base_BooleanArray_004_F {
     }
     // 场景特点：Boolean包装类数组传递但使用固定值
     Boolean[] arr = new Boolean[] { true, false };
-    Runtime.getRuntime().exec(arr);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(Arrays.toString(arr));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

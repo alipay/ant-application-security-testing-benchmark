@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,8 +34,12 @@ public class Map_Delete_Single_001_T {
     map.put("key", cmd);
     // 场景特点：删除Map中的键值对，被删除的值作为污点传递
     map.remove("key");
-    Runtime.getRuntime().exec(map);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(map.toString());
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

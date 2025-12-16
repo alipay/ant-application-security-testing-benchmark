@@ -29,7 +29,7 @@ public class Queue_obj_sensitive_006_F {
       queue.offer(cmd);
       queue.clear();
       queue.offer("safe_value");
-      Runtime.getRuntime().exec(queue);
+      Runtime.getRuntime().exec(String.valueOf(queue));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import com.sast.astbenchmark.common.utils.SinkUtil;import java.util.Map;
+import com.sast.astbenchmark.common.utils.SinkUtil;
+import java.util.Map;
 
 // evaluation information start
 // real case = true
@@ -26,7 +27,7 @@ public class Expression_Arithmetic_007_T {
     try {
       // 场景特点：除法运算保持污点传播
       int result = cmd / 2;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

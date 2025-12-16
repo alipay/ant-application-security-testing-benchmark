@@ -27,7 +27,7 @@ public class Set_obj_sensitive_002_F {
       // 场景特点：Set添加操作，但使用固定安全值，输入与输出不一致
       Set<String> set = new HashSet<>();
       set.add("safe_value");
-      Runtime.getRuntime().exec(set.toArray());
+      Runtime.getRuntime().exec(set.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

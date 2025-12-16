@@ -29,7 +29,7 @@ public class Base_List_003_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        Runtime.getRuntime().exec(cmd);
+        Runtime.getRuntime().exec(cmd.toString());
         modelMap.put("status", "success");
         return modelMap;
     }

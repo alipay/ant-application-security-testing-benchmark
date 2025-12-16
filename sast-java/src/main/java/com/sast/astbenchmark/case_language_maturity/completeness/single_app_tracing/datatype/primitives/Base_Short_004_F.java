@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,8 +31,12 @@ public class Base_Short_004_F {
     }
     // 场景特点：Short包装类对象传递但使用固定值
     Short s = 0;
-    Runtime.getRuntime().exec(s);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(String.valueOf(s));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

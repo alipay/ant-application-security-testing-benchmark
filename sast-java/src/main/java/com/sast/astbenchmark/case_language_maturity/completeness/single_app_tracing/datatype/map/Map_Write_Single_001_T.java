@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,8 +33,12 @@ public class Map_Write_Single_001_T {
     Map<String, String> map = new HashMap<>();
     // 场景特点：将输入参数作为值写入Map
     map.put("key", cmd);
-    Runtime.getRuntime().exec(map);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(map.toString());
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

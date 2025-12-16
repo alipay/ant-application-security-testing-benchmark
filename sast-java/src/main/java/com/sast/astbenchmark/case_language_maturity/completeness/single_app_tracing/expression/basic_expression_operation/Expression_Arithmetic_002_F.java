@@ -29,7 +29,7 @@ public class Expression_Arithmetic_002_F {
       // 场景特点：加法运算后结果被固定值覆盖，输入与输出不一致
       int result = cmd + 100;
       result = -1;
-      Runtime.getRuntime().exec(result);
+      Runtime.getRuntime().exec(String.valueOf(result));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,13 +24,17 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/map")
 public class Base_Map_002_F {
-    @PostMapping("Base_Map_002_F")
-    public Map<String, Object> aTaintCase0140(@RequestBody Map<String, String> cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        Map<String, String> map = new HashMap<>();
-        map.put("key1", "_");
-        Runtime.getRuntime().exec(map);
-        modelMap.put("status", "success");
-        return modelMap;
+  @PostMapping("Base_Map_002_F")
+  public Map<String, Object> aTaintCase0140(@RequestBody Map<String, String> cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    Map<String, String> map = new HashMap<>();
+    map.put("key1", "_");
+    try {
+      Runtime.getRuntime().exec(map.toString());
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 }

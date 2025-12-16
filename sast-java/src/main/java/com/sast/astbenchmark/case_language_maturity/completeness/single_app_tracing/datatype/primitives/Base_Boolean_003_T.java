@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +30,12 @@ public class Base_Boolean_003_T {
       return modelMap;
     }
     // 场景特点：Boolean包装类对象传递
-    Runtime.getRuntime().exec(cmd);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(String.valueOf(cmd));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

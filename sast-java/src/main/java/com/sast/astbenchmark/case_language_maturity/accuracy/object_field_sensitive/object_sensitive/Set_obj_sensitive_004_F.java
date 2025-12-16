@@ -29,7 +29,7 @@ public class Set_obj_sensitive_004_F {
       set.add(cmd);
       set.add("safe_value");
       set.remove(cmd); // 移除安全值，保留污点
-      Runtime.getRuntime().exec(set.toArray());
+      Runtime.getRuntime().exec(set.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

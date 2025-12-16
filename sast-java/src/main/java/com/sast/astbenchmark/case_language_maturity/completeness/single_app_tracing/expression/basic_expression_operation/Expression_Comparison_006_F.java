@@ -6,7 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
-import com.sast.astbenchmark.common.utils.SinkUtil;import java.util.Map;
+import com.sast.astbenchmark.common.utils.SinkUtil;
+import java.util.Map;
 
 // evaluation information start
 // real case = false
@@ -27,7 +28,7 @@ public class Expression_Comparison_006_F {
             // 场景特点：大于比较运算后结果被固定值覆盖，输入与输出不一致
             int result = cmd > 0 ? cmd : -1;
             result = -1;
-            Runtime.getRuntime().exec(result);
+            Runtime.getRuntime().exec(String.valueOf(result));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

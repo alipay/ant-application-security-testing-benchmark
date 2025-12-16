@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,9 +33,14 @@ public class Map_Read_Single_001_T {
     Map<String, String> map = new HashMap<>();
     map.put("key", cmd);
     // 场景特点：从Map中读取单个键值并作为污点传递
-    String value = map.get("input");
-    Runtime.getRuntime().exec(value);
-    modelMap.put("status", "success");
+    String value = map.get("key");
+    try {
+      Runtime.getRuntime().exec(value);
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
+
     return modelMap;
   }
 }

@@ -28,7 +28,7 @@ public class List_obj_sensitive_004_F {
       List<String> list = new ArrayList<>();
       list.add(cmd);
       list.set(0, "safe_value");
-      Runtime.getRuntime().exec(list);
+      Runtime.getRuntime().exec(list.toString());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

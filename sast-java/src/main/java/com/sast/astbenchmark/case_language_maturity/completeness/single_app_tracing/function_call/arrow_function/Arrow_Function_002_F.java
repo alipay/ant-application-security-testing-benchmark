@@ -3,6 +3,7 @@ package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tra
 import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
@@ -25,8 +26,12 @@ public class Arrow_Function_002_F {
     Function<String, String> function = (String s) -> {
       return "safe_value";
     };
-    Runtime.getRuntime().exec(function.apply(cmd));
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(function.apply(cmd));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }

@@ -28,7 +28,7 @@ public class Expression_Arithmetic_004_F {
             // 场景特点：减法运算后结果被固定值覆盖，输入与输出不一致
             int result = cmd - 50;
             result = 999;
-            Runtime.getRuntime().exec(result);
+            Runtime.getRuntime().exec(String.valueOf(result));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

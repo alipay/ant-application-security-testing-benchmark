@@ -27,7 +27,7 @@ public class Expression_Comparison_005_T {
         try {
             // 场景特点：大于比较运算保持污点传播
             int result = (cmd > 50) ? cmd : 25;
-            Runtime.getRuntime().exec(result);
+            Runtime.getRuntime().exec(String.valueOf(result));
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

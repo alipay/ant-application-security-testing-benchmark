@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,8 +31,12 @@ public class Base_ShortArray_001_T {
       return modelMap;
     }
     // 场景特点：short数组类型传递
-    Runtime.getRuntime().exec(cmd);
-    modelMap.put("status", "success");
+    try {
+      Runtime.getRuntime().exec(Arrays.toString(cmd));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
     return modelMap;
   }
 }
