@@ -26,9 +26,9 @@ public class List_obj_sensitive_003_T {
     try {
       // 场景特点：List设置操作，污点数据通过set方法传播
       List<String> list = new ArrayList<>();
-      list.add("initial");
+      list.add("safe_value");
       list.set(0, cmd);
-      Runtime.getRuntime().exec(list.toString());
+      Runtime.getRuntime().exec(list.get(0));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

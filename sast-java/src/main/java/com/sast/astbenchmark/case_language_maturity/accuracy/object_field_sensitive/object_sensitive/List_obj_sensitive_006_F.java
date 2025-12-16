@@ -29,7 +29,7 @@ public class List_obj_sensitive_006_F {
       list.add("safe_value");
       list.add(cmd);
       list.remove(1); // 移除初始值，保留安全值
-      Runtime.getRuntime().exec(list.toString());
+      Runtime.getRuntime().exec(list.get(0));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

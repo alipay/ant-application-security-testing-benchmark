@@ -2,10 +2,7 @@ package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tra
 
 import com.sast.astbenchmark.common.utils.SinkUtil;
 import org.springframework.util.CollectionUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -23,18 +20,13 @@ import java.util.Map;
 @RestController
 @RequestMapping("completeness/single_app_tracing/datatype/map")
 public class Map_Delete_Single_002_F {
-  @PostMapping("Map_Delete_Single_002_F")
-  public Map<String, Object> map_delete_single_002_f(@RequestBody String cmd) {
+  @GetMapping("Map_Delete_Single_002_F/{cmd}")
+  public Map<String, Object> map_delete_single_002_f(@PathVariable String cmd) {
     Map<String, Object> modelMap = new HashMap<>();
-    if (cmd == null) {
-      modelMap.put("status", "error");
-      return modelMap;
-    }
     Map<String, String> map = new HashMap<>();
     map.put("key", cmd);
-    // 场景特点：删除固定值而非Map中的值，输入与输出不一致
+    map.put("key2", "safe_value");
     map.remove("key");
-    map.put("key", "safe_value");
     try {
       Runtime.getRuntime().exec(map.toString());
       modelMap.put("status", "success");

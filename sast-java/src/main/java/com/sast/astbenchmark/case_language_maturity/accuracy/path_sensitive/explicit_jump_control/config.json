@@ -7,23 +7,23 @@
           "level": "4+",
           "scene_list": [
             {
-              "compose": "Statement_InterruptStatement_001_T.java && !Statement_InterruptStatement_002_F.java",
+              "compose": "Interrupt_Statement_001_T.java && !Interrupt_Statement_002_F.java",
               "scene": "中断语句->break"
             },
             {
-              "compose": "Statement_InterruptStatement_003_T.java && !Statement_InterruptStatement_004_F.java",
+              "compose": "Interrupt_Statement_003_T.java && !Interrupt_Statement_004_F.java",
               "scene": "中断语句->break+label"
             },
             {
-              "compose": "Statement_InterruptStatement_005_T.java && !Statement_InterruptStatement_006_F.java",
+              "compose": "Interrupt_Statement_005_T.java && !Interrupt_Statement_006_F.java",
               "scene": "中断语句->continue"
             },
             {
-              "compose": "Statement_InterruptStatement_007_T.java && !Statement_InterruptStatement_008_F.java",
+              "compose": "Interrupt_Statement_007_T.java && !Interrupt_Statement_008_F.java",
               "scene": "中断语句->continue+label"
             },
             {
-              "compose": "Statement_InterruptStatement_009_T.java && !Statement_InterruptStatement_010_F.java",
+              "compose": "Interrupt_Statement_009_T.java && !Interrupt_Statement_010_F.java",
               "scene": "中断语句->return"
             }
           ]

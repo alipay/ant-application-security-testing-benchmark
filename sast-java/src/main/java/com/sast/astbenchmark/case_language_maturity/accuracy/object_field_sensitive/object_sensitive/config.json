@@ -27,10 +27,6 @@
               "scene": "容器->数组元素敏感"
             },
             {
-              "compose": "ArrayElementOverwrite_003_T.java && !ArrayElementOverwrite_004_F.java",
-              "scene": "容器->数组元素敏感-ArrayList"
-            },
-            {
               "compose": "List_obj_sensitive_001_T.java && !List_obj_sensitive_002_F.java",
               "scene": "List-add"
             },
@@ -64,10 +60,6 @@
             },
             {
               "compose": "Queue_obj_sensitive_003_T.java && !Queue_obj_sensitive_004_F.java",
-              "scene": "Queue-poll"
-            },
-            {
-              "compose": "Queue_obj_sensitive_005_T.java && !Queue_obj_sensitive_006_F.java",
               "scene": "Queue-clear"
             }
           ]

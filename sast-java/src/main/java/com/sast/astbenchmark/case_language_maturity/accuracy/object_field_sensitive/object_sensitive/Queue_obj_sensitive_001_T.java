@@ -27,7 +27,7 @@ public class Queue_obj_sensitive_001_T {
       // 场景特点：Queue入队操作，污点数据通过offer方法传播
       Queue<String> queue = new LinkedList<>();
       queue.offer(cmd);
-      Runtime.getRuntime().exec(String.valueOf(queue));
+      Runtime.getRuntime().exec(queue.poll());
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

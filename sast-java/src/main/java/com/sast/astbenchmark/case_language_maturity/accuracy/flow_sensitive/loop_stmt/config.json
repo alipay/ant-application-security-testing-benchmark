@@ -15,15 +15,15 @@
               "scene": "for-init流敏感"
             },
             {
-              "compose": "Statement_WhileLoop_001_T.java && !Statement_WhileLoop_002_F.java",
+              "compose": "Statement_While_001_T.java && !Statement_While_002_F.java",
               "scene": "while循环体"
             },
             {
-              "compose": "Statement_DoWhileLoop_001_T.java && !Statement_DoWhileLoop_002_F.java",
+              "compose": "Statement_Do_While_001_T.java && !Statement_Do_While_002_F.java",
               "scene": "do-while循环体"
             },
             {
-              "compose": "Statement_ForEachLoop_001_T.java && !Statement_ForEachLoop_002_F.java",
+              "compose": "Statement_ForEach_001_T.java && !Statement_ForEach_002_F.java",
               "scene": "for-each循环"
             }
           ]

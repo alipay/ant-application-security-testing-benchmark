@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
-// scene introduction = 向上转型-父类引用
+// scene introduction = 父类引用
 // level = 2
 // bind_url = completeness/single_app_tracing/expression/type_cast/Expression_CastExpression_007_T
 // date = 2025-12-09 11:31:00

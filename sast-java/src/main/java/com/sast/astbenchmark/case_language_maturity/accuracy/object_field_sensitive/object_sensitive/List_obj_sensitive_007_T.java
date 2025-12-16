@@ -26,9 +26,9 @@ public class List_obj_sensitive_007_T {
     try {
       // 场景特点：List清空操作，但清空前已获取污点数据
       List<String> list = new ArrayList<>();
-      list.add(cmd);
       list.clear();
-      Runtime.getRuntime().exec(list.toString());
+      list.add(cmd);
+      Runtime.getRuntime().exec(list.get(0));
       modelMap.put("status", "success");
     } catch (Exception e) {
       modelMap.put("status", "error");

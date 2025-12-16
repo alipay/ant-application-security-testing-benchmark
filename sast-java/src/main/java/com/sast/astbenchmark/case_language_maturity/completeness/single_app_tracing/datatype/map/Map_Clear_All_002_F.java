@@ -26,15 +26,9 @@ public class Map_Clear_All_002_F {
   @PostMapping("Map_Clear_All_002_F")
   public Map<String, Object> map_clear_all_002_f(@RequestBody String cmd) {
     Map<String, Object> modelMap = new HashMap<>();
-    if (cmd == null) {
-      modelMap.put("status", "error");
-      return modelMap;
-    }
     Map<String, String> map = new HashMap<>();
     map.put("key", cmd);
-    // 场景特点：清空Map后传递固定值，输入与输出不一致
     map.clear();
-    map.put("key", "safe_value");
     try {
       Runtime.getRuntime().exec(map.toString());
       modelMap.put("status", "success");

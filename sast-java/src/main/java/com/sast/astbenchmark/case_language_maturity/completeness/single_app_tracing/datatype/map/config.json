@@ -11,10 +11,6 @@
               "scene": "Map"
             },
             {
-              "compose": "Map_Write_Single_001_T.java && !Map_Write_Single_002_F.java",
-              "scene": "Map写入"
-            },
-            {
               "compose": "Map_Read_Single_001_T.java && !Map_Read_Single_002_F.java",
               "scene": "Map读取"
             },

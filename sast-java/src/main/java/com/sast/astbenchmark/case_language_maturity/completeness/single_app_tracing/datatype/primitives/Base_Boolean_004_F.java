@@ -30,9 +30,8 @@ public class Base_Boolean_004_F {
       return modelMap;
     }
     // 场景特点：Boolean包装类对象传递但使用固定值
-    Boolean b = Boolean.TRUE;
     try {
-      Runtime.getRuntime().exec(String.valueOf(b));
+      Runtime.getRuntime().exec(String.valueOf(Boolean.FALSE));
       modelMap.put("status", "success");
     } catch (IOException e) {
       modelMap.put("status", "error");

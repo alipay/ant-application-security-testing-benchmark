@@ -20,11 +20,11 @@
             },
             {
               "compose": "Expression_CastExpression_007_T.java && !Expression_CastExpression_008_F.java",
-              "scene": "向上转型-父类引用"
+              "scene": "父类引用"
             },
             {
               "compose": "Expression_CastExpression_009_T.java && !Expression_CastExpression_010_F.java",
-              "scene": "向下转型-子类引用"
+              "scene": "子类引用"
             },
             {
               "compose": "Expression_CastExpression_011_T.java && !Expression_CastExpression_012_F.java",

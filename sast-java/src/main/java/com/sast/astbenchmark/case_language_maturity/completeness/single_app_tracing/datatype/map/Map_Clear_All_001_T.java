@@ -26,14 +26,9 @@ public class Map_Clear_All_001_T {
   @PostMapping("Map_Clear_All_001_T")
   public Map<String, Object> map_clear_all_001_t(@RequestBody String cmd) {
     Map<String, Object> modelMap = new HashMap<>();
-    if (cmd == null) {
-      modelMap.put("status", "error");
-      return modelMap;
-    }
     Map<String, String> map = new HashMap<>();
-    map.put("key", cmd);
-    // 场景特点：清空Map前将Map作为污点传递
     map.clear();
+    map.put("key", cmd);
     try {
       Runtime.getRuntime().exec(map.toString());
       modelMap.put("status", "success");

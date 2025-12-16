@@ -26,9 +26,8 @@ public class Base_Boolean_002_F {
   public Map<String, Object> base_boolean_002_f(@PathVariable boolean cmd) {
     Map<String, Object> modelMap = new HashMap<>();
     // 场景特点：基本布尔类型变量传递但使用固定值
-    boolean b = false;
     try {
-      Runtime.getRuntime().exec(String.valueOf(b));
+      Runtime.getRuntime().exec(String.valueOf(false));
       modelMap.put("status", "success");
     } catch (IOException e) {
       modelMap.put("status", "error");
