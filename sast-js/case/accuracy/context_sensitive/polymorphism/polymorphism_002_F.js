@@ -1,0 +1,52 @@
+// evaluation information start
+// real case = false
+// evaluation item = 准确度->上下文敏感分析->多态
+// scene introduction = 条件表达式
+// level = 4
+// bind_url = accuracy/context_sensitive/polymorphism/polymorphism_002_F
+// evaluation information end
+const { execSync } = require("child_process");
+
+function polymorphism_002_F(__taint_src) {
+  class BaseClass1 {
+    constructor() {
+      this.data = __taint_src;
+    }
+
+    getData() {
+      return this.data;
+    }
+  }
+
+  class BaseClass2 {
+    constructor() {
+      this.data = "safe_value";
+    }
+
+    getData() {
+      return this.data;
+    }
+  }
+
+  class SubClass extends (1 + 1 === 3 ? BaseClass1 : BaseClass2) {
+    constructor() {
+      super();
+    }
+
+    describe() {
+      return this.getData();
+    }
+  }
+
+  const subClass = new SubClass();
+
+  __taint_sink(subClass.describe());
+}
+
+function __taint_sink(o) {
+  execSync(o);
+}
+
+const taint_src = "taint_src_value";
+
+polymorphism_002_F(taint_src);
