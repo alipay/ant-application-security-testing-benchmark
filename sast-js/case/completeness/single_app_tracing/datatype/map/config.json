@@ -9,6 +9,34 @@
             {
               "compose": "map_001_T.js && !map_002_F.js",
               "scene": "字典/映射（Map）对象"
+            },
+            {
+              "compose": "map_key_read_001_T.js && !map_key_read_002_F.js",
+              "scene": "Map键读取"
+            },
+            {
+              "compose": "map_key_update_001_T.js && !map_key_update_002_F.js",
+              "scene": "Map键更新"
+            },
+            {
+              "compose": "map_key_delete_001_T.js && !map_key_delete_002_F.js",
+              "scene": "Map键删除"
+            },
+            {
+              "compose": "map_clear_001_T.js && !map_clear_002_F.js",
+              "scene": "Map清空"
+            },
+            {
+              "compose": "map_keys_collection_001_T.js && !map_keys_collection_002_F.js",
+              "scene": "Map键集合获取"
+            },
+            {
+              "compose": "map_values_collection_001_T.js && !map_values_collection_002_F.js",
+              "scene": "Map值集合获取"
+            },
+            {
+              "compose": "map_entries_collection_001_T.js && !map_entries_collection_002_F.js",
+              "scene": "Map条目集合获取"
             }
           ]
         }
