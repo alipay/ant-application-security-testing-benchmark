@@ -38,6 +38,26 @@
             {
               "compose": "!argument_passing_normal_value_005_F.js && argument_passing_normal_value_006_T.js",
               "scene": "值传递嵌套函数"
+            },
+            {
+              "compose": "!argument_passing_rest_params_001_F.js && argument_passing_rest_params_002_T.js",
+              "scene": "剩余参数"
+            },
+            {
+              "compose": "!argument_passing_destruct_params_001_F.js && argument_passing_destruct_params_002_T.js",
+              "scene": "解构参数"
+            },
+            {
+              "compose": "!argument_passing_spread_params_001_F.js && argument_passing_spread_params_002_T.js",
+              "scene": "展开参数"
+            },
+            {
+              "compose": "!argument_passing_this_binding_001_F.js && argument_passing_this_binding_002_T.js",
+              "scene": "this绑定参数->call"
+            },
+            {
+              "compose": "!argument_passing_this_binding_003_F.js && argument_passing_this_binding_004_T.js",
+              "scene": "this绑定参数->apply"
             }
           ]
         }
