@@ -1,0 +1,34 @@
+{
+  "primitives": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->基础数据类型",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "string_001_T.js && !string_002_F.js",
+              "scene": "字符串赋值"
+            },
+            {
+              "compose": "number_001_T.js && !number_002_F.js",
+              "scene": "数字赋值"
+            },
+            {
+              "compose": "boolean_001_T.js && !boolean_002_F.js",
+              "scene": "布尔值赋值"
+            },
+            {
+              "compose": "symbol_001_T.js && !symbol_002_F.js",
+              "scene": "symbol赋值"
+            },
+            {
+              "compose": "bigint_001_T.js && !bigint_002_F.js",
+              "scene": "bigint赋值"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
