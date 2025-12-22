@@ -17,6 +17,18 @@
             {
               "compose": "dowhile_body_loop_stmt_001_T.js && !dowhile_body_loop_stmt_002_F.js",
               "scene": "dowhile"
+            },
+            {
+              "compose": "while_body_loop_stmt_001_T.js && !while_body_loop_stmt_002_F.js",
+              "scene": "while循环"
+            },
+            {
+              "compose": "forin_body_loop_stmt_001_T.js && !forin_body_loop_stmt_002_F.js",
+              "scene": "for-in循环"
+            },
+            {
+              "compose": "forof_body_loop_stmt_001_T.js && !forof_body_loop_stmt_002_F.js",
+              "scene": "for-of循环"
             }
           ]
         }
