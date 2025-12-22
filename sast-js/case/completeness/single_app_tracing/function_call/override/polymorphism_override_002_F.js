@@ -5,10 +5,10 @@
 // level = 2
 // bind_url = completeness/single_app_tracing/function_call/override/polymorphism_override_002_F
 // evaluation information end
-const { execSync } = require('child_process');
+const { execSync } = require("child_process");
 
 function polymorphism_override_002_F(__taint_src) {
-  class Base { }
+  class Base {}
 
   class Sub1 extends Base {
     call() {
@@ -18,12 +18,12 @@ function polymorphism_override_002_F(__taint_src) {
 
   class Sub2 extends Base {
     call() {
-      return "_";
+      return "safe_value";
     }
   }
 
-  const sub = new Sub1();
-  __taint_sink("safe");
+  const sub = new Sub2();
+  __taint_sink(sub.call());
 }
 
 function __taint_sink(o) {
