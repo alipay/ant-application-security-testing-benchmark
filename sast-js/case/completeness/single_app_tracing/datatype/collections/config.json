@@ -9,6 +9,18 @@
             {
               "compose": "set_001_T.js && !set_002_F.js",
               "scene": "集合（Set）对象"
+            },
+            {
+              "compose": "set_add_001_T.js && !set_add_002_F.js",
+              "scene": "Set添加元素"
+            },
+            {
+              "compose": "set_delete_001_T.js && !set_delete_002_F.js",
+              "scene": "Set删除元素"
+            },
+            {
+              "compose": "set_clear_001_T.js && !set_clear_002_F.js",
+              "scene": "Set清空"
             }
           ]
         }
