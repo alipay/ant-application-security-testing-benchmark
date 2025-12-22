@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->指针
 // scene introduction = 泛型类-wildcard
 // level = 2

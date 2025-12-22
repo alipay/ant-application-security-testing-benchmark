@@ -25,6 +25,18 @@
             {
               "compose": "return_value_passing_001_T.java && !return_value_passing_002_F.java",
               "scene": "返回值传递"
+            },
+            {
+              "compose": "Method_Overloading_001_T.java && !Method_Overloading_002_F.java",
+              "scene": "方法重载"
+            },
+            {
+              "compose": "Constructor_Param_001_T.java && !Constructor_Param_002_F.java",
+              "scene": "构造器参数"
+            },
+            {
+              "compose": "Chained_Call_001_T.java && !Chained_Call_002_F.java",
+              "scene": "链式调用"
             }
           ]
         }

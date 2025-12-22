@@ -1,16 +1,16 @@
 package com.sast.astbenchmark.model.custom;
 
 public class Q {
-    public static String t;
+  public static String t;
 
-    private String cmd;
+  private String cmd;
 
-    public Q(String cmd) {
-        this.cmd = cmd;
-    }
+  public Q(String cmd) {
+    this.cmd = cmd;
+  }
 
-    public String getCmd() {
-        return this.cmd;
-    }
+  public String getCmd() {
+    return this.cmd;
+  }
 
 }

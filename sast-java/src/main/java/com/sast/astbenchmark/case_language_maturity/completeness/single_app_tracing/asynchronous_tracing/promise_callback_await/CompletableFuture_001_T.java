@@ -15,7 +15,7 @@ import java.util.concurrent.atomic.AtomicReference;
 // evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->同步原语
 // scene introduction = CompletableFuture
 // level = 2
-// bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/CompletableFuture_001_T/{cmd}
+// bind_url = completeness/single_app_tracing/asynchronous_tracing/promise_callback_await/CompletableFuture_001_T
 // evaluation information end
 @RestController
 @RequestMapping("completeness/single_app_tracing/asynchronous_tracing/promise_callback_await")

@@ -15,12 +15,12 @@ import java.util.Map;
 // evaluation item = 完整度->动态特性跟踪完整度->反射调用
 // scene introduction = 字符串常量
 // level = 3
-// bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_002_F/{cmd}/{methodname}
+// bind_url = completeness/dynamic_tracing/dynamic_call/Expression_Reflection_002_F
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/dynamic_tracing/dynamic_call")
 public class Expression_Reflection_002_F {
-    @GetMapping("Expression_Reflection_002_F/{cmd}/{methodname}")
+    @GetMapping("Expression_Reflection_002_F/{cmd}")
     public Map<String, Object> aTaintCase0134(@PathVariable String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         if (cmd == null) {

@@ -31,7 +31,7 @@ public class QueueWithLambda_002_F {
             queue.add("cd /");
             queue.add("cd ~");
             queue.stream().forEach(e -> {
-                if ("cd /".equals("e")) {
+                if ("cd /".equals(e)) {
                     try {
                         Runtime.getRuntime().exec(e);
                     } catch (IOException ex) {

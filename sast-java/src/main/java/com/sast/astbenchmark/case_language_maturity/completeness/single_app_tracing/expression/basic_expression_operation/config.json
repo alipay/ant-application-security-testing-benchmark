@@ -41,6 +41,58 @@
             {
               "compose": "Statement_VariableDeclarationStatement_001_T.java && !Statement_VariableDeclarationStatement_002_F.java",
               "scene": "变量定义语句"
+            },
+            {
+              "compose": "Expression_Arithmetic_001_T.java && !Expression_Arithmetic_002_F.java",
+              "scene": "算术运算->加法"
+            },
+            {
+              "compose": "Expression_Arithmetic_003_T.java && !Expression_Arithmetic_004_F.java",
+              "scene": "算术运算->减法"
+            },
+            {
+              "compose": "Expression_Arithmetic_005_T.java && !Expression_Arithmetic_006_F.java",
+              "scene": "算术运算->乘法"
+            },
+            {
+              "compose": "Expression_Arithmetic_007_T.java && !Expression_Arithmetic_008_F.java",
+              "scene": "算术运算->除法"
+            },
+            {
+              "compose": "Expression_Comparison_001_T.java && !Expression_Comparison_002_F.java",
+              "scene": "比较运算->等于"
+            },
+            {
+              "compose": "Expression_Comparison_003_T.java && !Expression_Comparison_004_F.java",
+              "scene": "比较运算->不等于"
+            },
+            {
+              "compose": "Expression_Comparison_005_T.java && !Expression_Comparison_006_F.java",
+              "scene": "比较运算->大于"
+            },
+            {
+              "compose": "Expression_Comparison_007_T.java && !Expression_Comparison_008_F.java",
+              "scene": "比较运算->小于"
+            },
+            {
+              "compose": "Expression_Comparison_009_T.java && !Expression_Comparison_010_F.java",
+              "scene": "比较运算->大于等于"
+            },
+            {
+              "compose": "Expression_Comparison_011_T.java && !Expression_Comparison_012_F.java",
+              "scene": "比较运算->小于等于"
+            },
+            {
+              "compose": "Expression_Logical_001_T.java && !Expression_Logical_002_F.java",
+              "scene": "逻辑运算->与运算"
+            },
+            {
+              "compose": "Expression_Logical_003_T.java && !Expression_Logical_004_F.java",
+              "scene": "逻辑运算->或运算"
+            },
+            {
+              "compose": "Expression_Logical_005_T.java && !Expression_Logical_006_F.java",
+              "scene": "逻辑运算->非运算"
             }
           ]
         }

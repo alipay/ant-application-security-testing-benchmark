@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation item = 准确度->路径敏感分析->异常抛出和捕获
 // scene introduction = 涉及求解问题->try语句-数组越界异常or抛出异常
 // level = 3
-// bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_005_T/{cmd}
+// bind_url = accuracy/path_sensitive/exception_throw/Statement_TryStatement_005_T
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/path_sensitive/exception_throw")
@@ -24,6 +24,7 @@ public class Statement_TryStatement_005_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             int[] data = new int[10];
+            cmd = "";
             throw new IOException(cmd);
         } catch (IndexOutOfBoundsException | IOException ex) {
             try {

@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "Expression_Polymorphism_001_T.java && !Expression_Polymorphism_002_F.java",
-              "scene": "1"
+              "scene": "子类重写父类方法"
             }
           ]
         }

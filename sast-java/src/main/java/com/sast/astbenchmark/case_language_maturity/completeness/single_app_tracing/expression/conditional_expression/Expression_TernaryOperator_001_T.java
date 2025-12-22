@@ -16,7 +16,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->表达式->条件表达式
 // scene introduction = 三目运算符
 // level = 2
-// bind_url = completeness/single_app_tracing/expression/conditional_expression/Expression_TernaryOperator_001_T/{url}
+// bind_url = completeness/single_app_tracing/expression/conditional_expression/Expression_TernaryOperator_001_T
 // evaluation information end
 
 @RestController()

@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +18,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // scene introduction = byte
 // level = 2
-// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Byte_003_T/{cmd}
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Byte_003_T
 // evaluation information end
 
 @RestController()
@@ -30,8 +31,12 @@ public class Base_Byte_003_T {
             modelMap.put("status", "error");
             return modelMap;
         }
-        SinkUtil.sink(cmd);
-        modelMap.put("status", "success");
+      try {
+        Runtime.getRuntime().exec(String.valueOf(cmd));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+      modelMap.put("status", "success");
         return modelMap;
     }
 

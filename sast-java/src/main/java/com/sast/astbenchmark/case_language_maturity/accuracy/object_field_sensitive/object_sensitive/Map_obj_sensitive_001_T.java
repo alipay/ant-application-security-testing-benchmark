@@ -25,7 +25,7 @@ public class Map_obj_sensitive_001_T {
         try {
             Map<String, String> m = new HashMap<>();
             m.put("key1", cmd);
-            SinkUtil.sink(m);
+            Runtime.getRuntime().exec(m.toString());
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

@@ -15,7 +15,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
 // scene introduction = 函数调用+中缀表达式
 // level = 2
-// bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_MethodInvocation_Infix_002_F/{cmd}
+// bind_url = completeness/single_app_tracing/function_call/argument_passing/Expression_MethodInvocation_Infix_002_F
 // evaluation information end
 @RestController()
 @RequestMapping("completeness/single_app_tracing/function_call/argument_passing")

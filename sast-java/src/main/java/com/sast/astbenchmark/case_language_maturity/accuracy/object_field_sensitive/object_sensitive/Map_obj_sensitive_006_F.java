@@ -27,7 +27,7 @@ public class Map_obj_sensitive_006_F {
             m.put("key1", cmd);
             m.put("key2", "_");
             m.remove("key1");
-            SinkUtil.sink(m);
+            Runtime.getRuntime().exec(m.toString());
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");

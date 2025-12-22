@@ -13,7 +13,7 @@ import java.util.Map;
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
 // scene introduction = char
 // level = 2
-// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Char_005_T/{cmd}
+// bind_url = completeness/single_app_tracing/datatype/primitives/Base_Char_005_T
 // evaluation information end
 
 @RestController()

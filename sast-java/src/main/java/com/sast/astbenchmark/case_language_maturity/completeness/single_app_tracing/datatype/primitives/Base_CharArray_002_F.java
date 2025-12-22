@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,13 +25,17 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_CharArray_002_F {
-    @PostMapping("Base_CharArray_002_F")
-    public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        char[] chars = {'a', 'b', 'c', 'd', 'e'};
-        SinkUtil.sink(chars);
-        modelMap.put("status", "success");
-        return modelMap;
+  @PostMapping("Base_CharArray_002_F")
+  public Map<String, Object> aTaintCase0150(@RequestBody char[] cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    char[] chars = {'a', 'b', 'c', 'd', 'e'};
+    try {
+      Runtime.getRuntime().exec(Arrays.toString(chars));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 
 }

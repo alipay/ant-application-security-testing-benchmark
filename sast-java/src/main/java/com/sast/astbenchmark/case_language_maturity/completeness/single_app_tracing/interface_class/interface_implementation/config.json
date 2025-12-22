@@ -1,0 +1,22 @@
+{
+  "interface_implementation": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->接口的实现",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Interface_001_T.java && !Interface_002_F.java",
+              "scene": "接口实现创建->类实现"
+            },
+            {
+              "compose": "Interface_003_T.java && !Interface_004_F.java",
+              "scene": "接口实现创建->匿名实现"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

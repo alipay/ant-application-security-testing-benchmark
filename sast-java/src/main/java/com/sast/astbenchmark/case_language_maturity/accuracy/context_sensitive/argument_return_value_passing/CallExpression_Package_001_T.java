@@ -13,22 +13,22 @@ import java.util.Map;
 // evaluation item =  准确度->上下文敏感分析->参数/返回值传递
 // scene introduction = 参数值传递->变量赋值表达式直接引入而不是import
 // level = 2
-// bind_url = accuracy/context_sensitive/argument_return_value_passing/CallExpression_Package_001_T/{url}
+// bind_url = accuracy/context_sensitive/argument_return_value_passing/CallExpression_Package_001_T
 // evaluation information end
 @RestController()
 @RequestMapping("accuracy/context_sensitive/argument_return_value_passing")
 public class CallExpression_Package_001_T {
-    @GetMapping("CallExpression_Package_001_T/{url}")
-    public Map<String, Object> aTaintCase0157(@PathVariable String url) {
+  @GetMapping("CallExpression_Package_001_T/{url}")
+  public Map<String, Object> aTaintCase0157(@PathVariable String url) {
 
-        Map<String, Object> modelMap = new HashMap<>();
-        try {
-            String result = com.sast.astbenchmark.common.utils.HttpUtil.doGet(url);
-            modelMap.put("status", "success");
-            modelMap.put("result", result);
-        } catch (Exception e) {
-            modelMap.put("status", "error");
-        }
-        return modelMap;
+    Map<String, Object> modelMap = new HashMap<>();
+    try {
+      String result = com.sast.astbenchmark.common.utils.HttpUtil.doGet(url);
+      Runtime.getRuntime().exec(result);
+      modelMap.put("status", "success");
+    } catch (Exception e) {
+      modelMap.put("status", "error");
     }
+    return modelMap;
+  }
 }

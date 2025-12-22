@@ -1,0 +1,18 @@
+{
+  "cross_module": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->文件、包、命名空间->跨模块",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "Cross_Module_001_T.java && !Cross_Module_002_F.java",
+              "scene": "跨模块调用"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

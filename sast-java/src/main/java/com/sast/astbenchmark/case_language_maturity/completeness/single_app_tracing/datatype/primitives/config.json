@@ -53,6 +53,14 @@
             {
               "compose": "(Base_Float_001_T.java && !Base_Float_002_F.java)||(Base_Float_003_T.java && !Base_Float_004_F.java)",
               "scene": "float1"
+            },
+            {
+              "compose": "(Base_Boolean_001_T.java && !Base_Boolean_002_F.java)||(Base_Boolean_003_T.java && !Base_Boolean_004_F.java)",
+              "scene": "boolean"
+            },
+            {
+              "compose": "(Base_Short_001_T.java && !Base_Short_002_F.java)||(Base_Short_003_T.java && !Base_Short_004_F.java)",
+              "scene": "short"
             }
           ]
         }

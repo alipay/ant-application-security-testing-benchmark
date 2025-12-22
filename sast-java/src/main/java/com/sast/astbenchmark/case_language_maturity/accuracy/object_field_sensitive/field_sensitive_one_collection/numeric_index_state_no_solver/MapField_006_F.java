@@ -26,7 +26,7 @@ public class MapField_006_F {
         try {
             Map<String, String> map = new HashMap<>();
             map.put("key1", "value1");
-            SinkUtil.sink(map.keySet());
+            Runtime.getRuntime().exec(map.keySet().toString());
         } catch (Exception e) {
             modelMap.put("status", "error");
         }

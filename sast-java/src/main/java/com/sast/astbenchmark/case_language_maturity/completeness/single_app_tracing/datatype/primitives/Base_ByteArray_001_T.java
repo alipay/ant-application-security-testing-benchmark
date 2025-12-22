@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,15 +25,19 @@ import java.util.Map;
 @RestController()
 @RequestMapping("completeness/single_app_tracing/datatype/primitives")
 public class Base_ByteArray_001_T {
-    @PostMapping("Base_ByteArray_001_T")
-    public Map<String, Object> aTaintCase0151(@RequestBody byte[] cmd) {
-        Map<String, Object> modelMap = new HashMap<>();
-        if (cmd == null || cmd.length < 1) {
-            modelMap.put("status", "error");
-            return modelMap;
-        }
-        SinkUtil.sink(cmd);
-        modelMap.put("status", "success");
-        return modelMap;
+  @PostMapping("Base_ByteArray_001_T")
+  public Map<String, Object> aTaintCase0151(@RequestBody byte[] cmd) {
+    Map<String, Object> modelMap = new HashMap<>();
+    if (cmd == null || cmd.length < 1) {
+      modelMap.put("status", "error");
+      return modelMap;
     }
+    try {
+      Runtime.getRuntime().exec(Arrays.toString(cmd));
+      modelMap.put("status", "success");
+    } catch (IOException e) {
+      modelMap.put("status", "error");
+    }
+    return modelMap;
+  }
 }

@@ -1,7 +1,7 @@
 package com.sast.astbenchmark.case_language_maturity.completeness.single_app_tracing.variable_scope.static_variable;
 
 import com.sast.astbenchmark.common.utils.SinkUtil;
-import com.sast.astbenchmark.model.custom.Q;
+import com.sast.astbenchmark.model.custom.P;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +25,7 @@ public class static_variable_002_F {
     public Map<String, Object> testcase(@RequestParam String cmd) {
         Map<String, Object> modelMap = new HashMap<>();
         try {
-            SinkUtil.sink(Q.t);
+            Runtime.getRuntime().exec(P.t);
             modelMap.put("status", "success");
         } catch (Exception e) {
             modelMap.put("status", "error");
