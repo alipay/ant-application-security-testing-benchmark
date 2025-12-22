@@ -9,6 +9,14 @@
             {
               "compose": "!alias_001_F.js && !alias_002_F.js && alias_003_T.js",
               "scene": "别名问题"
+            },
+            {
+              "compose": "!alias_004_F.js && alias_005_T.js",
+              "scene": "数组别名"
+            },
+            {
+              "compose": "!alias_006_F.js && alias_007_T.js",
+              "scene": "对象别名"
             }
           ]
         }
