@@ -9,6 +9,10 @@
             {
               "compose": "multi_invoke_001_T.js && !multi_invoke_002_F.js",
               "scene": "普通"
+            },
+            {
+              "compose": "chain_invoke_001_T.js && !chain_invoke_002_F.js",
+              "scene": "链式调用"
             }
           ]
         }
