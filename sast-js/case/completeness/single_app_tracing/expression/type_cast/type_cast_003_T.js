@@ -1,5 +1,5 @@
 // evaluation information start
-// real case = false
+// real case = true
 // evaluation item = 完整度->单应用跟踪完整度->表达式->类型转换
 // scene introduction = 隐式类型转换
 // level = 2

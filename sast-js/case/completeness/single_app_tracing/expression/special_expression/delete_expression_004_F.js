@@ -1,5 +1,5 @@
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->单应用跟踪完整度->表达式->语言特有的表达式
 // scene introduction = delete运算符->数组索引
 // level = 2
