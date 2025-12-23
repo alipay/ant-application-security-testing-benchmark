@@ -1263,7 +1263,12 @@ public class BenchmarkScore extends AbstractMojo {
 
       String key = parentDirectory.getFileName().toString();
 
-      Object o = jsonObject.get(key);
+      Object o;
+      try {
+        o = jsonObject.get(key);
+      } catch (Exception e) {
+        throw new RuntimeException(filePath + "/config.json The \"" + key + "\" in does not match the directory name");
+      }
 
       if (o instanceof JSONArray) {
         JSONArray jsonArray = (JSONArray) o;

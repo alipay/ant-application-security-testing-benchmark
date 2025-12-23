@@ -1,0 +1,26 @@
+{
+  "simple_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->简单对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "simple_object_001_T.js && !simple_object_002_F.js",
+              "scene": "class 对象"
+            },
+            {
+              "compose": "simple_object_003_T.js && !simple_object_004_F.js",
+              "scene": "构造函数创建"
+            },
+            {
+              "compose": "simple_object_005_T.js && !simple_object_006_F.js",
+              "scene": "字面量"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

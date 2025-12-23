@@ -21,6 +21,14 @@
             {
               "compose": "!while_body_solver_001_F.js && while_body_solver_002_T.js",
               "scene": "循环结构->while"
+            },
+            {
+              "compose": "ternary_expression_solver_001_T.js && !ternary_expression_solver_002_F.js",
+              "scene": "三元表达式求解"
+            },
+            {
+              "compose": "do_while_loop_solver_001_T.js && !do_while_loop_solver_002_F.js",
+              "scene": "do-while循环求解"
             }
           ]
         }

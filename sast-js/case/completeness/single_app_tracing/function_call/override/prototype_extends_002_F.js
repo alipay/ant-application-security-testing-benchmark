@@ -1,5 +1,5 @@
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->方法重写
 // scene introduction = 构造函数->原型链
 // level = 2

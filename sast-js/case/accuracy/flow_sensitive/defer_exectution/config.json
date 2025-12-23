@@ -1,0 +1,26 @@
+{
+  "defer_exectution": [
+    {
+      "evaluation_item": "准确度->流敏感分析->延迟执行",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "settimeout_defer_001_T.js && !settimeout_defer_002_F.js",
+              "scene": "setTimeout延迟"
+            },
+            {
+              "compose": "setinterval_defer_001_T.js && !setinterval_defer_002_F.js",
+              "scene": "setInterval延迟"
+            },
+            {
+              "compose": "queuemicrotask_delay_001_T.js && !queuemicrotask_delay_002_F.js",
+              "scene": "queueMicrotask延迟"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

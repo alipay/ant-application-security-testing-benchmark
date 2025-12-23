@@ -7,8 +7,8 @@
           "level": "4",
           "scene_list": [
             {
-              "compose": "asynchronous_await_001_T.js && !asynchronous_await_002_F.js",
-              "scene": "异步执行-await"
+              "compose": "promise_defer_001_T.js && !promise_defer_002_F.js",
+              "scene": "Promise延迟"
             }
           ]
         }

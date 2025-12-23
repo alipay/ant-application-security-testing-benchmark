@@ -7,8 +7,12 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "exception_throw_001_T.js && !exception_throw_002_F.js && exception_throw_003_T.js",
-              "scene": "1"
+              "compose": "exception_throw_001_T.js && !exception_throw_002_F.js",
+              "scene": "抛出"
+            },
+            {
+              "compose": "exception_throw_003_T.js && !exception_throw_004_F.js",
+              "scene": "捕获"
             }
           ]
         }

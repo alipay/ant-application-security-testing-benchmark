@@ -3,7 +3,7 @@
 // evaluation item = 完整度->单应用跟踪完整度->表达式->语言特有的表达式
 // scene introduction = 空合并运算符
 // level = 2
-// bind_url = completeness/single_app_tracing/expression/special_expression/nullish_coalescing_001_T
+// bind_url = completeness/single_app_tracing/expression/special_expression/nullish_coalescing_operator_001_T
 // evaluation information end
 const { execSync } = require('child_process');
 

@@ -17,6 +17,34 @@
             {
               "compose": "array_005_T.js && !array_006_F.js",
               "scene": "push操作"
+            },
+            {
+              "compose": "array_index_001_T.js && !array_index_002_F.js",
+              "scene": "数组索引读取"
+            },
+            {
+              "compose": "array_concat_001_T.js && !array_concat_002_F.js",
+              "scene": "数组连接"
+            },
+            {
+              "compose": "array_slice_001_T.js && !array_slice_002_F.js",
+              "scene": "数组切片"
+            },
+            {
+              "compose": "array_fill_001_T.js && !array_fill_002_F.js",
+              "scene": "数组填充"
+            },
+            {
+              "compose": "array_reverse_001_T.js && !array_reverse_002_F.js",
+              "scene": "数组反转"
+            },
+            {
+              "compose": "array_spread_001_T.js && !array_spread_002_F.js",
+              "scene": "数组展开"
+            },
+            {
+              "compose": "array_filter_001_T.js && !array_filter_002_F.js",
+              "scene": "数组过滤"
             }
           ]
         }

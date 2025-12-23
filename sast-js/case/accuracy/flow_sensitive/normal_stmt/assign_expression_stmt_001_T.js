@@ -1,5 +1,5 @@
 // evaluation information start
-// real case = false
+// real case = true
 // evaluation item = 准确度->流敏感分析->常规顺序执行语句
 // scene introduction = 赋值表达式
 // level = 2

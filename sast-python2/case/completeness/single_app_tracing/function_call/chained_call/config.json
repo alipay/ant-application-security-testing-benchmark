@@ -19,16 +19,6 @@
               "scene": "函数组合"
             }
           ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
-            {
-              "compose": "chained_call_003_T.py && !chained_call_004_F.py",
-              "scene": "闭包链式"
-            }
-
-          ]
         }
       ]
     }

@@ -5,11 +5,10 @@
 // level = 3
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/conditional_switch_no_solver_001_F
 // evaluation information end
-const { execSync } = require('child_process');
-
+const { execSync } = require("child_process");
 
 function conditional_switch_no_solver_001_F(__taint_src) {
-  let data = "_";
+  let data = "safe_value";
   switch (2) {
     case 1:
       data = __taint_src;

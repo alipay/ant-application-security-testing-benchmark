@@ -45,6 +45,26 @@
             {
               "compose": "while_body_001_T.js && !while_body_002_F.js",
               "scene": "while"
+            },
+            {
+              "compose": "map_001_T.js && !map_002_F.js",
+              "scene": "map循环"
+            },
+            {
+              "compose": "filter_001_T.js && !filter_002_F.js",
+              "scene": "filter循环"
+            },
+            {
+              "compose": "reduce_001_T.js && !reduce_002_F.js",
+              "scene": "reduce循环"
+            },
+            {
+              "compose": "find_001_T.js && !find_002_F.js",
+              "scene": "find循环"
+            },
+            {
+              "compose": "find_index_001_T.js && !find_index_002_F.js",
+              "scene": "findIndex循环"
             }
           ]
         }

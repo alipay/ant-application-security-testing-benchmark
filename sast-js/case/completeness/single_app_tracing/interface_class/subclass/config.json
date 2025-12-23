@@ -1,0 +1,26 @@
+{
+  "subclass": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->子类对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "inheritance_parent_property_001_T.js && !inheritance_parent_property_002_F.js",
+              "scene": "父类属性"
+            },
+            {
+              "compose": "inheritance_super_call_001_T.js && !inheritance_super_call_002_F.js",
+              "scene": "super调用"
+            },
+            {
+              "compose": "method_override_001_T.js && !method_override_002_F.js",
+              "scene": "子类覆盖"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

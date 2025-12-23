@@ -1,0 +1,26 @@
+{
+  "anonymous_object": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->接口与类->匿名对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "anonymous_object_001_T.js && !anonymous_object_002_F.js",
+              "scene": "对象字面量"
+            },
+            {
+              "compose": "anonymous_object_003_T.js && !anonymous_object_004_F.js",
+              "scene": "构造函数"
+            },
+            {
+              "compose": "anonymous_object_005_T.js && !anonymous_object_006_F.js",
+              "scene": "函数返回"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

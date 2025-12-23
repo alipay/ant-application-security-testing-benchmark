@@ -1,0 +1,30 @@
+{
+  "string": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->字符串",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "string_create_001_T.js && !string_create_002_F.js",
+              "scene": "字符串创建"
+            },
+            {
+              "compose": "string_concat_001_T.js && !string_concat_002_F.js",
+              "scene": "字符串拼接"
+            },
+            {
+              "compose": "string_substring_001_T.js && !string_substring_002_F.js",
+              "scene": "字符串截取"
+            },
+            {
+              "compose": "string_replace_001_T.js && !string_replace_002_F.js",
+              "scene": "字符串替换"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

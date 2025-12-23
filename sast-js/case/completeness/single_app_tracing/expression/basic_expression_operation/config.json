@@ -69,6 +69,66 @@
             {
               "compose": "binary_expression_add_assignment_001_T.js && !binary_expression_add_assignment_002_F.js",
               "scene": "二元运算-加等"
+            },
+            {
+              "compose": "binary_expression_subtract_001_T.js && !binary_expression_subtract_002_F.js",
+              "scene": "二元运算-减"
+            },
+            {
+              "compose": "binary_expression_multiply_001_T.js && !binary_expression_multiply_002_F.js",
+              "scene": "二元运算-乘"
+            },
+            {
+              "compose": "binary_expression_divide_001_T.js && !binary_expression_divide_002_F.js",
+              "scene": "二元运算-除"
+            },
+            {
+              "compose": "binary_expression_modulo_001_T.js && !binary_expression_modulo_002_F.js",
+              "scene": "二元运算-取模"
+            },
+            {
+              "compose": "binary_expression_exponentiation_001_T.js && !binary_expression_exponentiation_002_F.js",
+              "scene": "二元运算-幂"
+            },
+            {
+              "compose": "binary_expression_subtract_assignment_001_T.js && !binary_expression_subtract_assignment_002_F.js",
+              "scene": "二元运算-减等"
+            },
+            {
+              "compose": "binary_expression_multiply_assignment_001_T.js && !binary_expression_multiply_assignment_002_F.js",
+              "scene": "二元运算-乘等"
+            },
+            {
+              "compose": "binary_expression_divide_assignment_001_T.js && !binary_expression_divide_assignment_002_F.js",
+              "scene": "二元运算-除等"
+            },
+            {
+              "compose": "binary_expression_modulo_assignment_001_T.js && !binary_expression_modulo_assignment_002_F.js",
+              "scene": "二元运算-模等"
+            },
+            {
+              "compose": "relation_expression_not_equal_001_T.js && !relation_expression_not_equal_002_F.js",
+              "scene": "关系操作-不等于"
+            },
+            {
+              "compose": "relation_expression_greater_equal_001_T.js && !relation_expression_greater_equal_002_F.js",
+              "scene": "关系操作-大于等于"
+            },
+            {
+              "compose": "relation_expression_less_equal_001_T.js && !relation_expression_less_equal_002_F.js",
+              "scene": "关系操作-小于等于"
+            },
+            {
+              "compose": "relation_expression_strict_not_equal_001_T.js && !relation_expression_strict_not_equal_002_F.js",
+              "scene": "关系操作-严格不等于"
+            },
+            {
+              "compose": "logic_expression_not_001_T.js && !logic_expression_not_002_F.js",
+              "scene": "逻辑表达式-非表达式"
+            },
+            {
+              "compose": "conditional_expression_001_T.js && !conditional_expression_002_F.js",
+              "scene": "条件表达式"
             }
           ]
         }
