@@ -8,23 +8,22 @@
 # evaluation information end
 import os
 
+
 def map_field_sensitive_010_T(taint_src):
     arr = {
-        'a': '_',
-        'b': '_',
-        'c': {'taint_src': taint_src, 'd': 'a'}
+        'a': 'safe_value',
+        'b': 'safe_value',
     }
-    a = arr['a']
-    b = arr['b']
-    c = arr['c']
-    taint_sink(c['taint_src'])  # 传递嵌套字典中的 taint_src
+    key1, key2 = arr
+    arr[key1] = taint_src
+    taint_sink(arr['a'])
 
 
 def taint_sink(o):
     os.system(o)
 
+
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     map_field_sensitive_010_T(taint_src)
-

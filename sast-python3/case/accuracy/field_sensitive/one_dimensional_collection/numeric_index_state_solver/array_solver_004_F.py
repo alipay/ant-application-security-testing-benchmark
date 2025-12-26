@@ -11,13 +11,12 @@ import os
 
 import array
 
+
 def array_solver_004_F(taint_src):
     # 将字符串拆分为单个字符存储（无法完整保留原始字符串为一个元素）
     char_array = array.array('u', taint_src)  # 每个字符作为独立元素
-    # 创建包含其他元素的数组（需统一为字符类型）
-    s = array.array('u', ['c', 'b', char_array[0]])  # 仅保留首字符
-    length = len(s)
-    taint_sink(s[length - 2])
+    length = len(char_array)
+    taint_sink(char_array[length - 2])
 
 
 def taint_sink(o):
@@ -27,4 +26,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     array_solver_004_F(taint_src)  # 输出：_（仅第一个字符）
-
