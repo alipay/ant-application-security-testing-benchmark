@@ -8,15 +8,16 @@
 # evaluation information end
 import os
 
+
 def constructor_field_002_F(taint_src):
     class A:
         def __init__(self):
-            self.data = taint_src  # 初始化 data 属性为传入的参数
-            self.sani = '_'          # 初始化 sani 属性为下划线
-            
-    obj = A()                       # 创建类 A 的实例
-    taint_sink(obj.sani)          # 调用 taint_sink，传入实例的 sani 属性
+            self.data = taint_src
+            self.sani = 'safe_value'
 
+    obj1 = A()
+    obj2 = A()
+    taint_sink(obj2.sani)
 
 
 def taint_sink(o):
@@ -27,4 +28,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     constructor_field_002_F(taint_src)
-
