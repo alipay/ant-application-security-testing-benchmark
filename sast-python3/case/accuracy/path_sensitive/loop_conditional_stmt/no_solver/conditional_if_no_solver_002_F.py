@@ -10,12 +10,10 @@ import os
 
 
 def conditional_if_no_solver_002_F(taint_src):
-    res = ""
-    if True:
-        taint_sink(res)
+    if False:
+        taint_sink(taint_src)
     else:
-        res = taint_src
-
+        taint_sink("safe_value")
 
 
 def taint_sink(o):
@@ -26,4 +24,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_if_no_solver_002_F(taint_src)
-

@@ -10,13 +10,14 @@ import os
 
 
 def conditional_match_no_solver_002_F(taint_src):
-    data = ''
+    result = ""
     match 2:            # 表达式固定为 2
         case 1:         # 不匹配，不会执行
-            taint_sink(data)
+            result = taint_src
         case _:         # 默认分支
-            data = taint_src  # 污染源被赋值给 data，但未传递到 sink
+            result = "safe_value"  # 污染源被赋值给 data，但未传递到 sink
 
+    taint_sink(result)
 
 
 def taint_sink(o):
@@ -27,4 +28,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_match_no_solver_002_F(taint_src)
-

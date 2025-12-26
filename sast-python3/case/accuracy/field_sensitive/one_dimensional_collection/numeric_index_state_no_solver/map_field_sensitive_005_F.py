@@ -10,20 +10,17 @@ import os
 
 
 def map_field_sensitive_005_F(taint_src):
-    my_map = {}  
-    my_map['key1'] = taint_src  # 污染源绑定到 'key1'
-    my_map['key2'] = 'value'      # 初始设置 'key2' 为干净值
-    my_map['key2'] = taint_src  # 覆盖 'key2' 为污染源
-    del my_map['key1']            # 删除 'key1' 键值对
-    taint_sink(my_map.get('key1'))  # 通过 'key1' 获取值（已删除，返回 None）
-
+    my_map = {"key1": taint_src}
+    del my_map['key1']
+    my_map["key1"] = "safe_value"
+    taint_sink(my_map.get('key1'))
 
 
 def taint_sink(o):
     os.system(str(o))
 
+
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     map_field_sensitive_005_F(taint_src)
-

@@ -11,11 +11,11 @@ import os
 
 
 def while_body_solver_002_T(taint_src):
-    i = 7
-    res = taint_src
+    i = 1
+    res = "safe_value"
     while i < 3:
-        res = ""
-        break
+        res = taint_src
+        i = i + 1
     else:
         # 当while循环条件不满足时执行
         taint_sink(res)

@@ -9,20 +9,24 @@
 
 import os
 
+
 def conditional_matchClass_001_T(taint_src):
     class MyClass:
         __match_args__ = ('x', 'y')  # 定义匹配参数顺序
+
         def __init__(self, x, y):
             self.x = x
             self.y = y
 
-    obj = MyClass(taint_src, "suffix")
+    obj = MyClass(taint_src, "safe_value")
     match obj:
         case MyClass(x, y):  # 使用 MatchClass 匹配类实例
             taint_sink(x)
 
+
 def taint_sink(o):
     os.system(str(o))
+
 
 if __name__ == "__main__":
     taint_src = "taint_src_value"

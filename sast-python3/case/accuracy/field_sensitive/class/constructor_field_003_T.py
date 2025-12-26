@@ -8,14 +8,17 @@
 # evaluation information end
 import os
 
+
 def constructor_field_003_T(taint_src):
     class A:
-        def __init__(self, param):
-            self.data = param          
-            self.sani = '_'            
-            
-    obj = A(taint_src)               
-    taint_sink(obj.data)            
+        def __init__(self, param1, param2):
+            self.data = param1
+            self.sani = param2
+
+    obj1 = A(taint_src, "safe_value")
+    obj2 = A(taint_src, "safe_value")
+
+    taint_sink(obj1.data)
 
 
 def taint_sink(o):
@@ -26,4 +29,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     constructor_field_003_T(taint_src)
-

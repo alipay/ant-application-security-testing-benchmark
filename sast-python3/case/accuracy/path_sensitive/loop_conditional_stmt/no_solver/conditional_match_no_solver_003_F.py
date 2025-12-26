@@ -10,21 +10,21 @@ import os
 
 
 def conditional_match_no_solver_003_F(taint_src):
-    data = ''
+    result = 'safe_value'
     match 2:            # 表达式固定为 2
         case 1:         # 不匹配，不会执行
-            data = taint_src
+            result = taint_src
         case _:         # 默认分支（避免抛出异常）
             pass        # 不执行任何操作
-    taint_sink(data)  # 无论是否匹配，都会执行此行
 
+    taint_sink(result)  # 无论是否匹配，都会执行此行
 
 
 def taint_sink(o):
     os.system(o)
 
+
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_match_no_solver_003_F(taint_src)
-

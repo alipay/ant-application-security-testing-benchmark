@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->变量作用域->静态变量
-# scene introduction = 
+# scene introduction =
 # level = 2+
 # bind_url = completeness/single_app_tracing/variable_scope/static_variable/static_variable_002_F
 # evaluation information end
@@ -11,7 +11,7 @@ import os
 
 def static_variable_002_F(taint_src):
     class A:
-        data = '_'
+        data = 'safe_value'
 
     taint_sink(A.data)
 
@@ -23,4 +23,3 @@ def taint_sink(o):
 if __name__ == '__main__':
     taint_src = "taint_src_value"
     static_variable_002_F(taint_src)
-

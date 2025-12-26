@@ -10,11 +10,10 @@ import os
 
 import array
 
-def array_no_solver_003_T(taint_src):
-    arr = array.array('u', ['a','b'])
 
-    char_array = array.array('u', taint_src)  # 每个字符作为独立元素
-    arr[0] = char_array[0] # 动态修改索引0
+def array_no_solver_003_T(taint_src):
+    arr = array.array('u', taint_src)
+    arr[0] = 'a'  # 动态修改索引0
 
     taint_sink(arr[0])  # 访问修改后的污染元素
 
@@ -26,4 +25,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     array_no_solver_003_T(taint_src)
-

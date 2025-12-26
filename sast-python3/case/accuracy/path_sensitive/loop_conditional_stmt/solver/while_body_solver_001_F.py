@@ -12,14 +12,13 @@ import os
 
 def while_body_solver_001_F(taint_src):
     i = 7
-    res = "_"
+    res = "safe_value"
     while i < 3:
         res = taint_src
-        break
     else:
         # 当while循环条件不满足时执行
         taint_sink(res)
-    
+
 
 def taint_sink(o):
     os.system(o)

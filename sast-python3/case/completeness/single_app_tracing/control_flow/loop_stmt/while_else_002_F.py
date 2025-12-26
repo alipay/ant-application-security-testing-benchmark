@@ -9,16 +9,17 @@
 
 import os
 
+
 def while_else_002_F(taint_src):
     i = 2
-    res = taint_src
+    result = ""
     while i < 2:
+        result = taint_src
         i += 1
-        break
     else:
-        res = "_"
+        result = "safe_value"
 
-    taint_sink(res)
+    taint_sink(result)
 
 
 def taint_sink(o):

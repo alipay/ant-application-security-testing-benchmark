@@ -10,20 +10,19 @@ import os
 
 
 def continue_001_T(taint_src):
-    res = ''
+    res = 'safe_value'
     for i in range(10):
-        if i == 3:
-            res = taint_src
-            continue
-        taint_sink(res)
+        res = taint_src
+        continue
 
+    taint_sink(res)
 
 
 def taint_sink(o):
     os.system(o)
 
+
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     continue_001_T(taint_src)
-
