@@ -8,21 +8,23 @@
 # evaluation information end
 
 
-#原生的list、array等不支持多维切片的语法 需要额外下载numpy库
+# 原生的list、array等不支持多维切片的语法 需要额外下载numpy库
 import os
-import numpy as np
+
 
 def extslice_001_T(taint_src):
-    def process():       
-        arr = np.array([[1, 2, taint_src], [4, 5, 6]])
+    def process():
+        arr = [[1, 2, taint_src], [4, 5, "safe_value"]]
         # 使用ExtSlice来执行多维切片操作，并将可能被污染的数据传递给sink
-        taint_sink(arr[0:2, 2][0])  # 假设我们试图从数组中提取可能存在污染的数据
+        taint_sink(arr[0:1][0][2:3][0])  # 假设我们试图从数组中提取可能存在污染的数据
 
-    process()  
+    process()
+
 
 def taint_sink(o):
     os.system(o)
 
+
 if __name__ == "__main__":
-    taint_src = "taint_src_value"  
+    taint_src = "taint_src_value"
     extslice_001_T(taint_src)
