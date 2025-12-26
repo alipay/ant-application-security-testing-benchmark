@@ -9,27 +9,23 @@
 import os
 import asyncio
 
+
 async def asyncio_await_002_F(taint_src):
-    data = ''
-    taint_sink(data)  # 此时 data 为空字符串，未被污染
+    result = "safe_value"
 
     async def process():
-        await asyncio.sleep(0.01)  
+        await asyncio.sleep(0.01)
         return taint_src
 
-    data = await process()  # 等待异步操作完成，但未将结果传递给 taint_sink
+    taint_sink(result)  # 未被污染
+    result = await process()  # 等待异步操作完成，但未将结果传递给 taint_sink
 
 
 def taint_sink(o):
     os.system(o)
 
 
-# 执行示例（需事件循环）
-async def main(taint_src):
-    await asyncio_await_002_F(taint_src)
-
 # 启动事件循环（Python 3.7+）
 if __name__ == "__main__":
     taint_src = "taint_src_value"
-    asyncio.run(main(taint_src))
-
+    asyncio.run(asyncio_await_002_F(taint_src))
