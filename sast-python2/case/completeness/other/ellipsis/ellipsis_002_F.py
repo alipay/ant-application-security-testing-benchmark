@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 完整度->其他->ellipsis
 # scene introduction = 切片占位
-# level = 2+
+# level = 2
 # bind_url = completeness/other/ellipsis/ellipsis_002_F
 # evaluation information end
 

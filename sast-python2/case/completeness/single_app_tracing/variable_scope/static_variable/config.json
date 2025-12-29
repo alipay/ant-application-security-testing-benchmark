@@ -14,13 +14,8 @@
             {
               "compose": "static_variable_005_T.py && !static_variable_006_F.py",
               "scene": "继承覆盖"
-            }
-          ]
-        },
-         {
-          "level": "2+",
-          "scene_list": [
-             {
+            },
+            {
               "compose": "static_variable_001_T.py && !static_variable_002_F.py",
               "scene": "1"
             }

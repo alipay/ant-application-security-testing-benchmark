@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 完整度->单应用跟踪完整度->表达式->语言特有的表达式
 # scene introduction = del运算符->切片
-# level = 2+
+# level = 2
 # bind_url = completeness/single_app_tracing/expression/special_expression/del_expression_007_T
 # evaluation information end
 import os

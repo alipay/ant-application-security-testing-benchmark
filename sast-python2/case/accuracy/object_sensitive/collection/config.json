@@ -33,12 +33,7 @@
             {
               "compose": "list_object_sensitive_007_T.py && !list_object_sensitive_008_F.py",
               "scene": "列表->clear-extend函数"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "array_object_sensitive_001_T.py && !array_object_sensitive_002_F.py",
               "scene": "数组/集合->数组对象1"

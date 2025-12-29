@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->流敏感分析->循环顺序执行语句",
       "scene_levels": [
         {
-          "level": "2+",
+          "level": "2",
           "scene_list": [
             {
               "compose": "for_enumerate_001_T.py && !for_enumerate_002_F.py",

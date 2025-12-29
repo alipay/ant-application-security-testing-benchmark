@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 完整度->其他->exec
 # scene introduction = 动态执行代码
-# level = 2+
+# level = 2
 # bind_url = completeness/other/exec/exec_001_T
 # evaluation information end
 

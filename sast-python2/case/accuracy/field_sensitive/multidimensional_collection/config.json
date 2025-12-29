@@ -17,12 +17,7 @@
             {
               "compose": "map_mc_001_T.py && !map_mc_002_F.py",
               "scene": "字典键路径->嵌套"
-            }
-          ]
-        },
-        {
-          "level": "4+",
-          "scene_list": [
+            },
             {
               "compose": "list_mc_003_T.py && !list_mc_004_F.py",
               "scene": "列表索引->三维交叉"
