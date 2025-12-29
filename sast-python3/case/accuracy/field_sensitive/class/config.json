@@ -25,6 +25,14 @@
             {
               "compose": "inheritance_001_T.py && !inheritance_002_F.py",
               "scene": "继承覆盖父类字段"
+            },
+            {
+              "compose": "field_len_003_T.py && !field_len_004_F.py",
+              "scene": "路径长度2"
+            },
+            {
+              "compose": "field_len_005_T.py && !field_len_006_F.py",
+              "scene": "路径长度3"
             }
           ]
         }

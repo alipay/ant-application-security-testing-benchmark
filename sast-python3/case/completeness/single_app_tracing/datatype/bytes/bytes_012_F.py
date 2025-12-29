@@ -3,7 +3,7 @@
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->不可变字节序列
 # scene introduction = 解码
-# level = 2+
+# level = 2
 # bind_url = completeness/single_app_tracing/datatype/bytes/bytes_012_F
 # evaluation information end
 

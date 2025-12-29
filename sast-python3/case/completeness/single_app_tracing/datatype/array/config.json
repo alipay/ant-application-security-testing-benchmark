@@ -7,15 +7,6 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "numpy_array_001_T.py && !numpy_array_002_F.py",
-              "scene": "numpy数组"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
-            {
               "compose": "array_001_T.py && !array_002_F.py",
               "scene": "1"
             },

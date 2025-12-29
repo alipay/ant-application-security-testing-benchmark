@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 完整度->单应用跟踪完整度->流程控制语句->断言
 # scene introduction = 验证输入值
-# level = 2+
+# level = 2
 # bind_url = completeness/single_app_tracing/control_flow/assert/assert_001_T
 # evaluation information end
 

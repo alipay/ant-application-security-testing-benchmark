@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 准确度->对象敏感与域敏感分析->区分字典/列表/数组的不同元素
 # scene introduction = 列表->append函数
-# level = 2+
+# level = 2
 # bind_url = accuracy/object_sensitive/collection/list_object_sensitive_005_T
 # evaluation information end
 import os

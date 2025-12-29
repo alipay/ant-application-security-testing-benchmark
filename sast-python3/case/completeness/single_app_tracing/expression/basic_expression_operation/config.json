@@ -129,12 +129,7 @@
             {
               "compose": "unary_expression_uadd_001_T.py && !unary_expression_uadd_002_F.py",
               "scene": "一元运算->正号"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "greater_than_equal_001_T.py && !greater_than_equal_002_F.py",
               "scene": "关系操作->大于等于"

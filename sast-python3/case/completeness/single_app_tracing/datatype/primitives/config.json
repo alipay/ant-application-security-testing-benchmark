@@ -49,12 +49,7 @@
             {
               "compose": "type_annotation_str_001_T.py && !type_annotation_str_002_F.py",
               "scene": "字符串->类型注解"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "complex_003_T.py && !complex_004_F.py",
               "scene": "复数2"

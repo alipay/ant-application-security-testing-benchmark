@@ -21,12 +21,7 @@
             {
               "compose": "map_solver_003_T.py && !map_solver_004_F.py",
               "scene": "字典->字典索引->需求解2"
-            }
-          ]
-        },
-        {
-          "level": "4+",
-          "scene_list": [
+            },
             {
               "compose": "array_solver_001_T.py && !array_solver_002_F.py",
               "scene": "数组->数组索引->需求解1"
