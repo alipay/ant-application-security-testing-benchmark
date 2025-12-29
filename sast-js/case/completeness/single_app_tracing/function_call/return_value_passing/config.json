@@ -19,6 +19,19 @@
               "scene": "解构返回"
             }
           ]
+        },
+        {
+          "level": "2+",
+          "scene_list": [
+            {
+              "compose": "!return_array_method_001_F.js && return_array_method_002_T.js",
+              "scene": "数组返回"
+            },
+            {
+              "compose": "!return_destruct_001_F.js && return_destruct_002_T.js",
+              "scene": "解构返回"
+            }
+          ]
         }
       ]
     }
