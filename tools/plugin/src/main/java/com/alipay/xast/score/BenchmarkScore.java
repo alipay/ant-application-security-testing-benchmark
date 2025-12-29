@@ -462,11 +462,14 @@ public class BenchmarkScore extends AbstractMojo {
             TN++;
           }
         }
-        if (StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE")) {
-          booleanMap.put((String) data.get(i).get(0), true);
-        } else {
-          booleanMap.put((String) data.get(i).get(0), false);
-        }
+        String caseFileName = data.get(i).get(0).toString();
+        boolean realCase = StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE");
+        booleanMap.put(caseFileName, realCase);
+//        if (StringUtils.equalsIgnoreCase(scanFindVuln, "TRUE")) {
+//          booleanMap.put(caseFileName, true);
+//        } else {
+//          booleanMap.put(caseFileName, false);
+//        }
       }
       //准确率
       if ((TP + FN + FP + TN) != 0) {
@@ -1122,7 +1125,7 @@ public class BenchmarkScore extends AbstractMojo {
                          (path, attr) ->
                                  attr.isRegularFile()
                                          //&& path.toString().contains("cases"),
-                                         && path.toString().contains("case") && !path.toString().contains("target")
+                                         && path.toString().contains("case") && !path.toString().contains("/target")
                                          && containsToolPath(path.toString(), result),
                          FileVisitOption.FOLLOW_LINKS)) {
       // 收集所有文件路径到一个 List 中
