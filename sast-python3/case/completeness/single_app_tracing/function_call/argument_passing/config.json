@@ -41,12 +41,7 @@
             {
               "compose": "argument_passing_various_types_007_T.py && !argument_passing_various_types_008_F.py",
               "scene": "参数列表3"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "!argument_passing_keyword_taint_001_T.py && argument_passing_keyword_taint_002_F.py",
               "scene": "关键字参数"

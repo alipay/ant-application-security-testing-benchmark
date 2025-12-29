@@ -13,12 +13,7 @@
             {
               "compose": "set_003_T.py && !set_004_F.py",
               "scene": "add方法"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "set_005_T.py && !set_006_F.py",
               "scene": "交集-并集"

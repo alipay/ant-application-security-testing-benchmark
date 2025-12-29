@@ -53,12 +53,7 @@
             {
               "compose": "map_field_sensitive_014_T.py && !map_field_sensitive_015_F.py",
               "scene": "字典->扩展运算符"
-            }
-          ]
-        },
-        {
-          "level": "3+",
-          "scene_list": [
+            },
             {
               "compose": "array_no_solver_001_T.py && !array_no_solver_002_F.py",
               "scene": "数组->数组索引"

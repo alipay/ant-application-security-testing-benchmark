@@ -21,12 +21,7 @@
             {
               "compose": "asynchronous_promise_011_T.js && !asynchronous_promise_012_F.js",
               "scene": "Promise错误处理"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "asynchronous_promise_003_T.js && !asynchronous_promise_004_F.js",
               "scene": "Promise3"

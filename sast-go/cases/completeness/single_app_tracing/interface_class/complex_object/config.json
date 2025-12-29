@@ -29,12 +29,7 @@
             {
               "compose": "struct_tag_field_001_T/struct_tag_field_001_T.go && !struct_tag_field_002_F/struct_tag_field_002_F.go",
               "scene": "结构体标签字段处理"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list":[
+            },
             {
               "compose": "deep_nested_field_read_001_T/deep_nested_field_read_001_T.go && !deep_nested_field_read_002_F/deep_nested_field_read_002_F.go",
               "scene": "多层嵌套字段读取"

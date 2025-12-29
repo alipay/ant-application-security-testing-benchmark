@@ -12,7 +12,7 @@ import os
 
 def argument_passing_various_types_006_F(taint_src):
     def process(a, b=2, *args, **kwargs):
-        c = kwargs['c'];
+        c = kwargs['c']
         taint_sink(c)
 
     # 调用过程，展示各种参数的使用方式
@@ -20,7 +20,7 @@ def argument_passing_various_types_006_F(taint_src):
 
 
 def taint_sink(o):
-    os.system(o)  
+    os.system(o)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->参数传递
 // scene introduction = this绑定参数->call
-// level = 2+
+// level = 2
 // bind_url = completeness/single_app_tracing/function_call/argument_passing/argument_passing_this_binding_001_F
 // date = 2025-12-18 06:35:30
 // evaluation information end

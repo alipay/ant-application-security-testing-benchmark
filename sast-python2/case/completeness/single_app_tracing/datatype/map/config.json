@@ -13,12 +13,7 @@
             {
               "compose": "map_003_T.py && !map_004_F.py",
               "scene": "字典/映射（Map）对象2"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "map_007_T.py && !map_008_F.py",
               "scene": "字典/映射（Map）对象4"

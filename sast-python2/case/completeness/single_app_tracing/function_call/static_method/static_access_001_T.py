@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->静态方法
 # scene introduction = 静态变量操作
-# level = 2+
+# level = 2
 # bind_url = completeness/single_app_tracing/function_call/static_method/static_access_001_T
 # evaluation information end
 import os

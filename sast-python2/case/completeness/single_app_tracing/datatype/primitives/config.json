@@ -33,12 +33,7 @@
             {
               "compose": "str_003_T.py && !str_004_F.py",
               "scene": "字符串->字节字符串"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "complex_003_T.py && !complex_004_F.py",
               "scene": "复数2"

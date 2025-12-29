@@ -13,12 +13,7 @@
             {
               "compose": "extslice_001_T.py && !extslice_002_F.py",
               "scene": "多维切片"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "array_001_T.py && !array_002_F.py",
               "scene": "1"

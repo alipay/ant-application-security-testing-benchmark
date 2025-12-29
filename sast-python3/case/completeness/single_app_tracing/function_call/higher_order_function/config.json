@@ -17,12 +17,7 @@
             {
               "compose": "!higher_order_function_011_F.py && higher_order_function_012_T.py",
               "scene": "回调函数类型注解"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "!higher_order_function_003_F.py && higher_order_function_004_T.py",
               "scene": "二阶"

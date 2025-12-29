@@ -17,12 +17,7 @@
             {
               "compose": "inheritance_class_001_T.py && !inheritance_class_002_F.py",
               "scene": "继承与多态"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "inject_data_new_001_T.py && !inject_data_new_002_F.py",
               "scene": "实例化中注入污染源"

@@ -10,13 +10,11 @@ import os
 
 
 def conditional_match_solver_001_F(taint_src):
-    data = ''
+    data = 'safe_value'
     match 1 + 1:  # 计算表达式值为 2
         case 1:    # 与 2 不匹配，此分支不执行
             data = taint_src  # 污点传播路径（未触发）
     taint_sink(data)  # data 仍为空字符串 ''
-
-
 
 
 def taint_sink(o):
@@ -27,4 +25,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_match_solver_001_F(taint_src)
-

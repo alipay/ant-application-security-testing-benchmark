@@ -21,12 +21,7 @@
             {
               "compose": "alias_009_T.py && !alias_010_F.py",
               "scene": "对象属性别名"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "alias_003_T.py && !alias_004_F.py",
               "scene": "多级别名链"

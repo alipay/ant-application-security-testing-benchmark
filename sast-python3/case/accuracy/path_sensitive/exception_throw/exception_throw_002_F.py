@@ -8,10 +8,11 @@
 # evaluation information end
 import os
 
+
 def exception_throw_002_F(taint_src):
     try:
+        taint_sink("safe_value")
         raise Exception("_")
-        taint_sink(taint_src)
     except Exception as e:
         pass
 
@@ -19,8 +20,8 @@ def exception_throw_002_F(taint_src):
 def taint_sink(o):
     os.system(o)
 
+
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     exception_throw_002_F(taint_src)
-

@@ -17,12 +17,7 @@
             {
               "compose": "map_009_T.py && !map_010_F.py",
               "scene": "泛型映射"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "map_005_T.py && !map_006_F.py",
               "scene": "字典/映射（Map）对象3"

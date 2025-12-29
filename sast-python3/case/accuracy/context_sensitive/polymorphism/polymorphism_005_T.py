@@ -3,7 +3,7 @@
 # real case = true
 # evaluation item = 准确度->上下文敏感分析->多态
 # scene introduction = 元类控制继承
-# level = 2+
+# level = 2
 # bind_url = accuracy/context_sensitive/polymorphism/polymorphism_005_T
 # evaluation information end
 import os

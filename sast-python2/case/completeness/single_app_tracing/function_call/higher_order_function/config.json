@@ -13,12 +13,7 @@
             {
               "compose": "!higher_order_function_007_F.py && higher_order_function_008_T.py",
               "scene": "匿名函数为参数"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "!higher_order_function_003_F.py && higher_order_function_004_T.py",
               "scene": "二阶"

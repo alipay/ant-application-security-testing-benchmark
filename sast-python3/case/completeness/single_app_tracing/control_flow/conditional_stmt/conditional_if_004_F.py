@@ -10,11 +10,10 @@ import os
 
 
 def conditional_if_004_F(taint_src):
-    res = ''
     if False:
         pass
     elif True:
-        taint_sink(res)
+        taint_sink("safe_value")
     else:
         pass
 
@@ -27,4 +26,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_if_004_F(taint_src)
-

@@ -29,12 +29,7 @@
             {
               "compose": "while_body_001_T.py && !while_body_002_F.py",
               "scene": "while"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "nested_loop_001_T.py && !nested_loop_002_F.py",
               "scene": "嵌套循环"

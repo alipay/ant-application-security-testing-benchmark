@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->单应用跟踪完整度->异常与错误处理->断言",
       "scene_levels": [
         {
-          "level": "2+",
+          "level": "2",
           "scene_list": [
             {
               "compose": "Statement_AssertStatement_001_T.java && !Statement_AssertStatement_002_F.java",

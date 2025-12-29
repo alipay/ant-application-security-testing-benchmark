@@ -9,12 +9,7 @@
             {
               "compose": "!chained_call_001_F.py && chained_call_002_T.py",
               "scene": "1"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "chained_call_003_T.py && !chained_call_004_F.py",
               "scene": "闭包链式"

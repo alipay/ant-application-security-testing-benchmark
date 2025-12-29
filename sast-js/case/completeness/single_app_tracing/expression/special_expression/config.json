@@ -69,12 +69,7 @@
             {
               "compose": "spread_operator_003_T.js && !spread_operator_004_F.js",
               "scene": "扩展运算符6"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "destructuring_assignment_005_T.js && !destructuring_assignment_006_F.js",
               "scene": "解构赋值表达式->数组解构赋值->二维"

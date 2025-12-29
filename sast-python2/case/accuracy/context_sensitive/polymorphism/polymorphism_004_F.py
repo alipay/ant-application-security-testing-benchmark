@@ -3,7 +3,7 @@
 # real case = false
 # evaluation item = 准确度->上下文敏感分析->多态
 # scene introduction = 动态方法绑定
-# level = 2+
+# level = 2
 # bind_url = accuracy/context_sensitive/polymorphism/polymorphism_004_F
 # evaluation information end
 import os

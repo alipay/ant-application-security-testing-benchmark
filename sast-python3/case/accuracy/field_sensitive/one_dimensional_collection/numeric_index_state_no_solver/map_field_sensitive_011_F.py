@@ -11,14 +11,12 @@ import os
 
 def map_field_sensitive_011_F(taint_src):
     arr = {
-        'a': '_',
-        'b': '_',
-        'c': {'taint_src': taint_src, 'd': 'a'}
+        'a': 'safe_value',
+        'b': 'safe_value',
     }
-    a = arr['a']
-    b = arr['b']
-    c = arr['c']
-    taint_sink(c['d'])  # 传递嵌套字典中的 'd' 属性值
+    key1, key2 = arr
+    arr[key1] = taint_src
+    taint_sink(arr['b'])
 
 
 def taint_sink(o):
@@ -29,4 +27,3 @@ def taint_sink(o):
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     map_field_sensitive_011_F(taint_src)
-

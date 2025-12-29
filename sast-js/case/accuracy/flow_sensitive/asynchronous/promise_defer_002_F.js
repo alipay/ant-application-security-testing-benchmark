@@ -2,7 +2,7 @@
 // real case = false
 // evaluation item = 准确度->流敏感分析->异步执行
 // scene introduction = Promise延迟
-// level = 3
+// level = 4
 // bind_url = accuracy/flow_sensitive/asynchronous/promise_defer_002_F
 // date = 2025-12-19 03:34:05
 // evaluation information end

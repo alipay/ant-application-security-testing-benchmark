@@ -13,6 +13,10 @@
             {
               "compose": "asynchronous_chain_001_T.py && !asynchronous_chain_002_F.py",
               "scene": "异步函数链"
+            },
+            {
+              "compose": "asynchronous_execution_001_T.py && !asynchronous_execution_002_F.py",
+              "scene": "异步执行"
             }
           ]
         }

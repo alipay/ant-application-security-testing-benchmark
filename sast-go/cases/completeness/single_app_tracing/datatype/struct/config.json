@@ -29,12 +29,7 @@
             {
               "compose": "struct_pointer_001_T/struct_pointer_001_T.go && !struct_pointer_002_F/struct_pointer_002_F.go",
               "scene": "结构体指针字段访问"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "struct_cross_003_T/struct_cross_003_T.go && !struct_cross_004_F/struct_cross_004_F.go",
               "scene": "结构体-内嵌"

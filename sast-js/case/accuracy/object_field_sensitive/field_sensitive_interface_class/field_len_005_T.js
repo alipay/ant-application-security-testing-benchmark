@@ -2,7 +2,7 @@
 // real case = true
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同类对象的不同字段
 // scene introduction = 路径长度
-// level = 3+
+// level = 3
 // bind_url = accuracy/object_field_sensitive/field_sensitive_interface_class/field_len_005_T
 // evaluation information end
 const { execSync } = require('child_process');

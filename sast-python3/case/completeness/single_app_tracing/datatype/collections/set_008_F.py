@@ -3,7 +3,7 @@
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
 # scene introduction = 差集操作
-# level = 2+
+# level = 2
 # bind_url = completeness/single_app_tracing/datatype/collections/set_008_F
 # evaluation information end
 import os

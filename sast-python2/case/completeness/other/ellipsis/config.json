@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->其他->ellipsis",
       "scene_levels": [
         {
-          "level": "2+",
+          "level": "2",
           "scene_list": [
             {
               "compose": "ellipsis_001_T.py && !ellipsis_002_F.py",

@@ -3,7 +3,7 @@
 # real case = false
 # evaluation item = 完整度->其他->资源管理
 # scene introduction = 文件操作->安全读写
-# level = 2+
+# level = 2
 # bind_url = completeness/other/with_as/file_rw_002_F
 # evaluation information end
 

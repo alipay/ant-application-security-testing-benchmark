@@ -10,19 +10,18 @@ import os
 
 
 def conditional_match_solver_002_T(taint_src):
-    data = ''
+    data = 'safe_value'
     match 1 + 1:  # 表达式计算为 2
         case 2:    # 匹配成功，执行分支
             data = taint_src  # 污点传播路径（触发）
     taint_sink(data)  # data 被污染为 taint_src
 
 
-
 def taint_sink(o):
     os.system(o)
+
 
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
     conditional_match_solver_002_T(taint_src)
-

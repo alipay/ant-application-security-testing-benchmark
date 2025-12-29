@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->路径敏感分析->跳转语句",
       "scene_levels": [
         {
-          "level": "4+",
+          "level": "4",
           "scene_list": [
             {
               "compose": "Interrupt_Statement_001_T.java && !Interrupt_Statement_002_F.java",

@@ -25,12 +25,7 @@
             {
               "compose": "select_001_T/select_001_T.go && !select_002_F/select_002_F.go",
               "scene": "select"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "conditional_switch_005_T/conditional_switch_005_T.go && !conditional_switch_006_F/conditional_switch_006_F.go",
               "scene": "switch嵌套"

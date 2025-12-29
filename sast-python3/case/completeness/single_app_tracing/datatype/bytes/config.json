@@ -25,12 +25,7 @@
             {
               "compose": "bytes_009_T.py && !bytes_010_F.py",
               "scene": "字节拼接"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "bytes_011_T.py && !bytes_012_F.py",
               "scene": "解码"

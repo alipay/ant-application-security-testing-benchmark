@@ -17,12 +17,7 @@
             {
               "compose": "!higher_order_function_009_F.js && higher_order_function_010_T.js",
               "scene": "匿名函数为参数"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "!higher_order_function_003_F.js && higher_order_function_004_T.js",
               "scene": "二阶"
