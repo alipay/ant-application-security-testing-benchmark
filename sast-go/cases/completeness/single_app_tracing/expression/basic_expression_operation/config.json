@@ -105,14 +105,6 @@
             {
               "compose": "relation_011_T/relation_011_T.go && !relation_012_F/relation_012_F.go",
               "scene": "关系操作->小于等于"
-            },
-            {
-              "compose": "increment_001_T/increment_001_T.go && !increment_002_F/increment_002_F.go",
-              "scene": "自增运算"
-            },
-            {
-              "compose": "decrement_001_T/decrement_001_T.go && !decrement_002_F/decrement_002_F.go",
-              "scene": "自减运算"
             }
           ]
         }

@@ -2,7 +2,7 @@
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->接口与类->复杂对象
 // scene introduction = 多层嵌套字段读取
-// level = 2+
+// level = 2
 // date = 2025-11-17 14:32:00
 // bind_url = completeness/single_app_tracing/interface_class/complex_object/deep_nested_field_read_001_T/deep_nested_field_read_001_T
 // evaluation information end

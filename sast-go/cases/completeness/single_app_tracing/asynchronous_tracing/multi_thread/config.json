@@ -15,15 +15,6 @@
               "scene": "select"
             },
             {
-              "compose": "atomic_synchronization_001_T/atomic_synchronization_001_T.go && !atomic_synchronization_002_F/atomic_synchronization_002_F.go",
-              "scene": "原子操作"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
-            {
               "compose": "asynchronous_goroutine_channel_003_T/asynchronous_goroutine_channel_003_T.go && !asynchronous_goroutine_channel_004_F/asynchronous_goroutine_channel_004_F.go",
               "scene": "多Goroutine"
             },

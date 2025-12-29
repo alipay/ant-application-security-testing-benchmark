@@ -9,7 +9,7 @@ import (
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->条件语句
 // scene introduction = switch嵌套
-// level = 2+
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/conditional_switch_006_F/conditional_switch_006_F
 // evaluation information end
 

@@ -2,7 +2,7 @@
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->异常与错误处理->异常抛出与捕获
 // scene introduction = 异常抛出->自定义异常抛出
-// level = 2+
+// level = 2
 // date = 2025-11-27 10:52:11
 // bind_url = completeness/single_app_tracing/exception_error/exception_throw/exception_throw_004_F/exception_throw_004_F
 // evaluation information end
