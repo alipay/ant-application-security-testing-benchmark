@@ -17,12 +17,7 @@
             {
               "compose": "cross_class_007_T.js && !cross_class_008_F.js",
               "scene": "构造函数声明"
-            }
-          ]
-        },
-        {
-          "level": "2+",
-          "scene_list": [
+            },
             {
               "compose": "cross_class_003_T.js && !cross_class_004_F.js",
               "scene": "跨类访问-对象别名"

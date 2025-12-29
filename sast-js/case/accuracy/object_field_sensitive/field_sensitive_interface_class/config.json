@@ -17,12 +17,7 @@
             {
               "compose": "field_len_001_T.js && !field_len_002_F.js",
               "scene": "路径长度"
-            }
-          ]
-        },
-        {
-          "level": "3+",
-          "scene_list": [
+            },
             {
               "compose": "field_len_003_T.js && !field_len_004_F.js",
               "scene": "路径长度2"
