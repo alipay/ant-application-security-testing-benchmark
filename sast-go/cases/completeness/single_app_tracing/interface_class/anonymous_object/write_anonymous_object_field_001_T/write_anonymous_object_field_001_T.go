@@ -14,7 +14,7 @@ import (
 	"os/exec"
 )
 
-func write_anonymous_object_field_003_T(__taint_src string) {
+func write_anonymous_object_field_001_T(__taint_src string) {
 	// 场景特点：向匿名对象的字段写入污染数据
 	person := struct {
 		name string
@@ -33,5 +33,5 @@ func taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	write_anonymous_object_field_003_T(__taint_src)
+	write_anonymous_object_field_001_T(__taint_src)
 }

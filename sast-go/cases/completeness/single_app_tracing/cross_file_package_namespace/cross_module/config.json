@@ -15,7 +15,7 @@
               "scene": "跨module-别名"
             },
             {
-              "compose": "(cross_module_005_T/cross_module_005_T_a/cross_module_005_T.go || cross_module_005_T/cross_module_005_T_b/cross_module_005_T.go) && !(cross_module_006_F/cross_module_006_F_a/cross_module_006_F.go || cross_module_006_F/cross_module_006_F_b/cross_module_006_F.go)",
+              "compose": "(cross_module_005_T/cross_module_005_T_a/cross_module_005_T_a.go || cross_module_005_T/cross_module_005_T_b/cross_module_005_T_b.go) && !(cross_module_006_F/cross_module_006_F_a/cross_module_006_F_a.go || cross_module_006_F/cross_module_006_F_b/cross_module_006_F_b.go)",
               "scene": "多Main包模块化管理"
             }
           ]

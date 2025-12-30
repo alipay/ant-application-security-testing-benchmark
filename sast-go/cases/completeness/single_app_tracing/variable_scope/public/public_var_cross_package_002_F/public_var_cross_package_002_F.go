@@ -15,14 +15,18 @@ import (
 	"os/exec"
 )
 
+func public_var_cross_package_002_F(__taint_src) {
+	// 场景特点：在不同包中为public变量赋值
+	mypackage.SetPublicVar(__taint_src)
+	// 场景特点：在主包中访问不同包的public变量，但污点数据未传播到该变量
+	__taint_sink(mypackage.PublicVar)
+}
+
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
 }
 
 func main() {
 	__taint_src := "taint_src_value"
-	// 场景特点：在不同包中为public变量赋值
-	mypackage.SetPublicVar(__taint_src)
-	// 场景特点：在主包中访问不同包的public变量，但污点数据未传播到该变量
-	__taint_sink(mypackage.PublicVar)
+    public_var_cross_package_002_F(__taint_src)
 }
