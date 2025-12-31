@@ -10,8 +10,8 @@
 import os
 from .. import cross_module_036_F_a
 
-def cross_module_035_T_b(taint_src):
-    result = cross_module_036_F_a.source(taint_src)
+def cross_module_036_F_b(taint_src):
+    result = cross_module_036_F_a.cross_module_036_F_a(taint_src)
     taint_sink(result)
 
 
@@ -21,5 +21,5 @@ def taint_sink(o):
 
 if __name__ == '__main__':
     taint_src = "taint_src_value"
-    cross_module_035_T_b(taint_src)
+    cross_module_036_F_b(taint_src)
 

@@ -9,7 +9,10 @@
 
 from A.cross_module_027_T_a import cross_module_027_T_a
 
+def cross_module_027_T(taint_src):
+    cross_module_027_T_a(taint_src)
+
 if __name__ == "__main__":
     taint_src = "taint_src_value"
-    cross_module_027_T_a(taint_src)
+    cross_module_027_T(taint_src)
 

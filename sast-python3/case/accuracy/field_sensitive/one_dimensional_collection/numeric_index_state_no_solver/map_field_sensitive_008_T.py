@@ -9,7 +9,7 @@
 import os
 
 
-def map_object_sensitive_008_T(taint_src):
+def map_field_sensitive_008_T(taint_src):
     my_map = {}  
     my_map[taint_src] = 'value1'  # 污染源作为键，值为干净的 'value1'
     my_map['key2'] = 'value2'       # 设置另一个键值对（非污染键）
@@ -22,5 +22,5 @@ def taint_sink(o):
 # 示例调用
 if __name__ == "__main__":
     taint_src = "taint_src_value"
-    map_object_sensitive_008_T(taint_src)
+    map_field_sensitive_008_T(taint_src)
 

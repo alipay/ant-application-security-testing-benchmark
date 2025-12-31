@@ -9,7 +9,7 @@
 import os
 
 
-def return_normal_value_passing_001_f(taint_src):
+def return_normal_value_passing_001_F(taint_src):
     def process(src):
         return '_'  # 直接返回传入的参数
 
@@ -23,5 +23,5 @@ def taint_sink(o):
 
 if __name__ == '__main__':
     taint_src = "taint_src_value"
-    return_normal_value_passing_001_f(taint_src)
+    return_normal_value_passing_001_F(taint_src)
 

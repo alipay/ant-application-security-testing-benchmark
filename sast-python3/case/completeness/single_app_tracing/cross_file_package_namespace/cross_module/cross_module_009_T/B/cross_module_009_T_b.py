@@ -16,4 +16,4 @@ def cross_module_009_T_b(taint_src):
     taint_sink(result)
 
 def taint_sink(o):
-    os.system(o) 
+    os.system(o)

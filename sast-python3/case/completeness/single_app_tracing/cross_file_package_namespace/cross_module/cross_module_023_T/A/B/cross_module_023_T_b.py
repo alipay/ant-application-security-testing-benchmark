@@ -8,5 +8,5 @@
 # evaluation information end
 
 
-def function_b(taint_src):
+def cross_module_023_T_b(taint_src):
     return taint_src
