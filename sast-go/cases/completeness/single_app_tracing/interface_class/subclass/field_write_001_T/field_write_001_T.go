@@ -23,7 +23,7 @@ type SubClass struct {
 	Base
 }
 
-func subclass_field_write_005_T(__taint_src string) {
+func field_write_001_T(__taint_src string) {
 	// 场景特点：给子类结构体字段直接赋值
 	var s SubClass
 	s.id = 1
@@ -37,5 +37,5 @@ func taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	subclass_field_write_005_T(__taint_src)
+	field_write_001_T(__taint_src)
 }

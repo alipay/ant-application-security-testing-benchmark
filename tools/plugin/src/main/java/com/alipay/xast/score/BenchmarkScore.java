@@ -79,19 +79,19 @@ public class BenchmarkScore extends AbstractMojo {
   static final String USAGE_MSG =
           "Usage: -cf /PATH/TO/scoringconfigfile.yaml or -cr scoringconfigfile.yaml (where file is a resource)";
 
-  // The 1st line of a supplied expectedresults.csv file looks like:
-  // # test name, category, real vulnerability, cwe, TESTSUITENAME version: x.y, YYYY-MM-DD
+  // 提供的预期结果.csv 文件的第一行如下所示：
+  // # 测试名称、类别、真实漏洞、cwe、TESTSUITENAME 版本：x.y、YYYY-MM-DD
 
-  // Prefixes for generated test suites and file names. Used by lots of other classes for
-  // scorecard generation.
-  public static String TESTSUITEVERSION; // Pulled from expected results file
-  public static String TESTSUITE; // Pulled from expected results file
+  // 生成的测试套件和文件名的前缀。被许多其他类用于
+  // 记分卡生成。
+  public static String TESTSUITEVERSION; // 从预期结果文件中提取
+  public static String TESTSUITE; // 从预期结果文件中提取
   public static final String TEST = "Test";
   public static String TESTCASENAME; // Set w/TESTSUITE. i.e., TESTSUITE + TEST;
 
   public static String TESTPACKAGE = "org.owasp.benchmark.testcode.";
 
-  // The # of numbers in a test case name. Must match what is actually generated.
+  // 测试用例名称中的数字数量。必须与实际生成的内容匹配。
   public static final int TESTIDLENGTH = 5;
 
   private static final String HOMEFILENAME = "Scorecard_Home.html";
@@ -304,9 +304,7 @@ public class BenchmarkScore extends AbstractMojo {
     }
 
     try {
-      if (!rawToolResultsFile.isDirectory()) {
-        processNew(rawToolResultsFile, expectedResultsMap, tools, scoreCardDir, cons.get("lang"));
-      }
+      processNew(rawToolResultsFile, expectedResultsMap, tools, scoreCardDir, cons.get("lang"));
       System.exit(-1);
     } catch (Exception e) {
       System.out.println("Error during processing: " + e.getMessage());
@@ -884,8 +882,8 @@ public class BenchmarkScore extends AbstractMojo {
    */
 
   private static TestSuiteResults readActualResultsNew(File fileToParse) throws Exception {
-    ResultFile resultFile = new ResultFile(fileToParse);
     TestSuiteResults tr = null;
+    ResultFile resultFile = new ResultFile(fileToParse);
 
     Optional<Reader> reader =
             Reader.allReaders().stream().filter(r -> r.canRead(resultFile)).findAny();
@@ -1352,7 +1350,7 @@ public class BenchmarkScore extends AbstractMojo {
             if (level == null) {
               throw new NullPointerException(
                       "Please check " + caseName + " is the relevant configuration correct?" +
-                      " bind_url: " + testCaseResult.getUrl() + " | evaluation_item: " + testCaseResult.getAssesionProject()
+                              " bind_url: " + testCaseResult.getUrl() + " | evaluation_item: " + testCaseResult.getAssesionProject()
               );
             }
             if (!level.contains("+")) {

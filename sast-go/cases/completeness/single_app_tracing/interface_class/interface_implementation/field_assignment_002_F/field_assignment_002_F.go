@@ -10,7 +10,7 @@ package main
 
 import "os/exec"
 
-func interface_field_assignment_012_F(__taint_src string) {
+func field_assignment_002_F(__taint_src string) {
 	// 场景特点：将接口类型字段赋值为实现类实例
 	container := &Container{}
 	testImpl := &IctestImpl{}
@@ -45,5 +45,5 @@ type Container struct {
 
 func main() {
 	__taint_src := "taint_src_value"
-	interface_field_assignment_012_F(__taint_src)
+	field_assignment_002_F(__taint_src)
 }

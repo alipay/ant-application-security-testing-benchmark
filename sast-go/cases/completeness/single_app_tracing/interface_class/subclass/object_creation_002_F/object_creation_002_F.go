@@ -23,7 +23,7 @@ type SubClass struct {
 	Base
 }
 
-func subclass_object_creation_002_F(__taint_src string) {
+func object_creation_002_F(__taint_src string) {
 	// 场景特点：使用字面值初始化子类结构体但使用安全值
 	s := SubClass{
 		Base: Base{id: 1},
@@ -38,5 +38,5 @@ func taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	subclass_object_creation_002_F(__taint_src)
+	object_creation_002_F(__taint_src)
 }

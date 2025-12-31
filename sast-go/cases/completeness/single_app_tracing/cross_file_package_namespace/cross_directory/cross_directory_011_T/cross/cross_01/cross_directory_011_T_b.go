@@ -9,7 +9,7 @@
 package cross_directory_011_T_b
 import "os/exec"
 
-func SayHello(taint_src string) {
+func Cross_directory_011_T_b(taint_src string) {
 	__taint_sink(taint_src)
 }
 

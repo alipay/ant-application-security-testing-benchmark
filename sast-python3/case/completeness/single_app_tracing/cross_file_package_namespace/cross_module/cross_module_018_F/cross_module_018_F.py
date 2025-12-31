@@ -8,10 +8,10 @@
 # evaluation information end
 
 import os
-from A import function_a, function_b
+from A import cross_module_018_F_a, cross_module_018_F_b
 
 def cross_module_018_F(taint_src):
-    result = function_b(taint_src)  
+    result = cross_module_018_F_b(taint_src)
     taint_sink(result)
 
 def taint_sink(o):

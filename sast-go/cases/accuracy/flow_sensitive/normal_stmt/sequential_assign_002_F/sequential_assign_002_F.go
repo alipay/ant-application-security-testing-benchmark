@@ -14,7 +14,7 @@ import (
 	"os/exec"
 )
 
-func sequentialAssign_002_F(__taint_src string) {
+func sequential_assign_002_F(__taint_src string) {
 	// 场景特点：按顺序执行多个赋值语句，但污点数据未传播到最终变量
 	var a string
 	var b string
@@ -30,5 +30,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	sequentialAssign_002_F(__taint_src)
+	sequential_assign_002_F(__taint_src)
 }

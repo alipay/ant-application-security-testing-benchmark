@@ -1,6 +1,5 @@
 package main
 
-
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->库函数调用
@@ -10,13 +9,13 @@ package main
 // evaluation information end
 
 import (
-	"os/exec"
 	"encoding/json"
 	"fmt"
+	"os/exec"
 )
 
 func arg_arg_002_F(__taint_src string) {
-	taintedData := __taint_src
+	taintedData := "{\"key\": \"" + __taint_src + "\"}"
 	result, err := process(taintedData)
 	_ = result
 	__taint_sink(err)
@@ -31,9 +30,9 @@ func process(arg string) (map[string]interface{}, error) {
 
 func __taint_sink(o interface{}) {
 	_ = exec.Command("sh", "-c", fmt.Sprintf("%v", o)).Run()
-	}
+}
 
 func main() {
-	__taint_src := "{\"key\": \"taint_src_value\"}" 
-    arg_arg_002_F(__taint_src)
+	__taint_src := "taint_src_value"
+	arg_arg_002_F(__taint_src)
 }

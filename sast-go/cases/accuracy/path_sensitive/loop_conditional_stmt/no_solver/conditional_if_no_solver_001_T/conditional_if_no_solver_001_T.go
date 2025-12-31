@@ -10,7 +10,7 @@ import "os/exec"
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/conditional_if_no_solver_001_T/conditional_if_no_solver_001_T
 // evaluation information end
 
-func conditional_if_no_solver_001_F(__taint_src string) {
+func conditional_if_no_solver_001_T(__taint_src string) {
 	var res string
 	if true {
 		res = __taint_src
@@ -25,5 +25,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	conditional_if_no_solver_001_F(__taint_src)
+	conditional_if_no_solver_001_T(__taint_src)
 }
