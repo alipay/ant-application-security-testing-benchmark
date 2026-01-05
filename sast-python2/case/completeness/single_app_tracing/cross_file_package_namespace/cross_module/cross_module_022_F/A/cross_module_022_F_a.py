@@ -7,7 +7,7 @@
 # bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_module_022_F/A/cross_module_022_F_a
 # evaluation information end
 
-from A.B import function_b
+from A.B import cross_module_022_F_b
 
-def function_a(taint_src):
-    return function_b(taint_src)
+def cross_module_022_F_a(taint_src):
+    return cross_module_022_F_b(taint_src)

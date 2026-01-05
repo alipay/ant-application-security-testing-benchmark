@@ -7,5 +7,5 @@
 # bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_module_017_T/A/cross_module_017_T_a
 # evaluation information end
 
-def function_a(taint_src):
+def cross_module_017_T_a(taint_src):
     return taint_src

@@ -9,5 +9,5 @@
 
 import A.B
 
-def function_a(taint_src):
-    return A.B.function_b(taint_src)
+def cross_module_024_F_a(taint_src):
+    return A.B.cross_module_024_F_b(taint_src)
