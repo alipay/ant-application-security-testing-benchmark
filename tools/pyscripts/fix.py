@@ -192,7 +192,9 @@ def main():
     
     # 如果路径是相对路径，转换为绝对路径
     if not os.path.isabs(base_path):
-        base_path = os.path.join(os.getcwd(), base_path)
+        # 获取工作空间根目录（脚本目录的父级的父级目录）
+        workspace_root = Path(__file__).parent.parent.parent
+        base_path = str(workspace_root / base_path)
     
     if len(sys.argv) > 2:
         # 解析文件扩展名参数
