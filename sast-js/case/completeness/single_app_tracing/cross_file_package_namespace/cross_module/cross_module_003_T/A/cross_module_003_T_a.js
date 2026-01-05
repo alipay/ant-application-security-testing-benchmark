@@ -7,7 +7,7 @@
 // evaluation information end
 
 
-export default function defaultExport(__taint_src) {
+export default function cross_module_003_T_a(__taint_src) {
   return __taint_src + "_default";
 }
 

@@ -7,12 +7,12 @@
 // evaluation information end
 
 
-function exportString() {
+function cross_module_006_F_a() {
   return "_";
 }
 
 export  {
-  exportString,
+  cross_module_006_F_a,
 };
 
 
