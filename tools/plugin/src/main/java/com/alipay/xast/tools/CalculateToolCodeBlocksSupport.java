@@ -19,7 +19,7 @@ package com.alipay.xast.tools;
 
 import com.alipay.xast.CodeblockUtils;
 import com.alipay.xast.helpers.Utils;
-import com.alipay.xast.score.TestCaseResult;
+import com.alipay.xast.score.models.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
 import com.alipay.xast.score.TestSuiteResults.ToolType;
 import org.apache.commons.cli.CommandLine;

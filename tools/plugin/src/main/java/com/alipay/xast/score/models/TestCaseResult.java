@@ -15,7 +15,7 @@
  * @author Dave Wichers
  * @created 2015
  */
-package com.alipay.xast.score;
+package com.alipay.xast.score.models;
 
 import com.alipay.xast.tools.AbstractTestCaseRequest;
 

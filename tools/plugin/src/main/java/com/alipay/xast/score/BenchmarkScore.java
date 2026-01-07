@@ -21,6 +21,7 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.read.builder.ExcelReaderSheetBuilder;
 import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.alipay.xast.score.TestSuiteResults.ToolType;
+import com.alipay.xast.score.models.TestCaseResult;
 import com.alipay.xast.score.parsers.Reader;
 import com.alipay.xast.score.util.BooleanExpressionEvaluatorUtil;
 import com.alipay.xast.score.util.ScoreCardFormart;

@@ -27,7 +27,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -48,7 +47,7 @@ public abstract class Reader {
     return Arrays.asList(
             new PMDReader(),
             new ZapReader(),
-            new YASAReader()
+            new SarifReader()
     );
   }
 

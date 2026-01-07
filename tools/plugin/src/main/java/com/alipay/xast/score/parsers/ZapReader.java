@@ -18,7 +18,7 @@
 package com.alipay.xast.score.parsers;
 
 import com.alipay.xast.score.ResultFile;
-import com.alipay.xast.score.TestCaseResult;
+import com.alipay.xast.score.models.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
 import org.apache.commons.lang3.StringUtils;
 import org.w3c.dom.Document;
