@@ -8,6 +8,7 @@
 1. 检测文件路径是否和注释中的 bind_url 一致
 2. 检测go、js、py2、py3检测文件内容中是否有文件同名方法/类
 3. 支持同名方法检测白名单，跳过指定文件的同名方法/类检测（使用完整文件名匹配，包含扩展名）
+4. 检测config.json中的字段名称是否与config.json所在文件夹名称一致
 
 使用方法:
     python check.py [目录路径] [文件后缀1,文件后缀2,...] [同名方法检测白名单文件1,同名方法检测白名单文件2,...]
@@ -34,6 +35,7 @@
 4. 检查文件内容中是否有与文件名同名的方法/类
 5. 支持同名方法检测白名单跳过特定文件的同名方法/类检测
 6. 检测config.json中声明的case文件是否实际存在（文件缺失检测）
+7. 检测config.json中的字段名称是否与config.json所在文件夹名称一致
 """
 
 import json
@@ -444,6 +446,19 @@ class ConfigLevelChecker:
 
             # 获取config文件所在目录
             config_dir = config_path.parent
+            
+            # 检查config中的字段名称是否与所在文件夹名称一致
+            expected_field_name = config_dir.name
+            actual_field_names = list(config.keys())
+            
+            if expected_field_name not in actual_field_names:
+                self.inconsistencies.append({
+                    'config_file': str(config_path),
+                    'config_level': 'N/A',
+                    'go_file': str(config_path),
+                    'go_level': f'期望字段: {expected_field_name}',
+                    'status': f'config字段名称不一致(实际: {", ".join(actual_field_names)})'
+                })
 
             # 遍历config中的所有测试项
             for test_category, test_items in config.items():
@@ -653,6 +668,8 @@ class ConfigLevelChecker:
                 problem_type = "config level格式包含+号"
             elif status.startswith('文件level格式包含+号'):
                 problem_type = "文件level格式包含+号"
+            elif status.startswith('config字段名称不一致'):
+                problem_type = "config字段名称不一致"
             else:
                 problem_type = status
 
