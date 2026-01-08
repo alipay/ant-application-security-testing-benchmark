@@ -6,6 +6,8 @@ import com.alipay.xast.score.TestSuiteResults;
 import com.alipay.xast.score.models.ThreadFlowLocation;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class SarifReader extends Reader {
+  private static final Logger logger = LoggerFactory.getLogger(SarifReader.class);
 
   private static final int PATH_DEEP = 1;
 
@@ -56,7 +59,8 @@ public class SarifReader extends Reader {
 
   // 单文件解析器
   private TestSuiteResults fileParse(ResultFile resultFile) {
-    TestSuiteResults results = new TestSuiteResults("yasa", false, TestSuiteResults.ToolType.SAST);
+    String toolName = getToolName(resultFile);
+    TestSuiteResults results = new TestSuiteResults(toolName, false, TestSuiteResults.ToolType.SAST);
 
     results.setTime(resultFile.file());
 
@@ -75,7 +79,8 @@ public class SarifReader extends Reader {
 
   // 文件夹解析器
   private TestSuiteResults dirParse(List<ResultFile> resultFiles) throws Exception {
-    TestSuiteResults results = new TestSuiteResults("yasa", false, TestSuiteResults.ToolType.SAST);
+    String toolName = getToolName(resultFiles.get(0));
+    TestSuiteResults results = new TestSuiteResults(toolName, false, TestSuiteResults.ToolType.SAST);
 
     for (ResultFile resultFile : resultFiles) {
       if (resultFile.filename().endsWith(".sarif")) {
@@ -96,6 +101,20 @@ public class SarifReader extends Reader {
       }
     }
     return results;
+  }
+
+  // 获取工具名称
+  private String getToolName(ResultFile resultFile) {
+    String name = "yasa";
+    try {
+      JSONObject json = resultFile.json();
+      JSONArray runs = json.getJSONArray("runs");
+      JSONObject run = runs.getJSONObject(0);
+      name = run.getJSONObject("tool").getJSONObject("driver").getString("name");
+    } catch (Exception e) {
+      logger.error("获取工具名称失败", e);
+    }
+    return name;
   }
 
   // 处理文件夹构造文件列表
@@ -150,6 +169,7 @@ public class SarifReader extends Reader {
       }
     }
 
+    // 文件名去重
     for (String testCaseName : set) {
       TestCaseResult testCase = new TestCaseResult();
       testCase.setTestCaseName(testCaseName);
@@ -176,10 +196,19 @@ public class SarifReader extends Reader {
       ThreadFlowLocation threadFlowLocation = new ThreadFlowLocation();
       threadFlowLocation.setFilePath(artifactLocation.getString("uri"));
       threadFlowLocation.setFileName(extractTestCaseName(artifactLocation.getString("uri")));
-      threadFlowLocation.setStartLine(region.getInt("startLine"));
-      threadFlowLocation.setStartColumn(region.getInt("startColumn"));
-      threadFlowLocation.setEndLine(region.getInt("endLine"));
-      threadFlowLocation.setEndColumn(region.getInt("endColumn"));
+
+      if (region.has("startLine")) {
+        threadFlowLocation.setStartLine(region.getInt("startLine"));
+      }
+      if (region.has("startColumn")) {
+        threadFlowLocation.setStartColumn(region.getInt("startColumn"));
+      }
+      if (region.has("endLine")) {
+        threadFlowLocation.setEndLine(region.getInt("endLine"));
+      }
+      if (region.has("endColumn")) {
+        threadFlowLocation.setEndColumn(region.getInt("endColumn"));
+      }
 
       threadFlowLocations.add(threadFlowLocation);
     }
