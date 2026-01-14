@@ -25,6 +25,10 @@
             {
               "compose": "str_conversion_001_T.py && !str_conversion_002_F.py",
               "scene": "字符串转换"
+            },
+            {
+              "compose": "custom_conversion_001_T.py && !custom_conversion_002_F.py",
+              "scene": "自定义转换"
             }
           ]
         }
