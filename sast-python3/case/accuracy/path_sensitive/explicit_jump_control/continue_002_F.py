@@ -12,7 +12,8 @@ import os
 def continue_002_F(taint_src):
     res = 'safe_value'
     for i in range(10):
-        continue
+        if i < 10:
+            continue
         res = taint_src
 
     taint_sink(res)
