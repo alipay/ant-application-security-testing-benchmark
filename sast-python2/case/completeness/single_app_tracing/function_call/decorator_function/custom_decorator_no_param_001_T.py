@@ -1,0 +1,34 @@
+# -*- coding: utf-8 -*-
+# evaluation information start
+# real case = true
+# evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->装饰器函数
+# scene introduction = 自定义无参装饰器
+# level = 2
+# bind_url = completeness/single_app_tracing/function_call/decorator_function/custom_decorator_no_param_001_T
+# date = 2026-01-06 09:53:06
+# evaluation information end
+import os
+
+
+def custom_decorator_no_param_001_T(taint_src):
+    def my_decorator(func):
+        def wrapper(*args, **kwargs):
+            return func((taint_src), **kwargs)
+        return wrapper
+
+    # 场景特点：使用自定义无参装饰器修饰函数
+    @my_decorator
+    def process(data):
+        return data
+
+    result = process("safe_value")
+    taint_sink(result)
+
+
+def taint_sink(o):
+    os.system(o)
+
+
+if __name__ == u"__main__":
+    taint_src = u"taint_src_value"
+    custom_decorator_no_param_001_T(taint_src)
