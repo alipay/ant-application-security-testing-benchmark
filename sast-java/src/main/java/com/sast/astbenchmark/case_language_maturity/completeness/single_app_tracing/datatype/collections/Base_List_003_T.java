@@ -16,7 +16,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
-// scene introduction = List
+// scene introduction = List2
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_List_003_T
 // evaluation information end
