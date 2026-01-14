@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = true
 # evaluation item = 完整度->动态特性跟踪完整度->反射调用
-# scene introduction = 字符串常量->反射
+# scene introduction = 字符串常量->反射1
 # level = 3
 # bind_url = completeness/dynamic_tracing/dynamic_call/dynamic_call_reflect_002_T
 # evaluation information end
@@ -16,10 +16,10 @@ def dynamic_call_reflect_002_T(taint_src):
 
     obj = Obj(taint_src)
 
-    def taint_sink(o):
-        os.system(o)
-
     taint_sink(getattr(obj, u'name'))
+    
+def taint_sink(o):
+        os.system(o)
 
 
 # 示例调用
