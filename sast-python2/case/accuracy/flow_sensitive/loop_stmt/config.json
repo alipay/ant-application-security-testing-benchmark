@@ -13,6 +13,10 @@
             {
               "compose": "for_zip_001_T.py && !for_zip_002_F.py",
               "scene": "for_zip"
+            },
+            {
+              "compose": "while_001_T.py && !while_002_F.py",
+              "scene": "while"
             }
           ]
         }
