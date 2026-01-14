@@ -15,10 +15,15 @@ ERROR_LIST = {
     'FILE_MISSING': '文件缺失',
 }
 
-# 编译正则表达式以提高性能
-COMMENT_START_PATTERN = re.compile(r'evaluation information start\n?', re.IGNORECASE | re.MULTILINE)
-LEVEL_PATTERN = re.compile(r'level\s*=\s*(\d*\+?)\n?', re.IGNORECASE | re.MULTILINE)
-BIND_URL_PATTERN = re.compile(r'bind_url\s*=\s*([^#\n\r]*)\n?', re.IGNORECASE | re.MULTILINE)
-REAL_CASE_PATTERN = re.compile(r'real case\s*=\s*([^#\n\r]*)\n?', re.IGNORECASE | re.MULTILINE)
-EVALUATION_ITEM_PATTERN = re.compile(r'evaluation item\s*=\s*([^#\n\r]*)\n?', re.IGNORECASE | re.MULTILINE)
-SCENE_INTRODUCTION_PATTERN = re.compile(r'scene introduction\s*=\s*([^#\n\r]*)\n?', re.IGNORECASE | re.MULTILINE)
+def init_pattern(comment_icon):
+    """初始化正则表达式模式"""
+    end_flag = r'([^\n\r]*)'
+
+    return {
+        'COMMENT_START_PATTERN': re.compile(fr'^({comment_icon}[ \t]*evaluation information start){end_flag}', re.IGNORECASE | re.MULTILINE),
+        'LEVEL_PATTERN': re.compile(fr'^({comment_icon}[ \t]*level[ \t]*=)[ \t]*{end_flag}', re.IGNORECASE | re.MULTILINE),
+        'BIND_URL_PATTERN': re.compile(fr'^({comment_icon}[ \t]*bind_url[ \t]*=)[ \t]*{end_flag}', re.IGNORECASE | re.MULTILINE),
+        'REAL_CASE_PATTERN': re.compile(fr'^({comment_icon}[ \t]*real case[ \t]*=)[ \t]*{end_flag}', re.IGNORECASE | re.MULTILINE),
+        'EVALUATION_ITEM_PATTERN': re.compile(fr'^({comment_icon}[ \t]*evaluation item[ \t]*=)[ \t]*{end_flag}', re.IGNORECASE | re.MULTILINE),
+        'SCENE_INTRODUCTION_PATTERN': re.compile(fr'^({comment_icon}[ \t]*scene introduction[ \t]*=)[ \t]*{end_flag}', re.IGNORECASE | re.MULTILINE)
+    }

@@ -25,8 +25,7 @@ import sys
 from pathlib import Path
 from typing import List, Dict
 import subprocess
-from common import ERROR_LIST, BIND_URL_PATTERN, REAL_CASE_PATTERN, LEVEL_PATTERN, EVALUATION_ITEM_PATTERN, \
-    SCENE_INTRODUCTION_PATTERN, COMMENT_START_PATTERN
+from common import ERROR_LIST, init_pattern
 
 
 class AutoFixerFromCheck(object):
@@ -36,6 +35,8 @@ class AutoFixerFromCheck(object):
         self.file_extensions = file_extensions
         self.fixed_files = 0
         self.fixed_fail_files = 0
+
+        self.patterns = init_pattern('#' if file_extensions == 'py' else '//')
 
     def _common_fix(self, err_type: str, fix_error_dict: Dict[str, List[str]], callback):
         """通用修复方法"""
@@ -72,17 +73,21 @@ class AutoFixerFromCheck(object):
                         self.fixed_fail_files += 1
                         print(f'❌ 修复 {file_path} 时出错, {e}')
 
-            print(f'✅ {err_type} 问题修复完成，成功修复 {fixed_count} 个文件, 失败修复 {fixed_fail_count} 个文件')
+            print(f'✅ {err_type} 问题修复完成，成功修复 {fixed_count} 个问题, 失败修复 {fixed_fail_count} 个问题')
 
     def _fix_bind_url(self, content: str, expected_value: str):
         """修复 bind_url 不一致"""
-        return re.sub(BIND_URL_PATTERN, f'bind_url = {expected_value}\n', content)
+        new_content = content
+        if self.patterns['BIND_URL_PATTERN'].search(content) is None:
+            new_content = self._fix_missing_comment(content)
+
+        return re.sub(self.patterns['BIND_URL_PATTERN'], rf'\g<1> {expected_value}', new_content)
 
     def _fix_level_has_plus(self, error_list: List[str]):
         """修复 level 含有 + 号"""
         pass
 
-    def _fix_config_filed(self, content: str, expected_value: str):
+    def _fix_config_filed(self, content: str, expected_value: str) -> str:
         """修复 config 字段和所在文件夹名不一致"""
 
         config_json = json.loads(content)
@@ -100,36 +105,46 @@ class AutoFixerFromCheck(object):
     def _fix_level_not_same(self, content: str, expected_value) -> str:
         """修复 level 和 config 中的 level 不一致"""
         new_content = content
-        if LEVEL_PATTERN.search(content) is None:
+        if self.patterns['LEVEL_PATTERN'].search(content) is None:
             new_content = self._fix_missing_comment(content)
 
-        return re.sub(LEVEL_PATTERN, f'level = {expected_value}\n', new_content)
+        return re.sub(self.patterns['LEVEL_PATTERN'], rf'\g<1> {expected_value}', new_content)
 
-    def _fix_scene_not_same(self, content: str, expected_value: str):
+    def _fix_scene_not_same(self, content: str, expected_value: str) -> str:
         """修复 scene 和 config 中的 scene 不一致"""
-        return re.sub(SCENE_INTRODUCTION_PATTERN, f'scene introduction = {expected_value}\n', content)
+        new_content = content
+        if self.patterns['SCENE_INTRODUCTION_PATTERN'].search(content) is None:
+            new_content = self._fix_missing_comment(content)
+
+        return re.sub(self.patterns['SCENE_INTRODUCTION_PATTERN'], rf'\g<1> {expected_value}', new_content)
 
     def _fix_real_case(self, content: str, expected_value: str) -> str:
         """修复 real case 错误"""
-        return re.sub(REAL_CASE_PATTERN, f'real case = {expected_value}\n', content)
+        new_content = content
+        if self.patterns['REAL_CASE_PATTERN'].search(content) is None:
+            new_content = self._fix_missing_comment(content)
+        return re.sub(self.patterns['REAL_CASE_PATTERN'], rf'\g<1> {expected_value}', new_content)
 
     def _fix_evaluation_item(self, content: str, expected_value: str):
         """修复 evaluation item 和 config 中的 evaluation_item 不一致"""
-        return re.sub(EVALUATION_ITEM_PATTERN, f'evaluation item = {expected_value}\n',
-                      content)
+        new_content = content
+        if self.patterns['EVALUATION_ITEM_PATTERN'].search(content) is None:
+            new_content = self._fix_missing_comment(content)
+        return re.sub(self.patterns['EVALUATION_ITEM_PATTERN'], rf'\g<1> {expected_value}',
+                      new_content)
 
     def _fix_missing_comment(self, content: str) -> str:
         """修复缺失注释"""
-        start_match = COMMENT_START_PATTERN.search(content)
+        start_match = self.patterns['COMMENT_START_PATTERN'].search(content)
         comment_icon = '//'
         if self.file_extensions == 'py':
             comment_icon = '#'
         if start_match and start_match.group(0) != '':
-            real_case =  REAL_CASE_PATTERN.search(content)
-            evaluation_item = EVALUATION_ITEM_PATTERN.search(content)
-            scene = SCENE_INTRODUCTION_PATTERN.search(content)
-            level = LEVEL_PATTERN.search(content)
-            bind_url = BIND_URL_PATTERN.search(content)
+            real_case =  self.patterns['REAL_CASE_PATTERN'].search(content)
+            evaluation_item = self.patterns['EVALUATION_ITEM_PATTERN'].search(content)
+            scene = self.patterns['SCENE_INTRODUCTION_PATTERN'].search(content)
+            level = self.patterns['LEVEL_PATTERN'].search(content)
+            bind_url = self.patterns['BIND_URL_PATTERN'].search(content)
 
             # 清空之前的注释
             other_content = re.sub(f'^.*?{re.escape('evaluation information end')}', '', content, flags=re.DOTALL)
@@ -180,10 +195,6 @@ class AutoFixerFromCheck(object):
             ]
             result = subprocess.run(cmd, capture_output=True, text=True, cwd=script_dir.parent.parent)
             check_output = result.stdout
-
-            if result.returncode != 0:
-                print(f"运行 check.py 失败: {result.stderr}")
-                return {'fixed_files': [], 'skipped_files': [], 'errors': [result.stderr]}
 
             lines = check_output.split('\n')
 
@@ -261,7 +272,9 @@ def main():
 
     error_count = 0
     for key, value in fix_error_dict.items():
-        error_count += len(value)
+        for item in value:
+            if not item.startswith('期望'):
+                error_count += 1
 
     if error_count == 0:
         print("\n✅ 没有发现问题，无需修复")
@@ -270,9 +283,9 @@ def main():
         fixer.run_fix(fix_error_dict)
 
     if fixer.fixed_files > 0:
-        print(f"\n✅ 修复完成，总共成功修复 {fixer.fixed_files} 个文件")
+        print(f"\n✅ 修复完成，总共成功修复 {fixer.fixed_files} 个问题")
     if fixer.fixed_fail_files > 0:
-        print(f"❌ 总共修复失败 {fixer.fixed_fail_files} 个文件")
+        print(f"❌ 总共修复失败 {fixer.fixed_fail_files} 个问题")
 
 
 if __name__ == '__main__':

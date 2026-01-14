@@ -30,8 +30,7 @@ import re
 import sys
 from pathlib import Path
 from typing import List, Set, Dict, Optional, TypedDict
-from common import ERROR_LIST, LEVEL_PATTERN, REAL_CASE_PATTERN, BIND_URL_PATTERN, EVALUATION_ITEM_PATTERN, \
-    SCENE_INTRODUCTION_PATTERN
+from common import ERROR_LIST, init_pattern
 
 
 # 不一致类型
@@ -80,6 +79,9 @@ class ConfigLevelChecker(object):
         self.checked_fail_files = 0
         self.checked_config_files = 0
         self.checked_fail_config_files = 0
+        self.error_count = 0
+
+        self.patterns = init_pattern('#' if file_extensions == 'py' else '//')
 
         # 初始化 inconsistencies
         for error in ERROR_LIST.values():
@@ -341,6 +343,7 @@ class ConfigLevelChecker(object):
             return []
 
     def _set_inconsistencies(self, file_path, problem, expectation=None):
+        self.error_count += 1
         self.inconsistencies[problem].append({
             'file_path': str(file_path),
             'problem': problem,
@@ -351,7 +354,7 @@ class ConfigLevelChecker(object):
         """从文件中提取注释信息"""
 
         def get_match_value(match):
-            return match.group(1) if match else None
+            return match.group(2) if match else None
 
         result: FileCommentInfo = {
             'level': None,
@@ -364,11 +367,11 @@ class ConfigLevelChecker(object):
         try:
             with open(file_path, 'r', encoding='utf-8') as f:
                 file_content = f.read()
-                level_match = LEVEL_PATTERN.search(file_content)
-                real_case_match = REAL_CASE_PATTERN.search(file_content)
-                bind_url_match = BIND_URL_PATTERN.search(file_content)
-                evaluation_item = EVALUATION_ITEM_PATTERN.search(file_content)
-                scene_introduction = SCENE_INTRODUCTION_PATTERN.search(file_content)
+                level_match = self.patterns['LEVEL_PATTERN'].search(file_content)
+                real_case_match = self.patterns['REAL_CASE_PATTERN'].search(file_content)
+                bind_url_match = self.patterns['BIND_URL_PATTERN'].search(file_content)
+                evaluation_item = self.patterns['EVALUATION_ITEM_PATTERN'].search(file_content)
+                scene_introduction = self.patterns['SCENE_INTRODUCTION_PATTERN'].search(file_content)
 
                 result['level'] = get_match_value(level_match)
                 result['real_case'] = get_match_value(real_case_match)
@@ -573,11 +576,13 @@ def main():
     checker.run_check()
     checker.generate_report()
 
-    print(f"\n✅ 总计检查配置文件: {checker.checked_config_files}")
-    print(f"❌ 其中检查失败: {checker.checked_fail_config_files}")
-    print(f"✅ 总计检查文件: {checker.checked_files}")
-    print(f"❌ 其中检查失败: {checker.checked_fail_files}")
-
+    print(f"\n✅ 总计检查配置文件: {checker.checked_config_files} 个")
+    if checker.checked_fail_config_files > 0:
+        print(f"❌ 其中检查失败: {checker.checked_fail_config_files} 个")
+    print(f"✅ 总计检查文件: {checker.checked_files} 个")
+    if checker.checked_fail_files > 0:
+        print(f"❌ 其中检查失败: {checker.checked_fail_files} 个")
+    print(f"✅ 发现问题: {checker.error_count} 个")
 
 if __name__ == "__main__":
     main()
