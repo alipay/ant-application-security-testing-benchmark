@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = false
+# real case = true
 # evaluation item = 完整度->单应用跟踪完整度->函数和方法调用->生成器函数
-# scene introduction = yield_from
+# scene introduction = yield_from2
 # level = 2
 # bind_url = completeness/single_app_tracing/function_call/generator_function/yieldFrom_003_T
 # evaluation information end
