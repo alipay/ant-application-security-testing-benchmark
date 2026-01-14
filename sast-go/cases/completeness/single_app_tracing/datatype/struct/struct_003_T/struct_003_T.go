@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->结构体
-// scene introduction = 结构体
+// scene introduction = 结构体2
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/struct/struct_003_T/struct_003_T
 // evaluation information end

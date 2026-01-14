@@ -3,7 +3,7 @@ import "os/exec"
 
 
 // evaluation information start
-// real case = false
+// real case = true
 // evaluation item = 完整度->单应用跟踪完整度->流程控制语句->循环结构
 // scene introduction = for range
 // level = 2

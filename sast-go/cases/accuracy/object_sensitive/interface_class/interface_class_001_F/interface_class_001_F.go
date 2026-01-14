@@ -1,8 +1,8 @@
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同类对象
-// scene introduction = 
+// scene introduction = 1
 // level = 2
 // bind_url = accuracy/object_sensitive/interface_class/interface_class_001_F/interface_class_001_F
 // evaluation information end

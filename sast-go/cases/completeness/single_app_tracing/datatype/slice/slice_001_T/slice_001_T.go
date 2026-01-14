@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->切片
-// scene introduction = 
+// scene introduction = 1
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/slice/slice_001_T/slice_001_T
 // evaluation information end
