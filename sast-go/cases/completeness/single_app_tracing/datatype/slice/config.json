@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "slice_001_T/slice_001_T.go && !slice_002_F/slice_002_F.go",
-              "scene": "1"
+              "scene": "字面量切片"
             },
             {
               "compose": "slice_003_T/slice_003_T.go && !slice_004_F/slice_004_F.go",

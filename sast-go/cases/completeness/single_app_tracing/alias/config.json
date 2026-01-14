@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "!alias_001_F/alias_001_F.go && alias_002_T/alias_002_T.go",
-              "scene": "1"
+              "scene": "别名"
             }
           ]
         }

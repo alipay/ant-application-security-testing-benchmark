@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "!multi_invoke_001_F/multi_invoke_001_F.go && multi_invoke_002_T/multi_invoke_002_T.go",
-              "scene": "1"
+              "scene": "多次调用"
             }
           ]
         }

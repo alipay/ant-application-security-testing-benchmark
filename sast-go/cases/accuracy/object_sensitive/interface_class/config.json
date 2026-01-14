@@ -8,11 +8,11 @@
           "scene_list": [
             {
               "compose": "!interface_class_001_F/interface_class_001_F.go && interface_class_002_T/interface_class_002_T.go",
-              "scene": "1"
+              "scene": "不同结构体"
             },
             {
               "compose": "!interface_class_003_F/interface_class_003_F.go && interface_class_004_T/interface_class_004_T.go",
-              "scene": "2"
+              "scene": "不同接口"
             },
             {
               "compose": "!interface_class_005_F/interface_class_005_F.go && interface_class_006_T/interface_class_006_T.go",

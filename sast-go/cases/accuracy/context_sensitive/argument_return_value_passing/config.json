@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "!argument_passing_value_return_001_F/argument_passing_value_return_001_F.go && argument_passing_value_return_002_T/argument_passing_value_return_002_T.go",
-              "scene": "1"
+              "scene": "参数值传递->单个参数"
             },
             {
               "compose": "!argument_passing_value_return_003_F/argument_passing_value_return_003_F.go && argument_passing_value_return_004_T/argument_passing_value_return_004_T.go",
@@ -48,7 +48,7 @@
             },
             {
               "compose": "!return_normal_value_passing_001_F/return_normal_value_passing_001_F.go && return_normal_value_passing_002_T/return_normal_value_passing_002_T.go",
-              "scene": "2"
+              "scene": "返回值传递->普通返回值"
             }
           ]
         }
