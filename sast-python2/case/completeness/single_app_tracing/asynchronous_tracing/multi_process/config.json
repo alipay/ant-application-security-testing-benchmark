@@ -1,0 +1,18 @@
+{
+  "multi_process": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->并发、多线程、异步->多进程",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "process_create_001_T.py && !process_create_002_F.py",
+              "scene": "Process直接创建"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
