@@ -10,8 +10,8 @@ import os
 
 def exception_throw_002_F(taint_src):
     try:
+        taint_sink("safe_value")
         raise Exception(u"_")
-        taint_sink(taint_src)
     except Exception, e:
         pass
 
