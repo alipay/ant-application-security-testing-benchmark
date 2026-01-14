@@ -1,7 +1,7 @@
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->上下文敏感分析->多态
-// scene introduction =
+// scene introduction = 1
 // level = 4
 // bind_url = accuracy/context_sensitive/polymorphism/polymorphism_004_F
 // evaluation information end

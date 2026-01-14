@@ -1,6 +1,6 @@
 // evaluation information start
 // real case = false
-// evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->同步原语
+// evaluation item = 完整度->单应用跟踪完整度->并发、多线程、异步->延迟执行异步
 // scene introduction = promisify异步分析
 // level = 2
 // bind_url = completeness/single_app_tracing/asynchronous_tracing/delayed_execution_async/asynchronous_promisify_002_F

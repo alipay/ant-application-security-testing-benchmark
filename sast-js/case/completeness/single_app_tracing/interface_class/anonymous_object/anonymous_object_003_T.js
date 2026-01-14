@@ -1,7 +1,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->接口与类->匿名对象
-// scene introduction = 对象字面量
+// scene introduction = 构造函数
 // level = 2
 // bind_url = completeness/single_app_tracing/interface_class/anonymous_object/anonymous_object_003_T
 // date = 2025-12-17 09:15:43
