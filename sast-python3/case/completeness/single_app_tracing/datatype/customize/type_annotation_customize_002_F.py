@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->自定义类型注解
-# scene introduction = 1
+# scene introduction = 自定义类型注解
 # level = 2
 # bind_url = completeness/single_app_tracing/datatype/customize/type_annotation_customize_002_F
 # evaluation information end

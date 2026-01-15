@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->数组
-// scene introduction = 3
+// scene introduction = 不固定长度数组
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/array/array_007_T/array_007_T
 // evaluation information end

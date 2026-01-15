@@ -1,7 +1,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->上下文敏感分析->参数/返回值传递
-// scene introduction = 2
+// scene introduction = 返回值传递->普通返回值
 // level = 2
 // bind_url = accuracy/context_sensitive/argument_return_value_passing/return_normal_value_passing_002_T/return_normal_value_passing_002_T
 // evaluation information end

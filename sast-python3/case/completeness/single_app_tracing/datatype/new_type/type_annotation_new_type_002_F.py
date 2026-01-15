@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->名义类型
-# scene introduction = 1
+# scene introduction = 名义类型
 # level = 2
 # bind_url = completeness/single_app_tracing/datatype/new_type/type_annotation_new_type_002_F
 # evaluation information end

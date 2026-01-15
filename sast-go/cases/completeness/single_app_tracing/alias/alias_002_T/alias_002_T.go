@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名
-// scene introduction = 1
+// scene introduction = 别名
 // level = 2
 // bind_url = completeness/single_app_tracing/alias/alias_002_T/alias_002_T
 // evaluation information end
