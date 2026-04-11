@@ -1,6 +1,6 @@
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同结构体
 // scene introduction = 结构体对象->10层对象
 // level = 2

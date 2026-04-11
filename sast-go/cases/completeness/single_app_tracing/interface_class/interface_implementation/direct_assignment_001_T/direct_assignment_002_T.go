@@ -10,7 +10,7 @@ package main
 
 import "os/exec"
 
-func interface_direct_assignment_003_T(__taint_src string) {
+func direct_assignment_002_T(__taint_src string) {
 	// 场景特点：接口类型变量直接赋值为实现类实例
 	var testInterface IIctest
 	testImpl := &IctestImpl{}
@@ -40,5 +40,5 @@ func (s *IctestImpl) test(taint_src string) (interface{}, error) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	interface_direct_assignment_003_T(__taint_src)
+	direct_assignment_002_T(__taint_src)
 }

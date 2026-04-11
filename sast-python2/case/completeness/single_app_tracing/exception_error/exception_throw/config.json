@@ -15,6 +15,10 @@
               "scene": "exception_catch"
             },
             {
+              "compose": "exception_catch_003_T.py && !exception_catch_004_F.py",
+              "scene": "exception_raise_string"
+            },
+            {
               "compose": "exception_try_else_001_T.py && !exception_try_else_002_F.py",
               "scene": "exception_try_else"
             },

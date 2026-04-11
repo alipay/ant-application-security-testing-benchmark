@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "Expression_ThisExpression_001_T.java && !Expression_ThisExpression_002_F.java",
-              "scene": "1"
+              "scene": "this表达式+函数调用"
             },
             {
               "compose": "Expression_ThisExpression_Anonymous_001_T.java && !Expression_ThisExpression_Anonymous_002_F.java",

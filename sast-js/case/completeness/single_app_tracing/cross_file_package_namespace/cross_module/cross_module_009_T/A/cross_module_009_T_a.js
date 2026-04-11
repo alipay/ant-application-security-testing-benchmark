@@ -7,7 +7,7 @@
 // evaluation information end
 
 
-export function exportString(__taint_src) {
+export function cross_module_009_T_a(__taint_src) {
   return __taint_src;
 }
 

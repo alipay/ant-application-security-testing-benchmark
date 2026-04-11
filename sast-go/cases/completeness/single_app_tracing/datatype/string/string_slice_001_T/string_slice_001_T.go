@@ -1,5 +1,5 @@
 // evaluation information start
-// real case = false
+// real case = true
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->字符串
 // scene introduction = 字符串切片
 // level = 2

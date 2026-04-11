@@ -1,0 +1,34 @@
+{
+  "promise_callback_await": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->并发、多线程、异步->同步原语",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "lock_create_001_T.py && !lock_create_002_F.py",
+              "scene": "锁"
+            },
+            {
+              "compose": "event_create_001_T.py && !event_create_002_F.py",
+              "scene": "事件"
+            },
+            {
+              "compose": "condition_create_001_T.py && !condition_create_002_F.py",
+              "scene": "条件变量"
+            },
+            {
+              "compose": "process_join_001_T.py && !process_join_002_F.py",
+              "scene": "进程同步"
+            },
+            {
+              "compose": "thread_join_001_T.py && !thread_join_002_F.py",
+              "scene": "线程同步"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

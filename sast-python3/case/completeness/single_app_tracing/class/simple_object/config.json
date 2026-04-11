@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "simple_object_001_T.py && !simple_object_002_F.py",
-              "scene": "1"
+              "scene": "简单对象声明"
             },
             {
               "compose": "simple_object_003_T.py && !simple_object_004_F.py",

@@ -21,6 +21,22 @@
             {
               "compose": "staticmethod_decorator_001_T.py && !staticmethod_decorator_002_F.py",
               "scene": "staticmethod"
+            },
+            {
+              "compose": "custom_decorator_no_param_001_T.py && !custom_decorator_no_param_002_F.py",
+              "scene": "自定义无参装饰器"
+            },
+            {
+              "compose": "custom_decorator_with_param_001_T.py && !custom_decorator_with_param_002_F.py",
+              "scene": "自定义带参装饰器"
+            },
+            {
+              "compose": "decorator_chain_001_T.py && !decorator_chain_002_F.py",
+              "scene": "装饰器链"
+            },
+            {
+              "compose": "class_decorator_001_T.py && !class_decorator_002_F.py",
+              "scene": "类装饰器"
             }
           ]
         }

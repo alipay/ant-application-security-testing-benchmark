@@ -9,6 +9,9 @@
 
 from B.cross_module_014_F_b import cross_module_014_F_b
 
+def cross_module_014_F():
+    cross_module_014_F_b()
+
 
 if __name__ == u"__main__":
-    cross_module_014_F_b()
+    cross_module_014_F()

@@ -12,7 +12,7 @@
             },
             {
               "compose": "polymorphism_003_T.js && !polymorphism_004_F.js",
-              "scene": "1"
+              "scene": "子类继承父类"
             }
           ]
         }

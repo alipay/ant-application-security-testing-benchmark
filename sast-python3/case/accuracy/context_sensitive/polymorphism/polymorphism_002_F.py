@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = false
 # evaluation item = 准确度->上下文敏感分析->多态
-# scene introduction = 
+# scene introduction = 子类继承父类
 # level = 2
 # bind_url = accuracy/context_sensitive/polymorphism/polymorphism_002_F
 # evaluation information end

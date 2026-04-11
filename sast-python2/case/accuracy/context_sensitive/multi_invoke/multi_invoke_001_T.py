@@ -11,7 +11,7 @@ import os
 def multi_invoke_001_T(taint_src):
     def process(arg):
         return arg
-    
+
     a = process(taint_src)
     b = process(u'_')
     taint_sink(a)

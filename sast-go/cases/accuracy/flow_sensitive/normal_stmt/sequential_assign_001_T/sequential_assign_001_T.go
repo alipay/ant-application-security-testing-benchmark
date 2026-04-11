@@ -14,7 +14,7 @@ import (
 	"os/exec"
 )
 
-func sequentialAssign_001_T(__taint_src string) {
+func sequential_assign_001_T(__taint_src string) {
 	// 场景特点：按顺序执行多个赋值语句
 	var a string
 	var b string
@@ -29,5 +29,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	sequentialAssign_001_T(__taint_src)
+	sequential_assign_001_T(__taint_src)
 }

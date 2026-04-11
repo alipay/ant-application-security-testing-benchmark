@@ -1,6 +1,6 @@
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->流敏感分析->异步执行
 // scene introduction = 并发-Goroutine，Channel
 // level = 4

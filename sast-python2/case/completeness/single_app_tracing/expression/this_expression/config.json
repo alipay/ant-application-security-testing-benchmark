@@ -1,0 +1,18 @@
+{
+  "this_expression": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->表达式->this表达式",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "self_001_T.py && !self_002_F.py",
+              "scene": "self"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

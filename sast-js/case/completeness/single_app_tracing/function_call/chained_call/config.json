@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "!chained_call_001_F.js && chained_call_002_T.js",
-              "scene": "1"
+              "scene": "类方法链式调用"
             }
           ]
         }

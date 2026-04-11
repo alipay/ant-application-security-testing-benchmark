@@ -7,7 +7,7 @@
 // evaluation information end
 
 
-export default function defaultExport() {
+export default function cross_module_004_F_a() {
   return "_default";
 }
 

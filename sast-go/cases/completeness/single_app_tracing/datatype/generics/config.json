@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "generics_001_T/generics_001_T.go && !generics_002_F/generics_002_F.go",
-              "scene": "1"
+              "scene": "泛型"
             }
           ]
         }

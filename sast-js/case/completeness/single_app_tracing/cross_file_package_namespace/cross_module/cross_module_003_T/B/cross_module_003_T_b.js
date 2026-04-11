@@ -6,10 +6,10 @@
 // bind_url = completeness/single_app_tracing/cross_file_package_namespace/cross_module/cross_module_003_T/B/cross_module_003_T_b
 // evaluation information end
 import { execSync } from 'child_process';
-import defaultExport from "../A/cross_module_003_T_a.js";
+import cross_module_003_T_a from "../A/cross_module_003_T_a.js";
 
 function cross_module_003_T_b(taint_src) {
-  let result = defaultExport(taint_src);
+  let result = cross_module_003_T_a(taint_src);
   __taint_sink(result);
 }
 

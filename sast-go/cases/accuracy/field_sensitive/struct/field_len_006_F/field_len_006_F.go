@@ -1,8 +1,8 @@
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同结构体的不同字段
-// scene introduction = 域敏感-路径长度
+// scene introduction = 域敏感-路径长度3
 // level = 3
 // bind_url = accuracy/field_sensitive/struct/field_len_006_F/field_len_006_F
 // evaluation information end

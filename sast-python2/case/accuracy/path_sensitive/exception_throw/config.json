@@ -7,12 +7,20 @@
           "level": "3",
           "scene_list": [
             {
-              "compose": "exception_throw_001_T.py && !exception_throw_002_F.py && exception_throw_003_T.py",
-              "scene": "1"
+              "compose": "exception_throw_001_T.py && !exception_throw_002_F.py",
+              "scene": "try块"
             },
             {
-              "compose": "exception_throw_004_T.py && !exception_throw_005_F.py",
-              "scene": "finally块执行路径"
+              "compose": "exception_throw_003_T.py && !exception_throw_004_F.py",
+              "scene": "except块"
+            },
+            {
+              "compose": "exception_throw_005_T.py && !exception_throw_006_F.py",
+              "scene": "finally块"
+            },
+            {
+              "compose": "exception_throw_007_T.py && !exception_throw_008_F.py",
+              "scene": "else块"
             }
           ]
         }

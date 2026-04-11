@@ -11,7 +11,7 @@ import os
 from .... import cross_module_038_F_a
 
 def cross_module_038_F_d(taint_src):
-    result = cross_module_038_F_a.source(taint_src)
+    result = cross_module_038_F_a.cross_module_038_F_a(taint_src)
     taint_sink(result)
 
 

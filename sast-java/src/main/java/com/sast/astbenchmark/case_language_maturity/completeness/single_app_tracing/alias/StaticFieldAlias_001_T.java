@@ -14,7 +14,7 @@ import java.util.Map;
 // evaluation information start
 // real case = true
 // evaluation item = 完整度->单应用跟踪完整度->别名
-// scene introduction = FieldAlias FlowSensitive
+// scene introduction = StaticFieldAlias FlowSensitive
 // level = 2
 // bind_url = completeness/single_app_tracing/alias/StaticFieldAlias_001_T
 // evaluation information end

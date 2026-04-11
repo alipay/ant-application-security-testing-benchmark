@@ -9,7 +9,10 @@
 
 from B.cross_module_015_T_b import cross_module_015_T_b
 
-if __name__ == u'__main__':
+def cross_module_015_T():
     cross_module_015_T_b()
+
+if __name__ == u'__main__':
+    cross_module_015_T()
 
 

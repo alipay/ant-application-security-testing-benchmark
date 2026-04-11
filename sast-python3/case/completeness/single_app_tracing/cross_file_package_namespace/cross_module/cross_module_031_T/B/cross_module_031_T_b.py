@@ -8,10 +8,10 @@
 # evaluation information end
 
 import os
-from ..cross_module_031_T_a import source
+from ..cross_module_031_T_a import cross_module_031_T_a
 
-def cross_module_029_T_b(taint_src):
-    result = source(taint_src)
+def cross_module_031_T_b(taint_src):
+    result = cross_module_031_T_a(taint_src)
     taint_sink(result)
 
 
@@ -21,5 +21,5 @@ def taint_sink(o):
 
 if __name__ == '__main__':
     taint_src = "taint_src_value"
-    cross_module_029_T_b(taint_src)
+    cross_module_031_T_b(taint_src)
 

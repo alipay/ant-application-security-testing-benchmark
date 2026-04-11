@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "static_variable_001_T.java && !static_variable_002_F.java",
-              "scene": "1"
+              "scene": "静态变量"
             }
           ]
         }

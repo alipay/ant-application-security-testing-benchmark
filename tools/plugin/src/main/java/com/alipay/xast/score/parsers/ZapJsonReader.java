@@ -23,7 +23,7 @@ package com.alipay.xast.score.parsers;
 import com.alipay.xast.score.BenchmarkScore;
 import com.alipay.xast.score.CweNumber;
 import com.alipay.xast.score.ResultFile;
-import com.alipay.xast.score.TestCaseResult;
+import com.alipay.xast.score.models.TestCaseResult;
 import com.alipay.xast.score.TestSuiteResults;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;

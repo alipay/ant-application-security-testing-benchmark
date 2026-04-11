@@ -13,6 +13,10 @@
             {
               "compose": "multi_invoke_003_T.py && !multi_invoke_004_F.py",
               "scene": "嵌套函数调用"
+            },
+            {
+              "compose": "multi_invoke_005_T.py && !multi_invoke_006_F.py",
+              "scene": "类方法调用"
             }
           ]
         }

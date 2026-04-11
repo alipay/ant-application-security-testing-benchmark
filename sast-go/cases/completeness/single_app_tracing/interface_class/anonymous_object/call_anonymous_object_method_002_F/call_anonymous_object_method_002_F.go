@@ -14,7 +14,7 @@ import (
 	"os/exec"
 )
 
-func call_anonymous_object_method_006_F(__taint_src string) {
+func call_anonymous_object_method_002_F(__taint_src string) {
 	// 场景特点：匿名对象定义方法并调用返回安全数据
 	obj := struct {
 		getName func() string
@@ -35,5 +35,5 @@ func taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	call_anonymous_object_method_006_F(__taint_src)
+	call_anonymous_object_method_002_F(__taint_src)
 }
