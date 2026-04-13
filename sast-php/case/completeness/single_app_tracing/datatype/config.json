@@ -1,0 +1,59 @@
+{
+  "datatype": [
+    {
+      "evaluation_item": "完整度->单应用追踪->数据类型",
+      "scene_levels": [
+        {
+          "level": "1",
+          "scene_list": [
+            {
+              "compose": "array_element_001_T.php && !array_overwrite_001_F.php",
+              "scene": "数组元素存储和读取污点"
+            },
+            {
+              "compose": "string_concat_001_T.php && !string_replace_001_F.php",
+              "scene": "字符串拼接传递污点"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "array_push_002_T.php && !array_safe_key_002_F.php",
+              "scene": "array_push 添加污点后 array_pop 取出"
+            },
+            {
+              "compose": "int_to_string_001_T.php && !int_arithmetic_001_F.php",
+              "scene": "整数转字符串拼接保留污点"
+            },
+            {
+              "compose": "string_substr_002_T.php && !string_constant_002_F.php",
+              "scene": "substr 截取字符串保留污点"
+            },
+            {
+              "compose": "superglobal_001_T.php && !superglobal_001_F.php",
+              "scene": "$_POST超全局变量作为污点源"
+            },
+            {
+              "compose": "superglobal_002_T.php && !superglobal_002_F.php",
+              "scene": "$_COOKIE超全局变量作为污点源"
+            },
+            {
+              "compose": "superglobal_003_T.php && !superglobal_003_F.php",
+              "scene": "$_REQUEST超全局变量作为污点源"
+            },
+            {
+              "compose": "superglobal_004_T.php && !superglobal_004_F.php",
+              "scene": "$_SERVER HTTP头部作为污点源"
+            },
+            {
+              "compose": "superglobal_005_T.php && !superglobal_005_F.php",
+              "scene": "$_SESSION超全局变量作为污点源"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "cross_file_package_namespace": [
+    {
+      "evaluation_item": "完整度->单应用追踪->跨文件",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "autoload_001_T/main.php && !autoload_001_F/main.php",
+              "scene": "spl_autoload_register 自动加载类，实例化后方法传递污点"
+            },
+            {
+              "compose": "autoload_002_T/main.php && !autoload_002_F/main.php",
+              "scene": "spl_autoload_register 自动加载不同类，方法传递污点"
+            },
+            {
+              "compose": "cross_file_inheritance_001_T/main.php && !cross_file_inheritance_001_F/main.php",
+              "scene": "跨文件类继承，子类调用父类方法传递污点"
+            },
+            {
+              "compose": "cross_file_inheritance_002_T/main.php && !cross_file_inheritance_002_F/main.php",
+              "scene": "跨文件抽象类继承，子类实现方法传递污点"
+            },
+            {
+              "compose": "cross_file_interface_001_T/main.php && !cross_file_interface_001_F/main.php",
+              "scene": "跨文件 interface 实现类方法传递污点"
+            },
+            {
+              "compose": "cross_file_interface_002_T/main.php && !cross_file_interface_002_F/main.php",
+              "scene": "跨文件 Processable 接口实现类传递污点"
+            },
+            {
+              "compose": "cross_file_trait_001_T/main.php && !cross_file_trait_001_F/main.php",
+              "scene": "跨文件 trait 方法传递污点"
+            },
+            {
+              "compose": "cross_file_trait_002_T/main.php && !cross_file_trait_002_F/main.php",
+              "scene": "跨文件 trait 存储并返回污点数据"
+            },
+            {
+              "compose": "include_require_001_T/main.php && !include_require_001_F/main.php",
+              "scene": "include 引入文件中函数传递污点"
+            },
+            {
+              "compose": "include_require_002_T/main.php && !include_require_002_F/main.php",
+              "scene": "require_once 引入文件中类方法传递污点"
+            },
+            {
+              "compose": "namespace_use_001_T/main.php && !namespace_use_001_F/main.php",
+              "scene": "namespace + use 引入类传递污点"
+            },
+            {
+              "compose": "namespace_use_002_T/main.php && !namespace_use_002_F/main.php",
+              "scene": "namespace 别名 use as 传递污点"
+            },
+            {
+              "compose": "require_once_001_T/main.php && !require_once_001_F/main.php",
+              "scene": "require_once 引入文件中函数传递污点"
+            },
+            {
+              "compose": "require_once_002_T/main.php && !require_once_002_F/main.php",
+              "scene": "require_once 引入类定义，实例化后方法传递污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

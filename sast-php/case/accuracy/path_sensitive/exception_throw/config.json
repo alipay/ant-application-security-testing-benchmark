@@ -1,0 +1,22 @@
+{
+  "exception_throw": [
+    {
+      "evaluation_item": "准确度->路径敏感->异常抛出",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "exception_throw_001_T.php && !exception_throw_002_F.php",
+              "scene": "try块中sink在异常抛出前执行，接收污染数据"
+            },
+            {
+              "compose": "exception_throw_003_T.php && !exception_throw_004_F.php",
+              "scene": "catch块中捕获异常后，污染数据流入sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

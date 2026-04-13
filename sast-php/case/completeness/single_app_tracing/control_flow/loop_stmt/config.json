@@ -1,0 +1,22 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation_item": "完整度->单应用追踪->控制流",
+      "scene_levels": [
+        {
+          "level": "1",
+          "scene_list": [
+            {
+              "compose": "loop_for_001_T.php",
+              "scene": "for 循环体内污点传递"
+            },
+            {
+              "compose": "loop_foreach_001_T.php",
+              "scene": "foreach 遍历数组传递污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

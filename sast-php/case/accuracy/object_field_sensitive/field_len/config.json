@@ -1,0 +1,26 @@
+{
+  "field_len": [
+    {
+      "evaluation_item": "准确度->对象域敏感->域长度",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "field_len_001_T.php && !field_len_002_F.php",
+              "scene": "三层嵌套对象字段访问，末端持有污染数据"
+            },
+            {
+              "compose": "field_len_003_T.php && !field_len_004_F.php",
+              "scene": "四层嵌套对象字段访问，深层字段持有污染数据"
+            },
+            {
+              "compose": "field_len_005_T.php && !field_len_006_F.php",
+              "scene": "两层嵌套对象字段访问，二层字段持有污染数据"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

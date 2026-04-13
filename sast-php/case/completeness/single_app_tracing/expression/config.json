@@ -1,0 +1,87 @@
+{
+  "expression": [
+    {
+      "evaluation_item": "完整度->单应用追踪->表达式",
+      "scene_levels": [
+        {
+          "level": "1",
+          "scene_list": [
+            {
+              "compose": "basic_expression_001_T.php && !basic_expression_001_F.php",
+              "scene": "赋值表达式传递污点"
+            },
+            {
+              "compose": "conditional_expression_001_T.php && !conditional_expression_001_F.php",
+              "scene": "三元表达式 true 分支传递污点"
+            },
+            {
+              "compose": "string_interpolation_001_T.php && !string_interpolation_001_F.php",
+              "scene": "双引号字符串插值传递污点"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "basic_expression_002_T.php && !basic_expression_002_F.php",
+              "scene": "复合赋值运算符 .= 拼接污点"
+            },
+            {
+              "compose": "conditional_expression_002_T.php && !conditional_expression_002_F.php",
+              "scene": "null 合并运算符 ?? 左侧为污点"
+            },
+            {
+              "compose": "destructuring_001_T.php && !destructuring_001_F.php",
+              "scene": "list() 解构，污染值被解出传入 sink"
+            },
+            {
+              "compose": "destructuring_002_T.php && !destructuring_002_F.php",
+              "scene": "短语法 [$a, $b] = $arr 解构传递污点"
+            },
+            {
+              "compose": "heredoc_001_T.php && !heredoc_001_F.php",
+              "scene": "heredoc 内插入污染变量，污点传递到 sink"
+            },
+            {
+              "compose": "heredoc_002_T.php && !heredoc_002_F.php",
+              "scene": "heredoc 内使用花括号语法插入污染变量"
+            },
+            {
+              "compose": "nullsafe_001_T.php && !nullsafe_001_F.php",
+              "scene": "nullsafe 运算符 ?-> 返回污染值传入 sink"
+            },
+            {
+              "compose": "nullsafe_002_T.php && !nullsafe_002_F.php",
+              "scene": "链式 nullsafe $obj?->getInner()?->getValue() 传递污点"
+            },
+            {
+              "compose": "spread_001_T.php && !spread_001_F.php",
+              "scene": "...$args 展开含污染的数组作为函数参数"
+            },
+            {
+              "compose": "spread_002_T.php && !spread_002_F.php",
+              "scene": "数组解包 [...$arr1, ...$arr2] 传递污点"
+            },
+            {
+              "compose": "string_func_001_T.php && !string_func_001_F.php",
+              "scene": "sprintf 格式化传递污点到 sink"
+            },
+            {
+              "compose": "string_func_002_T.php && !string_func_002_F.php",
+              "scene": "implode 将含污染元素的数组拼接，污点传递到 sink"
+            },
+            {
+              "compose": "string_interpolation_002_T.php && !string_interpolation_002_F.php",
+              "scene": "花括号语法字符串插值传递污点"
+            },
+            {
+              "compose": "type_cast_001_T.php && !type_cast_001_F.php",
+              "scene": "(string) 类型转换保留污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

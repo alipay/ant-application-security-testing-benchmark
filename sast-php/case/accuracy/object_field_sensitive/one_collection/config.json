@@ -1,0 +1,26 @@
+{
+  "one_collection": [
+    {
+      "evaluation_item": "准确度->对象域敏感->一维集合",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "one_collection_001_T.php && !one_collection_002_F.php",
+              "scene": "数组索引，污染数据在索引0位置，sink访问索引0"
+            },
+            {
+              "compose": "one_collection_003_T.php && !one_collection_004_F.php",
+              "scene": "关联数组，污染数据通过key访问流入sink"
+            },
+            {
+              "compose": "one_collection_005_T.php && !one_collection_006_F.php",
+              "scene": "数组push后通过索引访问污染数据"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

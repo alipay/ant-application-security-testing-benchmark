@@ -1,0 +1,22 @@
+{
+  "variable_variables": [
+    {
+      "evaluation_item": "完整度->动态追踪->可变变量",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "variable_variables_001_T.php && !variable_variables_001_F.php",
+              "scene": "通过可变变量 $$name 间接传递污点数据到 sink"
+            },
+            {
+              "compose": "variable_variables_002_T.php && !variable_variables_002_F.php",
+              "scene": "循环中通过可变变量传递污点数据到 sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

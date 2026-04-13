@@ -1,0 +1,22 @@
+{
+  "polymorphism": [
+    {
+      "evaluation_item": "准确度->上下文敏感->多态",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "polymorphism_001_T.php && !polymorphism_002_F.php",
+              "scene": "抽象类多态，子类实现传递污点数据"
+            },
+            {
+              "compose": "polymorphism_003_T.php && !polymorphism_004_F.php",
+              "scene": "接口多态，实现类传递污点数据"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

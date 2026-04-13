@@ -1,0 +1,30 @@
+{
+  "argument_return_value_passing": [
+    {
+      "evaluation_item": "准确度->上下文敏感->参数/返回值传递",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "argument_return_value_passing_001_T.php && !argument_return_value_passing_002_F.php",
+              "scene": "参数值传递，污染数据直接作为参数传入函数后到达sink"
+            },
+            {
+              "compose": "argument_return_value_passing_003_T.php && !argument_return_value_passing_004_F.php",
+              "scene": "返回值传递，函数返回污染数据后到达sink"
+            },
+            {
+              "compose": "argument_return_value_passing_005_T.php && !argument_return_value_passing_006_F.php",
+              "scene": "多层参数传递，污染数据经过多层函数参数传递到达sink"
+            },
+            {
+              "compose": "argument_return_value_passing_007_T.php && !argument_return_value_passing_008_F.php",
+              "scene": "多层返回值传递，污染数据经过多层函数返回值传递到达sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

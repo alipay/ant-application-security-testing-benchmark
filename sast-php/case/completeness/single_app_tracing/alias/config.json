@@ -1,0 +1,26 @@
+{
+  "alias": [
+    {
+      "evaluation_item": "完整度->单应用追踪->别名",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "alias_001_T.php && !alias_001_F.php",
+              "scene": "普通变量赋值传递污点"
+            },
+            {
+              "compose": "reference_assign_001_T.php && !reference_assign_001_F.php",
+              "scene": "引用赋值 &$var 传递污点"
+            },
+            {
+              "compose": "reference_assign_002_T.php && !reference_assign_002_F.php",
+              "scene": "通过引用赋值修改原变量传播污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
