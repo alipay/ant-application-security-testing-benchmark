@@ -1,0 +1,83 @@
+{
+  "class": [
+    {
+      "evaluation_item": "完整度->单应用追踪->类与对象",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "simple_object_001_T.php && !simple_object_001_F.php",
+              "scene": "对象属性存取传递污点"
+            },
+            {
+              "compose": "simple_object_002_T.php && !simple_object_002_F.php",
+              "scene": "直接属性赋值传递污点"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "abstract_class_001_T.php && !abstract_class_001_F.php",
+              "scene": "抽象类子类实现方法传递污点"
+            },
+            {
+              "compose": "anonymous_class_001_T.php && !anonymous_class_001_F.php",
+              "scene": "匿名类方法传递污点"
+            },
+            {
+              "compose": "enum_001_T.php && !enum_001_F.php",
+              "scene": "枚举方法传递污点"
+            },
+            {
+              "compose": "interface_impl_001_T.php && !interface_impl_001_F.php",
+              "scene": "接口实现类方法传递污点"
+            },
+            {
+              "compose": "interface_impl_002_T.php && !interface_impl_002_F.php",
+              "scene": "接口类型声明参数传递污点"
+            },
+            {
+              "compose": "late_static_binding_001_T.php && !late_static_binding_001_F.php",
+              "scene": "后期静态绑定子类重写返回污点"
+            },
+            {
+              "compose": "magic_method_001_T.php && !magic_method_001_F.php",
+              "scene": "__get 魔术方法传递污点"
+            },
+            {
+              "compose": "magic_method_002_T.php && !magic_method_002_F.php",
+              "scene": "__toString 魔术方法传递污点"
+            },
+            {
+              "compose": "magic_method_003_T.php && !magic_method_003_F.php",
+              "scene": "__invoke 魔术方法传递污点"
+            },
+            {
+              "compose": "readonly_001_T.php && !readonly_001_F.php",
+              "scene": "readonly属性构造时存入污点后读取"
+            },
+            {
+              "compose": "subclass_001_T.php && !subclass_001_F.php",
+              "scene": "子类继承父类方法传递污点"
+            },
+            {
+              "compose": "subclass_002_T.php && !subclass_002_F.php",
+              "scene": "子类重写方法仍传递污点"
+            },
+            {
+              "compose": "trait_001_T.php && !trait_001_F.php",
+              "scene": "trait 方法传递污点"
+            },
+            {
+              "compose": "trait_002_T.php && !trait_002_F.php",
+              "scene": "trait 属性存储和读取污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

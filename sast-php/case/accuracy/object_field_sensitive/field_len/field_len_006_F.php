@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->域长度
 // scene introduction = 两层嵌套对象字段访问，sink接收二层的安全字段
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/field_len/field_len_006_F
 // evaluation information end
 

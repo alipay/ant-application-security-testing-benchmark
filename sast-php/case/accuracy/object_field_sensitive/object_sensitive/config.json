@@ -1,0 +1,22 @@
+{
+  "object_sensitive": [
+    {
+      "evaluation_item": "准确度->对象域敏感->对象敏感",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "object_sensitive_001_T.php && !object_sensitive_002_F.php",
+              "scene": "两个同类对象，污染对象和安全对象区分，sink接收污染对象"
+            },
+            {
+              "compose": "object_sensitive_003_T.php && !object_sensitive_004_F.php",
+              "scene": "数组中存放不同对象，取出污染对象的字段流入sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

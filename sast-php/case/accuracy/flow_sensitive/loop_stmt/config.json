@@ -1,0 +1,22 @@
+{
+  "loop_stmt": [
+    {
+      "evaluation_item": "准确度->流敏感->循环语句",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "loop_stmt_001_T.php && !loop_stmt_002_F.php",
+              "scene": "for循环体内，污染数据赋值后在同一迭代内流入sink"
+            },
+            {
+              "compose": "loop_stmt_003_T.php && !loop_stmt_004_F.php",
+              "scene": "while循环体内，污染数据赋值后流入sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

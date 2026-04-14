@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->一维集合
 // scene introduction = 关联数组，sink访问安全的key
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/one_collection/one_collection_004_F
 // evaluation information end
 

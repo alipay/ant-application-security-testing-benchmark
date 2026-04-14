@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->单应用追踪->表达式
 // scene introduction = 三元表达式两侧都是安全值
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/conditional_expression_001_F
 // evaluation information end
 

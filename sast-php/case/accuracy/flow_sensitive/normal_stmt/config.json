@@ -1,0 +1,22 @@
+{
+  "normal_stmt": [
+    {
+      "evaluation_item": "准确度->流敏感->普通语句",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "normal_stmt_001_T.php && !normal_stmt_002_F.php",
+              "scene": "赋值表达式，污染数据赋值后立即流入sink"
+            },
+            {
+              "compose": "normal_stmt_003_T.php && !normal_stmt_004_F.php",
+              "scene": "多变量赋值，污染数据通过中间变量传递到sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

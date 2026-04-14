@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->对象域敏感->域长度
 // scene introduction = 四层嵌套对象字段访问，深层字段持有污染数据
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/field_len/field_len_003_T
 // evaluation information end
 

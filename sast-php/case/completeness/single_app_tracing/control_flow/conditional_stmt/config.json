@@ -1,0 +1,31 @@
+{
+  "conditional_stmt": [
+    {
+      "evaluation_item": "完整度->单应用追踪->控制流",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "conditional_if_001_T.php",
+              "scene": "if 分支中污点传递到 sink"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "conditional_match_001_T.php",
+              "scene": "PHP 8 match 表达式传递污点"
+            },
+            {
+              "compose": "conditional_switch_001_T.php",
+              "scene": "switch-case 分支中污点传递"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

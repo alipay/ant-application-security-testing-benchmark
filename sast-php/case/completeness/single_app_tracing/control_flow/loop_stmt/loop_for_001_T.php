@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->控制流
 // scene introduction = for 循环体内污点传递
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/loop_for_001_T
 // evaluation information end
 

@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->控制流
 // scene introduction = foreach 遍历数组传递污点
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/loop_stmt/loop_foreach_001_T
 // evaluation information end
 

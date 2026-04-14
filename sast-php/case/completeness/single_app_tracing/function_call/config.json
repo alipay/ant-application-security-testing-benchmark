@@ -1,0 +1,103 @@
+{
+  "function_call": [
+    {
+      "evaluation_item": "完整度->单应用追踪->函数调用",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "argument_passing_001_T.php && !argument_passing_001_F.php",
+              "scene": "函数参数直接传递污点"
+            },
+            {
+              "compose": "return_value_001_T.php && !return_value_001_F.php",
+              "scene": "函数返回值传递污点"
+            },
+            {
+              "compose": "static_method_001_T.php && !static_method_001_F.php",
+              "scene": "静态方法调用传递污点"
+            }
+          ]
+        },
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "anonymous_function_001_T.php && !anonymous_function_001_F.php",
+              "scene": "匿名函数（闭包）传递污点"
+            },
+            {
+              "compose": "anonymous_function_002_T.php && !anonymous_function_002_F.php",
+              "scene": "箭头函数 fn() => 传递污点"
+            },
+            {
+              "compose": "argument_passing_002_T.php && !argument_passing_002_F.php",
+              "scene": "引用传参 &$param 修改外部变量传递污点"
+            },
+            {
+              "compose": "argument_passing_003_T.php && !argument_passing_003_F.php",
+              "scene": "多层函数调用传递污点"
+            },
+            {
+              "compose": "chained_call_001_T.php && !chained_call_001_F.php",
+              "scene": "链式方法调用传递污点"
+            },
+            {
+              "compose": "chained_call_002_T.php && !chained_call_002_F.php",
+              "scene": "多级链式调用传递污点"
+            },
+            {
+              "compose": "first_class_callable_001_T.php && !first_class_callable_001_F.php",
+              "scene": "first-class callable 语法获取函数引用并调用，传递污点"
+            },
+            {
+              "compose": "first_class_callable_002_T.php && !first_class_callable_002_F.php",
+              "scene": "first-class callable 通过 array_map 传递污点"
+            },
+            {
+              "compose": "generator_001_T.php && !generator_001_F.php",
+              "scene": "生成器yield传递污点"
+            },
+            {
+              "compose": "generator_002_T.php && !generator_002_F.php",
+              "scene": "yield from委托生成器传递污点"
+            },
+            {
+              "compose": "higher_order_function_001_T.php && !higher_order_function_001_F.php",
+              "scene": "array_map 高阶函数传递污点"
+            },
+            {
+              "compose": "higher_order_function_002_T.php && !higher_order_function_002_F.php",
+              "scene": "array_filter 回调保留污点元素"
+            },
+            {
+              "compose": "named_arg_001_T.php && !named_arg_001_F.php",
+              "scene": "PHP 8 named arguments 传递污点到 sink"
+            },
+            {
+              "compose": "named_arg_002_T.php && !named_arg_002_F.php",
+              "scene": "named arguments 乱序传递，污点通过参数名绑定传入 sink"
+            },
+            {
+              "compose": "return_value_002_T.php && !return_value_002_F.php",
+              "scene": "嵌套函数返回值链传递污点"
+            },
+            {
+              "compose": "static_method_002_T.php && !static_method_002_F.php",
+              "scene": "静态属性存储后静态方法读取传递污点"
+            },
+            {
+              "compose": "variable_function_001_T.php && !variable_function_001_F.php",
+              "scene": "可变函数 $func() 传递污点"
+            },
+            {
+              "compose": "variable_function_002_T.php && !variable_function_002_F.php",
+              "scene": "call_user_func 动态调用传递污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "variable_scope": [
+    {
+      "evaluation_item": "完整度->单应用追踪->变量作用域",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "closure_use_001_T.php && !closure_use_001_F.php",
+              "scene": "闭包 use ($var) 捕获外部污点变量"
+            },
+            {
+              "compose": "closure_use_002_T.php && !closure_use_002_F.php",
+              "scene": "闭包 use (&$var) 引用捕获修改外部变量传递污点"
+            },
+            {
+              "compose": "global_variable_001_T.php && !global_variable_001_F.php",
+              "scene": "global 关键字引入全局变量传递污点"
+            },
+            {
+              "compose": "global_variable_002_T.php && !global_variable_002_F.php",
+              "scene": "$GLOBALS 超全局数组传递污点"
+            },
+            {
+              "compose": "static_variable_001_T.php && !static_variable_001_F.php",
+              "scene": "静态变量跨调用保留污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

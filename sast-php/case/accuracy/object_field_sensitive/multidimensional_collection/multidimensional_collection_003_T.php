@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->对象域敏感->多维集合
 // scene introduction = 嵌套关联数组，污染数据通过多层key访问流入sink
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/multidimensional_collection/multidimensional_collection_003_T
 // evaluation information end
 

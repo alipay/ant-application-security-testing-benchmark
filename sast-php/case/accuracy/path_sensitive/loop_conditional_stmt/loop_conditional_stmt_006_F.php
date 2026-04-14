@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->路径敏感->条件循环语句
 // scene introduction = if-else分支中，else分支传递安全数据到sink，污染数据在if分支
-// level = 2
+// level = 3
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/loop_conditional_stmt_006_F
 // evaluation information end
 

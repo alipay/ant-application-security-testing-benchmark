@@ -1,0 +1,26 @@
+{
+  "class_field": [
+    {
+      "evaluation_item": "准确度->对象域敏感->类字段",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "class_field_001_T.php && !class_field_002_F.php",
+              "scene": "类字段赋值污染数据后，通过字段访问流入sink"
+            },
+            {
+              "compose": "class_field_003_T.php && !class_field_004_F.php",
+              "scene": "通过setter方法设置污染数据到类字段，再通过getter获取流入sink"
+            },
+            {
+              "compose": "class_field_005_T.php && !class_field_006_F.php",
+              "scene": "嵌套类字段，内层类字段持有污染数据"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

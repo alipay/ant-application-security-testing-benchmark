@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->流敏感->普通语句
 // scene introduction = 赋值表达式，变量先被赋安全值后流入sink，之后才被污染
-// level = 2
+// level = 3
 // bind_url = accuracy/flow_sensitive/normal_stmt/normal_stmt_002_F
 // evaluation information end
 

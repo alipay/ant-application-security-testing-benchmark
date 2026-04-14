@@ -1,0 +1,22 @@
+{
+  "exception_error": [
+    {
+      "evaluation_item": "完整度->单应用追踪->异常处理",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "try_catch_001_T.php && !try_catch_001_F.php",
+              "scene": "try 块内污点传递到 catch 后仍到达 sink"
+            },
+            {
+              "compose": "try_catch_002_T.php && !try_finally_002_F.php",
+              "scene": "catch 块中异常消息携带污点"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

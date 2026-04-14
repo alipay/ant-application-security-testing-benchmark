@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->路径敏感->异常抛出
 // scene introduction = try块中sink在异常抛出前执行，接收污染数据
-// level = 2
+// level = 3
 // bind_url = accuracy/path_sensitive/exception_throw/exception_throw_001_T
 // evaluation information end
 

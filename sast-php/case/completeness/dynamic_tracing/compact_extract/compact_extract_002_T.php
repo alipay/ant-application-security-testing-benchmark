@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->动态追踪->compact与extract
 // scene introduction = extract() 将含污染值的数组解包为变量，该变量传入 sink
-// level = 3
+// level = 4
 // bind_url = completeness/dynamic_tracing/compact_extract/compact_extract_002_T
 // evaluation information end
 

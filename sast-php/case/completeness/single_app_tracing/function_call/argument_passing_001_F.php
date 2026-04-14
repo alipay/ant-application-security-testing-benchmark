@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->单应用追踪->函数调用
 // scene introduction = 函数参数被净化后传递
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/function_call/argument_passing_001_F
 // evaluation information end
 

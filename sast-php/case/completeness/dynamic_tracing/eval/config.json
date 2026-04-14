@@ -1,0 +1,22 @@
+{
+  "eval": [
+    {
+      "evaluation_item": "完整度->动态追踪->eval",
+      "scene_levels": [
+        {
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "eval_001_T.php && !eval_001_F.php",
+              "scene": "eval 执行拼接了污染数据的代码字符串，直接调用 shell_exec"
+            },
+            {
+              "compose": "eval_002_T.php && !eval_002_F.php",
+              "scene": "eval 将污染数据赋值给变量，再将该变量传入 sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

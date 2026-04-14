@@ -1,0 +1,22 @@
+{
+  "multi_invoke": [
+    {
+      "evaluation_item": "准确度->上下文敏感->多次调用",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "multi_invoke_001_T.php && !multi_invoke_002_F.php",
+              "scene": "同一函数被多次调用，sink接收污染参数的返回值"
+            },
+            {
+              "compose": "multi_invoke_003_T.php && !multi_invoke_004_F.php",
+              "scene": "链式调用，污染数据经过多层函数传递后到达sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

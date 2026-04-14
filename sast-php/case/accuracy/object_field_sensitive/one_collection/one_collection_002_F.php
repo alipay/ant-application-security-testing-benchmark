@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->一维集合
 // scene introduction = 数组索引，污染数据在索引0位置，sink访问索引1（安全）
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/one_collection/one_collection_002_F
 // evaluation information end
 

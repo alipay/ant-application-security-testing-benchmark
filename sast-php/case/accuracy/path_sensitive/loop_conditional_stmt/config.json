@@ -1,0 +1,26 @@
+{
+  "loop_conditional_stmt": [
+    {
+      "evaluation_item": "准确度->路径敏感->条件循环语句",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "loop_conditional_stmt_001_T.php && !loop_conditional_stmt_002_F.php",
+              "scene": "if条件为true时，污染数据流入sink"
+            },
+            {
+              "compose": "loop_conditional_stmt_003_T.php && !loop_conditional_stmt_004_F.php",
+              "scene": "while循环中污染数据在循环体内流入sink"
+            },
+            {
+              "compose": "loop_conditional_stmt_005_T.php && !loop_conditional_stmt_006_F.php",
+              "scene": "if-else分支中，else分支传递污染数据到sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

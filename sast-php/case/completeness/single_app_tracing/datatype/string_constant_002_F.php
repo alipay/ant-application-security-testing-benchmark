@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->单应用追踪->数据类型
 // scene introduction = 字符串赋值为常量，污点断开
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/string_constant_002_F
 // evaluation information end
 

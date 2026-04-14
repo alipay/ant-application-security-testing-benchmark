@@ -1,0 +1,22 @@
+{
+  "compact_extract": [
+    {
+      "evaluation_item": "完整度->动态追踪->compact与extract",
+      "scene_levels": [
+        {
+          "level": "4",
+          "scene_list": [
+            {
+              "compose": "compact_extract_001_T.php && !compact_extract_001_F.php",
+              "scene": "compact() 将受污染变量打包为数组，后续从数组取值传入 sink"
+            },
+            {
+              "compose": "compact_extract_002_T.php && !compact_extract_002_F.php",
+              "scene": "extract() 将含污染值的数组解包为变量，该变量传入 sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

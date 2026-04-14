@@ -1,0 +1,22 @@
+{
+  "multidimensional_collection": [
+    {
+      "evaluation_item": "准确度->对象域敏感->多维集合",
+      "scene_levels": [
+        {
+          "level": "3",
+          "scene_list": [
+            {
+              "compose": "multidimensional_collection_001_T.php && !multidimensional_collection_002_F.php",
+              "scene": "二维数组，污染数据在[0][0]位置，sink访问该位置"
+            },
+            {
+              "compose": "multidimensional_collection_003_T.php && !multidimensional_collection_004_F.php",
+              "scene": "嵌套关联数组，污染数据通过多层key访问流入sink"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
