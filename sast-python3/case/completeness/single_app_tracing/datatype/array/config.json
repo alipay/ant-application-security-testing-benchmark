@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "array_001_T.py && !array_002_F.py",
-              "scene": "1"
+              "scene": "array操作"
             },
             {
               "compose": "array_003_T.py && !array_004_F.py",

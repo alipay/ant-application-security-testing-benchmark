@@ -37,6 +37,10 @@
             {
               "compose": "complex_003_T.py && !complex_004_F.py",
               "scene": "复数2"
+            },
+            {
+              "compose": "long_001_T.py && !long_002_F.py",
+              "scene": "长整型"
             }
           ]
         }

@@ -1,7 +1,7 @@
 // evaluation information start
 // real case = false
 // evaluation item = 准确度->路径敏感分析->异常抛出和捕获
-// scene introduction = 异常抛出路径
+// scene introduction = 异常抛出和捕获->不可控错误处理
 // level = 3
 // bind_url = accuracy/path_sensitive/exception_throw/exception_catch_002_F/exception_catch_002_F
 // date = 2025-12-01 16:29:18

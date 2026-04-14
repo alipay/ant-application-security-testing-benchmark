@@ -9,7 +9,7 @@
 import os
 import json
 
-def json_001_t(taint_src):
+def json_001_T(taint_src):
     def process(arg):
         obj = json.loads(arg)
         taint_sink(obj["key"])
@@ -23,5 +23,5 @@ def taint_sink(o):
 
 if __name__ == '__main__':
     taint_src = '{"key": "taint_src_value"}'
-    json_001_t(taint_src)  # 传递一个有效的 JSON 字符串
+    json_001_T(taint_src)  # 传递一个有效的 JSON 字符串
 

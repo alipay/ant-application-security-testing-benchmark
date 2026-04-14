@@ -17,6 +17,7 @@
  */
 package com.alipay.xast.score;
 
+import com.alipay.xast.score.models.TestCaseResult;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;

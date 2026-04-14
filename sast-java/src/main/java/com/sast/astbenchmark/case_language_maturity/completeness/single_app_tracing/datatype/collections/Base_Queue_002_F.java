@@ -20,7 +20,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->集合
-// scene introduction = Queue
+// scene introduction = Queue1
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/collections/Base_Queue_002_F
 // evaluation information end

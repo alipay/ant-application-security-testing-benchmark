@@ -8,10 +8,10 @@
 import { execSync } from 'child_process';
 
 
-import { exportString } from "#root/cross_module_010_F_a.js";
+import { cross_module_010_F_a } from "#root/cross_module_010_F_a.js";
 
 function cross_module_010_F_b() {
-  let result = exportString();
+  let result = cross_module_010_F_a();
   __taint_sink(result);
 }
 

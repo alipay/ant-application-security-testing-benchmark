@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同结构体的不同字段
-// scene introduction = 域敏感
+// scene introduction = 域敏感2
 // level = 3
 // bind_url = accuracy/field_sensitive/struct/struct_field_003_T/struct_field_003_T
 // evaluation information end

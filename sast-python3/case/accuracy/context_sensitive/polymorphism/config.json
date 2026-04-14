@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "polymorphism_001_T.py && !polymorphism_002_F.py",
-              "scene": "1"
+              "scene": "子类继承父类"
             },
             {
               "compose": "polymorphism_003_T.py && !polymorphism_004_F.py",

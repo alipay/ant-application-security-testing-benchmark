@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "channel_001_T/channel_001_T.go && !channel_002_F/channel_002_F.go",
-              "scene": "1"
+              "scene": "通道"
             }
           ]
         }

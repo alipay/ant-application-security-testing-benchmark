@@ -26,6 +26,6 @@ func __taint_sink(o interface{}) {
 }
 
 func main() {
-	__taint_src := "tainted_string"
+	__taint_src := "taint_src_value"
 	type_cast_008_F(&__taint_src)
 }

@@ -9,8 +9,11 @@
 
 from B.cross_module_010_F_b import cross_module_010_F_b
 
+def cross_module_010_F(taint_src):
+    cross_module_010_F_b(taint_src)
+
 
 if __name__ == u"__main__":
     taint_src = u"taint_src_value"
-    cross_module_010_F_b(taint_src)
+    cross_module_010_F(taint_src)
 

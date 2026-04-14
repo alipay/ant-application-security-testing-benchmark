@@ -17,6 +17,14 @@
             {
               "compose": "dynamic_call_reflect_005_T.py && !dynamic_call_reflect_006_F.py",
               "scene": "字符串常量->反射3"
+            },
+            {
+              "compose": "dynamic_call_reflect_007_T.py && !dynamic_call_reflect_008_F.py",
+              "scene": "动态创建类"
+            },
+            {
+              "compose": "dynamic_call_reflect_009_T.py && !dynamic_call_reflect_010_F.py",
+              "scene": "动态导入"
             }
           ]
         }

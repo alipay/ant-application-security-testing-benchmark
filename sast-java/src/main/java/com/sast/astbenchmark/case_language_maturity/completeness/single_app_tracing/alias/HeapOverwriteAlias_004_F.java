@@ -13,7 +13,7 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->别名
-// scene introduction = HeapOverwriteAlias-scene2
+// scene introduction = HeapOverwriteAlias FlowSensitive-scene2
 // level = 2
 // bind_url = completeness/single_app_tracing/alias/HeapOverwriteAlias_004_F
 // evaluation information end

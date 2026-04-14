@@ -31,7 +31,7 @@ func (s SubClass) GetName() string {
 	return s.name
 }
 
-func subclass_method_call_007_T(__taint_src string) {
+func method_call_001_T(__taint_src string) {
 	// 场景特点：调用子类的实例方法获取字段值
 	s := SubClass{
 		Base: Base{id: 1},
@@ -46,5 +46,5 @@ func taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	subclass_method_call_007_T(__taint_src)
+	method_call_001_T(__taint_src)
 }

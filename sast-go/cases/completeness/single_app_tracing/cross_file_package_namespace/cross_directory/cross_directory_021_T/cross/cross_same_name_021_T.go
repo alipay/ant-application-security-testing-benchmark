@@ -9,7 +9,7 @@
 package cross_same_name_021_T
 import "os/exec"
 
-func SayHello(taint_src string) {
+func Cross_same_name_021_T(taint_src string) {
 	__taint_sink(taint_src)
 }
 

@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "type_annotation_any_001_T.py && !type_annotation_any_002_F.py",
-              "scene": "1"
+              "scene": "any类型"
             }
           ]
         }

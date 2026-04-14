@@ -12,7 +12,7 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->基础数据类型
-// scene introduction = long
+// scene introduction = long1
 // level = 2
 // bind_url = completeness/single_app_tracing/datatype/primitives/Base_Long_006_F
 // evaluation information end

@@ -7,16 +7,12 @@
           "level": "2",
           "scene_list": [
             {
-              "compose": "numpy_array_001_T.py && !numpy_array_002_F.py",
-              "scene": "numpy数组"
-            },
-            {
               "compose": "extslice_001_T.py && !extslice_002_F.py",
               "scene": "多维切片"
             },
             {
               "compose": "array_001_T.py && !array_002_F.py",
-              "scene": "1"
+              "scene": "array操作"
             },
             {
               "compose": "array_003_T.py && !array_004_F.py",

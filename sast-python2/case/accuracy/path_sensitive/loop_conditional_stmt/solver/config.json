@@ -17,6 +17,10 @@
             {
               "compose": "!while_body_solver_001_F.py && while_body_solver_002_T.py",
               "scene": "循环结构->whileElse"
+            },
+            {
+              "compose": "conditional_expression_solver_001_T.py && !conditional_expression_solver_002_F.py",
+              "scene": "条件表达式"
             }
           ]
         }

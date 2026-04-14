@@ -6,7 +6,7 @@ import (
 )
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 完整度->单应用跟踪完整度->文件、包、命名空间->跨包
 // scene introduction = 跨package4
 // level = 2

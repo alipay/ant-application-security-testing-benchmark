@@ -1,7 +1,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->路径敏感分析->异常抛出和捕获
-// scene introduction = 异常抛出-try块
+// scene introduction = 抛出
 // level = 3
 // bind_url = accuracy/path_sensitive/exception_throw/exception_throw_001_T
 // evaluation information end

@@ -9,7 +9,7 @@
 import os
 
 
-def binary_expression_add_assignment_002_T(taint_src):
+def binary_expression_add_assignment_002_F(taint_src):
     aa = "aa"
     result = '_'
     result += aa  # 使用传入的参数 aa
@@ -22,5 +22,5 @@ def taint_sink(o):
 
 if __name__ == '__main__':
     taint_src = "taint_src_value"
-    binary_expression_add_assignment_002_T(taint_src) 
+    binary_expression_add_assignment_002_F(taint_src) 
 

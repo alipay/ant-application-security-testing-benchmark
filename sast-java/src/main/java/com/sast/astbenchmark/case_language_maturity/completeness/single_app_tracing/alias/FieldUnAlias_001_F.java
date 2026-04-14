@@ -13,7 +13,7 @@ import java.util.Map;
 // evaluation information start
 // real case = false
 // evaluation item = 完整度->单应用跟踪完整度->别名
-// scene introduction = FieldUnAlias-scene1
+// scene introduction = FieldUnAlias FlowSensitive-scene1
 // level = 2
 // bind_url = completeness/single_app_tracing/alias/FieldUnAlias_001_F
 // evaluation information end

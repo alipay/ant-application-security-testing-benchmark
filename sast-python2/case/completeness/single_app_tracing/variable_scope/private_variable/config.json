@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "private_variable_001_T.py && !private_variable_002_F.py",
-              "scene": "1"
+              "scene": "私有变量"
             }
           ]
         }

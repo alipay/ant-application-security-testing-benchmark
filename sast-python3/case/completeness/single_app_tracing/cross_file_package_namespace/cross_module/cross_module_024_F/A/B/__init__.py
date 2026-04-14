@@ -1,1 +1,1 @@
-from .cross_module_024_F_b import function_b
+from .cross_module_024_F_b import cross_module_024_F_b

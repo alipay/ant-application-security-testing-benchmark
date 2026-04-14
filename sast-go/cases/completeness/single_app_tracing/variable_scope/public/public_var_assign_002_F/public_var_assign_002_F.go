@@ -17,7 +17,7 @@ import (
 // Public变量（首字母大写）
 var PublicVar string
 
-func publicVarAssign_002_F(__taint_src string) {
+func public_var_assign_002_F(__taint_src string) {
 	// 场景特点：为public变量赋值，但不是污点数据
 	PublicVar = "_"
 	__taint_sink(PublicVar)
@@ -29,5 +29,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	publicVarAssign_002_F(__taint_src)
+	public_var_assign_002_F(__taint_src)
 }

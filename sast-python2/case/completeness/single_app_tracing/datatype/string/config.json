@@ -1,0 +1,22 @@
+{
+  "string": [
+    {
+      "evaluation_item": "完整度->单应用跟踪完整度->数据类型和结构->字符串",
+      "scene_levels": [
+        {
+          "level": "2",
+          "scene_list": [
+            {
+              "compose": "string_type_001_T.py && !string_type_002_F.py",
+              "scene": "字符串创建"
+            },
+            {
+              "compose": "string_type_003_T.py && !string_type_004_F.py",
+              "scene": "字符串拼接"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "reflect_call_001_T/reflect_call_001_T.go && !reflect_call_002_F/reflect_call_002_F.go",
-              "scene": "1"
+              "scene": "反射调用"
             }
           ]
         }

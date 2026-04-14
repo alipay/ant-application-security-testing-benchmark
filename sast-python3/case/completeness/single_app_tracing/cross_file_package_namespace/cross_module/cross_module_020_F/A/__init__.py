@@ -1,2 +1,2 @@
-from .cross_module_020_F_a import function_a
-from .cross_module_020_F_b import function_b
+from .cross_module_020_F_a import cross_module_020_F_a
+from .cross_module_020_F_b import cross_module_020_F_b

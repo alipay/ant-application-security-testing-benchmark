@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = false
 # evaluation item = 完整度->单应用跟踪完整度->数据类型和结构->列表
-# scene introduction = 
+# scene introduction = 一维
 # level = 2
 # bind_url = completeness/single_app_tracing/datatype/list/list_002_F
 # evaluation information end

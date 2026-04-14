@@ -2,7 +2,7 @@
 # evaluation information start
 # real case = true
 # evaluation item = 完整度->动态特性跟踪完整度->反射调用
-# scene introduction = 字符串常量->反射
+# scene introduction = 字符串常量->反射3
 # level = 3
 # bind_url = completeness/dynamic_tracing/dynamic_call/dynamic_call_reflect_005_T
 # evaluation information end

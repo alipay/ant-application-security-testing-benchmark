@@ -10,13 +10,13 @@ import os
 
 
 def conditional_if_no_solver_003_T(taint_src):
-    res = u""
+    result = ""
     if False:
-        res = u"_"
+        result = "safe_value"
     else:
-        res = taint_src
+        result = taint_src
 
-    taint_sink(res)
+    taint_sink(result)
 
 
 

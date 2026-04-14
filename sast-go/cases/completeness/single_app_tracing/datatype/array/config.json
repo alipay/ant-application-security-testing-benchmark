@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "array_001_T/array_001_T.go && !array_002_F/array_002_F.go",
-              "scene": "1"
+              "scene": "一维数组"
             },
             {
               "compose": "array_003_T/array_003_T.go && !array_004_F/array_004_F.go",
@@ -16,11 +16,11 @@
             },
             {
               "compose": "array_005_T/array_005_T.go && !array_006_F/array_006_F.go",
-              "scene": "2"
+              "scene": "数组参数"
             },
             {
               "compose": "array_007_T/array_007_T.go && !array_008_F/array_008_F.go",
-              "scene": "3"
+              "scene": "不固定长度数组"
             },
             {
               "compose": "array_slice_001_T/array_slice_001_T.go && !array_slice_002_F/array_slice_002_F.go",

@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "Expression_LambdaExpression_001_T.java && !Expression_LambdaExpression_002_F.java",
-              "scene": "1"
+              "scene": "Lambda表达式"
             }
           ]
         }

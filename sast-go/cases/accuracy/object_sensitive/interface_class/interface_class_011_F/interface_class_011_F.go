@@ -1,6 +1,6 @@
 
 // evaluation information start
-// real case = true
+// real case = false
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同类对象
 // scene introduction = 接口作为参数的多态调用
 // level = 2

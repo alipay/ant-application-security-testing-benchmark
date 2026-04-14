@@ -1,2 +1,2 @@
-from .cross_module_019_T_a import function_a
-from .cross_module_019_T_b import function_b
+from .cross_module_019_T_a import cross_module_019_T_a
+from .cross_module_019_T_b import cross_module_019_T_b

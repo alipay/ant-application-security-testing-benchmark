@@ -8,7 +8,7 @@
           "scene_list": [
             {
               "compose": "!tagged_template_literal_001_F.js && tagged_template_literal_002_T.js",
-              "scene": "1"
+              "scene": "标签函数"
             }
           ]
         }

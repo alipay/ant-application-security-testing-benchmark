@@ -7,12 +7,12 @@
 // evaluation information end
 
 
-function exportString(__taint_src) {
+function cross_module_005_T_a(__taint_src) {
   return __taint_src;
 }
 
 export {
-  exportString,
+  cross_module_005_T_a,
 };
 
 

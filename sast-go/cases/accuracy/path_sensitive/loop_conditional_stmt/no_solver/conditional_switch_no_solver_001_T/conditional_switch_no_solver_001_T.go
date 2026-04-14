@@ -10,7 +10,7 @@ import "os/exec"
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/no_solver/conditional_switch_no_solver_001_T/conditional_switch_no_solver_001_T
 // evaluation information end
 
-func conditional_switch_no_solver_001_F(__taint_src string) {
+func conditional_switch_no_solver_001_T(__taint_src string) {
 	res := ""
 	switch 2 {
 	case 1:
@@ -27,5 +27,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	conditional_switch_no_solver_001_F(__taint_src)
+	conditional_switch_no_solver_001_T(__taint_src)
 }

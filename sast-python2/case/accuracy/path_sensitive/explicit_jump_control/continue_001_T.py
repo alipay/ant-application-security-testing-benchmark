@@ -10,12 +10,12 @@ import os
 
 
 def continue_001_T(taint_src):
-    res = u''
-    for i in xrange(10):
-        if i == 3:
-            res = taint_src
-            continue
-        taint_sink(res)
+    res = 'safe_value'
+    for i in range(10):
+        res = taint_src
+        continue
+
+    taint_sink(res)
 
 
 

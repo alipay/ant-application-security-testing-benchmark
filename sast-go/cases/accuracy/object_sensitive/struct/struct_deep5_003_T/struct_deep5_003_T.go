@@ -2,7 +2,7 @@
 // evaluation information start
 // real case = true
 // evaluation item = 准确度->对象敏感与域敏感分析->区分不同结构体
-// scene introduction = 结构体对象->5层对象
+// scene introduction = 结构体对象->5层对象2
 // level = 2
 // bind_url = accuracy/object_sensitive/struct/struct_deep5_003_T/struct_deep5_003_T
 // evaluation information end
