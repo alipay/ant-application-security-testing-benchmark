@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->对象域敏感->多维集合
 // scene introduction = 二维数组，污染数据在[0][0]位置，sink访问该位置
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/multidimensional_collection/multidimensional_collection_001_T
 // evaluation information end
 

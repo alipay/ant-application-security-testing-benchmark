@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->表达式
 // scene introduction = 双引号字符串插值传递污点
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/expression/string_interpolation_001_T
 // evaluation information end
 

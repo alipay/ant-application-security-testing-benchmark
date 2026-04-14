@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->上下文敏感->多态",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "polymorphism_001_T.php && !polymorphism_002_F.php",

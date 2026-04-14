@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->上下文敏感->多次调用
 // scene introduction = 链式调用，sink接收的是安全数据经过多层函数传递的结果
-// level = 2
+// level = 3
 // bind_url = accuracy/context_sensitive/multi_invoke/multi_invoke_004_F
 // evaluation information end
 

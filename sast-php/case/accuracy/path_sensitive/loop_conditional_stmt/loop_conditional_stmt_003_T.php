@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->路径敏感->条件循环语句
 // scene introduction = while循环中污染数据在循环体内流入sink
-// level = 2
+// level = 3
 // bind_url = accuracy/path_sensitive/loop_conditional_stmt/loop_conditional_stmt_003_T
 // evaluation information end
 

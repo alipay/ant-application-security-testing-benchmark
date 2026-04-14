@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->对象域敏感->对象敏感",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "object_sensitive_001_T.php && !object_sensitive_002_F.php",

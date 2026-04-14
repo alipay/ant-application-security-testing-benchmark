@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->对象域敏感->对象敏感
 // scene introduction = 数组中存放不同对象，取出污染对象的字段流入sink
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/object_sensitive/object_sensitive_003_T
 // evaluation information end
 

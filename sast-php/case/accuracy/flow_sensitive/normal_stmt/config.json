@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->流敏感->普通语句",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "normal_stmt_001_T.php && !normal_stmt_002_F.php",

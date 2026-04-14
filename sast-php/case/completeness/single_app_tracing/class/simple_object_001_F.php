@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->单应用追踪->类与对象
 // scene introduction = 对象方法返回安全值
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/class/simple_object_001_F
 // evaluation information end
 

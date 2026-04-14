@@ -74,8 +74,8 @@ const expectData: Record<string, string> = JSON.parse(fs.readFileSync(expectPath
 const detectionMap = new Map<string, boolean>()
 
 for (const [key, value] of Object.entries(expectData)) {
-  // 有 findings = 被检出
-  detectionMap.set(key, !value.includes('No findings!'))
+  // 有 findings = 被检出（空字符串视为无 findings，兼容 execute 无输出的跨文件场景）
+  detectionMap.set(key, value !== '' && !value.includes('No findings!'))
 }
 
 console.log(`读取 expect 文件: ${Object.keys(expectData).length} 条结果`)
@@ -237,10 +237,10 @@ lines.push('### 等级说明')
 lines.push('')
 lines.push('| 等级 | 核心能力 |')
 lines.push('|------|---------|')
-lines.push('| 1 级 基础级 | 语言特性识别，无数据流 |')
-lines.push('| 2 级 标准级 | 单应用数据流分析，对象级粒度 |')
-lines.push('| 3 级 增强级 | 内存建模，字段级粒度，有限动态特性 |')
-lines.push('| 4 级 卓越级 | 跨应用、三方包、精确数值追踪 |')
+lines.push('| 1 级 基础级 | 语言特性识别，无数据流（当前无 case） |')
+lines.push('| 2 级 标准级 | 单应用数据流分析，完整度 |')
+lines.push('| 3 级 增强级 | 内存建模，字段级精度，准确度 |')
+lines.push('| 4 级 卓越级 | 动态特性追踪（可变变量、eval、compact/extract） |')
 lines.push('')
 
 // 按评价项细分

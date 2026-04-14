@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 准确度->对象域敏感->类字段
 // scene introduction = 通过setter方法设置污染数据到类字段，再通过getter获取流入sink
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/class_field/class_field_003_T
 // evaluation information end
 

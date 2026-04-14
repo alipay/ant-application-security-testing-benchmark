@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->上下文敏感->多次调用",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "multi_invoke_001_T.php && !multi_invoke_002_F.php",

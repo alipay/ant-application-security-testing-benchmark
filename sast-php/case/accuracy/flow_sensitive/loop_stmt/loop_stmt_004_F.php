@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->流敏感->循环语句
 // scene introduction = foreach循环体内，sink在污染赋值之前执行
-// level = 2
+// level = 3
 // bind_url = accuracy/flow_sensitive/loop_stmt/loop_stmt_004_F
 // evaluation information end
 

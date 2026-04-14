@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->类字段
 // scene introduction = 类的不同字段区分，sink接收安全字段
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/class_field/class_field_002_F
 // evaluation information end
 

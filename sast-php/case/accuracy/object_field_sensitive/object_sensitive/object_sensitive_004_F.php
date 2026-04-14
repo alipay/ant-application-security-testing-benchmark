@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->对象敏感
 // scene introduction = 数组中存放不同对象，取出安全对象的字段流入sink
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/object_sensitive/object_sensitive_004_F
 // evaluation information end
 

@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->上下文敏感->多态
 // scene introduction = 接口多态，实现类返回安全数据
-// level = 2
+// level = 3
 // bind_url = accuracy/context_sensitive/polymorphism/polymorphism_004_F
 // evaluation information end
 

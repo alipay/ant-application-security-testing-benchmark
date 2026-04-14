@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->动态追踪->可变变量",
       "scene_levels": [
         {
-          "level": "3",
+          "level": "4",
           "scene_list": [
             {
               "compose": "variable_variables_001_T.php && !variable_variables_001_F.php",

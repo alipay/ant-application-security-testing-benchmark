@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->对象域敏感->多维集合",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "multidimensional_collection_001_T.php && !multidimensional_collection_002_F.php",

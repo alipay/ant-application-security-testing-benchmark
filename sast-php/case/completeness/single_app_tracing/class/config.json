@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->单应用追踪->类与对象",
       "scene_levels": [
         {
-          "level": "1",
+          "level": "2",
           "scene_list": [
             {
               "compose": "simple_object_001_T.php && !simple_object_001_F.php",

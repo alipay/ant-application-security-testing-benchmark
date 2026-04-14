@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->动态追踪->compact与extract
 // scene introduction = extract 解包后使用的是数组中安全的键，污点未传入 sink
-// level = 3
+// level = 4
 // bind_url = completeness/dynamic_tracing/compact_extract/compact_extract_002_F
 // evaluation information end
 

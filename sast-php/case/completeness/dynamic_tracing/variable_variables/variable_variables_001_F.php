@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->动态追踪->可变变量
 // scene introduction = 可变变量赋值了安全值，污点未传递到 sink
-// level = 3
+// level = 4
 // bind_url = completeness/dynamic_tracing/variable_variables/variable_variables_001_F
 // evaluation information end
 

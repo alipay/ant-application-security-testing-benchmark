@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->对象域敏感->对象敏感
 // scene introduction = 两个同类对象，污染对象和安全对象区分，sink接收安全对象
-// level = 2
+// level = 3
 // bind_url = accuracy/object_field_sensitive/object_sensitive/object_sensitive_002_F
 // evaluation information end
 

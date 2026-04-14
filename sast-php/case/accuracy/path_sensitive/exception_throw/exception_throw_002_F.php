@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 准确度->路径敏感->异常抛出
 // scene introduction = 异常在sink之前抛出，sink不会执行
-// level = 2
+// level = 3
 // bind_url = accuracy/path_sensitive/exception_throw/exception_throw_002_F
 // evaluation information end
 

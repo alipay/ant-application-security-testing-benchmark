@@ -4,7 +4,7 @@
       "evaluation_item": "完整度->动态追踪->compact与extract",
       "scene_levels": [
         {
-          "level": "3",
+          "level": "4",
           "scene_list": [
             {
               "compose": "compact_extract_001_T.php && !compact_extract_001_F.php",

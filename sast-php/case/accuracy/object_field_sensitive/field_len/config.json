@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->对象域敏感->域长度",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "field_len_001_T.php && !field_len_002_F.php",

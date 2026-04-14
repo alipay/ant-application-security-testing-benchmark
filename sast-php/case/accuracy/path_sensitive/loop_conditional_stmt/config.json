@@ -4,7 +4,7 @@
       "evaluation_item": "准确度->路径敏感->条件循环语句",
       "scene_levels": [
         {
-          "level": "2",
+          "level": "3",
           "scene_list": [
             {
               "compose": "loop_conditional_stmt_001_T.php && !loop_conditional_stmt_002_F.php",

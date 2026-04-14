@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->类与对象
 // scene introduction = 对象属性存取传递污点
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/class/simple_object_001_T
 // evaluation information end
 

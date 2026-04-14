@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->数据类型
 // scene introduction = 数组元素存储和读取污点
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/array_element_001_T
 // evaluation information end
 

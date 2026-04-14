@@ -3,7 +3,7 @@
 // real case = false
 // evaluation item = 完整度->单应用追踪->数据类型
 // scene introduction = str_replace 将污点完全替换为安全值
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/datatype/string_replace_001_F
 // evaluation information end
 

@@ -3,7 +3,7 @@
 // real case = true
 // evaluation item = 完整度->单应用追踪->控制流
 // scene introduction = if 分支中污点传递到 sink
-// level = 1
+// level = 2
 // bind_url = completeness/single_app_tracing/control_flow/conditional_stmt/conditional_if_001_T
 // evaluation information end
 
