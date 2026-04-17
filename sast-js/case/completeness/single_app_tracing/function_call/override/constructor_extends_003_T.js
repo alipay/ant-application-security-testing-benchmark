@@ -34,8 +34,8 @@ function constructor_extends_003_T(__taint_src) {
   derived.process();
 }
 
-function __taint_sink(data) {
-    execSync(data);
+function __taint_sink(o) {
+    execSync(o);
 }
 
 const taint_src = "taint_src_value";
