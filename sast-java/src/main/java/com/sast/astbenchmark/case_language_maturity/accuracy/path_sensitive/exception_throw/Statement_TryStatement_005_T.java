@@ -24,7 +24,6 @@ public class Statement_TryStatement_005_T {
         Map<String, Object> modelMap = new HashMap<>();
         try {
             int[] data = new int[10];
-            cmd = "";
             throw new IOException(cmd);
         } catch (IndexOutOfBoundsException | IOException ex) {
             try {
