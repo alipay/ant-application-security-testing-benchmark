@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = false
+# real case = true
 # evaluation item = 完整度->单应用跟踪完整度->别名
 # scene introduction = 别名问题
 # level = 2
