@@ -22,7 +22,7 @@ func (e *CustomError) Error() string {
 	return e.message
 }
 
-func exception_throw_004_T(__taint_src string) {
+func exception_throw_004_F(__taint_src string) {
 	defer func() {
 		if r := recover(); r != nil {
 			defer func() {
@@ -48,5 +48,5 @@ func __taint_sink(o interface{}) {
 
 func main() {
 	__taint_src := "taint_src_value"
-	exception_throw_004_T(__taint_src)
+	exception_throw_004_F(__taint_src)
 }

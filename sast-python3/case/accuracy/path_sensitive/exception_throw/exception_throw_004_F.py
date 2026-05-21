@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # evaluation information start
-# real case = true
+# real case = false
 # evaluation item = 准确度->路径敏感分析->异常抛出和捕获
 # scene introduction = 异常抛出-except块
 # level = 3
