@@ -33,8 +33,8 @@ def constructor_extends_004_F(taint_src):
 
 
 
-def taint_sink(data):
-    os.system(data)
+def taint_sink(o):
+    os.system(o)
 
 
 if __name__ == u'__main__':
